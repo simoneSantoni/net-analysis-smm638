@@ -83,7 +83,7 @@ FM = 0.25 X MTP + 0.75 X FCP
 For the **mid-term project**, students are required to solve a network
 analytic problem. This year, the project will focus on the topic of
 'core-periphery' (details will be available by week 3, when the project
-will be released). Submissions will be assessed on a $0 - 100 \%$ scale.
+will be released). Submissions will be assessed on a 0 - 100% scale.
 The Groups who fail can resubmit a revised version of the project; if
 the revision is sufficient, students receive a 50% mark. The deadline
 for the project is November 12 (week 6). Selected groups will be invite
