@@ -1,3 +1,6 @@
 # README
 
-This folder contains the slideshow used week one's class.
+This folder contains the following materials:
+
++ lecture notes:
+  - [slideshow_0.ipynb](slideshow_0.ipynb)
