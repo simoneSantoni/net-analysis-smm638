@@ -12,7 +12,7 @@ Here is the workflow students may want to go through:
   * the size of nodes is proportional to the sum of the weights of 
       the edges that point to each individual node.
 
-Tips: in order to simulate network, you may want to screen for functions
+Tips: in order to simulate your network, you may want to screen for functions
 included in the numpy.random module; play a little bit with the different
 color-maps offered by [Matplotlib](https://matplotlib.org/3.1.1/gallery/color/colormap_reference.html)
 
