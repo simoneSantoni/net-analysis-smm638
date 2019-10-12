@@ -17,4 +17,4 @@ included in the numpy.random module; play a little bit with the different
 color-maps offered by [Matplotlib](https://matplotlib.org/3.1.1/gallery/color/colormap_reference.html)
 
 Deliverables: by Wednesday (8:00 PM), individual students submit their Jupyter
-notebook and copy of the visualization (.pdf format).
+notebook and copy of the network visualization (.pdf format).
