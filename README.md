@@ -370,3 +370,11 @@ On top of Anaconda ― Python, students should install the module
 [NetworkX](https://networkx.github.io/) (I recommend to do that using
 Conda), [Docker](https://www.docker.com/), and
 [Graph-Tool](https://graph-tool.skewed.de/).
+
+
+Versioning
+==========
+
++ Created: 
++ Last change:Sun 20 Oct 16:27:02 UTC 2019
+ 
