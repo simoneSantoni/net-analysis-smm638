@@ -4,7 +4,8 @@ README
 This ```week4``` folder contains the following materials:
 
 + lecture notes:
-  ```slideshow_0```
+  - Jupyter notebook - ```slideshow_0.ipynb```
+  - images for the notebook - ```images/```
   
 
 Version history
