@@ -1,7 +1,9 @@
 Mid-term project
 ================
 
-Core-periphery (CP) structures are ubiquitous in the economy [1]. However, 
+Core-periphery (CP) structures are ubiquitous in the economy [Csermely
+ et al., 2013 – Journal of Complex Networks](https://academic.oup.com
+ /comnet/article-abstract/1/2/93/2392115). However, 
 there is a scant of guidelines/established practices on how to conduct CP
  analyses on network data.
  
@@ -23,7 +25,7 @@ there is a scant of guidelines/established practices on how to conduct CP
  
  This mid-term project is a great opportunity for you to create a
   literature review workflow that you can redeploy in the context of the
-   ARP or in you future job.
+   ARP, final course project, or in you future job.
  
     
 Deliverables
@@ -36,6 +38,3 @@ By November 12 (8:00 PM), groups have to upload the following set of
 + copy of the PowerPoint/LaTeX presentation (including the bibliography);
 + if the group produces a new CP algorithm, a companion documentation file
  should be uploaded (.md/.tex format)
-
-
-    [1]: https://academic.oup.com/comnet/article-abstract/1/2/93/2392115
