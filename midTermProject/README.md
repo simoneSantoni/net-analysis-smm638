@@ -1,8 +1,9 @@
 Mid-term project
 ================
 
-Core-periphery (CP) structures are ubiquitous in the economy [Csermely
- et al., 2013 – Journal of Complex Networks](https://academic.oup.com/comnet/article-abstract/1/2/93/2392115). However, 
+Core-periphery (CP) structures are ubiquitous in the economy [(Csermely
+ et al., 2013 – Journal of Complex Networks)](https://academic.oup.com
+ /comnet/article-abstract/1/2/93/2392115). However, 
 there is a scant of guidelines/established practices on how to conduct CP
  analyses on network data.
  
