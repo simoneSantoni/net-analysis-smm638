@@ -6,25 +6,27 @@ Core-periphery (CP) structures are ubiquitous in the economy [(Csermely
 there is a scant of guidelines/established practices on how to conduct CP
  analyses on network data.
  
- Recently, practitioners from the industry and network scholars have
+ Recently, several practitioners from the industry and network scholars have
   started to work on the topic and proposed their 'CP' algorithm. As a
    result, there are a plethora of different algorithms/approaches. For
  this mid-term project, groups are required:
  
 + to conduct a review of the literature covering substantive and
- computational aspects of the CP detection problem. At minimum, (10)
-  applications and ten (10) methodological articles should be retrieved
+ computational aspects of the CP detection problem. At minimum, ten (10)
+  applications and ten (10) methodological articles should be retrieved;
 + to compare and contrast the results achieved by running two CP
  algorithms on the same network dataset. Students can re-use an existing
   algorithm that is already implemented in Python, implement for the first
-   time an existing algorithm in Python, or design and implement a new
+   time an existing algorithm in Python, or design and implement a brand-new
     algorithm;
-+ to prepare a PowerPoint slidewshow presenting the critical insights and
++ to prepare a PowerPoint slide-show presenting the critical insights and
  results emerging from the literature review and network analysis application.
  
- This mid-term project is a great opportunity for you to create a
-  literature review workflow that you can redeploy in the context of the
-   ARP, final course project, or in you future job.
+ This mid-term project is a great opportunity for students:
+ 
+ + to create a literature review workflow that they can redeploy in the
+  context of the ARP, final course project, or in you future job;
+ + to solve practical problems by implementing cutting edge tools.
  
     
 Deliverables
