@@ -375,6 +375,6 @@ Conda), [Docker](https://www.docker.com/), and
 Versioning
 ==========
 
-+ Created: 
++ Created: Oct 1  
 + Last change: Thu Oct 24 17:47:57 UTC 2019
  
