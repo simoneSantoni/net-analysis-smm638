@@ -8,47 +8,78 @@
 
 Author: Simone Santoni, simone.santoni.1@city.ac.uk
 
-Dates: create Fri 25 Oct 09:26:01 2019; last change 
+Dates: created Fri 25 Oct 09:26:01 2019
+       last change Sun Oct 27 11:00:08 UTC 2019
 
-Notes: Numpy and Networkx are required libraries 
+Notes: Numpy and Networkx are required libraries
 
 """
 
 
 # %% setup
+# --------
 
+import os
 import numpy as np
-import networkx as nx
 import matplotlib.pyplot as plt
+from graspy.plot import heatmap
 
 
 # %% simulate the network
+# -----------------------
 
 '''
-Drawing on the adjacency matrix reported in Borgatti and Everett's paper, we can
-think an indirected cp network as the composition of:
+Drawing on the adjacency matrix reported in Borgatti and Everett's paper, we
+can think an indirected cp network as the composition of:
 
-- a square (n1 X n1), very densely populated matrix reflecting ties linking any 
+- a square (n1 X n1), very densely populated matrix reflecting ties linking any
   two core nodes
-- a 'rectangular' (n1 X n2) matrix reflecting scatter ties linking peripheral 
+- a 'rectangular' (n1 X n2) matrix reflecting scatter ties linking peripheral
   nodes to core nodes
 - a square (n2 x n2), matrix mostly populated by zeros, which reflects absent
   ties among peripheral nodes
 '''
 
 # simulation params
-n = 1000
-p_c = 0.05
-n_c, n_p = n * p_c, n * (1 - p_c)
+n = 1000                              # nodes
+c = 0.05                              # % core nodes
+p = 1 - c                             # % peripheral nodes
+n_c, n_p = int(n * c), int(n * p)     # core nodes, peripheral nodes
 
-# core-core ties
-cc = np.random.binomial(1, 1, size=(n_c, n_c))
+# core - core ties
+cc = np.ones((n_c, n_c))
 
-# periphery-core ties
-pc = np.random.binomial(1, 0.1, size=(n_c, n_p))
-
-
+# periphery - core ties
+pc = np.random.binomial(1, 0.1, size=(n_p, n_c))
 
 # core-periphery ties
+cp = np.transpose(pc)
+
+# periphery - periphere y ties
+pp = np.zeros((n_p, n_p))
+np.fill_diagonal(pp, 1)                # filling the diagonal with 1s
+
+# stack the three matrices
+cc_pc = np.vstack((cc, pc))            # stack left-bottom and left-top
+cp_pp = np.vstack((cp, pp))            # stack right-bottom and right-top
+g = np.hstack((cc_pc, cp_pp))          # stack left and right sections
 
 
+# %% visualize the core-periphery network
+# ---------------------------------------
+
+'''
+GraSpy (https://graspy.neurodata.io/index.html) is a Python librarary that
+leverages Networkx and Matplotlib to create a series of network visualizations
+including heatmaps, gridplots, pairplot, degreeplot, edgeplot, screeplot.
+
+As you see below, producing a heatmap of the adjacency matrix at hand takes
+one line
+'''
+
+fig = plt.figure(figsize=(6, 6))
+ax = fig.add_subplot(1, 1, 1)
+heatmap(g, cmap='Greens', ax=ax)
+ax.set_title(r'$A_{ij}$ of the simulated core-periphery network')
+out_f = os.path.join(os.getcwd(), 'viz_0.pdf')
+plt.savefig(out_f)
