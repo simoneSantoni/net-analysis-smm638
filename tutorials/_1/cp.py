@@ -22,6 +22,7 @@ Notes: Numpy and Networkx are required libraries
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import networkx as nx
 from graspy.plot import heatmap
 
 
@@ -77,9 +78,57 @@ As you see below, producing a heatmap of the adjacency matrix at hand takes
 one line
 '''
 
+# create figure
 fig = plt.figure(figsize=(6, 6))
+
+# add plot
 ax = fig.add_subplot(1, 1, 1)
+
+# plot data with GraSPy heatmap
 heatmap(g, cmap='Greens', ax=ax)
+
+# add title
 ax.set_title(r'$A_{ij}$ of the simulated core-periphery network')
+
+# save figure
 out_f = os.path.join(os.getcwd(), 'viz_0.pdf')
 plt.savefig(out_f)
+
+
+# %% get degree distribution
+# ---------------------------
+
+# get degree k of each node in g
+d = np.sum(g, axis=0)
+
+# get p_k
+p_k = np.unique(d, return_index=True)
+
+# plot p_k
+
+# create figure
+fig = plt.figure(figsize=(6, 6))
+
+# add plot
+ax = fig.add_subplot(1, 1, 1)
+
+# plot data
+ax.scatter(p_k[0], p_k[1]/n, alpha=0.4, color='orange')
+
+# transform the scale of axes
+#ax.set_xscale('log')
+#ax.set_yscale('log')
+
+# labels
+ax.set_xlabel(r'$k$')
+ax.set_ylabel(r'$p_{k}$')
+
+# title
+ax.set_title('Degree distribution of the simulated\ncore-periphery network')
+
+# grid
+ax.grid(ls='--')
+
+# save figure
+plt.tight_layout()
+plt.savefig(os.path.join(os.getcwd(), 'viz_1.pdf'))
