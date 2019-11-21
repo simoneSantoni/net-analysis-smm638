@@ -45,5 +45,4 @@ By December 20 (5:00 PM), groups have to upload the following set of materials:
   - a description of the netwrok analytics pipeline you have created (including
       models, metrics, algorithms, etc.);
   - an effective, concise description of the key insights emerging from
-      the figure;
-  - the set of statistical analyses (if any) behind the charts.
+      the network analyses.
