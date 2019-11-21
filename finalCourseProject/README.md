@@ -30,7 +30,7 @@ Data
 There are several dumps of the Stackoverflow platform:
 
 + [official dump](https://data.stackexchange.com/stackoverflow/queries)
-+ Archive dump(https://archive.org/details/stackexchange)
++ [Archive dump](https://archive.org/details/stackexchange)
 + [SNAP dump](http://snap.stanford.edu/data/sx-stackoverflow.html)
 + Simone's dump (available upon request)
 
