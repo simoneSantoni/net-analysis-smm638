@@ -1,4 +1,5 @@
 Tutorial 2 - README
+===================
 
 This tutorial focuses on triadic closure. The setting is an information
 exchange network (email exchange within a large research institution in
