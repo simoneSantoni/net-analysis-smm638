@@ -40,7 +40,7 @@ import numpy as np
 # ------------
 
 """
-I specifiy the location of the file by means of the 'os' module.
+I specify the location of the file by means of the 'os' module.
 Particularly, I use 'os.path.join' in order to join 'path',
 'folder', and 'file name' elements. Note os.path.join should be
 imported.
@@ -124,9 +124,9 @@ m = pd.DataFrame({'m': m}, index=np.repeat(0, len(m)))
 Since we have the set of unique nodes and the set of unique periods stored in
 memory, we get the set of ties that are at risk to emerge in every period.
 
-In algebric terms, this is equivalent to the Cartesian Product of two
+In algebraic terms, this is equivalent to the Cartesian Product of two
 vectors. There are several ways to achieve the Cartesian Product in Python:
-    - naive solution to implement in Pandas
+    - naive, Panda-based implementation
     - numpy.meshgrid
     - ad-hoc solutions implemented in numpy (e.g.,
       https://gist.github.com/hernamesbarbara/)
@@ -203,7 +203,7 @@ df = pd.DataFrame(gr['ml_cnt'].agg(np.size))
 """
 As per the Kossinets-Watts model, a tie emerges between two nodes i, j insofar
 as i sends an email to j and j sends an email to i (say j
-replies/reciproactes to i's email message). So, we have to disentangle data
+replies/reciprocates to i's email message). So, we have to disentangle data
 ties and potentiallt asymmetric email exchange.
 
 The 'trick' is to nest email exchange data within ties by means of the 'set'
@@ -271,7 +271,7 @@ df = df.loc[df['tie'] == 1]
 # -----------------------------------------
 
 """
-At this point, we want to take into account of the fact that
+At this point, we want to take into account the fact that
 information exchange ties don't disappear: If i and j are connected
 in period 0 they will remain connected up to time k, it doesn't
 matter if they exchance or not exchange emails.
@@ -389,11 +389,15 @@ connection
 # we're iterating over the g data frame, which contains 8,740,890 observations
 # in the interest of efficiency we should be better off using a list
 # comprehension
-k = [list(set(g.loc[i, 'n_x_alr']) & set(g.loc[i, 'n_y_alr'])) for i in
-     g.index]
+
+# shared alters
+shared_alters = [list(set(g.loc[i, 'n_x_alr']) & set(g.loc[i, 'n_y_alr'])) for i in g.index]
+
+# count of shared alters
+k = [len(i) for i in shared_alters]
 
 # get a data frame
-k = pd.DataFrame(, columns=['ntr', 'k'], index=g.index)
+k = pd.DataFrame({'shared_alters': shared_alters, 'k': k}, index=g.index)
 
 # append data on actual and potential ties and k
 g = pd.concat([g, k], axis=1)
@@ -407,11 +411,10 @@ g.sort_index(inplace=True)
 
 # adjust cum_ties field
 g.loc[g['cum_ties'] > 0, 'tie'] = 1
-g.loc[:, 'cum_ties'] = g.groupby(
-    level=['n_x', 'n_y'])['tie'].transform(np.cumsum)
+g.loc[:, 'cum_ties'] = g.groupby(level=['n_x', 'n_y'])['tie'].transform(np.cumsum)
 
 # housekeeping - remove redundant col
-g.drop('ntr', axis=1, inplace=True)
+g.drop('shared_alters', axis=1, inplace=True)
 
 
 # %% get T(k)
@@ -472,65 +475,64 @@ Three main insights arise from the visualization:
     1 - the functional form of T(k) is contingent on time
     2 - no matter the functional form, the average T(K) changes markedly
         as time passes
-    3 - given 1) and 2), results from triadic closure models whoudl be
+    3 - given 1) and 2), results from triadic closure models would be
         properly contextualized (how mature is the network? How many prior
         ties? Do newcomers join the network? ...
 """
 
-# # setup
-# import matplotlib.pyplot as plt
-# import matplotlib as mpl
-# plt.style.use('seaborn-bright')
-# import pandas as pd
-# import numpy as np
+## setup
+#import matplotlib.pyplot as plt
+#import matplotlib as mpl
+#plt.style.use('seaborn-bright')
+#import pandas as pd
+#import numpy as np
 #
 #
-# # read data
-# df = pd.read_csv('tk.csv')
+## read data
+#df = pd.read_csv('tk.csv')
 #
-# # explore the distribution of pairs over k
-# df.groupby(['k', 'm'])['tie_cnt'].aggregate(np.sum)
+## explore the distribution of pairs over k
+#df.groupby(['k', 'm'])['tie_cnt'].aggregate(np.sum)
 #
-# """
-# There seems to be a knot in the distribution around k = 15. Let's stick
-# with that (and slice the data).
-# """
+#"""
+#There seems to be a knot in the distribution around k = 15. Let's stick
+#with that (and slice the data).
+#"""
 #
-# df = df.loc[df['k'] <= 15]
+#df = df.loc[df['k'] <= 15]
+#
+## create figure
+#fig = plt.figure(figsize=(6, 4))
+#
+## create chart
+#ax = fig.add_subplot(1, 1, 1)
+#
+## colors for individual lines
+#n = 16 # months we focus on
+#c = np.arange(0, n, 1)
+#cmap = mpl.cm.get_cmap('viridis', n)
+#
+## plot the data
+#for i in np.arange(0, 16, 1):
+#    k = df.loc[df['m'] == i, 'k']
+#    tk = df.loc[df['m'] == i, 'tk']
+#    # label = str(i)
+#    ax.plot(k, tk, c=cmap(i)) # label=label)
 #
 #
-# # create figure
-# fig = plt.figure(figsize=(6, 4))
+## axes
+#ax.set_xlabel('$k$')
+#ax.set_ylabel('$T(k)$')
 #
-# # create chart
-# ax = fig.add_subplot(1, 1, 1)
+## grid
+#ax.grid(True, ls='--')
 #
-# # colors for individual lines
-# n = 16 # months we focus on
-# c = np.arange(0, n, 1)
-# cmap = mpl.cm.get_cmap('viridis', n)
+## colorbar
+#d = ax.scatter(c, c, marker='', c=c, cmap=cmap)
+#fig.colorbar(d)
 #
-# # plot the data
-# for i in np.arange(0, 16, 1):
-#     k = df.loc[df['m'] == i, 'k']
-#     tk = df.loc[df['m'] == i, 'tk']
-#     # label = str(i)
-#     ax.plot(k, tk, c=cmap(i)) # label=label)
+## legend
+## ax.legend(loc='best')
 #
-#
-# # axes
-# ax.set_xlabel('$k$')
-# ax.set_ylabel('$T(k)$')
-#
-# # grid
-# ax.grid(True, ls='--')
-#
-# # colorbar
-# d = ax.scatter(c, c, marker='', c=c, cmap=cmap)
-# fig.colorbar(d)
-#
-# # legend
-# # ax.legend(loc='best')
-#
-# # show the plot
-# plt.show()
+## show the plot
+#plt.show()
