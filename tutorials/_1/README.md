@@ -1,4 +1,4 @@
-# Tutorial 1 - README
+# Tutorial #1 - README
 
 This tutorial solves the second problem set of the module, which consists of:
 

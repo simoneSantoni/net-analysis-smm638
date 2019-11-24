@@ -1,4 +1,4 @@
-Tutorial 2 - README
+Tutorial #2 - README
 ===================
 
 This tutorial focuses on triadic closure. The setting is an information

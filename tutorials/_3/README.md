@@ -1,4 +1,4 @@
-# Tutorial 3 – README
+# Tutorial #3 – README
 
 This tutorial focuses on hompohily in networks. The setting is a friendship network.
 I assume gender is the ascriptive characteristic driving tie emergence.
