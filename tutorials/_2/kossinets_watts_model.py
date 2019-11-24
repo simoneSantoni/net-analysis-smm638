@@ -3,15 +3,27 @@
 
 """
 -------------------------------------------------------------------------------
-
+    Kossinets - Watts model
 -------------------------------------------------------------------------------
 
 Author: Simone Santoni, simone.santoni.1@city.ac.uk
 
+Date: created ; last change
+
 Notes:
-    - *overview*: email exchange network data collected by the SNAP crowd
-    - *location*: https://snap.stanford.edu/data/email-Eu-core-temporal.html
-    - *description*: The network was generated using email data from a large European research institution. We have anonymized information about all incoming and outgoing email between members of the research institution. The e-mails only represent communication between institution members (the core), and the dataset does not contain incoming messages from or outgoing messages to the rest of the world. A directed edge (u, v, t) means that person u sent an e-mail to person v at time t. A separate edge is created for each recipient of the e-mail. We also have four sub-networks corresponding to the communication between members of four different departments at the institution. Node IDs in the sub-networks do not correspond to the same node ID in the entire network.
+    - data consist of email exchange events collected by the SNAP crowd
+    - location: https://snap.stanford.edu/data/email-Eu-core-temporal.html
+    - site: data come from a large European research institution. Here's a quote
+      from the SNAP website: "We have anonymized information about all incoming
+      and outgoing email between members of the research institution. The
+      e-mails only represent communication between institution members (the
+      core), and the dataset does not contain incoming messages from or outgoing
+      messages to the rest of the world. A directed edge (u, v, t) means that
+      person u sent an e-mail to person v at time t. A separate edge is created
+      for each recipient of the e-mail. We also have four sub-networks
+      corresponding to the communication between members of four different
+      departments at the institution. Node IDs in the sub-networks do not
+      correspond to the same node ID in the entire network."
 
 """
 
@@ -19,36 +31,39 @@ Notes:
 # %% load modules
 # ---------------
 
+import os
 import pandas as pd
 import numpy as np
-from os.path import join
-from os import getcwd
 
 
 # %% load data
 # ------------
 
 """
-I specifiy the location of the file by means of the 'os' module for 
-Python. Particularly, I use 'os.path.join' in order to join 'path', 
-'folder', and 'file name' elements. Note os.path.join should be 
+I specifiy the location of the file by means of the 'os' module.
+Particularly, I use 'os.path.join' in order to join 'path',
+'folder', and 'file name' elements. Note os.path.join should be
 imported.
 
 If you run this, update your path and folder strings.
 """
 
-path = getcwd()
-folder = '_c'
-file = 'email-Eu-core-temporal.csv'
-df = pd.read_csv(join(path, folder, file))
+cwd = os.getcwd()
+fdr = 'tutorials/_2'
+in_f = 'email-Eu-core-temporal.txt'
+df = pd.read_table(os.path.join(cwd, fdr, in_f),
+                   sep=' ',
+                   header=None,
+                   names=['src', 'tgt', 'ts'])
 
 
 # %% clean time data
+# ------------------
 
 """
-The place to start is, as usual, data cleaning. Specifically, we want to 
-create a variable capturing the time elapsed since the first email 
-exchanged by network participants. In order to do this, we leverage the 
+The place to start is, as usual, data cleaning. Specifically, we want to
+create a variable capturing the time elapsed since the first email
+exchanged by network participants. In order to do this, we leverage the
 amazing capabilities Pandas has to deal with 'time' data.
 
 Please go back to the 'Timeseries'/'Timedeltas' sections of the Pandas
@@ -64,49 +79,68 @@ df.loc[:, 'm'] = df['td'].dt.days // timespan
 
 
 # %% get unique nodes
+# -------------------
 
 """
 We will use the set of unique nodes to get the set of ties that are at risk
 to emerge in every period (or 'timedelta' to use Pandas' terminology).
 """
 
+# sources
 n = list(set(df['src']))
+
+# targets
+n.extend(list(set(df['tgt'])))
+
+# collapse sources and targets
+n = list(set(n))
+
+# get a data frame whose index is constant and equal to zero
 n = pd.DataFrame({'n': n}, index=np.repeat(0, len(n)))
 
 
 # %% get unique timespans
+# -----------------------
 
 """
 Related to the previous point, we need the set of unique periods.
 """
 
+# unique months
 m = list(set(df['m']))
+
+# filter-in those email exchange occurring before 19 months since the
+# first interaction
+m = [i for i in m if i < 19]
+
+# get a data frame whose index is constant and equal to zero
 m = pd.DataFrame({'m': m}, index=np.repeat(0, len(m)))
 
 
 # %% get the risk set of ties to emerge in each timespan
+# ------------------------------------------------------
 
 """
-Since we have the set of unique nodes and the set of unique periods stored in 
+Since we have the set of unique nodes and the set of unique periods stored in
 memory, we get the set of ties that are at risk to emerge in every period.
 
-In algebric terms, this is equivalent to the Cartesian Product of two 
-vectors. There are several ways to achieve the Cartesian Product in Python: 
+In algebric terms, this is equivalent to the Cartesian Product of two
+vectors. There are several ways to achieve the Cartesian Product in Python:
     - naive solution to implement in Pandas
     - numpy.meshgrid
-    - ad-hoc solutions implemented in numpy (e.g., 
-    https://gist.github.com/hernamesbarbara/)
+    - ad-hoc solutions implemented in numpy (e.g.,
+      https://gist.github.com/hernamesbarbara/)
     - itertools (https://docs.python.org/3/library/itertools.html)
-    
-    
-Stackoverflow has a useful thread focusing on how to operate a Cartesian 
+
+Stackoverflow has a useful thread focusing on how to operate a Cartesian
 Product in Python (https://stackoverflow.com/questions/1208118/using-numpy
 -to-build-an-array-of-all-combinations-of-two-arrays)
 
-In our case, we will go for the naive implementation with Pandas (which is 
-very efficient indeed; you can verify by applying the %timeit magic over 
-alternative pieces of code implementing the Cartesian Product. 
+In our case, we will go for the naive implementation with Pandas (which is
+very efficient indeed; you can verify by applying the %timeit magic over
+alternative pieces of code implementing the Cartesian Product.
 """
+
 
 # node-node cartesian product
 rs = pd.merge(n, n, left_index=True, right_index=True)
@@ -123,34 +157,33 @@ If you go with numpy.meshgrid, the code is:
 
 nodes = n['n'].values.tolist()
 
-rs = pd.DataFrame(
-    np.stack(np.meshgrid(nodes, nodes)).T.reshape(-1, 2),
-    columns=['n_x', 'n_y']
-)
+rs = pd.DataFrame(np.stack(np.meshgrid(nodes, nodes)).T.reshape(-1, 2),
+                  columns=['n_x', 'n_y'])
 
 Let me highlight the logic:
-    
+
     - we create a list out of the 'n' columns in the 'n' df
-    - we apply meshgrid 
-    - we stack the output of np.meshgrid (namely, two arrays of shape 
+    - we apply meshgrid
+    - we stack the output of np.meshgrid (namely, two arrays of shape
       (len(n), len(n))
     - we transpose the stacked arrays by means of the .T function
     - we reshape so as the get an array of shape (len(n**2), 2)
     - we create a Pandas df out of the np array
-    
-    
+
+
 If you wan to go with itertools, you can go for itertools.product. Snippets of
-code are available here: 
+code are available here:
 
 https://docs.python.org/3/library/itertools.html#itertools.product
 
-That said, I don't recommend to go down this route. The underlying coding 
-philosophy is a bit old school -- not particularly efficient. No offense for 
+That said, I don't recommend to go down this route. The underlying coding
+philosophy is a bit old school -- not particularly efficient. No offense for
 'loop' lovers.
 """
 
 
 # %% group email exchange data around unique src-tgt-td
+# -----------------------------------------------------
 
 """
 The first transformation procedure to apply is grouping observations around
@@ -165,26 +198,27 @@ df = pd.DataFrame(gr['ml_cnt'].agg(np.size))
 
 
 # %% nest src-tgt within unique dyads
+# -----------------------------------
 
 """
 As per the Kossinets-Watts model, a tie emerges between two nodes i, j insofar
-as i sends an email to j and j sends an email to i (say j 
+as i sends an email to j and j sends an email to i (say j
 replies/reciproactes to i's email message). So, we have to disentangle data
 ties and potentiallt asymmetric email exchange.
 
-The 'trick' is to nest email exchange data within ties by means of the 'set' 
-function. This us allows to get rid of the order in which pairs of nodes can 
+The 'trick' is to nest email exchange data within ties by means of the 'set'
+function. This us allows to get rid of the order in which pairs of nodes can
 present. E.g.: set([0,1]) == set([1, 0]) gives 'True'
 
-During the second extra-lab, you guys proposed to use the 'set' function to 
-create a new column within the data frame containing actual ties. That seems 
+During the second extra-lab, you guys proposed to use the 'set' function to
+create a new column within the data frame containing actual ties. That seems
 an appeal alternative but it doesn't work as it comes to manipulate the column
-containing sets (e.g., to assign sets to the index of the dataframe. 
-The reason is that set objects are not mutable and cannot be hashed 
+containing sets (e.g., to assign sets to the index of the dataframe.
+The reason is that set objects are not mutable and cannot be hashed
 (meaning you can't get the i-th element of the set).
 
 The following lines of code show how to properly leverage 'sets' in the
-context of our problem (that is, nesting email exchange observations into 
+context of our problem (that is, nesting email exchange observations into
 ties). Here's the logic:
 
 - we create two empty lists to separately store the nodes involved in
@@ -207,8 +241,11 @@ for i, j in zip(df['src'], df['tgt']):
 df.loc[:, 'n_x'] = focal
 df.loc[:, 'n_y'] = alter
 
+del (focal, alter)
+
 
 # %% locate actual ties by month
+# ------------------------------
 
 """
 We assess the presence of a tie by counting the observations nested within
@@ -231,16 +268,17 @@ df = df.loc[df['tie'] == 1]
 
 
 # %% cumulate ties over 'n_x' - 'n_y' pairs
+# -----------------------------------------
 
 """
-At this point, we want to take into account of the fact that 
+At this point, we want to take into account of the fact that
 information exchange ties don't disappear: If i and j are connected
-in period 0 they will remain connected up to time k, it doesn't 
+in period 0 they will remain connected up to time k, it doesn't
 matter if they exchance or not exchange emails.
 
-Here, we index the data on ties around unique pairs of nodes. Then we sort 
-ties with respect to their emergence. Finally, we count the ties (cum_tie) 
-involving a same pair of nodes over time. 
+Here, we index the data on ties around unique pairs of nodes. Then we sort
+ties with respect to their emergence. Finally, we count the ties (cum_tie)
+involving a same pair of nodes over time.
 """
 
 df.set_index(['n_x', 'n_y', 'm'], inplace=True)
@@ -253,6 +291,7 @@ ct.rename(columns={'tie': 'cum_ties'}, inplace=True)
 
 
 # %% merge data on actual and potential ties
+# ------------------------------------------
 
 """
 Now, we're ready to merge data on actual and potential ties.
@@ -273,6 +312,7 @@ g.loc[g['cum_ties'] > 0, 'tie'] = 1
 
 
 # %% attach data on alters
+# ------------------------
 
 """
 For each tie (being an actual or potential one) and period we want to
@@ -297,9 +337,8 @@ df.reset_index(inplace=True)
 # for loop
 for i in nodes:
     for j in months:
-        to_append = df.loc[
-            (df['src'] == i) & (df['m'] <= j), 'tgt'
-        ].values.tolist()
+        to_append = df.loc[(df['src'] == i) & (df['m'] <= j),
+                           'tgt'].values.tolist()
         to_append = list(set(to_append))
         alr.append([i, j, to_append])
 
@@ -308,9 +347,10 @@ alr = pd.DataFrame(alr, columns=['n', 'm', 'alr'])
 
 
 # %% merge actual/potential ties with alters
+# ------------------------------------------
 
 """
-It's time to attach each node's alters to each individual 
+It's time to attach each node's alters to each individual
 pair so as to get 'k', namely the number of contacts i and j share
 """
 
@@ -326,9 +366,9 @@ g.rename(columns={'alr': 'n_y_alr'}, inplace=True)
 
 
 # %% compute k
-
+# -------------
 """
-We can get k as the intersection between 'n_x_alr' and 
+We can get k as the intersection between 'n_x_alr' and
 'n_y_alr'. In Python, we can achieve this in several ways:
 
     - leveraging sets
@@ -336,26 +376,24 @@ We can get k as the intersection between 'n_x_alr' and
         or
         * set(a).intersection(b)
     - using np.intersect1d
-    - creating ad-hoc functions 
+    - creating ad-hoc functions
       (e.g., https://www.geeksforgeeks.org/python-intersection-two-lists/)
 
 In order to make the comparison faster/more efficient, we may want to remove
-those instances in which a least one node in the pair doesn't have any 
+those instances in which a least one node in the pair doesn't have any
 connection
 
 """
 
-# create empty list to populate
-k = []
 
-# for loop
-for i in g.index:
-    ntr = list(set(g.loc[i, 'n_x_alr']) & set(g.loc[i, 'n_y_alr']))
-    k.append([ntr, len(ntr)])
-
+# we're iterating over the g data frame, which contains 8,740,890 observations
+# in the interest of efficiency we should be better off using a list
+# comprehension
+k = [list(set(g.loc[i, 'n_x_alr']) & set(g.loc[i, 'n_y_alr'])) for i in
+     g.index]
 
 # get a data frame
-k = pd.DataFrame(k, columns=['ntr', 'k'], index=g.index)
+k = pd.DataFrame(, columns=['ntr', 'k'], index=g.index)
 
 # append data on actual and potential ties and k
 g = pd.concat([g, k], axis=1)
@@ -377,9 +415,10 @@ g.drop('ntr', axis=1, inplace=True)
 
 
 # %% get T(k)
+# -----------
 
 """
-At this point, we have to assess the probability that, conditionally on k,  
+At this point, we have to assess the probability that, conditionally on k,
 pairs of unconnected nodes will link in the 'following' period. This implies:
 
     - we distinguish among connected and unconnected pairs of nodes
@@ -417,23 +456,24 @@ t.to_csv('tk.csv', index=False)
 
 
 # %% plot T(k)
+# ------------
 
 """
-Uncomment if you want to run. 
+Uncomment if you want to run.
 
-The visualization strategy should keep into account that pairs of nodes are 
-very heterogeneously distributed across k. This might make t(k) extremely 
-sensitive as k increases. So, first-thing-first, explore the 
-distribution of pairs across k. Then, fix an appropriate range of variation 
+The visualization strategy should keep into account that pairs of nodes are
+very heterogeneously distributed across k. This might make t(k) extremely
+sensitive as k increases. So, first-thing-first, explore the
+distribution of pairs across k. Then, fix an appropriate range of variation
 for k. Finally, make the visualization of t(k) over k.
 
 Three main insights arise from the visualization:
 
     1 - the functional form of T(k) is contingent on time
-    2 - no matter the functional form, the average T(K) changes markedly 
+    2 - no matter the functional form, the average T(K) changes markedly
         as time passes
-    3 - given 1) and 2), results from triadic closure models whoudl be 
-        properly contextualized (how mature is the network? How many prior 
+    3 - given 1) and 2), results from triadic closure models whoudl be
+        properly contextualized (how mature is the network? How many prior
         ties? Do newcomers join the network? ...
 """
 
