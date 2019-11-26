@@ -68,7 +68,8 @@ In order to run a Jupyter server from within your Ubuntu 18.04 machine:
 
     jupyter notebook --no-browser
 
-Open your browser and go to localhost:8888 (just make sure there's no other Jupyter server ongoing).
+Open your browser and go to localhost:8888 (just make sure there's no other
+ Jupyter server ongoing in your Win10 OS).
 
 
 Step 8
