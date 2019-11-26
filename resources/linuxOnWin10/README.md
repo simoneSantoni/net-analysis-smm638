@@ -8,7 +8,7 @@ Step 1
 
 Launch the Microsoft Store app.
 
-![](images/_0.png)
+![](images/_0.PNG)
 
 
 Step 2
@@ -16,7 +16,7 @@ Step 2
 
 Search for Ubuntu 18.04 (for example).
 
-![](images/_1.png)
+![](images/_1.PNG)
 
 
 Step 3
@@ -24,7 +24,7 @@ Step 3
 
 Download Ubuntu 18.04
 
-![](images/_2.png)
+![](images/_2.PNG)
 
 
 Step 4
@@ -32,7 +32,7 @@ Step 4
 
 From the 'Start' menu, launch Ubuntu 18.04. A new terminal will pop-up - the installer will run automatically.
 
-![](images/_3.png)
+![](images/_3.PNG)
 
 
 Step 5
@@ -40,7 +40,7 @@ Step 5
 
 Pass your username and password, and that's it.
 
-![](images/_4.png)
+![](images/_4.PNG)
 
 
 Step 6
@@ -48,7 +48,7 @@ Step 6
 
 At this point, you can install Anaconda in your Ubuntu 18.04 machine.
 
-![](images/_5.png)
+![](images/_5.PNG)
 
 Download an image of Anaconda by copying and pasting the following onto the prompt in which Ubuntu is running:
 
