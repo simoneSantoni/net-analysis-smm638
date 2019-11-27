@@ -7,4 +7,3 @@ This folder contains step-by-steep guidelines to accomplish the following:
  [linuxOnWin10](linuxOnWin10/README.md)
 + installing Docker - see [installingDocker](installingDocker/README.md)
 + installing Graph-tool - see [graphTool](graphTool/README.md)
-
