@@ -1,7 +1,10 @@
-Running Linux Distros on Win10 - README
-=======================================
+'Running' Linux Distros on Win10 - README
+=========================================
 
-This is a step-by-step guide to install a Linux distro (Ubuntu or Debian) on Win10 machine.
+This is a step-by-step guide to install a Linux distro (e.g., Ubuntu or Debian
+) on
+ Win10 machine.
+
 
 Step 1
 ------
@@ -33,6 +36,7 @@ Step 4
 From the 'Start' menu, launch Ubuntu 18.04. A new terminal will pop-up - the installer will run automatically.
 
 ![](images/_3.PNG)
+
 
 
 Step 5
@@ -76,3 +80,4 @@ Step 8
 ------
 
 Use `conda` from the Ubuntu prompt to manipulate your environments.
+
