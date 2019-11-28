@@ -60,6 +60,19 @@ Verify that Docker Engine - Community is installed correctly by running the hell
 
     $ sudo docker run hello-world
 
+### Step 3 - FOR WINDOWS USERS RUNNING UBUNTU IN THE SUB-SYSTEM
+
+When Windows users try to run the previous command, they get the following
+ error: 
+ 
+     Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the 
+     docker daemon running?
+
+This [Medium post](https://medium.com/@sebagomez/installing-the-docker-client-on-ubuntus-windows-subsystem-for-linux-612b392a44c4) 
+shows how to deal with the problem.
+
+*Ditto*, in the interest of installing Graph-Tool, Windows users can also
+ use Conda to get the library work in their Ubuntu sub-system. 
 
 Docker for MacOS
 ----------------
