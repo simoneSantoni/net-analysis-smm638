@@ -66,6 +66,8 @@ Docker for MacOS
 
 Download and run the [graphical installer](https://docs.docker.com/docker-for-mac/install/). Registration required.
 
+Once the software is installed, try to launch Docker from the icon.
+
 
 Docker for Win10
 ----------------
