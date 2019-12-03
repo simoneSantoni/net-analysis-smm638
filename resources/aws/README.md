@@ -28,8 +28,7 @@ To access your instance:
 $ chmod 400 your_key.pem
 ```
 
-3. Connect to your instance using its Public DNS: ```ec2-35-176-67-90.eu
--west-2.compute.amazonaws.com```
+3. Connect to your instance using its Public DNS: ```ec2-35-176-67-90.eu-west-2.compute.amazonaws.com```
 
 Example:
 
