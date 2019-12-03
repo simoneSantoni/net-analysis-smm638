@@ -28,12 +28,12 @@ To access your instance:
 $ chmod 400 your_key.pem
 ```
 
-3. Connect to your instance using its Public DNS: ```ec2-35-176-67-90.eu-west-2.compute.amazonaws.com```
+3. Connect to your instance using its Public DNS, e.g.: ```xxx-xx-xxx-xx-xx.eu-west-2.compute.amazonaws.com```
 
 Example:
 
 ```bash
-$ ssh -i "Users/you/your_key.pem" ubuntu@ec2-35-176-67-90.eu-west-2.compute.amazonaws.com
+$ ssh -i "Users/you/your_key.pem" ubuntu@ec2-xx-xxx-xx-xx.eu-west-2.compute.amazonaws.com
 ```
 
 Installing Anaconda
@@ -72,7 +72,7 @@ Running Python code on AWS servers
 MacOS and Linux users can SSH tunnel to AWS servers as follows:  (see [details](https://www.digitalocean.com/community/tutorials/how-to-install-run-connect-to-jupyter-notebook-on-remote-server))
 
 ```bash
-$ ssh -i "your_key.pem" -L 8000:localhost:8888 ubuntu@ec2-35-176-67-90.eu:w-west-2.compute.amazonaws.com
+$ ssh -i "your_key.pem" -L 8000:localhost:8888 ubuntu@ec2-xx-xxx-xx-xx.eu:w-west-2.compute.amazonaws.com
 ```
 
 Now you start a Jupyter server:
