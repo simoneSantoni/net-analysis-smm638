@@ -1,5 +1,14 @@
 # Network Analysis, SMM638 ― README
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Network Analysis, SMM638 ― README](#network-analysis-smm638-readme)
+- [Module Overview](#module-overview)
+- [Materials & Readings](#materials-readings)
+- [Learning Objectives and Assessment](#learning-objectives-and-assessment)
+
+<!-- /TOC -->
+
 # Module Overview
 
 Networks are ubiquitous: job offerings reach us via inter-personal
@@ -61,27 +70,30 @@ As per the module specification, students will be assessed on the basis
 of coursework submissions, which all are the outcome of group-level
 efforts (yes, you understand correctly, for this module there is no
 final examination and you are not supposed to deliver any assignment on
-your own). Specifically, there are two pieces of coursework, namely a
-'mid-term project' (MTP), and a 'final course project' (FCP), which
+your own). Specifically, there are three pieces of coursework, namely:
+
++   a 'mid-term project' (MTP)
++   a 'final course project' (FCP)
++   tw, which
 contribute to the final mark (FM) as follows:
 
 FM = 0.25 X MTP + 0.75 X FCP
 
-For the **mid-term project**, students are required to solve a network
-analytic problem. The details of the MTP ietails will be available by week 3, when the project will
-be released. Submissions will be assessed on a 0 - 100% scale. The Groups who
-fail can resubmit a revised version of the project; if the revision is
-sufficient, students receive a 50% mark. The deadline for the project is
-November 12 (week 6). Selected groups will be invited to present the outcome
-of their work to fellow students in week 6. Invited groups could also receive
-a maximum of 3 bonus points on the basis of the quality of their in-class
-presentations.
+For the **MTP**, groups are required to solve a network
+analytic problem. The details of the MTP ietails will be available by week 3,
+when the project will be released. Submissions will be assessed on a 0 - 100%
+scale. The Groups who fail can resubmit a revised version of the project; if
+the revision is sufficient, students receive a 50% mark. The deadline for the
+project is November **DD** (week 6). Selected groups will be invited to present
+the outcome of their work to fellow students in week 6. Invited groups could
+also receive a maximum of 3 bonus points on the basis of the quality of their
+in-class presentations.  
 
-With the **final course project** (due by week 10, see Table 1), groups
+With the **FCP**, groups
 make their hands 'dirty' as they help a real-world client to face some
-network analytic challenges. Details about the client and the challenge
+network analytic challenges. The details about the client and the challenge
 will be available in week 8. Final course projects will be evaluated on
-a rolling-based window and should be submitted by December 20.
+a rolling-based window and should be submitted by December **DD**.
 
 Both types of assessment will be evaluated along four criteria: i)
 appropriate use of notions and frameworks discussed in class; ii)

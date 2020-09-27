@@ -1,7 +1,7 @@
-README
-======
+# README
 
-This folder contains step-by-step guidelines to accomplish the following:
+This folder contains step-by-step guidelines to accomplish the following
+tasks:
 
 + installing a Linux distro (e.g., Ubuntu or Debian) on a Win10 machine - see
  [linuxOnWin10](linuxOnWin10/README.md)
