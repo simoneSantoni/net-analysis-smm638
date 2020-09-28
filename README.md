@@ -1,4 +1,4 @@
-# Network Analysis, SMM638 ― README
+# Network Analytics, SMM638 ― README
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -16,6 +16,12 @@
 - [Versioning](#versioning)
 
 <!-- /TOC -->
+
+# Instructor
+
++   Dr. Simone Santoni [simone.santoni.1@city.ac.uk](simone.santoni.1@city.ac.uk)
++   Office hour: every Thursday from 12:00 to 13:00 (students are required to book a slot and share their questions via email in advance).
++   Teaching assistant: Dr. Matteo Devigili [matteo.devigili.2@city.ac.uk](matteo.devigili.2@city.ac.uk)
 
 # Module Overview
 
