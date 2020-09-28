@@ -1,6 +1,8 @@
-# README
+# Week 1 ― README
 
-This folder contains the following materials:
+In the first week, I will present the organization and functioning of SMM638.
 
-+ lecture notes:
-  - [slideshow_0.ipynb](slideshow_0.ipynb)
+Relevant materials:
+
++   the attention will revolve mainly around the contents included in the README.md file included in the home of the repo
++   lecture notes ― see [slideshow_1.ipynb]()
