@@ -2,7 +2,6 @@
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Network Analysis, SMM638 ― README](#network-analysis-smm638-―-readme)
 - [Module Overview](#module-overview)
 - [Materials & Readings](#materials--readings)
 - [Learning Objectives](#learning-objectives)
@@ -12,6 +11,9 @@
   - [Case studies](#case-studies)
   - [Discretionary problem sets](#discretionary-problem-sets)
 - [Schedule of the Module](#schedule-of-the-module)
+- [Prerequisites](#prerequisites)
+- [Software Requirements](#software-requirements)
+- [Versioning](#versioning)
 
 <!-- /TOC -->
 
