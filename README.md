@@ -2,15 +2,23 @@
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+- [Instructor](#instructor)
+Both types of assessment will be evaluated along four criteria: i) appropriate
+use of notions and frameworks discussed in class; ii) effectiveness of the
+proposed answer or solution; iii) originality/creativity of the proposed answer
+or solution; iv) organization an clarity of submitted materials. All criteria
+carry-out equal weight in terms of mark.
+
 - [Module Overview](#module-overview)
 - [Materials & Readings](#materials--readings)
 - [Learning Objectives](#learning-objectives)
 - [Assessment](#assessment)
   - [Mid-term project](#mid-term-project)
-  - [Final-cours project](#final-cours-project)
+  - [Final course project](#final-course-project)
   - [Case studies](#case-studies)
   - [Discretionary problem sets](#discretionary-problem-sets)
 - [Schedule of the Module](#schedule-of-the-module)
+- [Guest speakers](#guest-speakers)
 - [Prerequisites](#prerequisites)
 - [Software Requirements](#software-requirements)
 - [Versioning](#versioning)
@@ -42,7 +50,7 @@ book, whereas it is essential they carefully go through the following:
 
 -   lecture notes (to be uploaded onto
     Moodle/[Github](https://github.com/simoneSantoni/net-analysis-smm638)
-    weekly);
+    weekly; they include slideshows + videos);
 -   selected chapters from [Networks, Crowds,
     Markets](https://www.cs.cornell.edu/home/kleinber/networks-book/)
     (access via our Library websiste)
@@ -111,14 +119,13 @@ November 9 (week 6). Selected groups will be invited to present the outcome of
 their work to fellow students in week 6. Invited groups could also receive a
 maximum of 3 bonus points on the basis of the quality of their presentations.
 
-## Final-cours project
+## Final course project
 
 With the **FCP**, groups make their hands 'dirty' as they help a real-world
 client to face some network analytic challenges. The details about the client
-and the challenge will be available in week 8. Final course projects will be
+and the challenge will be available in week 7. Final course projects will be
 evaluated on a rolling-based window and should be submitted by mid December
-(the course office will liaise with the students soon about the exact
-deadline).
+(the course office will confirm the exact deadline shortly).
 
 ## Case studies
 
@@ -134,7 +141,7 @@ pairs of presenting and discussant groups; this means group that will present
 their solution in week 8 will serve as discussant in week 10 (and viceversa).
 Both presenting and discussant groups will be assessed.
 
-## Discretionary problem sets
+## Discretionary coursework
 
 **Problem sets** will be launched weekly. Students may want to deal
 these problem sets and present their solution to the class. Up to three students
@@ -152,8 +159,8 @@ effectiveness of the proposed solution. One bonus point
 |      | - networks are made-up of nodes and ties           |
 |      | - graph and algebraic representations of networks  |
 |      | - forms of networks                                |
-|      | Case discussion                                    |
-|      | - markets & networks: the Soundcloud case          |
+|      | Debate:                                            |
+|      | - markets & networks: the Soundcloud example       |
 |  2   | Network theory                                     |
 |      | - strong ties and closure                          |
 |      | - weak ties and brokerage                          |
@@ -169,6 +176,7 @@ effectiveness of the proposed solution. One bonus point
 |      | Network models and metrics                         |
 |      | - search and collective intelligence in networks   |
 |      | Laboratory (NetworkX)                              |
+|      | Mid-term project release                           |
 |  4   | Network theory                                     |
 |      | - homophily, selection, and social influence       |
 |      | Network models and metrics                         |
@@ -202,6 +210,14 @@ effectiveness of the proposed solution. One bonus point
 |      | - cascading failures                               |
 |      | Laboratory (NetworkX, Graph-Tool)                  |
 |  10  | Case study # 2 (associated with section 9 topics)  |
+
+
+# Guest speakers
+
+Throughout all the various weeks of the Term, SMM635 will host two types of
+guest speakers: ambassadors – former students of the BA program – and
+practitioners from several industries.
+
 
 # Prerequisites
 
