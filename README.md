@@ -3,12 +3,6 @@
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Instructor](#instructor)
-Both types of assessment will be evaluated along four criteria: i) appropriate
-use of notions and frameworks discussed in class; ii) effectiveness of the
-proposed answer or solution; iii) originality/creativity of the proposed answer
-or solution; iv) organization an clarity of submitted materials. All criteria
-carry-out equal weight in terms of mark.
-
 - [Module Overview](#module-overview)
 - [Materials & Readings](#materials--readings)
 - [Learning Objectives](#learning-objectives)
