@@ -19,9 +19,9 @@
 
 # Instructor
 
-+   Dr. Simone Santoni [simone.santoni.1@city.ac.uk](simone.santoni.1@city.ac.uk)
++   Dr. Simone Santoni ―  [simone.santoni.1@city.ac.uk](simone.santoni.1@city.ac.uk)
 +   Office hour: every Thursday from 12:00 to 13:00 (students are required to book a slot and share their questions via email in advance).
-+   Teaching assistant: Dr. Matteo Devigili [matteo.devigili.2@city.ac.uk](matteo.devigili.2@city.ac.uk)
++   Teaching assistant: Dr. Matteo Devigili ―  [matteo.devigili.2@city.ac.uk](matteo.devigili.2@city.ac.uk)
 
 # Module Overview
 
