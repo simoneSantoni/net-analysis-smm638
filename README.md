@@ -85,7 +85,7 @@ your own). Specifically, there are three pieces of coursework, namely:
 
 These three pieces of coursework contribute to the final mark (FM) as follows:
 
-FM = 0.25 X MTP + 0.75 X FCP + 0.05 X [(CS1 + CS2)/2]
+FM = 0.20 X MTP + 0.75 X FCP + 0.05 X [(CS1 + CS2)/2]
 
 All types of assessment will be evaluated along four criteria: i)
 appropriate use of notions and frameworks discussed in class; ii)
@@ -131,7 +131,7 @@ Both presenting and discussant groups will be assessed.
 ## Discretionary problem sets
 
 **Problem sets** will be launched weekly. Students may want to deal
-these problem sets and present their solution to the class. One student
+these problem sets and present their solution to the class. Up to three students
 per session will be selected on the basis of the novelty and
 effectiveness of the proposed solution. One bonus point
 (+1 FM) will be assigned.
