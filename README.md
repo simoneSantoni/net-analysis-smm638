@@ -168,7 +168,7 @@ effectiveness of the proposed solution. One bonus point
 |      | - core-periphery structures in networks            |
 |      | - community structures in networks                 |
 |      | Network models and metrics                         |
-|      | - search and collective intelligence in networks   |
+|      | - Collection of community detection algorithms     |
 |      | Laboratory (NetworkX)                              |
 |      | Mid-term project release                           |
 |  4   | Network theory                                     |
