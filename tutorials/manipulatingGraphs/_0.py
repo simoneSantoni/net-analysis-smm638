@@ -1,4 +1,3 @@
-
 # !/usr/env/bin python3
 #-*- encpding is utf-8 -*-
 
@@ -7,17 +6,18 @@
     IO operations with NewtworkX
 --------------------------------------------------------------------------------
 Author: Simone Santoni, simone.santoni.1@city.ac.uk
-Dates: created Thu 31 Oct 14:29:59 2019
-       last change Sun Nov 24 18:04:21 UTC 2019
+Dates: created 17/10/2020, 23:05:11
+       last change17/10/2020, 23:05:37
 Notes: This script reads the one-mode network dataset included in the
        'musae_ENGB_edges'
 """
 
 # %% load libraries
 import os
-import numpy as np
 import networkx as nx
-import pandas as pd
+
+# %% setup
+wd = os.getcwd()
 
 # %% read dataset
 """
@@ -30,8 +30,7 @@ Notes on data format:
 """
 
 # path for the data file
-os.getcwd()
-in_file = os.path.join(os.getcwd(), 'data', 'musae_ENGB_edges.csv')
+in_file = os.path.join(wd, 'data', 'musae_ENGB_edges.csv')
 # read file
 G = nx.read_edgelist(in_file,         # edgelist file to read
                      delimiter=',',   # delimiter between 'from' and 'to'
@@ -44,14 +43,14 @@ We see two different options:
 
 - the GraphML is popular among network scientists; it's based on the XML
   format; this file format contains metadata on the network
-- the adjancy list turns to be useful for graphs without data associated with
-  nodes or edges and for nodes that can be meaningfully represented as
+- the adjacency list turns to be useful for graphs without data associated
+  with nodes or edges and for nodes that can be meaningfully represented as
   strings
 """
 
 # GrphML
 # --+ path for the data file
-out_file = os.path.join(os.getcwd(), 'data', 'to_graphml.xml')
+out_file = os.path.join(wd, 'data', 'to_graphml.xml')
 # --+ write data
 nx.write_graphml_xml(G, out_file)
 
