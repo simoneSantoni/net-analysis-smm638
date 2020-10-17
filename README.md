@@ -13,7 +13,7 @@
   - [Discretionary problem sets](#discretionary-problem-sets)
 - [Schedule of the Module](#schedule-of-the-module)
 - [Guest speakers](#guest-speakers)
-- [Prerequisites](#prerequisites)
+[Prerequisites](#prerequisites)
 - [Software Requirements](#software-requirements)
 - [Versioning](#versioning)
 
@@ -152,10 +152,10 @@ effectiveness of the proposed solution. One bonus point
 |      | - how networks matter                              |
 |      | - networks are made-up of nodes and ties           |
 |      | - graph and algebraic representations of networks  |
+|  2   | Introduction to networks                           |
 |      | - forms of networks                                |
-|      | Debate:                                            |
 |      | - markets & networks: the Soundcloud example       |
-|  2   | Network theory                                     |
+|      | Network theory                                     |
 |      | - strong ties and closure                          |
 |      | - weak ties and brokerage                          |
 |      | Network models and metrics                         |
@@ -168,7 +168,7 @@ effectiveness of the proposed solution. One bonus point
 |      | - core-periphery structures in networks            |
 |      | - community structures in networks                 |
 |      | Network models and metrics                         |
-|      | - search and collective intelligence in networks   |
+|      | - collection of community detection algorithms     |
 |      | Laboratory (NetworkX)                              |
 |      | Mid-term project release                           |
 |  4   | Network theory                                     |
@@ -260,5 +260,5 @@ On top of Anaconda ― Python, students should install the modules:
 
 # Versioning
 
-+ Created: 28/09/2020, 06:06:45  
++ Created: 28/09/2020, 06:06:45
 + Last change: no revisions so far
