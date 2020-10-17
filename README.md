@@ -13,7 +13,7 @@
   - [Discretionary problem sets](#discretionary-problem-sets)
 - [Schedule of the Module](#schedule-of-the-module)
 - [Guest speakers](#guest-speakers)
-[Prerequisites](#prerequisites)
+- [Prerequisites](#prerequisites)
 - [Software Requirements](#software-requirements)
 - [Versioning](#versioning)
 
