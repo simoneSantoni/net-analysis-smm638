@@ -48,7 +48,7 @@ We see two different options:
   strings
 """
 
-# GrphML
+# GraphML
 # --+ path for the data file
 out_file = os.path.join(wd, 'data', 'to_graphml.xml')
 # --+ write data
