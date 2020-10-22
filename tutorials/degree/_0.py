@@ -3,7 +3,7 @@
 
 """"
 --------------------------------------------------------------------------------
-    Node centraslity metrics
+    Node centrality metrics
 --------------------------------------------------------------------------------
 Author: Simone Santoni, simone.santoni.1@city.ac.uk
 Dates:  - created 17/10/2020, 23:05:11
