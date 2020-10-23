@@ -31,12 +31,12 @@ G = nx.erdos_renyi_graph(n, p, seed=seed)
 k = sorted([d for n, d in G.degree()], reverse=True)
 
 # get count of nodes with degree 'k = k_i'
-p_k = np.unique(k, return_index=True)
+p_k = np.unique(k, return_counts=True)
 
 # %% degree distribution plot - case A, barchart
 
 # create figure
-fig = plt.figure(figsize=(6, 4))
+fig = plt.figure(figsize=(9, 6))
 
 # create plot
 ax = fig.add_subplot(1, 1, 1)
@@ -50,8 +50,7 @@ plt.ylabel("Count")
 plt.xlabel("Degree")
 
 # draw graph in inset
-plt.axes([0.4, 0.4, 0.5, 0.5])
-Gcc = G.subgraph(sorted(nx.connected_components(G), key=len, reverse=True)[0])
+plt.axes([0.125, 0.5, 0.3, 0.3])
 pos = nx.spring_layout(G)
 plt.axis("off")
 nx.draw_networkx_nodes(G, pos, node_size=20)
