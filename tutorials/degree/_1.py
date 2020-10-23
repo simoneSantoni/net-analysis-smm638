@@ -1,4 +1,5 @@
-# %% codecell
+#!/usr/env/bin python3
+# -*- encoding utf-8 -*-
 
 """"
 --------------------------------------------------------------------------------
@@ -11,35 +12,31 @@ Notes: This script illustrates three popular centrality metrics, such as
        node degree, eigenvector centrality, and betweenness centrality
 """
 
-# %% markdown
-# # Setup
-# %% codecell
+# %% Load libraries
 import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
-# %% codecell
+
+# %% Setup
 plt.style.use('fivethirtyeight')
-# %% markdown
-# # Simulation
-# %% codecell
-# parms for random net
+
+# %% Simulation
+
+# random network
+# --+ params
 n, p = 5000, 0.05
 seed = 333
-
-# graph
+# --+ graph
 rn = nx.erdos_renyi_graph(n, p, seed=seed)
-# %% codecell
-# parms for scale-free net
+# small network
+# --+ params
 n, k, p = 5000, 5, 0.2
 seed = 111
 
 # graph
 wsn = nx.watts_strogatz_graph(n, k, p, seed=seed)
-# %% markdown
-# # Degree computation
-# %% markdown
-# ## Random network degree distribution
-# %% codecell
+
+# %% Random network degree distribution
 
 # get nodal degree 'k' data as list
 k_rn = sorted([d for n, d in rn.degree()], reverse=True)
@@ -78,9 +75,8 @@ ax1.set_xlabel("Degree $k$")
 # show plot
 plt.show()
 
-# %% markdown
-# ## Small world network degree distribution
-# %% codecell
+# %% Small-world network
+
 # get nodal degree 'k' data as list
 k_wsn = sorted([d for n, d in wsn.degree()], reverse=True)
 
@@ -118,9 +114,8 @@ ax1.set_xlabel("Degree $k$")
 # show plot
 plt.show()
 
-# %% markdown
-# ## Random vs small world network degree distribution - rank plot
-# %% codecell
+# %% Random vs small world network degree distribution - rank plot
+
 # create figure
 fig = plt.figure(figsize=(6, 4))
 
