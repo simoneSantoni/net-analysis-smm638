@@ -57,39 +57,28 @@ for community in itertools.islice(solutions, k):
 # %% use the modularity index to appreciate the quality of alternative
 #    paritioning solutions
 
-# sample data
-G = nx.barbell_graph(3, 0)
-
 # fit
 solutions = girvan_newman(G)
 
-# empty list to record modularity scores
-modularity_scores = []
+# alternative paritioning solutions to consider
+k = 10
 
-for solution in solutions:
-    for community in solution:
-        to_evaluate.append(community)
-        pp(to_evaluate)
+# register modularit scores
+modularity_scores = dict()
 
+# iterate over solutions
+for community in itertools.islice(solutions, k):
+    solution = list(sorted(c) for c in community)
+    score = modularity(G, solution)
+    modularity_scores[len(solution)] = score
 
-# %% on going
-#first compute the best partitiona
-partition = community_louvain.best_partition(G)
-
-# compute the best partition
-partition = community_louvain.best_partition(G)
-
-# draw the graph
-pos = nx.spring_layout(G)
-# color the nodes according to their partition
-cmap = cm.get_cmap('viridis', max(partition.values()) + 1)
-nx.draw_networkx_nodes(G, pos, partition.keys(), node_size=40,
-                       cmap=cmap, node_color=list(partition.values()))
-nx.draw_networkx_edges(G, pos, alpha=0.5)
+# plot modularity data
+fig = plt.figure()
+pos = list(modularity_scores.keys())
+values = list(modularity_scores.values())
+ax = fig.add_subplot(1, 1, 1)
+ax.stem(pos, values)
+ax.set_xticks(pos)
+ax.set_xlabel(r'Number of communities detected')
+ax.set_ylabel(r'Modularity score')
 plt.show()
-
-# %%
-
-
-
-nx.draw(G)
