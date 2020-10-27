@@ -64,3 +64,5 @@ while len(adj) > 0:
     # --+ update degree sequence
     for alter in alters:
         d[alter] = d[alter] - 1
+
+#TODO: to complete and test!
