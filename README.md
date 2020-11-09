@@ -109,7 +109,7 @@ details of the MTP will be available by week 3, when the project will be
 released. Submissions will be assessed on a 0 - 100% scale. The Groups who
 fail MTP can resubmit a revised version of the project; if the revision is
 sufficient, students receive a 50% mark. The deadline for the project is
-November 9 (week 6). Selected groups will be invited to present the outcome of
+November 11 (week 6). Selected groups will be invited to present the outcome of
 their work to fellow students in week 6. Invited groups could also receive a
 maximum of 3 bonus points on the basis of the quality of their presentations.
 
