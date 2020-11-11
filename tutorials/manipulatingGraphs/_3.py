@@ -21,93 +21,43 @@ import numpy as np
 import networkx as nx
 from networkx.algorithms import bipartite as bp
 import pandas as pd
-from os import getcwd
-from os.path import join
-import progressbar
-from time import sleep
+
+#%% fake data
+'''
+We simulate an incidence matrix with 100 mode-1/bottom nodes (e.g.,
+individuals) and  10 mode-2/top nodes (e.g., products).
+'''
+# numpy simulation
+n, k = 100, 10
+bottom_nodes = np.arange(0, n)
+top_nodes = np.arange(n, n+k)
+edges = []
+for i in bottom_nodes:
+    # random number of ties from a poisson distribution
+    degree = np.random.poisson(lam=3, size=1)
+    # alters
+    alters = np.random.choice(top_nodes, size=degree)
+    # add edges
+    for alter in alters:
+        edges.append((i, alter))
 
 
-#%% read data
-path = '/home/simone/Dropbox/teaching'
-folder = 'smm638/finalCourseProject/dataPackage'
-f = 'all_user_interactions.csv'
-
-df = pd.read_csv(join(path, folder, f))
-
-
-#%% clean
-
-# drop housekeeping column
-
-df.drop('call', axis=1, inplace=True)
-
-
-# rename cols
-
-old_cols = ['Unnamed: 0', 'value']
-new_cols = ['id', 'event']
-df.rename(columns=dict(zip(old_cols, new_cols)), inplace=True)
-
-
-# slice for forums
-
-"""
-let's assume `forums' are the type of events we
-want to focus on for the social net part
-"""
-
-df = df.loc[df['var'] == 'forum']
-df = df.loc[df['var'].notnull()]
-df.drop('var', axis=1, inplace=True)
-
-
-# get forum 'id'
-
-df.loc[:, 'event'] = df['event'].str.split('forums/').str.get(1)
-df.loc[:, 'event'] = df['event'].str.strip('/')
-df = df.loc[df['event'].notnull()]
-
-
-# cleaning usr column
-
-df.loc[:, 'usr'] = df['usr'].str.split(
-        '.').str.get(1).str.strip('/')
-
-
-# create a bipartite network with nX
-
-top_nodes = set(df['event'])
-bottom_nodes = set(df['usr'])
-
-
+|#%% graph creation
+# empthy graph
+bg = nx.Graph()
+# add nodes
+bg.add_nodes_from(bottom_nodes, bipartite=0)
+bg.add_nodes_from(top_nodes, bipartite=1)
 # get nx object
-
-b = nx.from_pandas_edgelist(df, source='usr', target='event')
-
-
+bg.add_edges_from(edges)
 # `is bipartite` check
+is_bip = nx.is_bipartite(bg)
 
-is_bip = nx.is_bipartite(b)
-
-
-# getting network projections
-
-print("Start projecting 2-mode network data")
-bar = progressbar.ProgressBar(
-    maxval=5,
-    widgets=[progressbar.Bar('>', '[', ']'),' ', progressbar.Percentage()]
-)
-bar.start()
-
-
+# %% getting network projections
 # get the unweighted projections of the two-mode networks
-
-gu = bp.projected_graph(b, bottom_nodes)
-ge = bp.projected_graph(b, top_nodes)
-
-
+g_b = bp.projected_graph(bg, bottom_nodes)
+g_t = bp.projected_graph(bg, top_nodes)
 # get the weighted projections of the two-mode networks
-
 """
 The weighted projected graph is the projection of the bipartite
 network B onto the specified nodes with weights representing
@@ -117,35 +67,20 @@ True. The nodes retain their attributes and are connected
 in the resulting graph if they have an edge to a common node
 in the original graph.
 """
+g_b_w = bp.weighted_projected_graph(bg, bottom_nodes, ratio=True)
+g_t_w = bp.weighted_projected_graph(bg, top_nodes, ratio=True)
 
-gu_w = bp.weighted_projected_graph(b, bottom_nodes, ratio=True)
-ge_w = bp.weighted_projected_graph(b, top_nodes, ratio=True)
-
-
-bar.finish()
-print("Done!")
-
-
-# write projections and node labels to files
+# %% write projections and node labels to files
 
 path = '/home/simone/Dropbox/teaching'
 folder = 'smm638/finalCourseProject/dataPackage'
-
 f0 = 'event_event_graph.csv'
 nx.write_edgelist(ge, open(join(path, folder, f0), 'wb'))
-
-
 f1 = 'user_user_graph.csv'
 nx.write_edgelist(gu, open(join(path, folder, f1), 'wb'))
-
 f2 = 'event_event_weighted_graph.csv'
 nx.write_weighted_edgelist(ge_w, open(join(path, folder, f2), 'wb'))
-
 f3 = 'user_user_weighted_graph.csv'
 nx.write_weighted_edgelist(gu_w, open(join(path, folder, f3), 'wb'))
-
 f4 =  'bipartite_graph.csv'
 nx.write_edgelist(b, open(join(path, folder, f4), 'wb'))
-
-
-#%% SCRIPT ENDS HERE
