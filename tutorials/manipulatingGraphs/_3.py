@@ -71,9 +71,8 @@ g_b_w = bp.weighted_projected_graph(bg, bottom_nodes, ratio=True)
 g_t_w = bp.weighted_projected_graph(bg, top_nodes, ratio=True)
 
 # %% write projections and node labels to files
-
-path = '/home/simone/Dropbox/teaching'
-folder = 'smm638/finalCourseProject/dataPackage'
+path = 'data'
+folder = 'bipartiteGraph'
 f0 = 'event_event_graph.csv'
 nx.write_edgelist(ge, open(join(path, folder, f0), 'wb'))
 f1 = 'user_user_graph.csv'
