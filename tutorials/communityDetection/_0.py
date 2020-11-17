@@ -50,7 +50,7 @@ tuple(sorted(c) for c in next(solutions))
 # --+ fit
 solutions = girvan_newman(G)
 # --+ display node2community affiliations
-k = 2
+k = 3
 for community in itertools.islice(solutions, k):
     pp(list(sorted(c) for c in community))
 
