@@ -33,6 +33,6 @@ Electric vehicles are widely considered as a category-creating product. Reddit i
 
 # Deliverables
 
-Create a slideshow to be used for a 10 minute presentation directed to policy makers working for a team of marketing people working at FCA. The presentation should include the recommendation(s) along with network visualizations/analysis supporting the recommendation(s).
+Create a slideshow to be used for a 10 minute presentation directed to a team of marketing people working at FCA. The presentation should include the recommendation(s) along with network visualizations/analysis supporting the recommendation(s).
 
 Upload the slideshow via Moodle by November 25.
