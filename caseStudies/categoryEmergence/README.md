@@ -26,7 +26,7 @@ Prior studies have started to articulate the role communities of enthusiasts can
 
 # Problem to address
 
-Electric vehicles are widely considered as a category creating product. Reddit is the home of many communities of enthusiasts, including motor-heads. Examples are r/autors, r/cars, r/electricvehicles. Not only, there are several specialized forums wherein people share their passion for cars. Use [this datadump](r/electricvehicles/) containing on-line interactions among car enthusiasts (companion documents included in the folder), to address the following questions:
+Electric vehicles are widely considered as a category-creating product. Reddit is the home of many communities of enthusiasts, including motor-heads. Examples are r/autors, r/cars, r/electricvehicles. Not only, there are several specialized forums wherein people share their passion for cars. Use [these datadumps](https://cityuni-my.sharepoint.com/:f:/r/personal/simone_santoni_1_city_ac_uk/Documents/sharing/smm638?csf=1&web=1&e=GO5Nhw) containing on-line interactions among car enthusiasts (companion documents included in the folder), to address the following questions:
 
 - in network terms, what is the main obstacle to the diffusion of positive opinion/sentiment toward electric vehicle?
 - is there any node/group of nodes to rely upon in order to facilitate the diffusion of electric vehicles?
