@@ -60,13 +60,22 @@ for node in g.nodes:
 # %% model the diffusion process
 # at time 1 there are early adopters emerge for some reasons
 # --+ new adopters
-early_adopters = ['v', 'w']
+early_adopters = ['w']
 # --+ expand the set of adopters
 adopters.extend(early_adopters)
 # --+ adopt node attributes
 for adopter in adopters:
     g.nodes[adopter]['adopting'] = 1
-# let's simulate what happens in the following periods as nodes make decisions
+# draw the network
+colors = []
+for n in g.nodes():
+    if g.nodes[n]['adopting'] == 1:
+        colors.append('orange')
+    else:
+        colors.append('white')
+nx.draw(g, pos=pos, with_labels=True, node_color=colors)
+
+# %% let's simulate what happens in the following periods as nodes make decisions
 for focal in nodes:
     # count adopting neighbors
     focal_nbrs = list(g.neighbors(focal))
@@ -83,3 +92,12 @@ for focal in nodes:
         pass
 # outcome of the cascading behavior
 adopters
+
+# %% draw the network
+colors = []
+for n in g.nodes():
+    if g.nodes[n]['adopting'] == 1:
+        colors.append('orange')
+    else:
+        colors.append('white')
+nx.draw(g, pos=pos, with_labels=True, node_color=colors)
