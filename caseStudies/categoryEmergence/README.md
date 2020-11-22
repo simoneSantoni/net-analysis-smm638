@@ -22,17 +22,35 @@ According to the prior literature and empirical evidence category-creating innov
   * confusion in evaluation - consumers don't have reference points to assess the quality of the proposed innovation
   * competency discount – consumers don't trust the innovator credibly masters the knowledge/technology from distant domains. In 2007: Apple producing phones? Are you kidding me?
 
-Prior studies have started to articulate the role communities of enthusiasts can play in promoting category creating products. However, we have a very limited knowledge of how innovators can leverage upon these communities, possibly, just a few individuals to sustain the diffusion of their innovations.
+Prior studies have started to articulate the role communities of enthusiasts can play in promoting category creating products. However, we have a very limited knowledge of how innovators can leverage upon these communities, possibly, just a few individuals, to sustain the diffusion of their innovations.
 
 # Problem to address
 
-Electric vehicles are widely considered as a category-creating product. Reddit is the home of many communities of enthusiasts, including motor-heads. Examples are r/autors, r/cars, r/electricvehicles. Not only, there are several specialized forums wherein people share their passion for cars. Use [these datadumps](https://cityuni-my.sharepoint.com/:f:/r/personal/simone_santoni_1_city_ac_uk/Documents/sharing/smm638?csf=1&web=1&e=GO5Nhw) containing on-line interactions among car enthusiasts (companion documents included in the folder), to address the following questions:
+Electric vehicles are widely considered as a category-creating product. Talking about data, there are several data sources that can be used to explore/articulate the role of enthusiasts in facilitation the diffusion of electric vehicles. For example, Reddit is the home of many communities of enthusiasts, including motor-heads such as r/autors, r/cars, r/electricvehicles. Not only, there are several specialized forums wherein people share their passion for cars. Use [this datadump](https://drive.google.com/drive/folders/1Ar2wbCSsxn2agbN0pcxGUvKBvX6ds5_i?usp=sharing) containing on-line interactions among car enthusiasts (companion documents included in the folder), to address the following questions:
 
 - in network terms, what is the main obstacle to the diffusion of positive opinion/sentiment toward electric vehicle?
 - is there any node/group of nodes to rely upon in order to facilitate the diffusion of electric vehicles?
+
+# Data
+
+Here is a minimal description of the data included in the dump.
+
+
+## Source
+
+Data have been crawled from the forum of [Car4play](http://www.car4play.com/forum)
+
+## Data tables
+
++ `c4p_thread_list.csv`: population of threads
++ `cp4_thread.csv`: messages included in the threads (some minimal cleaning operated within the [Scrapy](https://scrapy.org/) pipeline that crawls the data; overall, the text has some garbage). This file includes the 2-mode network linking authors with threads
++ `lemma.csv`: messages included in threads in lemmatized form (the text corpora has been passed through a [spaCy](https://spacy.io/) NLP pipeline)
++ `sentiment_score.csv`: sentiment score of the messages included in threads (computed with the [spaCyTextBlob](https://github.com/SamEdwardes/spaCyTextBlob) library)
++ `subjectivity_score.csv`: subjectivity score of messages computed with the [spaCyTextBlob](https://github.com/SamEdwardes/spaCyTextBlob) library
++ `ev_threads.csv`: a collection of threads dealing with the topic of electric cars
 
 # Deliverables
 
 Create a slideshow to be used for a 10 minute presentation directed to a team of marketing people working at FCA. The presentation should include the recommendation(s) along with network visualizations/analysis supporting the recommendation(s).
 
-Upload the slideshow via Moodle by November 25.
+Upload the slideshow via Moodle by November 26 (12:00).
