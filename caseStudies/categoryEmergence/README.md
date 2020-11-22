@@ -4,7 +4,7 @@
 
 # Introduction
 
-There are two types of product innovations: innovations that are new to a company and innovations that are new to the world. The latter type of innovation is by far the most challenging to pursue because it requires firms to cope with radically new technologies and to create a new market. iPhone/Pad/Pod, electronic cigarettes, cars or rock music (to go back to early XX century) are iconic examples of category-creating innovations.
+There are two types of product innovations: innovations that are new to a company and innovations that are new to the world.[1] The latter type of innovation is by far the most challenging to pursue because it requires firms to cope with radically new technologies and to create a new market. iPhone/Pad/Pod, electronic cigarettes, cars or rock music (to go back to early XX century) are iconic examples of category-creating innovations.[2]
 
 <center>
 <img src='images/iphone.jpg' width=600px/>
@@ -14,7 +14,7 @@ There are two types of product innovations: innovations that are new to a compan
 
 # Context for the case study
 
-According to the prior literature and empirical evidence category-creating innovations show peculiar characteristics. For example:
+According to the prior literature and empirical evidence category-creating innovations show peculiar characteristics[3]. For example:
 
 - they have a high-risk and high-reward structure
 - product positioning poses peculiar marketing challenges
@@ -35,7 +35,6 @@ Electric vehicles are widely considered as a category-creating product. Talking 
 
 Here is a minimal description of the data included in the dump.
 
-
 ## Source
 
 Data have been crawled from the forum of [Car4play](http://www.car4play.com/forum)
@@ -47,10 +46,18 @@ Data have been crawled from the forum of [Car4play](http://www.car4play.com/foru
 + `lemma.csv`: messages included in threads in lemmatized form (the text corpora has been passed through a [spaCy](https://spacy.io/) NLP pipeline)
 + `sentiment_score.csv`: sentiment score of the messages included in threads (computed with the [spaCyTextBlob](https://github.com/SamEdwardes/spaCyTextBlob) library)
 + `subjectivity_score.csv`: subjectivity score of messages computed with the [spaCyTextBlob](https://github.com/SamEdwardes/spaCyTextBlob) library
-+ `ev_threads.csv`: a collection of threads dealing with the topic of electric cars
++ `c4p_ev_threads.csv`: a collection of threads dealing with the topic of electric cars
 
 # Deliverables
 
 Create a slideshow to be used for a 10 minute presentation directed to a team of marketing people working at FCA. The presentation should include the recommendation(s) along with network visualizations/analysis supporting the recommendation(s).
 
-Upload the slideshow via Moodle by November 26 (12:00).
+Upload the slideshow via Moodle by November 26 (12:00.)
+
+# References
+
+[1] Hargadon, A.B. and Douglas, Y., 2001. When innovations meet institutions: Edison and the design of the electric light. _Administrative Science Quarterly_, 46(3), pp.476-501.
+
+[2] Hsu, G. and Grodal, S., 2015. Category taken-for-grantedness as a strategic opportunity: The case of light cigarettes, 1964 to 1993. _American Sociological Review_, 80(1), pp.28-62.
+
+[3] Durand, R. and Khaire, M., 2017. Where do market categories come from and how? Distinguishing category creation from category emergence. _Journal of Management_, 43(1), pp.87-110.
