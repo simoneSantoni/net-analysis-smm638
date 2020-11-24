@@ -19,9 +19,10 @@
     - [Source](#source-2)
     - [Data tables](#data-tables-2)
     - [Data analysis tips](#data-analysis-tips-2)
-  - [Dataset 4 – collaboration and performance in rap music](#dataset-4--collaboration-and-performance-in-rap-music)
+  - [Dataset 4 – collaboration and performance in hip hop music](#dataset-4--collaboration-and-performance-in-hip-hop-music)
     - [Source](#source-3)
     - [Data tables](#data-tables-3)
+    - [Data analysis tips](#data-analysis-tips-3)
 - [Deliverables](#deliverables)
 
 <!-- /TOC -->
@@ -131,7 +132,7 @@ Students may want to:
 
 - consider the supplier - F1 team collaboration network as a two-mode, supply network
 - use some race-level outcome as performance measure
-- emphasize the role of focal and membership closure in predicting the formation of inter-organizational ties linking suppliers and F1 teams 
+- emphasize the role of focal and membership closure in predicting the formation of inter-organizational ties linking suppliers and F1 teams
 
 ## Dataset 2 – founding teams in the UK economy
 
