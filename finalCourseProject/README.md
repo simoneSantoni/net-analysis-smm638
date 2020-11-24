@@ -346,6 +346,10 @@ Students may want to:
 
 # Deliverables
 
-Create a slideshow to be used for a 10 minute presentation directed to a team of marketing people working at FCA. The presentation should include the recommendation(s) along with network visualizations/analysis supporting the recommendation(s).
+Students are required to submit:
+
+1. a 10-frame slideshow that illustrate the managerial implications of the work
+2. the code/data necessary to reproduce the tables/visualizations included in the slideshow
+3. a companion document that explains the background for the analyses (e.g., literature, white papers, technical reports, estimation choices)
 
 Upload the slideshow via Moodle by December 17 (16:00).
