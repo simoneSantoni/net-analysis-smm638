@@ -1,4 +1,4 @@
-# Case study 3 – Mobility and intra-organizational networks
+# Case study 2 – Mobility and intra-organizational networks
 
 <center><img src='images/retention.jpg' width=600px /></center>
 
