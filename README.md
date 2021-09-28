@@ -1,6 +1,6 @@
 # Network Analytics, SMM638 ― README
 
-![](images/cover.jpg)
+<img src="images/cover.jpg" alt="drawing" width="400"/>
 
 - [Network Analytics, SMM638 ― README](#network-analytics-smm638--readme)
   - [Instructor](#instructor)
