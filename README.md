@@ -1,31 +1,14 @@
 # Network Analytics, SMM638 ― README
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Instructor](#instructor)
-- [Module Overview](#module-overview)
-- [Materials & Readings](#materials--readings)
-- [Learning Objectives](#learning-objectives)
-- [Assessment](#assessment)
-  - [Mid-term project](#mid-term-project)
-  - [Final course project](#final-course-project)
-  - [Case studies](#case-studies)
-  - [Discretionary problem sets](#discretionary-problem-sets)
-- [Schedule of the Module](#schedule-of-the-module)
-- [Guest speakers](#guest-speakers)
-- [Prerequisites](#prerequisites)
-- [Software Requirements](#software-requirements)
-- [Versioning](#versioning)
-
-<!-- /TOC -->
+![](images/cover.jpg)
 
 # Instructor
 
-+   Dr. Simone Santoni ―  [simone.santoni.1@city.ac.uk](simone.santoni.1@city.ac.uk)
-+   Office hour: every Thursday from 12:00 to 13:00 (students are required to book a slot and share their questions via email in advance).
-+   Teaching assistant: Dr. Matteo Devigili ―  [matteo.devigili.2@city.ac.uk](matteo.devigili.2@city.ac.uk)
+- Dr. Simone Santoni —  [simone.santoni.1@city.ac.uk](simone.santoni.1@city.ac.uk)
+- Office hour: every Tuesday from 17:30 to 18:30 (students are required to book a slot and share their questions via email in advance).
+- Teaching assistant: Dr. Matteo Devigili — [matteo.devigili.2@city.ac.uk](matteo.devigili.2@city.ac.uk)
 
-# Module Overview
+## Module Overview
 
 Networks are ubiquitous: job offerings reach us via inter-personal
 connections; what we see on the screen of our digital device is a
@@ -39,18 +22,38 @@ individuals, organizations, and communities.
 
 # Materials & Readings
 
+SMM638 sticks with a GitHub-based workflow. The only way to get access to 
+the latest version of lecture notes, code, and data is to use this GitHub
+repo.
+
+For this module, you aren't required to purchase any book, whereas it is key 
+you carefully consider the following set of __mandatory materials__:
+
 For this module, students are not required to purchase any (expensive)
 book, whereas it is essential they carefully go through the following:
 
--   lecture notes (to be uploaded onto
-    Moodle/[Github](https://github.com/simoneSantoni/net-analysis-smm638)
-    weekly; they include slideshows + videos);
--   selected chapters from [Networks, Crowds,
-    Markets](https://www.cs.cornell.edu/home/kleinber/networks-book/)
-    (access via our Library websiste)
--   selected chapters from [Network
-    Science](http://networksciencebook.com/) (access via the Book
-    website)
+- lecture notes (to be uploaded onto
+  Moodle/[Github](https://github.com/simoneSantoni/net-analysis-smm638)
+  weekly; they include slideshows + videos);
+- weekly [lecture notes]()
+- weekly [video-recordings]() 
+  attached to the lecture notes, available via the MS Office app [Streams]()
+  and accessible to Bayes MSc students only
+- selected chapters from the book [Networks, Crowds, Markets](https://www.cs.cornell.edu/home/kleinber/networks-book/)
+  (or access via our Library website)
+- selected chapters from the book [Network Science](http://networksciencebook.com/)
+- [case studies]()
+- ad hoc [tutorials]()
+  dealing with foundational aspects of data visualizations and aiming to speed
+  up students' learning
+- selected [journal articles](),
+  made available on a rolling basis to best fit the interests and
+  needs of the students
+- selected [datasets]()
+  supporting the labs offered during the weekly 'live' sessions and tutorials.
+  Note that further datasets could be uploaded onto the repo in order
+  to create labs/tutorials that best fit the interests and needs of the 
+  students
 
 Discretionary readings students may want to reference to:
 
