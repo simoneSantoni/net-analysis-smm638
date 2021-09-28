@@ -1,5 +1,4 @@
-# Past assignments – README
+# Past assignments — README
 
-This folder contains the description of the [MTP](https://github.com/simoneSantoni/net-analysis-smm638/blob/master/pastAssigments/MTP.md) and 
-[FCP](https://github.com/simoneSantoni/net-analysis-smm638/blob/master/pastAssigments/FCP.md) administered to the
-2019/20 cohort.
+This folder contains the description of the MTP, FCP, and PSs administered to 
+the 2019/20 and 2020/21 cohorts.
