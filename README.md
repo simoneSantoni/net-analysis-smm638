@@ -273,5 +273,5 @@ On top of Anaconda ― Python, students should install the modules:
 ## Versioning
 
 - The current version is 1.0
-- Last change: Tue 28 Sep 17:38:52 BST 2021
+- Last change: Tue 28 Sep 22:24:07 BST 2021
  
