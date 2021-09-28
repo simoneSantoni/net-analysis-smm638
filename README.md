@@ -168,7 +168,7 @@ administered to the previous BA cohorts](https://github.com/simoneSantoni/net-an
 |  1   | Introduction to SMM638                             |
 |      | Introduction to networks                           |
 |      | - how networks matter                              |
-|      | - networks are made-up of nodes and ties           |
+|      | - networks are made up of nodes and ties           |
 |      | - graph and algebraic representations of networks  |
 |  2   | Introduction to networks                           |
 |      | - forms of networks                                |
@@ -181,7 +181,7 @@ administered to the previous BA cohorts](https://github.com/simoneSantoni/net-an
 |      | - paths and distances                              |
 |      | - connectedeness                                   |
 |      | Laboratory (NetworkX)                              |
-|  3   | Network therory                                    |
+|  3   | Network theory                                    |
 |      | - small worlds and networks                        |
 |      | - core-periphery structures in networks            |
 |      | - community structures in networks                 |
@@ -239,13 +239,13 @@ official [GitHub Guides](https://guides.github.com))
 
 ## Software Requirements
 
-For this module you're supposed to run Python 3.7 on your machine. Now,
-how to get Python work on your machine? There are several ways to do
+For this module, you're supposed to run Python 3.7 on your machine. Now,
+how to get Python to work on your machine? There are several ways to do
 that. A fast, smooth alternative is to install
-[Anaconda](https://www.anaconda.com/what-is-anaconda/), an open source
+[Anaconda](https://www.anaconda.com/what-is-anaconda/), an open-source
 distribution of Python that includes: i) 250+ popular data science
 packages; ii) the [conda](https://conda.io/docs/index.html) package,
-which makes quick and easy to install, run, and upgrade complex data
+which makes it quick and easy to install, run, and upgrade complex data
 science and machine learning environments.
 
 Here is the workflow:
@@ -255,7 +255,7 @@ Here is the workflow:
 2.  Select the installer the which suits your machine (32- or 64-bit)
     and operating system (Win, Mac OS, Linux). Mac users may want to
     download the graphical installer rather than the command-line
-    installer (students may feel less comfortable with);
+    installer (students may feel less comfortable with it);
 3.  Retrieve the installer (perhaps in your download folder);
 4.  Run the installer;
 5.  Log-out from your current session (it does not matter if you use
