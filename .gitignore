@@ -1,1 +1,4 @@
-
+# JetBrains config
+.idea/
+# private stuff
+.mySlides/

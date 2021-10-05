@@ -20,8 +20,10 @@
 ## Instructor
 
 - Dr. Simone Santoni —  [simone.santoni.1@city.ac.uk](simone.santoni.1@city.ac.uk)
-- Office hour: every Tuesday from 17:30 to 18:30 (students are required to book a slot and share their questions via email in advance).
-- Teaching assistant: Dr. Matteo Devigili — [matteo.devigili.2@city.ac.uk](matteo.devigili.2@city.ac.uk)
+- Office hour: every Tuesday from 17:30 to 18:30 (students are required to 
+  book a slot and share their questions via email in advance).
+- Teaching assistant: Dr. Matteo Devigili — 
+  [matteo.devigili.2@city.ac.uk](matteo.devigili.2@city.ac.uk)
 
 ## Module overview
 
@@ -48,7 +50,7 @@ you carefully consider the following set of __mandatory materials__:
   Moodle/[Github](https://github.com/simoneSantoni/net-analysis-smm638)
   weekly; they include slideshows + videos);
 - weekly [lecture notes](https://github.com/simoneSantoni/net-analysis-smm638/blob/fab7aa6bd71b57efcc42fed5f5e6cfac961ce8dd/lectureNotes)
-- weekly [video-recordings]() 
+- weekly [video-recordings](https://web.microsoftstream.com/channel/f1a91ca8-9953-4536-b2dd-e4a1cc3c3548) 
   attached to the lecture notes, available via the MS Office app [Streams](https://web.microsoftstream.com/channel/f1a91ca8-9953-4536-b2dd-e4a1cc3c3548)
   and accessible to Bayes MSc students only
 - selected chapters from the book [Networks, Crowds, Markets](https://www.cs.cornell.edu/home/kleinber/networks-book/)
@@ -80,17 +82,17 @@ __Discretionary readings/materials__ include and aren't limited to:
 
 At the end of the module, students should be able to:
 
--  appreciate the properties of networks;
--  appreciate the properties of communities of nodes belonging to a
-   network;
--  appreciate the properties of individual nodes belonging to a
-   network;
--  visually represent the key features of networks;
--  leverage the most advanced Python modules for network analytics;
--  mobilize key network analytics notions and tools in order to
-   produce elegant, effective, and efficient solutions to practical
-   problems in the field of business strategy, product innovation, and
-   operations.
+- appreciate the properties of networks;
+- appreciate the properties of communities of nodes belonging to a
+  network;
+- appreciate the properties of individual nodes belonging to a
+  network;
+- visually represent the key features of networks;
+- leverage the most advanced Python modules for network analytics;
+- mobilize key network analytics notions and tools in order to
+  produce elegant, effective, and efficient solutions to practical
+  problems in the field of business strategy, product innovation, and
+  operations.
 
 ## Assessment
 
@@ -133,8 +135,7 @@ With the FCP, students will work __individually__ to help a real-world client to
 face some data challenges that can best be addressed using a network analytics
 angle. Details about the client and the challenge will be available on November
 16. Final course projects will be evaluated on a rolling basis and should be
-submitted by early January (e.g., January 7 — the course office will confirm the
-exact deadline shortly).
+submitted by December 17.
 
 To clarify your expectations about the FCP, please consider the [assignments
 administered to the previous BA cohorts](https://github.com/simoneSantoni/data-viz-smm635/blob/c3eb44673454d975a2a5c92db514daf5fb5ac5b4/pastAssignments).
@@ -149,6 +150,7 @@ data. Then, they will be working for one week to produce their own solution.
 The views on the case will be discussed in class during an interactive session
 led by the lecturer. Students could be cold-called during the session and asked
 to share their solutions.
+
 ## Discretionary coursework
 
 __Problem sets (PS)__ will be launched weekly. Individual students may want to
@@ -239,7 +241,7 @@ official [GitHub Guides](https://guides.github.com))
 
 ## Software Requirements
 
-For this module, you're supposed to run Python 3.7 on your machine. Now,
+For this module, you're supposed to run Python 3.7 or higher on your machine. Now,
 how to get Python to work on your machine? There are several ways to do
 that. A fast, smooth alternative is to install
 [Anaconda](https://www.anaconda.com/what-is-anaconda/), an open-source
@@ -268,10 +270,13 @@ On top of Anaconda ― Python, students should install the modules:
 
 - [NetworkX](https://networkx.github.io/)
 - [Mesa](https://mesa.readthedocs.io/en/master/)
-- [Graph-Tool](https://graph-tool.skewed.de/). Note Graph-Tool is a 'complex' library (i.e., it depends on several Pyhon and C++ libraries); you may want to follow the installation instructions reported under the [`resources`](https://github.com/simoneSantoni/net-analysis-smm638/tree/master/resources/graphTool) section of this repo.
+- [Graph-Tool](https://graph-tool.skewed.de/). Note Graph-Tool is a 'complex' 
+  library (i.e., it depends on several Pyhon and C++ libraries); you may want 
+  to follow the installation instructions reported under 
+  the [`resources`](https://github.com/simoneSantoni/net-analysis-smm638/tree/master/resources/graphTool) 
+  section of this repo.
 
 ## Versioning
 
-- The current version is 1.0
-- Last change: Tue 28 Sep 22:24:07 BST 2021
- 
+- The current version is 1.1
+- Last change: Tue 5 Oct 2021 09:38:36 BST
