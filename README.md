@@ -228,7 +228,7 @@ administered to the previous BA cohorts](https://github.com/simoneSantoni/net-an
 
 ## Guest speakers
 
-Subject to the Covid-19-related norms and actions, SMM635 might host short talks
+Subject to the Covid-19-related norms and actions, SMM638 might host short talks
 from two types of guest speakers: ambassadors — former students of the BA 
 program — and practitioners.
 ## Prerequisites
