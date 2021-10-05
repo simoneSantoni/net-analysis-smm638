@@ -127,7 +127,7 @@ could also receive a maximum of three (3) bonus points on the basis of the quali
 their presentations.
 
 To clarify your expectations about the MTP, please consider the [assignments
-administered to the previous BA cohorts](https://github.com/simoneSantoni/net-analysis-smm638/blob/ca0390fdba5f205a974159ddd840c69ee5a08ecf/pastAssigments).
+administered to the previous BA cohorts](https://github.com/simoneSantoni/net-analysis-smm638/tree/master/pastAssigments).
 
 ### Final course project
 
@@ -138,7 +138,7 @@ angle. Details about the client and the challenge will be available on November
 submitted by December 17.
 
 To clarify your expectations about the FCP, please consider the [assignments
-administered to the previous BA cohorts](https://github.com/simoneSantoni/data-viz-smm635/blob/c3eb44673454d975a2a5c92db514daf5fb5ac5b4/pastAssignments).
+administered to the previous BA cohorts](https://github.com/simoneSantoni/net-analysis-smm638/tree/master/pastAssigments).
 
 ## Case studies
 
@@ -160,7 +160,7 @@ effectiveness of the proposed solution. One bonus point (+1 FM) will be
 assigned.
 
 To clarify your expectations about PSs, please consider the [assignments
-administered to the previous BA cohorts](https://github.com/simoneSantoni/net-analysis-smm638/blob/ca0390fdba5f205a974159ddd840c69ee5a08ecf/pastAssigments).
+administered to the previous BA cohorts](https://github.com/simoneSantoni/net-analysis-smm638/tree/master/pastAssigments).
 
 
 ## Schedule of the module
