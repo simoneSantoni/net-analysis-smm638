@@ -1,11 +1,21 @@
-# Week 2 Materials
+# Week 2 — README
 
-This folder contains the following set of materials:
+In this second week of the module, we're going to:
 
-+ Lecture notes:
-  - [slideshow_1.ipynb](slideshow_1.ipynb) - representing network data
-  - [slideshow_2.ipynb](slideshow_2.ipynb) - strong ties, weak ties, degree
+1. appreciate the business, economic, and organizational relevance of networks
+2. articulate the various forms of networks that
+3. detail the mechanisms through which networks bring value to individuals, 
+   organizations, and communities
+4. use NetworkX to measure key node- and network-level properties
+
+This folder contains the following set of __materials__:
+
+- Video-recording:
+  - [smm638_2, key network concepts](https://web.microsoftstream.com/video/c59c08dd-a532-46b9-8bd2-69c4dadd4465)
+  - [smm638_3, from network research to value creation](https://web.microsoftstream.com/video/30d1be59-c525-42d5-bc29-29bd2676c808) 
+- Lecture notes:
+  - [slideshow_1.ipynb](slideshow_1.ipynb) — representing network data
+  - [slideshow_2.ipynb](slideshow_2.ipynb) — strong ties, weak ties, degree
     distribution, connectednes
-
-Further materials concerning 'labs' and the problem set will be made available
-during the Thursday 8 lecture.
+- Further materials concerning 'labs' and the problem set might be made available
+  during the Tue 12 lecture
