@@ -20,6 +20,3 @@ Required actions:
 - subscribe to the [GitHub repo of the module](https://github.com/simoneSantoni/net-analysis-smm638) — that is, to 'watch' the repo — to receive notifications about the [open issues](https://github.com/simoneSantoni/net-analysis-smm638/issues)
 - regularly fetch & pull the changes in the [GitHub repo of the module](https://github.com/simoneSantoni/net-analysis-smm638).
 
-My best,
-
-—Simone
