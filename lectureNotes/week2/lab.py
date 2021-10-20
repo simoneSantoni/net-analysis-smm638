@@ -45,6 +45,8 @@ import pandas as pd
 
 # %% undirected network
 # initialize an NX object of class Graph
+from networkx.algorithms import bipartite
+
 g = nx.Graph()
 # add nodes intand edges to the graph
 nodes = [0, 1, 2, 3, 4]
@@ -110,6 +112,16 @@ bg.add_edges_from(edges)
 # check the graph is bipartite
 nx.algorithms.bipartite.is_bipartite(bg)
 
+bg = nx.Graph()
+bottom_nodes = ['a', 'b', 'c', 'd']
+top_nodes = ['x', 'y', 'z']
+bg.add_nodes_from(bottom_nodes, bipartite=0)
+bg.add_nodes_from(top_nodes, bipartite=1)
+edgelist = [('a', 'x'), ('a', 'y'), ('b', 'y'), ('c', 'z'), ('d', 'x')]
+bg.add_edges_from(edgelist)
+
+nx.algorithms.bipartite.is_bipartite(bg)
+
 # %% initializing a graph from existing objects
 # NumPy object
 A = np.random.binomial(1, 0.1, size=(100, 100))
@@ -158,4 +170,6 @@ ds = collections.Counter(k)
 fig = plt.figure(figsize=(6, 4))
 ax = fig.add_subplot(1, 1, 1)
 ax.scatter(ds.keys(), ds.values(), color='k')
+ax.set_xlabel('Degree')
+ax.set_ylabel('Counts of nodes')
 plt.show()
