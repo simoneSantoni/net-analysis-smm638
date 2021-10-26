@@ -22,15 +22,12 @@ from networkx.algorithms.community import girvan_newman, modularity
 from pprint import pprint as pp
 
 # %% sample data
-
 # load the karate club graph
 G = nx.karate_club_graph()
 
 # %% inspect the networkx
-
 # basic info
 pp(nx.info(G))
-
 # draw the network
 pos = nx.spring_layout(G)
 nx.draw(G, pos, alpha=1, node_color='white')
@@ -39,13 +36,11 @@ plt.axis("off")
 plt.show()
 
 # %% fit Girvman-Newman algorithm on the Karate Club dataset
-
 # retrieve the two community-solution
 # --+ fit
 solutions = girvan_newman(G)
 # --+ display node2community affiliations
 tuple(sorted(c) for c in next(solutions))
-
 # retrieve the first 'k' community-solution
 # --+ fit
 solutions = girvan_newman(G)
@@ -56,22 +51,17 @@ for community in itertools.islice(solutions, k):
 
 # %% use the modularity index to appreciate the quality of alternative
 #    paritioning solutions
-
 # fit
 solutions = girvan_newman(G)
-
 # alternative paritioning solutions to consider
 k = 10
-
-# register modularit scores
+# register modularity scores
 modularity_scores = dict()
-
 # iterate over solutions
 for community in itertools.islice(solutions, k):
     solution = list(sorted(c) for c in community)
     score = modularity(G, solution)
     modularity_scores[len(solution)] = score
-
 # plot modularity data
 fig = plt.figure()
 pos = list(modularity_scores.keys())
