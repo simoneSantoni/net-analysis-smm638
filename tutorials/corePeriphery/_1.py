@@ -3,7 +3,7 @@
 
 """
 --------------------------------------------------------------------------------
-    _0.py    |     creating and visualizing a core-periphery structure
+   _1.py    |    using closeness centrality as a measure of node coreness
 --------------------------------------------------------------------------------
 
 Author: Simone Santoni, simone.santoni.1@city.ac.uk
@@ -20,7 +20,6 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import networkx as nx
-from graspy.plot import heatmap
 
 
 # %% simulate the network
@@ -57,67 +56,12 @@ np.fill_diagonal(pp, 1)                # filling the diagonal with 1s
 # stack the three matrices
 cc_pc = np.vstack((cc, pc))            # stack left-bottom and left-top
 cp_pp = np.vstack((cp, pp))            # stack right-bottom and right-top
-g = np.hstack((cc_pc, cp_pp))          # stack left and right sections
+a = np.hstack((cc_pc, cp_pp))          # stack left and right sections
 
+# get a Graph class object 
+g = nx.from_numpy_array(a)
 
-# %% visualize the core-periphery network
-'''
-GraSpy (https://graspy.neurodata.io/index.html) is a Python librarary that
-leverages Networkx and Matplotlib to create a series of network visualizations
-including heatmaps, gridplots, pairplot, degreeplot, edgeplot, screeplot.
-As you see below, producing a heatmap of the adjacency matrix at hand takes
-one line
-'''
-
-# create figure
-fig = plt.figure(figsize=(6, 6))
-
-# add plot
-ax = fig.add_subplot(1, 1, 1)
-
-# plot data with GraSPy heatmap
-heatmap(g, cmap='Greens', ax=ax)
-
-# add title
-ax.set_title(r'$A_{ij}$ of the simulated core-periphery network')
-
-# save figure
-out_f = os.path.join(os.getcwd(), 'viz_0.pdf')
-plt.savefig(out_f)
-
-
-# %% get degree distribution
-# get degree k of each node in g
-d = np.sum(g, axis=0)
-
-# get p_k
-p_k = np.unique(d, return_index=True)
-
-# plot p_k
-
-# create figure
-fig = plt.figure(figsize=(6, 6))
-
-# add plot
-ax = fig.add_subplot(1, 1, 1)
-
-# plot data
-ax.scatter(p_k[0], p_k[1]/n, alpha=0.4, color='orange')
-
-# transform the scale of axes
-#ax.set_xscale('log')
-#ax.set_yscale('log')
-
-# labels
-ax.set_xlabel(r'$k$')
-ax.set_ylabel(r'$p_{k}$')
-
-# title
-ax.set_title('Degree distribution of the simulated\ncore-periphery network')
-
-# grid
-ax.grid(ls='--')
-
-# save figure
-plt.tight_layout()
-plt.savefig(os.path.join(os.getcwd(), 'viz_1.pdf'))
+# %% get a continuous indicator of coreness, i.e., the extent to which a node
+#    is close to other central nodes. For an example, see:
+#    https://www.researchgate.net/publication/338223948_Core-Periphery_Tension_in_Online_Innovation_Communities
+coreness = nx.algorithms.centrality.closeness_centrality(g)

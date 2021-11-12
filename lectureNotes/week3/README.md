@@ -1,4 +1,4 @@
-# Week 3 — README
+# Week 4 — README
 
 In the third week of the module, we're going to:
 

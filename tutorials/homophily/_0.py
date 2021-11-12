@@ -29,49 +29,37 @@ from scipy.spatial.distance import pdist
 plt.style.use('fivethirtyeight')
 
 # %% simulate the observed network data
-
 # seed
 np.random.seed(000)
-
 # nodes
 n = 100
-
 # proportion of female nodes
 p = 0.5
-
 # tie formation probabilities
 p_ff = 0.25
 p_mm = 0.20
 p_fm = 0.01
-
 # size of the sub-components of the adjacency
 size=(int(n*p), int(n*p))
-
 # let's assume the observed network exhibits sharp gender segregation
 ff = np.random.binomial(1, p_ff, size=size)
 mm = np.random.binomial(1, p_mm, size=size)
 fm = np.random.binomial(1, p_fm, size=size)
 mf = np.transpose(fm)
-
 # the graph
 g_left, g_right = np.vstack((ff, mf)), np.vstack((fm, mm))
 g = np.hstack((g_left, g_right))
-
 # fill diagonal values with 0s - we're not interested in the relationship
 # a node has with itself
 np.fill_diagonal(g, 0)
-
 # count of female-female ties
 c_ff = np.sum(ff)
-
 # count of female-male or male-female ties
 c_fm = 2 * np.sum(fm)
-
 # count of male-male ties
 c_mm = np.sum(mm)
 
 # %% compare the focal network against 1,000 simulated networks
-
 # define function
 def assess_hompohily(_g,
                      _p,
@@ -89,16 +77,13 @@ def assess_hompohily(_g,
     :return: list of cosine similarity scores along with descriptive
              statistics
     '''
-
     # fix seed
     np.random.seed(000)
-
     # containers
     # --+ count ties by type (homophilous Vs heterophilous)
     _r_ff, _r_fm, _r_mm = 0, 0, 0
     # --+ distance between observed and simulated data
     _dist = []
-
     # iterate over simulated distribution of genders
     for iteration in range(_n_iterations):
         # --+ reshuffling the gender of nodes; gender = female is coded as 1
@@ -122,7 +107,6 @@ def assess_hompohily(_g,
                         pass
                 else:
                     pass
-
         # get the distance between the observed and simulated distribution
         # of ties with respect to three following categories: (i)
         # female-female; (ii) female-male; (iii) male-male. Scipy doc is the
@@ -132,7 +116,6 @@ def assess_hompohily(_g,
         _simulated = np.array([_r_ff, _r_fm, _r_mm])
         to_append = pdist([_observed, _simulated], metric='cosine')
         _dist.append(to_append[0])
-
     # return statistics on the distance between the observed and siimulated
     # distributions of ties with respect to type (homophilopus Vs.
     # heterophilous)
@@ -172,11 +155,9 @@ outcome = assess_hompohily(_g=g, _p=p, _n=n,
                            _n_iterations=1000)
 
 # %% save results
-
 # --+ individual data points (N = 1,000)
 with open('cosine_sim_scores.pickle', 'wb') as pipe:
     pickle.dump(outcome[0], pipe)
-
 # --+ save mean, std, min, max
 with open('cosine_sim_stats.pickle', 'wb') as pipe:
     pickle.dump(outcome[1], pipe)
