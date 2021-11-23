@@ -58,8 +58,8 @@ of traders is reported as two node attributes, that is, `x-pos` and `y-pos`.
 By Dec 17 (4:00 PM) you're supposed to upload onto Moodle a 800 word (max) 
 document addressing questions 1 - 4 in plain English. The document must also
 contain the Python code and results ― being tables and/or charts ― 
-supporting your answers. Code, tables, charts, and references do not count 
-against the 800 word limit. 
+supporting your answers. Code, results, and references (if any) do not count 
+against the 800-word limit. 
 
 ## References
 
