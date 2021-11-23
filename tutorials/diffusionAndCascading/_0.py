@@ -3,7 +3,7 @@
 
 """"
 --------------------------------------------------------------------------------
-   Degree distribution plots with NetworkX
+   Implementing Easley and Kleinberg's diffusion model
 --------------------------------------------------------------------------------
 
 Author: Simone Santoni, simone.santoni.1@city.ac.uk
