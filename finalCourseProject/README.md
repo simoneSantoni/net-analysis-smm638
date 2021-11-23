@@ -39,23 +39,27 @@ regarding:
   extent). In the datasets, this variable is reported as the node attribute `ai`.
 
 Thanks to the cooperation of the client, you also know the traders' location
-in the floor. There are eight zones, each of which hosts 32 individuals (16 
+in the floor. There are six zones, each of which hosts 32 individuals (16 
 individuals on each side of the zone). The above-displayed picture gives
 you an idea of the layout of the trading floor. In the dataset, the location
 of traders is reported as two node attributes, that is, `x-pos` and `y-pos`.
 
-## Question
+## Questions
 
 1. How do traders' opinions map onto the knowledge exchange network?
 2. How do traders' opinions map onto the physical layout of the trading floor?
 3. What are the network-related obstacles to the diffusion of positive 
-   opinions about AI?
-4. What is your recommendetion to promote the diffusion of positive opinions
-   about AI?
+   opinions about AI in the trading floor?
+4. What is your recommendation to promote the diffusion of positive opinions
+   about AI in the trading floor?
 
 ## Deliverables
 
-By Dec 17 (4:00 PM) you're supposed to upload via Moodle
+By Dec 17 (4:00 PM) you're supposed to upload onto Moodle a 800 word (max) 
+document addressing questions 1 - 4 in plain English. The document must also
+contain the Python code and results ― being tables and/or charts ― 
+supporting your answers. Code, tables, charts, and references do not count 
+against the 800 word limit. 
 
 ## References
 

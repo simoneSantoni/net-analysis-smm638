@@ -1,11 +1,12 @@
 {
 	"python.pythonPath": "/Users/simone/opt/anaconda3/envs/na/bin/python",
-	"workbench.colorTheme": "Bluloco Light Italic",
+	"workbench.colorTheme": "Material Theme",
 	"editor.fontWeight": "normal",
 	"window.zoomLevel": 1,
 	"customPresentationMode.backup": {
 		"workbench.colorTheme": "Visual Studio Light",
 		"editor.fontWeight": "normal",
 		"window.zoomLevel": 1
-	}
+	},
+	"jupyter.jupyterServerType": "local"
 }
