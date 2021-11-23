@@ -12,10 +12,10 @@ incumbent's operations [2]; there is a shortage of human capital trained in the
 area of AI [3]; developing AI applcations may require businesses to cope with
 ethical/societal implications [4, 5] and regulatory issues [6]. In the context
 of knowledge intensive industries, there is yet another obstacle to the
-diffusion of AI, namely, 'people.' While some professionals may be thrilled to
-integrate AI in their daily work, some others may just feel threatened. This FCP
-deals with the distribution of security traders opinions about the impact AI can
-make on 'trading floors.'
+diffusion of AI, namely, 'professionals.' While some individuals may be
+thrilled to integrate AI in their daily work, some others may just feel
+threatened. This FCP deals with the distribution of security traders opinions
+about the impact AI can make on 'trading floors.'
 
 ## Aim & context
 
