@@ -43,9 +43,7 @@ Data have been crawled from the forum of [Car4play](http://www.car4play.com/foru
 
 + `c4p_thread_list.csv`: population of threads
 + `cp4_thread.csv`: messages included in the threads (some minimal cleaning operated within the [Scrapy](https://scrapy.org/) pipeline that crawls the data; overall, the text has some garbage). This file includes the 2-mode network linking authors with threads
-+ `lemma.csv`: messages included in threads in lemmatized form (the text corpora has been passed through a [spaCy](https://spacy.io/) NLP pipeline)
-+ `sentiment_score.csv`: sentiment score of the messages included in threads (computed with the [spaCyTextBlob](https://github.com/SamEdwardes/spaCyTextBlob) library)
-+ `subjectivity_score.csv`: subjectivity score of messages (computed with the [spaCyTextBlob](https://github.com/SamEdwardes/spaCyTextBlob) library)
++ `c4p_spacy_output.csv`: messages included in threads in lemmatized form (the text corpora has been passed through a [spaCy](https://spacy.io/) NLP pipeline) along with sentiment scores  (computed with the [spaCyTextBlob](https://github.com/SamEdwardes/spaCyTextBlob) library) and subjectivity scores (computed with the [spaCyTextBlob](https://github.com/SamEdwardes/spaCyTextBlob) library)
 + `c4p_ev_threads.csv`: a collection of threads dealing with the topic of electric cars
 
 # Deliverables
