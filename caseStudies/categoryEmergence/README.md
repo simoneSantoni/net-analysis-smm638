@@ -26,7 +26,7 @@ Prior studies have started to articulate the role communities of enthusiasts can
 
 # Problem to address
 
-Electric vehicles are widely considered as a category-creating product. Talking about data, there are several data sources that can be used to explore/articulate the role of enthusiasts in facilitation the diffusion of electric vehicles. For example, Reddit is the home of many communities of enthusiasts, including motor-heads such as r/autors, r/cars, r/electricvehicles. Not only, there are several specialized forums wherein people share their passion for cars. Use [this datadump](https://drive.google.com/drive/folders/1Ar2wbCSsxn2agbN0pcxGUvKBvX6ds5_i?usp=sharing) containing on-line interactions among car enthusiasts (companion documents included in the folder), to address the following questions:
+Electric vehicles are widely considered as a category-creating product. Talking about data, there are several data sources that can be used to explore/articulate the role of enthusiasts in facilitation the diffusion of electric vehicles. For example, Reddit is the home of many communities of enthusiasts, including motor-heads such as r/autors, r/cars, r/electricvehicles. Not only, there are several specialized forums wherein people share their passion for cars. Use [this datadump](https://github.com/simoneSantoni/net-analysis-smm638/blob/master/data/c4p.zip) containing on-line interactions among car enthusiasts (companion documents included in the folder), to address the following questions:
 
 - in network terms, what is the main obstacle to the diffusion of positive opinion/sentiment toward electric vehicle?
 - is there any node/group of nodes to rely upon in order to facilitate the diffusion of electric vehicles?
@@ -50,7 +50,7 @@ Data have been crawled from the forum of [Car4play](http://www.car4play.com/foru
 
 # Deliverables
 
-No deliverable is exptected. However, students should examine the text of the 
+No deliverable is exptected. However, students should carefully examine the text of the 
 case along with the data before the class.
 
 # References
