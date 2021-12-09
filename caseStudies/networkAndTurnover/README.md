@@ -22,7 +22,7 @@ Prior studies have started to articulate the role communities of enthusiasts can
 
 # Problem to address
 
-⍺βƔ is a prominent law firm based in Europe, which counts circa 1,000 associates and 200 partner attorneys and operates in the business segment. Over the past five years, ⍺βƔ has been coping with a high number of voluntary mobility events that were mainly due to competitive offers from rival firms. In a fraction of the cases, employees were retained by matching rivals' offers. Executives have started to consider churn a structural feature of the sector – hence, they have planned to create some policies aiming at minimizing the negative impact of mobility and ensuring consistency across mobility cases. Use [this dataset](https://drive.google.com/drive/folders/1J20MwmmHbNtQroW27MyWpM43XJ296U4n?usp=sharing) containing relational and attributive data on attorneys (companion documents included in the folder), to address the below-displayed questions:
+⍺βƔ is a prominent law firm based in Europe, which counts circa 1,000 associates and 200 partner attorneys and operates in the business segment. Over the past five years, ⍺βƔ has been coping with a high number of voluntary mobility events that were mainly due to competitive offers from rival firms. In a fraction of the cases, employees were retained by matching rivals' offers. Executives have started to consider churn a structural feature of the sector – hence, they have planned to create some policies aiming at minimizing the negative impact of mobility and ensuring consistency across mobility cases. Use [this dataset]() containing relational and attributive data on attorneys (companion documents included in the folder), to address the below-displayed questions:
 
 - what are the key decision drivers that executives should keep in mind when it comes retaining a lawyer with a job offer from a rival?
 - which are the lawyers that should be retained by matching any offer coming from rivals? Why?
@@ -44,16 +44,9 @@ Attributive data (see `attributive_data.csv`) comprise the following variables:
 + `ocb`: individual [organizational citizenship behavior (OCB)](https://en.wikipedia.org/wiki/Organizational_citizenship_behavior) (based on supervisor ratings). The measure, expressed as a z-score, comes from the prior literature on OCB[3]
 + `ldr`: individual ability/capacity to project his/her view and to guide others' behavior over and beyond roles and organizational/reporting structures (based on supervisor ratings). The measure, expressed as a z-score, comes from the prior literature on charismatic leadership[4]
 
-Relational data (two `.gml` files):
+Relational data (`.gml` format):
 
-+ `inf_exc.gml`: a one mode-network expressing who is exchanging information with whom. By information, the survey means procedures, data sources, references, deadlines, opportunities
 + `knw_exc.gml`: a one mode-network expressing who is exchanging knowledge with whom. By knowledge, the survey means mental models and schemas that help individuals to carry out projects and to navigate the complexity of the organization they belong to. Note these mental models and schemas are informal, that is, not codified in any organizational procedure
-
-# Deliverables
-
-Create a slideshow to be used for a 10 minute presentation directed to the team of executives. The presentation should include the recommendation(s) along with network visualizations/analysis supporting the recommendation(s).
-
-Upload the slideshow via Moodle by December 10 (12:00).
 
 # References
 
