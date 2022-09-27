@@ -2,3 +2,5 @@
 .idea/
 # private stuff
 .mySlides/
+# vscode settings
+.vscode/
