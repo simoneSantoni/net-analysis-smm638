@@ -1,6 +1,6 @@
 # Network Analytics (SMM638) ― README
 
-![](images/cover.png)
+<img src="images/cover.png" alt="drawing" width="400"/>
 
 This is the GitHub repository for the course Network Analytics, SMM638. The 
 repo is alive and will be updated throughout the term.
