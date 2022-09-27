@@ -16,7 +16,7 @@ tools to appreciate the organization and functioning of disparate networks.
 Ultimately, the goal is to develop a distinctive angle on how networks bring
 value to individuals, organizations, and communities.
 
-## Learnign Objectives
+## Learning Objectives
 
 In terms of learning objectives, by the end of the module, students will be 
 able to:
