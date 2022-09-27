@@ -9,7 +9,7 @@ repo is alive and will be updated throughout the term.
 
 Networks are ubiquitous: job offerings reach us via inter-personal connections;
 what we see on the screen of our digital device is a function of the
-relationships we develop in the digital world; market valuations are --- largely ---
+relationships we develop in the digital world; market valuations are — largely —
 the byproduct of social influence, which accumulates and spreads over relations.
 This module provides students with cutting-edge network theories and practical
 tools to appreciate the organization and functioning of disparate networks.
