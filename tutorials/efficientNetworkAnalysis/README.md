@@ -1,2 +1,0 @@
-# Efficient network analysis – README
-
