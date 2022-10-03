@@ -1,0 +1,159 @@
+\documentclass[notes, aspectratio=1610]{beamer}
+%\documentclass[aspectratio=1610]{beamer}
+
+% ========================= Theme =========================================
+\usetheme{Berkeley}
+\usecolortheme{spruce}
+
+% ========================= Essential packages ============================
+%\usepackage{hyperref}
+%\hypersetup{
+%    colorlinks = true,
+%    linkcolor = blue,
+%    citecolor = blue,
+%    filecolor = blue,
+%    urlcolor = blue
+%}
+
+% ========================= Frame notes systm ============================
+%\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen}
+
+% ========================= Plotting ======================================
+\usepackage{calc}
+\usepackage{tikz}
+\usetikzlibrary{arrows,
+                arrows.meta,
+                calc,
+		chains,
+                quotes,
+                positioning,
+		shapes,
+                shapes.geometric}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.17}
+
+%% ============================== Tabular =================================
+\usepackage{booktabs}
+\usepackage{tabularx,ragged2e}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{siunitx}
+  \sisetup{detect-all}
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage[justification=centering]{caption}
+
+%% ========================== Coding snippets =============================
+% Default fixed font does not support bold face
+%\usepackage{minted}
+%\usemintedstyle{vs}
+
+% ========================= Infor on authors ==============================
+\title[Network Theory and Network Data]
+{The `What' and `How' of Network Analytics}
+\subtitle{Network Theory and Network Data}
+\author{S.~Santoni\inst{1}\inst{2}}
+\institute{
+	\inst{1}%
+	Bayes Business School
+	\and
+	\inst{2}%
+	Soundcloud
+	}
+\date{MSc in Business Analytics, 2022/23}
+
+% ============================ Colors =====================================
+\definecolor{base_c}{rgb}{0.6,0,0}
+\definecolor{comp_c}{rgb}{0.09803921568627451, 0.6901960784313725, 0.7529411764705882}
+\definecolor{tri_1}{rgb}{0.09803921568627451, 0.7686274509803922, 0.19215686274509805}
+\definecolor{tri_2}{rgb}{0.19215686274509805, 0.09803921568627451, 0.7686274509803922}
+
+% ========================= TOC  ==========================================
+%\AtBeginSubsection[]
+%{
+%	\begin{frame}
+%		       \frametitle{Outline}
+%		       \tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+
+% ========================= References ===================================
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+% =========================== TOC =========================================
+\AtBeginSubsection[]
+{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+}
+
+% ========================= Document  ====================================
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+% =========================== Session 1 wrapup =============================
+\section{Session 1 Wrap Up}
+
+\begin{frame}
+	\frametitle{There Are Several Families of Networks}
+	\begin{table}
+		% \begin{small}
+		\begin{center}
+			\begin{tabular}[c]{l|l}
+				\hline \hline
+				\multicolumn{1}{c|}{\textbf{Family}} & 
+				\multicolumn{1}{c}{\textbf{Example}} \\
+				\hline \\[-1.8ex]
+				Biological networks & The brain\\
+		                Cultural networks& \\
+				Financial networks & \\
+		                Information networks& \\
+				Inter-organizational networks & \\
+		                Organizational networks& \\
+		                Social networks& \\
+		                Transportation networks& \\				
+				\hline
+			\end{tabular}
+		\end{center}
+		% \end{small}
+	\end{table}
+\end{frame}
+
+% =========================== Structuring a NA project =====================
+\section{The Structure of Network Analytics Projects}
+
+% =========================== The business problem ========================
+\section{The Business Problem}
+
+
+% =========================== Network theory ==============================
+\section{Network Theory}
+
+% =========================== Network data ================================
+\section{Network Data}
+
+% =========================== Session 2 wrapup =============================
+\section{Session 2 Wrap Up}
+
+% =========================== Bibliography =================================
+
+\begin{frame}
+	\frametitle{References}
+	\printbibliography
+ \end{frame} 
+
+\end{document}
