@@ -1,6 +1,13 @@
 \documentclass[notes, aspectratio=1610]{beamer}
 %\documentclass[aspectratio=1610]{beamer}
 
+% ============================ Custom colors ================================
+\definecolor{base_c}{rgb}{0.6,0,0}
+\definecolor{comp_c}{rgb}{0.09803921568627451, 0.6901960784313725, 0.7529411764705882}
+\definecolor{tri_1}{rgb}{0.09803921568627451, 0.7686274509803922, 0.19215686274509805}
+\definecolor{tri_2}{rgb}{0.19215686274509805, 0.09803921568627451, 0.7686274509803922}
+
+
 % ========================= Theme =========================================
 \usetheme{Berkeley}
 \usecolortheme{spruce}
@@ -34,6 +41,7 @@
 \usepackage{graphics}
 \usepackage{pgfplots}
 \pgfplotsset{width=7cm,compat=1.17}
+\usepackage{venndiagram}
 
 %% ============================== Tabular =================================
 \usepackage{booktabs}
@@ -66,20 +74,14 @@
 	}
 \date{MSc in Business Analytics, 2022/23}
 
-% ============================ Colors =====================================
-\definecolor{base_c}{rgb}{0.6,0,0}
-\definecolor{comp_c}{rgb}{0.09803921568627451, 0.6901960784313725, 0.7529411764705882}
-\definecolor{tri_1}{rgb}{0.09803921568627451, 0.7686274509803922, 0.19215686274509805}
-\definecolor{tri_2}{rgb}{0.19215686274509805, 0.09803921568627451, 0.7686274509803922}
-
 % ========================= TOC  ==========================================
-%\AtBeginSubsection[]
-%{
-%	\begin{frame}
-%		       \frametitle{Outline}
-%		       \tableofcontents[currentsection,currentsubsection]
-%	\end{frame}
-%}
+\AtBeginSection[]
+{
+	\begin{frame}
+		       \frametitle{Outline}
+		       \tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
 
 % ========================= References ===================================
 \usepackage[style=numeric,backend=biber]{biblatex}
@@ -109,36 +111,218 @@
 \section{Session 1 Wrap Up}
 
 \begin{frame}
+% TODO: alternate colors in the table's rows
 	\frametitle{There Are Several Families of Networks}
 	\begin{table}
-		% \begin{small}
+		\begin{small}
 		\begin{center}
-			\begin{tabular}[c]{l|l}
-				\hline \hline
-				\multicolumn{1}{c|}{\textbf{Family}} & 
-				\multicolumn{1}{c}{\textbf{Example}} \\
-				\hline \\[-1.8ex]
-				Biological networks & The brain\\
-		                Cultural networks& \\
-				Financial networks & \\
-		                Information networks& \\
-				Inter-organizational networks & \\
-		                Organizational networks& \\
-		                Social networks& \\
-		                Transportation networks& \\				
-				\hline
-			\end{tabular}
+		\begin{tabular}[c]{|l|l|}
+			\hline
+			\textbf{Family} & 
+			\textbf{Example} \\
+			\hline 
+			Biological networks\dotfill
+			& A living organism's neural system\\
+		        Cultural networks\dotfill
+			& A model of the `returns of education'\\
+			Financial networks\dotfill
+			& A cryptocurrency\\
+		        Information networks\dotfill
+			& Information sharing among BA students\\
+			Inter-organizational networks\dotfill
+			& Technological alliances among pharma industry players\\
+		        Organizational networks\dotfill
+			& Knowledge sharing among financial analysists\\
+		        Social networks\dotfill
+			& Friendship among BA students\\
+		        Transportation networks\dotfill
+			& The Tube\\				
+			\hline
+		\end{tabular}
 		\end{center}
-		% \end{small}
+		\end{small}
 	\end{table}
+\end{frame}
+
+\begin{frame}[t]
+% TODO: creat text box around `!! Pay Attention !!' 
+	\frametitle{Networks Have a `Hard' and a `Soft' Component}
+	\begin{small}
+	\begin{columns}[t]
+		\begin{column}{0.45\textwidth}
+			\begin{center}
+				\textbf{The hard component}
+			\end{center}
+
+			A network is a collection of nodes and edges, what is
+			formally called a `graph':
+
+			\vspace{-0.75em}
+
+			\begin{equation}
+				G = \{V, E\}
+			\end{equation}
+
+			where $V$ is the array of nodes 
+
+			\vspace{1em}
+
+			$\{v_{1}, v_{2}, ... , v_{i}, ... , v_{N}\}$
+			
+			\vspace{1em}
+			
+			and $E$ is the set of edges reflecting connections among
+			pairs of nodes
+
+			\vspace{1em}
+			
+			$\{..., \{v_{i}, v_{j}\}, \{v_{i}, v_{k}\}, ...\}$
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\begin{center}
+				\textbf{The soft component}
+			\end{center}
+
+			The soft component is the relationship that maps 
+			the connections onto the pairs of nodes.
+			Examples of relationships are affilition to a club,
+		        music collab (i.e., a `feat'), friendship, marriage, 
+			mentoring, tube route.
+
+			\begin{center}
+			!! Pay attention !!
+			\end{center}
+
+			\emph{A network is more than a graph}. 
+			Two nodes may be connected for many reasons --- 
+			when it come to analyze network data, we must be 
+			specific about the concrete relationship under 
+			investigation.
+		\end{column}
+	\end{columns}
+\end{small}
+\end{frame}
+
+\begin{frame}
+	\frametitle{A Real-World Example: The Soundcloud Networks}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			\begin{figure}
+				\begin{small}
+					\begin{center}
+						\includegraphics[
+							width=0.95\textwidth
+							]{example-image}
+					\end{center}
+				\end{small}
+			\end{figure}
+			
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{small}
+
+			Some key general points emerging from the analysis of the 
+			Soundcloud example:
+			\begin{itemize}
+				\item
+				The same pair of nodes can be connected 
+				because of multiple relatonships (i.e., `like,'
+				`repost,' `comment')
+				\item 
+				The nodes of a network may have the 
+				same type (e.g., `following') or 
+				different types (e.g., `like')
+				\item Analytically seprated networks may be 
+				correlated (e.g., one tends to like her/his 
+				followings' likes)
+			\end{itemize}
+
+			\end{small}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 % =========================== Structuring a NA project =====================
 \section{The Structure of Network Analytics Projects}
 
+\begin{frame}
+% This frame presents a Venn Diagram illustrating the three components of a
+% 	Network Analytics Project:
+%
+%	1 - the business problem 
+%	2 - network theory 
+% 	3 - network 
+% 
+	\frametitle{What Are the Components of a Network Analytics' Project?}
+	\begin{figure}
+		% \begin{tikzpicture}
+			\begin{center}
+				\includegraphics[width=0.7\textwidth]{
+					example-image
+					}
+			\end{center}
+		% \end{tikzpicture}
+	\end{figure}	
+\end{frame}
+
 % =========================== The business problem ========================
 \section{The Business Problem}
 
+\begin{frame}
+% TODO: make indvidual cells colored
+	\frametitle{}
+	\begin{table}
+		\begin{small}
+			\begin{center}
+				\begin{tabular}[c]{
+					|l|p{2cm}|p{2cm}|p{2cm}|p{2cm}|
+					}
+					\hline
+					\textbf{}
+					& \multicolumn{4}{c|}{\textbf{Level}}\\
+					\hline
+					\textbf{Objective function}
+					& \textbf{Individual}
+					& \textbf{Team}
+					& \textbf{Organization}
+					& \textbf{Inter-orgs}\\
+					\hline
+					Coordination\dotfill
+					& 
+					&
+					&
+					&\\ 
+					Knowledge sharing\dotfill
+					&
+					&
+					&
+					&\\
+					Task performance\dotfill
+					&
+					&
+					&
+					&\\ 
+					Innovation\dotfill
+					&
+					&
+					&
+					&\\ 
+				        Economic performance\dotfill
+					&
+					&
+					&
+					&\\
+					\hline
+				\end{tabular}
+			\end{center}
+		\end{small}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sample of Real Business Problems Raised by Industry Partners}
+\end{frame}
 
 % =========================== Network theory ==============================
 \section{Network Theory}
