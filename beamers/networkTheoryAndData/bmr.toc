@@ -1,7 +1,7 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \beamer@sectionintoc {1}{Session 1 Wrap Up}{3}{0}{1}
-\beamer@sectionintoc {2}{The Structure of Network Analytics Projects}{7}{0}{2}
-\beamer@sectionintoc {3}{The Business Problem}{9}{0}{3}
-\beamer@sectionintoc {4}{Network Theory}{12}{0}{4}
-\beamer@sectionintoc {5}{Network Data}{13}{0}{5}
-\beamer@sectionintoc {6}{Session 2 Wrap Up}{14}{0}{6}
+\beamer@sectionintoc {2}{The Structure of a Network Analytics Project}{7}{0}{2}
+\beamer@sectionintoc {3}{The Business Problem}{13}{0}{3}
+\beamer@sectionintoc {4}{Network Theory}{19}{0}{4}
+\beamer@sectionintoc {5}{Network Data}{24}{0}{5}
+\beamer@sectionintoc {6}{Session 2 Wrap Up}{31}{0}{6}
