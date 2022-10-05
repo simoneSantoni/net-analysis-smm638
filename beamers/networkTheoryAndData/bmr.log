@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  4 OCT 2022 14:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  5 OCT 2022 11:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2671,10 +2671,10 @@ Package logreq Info: Writing requests to 'bmr.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57699 strings out of 478994
- 1334883 string characters out of 5858184
+ 57701 strings out of 478994
+ 1334899 string characters out of 5858184
  2240462 words of memory out of 5000000
- 74046 multiletter control sequences out of 15000+600000
+ 74048 multiletter control sequences out of 15000+600000
  416588 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,132p,1136b,3128s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2689,7 +2689,7 @@ ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/l
 ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on bmr.pdf (33 pages, 769011 bytes).
+Output written on bmr.pdf (33 pages, 769032 bytes).
 PDF statistics:
  1301 PDF objects out of 1440 (max. 8388607)
  1208 compressed objects within 13 object streams
