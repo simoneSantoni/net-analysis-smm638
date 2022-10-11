@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  11 OCT 2022 15:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  11 OCT 2022 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2504,19 +2504,7 @@ Overfull \vbox (2.573pt too high) detected at line 674
 
  <./images/interlock.png>] [30
 
-]
-! Undefined control sequence.
-\beamer@doifinframe ...end {itemize} \par \vpsace 
-                                                  {1em} \par Does $s$ behave...
-l.701 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[31
+] [31
 
 ] (./images/open_triad.pgf) (./images/closed_triad.pgf) [32
 
@@ -2524,10 +2512,10 @@ and I'll forget about whatever was undefined.
 <images/trust_research.png, id=1118, 805.0075pt x 774.895pt>
 File: images/trust_research.png Graphic file (type png)
 <use images/trust_research.png>
-Package pdftex.def Info: images/trust_research.png  used on input line 735.
+Package pdftex.def Info: images/trust_research.png  used on input line 725.
 (pdftex.def)             Requested size: 343.60988pt x 330.75081pt.
 
-Overfull \vbox (106.96075pt too high) detected at line 735
+Overfull \vbox (106.96075pt too high) detected at line 725
  []
 
 [33
@@ -2560,31 +2548,29 @@ Package logreq Info: Writing requests to 'bmr.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58355 strings out of 478994
- 1346793 string characters out of 5858184
+ 58366 strings out of 478994
+ 1347011 string characters out of 5858184
  2261273 words of memory out of 5000000
- 74665 multiletter control sequences out of 15000+600000
- 419020 words of font info for 85 fonts, out of 8000000 for 9000
+ 74676 multiletter control sequences out of 15000+600000
+ 422657 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,132p,1136b,1539s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Navigation37} has been referenced but does not ex
-ist, replaced by a fixed one
-
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
-sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></us
-r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr
-/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/l
-ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/loc
-al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/lo
-cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/lo
-cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/loc
-al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on bmr.pdf (36 pages, 952599 bytes).
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
+local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/
+local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi17.pfb></usr/
+local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on bmr.pdf (36 pages, 960897 bytes).
 PDF statistics:
- 1304 PDF objects out of 1440 (max. 8388607)
- 1206 compressed objects within 13 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 1307 PDF objects out of 1440 (max. 8388607)
+ 1208 compressed objects within 13 object streams
+ 79 named destinations out of 1000 (max. 500000)
  242 words of extra memory for PDF output out of 10000 (max. 10000000)
 
