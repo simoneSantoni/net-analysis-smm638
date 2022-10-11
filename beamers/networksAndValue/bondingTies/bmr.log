@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  11 OCT 2022 14:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  11 OCT 2022 15:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2472,7 +2472,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <13> not available
 (Font)              size <12> substituted on input line 175.
 
 )
-Overfull \hbox (2.57677pt too wide) in paragraph at lines 647--647
+Overfull \hbox (21.66751pt too wide) in paragraph at lines 647--647
 [][]  
  []
 
@@ -2483,44 +2483,32 @@ Overfull \hbox (21.07985pt too wide) in paragraph at lines 661--661
 [][]  
  []
 
-(./images/buyer_seller_network.pgf)
+(./images/buyer_seller_network_dense.pgf)
 Overfull \hbox (21.66751pt too wide) in paragraph at lines 661--661
 [][]  
  []
 
 [28
 
-] (./images/expected_profitability.pgf)
-Overfull \hbox (21.07985pt too wide) in paragraph at lines 675--675
-[][]  
- []
+]
+<images/interlock.png, id=986, 769.87625pt x 474.77374pt>
+File: images/interlock.png Graphic file (type png)
+<use images/interlock.png>
+Package pdftex.def Info: images/interlock.png  used on input line 674.
+(pdftex.def)             Requested size: 305.43423pt x 188.36305pt.
 
-(./images/buyer_seller_network_dense.pgf)
-Overfull \hbox (21.66751pt too wide) in paragraph at lines 675--675
-[][]  
+Overfull \vbox (2.573pt too high) detected at line 674
  []
 
 [29
 
-]
-<images/interlock.png, id=1018, 769.87625pt x 474.77374pt>
-File: images/interlock.png Graphic file (type png)
-<use images/interlock.png>
-Package pdftex.def Info: images/interlock.png  used on input line 688.
-(pdftex.def)             Requested size: 305.43423pt x 188.36305pt.
-
-Overfull \vbox (2.573pt too high) detected at line 688
- []
-
-[30
-
- <./images/interlock.png>] [31
+ <./images/interlock.png>] [30
 
 ]
 ! Undefined control sequence.
 \beamer@doifinframe ...end {itemize} \par \vpsace 
                                                   {1em} \par Does $s$ behave...
-l.715 \end{frame}
+l.701 \end{frame}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2528,27 +2516,27 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[32
+[31
 
-] (./images/open_triad.pgf) (./images/closed_triad.pgf) [33
+] (./images/open_triad.pgf) (./images/closed_triad.pgf) [32
 
 ]
-<images/trust_research.png, id=1148, 805.0075pt x 774.895pt>
+<images/trust_research.png, id=1118, 805.0075pt x 774.895pt>
 File: images/trust_research.png Graphic file (type png)
 <use images/trust_research.png>
-Package pdftex.def Info: images/trust_research.png  used on input line 749.
+Package pdftex.def Info: images/trust_research.png  used on input line 735.
 (pdftex.def)             Requested size: 343.60988pt x 330.75081pt.
 
-Overfull \vbox (106.96075pt too high) detected at line 749
+Overfull \vbox (106.96075pt too high) detected at line 735
  []
 
-[34
+[33
 
- <./images/trust_research.png>] (./bmr.toc) [35
+ <./images/trust_research.png>] (./bmr.toc) [34
+
+] [35
 
 ] [36
-
-] [37
 
 ]
 \tf@nav=\write10
@@ -2572,28 +2560,31 @@ Package logreq Info: Writing requests to 'bmr.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58360 strings out of 478994
- 1346932 string characters out of 5858184
+ 58355 strings out of 478994
+ 1346793 string characters out of 5858184
  2261273 words of memory out of 5000000
  74665 multiletter control sequences out of 15000+600000
  419020 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,132p,1136b,1539s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
-/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></u
-sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr
-/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/l
-ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
-local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/
-local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/l
-ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on bmr.pdf (37 pages, 956487 bytes).
+pdfTeX warning (dest): name{Navigation37} has been referenced but does not ex
+ist, replaced by a fixed one
+
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></us
+r/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr
+/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/lo
+cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/lo
+cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on bmr.pdf (36 pages, 952599 bytes).
 PDF statistics:
- 1337 PDF objects out of 1440 (max. 8388607)
- 1238 compressed objects within 13 object streams
- 81 named destinations out of 1000 (max. 500000)
+ 1304 PDF objects out of 1440 (max. 8388607)
+ 1206 compressed objects within 13 object streams
+ 80 named destinations out of 1000 (max. 500000)
  242 words of extra memory for PDF output out of 10000 (max. 10000000)
 
