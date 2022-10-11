@@ -1,0 +1,5 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\beamer@sectionintoc {1}{Session 2 Wrap Up}{3}{0}{1}
+\beamer@sectionintoc {2}{When Do Networks Create Value?}{11}{0}{2}
+\beamer@sectionintoc {3}{Bonding Social Capital and Value Creation}{15}{0}{3}
+\beamer@sectionintoc {4}{Measuring Density}{35}{0}{4}
