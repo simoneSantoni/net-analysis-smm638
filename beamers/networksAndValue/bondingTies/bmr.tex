@@ -436,7 +436,7 @@
 \begin{frame}
 	\frametitle{The Leading Question}
 		\begin{center}
-			\LARGE When do networks create value?
+			\Large When do networks create value?
 		\end{center}
 \end{frame}
 
@@ -680,16 +680,23 @@
 		\item Let us have one seller $s$ serving a market with two 
 		buyers $b1$ and $b2$
 		\item Let us also assume that the parties cannot write a 
-		complete contract specifyin the characteristics of the good 
-		$s$ sells, say an industrial machinery to produce marmelade 
+		complete contract specifying the characteristics of the good 
+		$s$ sells, say an industrial machinery to produce jam 
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Network Density $\rightarrow$ Cooperation}{A simple cooperative game}
-	\LARGE Does $s$ behave opportunistically by engaging in moral hazard? In other 
-	words, does $b$ deliver the good with the agreed features or not?
-\end{frame}
+\begin{frame}
+	{Network Density $\rightarrow$ Cooperation}
+	{A simple cooperative game}
+	\centering
+	\Large Does $s$ behave opportunistically by engaging in moral hazard? 
+	
+	In other words, does $b$ receive the good with the agreed features?
 
+	\vspace{2em}
+
+	\Large Network theory helps to address this question! 
+\end{frame}
 
 \begin{frame}
 	{Network Density $\rightarrow$ Cooperation}
@@ -700,7 +707,8 @@
 				\begin{center}
 					\input{images/open_triad.pgf}
 				\end{center}
-				\caption*{Scenario A: an open triad\\$b1$ and $b2$ do not exchange information}
+				\caption*{\textbf{Scenario A}: open triad---
+				\\$b1$ and $b2$ do not exchange information}
 		\end{figure}
 	\end{column}
 	\begin{column}{0.5\textwidth}
@@ -708,8 +716,103 @@
 			\begin{center}
 				\input{images/closed_triad.pgf}
 			\end{center}
-			\caption*{Scenario B: a closed triad\\$b1$ and $b2$ exchange information}
+			\caption*{\textbf{Scenario B}: closed triad---
+			\\$b1$ and $b2$ exchange information}
 	\end{figure}
+	\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	{Network Density $\rightarrow$ Cooperation}
+	{What is the expected pay-off of $s$ in scenario A?}
+	\footnotesize
+	\begin{columns}[t]
+	\begin{column}{0.65\textwidth}
+
+		The expected total pay-off of $s$ is the sum of two independent 
+		expected pay-offs $E(\Pi^{s}) = E(\Pi_{b1}^{s}) + E(\Pi_{b2}^{s}$),
+		where 
+
+		\begin{equation*}
+		E(\Pi_{b1}^{S}) = E(\Pi_{b2}^{S}) = p * (\phi - \delta) + (1 - p) * (- \delta)
+		\end{equation*}
+
+		\vspace{1em}
+		The intuition is that $b2$ does not know if $s$ engages in 
+		moral hazard and delivers a machinery lacking the agreed 
+		features to $b1$. Hence, the willingness to buy of $b2$ is 
+		a function of the price $s$ charges but not of the courses 
+		of actions of $s$ regarding the transaction with $b1$
+
+		\begin{equation*}
+			p_{b2} = f(\phi)
+		\end{equation}
+	
+	\end{column}
+	\begin{column}{0.3\textwidth}
+		\footnotesize
+		\begin{figure}
+		\resizebox{1\textwidth}{!}{
+			\begin{center}
+				\input{images/open_triad.pgf}
+			\end{center}
+			}
+			\caption*{
+				\footnotesize
+				$b1$ and $b2$ do not exchange information
+				}	
+		\end{figure}	
+	\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	{Network Density $\rightarrow$ Cooperation}
+	{What is the expected pay-off of $s$ in the two scenarios?}
+	\footnotesize
+	\begin{columns}[t]
+	\begin{column}{0.65\textwidth}
+			
+		If the transactions between $s$ and $b1$ and $s$ and $b2$ are 
+			not contemporaneous (e.g., the $s-b2$ transaction takes place 
+			after the $s-b1$ transation), the expected total pay-off of 
+			$E(\Pi)^{s}$  depends on the fact that $s$ engages in moral 
+			hazard by not delivering the machinery with all the 
+			features $b1$ expects. Specifically, the willingness 
+			to buy probabilities will differ across buyers:
+			
+			\[
+			p_{i} =
+			\begin{dcases}
+				f(\phi) & \text{if} ~i = b1\\
+				f(\phi, \omega) & \text{if} ~i = b2\\
+				\end{dcases}
+			\]
+	
+			where $\phi$ is the price of the good and 
+			$\omega$ is the extent of moral hazard of $s$
+			in the $s - b1$ transaction (the more the machinery 
+			deviates from $b1$'s expectations, the larger $\omega$).
+			For example the willingness to buy of $b1$ may be 
+			modelled as $p_{b1} = \frac{1}{\phi}$ (with $\phi\geq 1$). 
+			Instead, $b2$'s willingness to buy may be modelled as 
+			$p_{b2} = \frac{1}{\phi} * \frac{1}{\omega}$ (with 
+			$\phi\geq 1$ and $\omega\geq 1$).
+			
+	\end{column}
+	\begin{column}{0.35\textwidth}
+		\begin{figure}
+		\resizebox{1\textwidth}{!}{
+			\begin{center}
+				\input{images/closed_triad.pgf}
+			\end{center}
+			}
+			\caption*{
+				\footnotesize
+				$b1$ and $b2$ exchange information
+				}
+		\end{figure}	
 	\end{column}
 	\end{columns}
 \end{frame}
@@ -719,7 +822,7 @@
 	{Why do we trust `places' as well as `businesses'?}
         \begin{figure}
         	\begin{center}
-        		\includegraphics[width=0.9\textwidth]{images/trust_research.png}
+        		\includegraphics[width=0.65\textwidth]{images/trust_research.png}
         	\end{center}
         \end{figure}
 \end{frame}

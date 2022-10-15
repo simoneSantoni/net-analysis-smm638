@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  11 OCT 2022 16:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  14 OCT 2022 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**bmr.tex bmr.pdf
+**bmr.tex
 (./bmr.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/usr/local/texlive/2021/texmf-dist/tex/latex
@@ -2390,7 +2390,7 @@ Overfull \hbox (4.17067pt too wide) in paragraph at lines 320--320
 ] [13
 
 ]
-<images/brokerage_and_closure.jpeg, id=505, 910.40125pt x 1365.1pt>
+<images/brokerage_and_closure.jpeg, id=504, 910.40125pt x 1365.1pt>
 File: images/brokerage_and_closure.jpeg Graphic file (type jpg)
 <use images/brokerage_and_closure.jpeg>
 Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 
@@ -2491,7 +2491,7 @@ Overfull \hbox (21.66751pt too wide) in paragraph at lines 661--661
 [28
 
 ]
-<images/interlock.png, id=986, 769.87625pt x 474.77374pt>
+<images/interlock.png, id=985, 769.87625pt x 474.77374pt>
 File: images/interlock.png Graphic file (type png)
 <use images/interlock.png>
 Package pdftex.def Info: images/interlock.png  used on input line 674.
@@ -2509,22 +2509,187 @@ Overfull \vbox (2.573pt too high) detected at line 674
 ] (./images/open_triad.pgf) (./images/closed_triad.pgf) [32
 
 ]
-<images/trust_research.png, id=1118, 805.0075pt x 774.895pt>
-File: images/trust_research.png Graphic file (type png)
-<use images/trust_research.png>
-Package pdftex.def Info: images/trust_research.png  used on input line 725.
-(pdftex.def)             Requested size: 343.60988pt x 330.75081pt.
 
-Overfull \vbox (106.96075pt too high) detected at line 725
- []
+! LaTeX Error: \begin{equation*} on input line 768 ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.768 \end{frame}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.768 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.768 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.768 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./images/open_triad.pgf)
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.768 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.768 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.768 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 [33
 
- <./images/trust_research.png>] (./bmr.toc) [34
+]
 
-] [35
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
-] [36
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.818 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.818 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.818 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(./images/closed_triad.pgf)
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.818 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.818 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.818 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[34
+
+]
+<images/trust_research.png, id=1184, 805.0075pt x 774.895pt>
+File: images/trust_research.png Graphic file (type png)
+<use images/trust_research.png>
+Package pdftex.def Info: images/trust_research.png  used on input line 828.
+(pdftex.def)             Requested size: 248.16203pt x 238.87886pt.
+
+Overfull \vbox (15.0888pt too high) detected at line 828
+ []
+
+[35
+
+ <./images/trust_research.png>] (./bmr.toc) [36
+
+] [37
+
+] [38
 
 ]
 \tf@nav=\write10
@@ -2548,29 +2713,33 @@ Package logreq Info: Writing requests to 'bmr.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58366 strings out of 478994
- 1347011 string characters out of 5858184
+ 58373 strings out of 478994
+ 1347032 string characters out of 5858184
  2261273 words of memory out of 5000000
- 74676 multiletter control sequences out of 15000+600000
- 422657 words of font info for 99 fonts, out of 8000000 for 9000
+ 74672 multiletter control sequences out of 15000+600000
+ 420528 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,132p,1136b,1539s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,16n,132p,1128b,1539s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
-/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></u
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.
+pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></u
 sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr
 /local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/l
 ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/
-local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi17.pfb></usr/
+local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/l
-ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on bmr.pdf (36 pages, 960897 bytes).
+ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/lo
+cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on bmr.pdf (38 pages, 996818 bytes).
 PDF statistics:
- 1307 PDF objects out of 1440 (max. 8388607)
- 1208 compressed objects within 13 object streams
- 79 named destinations out of 1000 (max. 500000)
+ 1388 PDF objects out of 1440 (max. 8388607)
+ 1283 compressed objects within 13 object streams
+ 83 named destinations out of 1000 (max. 500000)
  242 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -82,7 +82,9 @@ g.add_nodes_from(["b1", "b2", "b3"])
 g.add_nodes_from(["s1", "s2", "s3", "s4"])
 g.add_edge("s1", "s2")
 g.add_edge("s1", "s3")
-# g.add_edge("s2", "s3")
+g.add_edge("s2", "s3")
+g.add_edge("s3", "s4")
+g.add_edge("s2", "s4")
 pos = {
     "b1": (0, 0),
     "b2": (0, 1),
@@ -95,5 +97,27 @@ pos = {
 nx.draw(g, pos=pos, node_color="white", with_labels=True, ax=ax)
 ax.text(-0.5, 2.5, "Buyers", fontsize=13)
 ax.text(2.5, 2.5, "Sellers", fontsize=13)
-plt.savefig("images/buyer_seller_network.pgf", bbox_inches="tight", backend="pgf")
+plt.savefig("images/buyer_seller_network_dense.pgf", bbox_inches="tight", backend="pgf")
+
+# %%
+# open and closed triads
+# buyer seller network
+fig = plt.figure(figsize=(3, 2))
+ax = fig.add_subplot(111)
+g = nx.Graph()
+g.add_nodes_from(["s", "b1", "b2"])
+g.add_edge("s", "b1")
+g.add_edge("s", "b2")
+# g.add_edge("b1", "b2")
+pos = {
+        "s": (1,1),
+        "b1": (0, 0),
+        "b2": (2, 0)
+}
+nx.draw(g, pos=pos, node_color="white", with_labels=True, ax=ax)
+# ax.text(1, 1.5, "An open tri", fontsize=13)
+# ax.text(2.5, 2.5, "Sellers", fontsize=13)
+plt.savefig("images/open_triad.pgf", bbox_inches="tight", backend="pgf")
+
+
 # %%
