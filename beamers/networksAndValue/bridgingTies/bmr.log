@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  17 OCT 2022 21:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  18 OCT 2022 14:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1671,13 +1671,62 @@ Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 2
 
 ] (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/clustering_0.pgf) (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/clustering_1.pgf) (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/clustering_2.pgf) [13
 
-] (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/bmr.toc) [14
+] [14
 
-] (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/bmr.toc) [15
+] (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/network_density_sum.pgf) [15
 
-] [16
+] (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/bmr.toc) [16
 
-] [17
+]
+Overfull \hbox (136.91481pt too wide) in paragraph at lines 590--590
+[][]  
+ []
+
+
+Overfull \vbox (96.02043pt too high) detected at line 590
+ []
+
+[17
+
+] [18
+
+] (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/random_net.pgf) (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/small_world.pgf) [19
+
+]
+<images/ron_burt.jpeg, id=655, 1806.75pt x 1806.75pt>
+File: images/ron_burt.jpeg Graphic file (type jpg)
+<use images/ron_burt.jpeg>
+Package pdftex.def Info: images/ron_burt.jpeg  used on input line 646.
+(pdftex.def)             Requested size: 171.80493pt x 171.78087pt.
+File: images/brokerage_and_closure.jpeg Graphic file (type jpg)
+<use images/brokerage_and_closure.jpeg>
+Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 646.
+(pdftex.def)             Requested size: 133.62639pt x 200.36108pt.
+ [20
+
+ </Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/ron_burt.jpeg>]
+<images/intr_org_net.png, id=686, 1504.62125pt x 1101.11375pt>
+File: images/intr_org_net.png Graphic file (type png)
+<use images/intr_org_net.png>
+Package pdftex.def Info: images/intr_org_net.png  used on input line 653.
+(pdftex.def)             Requested size: 305.43423pt x 223.51196pt.
+ [21
+
+ </Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/intr_org_net.png>] [22
+
+]
+<images/good_ideas.png, id=751, 1381.16pt x 957.5775pt>
+File: images/good_ideas.png Graphic file (type png)
+<use images/good_ideas.png>
+Package pdftex.def Info: images/good_ideas.png  used on input line 697.
+(pdftex.def)             Requested size: 305.43423pt x 211.74895pt.
+ [23
+
+ </Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/images/good_ideas.png>] (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/bmr.toc) [24
+
+] [25
+
+] [26
 
 ]
 \tf@nav=\write10
@@ -1691,24 +1740,24 @@ Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 2
 
  (/Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/bmr.aux)
 Package rerunfilecheck Info: File `bmr.out' has not changed.
-(rerunfilecheck)             Checksum: EC609E94A4131A0DC18D6EBE937A9F98;672.
+(rerunfilecheck)             Checksum: C416F648C18D20C0F17DB50414996630;733.
 Package logreq Info: Writing requests to 'bmr.run.xml'.
 \openout1 = `bmr.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57836 strings out of 478994
- 1341060 string characters out of 5858184
- 2224297 words of memory out of 5000000
- 74194 multiletter control sequences out of 15000+600000
- 416539 words of font info for 76 fonts, out of 8000000 for 9000
+ 58250 strings out of 478994
+ 1348976 string characters out of 5858184
+ 2861083 words of memory out of 5000000
+ 74566 multiletter control sequences out of 15000+600000
+ 420172 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,132p,1213b,1539s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on /Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/bmr.pdf (17 pages, 436491 bytes).
+ 131i,16n,132p,1213b,2166s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on /Users/sbbk475/githubRepos/net-analysis-smm638/beamers/networksAndValue/bridgingTies/bmr.pdf (26 pages, 6056512 bytes).
 PDF statistics:
- 655 PDF objects out of 1000 (max. 8388607)
- 589 compressed objects within 6 object streams
- 40 named destinations out of 1000 (max. 500000)
- 224 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 936 PDF objects out of 1000 (max. 8388607)
+ 848 compressed objects within 9 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

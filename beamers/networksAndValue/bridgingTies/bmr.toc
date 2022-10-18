@@ -1,4 +1,4 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \beamer@sectionintoc {1}{Session 3 Wrap Up}{3}{0}{1}
-\beamer@sectionintoc {2}{Bonding Social Capital and Value Creation}{14}{0}{2}
-\beamer@sectionintoc {3}{Measuring Structural Holes}{15}{0}{3}
+\beamer@sectionintoc {2}{Bridging Social Capital and Value Creation}{16}{0}{2}
+\beamer@sectionintoc {3}{Capturing Briging Ties and Positions}{24}{0}{3}

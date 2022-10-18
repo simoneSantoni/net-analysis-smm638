@@ -543,72 +543,178 @@
 			$C_{ego} = \frac{3}{3}$
 	
 		\end{column}
-	\end{columns}
-	
+	\end{columns}	
 \end{frame}
 
+\begin{frame}{}{}
+	\centering
+	\Large
+	Time for Python Lab!
+\end{frame}
+
+{ % all template changes are local to this group.
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}<article:0>[plain]
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[at=(current page.center)] {
+                \input{images/network_density_sum.pgf}
+            };
+        \end{tikzpicture}
+     \end{frame}
+}
 
 % =========================== Bridging Social Capital ======================= 
-\section{Bonding Social Capital and Value Creation}
+\section{Bridging Social Capital and Value Creation}
 
-%\begin{frame}{Today's Class Focus}
-%\begin{columns}[c]
-%	\begin{column}{0.5\textwidth}
-%	\Large The attention revolves around the topic of \textcolor{base_c}{
-%		bonding social capital} and the \textcolor{comp_c}{closure 
-%		mechanism}
-%	\end{column}
-%	\begin{column}{0.5\textwidth}
-%		\begin{tikzpicture}[transform shape]
-%			\foreach \x in {1,...,16}{%
-%			  \pgfmathparse{(\x-1)*45+floor(\x/9)*22.5}
-%			  \node[draw,circle,inner sep=0.25cm] (N-\x) at (\pgfmathresult:5.4cm) {};
-%			} 
-%			\foreach \x [count=\xi from 1] in {2,...,16}{%
-%			  \foreach \y in {\x,...,16}{%
-%			  \path (N-\xi) edge[-,bend right=3] (N-\y)  edge[-,bend left=3] (N-\y);
-%			}
-%		      }
-%		\end{tikzpicture}
-%	\end{column}	
-%\end{columns}
-%\end{frame}
+\begin{frame}{Today's Class Focus}
+\begin{columns}[c]
+	\begin{column}{0.5\textwidth}
+	\Large The attention revolves around the topic of \textcolor{base_c}{
+		bridging social capital} and the \textcolor{comp_c}{brokerage 
+		mechanism}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\begin{tikzpicture}[transform shape]
+			\foreach \x in {1,...,16}{%
+			  \pgfmathparse{(\x-1)*45+floor(\x/9)*22.5}
+			  \node[draw,circle,inner sep=0.25cm] (N-\x) at (\pgfmathresult:5.4cm) {};
+			} 
+			\foreach \x [count=\xi from 1] in {2,...,16}{%
+			  \foreach \y in {\x,...,16}{%
+			  \path (N-\xi) edge[-,bend right=3] (N-\y)  edge[-,bend left=3] (N-\y);
+			}
+		      }
+		\end{tikzpicture}
+	\end{column}	
+\end{columns}
+\end{frame}
 
-%\begin{frame}{What is Network Density?}
-%	\begin{tcolorbox}[
-%		colback=tri_2!5!white,
-%		colframe=tri_2!90!black,
-%		title={\centering \Large $\sim$ Definition 1 --- Density $\sim$}]
-%		\large The tendency of a network to present direct ties between 
-%		pairs of nodes.
-%	\end{tcolorbox}
-%\end{frame}
+\begin{frame}{What are Small World Networks?}
+	\begin{tcolorbox}[
+		colback=tri_2!5!white,
+		colframe=tri_2!90!black,
+		title={\centering \Large $\sim$ Definition 2 --- Small-world network $\sim$}]
+		\large The tendency of a network to present small cohesive 
+		groups of nodes tied together by few bridging ties.
+	\end{tcolorbox}
+\end{frame}
 
-%\begin{frame}{Two Networks with Different Levels of Density}
-%	\begin{columns}[t]
-%		\begin{column}{0.5\textwidth}
-%			\begin{center}
-%				\textbf{A sparse network}
-%				%\begin{figure}
-%				%	\input{images/sparse_graph.pgf}
-%				%\end{figure}
-%			\end{center}
-%		\end{column}
-%		\begin{column}{0.5\textwidth}
-%			\begin{center}
-%				\textbf{A dense network}
-%				%\begin{figure}
-%				%	\input{images/dense_graph.pgf}
-%				%\end{figure}
-%			\end{center}
-%		\end{column}
-%	\end{columns}
-%\end{frame}
+\begin{frame}{Two Alternative Network Forms}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\textbf{A homogenous network}
+				\begin{figure}
+					\input{images/random_net.pgf}
+				\caption*{
+					\footnotesize
+					A random network with $N=100$ nodes 
+					and $\langle k \rangle = 5$. Source 
+					\cite{steger1999}
+					}
+				\end{figure}
+			\end{center}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\textbf{A small-world network}
+				\begin{figure}
+					\input{images/small_world.pgf}
+				\caption*{
+					\footnotesize
+					A Watts-Strogatz network with $N=100$
+					nodes, $10$ neighbors a node, and 
+					tie rewiring prob. $0.02$. Source
+					\cite{watts1998}
+					}
+				\end{figure}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{What is the Outcome of Small World Networks?}
+	\centering
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=0.9\textwidth]{images/ron_burt.jpeg}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=0.7\textwidth]{images/brokerage_and_closure.jpeg}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{What is the Outcome of Small World Networks?}
+	{Source \cite{burt2007} --- Fig. 1.1: The small world of organizations and markets}
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{images/intr_org_net.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{What Is the Outcome of Small-World Networks?}
+	\begin{figure}
+		\resizebox{0.85\textwidth}{!}{
+		\begin{tikzpicture}[node distance=1cm, auto,] % no additional information
+		\node[](d){};
+		\node[punkt,left=2cm of d](dn){Small-world nets};
+		\node[punkt, label={[align=right]}, right=2cm of d](bsc){Bridging\\social capital}
+		edge[pil, <-, bend left=0](dn.east);
+		\node[above=0.15cm of d](edge_label){\textcolor{blue}{\textit{foster}}};
+		\node[below=0.15cm of d](d0){};
+		\node[right=3.35cm of d0](d1){};
+                \node[right=0.001cm of d1](d2){};
+		\node[right=0.001cm of d2](d3){};
+		\node[below=-0.2cm of dn](d5){};
+                \node[right=0.001cm of d5](d4){};
+		\node[left=0.001cm of d5](d6){};
+		% \pause
+		\node[punkt, below=0.65cm of d](info_sharing){Access to non-redundant information}
+		edge[pil, <-, bend left=30](d4)
+		edge[pil, ->, bend right=30] (d1.south);
+		% \pause 
+		% \pause
+		\node[punkt, below=0.65cm of info_sharing](cooperation){Early access to information}
+		edge[pil, <-, bend left=30](d5)
+		edge[pil, ->, bend right=30] (d2.south);
+		% \pause
+		% \pause
+		\node[punkt, below=0.65cm of cooperation](trust){Strategic information management}
+		edge[pil, <-, bend left=30](d6)
+		edge[pil, ->, bend right=30] (d3.south);
+		\node[below=-0.2cm of cooperation](cooperation_1){}
+		edge[pil, ->](trust.north);
+		\node[below=-0.2cm of info_sharing](info_sharing_1){}
+		edge[pil, ->](cooperation.north);
+	\end{tikzpicture}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Evidence on the Returns of Bridging Social Capital}
+	{Source \cite{burt2007} --- Fig. 2.1: Good ideas and brokerage}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/good_ideas.png}
+\end{frame}
 
 % =========================== Measuring structural holes =====================
-\section{Measuring Structural Holes}
+\section{Capturing Briging Ties and Positions}
 
-\begin{frame}{Density Metrics}
+\begin{frame}{Metrics Associated with the Brokerage Process}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\textbf{Bridging Ties}
+			\begin{itemize}
+				\item Edge betweeness
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\textbf{Bridging Positions}
+			\begin{itemize}
+				\item Node betweness
+				\item Burt's Constraint Index
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 % =========================== Bibliography =================================

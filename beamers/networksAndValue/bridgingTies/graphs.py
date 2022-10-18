@@ -72,3 +72,26 @@ g = nx.random_regular_graph(5, 8)
 pos = nx.layout.circular_layout(g)
 nx.draw(g, pos=pos, node_color="white", edge_color="black", with_labels=True, ax=ax)
 plt.savefig("images/connected_net.pgf", bbox_inches="tight", pad_inches=0)
+
+# %% 
+# random network
+fig = plt.figure(figsize=(2.5, 2.25))
+ax = fig.add_subplot(111)
+ax.set_facecolor("white")
+g = nx.random_regular_graph(5, 100)
+pos = nx.layout.spring_layout(g)
+nx.draw(g, pos=pos, node_color="k", edge_color="k", node_size=2, alpha=0.3, width=0.5, with_labels=False, ax=ax)
+plt.savefig("images/random_net.pgf", bbox_inches="tight", pad_inches=0)
+
+# %% 
+# small-world network
+fig = plt.figure(figsize=(2.5, 2.25))
+ax = fig.add_subplot(111)
+ax.set_facecolor("white")
+g = nx.watts_strogatz_graph(100, 10, 0.02)
+pos = nx.layout.kamada_kawai_layout(g)
+nx.draw(g, pos=pos, node_color="k", edge_color="k", node_size=2, alpha=0.3, width=0.5, with_labels=False, ax=ax)
+plt.savefig("images/small_world.pgf", bbox_inches="tight", pad_inches=0)
+
+
+# %%
