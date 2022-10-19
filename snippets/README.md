@@ -8,4 +8,4 @@ As of October 19 the folder contains the following:
 + `manipulatingGraphs`, a sub-folder regarding the basics of NetworkX and 
   network data manipulation tasks
 + `networkMeasures`, a sub-folder regarding the measurement of network 
-   density and bridingness with NetworkX
+   density and bridgingness with NetworkX
