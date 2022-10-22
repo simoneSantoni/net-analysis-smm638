@@ -1,0 +1,9 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'project_description.blg'
+[429] biber-darwin:340> INFO - === Fri Oct 21, 2022, 19:17:00
+[556] Biber.pm:415> INFO - Reading 'project_description.bcf'
+[1091] Biber.pm:952> INFO - Found 0 citekeys in bib section 0
+[1106] Utils.pm:395> WARN - The file 'project_description.bcf' does not contain any citations!
+[1152] bbl.pm:654> INFO - Writing 'project_description.bbl' with encoding 'UTF-8'
+[1152] bbl.pm:757> INFO - Output to project_description.bbl
+[1155] Biber.pm:128> INFO - WARNINGS: 1
