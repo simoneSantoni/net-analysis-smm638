@@ -1,0 +1,847 @@
+\documentclass[notes, aspectratio=1610]{beamer}
+
+% =================================== Colors ================================
+\definecolor{base_c}{rgb}{
+	0.1411764705882353, 0.6235294117647059, 0.33725490196078434
+	}
+\definecolor{comp_c}{rgb}{
+	0.6235294117647059, 0.1411764705882353, 0.42745098039215684
+	}
+\definecolor{tri_1}{rgb}{
+	0.33725490196078434, 0.1411764705882353, 0.6235294117647059
+	}
+\definecolor{tri_2}{rgb}{
+	0.6235294117647059, 0.33725490196078434, 0.1411764705882353
+	}
+\definecolor{white}{rgb}{1,1,1}
+\usepackage{color, colortbl}
+
+% ================================ Text boxes ==============================
+\usepackage[most]{tcolorbox}
+
+% ================================ Symbols ==============================
+%\usepackage{bbding}
+%\usepackage{pifont}
+%\usepackage{wasysym}
+%\usepackage{amssymb}
+
+% ========================= Theme =========================================
+\usetheme{Berkeley}
+\usecolortheme{spruce}
+% \setbeamercolor{itemize item}{fg=comp_c,bg=white}
+% \setbeamercolor{enumerate item}{fg=comp_c,bg=white}
+
+% ========================= Essential packages ============================
+% \usepackage{hyperref}
+% \hypersetup{
+%     colorlinks = false,
+%     linkcolor = comp_c,
+%     citecolor = tri_1,
+%     filecolor = tri_2,
+%     urlcolor = yellow
+% }
+
+% ========================= Frame notes systm ============================
+%\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen}
+
+% ========================= Plotting ======================================
+\usepackage{calc}
+\usepackage{tikz}
+\usetikzlibrary{arrows,
+                arrows.meta,
+                calc,
+		chains,
+                quotes,
+                positioning,
+		shapes,
+		topaths,
+                shapes.geometric}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.17}
+\usepackage{venndiagram}
+% tikz exhibits
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,fit,calc,positioning}
+\tikzstyle{box} = [
+	draw,
+	rectangle,
+	rounded corners,
+	thick,
+	node distance=7em,
+	text width=6em,
+	text centered,
+	minimum height=3.5em
+	]
+\tikzstyle{container} = [draw, rectangle, dashed, inner sep=2em]
+\tikzstyle{lineSq} = [draw, thick, -latex']
+\tikzset{
+	%Define standard arrow tip
+	>=stealth',
+	%Define style for boxes
+	punkt/.style={
+	       rectangle,
+	       rounded corners,
+	       draw=black, thick,
+	       text width=8em,
+	       minimum height=3em,
+	       text centered},
+	punkbig/.style={
+		   rectangle,
+		   rounded corners,
+		   draw=black, thick,
+		   text width=5em,
+		   minimum height=5em,
+		   text centered},
+	punkb/.style={
+		   rectangle,
+		   rounded corners,
+		   %draw=black, thick,
+		   text width=8em,
+		   minimum height=3em,
+		   text centered},
+	punkc/.style={
+	       circle,
+	       rounded corners,
+	       draw=black, thick,
+	       text width=1.5em,
+	       minimum height=1.5em,
+	       text centered},
+	% Define arrow style
+	pil/.style={
+	       ->,
+	       thick,
+	       shorten <=2pt,
+	       shorten >=2pt,}
+}
+
+% ============================= Network viz ===============================
+\usepackage{tikz-network}
+
+%% ============================== Tabular =================================
+\usepackage{booktabs}
+\usepackage{tabularx,ragged2e}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{siunitx}
+  \sisetup{detect-all}
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage[justification=centering]{caption}
+
+%% ========================== Coding snippets =============================
+% Default fixed font does not support bold face
+%\usepackage{minted}
+%\usemintedstyle{vs}
+
+%% ============================= Math =====================================
+\usepackage{mathtools}
+
+% ========================= Infor on authors ==============================
+\title[Orgnazing within Networks]
+{Organizing within Networks}
+\subtitle{Network Roles and Positions}
+\author{S.~Santoni\inst{1}\inst{2}}
+\institute{
+	\inst{1}%
+	Bayes Business School
+	\and
+	\inst{2}%
+	Soundcloud
+	}
+\date{MSc in Business Analytics, 2022/23}
+
+% ========================= TOC  ==========================================
+\AtBeginSection[]
+{
+	\begin{frame}
+		       \frametitle{Outline}
+		       \tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+% ========================= References ===================================
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+% ========================= Document  ====================================
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+% =========================== Session 3 wrapup =============================
+\section{Session 4 Wrap Up}
+
+\begin{frame}
+	\frametitle{Network Theories across the Various Weeks of SMM638}
+	\begin{table}
+		\begin{tabular}[c]{l|c|c|c|c|c|c|c|c}
+			\textbf{Network theory} & 
+			\textbf{2} & 
+			\textbf{3} & 
+			\textbf{4} & 
+			\textbf{5} & 
+			\textbf{6} & 
+			\textbf{7} & 
+			\textbf{9} & 
+			\textbf{10}\\
+			\hline
+			Value creation &  & $\bullet$ & $\bullet$ &  &  &  &  & \\	
+			Coordination &  &  &  & $\bullet$ &  &  &  & \\	
+			Network change &  &  &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$\\	
+			Contagion &  &  &  &  &  & $\bullet$ &  & $\bullet$ \\	
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Leading Question}
+		\begin{center}
+			\Large When do networks create value?
+		\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Groups of Network Theories}
+	\centering
+	\small
+	\begin{table}
+		\begin{center}
+			\begin{tabular}[c]{l|l|l}
+				% \hline
+				\textbf{Underlying model} & 
+				\textbf{Social capital} &
+				\textbf{Social homogeneity}\\
+				\hline
+				\textbf{Network flow} & \cellcolor{blue!20}{\color{black}{Capitalization (value creation)}} & Contagion  \\
+				\hline
+				\textbf{Network architecture} & Coordination & Adaptation  (network change)\\
+				% \hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+	\vspace{1em}
+
+	\raggedright \small Source is~\cite[][page 47]{scott2011}
+\end{frame}
+
+\begin{frame}{Theories on Networks and Value Creation}
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+	Mainly, the various theories on the influence of networks on value 
+	creation can be grouped into two categories:
+
+	\vspace{1em}
+
+	\begin{itemize}
+		\item \textbf{Bridging} social capital theories, whose key 
+		      tenet is that sparse networks bring value to 
+		      individuals and groups by facilitating fresh courses 
+		      of action and new ideas --- a process called 
+		      \textbf{network brokerage} 
+		\item \textbf{Bonding} social capital theories, whose key 
+		      tenet is that dense networks bring value to 
+		      individuals and groups by fostering cooperation and trust
+		      ---  a process called \textbf{network closure}
+	\end{itemize}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{images/brokerage_and_closure.jpeg}
+	\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{What are Small World Networks?}
+	\begin{tcolorbox}[
+		colback=tri_2!5!white,
+		colframe=tri_2!90!black,
+		title={\centering \Large $\sim$ Definition 2 --- Small-world network $\sim$}]
+		\large The tendency of a network to present small cohesive 
+		groups of nodes tied together by few bridging ties.
+	\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Two Alternative Network Forms}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\textbf{A homogenous network}
+				\begin{figure}
+					\input{images/random_net.pgf}
+				\caption*{
+					\footnotesize
+					A random network with $N=100$ nodes 
+					and $\langle k \rangle = 5$. Source 
+					\cite{steger1999}
+					}
+				\end{figure}
+			\end{center}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\textbf{A small-world network}
+				\begin{figure}
+					\input{images/small_world.pgf}
+				\caption*{
+					\footnotesize
+					A Watts-Strogatz network with $N=100$
+					nodes, $10$ neighbors a node, and 
+					tie rewiring prob. $0.02$. Source
+					\cite{watts1998}
+					}
+				\end{figure}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{What is the Outcome of Small World Networks?}
+	\centering
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=0.9\textwidth]{images/ron_burt.jpeg}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=0.7\textwidth]{images/brokerage_and_closure.jpeg}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{What is the Outcome of Small World Networks?}
+	{Source \cite{burt2007} --- Fig. 1.1: The small world of organizations and markets}
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{images/intr_org_net.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{What Is the Outcome of Small-World Networks?}
+	\begin{figure}
+		\resizebox{0.85\textwidth}{!}{
+		\begin{tikzpicture}[node distance=1cm, auto,] % no additional information
+		\node[](d){};
+		\node[punkt,left=2cm of d](dn){Small-world nets};
+		\node[punkt, label={[align=right]}, right=2cm of d](bsc){Bridging\\social capital}
+		edge[pil, <-, bend left=0](dn.east);
+		\node[above=0.15cm of d](edge_label){\textcolor{blue}{\textit{foster}}};
+		\node[below=0.15cm of d](d0){};
+		\node[right=3.35cm of d0](d1){};
+                \node[right=0.001cm of d1](d2){};
+		\node[right=0.001cm of d2](d3){};
+		\node[below=-0.2cm of dn](d5){};
+                \node[right=0.001cm of d5](d4){};
+		\node[left=0.001cm of d5](d6){};
+		% \pause
+		\node[punkt, below=0.65cm of d](info_sharing){Access to non-redundant information}
+		edge[pil, <-, bend left=30](d4)
+		edge[pil, ->, bend right=30] (d1.south);
+		% \pause 
+		% \pause
+		\node[punkt, below=0.65cm of info_sharing](cooperation){Early access to information}
+		edge[pil, <-, bend left=30](d5)
+		edge[pil, ->, bend right=30] (d2.south);
+		% \pause
+		% \pause
+		\node[punkt, below=0.65cm of cooperation](trust){Strategic information management}
+		edge[pil, <-, bend left=30](d6)
+		edge[pil, ->, bend right=30] (d3.south);
+		\node[below=-0.2cm of cooperation](cooperation_1){}
+		edge[pil, ->](trust.north);
+		\node[below=-0.2cm of info_sharing](info_sharing_1){}
+		edge[pil, ->](cooperation.north);
+	\end{tikzpicture}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Evidence on the Returns of Bridging Social Capital}
+	{Source \cite{burt2007} --- Fig. 2.1: Good ideas and brokerage}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/good_ideas.png}
+\end{frame}
+
+
+\begin{frame}{Metrics Associated with the Brokerage Process}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\textbf{Bridging Ties}
+			\begin{itemize}
+				\item Edge betweenness
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\textbf{Bridging Positions}
+			\begin{itemize}
+				\item Node betweenness
+				\item Burt's Constraint Index
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+% ============================ MTP Project QA ==============================
+\section{MTP Project QA}
+
+\begin{frame}{Let Us Talk about the Silico Inc. Case}{}
+	\Large \centering Time for questions and --- hopefully --- satisfying answers! 
+\end{frame}
+
+% =========================== Roles and Positons ============================
+\section{Network Roles and Positions}
+
+\begin{frame}{Today's Class Focus}
+\begin{columns}[c]
+	\begin{column}{0.5\textwidth}
+	\Large The attention revolves around \textcolor{base_c}
+	{roles and positions in networks} and their importance for the  
+	\textcolor{comp_c}{functioning of organizations and markets}.
+	
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		\begin{tikzpicture}[transform shape]
+			\foreach \x in {1,...,16}{%
+			  \pgfmathparse{(\x-1)*45+floor(\x/9)*22.5}
+			  \node[draw,circle,inner sep=0.25cm] (N-\x) at (\pgfmathresult:5.4cm) {};
+			} 
+			\foreach \x [count=\xi from 1] in {2,...,16}{%
+			  \foreach \y in {\x,...,16}{%
+			  \path (N-\xi) edge[-,bend right=3] (N-\y)  edge[-,bend left=3] (N-\y);
+			}
+		      }
+		\end{tikzpicture}
+	\end{column}	
+\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Groups of Network Theories}
+	\centering
+	\small
+	\begin{table}
+		\begin{center}
+			\begin{tabular}[c]{l|l|l}
+				% \hline
+				\textbf{Underlying model} & 
+				\textbf{Social capital} &
+				\textbf{Social homogeneity}\\
+				\hline
+				\textbf{Network flow} &
+				Capitalization (value creation) & 
+				Contagion  \\
+				\hline
+				\textbf{Network architecture} & 
+				\cellcolor{blue!20}{\color{black}{Coordination}} & 
+				Adaptation  (network change)\\
+				% \hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+	\vspace{1em}
+
+	\raggedright \small Source is~\cite[][page 47]{scott2011}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Groups of Network Theories}
+	\centering
+	\small
+	\begin{table}
+		\begin{center}
+			\begin{tabular}[c]{l|l|l}
+				% \hline
+				\textbf{Underlying model} & 
+				\textbf{Social capital} &
+				\textbf{Social homogeneity}\\
+				\hline
+				\textbf{Network flow} &
+				Capitalization (value creation) & 
+				Contagion  \\
+				\hline
+				\textbf{Network architecture} &  
+				\cellcolor{blue!20}{\color{black}{Coordination}} & 
+				Adaptation  (network change)\\
+				% \hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+	\vspace{1em}
+
+	\raggedright \small Source is~\cite[][page 47]{scott2011}
+\end{frame}
+
+\begin{frame}{Networks as Social Capital: Capitalization and Coordination}
+	{How do the capitalization and coordination perspectives differ?}
+	\small
+	\begin{table}
+	\begin{center}
+		\begin{tabular}[c]{p{2.75cm}|p{4.5cm}|p{4.5cm}}
+			\textbf{} &
+			\textbf{Capitalization} & 
+			\textbf{Coordination} \\
+			\hline
+			\textbf{Level of analysis} &
+			Individual nodes/groups of nodes --- aka, the trees 
+			in the forest &
+			The network as a whole --- aka, the forest \\ \hline
+			\textbf{Key tenet} &
+			(Information exchange) Networks bring resources to 
+			individual nodes & 
+			The organization and functioning of organizations/markets 
+			depend on the characteristics of its underlying 
+			(information exchange) network \\ \hline
+			\textbf{Sample problem} &
+			What is the best network position for a node or a group 
+			of nodes with a given objective function (e.g.,
+			innovativeness)? & What is the best reporting structure
+			for an organization with certain characteristics (e.g.,
+			a start-up in a high-tech industry)?\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\end{table}	
+\end{frame}
+
+\begin{frame}{Market Coordination and Network Structure}
+	{Price fixing conspirancies in the heavy electrical equipment industry}
+	\centering
+	\begin{columns}[c]
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=1\textwidth]{images/baker_faulkner.png}
+			\small Source is~\cite{baker_faulkner_1993}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+			\textbf{Key features of the case}
+			\end{center}
+			\small
+			\begin{itemize}
+				\item 
+				\textbf{Scope of the business case}: the 
+				case deals with the organization of 
+				three well-known price-fixing conspiracies in 
+				the heavy electrical equipment industry 
+				\item
+				\textbf{Relationship under investigation}: the 
+				information exchange network among the individuals 
+				involved in the price-fixing conspiracy 
+				\item
+				\textbf{Outcomes of interest}:
+				\begin{itemize}
+					\item Coordination among the conspirators
+					\item Concealment of the conspiracy
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Market Coordination and Network Structure}
+	{Background: the origin price-fixing conspiracy}
+	\small
+	\begin{itemize}
+		\item 
+		Collusive agreements in the heavy electrical equipment industry go back 
+		to the 1880s, but the price-fixing \textit{``schemes of the 1950s were given 
+		special impetus when repeated episodes of price warfare proved 
+		incompatible with top management demands for higher profits''} (Scherer 
+		1980, p. 170).
+	        \item 	
+		Top executives imposed unrealistic profit objectives in an industry 
+		characterized by chronic overcapacity, increasing foreign competition, 
+		and stagnating demand (Ohio Valley 1965, p. 939)
+		\item 
+		To cope, managers 
+		decided to conspire rather than compete. Their elaborate conspiracy 
+		involved as many as 40 manufacturers and included more than 20 product 
+		lines, with total annual sales over \$2 billion. The conspiracy was 
+		pervasive and long-lasting; it became, insiders said, a \textit{``way of life''}
+		(U.S. Senate Committee on the Judiciary 1961, pp. 16879-84.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Market Coordination and Network Structure}
+	{The manifestation of price-fixing conspirancy}
+	\begin{quote}
+	``The Tennessee Valley Authority's (TVA) planning in 1958 for the
+	Colbert Steam Plant exposed the conspiracy. The TVA complained about
+	possible bid rigging to the U.S. Justice Department because it had
+	received identical or nearly identical bids for electrical equipment,
+	ranging from \$3 for insulators to \$17,402,300 for a 500,000 kilowatt
+	steam turbine generator (Walton and Cleveland 1964, pp. 24-29). The
+	Justice Department's investigation in 1959 revealed extensive
+	collusion and grand jury indictments followed in 1960. The U.S. Senate
+	Committee on the Judiciary, Sub-committee on Antitrust and Monopoly
+	(the Kefauver Committee), held hearings on admin- istered prices in
+	April, May, and June 1961.''
+	\end{quote}
+	
+	Source~\cite[][page 838]{baker_faulkner_1993}
+\end{frame}
+
+\begin{frame}{Market Coordination and Network Structure}{The object of the price-fixing conspirancy}
+	\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\centering 
+			Switchgears
+
+			\includegraphics[width=0.85\textwidth]{images/switchgear}
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\centering 
+			Transfomers
+
+			\includegraphics[width=0.45\textwidth]{images/transformer.jpeg}
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\centering 
+			Steam turbine generator
+
+			\includegraphics[width=1\textwidth]{images/turbine_generator}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Market Coordination and Network Structure}
+	{Network structure promoting concealment}
+
+	\small
+
+	\begin{columns}
+			\begin{column}{0.5\textwidth}
+
+
+
+		\begin{tcolorbox}[
+			colback=base_c!5!white,
+			colframe=base_c!90!black,
+			title={\centering Proposition 1}]
+			The need for secrecy lead conspirators to conceal their 
+			activities by creating sparse and decentralized networks.
+		\end{tcolorbox}
+
+		\pause
+
+		\begin{tcolorbox}[
+			colback=comp_c!5!white,
+			colframe=comp_c!90!black,
+			title={\centering Argument for Proposition 1}]
+			Decentralization or `compartmental insulation'
+			limits exposure, making it difficult to uncover an entire 
+			network, particularly its leader
+		\end{tcolorbox}
+
+		\end{column}
+
+		\pause
+
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=1\textwidth]{images/centralization}
+
+			\raggedleft Source~\cite[][page 849]{baker_faulkner_1993}
+		\end{column}
+
+
+	\end{columns}
+\end{frame}
+
+{ % all template changes are local to this group.
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}<article:0>[plain]
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[at=(current page.center)] {
+                \includegraphics[height=1\textheight]{images/centralization.png}
+            };
+        \end{tikzpicture}
+     \end{frame}
+}
+
+\begin{frame}{Market Coordination and Network Structure}
+	{Network structure promoting coordination}
+
+	\small
+
+	\begin{columns}
+			\begin{column}{0.5\textwidth}
+
+
+
+		\begin{tcolorbox}[
+			colback=base_c!5!white,
+			colframe=base_c!90!black,
+			title={\centering Proposition 2}]
+			\footnotesize The conspiracies with low information-processing 
+			requirements --- switchgear and transformers --- 
+			exhibit centralize communication networks.
+			The conspiracy with high information-process- ing
+			requirements --- turbines --- should exhibit decentralized
+			communication networks \end{tcolorbox}
+
+		\pause
+
+		\begin{tcolorbox}[
+			colback=comp_c!5!white,
+			colframe=comp_c!90!black,
+			title={\centering \small Argument for Proposition 2}]
+			\footnotesize Experimental research on small groups has found that 
+			simple, routine, unambiguous tasks are performed more 
+			efficiently in centralized structures, while difficult, 
+			complex, ambiguous tasks are performed more efficiently 
+			in decentralized structures.
+		\end{tcolorbox}
+
+		\end{column}
+
+		\pause
+
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=1\textwidth]{images/centralization}
+
+			\raggedleft Source~\cite[][page 849]{baker_faulkner_1993}
+		\end{column}
+
+
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Market Coordination and Network Structure}
+	{Which is the best network structure to achieve coordination in fix-pricing conspiracy?}
+	\centering
+	\includegraphics[height=.8\textheight]{images/two_by_two.png}
+
+	\raggedleft Source~\cite[][page 845]{baker_faulkner_1993}
+\end{frame}
+
+\begin{frame}{Market Coordination and Network Structure}
+	{Results}
+	\begin{columns}[c]
+		\begin{column}{0.5\textwidth}
+			\centering 
+			% \textbf{Aggregate results}
+
+			\includegraphics[width=0.5\textwidth]{images/individual}
+			
+			\footnotesize Source~\cite[][page 851]{baker_faulkner_1993}
+			
+		\end{column}
+
+		\pause
+
+		\begin{column}{0.5\textwidth}
+			\centering
+			% \textbf{Individual-level results}
+			
+			\includegraphics[width=0.5\textwidth]{images/aggregated}
+
+			\footnotesize Source~\cite[][page 852]{baker_faulkner_1993}
+
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Time for the Ragu Sauce Simulation Game!}{}
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/pasta_ragu.jpeg}
+\end{frame}
+
+\begin{frame}{Ragu Sauce Simulation Game}{}
+	\small
+	\begin{columns}[t]
+		\begin{column}{0.4\textwidth}
+			\begin{center}
+			\textbf{Goal}
+		        \end{center}
+			Teams of seven members are asked to write on a piece of 
+			paper the recipe for the authentic Italian ragu sauce
+			without using the Internet and without asking
+			to `externals.'
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{center}
+			\textbf{Setup}
+			\end{center}
+			\begin{itemize}
+				\item A team has seven members, a.k.a., nodes
+				\item The information on how to make the sauce is
+				dispersed across four `source' nodes 
+				\begin{itemize}
+					\item Two members know sub-sets of ingredients 
+					\item Two members know sub-sets of cooking steps
+				\end{itemize}
+				\item The `manager' nodes --- who do not have 
+				any specific information on ingredients and 
+				cooking steps --- are required to collect 
+				and synthesize the information from the `source' 
+				nodes
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{}{}
+	\Large \centering What are the insights of the ragu sauce 
+	simulation game?
+\end{frame}
+
+\begin{frame}{The Trees Mask the Forest Behind a Network}
+	{A graph with $N = 1,000$ and $\langle k \rangle$ = 4.85 }
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering 
+			\input{images/cp.pgf}
+
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\textbf{Leading question}
+
+			\begin{itemize}
+				\item 
+				Can you see any types of position in this network?
+				\item That is, can you see specific types of nodes 
+				occupying a certain position in the network?
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Revealing the Forest Behind a Network}
+	{The block-model for a graph with $N = 1,000$ and $\langle k \rangle$ = 4.85 }
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[height=.8\textheight]{images/heatmap}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\textbf{Leading question}
+
+			\begin{itemize}
+				\item 
+				Can you see any types of position in this network?
+				\item That is, can you see specific types of nodes 
+				occupying a certain position in the network?
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+% =========================== Bibliography =================================
+\begin{frame}
+	\frametitle{References}
+	\printbibliography
+ \end{frame} 
+
+% =========================== Document end ================================== 
+\end{document}

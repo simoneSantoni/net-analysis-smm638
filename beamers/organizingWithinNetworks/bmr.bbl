@@ -1,0 +1,177 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{baker_faulkner_1993}{article}{}
+      \name{author}{2}{}{%
+        {{hash=726262244b105704550955afacca21c7}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={Wayne\bibnamedelima E},
+           giveni={W\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=c5b41d121cc150f39402cdb06721cfa4}{%
+           family={Faulkner},
+           familyi={F\bibinitperiod},
+           given={Robert\bibnamedelima R},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{88f4939349956e3f518e607620529ab5}
+      \strng{fullhash}{88f4939349956e3f518e607620529ab5}
+      \strng{bibnamehash}{88f4939349956e3f518e607620529ab5}
+      \strng{authorbibnamehash}{88f4939349956e3f518e607620529ab5}
+      \strng{authornamehash}{88f4939349956e3f518e607620529ab5}
+      \strng{authorfullhash}{88f4939349956e3f518e607620529ab5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Sociological Review}
+      \field{number}{6}
+      \field{title}{{The Social Organization of Conspiracy: Illegal Networks in the Heavy Electrical Equipment Industry}}
+      \field{volume}{58}
+      \field{year}{1993}
+      \field{pages}{837}
+      \range{pages}{1}
+    \endentry
+    \entry{burt2007}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fd355c0061f6dee85bc26b7564b0e4c0}{%
+           family={Burt},
+           familyi={B\bibinitperiod},
+           given={Ronald\bibnamedelima S},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OUP Oxford}%
+      }
+      \strng{namehash}{fd355c0061f6dee85bc26b7564b0e4c0}
+      \strng{fullhash}{fd355c0061f6dee85bc26b7564b0e4c0}
+      \strng{bibnamehash}{fd355c0061f6dee85bc26b7564b0e4c0}
+      \strng{authorbibnamehash}{fd355c0061f6dee85bc26b7564b0e4c0}
+      \strng{authornamehash}{fd355c0061f6dee85bc26b7564b0e4c0}
+      \strng{authorfullhash}{fd355c0061f6dee85bc26b7564b0e4c0}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Brokerage and Closure: An Introduction to Social Capital}
+      \field{year}{2007}
+    \endentry
+    \entry{scott2011}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e46b1f3c7bf03629ea0aefe16a966b33}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5cc9376cc48d7c6253b128ff232b4745}{%
+           family={Carrington},
+           familyi={C\bibinitperiod},
+           given={Peter\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE publications}%
+      }
+      \strng{namehash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{fullhash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{bibnamehash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{authorbibnamehash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{authornamehash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{authorfullhash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The SAGE Handbook of Social Network Analysis}
+      \field{year}{2011}
+    \endentry
+    \entry{steger1999}{article}{}
+      \name{author}{2}{}{%
+        {{hash=818216d7564280aa6b1e979c30a3785f}{%
+           family={Steger},
+           familyi={S\bibinitperiod},
+           given={Angelika},
+           giveni={A\bibinitperiod}}}%
+        {{hash=73cfdc79e5147f9727dbf8437f510cc9}{%
+           family={Wormald},
+           familyi={W\bibinitperiod},
+           given={Nicholas\bibnamedelima C},
+           giveni={N\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{ba3a77850f5aa6d2fe8ba2d9b59d48a2}
+      \strng{fullhash}{ba3a77850f5aa6d2fe8ba2d9b59d48a2}
+      \strng{bibnamehash}{ba3a77850f5aa6d2fe8ba2d9b59d48a2}
+      \strng{authorbibnamehash}{ba3a77850f5aa6d2fe8ba2d9b59d48a2}
+      \strng{authornamehash}{ba3a77850f5aa6d2fe8ba2d9b59d48a2}
+      \strng{authorfullhash}{ba3a77850f5aa6d2fe8ba2d9b59d48a2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Combinatorics, Probability and Computing}
+      \field{number}{4}
+      \field{title}{Generating Random Regular Graphs Quickly}
+      \field{volume}{8}
+      \field{year}{1999}
+      \field{pages}{377\bibrangedash 396}
+      \range{pages}{20}
+    \endentry
+    \entry{watts1998}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8749174d8ea73cb9cc7eda222618b353}{%
+           family={Watts},
+           familyi={W\bibinitperiod},
+           given={Duncan\bibnamedelima J},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b0115f77df78376c68429033349375fc}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima H},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{61ec8115bb61a3bd19135c7c8b217c6a}
+      \strng{fullhash}{61ec8115bb61a3bd19135c7c8b217c6a}
+      \strng{bibnamehash}{61ec8115bb61a3bd19135c7c8b217c6a}
+      \strng{authorbibnamehash}{61ec8115bb61a3bd19135c7c8b217c6a}
+      \strng{authornamehash}{61ec8115bb61a3bd19135c7c8b217c6a}
+      \strng{authorfullhash}{61ec8115bb61a3bd19135c7c8b217c6a}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{nature}
+      \field{number}{6684}
+      \field{title}{Collective Dynamics of `Small-World' Networks}
+      \field{volume}{393}
+      \field{year}{1998}
+      \field{pages}{440\bibrangedash 442}
+      \range{pages}{3}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

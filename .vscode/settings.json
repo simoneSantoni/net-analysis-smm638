@@ -1,6 +1,6 @@
 {
 	"python.pythonPath": "/Users/simone/opt/anaconda3/envs/na/bin/python",
-	"workbench.colorTheme": "Bearded Theme Monokai Stone",
+	"workbench.colorTheme": "Default Light+",
 	"editor.fontWeight": "normal",
 	"window.zoomLevel": 0,
 	"customPresentationMode.backup": {
@@ -14,6 +14,11 @@
 			"language": "latex",
 			"scheme": "file",
 			"pattern": "beamers/networksAndValue/bondingTies/bmr.tex"
+		},
+		{
+			"language": "latex",
+			"scheme": "file",
+			"pattern": "beamers/organizingWithinNetworks/bridgingTies/bmr.tex"
 		}
 	]
 }
