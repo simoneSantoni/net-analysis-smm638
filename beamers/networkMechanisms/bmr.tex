@@ -566,17 +566,17 @@
 		colframe=tri_2!90!black,
 		title={\centering \small Corollario to Proposition 3}]
 		The centralization of a reporting network is a key attribute 
-		shaping the decision making process.
+		shaping the decision-making process.
 	\end{tcolorbox}
 \end{frame}
 
 \begin{frame}{How Do We Measure Network Centralization?}{}
 	\begin{itemize}
-		\item First-thing-first: centalization is a network-level 
+		\item First-thing-first: centralization is a network-level 
 		property --- that is, it regards the `forest' not the `trees'
 		of a network
 		\item The paper on illicit networks uses the following measures 
-		of graph centralization Freemans's graph centrality index \cite{freeman1979}
+		of graph centralization, Freemans's graph centrality index \cite{freeman1979}
 		, defined as $\sum_{i=1}^{g}[C_{A}(n^{*}) - C_{A}(n_{i})]$,
 		where $C_{A}(n^{*})$ is the largest centrality index across 
 		the $g$ actors in the network and $C_{A}(n_{i})$ is the
@@ -592,11 +592,11 @@
 \end{frame}
 
 \begin{frame}{The Trees Mask the Forest Behind a Network}
-	{A graph with $N = 1,000$ and $\langle k \rangle$ = 4.85 }
+	{A graph with $N = 2,000$ and $\langle k \rangle$ = 502.598 }
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\centering 
-			\input{images/cp.pgf}
+			\input{images/cp_net.pgf}
 
 		\end{column}
 		\begin{column}{0.3\textwidth}
@@ -604,7 +604,8 @@
 
 			\begin{itemize}
 				\item 
-				Can you see any types of position in this network?
+				Can you see any type of position in this 
+				network visualization?
 				\item That is, can you see specific types of nodes 
 				occupying a certain position in the network?
 			\end{itemize}
@@ -612,19 +613,21 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Revealing the Forest Behind a Network}
-	{The block-model for a graph with $N = 1,000$ and $\langle k \rangle$ = 4.85 }
+\begin{frame}{The Trees Mask the Forest Behind a Network}
+	{A graph with $N = 2,000$ and $\langle k \rangle$ = 502.598 }
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
-			\centering
-			\includegraphics[height=.8\textheight]{images/heatmap}
+			\centering 
+			\includegraphics[]{images/random.pdf}
+
 		\end{column}
-		\begin{column}{0.5\textwidth}
+		\begin{column}{0.3\textwidth}
 			\textbf{Leading question}
 
 			\begin{itemize}
 				\item 
-				Can you see any types of position in this network?
+				Can you see any type of position in this 
+				adjacency matrix?
 				\item That is, can you see specific types of nodes 
 				occupying a certain position in the network?
 			\end{itemize}
@@ -632,17 +635,201 @@
 	\end{columns}
 \end{frame}
 
+\begin{frame}{The Trees Mask the Forest Behind a Network}
+	{A graph with $N = 2,000$ and $\langle k \rangle$ = 502.598 }
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering 
+			\includegraphics[]{images/blockmodel.pdf}
+
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\textbf{Leading question}
+
+			\begin{itemize}
+				\item 
+				Can you see any type of position in this 
+				adjacency matrix?
+				\item That is, can you see specific types of nodes 
+				occupying a certain position in the network?
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Blockmodeling: The Nuts and Bolts}{}
+	\begin{columns}
+		\small 
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item 
+				The procedure through which an adjacency matrix's rows and
+				columns are permuted to reveal a hidden structure (if
+				any) is called \textbf{block-modeling} \cite{peixoto2014}
+				\item 
+				By scrutinizing the outcome of a block-modeling procedure,
+				one can identify the presence of types of nodes 
+				in the network --- oftentimes called `positions' --- 
+				as well as the relationship between them.
+				\item 
+				Furthermore, block-modeling allows creating 
+				a stripped-down representation of a real-world network can 
+				--- known as reduced form network
+			\end{itemize}		
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\begin{tikzpicture}[
+				node distance=4cm,
+				thick,
+				main node/.style={circle,draw,font=\Large\bfseries}
+				]
+		  		\node[main node] (c) {Core};
+		  		\node[main node] (p) [below left of=c] {Periphery};
+		  		\path[-] (c) edge [loop above] node {} (c);
+				\path[-] (c) edge [bend right] node {} (p);      
+		\end{tikzpicture}
+
+		\textbf{Notes.} --- The reduced-form network representation of a core-periphery 
+		network.
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Problem Set/Homework}{}
+	Create the adjacency matrix behind the reporting network of a 
+	multi-unit organization with the following attributes
+	\begin{itemize}
+		\item Ten units
+		\item One manager by unit
+		\item Five middle managers by unit reporting to the unit manager
+		\item Ten employees reporting to each middle manager 
+	\end{itemize}
+
+	Then
+	\begin{itemize}
+		\item 
+		Visualize the adjacency matrix of the network
+		\item 
+		Visualize the network
+		\item 
+		Get the centralization index of the network
+	\end{itemize}
+\end{frame}
+
 % ============================ Network mechanisms ===========================
 
-\begin{frame}{}{}
-	...
+\section{Network Mechanisms and Network Structure}
+
+\begin{frame}{Why do Network Mechanisms Matter?}{}
+	\begin{enumerate}
+		\item Network mechanisms can explain why networks look how 
+		they look!
+		\item If we know the network mechanisms, we can predict the
+		evolution of a network. E.g.,
+		\begin{itemize}
+			\item 
+			Who will pay attention to what market offers
+			\item 
+			Who will date whom
+			\item 
+			Who will adopt or reject whom's opinion
+		\end{itemize}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{What Are We Trying to Achieve in Sessions 6 and 7?}
+	\begin{table}
+		\begin{tabular}[c]{l|c|c|c|c|c|c|c|c}
+			\textbf{Network theory} & 
+			\textbf{2} & 
+			\textbf{3} & 
+			\textbf{4} & 
+			\textbf{5} & 
+			\textbf{6} & 
+			\textbf{7} & 
+			\textbf{9} & 
+			\textbf{10}\\
+			\hline
+			Value creation &  & $\bullet$ & $\bullet$ &  &  &  &  & \\	
+			Coordination &  &  &  & $\bullet$ &  &  &  & \\	
+			Network change &  &  &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$\\	
+			Contagion &  &  &  &  &  & $\bullet$ &  & $\bullet$ \\	
+		\end{tabular}
+	\end{table}
+
+	\pause
+
+	\begin{itemize}
+		\item In today's session, we will try to discover the 
+		mixture of network 
+		mechanisms accounting for Soundcloud's network structure
+		\pause
+		\item In the next session, we will learn how to quantify a key 
+		network mechanism and will connect it to the problem 
+		of contagion (critically important to explain offering 
+		popularity in markets)
+	\end{itemize}
+\end{frame}
+
+\subsection{Searching for Network Mechanisms in Soundcloud}
+
+\begin{frame}
+	\frametitle{A Real-World Example: The Soundcloud Networks}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			\begin{figure}[!htbp]
+				\begin{tikzpicture}[scale=0.9, transform shape, multilayer=3d]
+				  %% separation between Layers
+				  \SetLayerDistance{-4.5}
+				  %% layer for activities
+				  \begin{Layer}[layer=1]
+				    %% plane
+				    \Plane[x = 0, y = 0, width = 3, height = 6, layer = 1,
+				      color = white, opacity = 0, style = {thick, gray}];
+				    %% label
+				    \node at (0, 3) [above right] {Offerings};
+				  \end{Layer}
+				  %% layer for actors
+				  \begin{Layer}[layer=2]
+				    \Plane[x = 0, y = 0, width = 3, height = 6, layer = 2,
+				      color = white, opacity = 0, style = {thick, gray}];
+				    %% plane
+				    \node at (0, 0) [below right] {Followership network};
+				  \end{Layer}
+				  %% vertices
+				  \Vertices{data/soundcloud_vertices.csv}
+				  %% edges
+				  \Edges{data/soundcloud_edges.csv}
+				\end{tikzpicture}
+			      \end{figure}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{small}
+
+			Some key general points emerging from the analysis of the 
+			Soundcloud example:
+			\begin{itemize}
+				\item
+				The same pair of nodes can be connected 
+				because of multiple relatonships (i.e., `like,'
+				`repost,' `comment')
+				\item 
+				The nodes of a network may have the 
+				same type (e.g., `following') or 
+				different types (e.g., `like')
+				\item Analytically seprated networks may be 
+				correlated (e.g., one tends to like her/his 
+				followings' likes)
+			\end{itemize}
+
+			\end{small}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 
-
-\begin{frame}{}{}
-	...
-\end{frame}
 
 % ============================ Bibliography =================================
 \begin{frame}

@@ -113,6 +113,35 @@
       \field{pages}{215\bibrangedash 239}
       \range{pages}{25}
     \endentry
+    \entry{peixoto2014}{article}{}
+      \name{author}{1}{}{%
+        {{hash=dce939cf618d94411e316ae819a3b661}{%
+           family={Peixoto},
+           familyi={P\bibinitperiod},
+           given={Tiago\bibnamedelima P},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{dce939cf618d94411e316ae819a3b661}
+      \strng{fullhash}{dce939cf618d94411e316ae819a3b661}
+      \strng{bibnamehash}{dce939cf618d94411e316ae819a3b661}
+      \strng{authorbibnamehash}{dce939cf618d94411e316ae819a3b661}
+      \strng{authornamehash}{dce939cf618d94411e316ae819a3b661}
+      \strng{authorfullhash}{dce939cf618d94411e316ae819a3b661}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review E}
+      \field{number}{1}
+      \field{title}{Efficient Monte Carlo and Greedy Heuristic for the Inference of Stochastic Block Models}
+      \field{volume}{89}
+      \field{year}{2014}
+      \field{pages}{012804}
+      \range{pages}{1}
+    \endentry
     \entry{scott2011}{book}{}
       \name{author}{2}{}{%
         {{hash=e46b1f3c7bf03629ea0aefe16a966b33}{%

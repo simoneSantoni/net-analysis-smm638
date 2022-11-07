@@ -2355,6 +2355,7 @@
     <bcf:citekey order="9">freeman1979</bcf:citekey>
     <bcf:citekey order="10">borgatti_everett2006</bcf:citekey>
     <bcf:citekey order="11">wasserman_faust1994</bcf:citekey>
+    <bcf:citekey order="12">peixoto2014</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
