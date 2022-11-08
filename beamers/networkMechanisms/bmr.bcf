@@ -2345,17 +2345,16 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">scott2011</bcf:citekey>
-    <bcf:citekey order="2">scott2011</bcf:citekey>
+    <bcf:citekey order="2">baker_faulkner_1993</bcf:citekey>
     <bcf:citekey order="3">baker_faulkner_1993</bcf:citekey>
     <bcf:citekey order="4">baker_faulkner_1993</bcf:citekey>
     <bcf:citekey order="5">baker_faulkner_1993</bcf:citekey>
     <bcf:citekey order="6">baker_faulkner_1993</bcf:citekey>
     <bcf:citekey order="7">baker_faulkner_1993</bcf:citekey>
-    <bcf:citekey order="8">baker_faulkner_1993</bcf:citekey>
-    <bcf:citekey order="9">freeman1979</bcf:citekey>
-    <bcf:citekey order="10">borgatti_everett2006</bcf:citekey>
-    <bcf:citekey order="11">wasserman_faust1994</bcf:citekey>
-    <bcf:citekey order="12">peixoto2014</bcf:citekey>
+    <bcf:citekey order="8">freeman1979</bcf:citekey>
+    <bcf:citekey order="9">borgatti_everett2006</bcf:citekey>
+    <bcf:citekey order="10">wasserman_faust1994</bcf:citekey>
+    <bcf:citekey order="11">peixoto2014</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

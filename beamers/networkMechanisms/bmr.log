@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  7 NOV 2022 21:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  8 NOV 2022 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1962,150 +1962,136 @@ thkerncmss.
 
 ] [5
 
-] [6
-
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 294--294
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []|\OT1/cmss/m/n/10 Individual nodes/-groups of
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 294--294
+Underfull \hbox (badness 1953) in paragraph at lines 265--265
 []|\OT1/cmss/m/n/10 (Information ex-change) Net-
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 294--294
+Underfull \hbox (badness 1783) in paragraph at lines 265--265
 \OT1/cmss/m/n/10 ing of or-ga-ni-za-tion-s/-mar-kets
  []
 
 
-Underfull \hbox (badness 6284) in paragraph at lines 294--294
+Underfull \hbox (badness 6284) in paragraph at lines 265--265
 []|\OT1/cmss/m/n/10 What is the best re-port-
  []
 
-[7
+[6
 
 ]
-<images/baker_faulkner.png, id=288, 1043.9pt x 955.57pt>
+<images/baker_faulkner.png, id=267, 1043.9pt x 955.57pt>
 File: images/baker_faulkner.png Graphic file (type png)
 <use images/baker_faulkner.png>
-Package pdftex.def Info: images/baker_faulkner.png  used on input line 328.
+Package pdftex.def Info: images/baker_faulkner.png  used on input line 299.
 (pdftex.def)             Requested size: 190.89568pt x 174.73636pt.
-[8
+[7
 
  <./images/baker_faulkner.png>]
-<images/centralization.png, id=322, 658.46pt x 632.3625pt>
+<images/centralization.png, id=303, 658.46pt x 632.3625pt>
 File: images/centralization.png Graphic file (type png)
 <use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 364.
+Package pdftex.def Info: images/centralization.png  used on input line 335.
 (pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
-[9
+[8
 
  <./images/centralization.png>]
-File: images/centralization.png Graphic file (type png)
-<use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 374.
-(pdftex.def)             Requested size: 245.244pt x 235.52756pt.
-[10
-
-]
-Underfull \hbox (badness 1655) in paragraph at lines 416--416
+Underfull \hbox (badness 1655) in paragraph at lines 376--376
 \OT1/cmss/m/n/9 processing re-quire-ments --- switchgear
  []
 
-
-Underfull \hbox (badness 1178) in paragraph at lines 416--416
-\OT1/cmss/m/n/9 and trans-form-ers --- ex-hibit cen-tral-ize
- []
-
 File: images/centralization.png Graphic file (type png)
 <use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 416.
+Package pdftex.def Info: images/centralization.png  used on input line 376.
 (pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
 
-Overfull \vbox (0.14772pt too high) detected at line 416
+Overfull \vbox (0.14772pt too high) detected at line 376
  []
 
-[11
+[9
 
 ]
-<images/two_by_two.png, id=390, 369.38pt x 269.005pt>
+<images/two_by_two.png, id=367, 369.38pt x 269.005pt>
 File: images/two_by_two.png Graphic file (type png)
 <use images/two_by_two.png>
-Package pdftex.def Info: images/two_by_two.png  used on input line 425.
+Package pdftex.def Info: images/two_by_two.png  used on input line 385.
 (pdftex.def)             Requested size: 258.73332pt x 188.42276pt.
-[12
+[10
 
  <./images/two_by_two.png>]
-<images/individual.png, id=422, 369.38pt x 704.6325pt>
+<images/individual.png, id=401, 369.38pt x 704.6325pt>
 File: images/individual.png Graphic file (type png)
 <use images/individual.png>
-Package pdftex.def Info: images/individual.png  used on input line 450.
+Package pdftex.def Info: images/individual.png  used on input line 410.
 (pdftex.def)             Requested size: 95.44783pt x 182.07118pt.
-<images/aggregated.png, id=424, 369.38pt x 741.77126pt>
+<images/aggregated.png, id=403, 369.38pt x 741.77126pt>
 File: images/aggregated.png Graphic file (type png)
 <use images/aggregated.png>
-Package pdftex.def Info: images/aggregated.png  used on input line 450.
+Package pdftex.def Info: images/aggregated.png  used on input line 410.
 (pdftex.def)             Requested size: 95.44783pt x 191.66753pt.
-[13
+[11
 
  <./images/individual.png> <./images/aggregated.png>]
-<images/pasta_ragu.jpeg, id=458, 770.88pt x 513.92pt>
+<images/pasta_ragu.jpeg, id=437, 770.88pt x 513.92pt>
 File: images/pasta_ragu.jpeg Graphic file (type jpg)
 <use images/pasta_ragu.jpeg>
-Package pdftex.def Info: images/pasta_ragu.jpeg  used on input line 455.
+Package pdftex.def Info: images/pasta_ragu.jpeg  used on input line 415.
 (pdftex.def)             Requested size: 286.3435pt x 190.89238pt.
-[14
+[12
 
- <./images/pasta_ragu.jpeg>] [15
+ <./images/pasta_ragu.jpeg>] [13
 
-] (./images/team_a.pgf) (./images/team_b.pgf) [16
+] (./images/team_a.pgf) (./images/team_b.pgf) [14
 
-] (./images/team_comparison.pgf) [17
+] (./images/team_comparison.pgf) [15
+
+] [16
+
+] [17
 
 ] [18
 
-] [19
-
-] [20
-
 ] (./images/cp_net.pgf)
-Overfull \hbox (5.13625pt too wide) in paragraph at lines 614--614
+Overfull \hbox (5.13625pt too wide) in paragraph at lines 574--574
  [][] 
  []
 
-[21
+[19
 
 ]
-<images/random.pdf, id=708, 170.45683pt x 170.45683pt>
+<images/random.pdf, id=695, 170.45683pt x 170.45683pt>
 File: images/random.pdf Graphic file (type pdf)
 <use images/random.pdf>
-Package pdftex.def Info: images/random.pdf  used on input line 636.
+Package pdftex.def Info: images/random.pdf  used on input line 596.
 (pdftex.def)             Requested size: 170.4564pt x 170.4564pt.
-[22
+[20
 
  <./images/random.pdf>]
-<images/blockmodel.pdf, id=739, 170.45683pt x 170.45683pt>
+<images/blockmodel.pdf, id=728, 170.45683pt x 170.45683pt>
 File: images/blockmodel.pdf Graphic file (type pdf)
 <use images/blockmodel.pdf>
-Package pdftex.def Info: images/blockmodel.pdf  used on input line 658.
+Package pdftex.def Info: images/blockmodel.pdf  used on input line 618.
 (pdftex.def)             Requested size: 170.4564pt x 170.4564pt.
-[23
+[21
 
- <./images/blockmodel.pdf>] [24
+ <./images/blockmodel.pdf>] [22
+
+] [23
+
+] (./bmr.toc) [24
 
 ] [25
 
-] (./bmr.toc) [26
+] [26
 
 ] [27
 
 ] [28
-
-] [29
-
-] [30
 
 ]
 Missing character: There is no ; in font nullfont!
@@ -2142,7 +2128,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.829 \end{frame}
+l.790 \end{frame}
                  
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -2157,18 +2143,18 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.829 \end{frame}
+l.790 \end{frame}
                  
 (That was another \errmessage.)
 
 
-Overfull \hbox (14.19527pt too wide) in paragraph at lines 829--829
+Overfull \hbox (14.19527pt too wide) in paragraph at lines 790--790
  [] 
  []
 
-[31
+[29
 
-] [32
+] [30
 
 ]
 \tf@nav=\write10
@@ -2181,29 +2167,17 @@ Overfull \hbox (14.19527pt too wide) in paragraph at lines 829--829
 \openout12 = `bmr.snm'.
 
 (./bmr.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `bmr.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `bmr.out':
-(rerunfilecheck)             Before: 6EBEC7F6B8C7AB2684976493B59ED18C;695
-(rerunfilecheck)             After:  A206E1696F2AF90C11863BBDBBFD3A86;788.
-
-Package biblatex Warning: Please rerun LaTeX.
-
+Package rerunfilecheck Info: File `bmr.out' has not changed.
+(rerunfilecheck)             Checksum: B6E899E7535659D27F8A669B025AECFE;788.
 Package logreq Info: Writing requests to 'bmr.run.xml'.
 \openout1 = `bmr.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58221 strings out of 478994
- 1346501 string characters out of 5858184
- 4013420 words of memory out of 5000000
- 74544 multiletter control sequences out of 15000+600000
+ 58203 strings out of 478994
+ 1346030 string characters out of 5858184
+ 4013626 words of memory out of 5000000
+ 74530 multiletter control sequences out of 15000+600000
  418634 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,132p,1128b,3125s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2221,10 +2195,10 @@ al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/loca
 l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on bmr.pdf (32 pages, 4189405 bytes).
+Output written on bmr.pdf (30 pages, 4187482 bytes).
 PDF statistics:
- 1105 PDF objects out of 1200 (max. 8388607)
- 1003 compressed objects within 11 object streams
- 75 named destinations out of 1000 (max. 500000)
- 251 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1099 PDF objects out of 1200 (max. 8388607)
+ 1000 compressed objects within 10 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 259 words of extra memory for PDF output out of 10000 (max. 10000000)
 
