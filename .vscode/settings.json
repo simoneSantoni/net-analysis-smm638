@@ -1,6 +1,6 @@
 {
 	"python.pythonPath": "/Users/simone/opt/anaconda3/envs/na/bin/python",
-	"workbench.colorTheme": "Xcode Default (Light)",
+	"workbench.colorTheme": "Default Dark+",
 	"editor.fontWeight": "normal",
 	"window.zoomLevel": 0,
 	"customPresentationMode.backup": {
@@ -24,6 +24,11 @@
 			"language": "latex",
 			"scheme": "file",
 			"pattern": "beamers/networkMechanisms/bmr.tex"
+		},
+		{
+			"language": "latex",
+			"scheme": "file",
+			"pattern": "beamers/networkMechanisms/partII/bmr.tex"
 		}
 	]
 }
