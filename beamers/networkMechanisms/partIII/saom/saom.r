@@ -25,7 +25,7 @@ friendship <- sienaDependent(array(c(friend1, friend2, friend3), dim = c(32, 32,
 quit <- sienaDependent(quit, type = "behavior")
 # -- attributes
 gender <- coCovar(gender[, 1])
-# -- wrap the data togethe
+# -- wrap the data together
 data <- sienaDataCreate(friendship, quit, gender)
 # %%
 
@@ -38,15 +38,19 @@ effs <- getEffects(data)
 # %%
 
 
+# ----------------------------------------------------------------------------
+# Create a null model containing elementary effects only
+# ----------------------------------------------------------------------------
+
 # %% create and estimate a model
 alg <- sienaAlgorithmCreate(useStdInits = TRUE, projname = "quit_fr")
-null_model.results <- siena07(
+null_model <- siena07(
         alg,
         data = data,
         effects = effs,
-	returnDeps = TRUE
+        returnDeps = TRUE
 )
-null_model.results
+null_model
 # %%
 
 # %% assess the model GOF
@@ -68,33 +72,52 @@ gof <- sienaGOF(
         varName = "friendship"
 )
 plot(gof)
+# %%
 
-# %% add a new effect network effect
-MyEff <- includeEffects(MyEff, gwespFF)
-Model1.results <- siena07(
-        Model1,
-        data = MyData,
-        effects = MyEff,
+# ----------------------------------------------------------------------------
+# Expand on the null model by adding a network rule
+# ----------------------------------------------------------------------------
+
+# %% add a triadic closure effect
+effs <- includeEffects(effs, gwespFF)
+model_1 <- siena07(
+        alg,
+        data = data,
+        effects = effs,
         returnDeps = TRUE,
         verbose = TRUE
 )
-Model1.results
+model_1
+# %%
 
-MyEff <- includeEffects(MyEff, egoX, altX, simX, interaction1 = "gender")
-MyEff <- includeEffects(MyEff, egoX, altX, simX, interaction1 = "quit")
-Model1.results <- siena07(
-        Model1,
-        data = MyData,
-        effects = MyEff,
+# ----------------------------------------------------------------------------
+# Expand on model_1 by adding a social selection rule
+# ----------------------------------------------------------------------------
+
+# %% gender and quit similarity influence network change
+effs <- includeEffects(effs, egoX, altX, simX, interaction1 = "gender")
+effs <- includeEffects(effs, egoX, altX, simX, interaction1 = "quit")
+model_2 <- siena07(
+        alg,
+        data = data,
+        effects = effs,
         returnDeps = TRUE,
         verbose = TRUE
 )
-Model1.results
+model_2
+# %%
 
 # ----------------------------------------------------------------------------
-# Modeling social influence
+# Expand on model_2 by adding a social influence rule
 # ----------------------------------------------------------------------------
 
-MyEff <- includeEffects(MyEff, name = "quit", avSim, interaction1 = "friendship")
-soc_influence <- siena07(Model1, data = MyData, effects = MyEff)
-soc_influence.results
+# %% alters' quit intentions influence network change
+effs <- includeEffects(effs, name = "quit", avSim, interaction1 = "friendship")
+model_3 <- siena07(
+        alg,
+        data = data,
+        effects = effs,
+        returnDeps = TRUE,
+        verbose = TRUE
+)
+model_3
