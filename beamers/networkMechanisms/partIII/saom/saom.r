@@ -56,7 +56,7 @@ null_model
 # %% assess the model GOF
 # -- are we reproducing the observed indegree distribution of the network?
 gof <- sienaGOF(
-        null_model.results,
+        null_model,
         IndegreeDistribution,
         verbose = TRUE,
         join = TRUE,
@@ -65,7 +65,7 @@ gof <- sienaGOF(
 plot(gof)
 # --+ are we reproducing the observed outdegree distribution of the network?
 gof <- sienaGOF(
-        null_model.results,
+        null_model,
         OutdegreeDistribution,
         verbose = TRUE,
         join = TRUE,
