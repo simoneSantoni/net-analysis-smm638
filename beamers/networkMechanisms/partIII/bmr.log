@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  29 NOV 2022 15:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.16)  1 DEC 2022 10:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2046,7 +2046,7 @@ Overfull \hbox (14.19527pt too wide) in paragraph at lines 341--341
 ] [17
 
 ]
-<images/birds_of_a_feather.jpeg, id=676, 233.87375pt x 216.81pt>
+<images/birds_of_a_feather.jpeg, id=677, 233.87375pt x 216.81pt>
 File: images/birds_of_a_feather.jpeg Graphic file (type jpg)
 <use images/birds_of_a_feather.jpeg>
 Package pdftex.def Info: images/birds_of_a_feather.jpeg  used on input line 459
@@ -2063,7 +2063,7 @@ Package pdftex.def Info: images/birds_of_a_feather.jpeg  used on input line 459
 [19
 
 ]
-<images/mcpherson_et_al.png, id=745, 1069.9975pt x 1103.12125pt>
+<images/mcpherson_et_al.png, id=746, 1069.9975pt x 1103.12125pt>
 File: images/mcpherson_et_al.png Graphic file (type png)
 <use images/mcpherson_et_al.png>
 Package pdftex.def Info: images/mcpherson_et_al.png  used on input line 467.
@@ -2071,7 +2071,7 @@ Package pdftex.def Info: images/mcpherson_et_al.png  used on input line 467.
 [20
 
  <./images/mcpherson_et_al.png>]
-<images/moody_2001.png, id=781, 1516.66624pt x 998.73125pt>
+<images/moody_2001.png, id=782, 1516.66624pt x 998.73125pt>
 File: images/moody_2001.png Graphic file (type png)
 <use images/moody_2001.png>
 Package pdftex.def Info: images/moody_2001.png  used on input line 479.
@@ -2079,12 +2079,12 @@ Package pdftex.def Info: images/moody_2001.png  used on input line 479.
 [21
 
  <./images/moody_2001.png>]
-<images/mcfarland_et_al.png, id=818, 712.6625pt x 1073.00874pt>
+<images/mcfarland_et_al.png, id=819, 712.6625pt x 1073.00874pt>
 File: images/mcfarland_et_al.png Graphic file (type png)
 <use images/mcfarland_et_al.png>
 Package pdftex.def Info: images/mcfarland_et_al.png  used on input line 496.
 (pdftex.def)             Requested size: 133.62639pt x 201.18864pt.
-<images/romantic_relation.jpg, id=820, 259.97125pt x 394.47375pt>
+<images/romantic_relation.jpg, id=821, 259.97125pt x 394.47375pt>
 File: images/romantic_relation.jpg Graphic file (type jpg)
 <use images/romantic_relation.jpg>
 Package pdftex.def Info: images/romantic_relation.jpg  used on input line 496.
@@ -2092,7 +2092,7 @@ Package pdftex.def Info: images/romantic_relation.jpg  used on input line 496.
 [22
 
  <./images/mcfarland_et_al.png> <./images/romantic_relation.jpg>]
-<images/mcdonald_westphal.png, id=855, 1198.4775pt x 605.26125pt>
+<images/mcdonald_westphal.png, id=856, 1198.4775pt x 605.26125pt>
 File: images/mcdonald_westphal.png Graphic file (type png)
 <use images/mcdonald_westphal.png>
 Package pdftex.def Info: images/mcdonald_westphal.png  used on input line 505.
@@ -2100,7 +2100,7 @@ Package pdftex.def Info: images/mcdonald_westphal.png  used on input line 505.
 [23
 
  <./images/mcdonald_westphal.png>]
-<images/fig_4_2.png, id=891, 598.235pt x 491.8375pt>
+<images/fig_4_2.png, id=892, 598.235pt x 491.8375pt>
 File: images/fig_4_2.png Graphic file (type png)
 <use images/fig_4_2.png>
 Package pdftex.def Info: images/fig_4_2.png  used on input line 514.
@@ -2116,7 +2116,7 @@ Package pdftex.def Info: images/fig_4_2.png  used on input line 514.
 ] [28
 
 ]
-<images/membership_closure.png, id=1063, 1492.57625pt x 1008.76875pt>
+<images/membership_closure.png, id=1064, 1492.57625pt x 1008.76875pt>
 File: images/membership_closure.png Graphic file (type png)
 <use images/membership_closure.png>
 Package pdftex.def Info: images/membership_closure.png  used on input line 606.
@@ -2125,7 +2125,7 @@ Package pdftex.def Info: images/membership_closure.png  used on input line 606.
 [29
 
  <./images/membership_closure.png>]
-<images/focal_closure.png, id=1100, 1219.55624pt x 782.925pt>
+<images/focal_closure.png, id=1101, 1219.55624pt x 782.925pt>
 File: images/focal_closure.png Graphic file (type png)
 <use images/focal_closure.png>
 Package pdftex.def Info: images/focal_closure.png  used on input line 617.
@@ -2133,7 +2133,7 @@ Package pdftex.def Info: images/focal_closure.png  used on input line 617.
 [30
 
  <./images/focal_closure.png>]
-<images/selection_and_socialization.png, id=1135, 1456.44125pt x 1115.16624pt>
+<images/selection_and_socialization.png, id=1136, 1456.44125pt x 1115.16624pt>
 File: images/selection_and_socialization.png Graphic file (type png)
 <use images/selection_and_socialization.png>
 Package pdftex.def Info: images/selection_and_socialization.png  used on input 
@@ -2192,10 +2192,10 @@ Package logreq Info: Writing requests to 'bmr.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58231 strings out of 478994
- 1346605 string characters out of 5858184
+ 58233 strings out of 478994
+ 1346622 string characters out of 5858184
  2254559 words of memory out of 5000000
- 74519 multiletter control sequences out of 15000+600000
+ 74521 multiletter control sequences out of 15000+600000
  417553 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,132p,1128b,3126s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2212,7 +2212,7 @@ ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/l
 ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/lo
 cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/loc
 al/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on bmr.pdf (43 pages, 3800139 bytes).
+Output written on bmr.pdf (43 pages, 3800266 bytes).
 PDF statistics:
  1650 PDF objects out of 1728 (max. 8388607)
  1533 compressed objects within 16 object streams
