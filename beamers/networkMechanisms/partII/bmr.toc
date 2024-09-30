@@ -1,6 +1,0 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\beamer@sectionintoc {1}{Problem Set}{3}{0}{1}
-\beamer@sectionintoc {2}{Session 6 Wrap Up}{6}{0}{2}
-\beamer@sectionintoc {3}{Network Mechanisms and Network Structure}{20}{0}{3}
-\beamer@subsectionintoc {3}{1}{The Principle of Homophily}{21}{0}{3}
-\beamer@subsectionintoc {3}{2}{Homophily: Selection and Socialization}{32}{0}{3}

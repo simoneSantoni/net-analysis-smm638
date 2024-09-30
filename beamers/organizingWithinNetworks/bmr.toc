@@ -1,4 +1,0 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\beamer@sectionintoc {1}{Session 4 Wrap Up}{3}{0}{1}
-\beamer@sectionintoc {2}{MTP Project QA}{15}{0}{2}
-\beamer@sectionintoc {3}{Network Roles and Positions}{17}{0}{3}
