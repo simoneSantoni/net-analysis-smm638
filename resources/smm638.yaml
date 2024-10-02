@@ -1,0 +1,31 @@
+name: smm638
+channels:
+  - conda-forge
+dependencies:
+  - pylsp-mypy
+  - pynvim
+  - pylint
+  - flake8
+  - anaconda
+  - pip
+  - jupyter
+  - jupyterlab
+  - r-base
+  - r-essentials
+  - r-irkernel
+  - r-tidyverse
+  - rpy2
+  - radian
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - networkx
+  - r-sna
+  - r-latentnet
+  - r-network
+  - r-ergm
+  - r-networkDynamic
+  - r-tergm
+  - r-tsna
+  - r-ergm
