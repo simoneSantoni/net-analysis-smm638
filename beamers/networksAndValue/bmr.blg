@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'bmr.blg'
+[78] biber:340> INFO - === Mon Oct  7, 2024, 11:27:09
+[94] Biber.pm:419> INFO - Reading 'bmr.bcf'
+[152] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[163] Biber.pm:4419> INFO - Processing section 0
+[173] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[174] bibtex.pm:1713> INFO - LaTeX decoding ...
+[178] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[221] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[221] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[221] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[221] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[224] bbl.pm:660> INFO - Writing 'bmr.bbl' with encoding 'UTF-8'
+[225] bbl.pm:763> INFO - Output to bmr.bbl
+[225] Biber.pm:131> WARN - Duplicate entry key: 'scott2011' in file 'bibliography.bib', skipping ...
+[225] Biber.pm:133> INFO - WARNINGS: 1
