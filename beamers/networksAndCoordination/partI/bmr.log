@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.7.31)  14 OCT 2024 14:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.7.31)  14 OCT 2024 15:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1670,200 +1670,758 @@ Package pdftex.def Info: images/good_ideas.png  used on input line 669.
 ] (./bmr.toc) [23
 
 ]
-Overfull \hbox (136.91481pt too wide) in paragraph at lines 715--715
-[][]  
+./bmr.tex:714: Undefined control sequence.
+\beamer@doifinframe ... \par \end {column} \megin 
+                                                  {column}{0.5\textwidth } \...
+l.714 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./bmr.tex:714: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.714 \end{frame}
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./bmr.tex:714: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.714 \end{frame}
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./bmr.tex:714: Missing } inserted.
+<inserted text> 
+                }
+l.714 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (157.85883pt too wide) detected at line 714
+[][][] $[]$[][][][][][] \OT1/cmss/m/n/10.95 column0.5 []
  []
 
+./bmr.tex:714: Missing } inserted.
+<inserted text> 
+                }
+l.714 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-Overfull \vbox (96.02043pt too high) detected at line 715
+
+Overfull \hbox (14.22636pt too wide) detected at line 714
+ []
  []
 
-[24
+./bmr.tex:714: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.714 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-] [25
+./bmr.tex:714: Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.714 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-] [26
+./bmr.tex:724: Missing number, treated as zero.
+<to be read again> 
+                   l
+l.724 				\textbf
+                 {Underlying model} &
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 807--807
+./bmr.tex:724: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   l
+l.724 				\textbf
+                 {Underlying model} &
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+./bmr.tex:724: Package calc Error: `l' invalid at this point.
+
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.724 				\textbf
+                 {Underlying model} &
+I expected to see one of: + - * / )
+
+Runaway argument?
+{\@checkend {minipage}\expandafter \endgroup \if@endpe \@doendpe \fi \ETC.
+./bmr.tex:724: Paragraph ended before \calc@assign@generic was complete.
+<to be read again> 
+                   \par 
+l.724 				\textbf
+                 {Underlying model} &
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./bmr.tex:724: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.724 				\textbf
+                 {Underlying model} &
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./bmr.tex:724: Undefined control sequence.
+\endminipage ...\expandafter \@iiiparbox \@mpargs 
+                                                  {\unvbox \@tempboxa }
+l.724 				\textbf
+                 {Underlying model} &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./bmr.tex:724: Missing number, treated as zero.
+<to be read again> 
+                   \begingroup 
+l.724 				\textbf
+                 {Underlying model} &
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./bmr.tex:724: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \begingroup 
+l.724 				\textbf
+                 {Underlying model} &
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+./bmr.tex:724: Package calc Error: `\begingroup ' invalid at this point.
+
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.724 				\textbf
+                 {Underlying model} &
+I expected to see one of: + - * / )
+
+./bmr.tex:724: Misplaced alignment tab character &.
+l.724 				\textbf{Underlying model} &
+                                     
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./bmr.tex:725: Misplaced alignment tab character &.
+l.725 				\textbf{Social capital} &
+                                   
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./bmr.tex:727: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.727 				\hline
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+./bmr.tex:728: Misplaced alignment tab character &.
+l.728 				\textbf{Network flow} &
+                                 
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./bmr.tex:729: Misplaced alignment tab character &.
+l.729 				Capitalization (value creation) &
+                                           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./bmr.tex:731: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
+l.731 				\hline
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+./bmr.tex:732: Misplaced alignment tab character &.
+l.732 				\textbf{Network architecture} &
+                                         
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./bmr.tex:733: Misplaced alignment tab character &.
+l.733 ...r{blue!20}{\color{black}{Coordination}} &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./bmr.tex:736: Misplaced \crcr.
+\endarray ->\crcr 
+                  \egroup \egroup \@arrayright \gdef \@preamble {}\CT@end 
+l.736 			\end{tabular}
+                      
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./bmr.tex:736: Extra }, or forgotten \endgroup.
+\endarray ->\crcr \egroup 
+                          \egroup \@arrayright \gdef \@preamble {}\CT@end 
+l.736 			\end{tabular}
+                      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./bmr.tex:736: Extra }, or forgotten \endgroup.
+\endarray ->\crcr \egroup \egroup 
+                                  \@arrayright \gdef \@preamble {}\CT@end 
+l.736 			\end{tabular}
+                      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./bmr.tex:736: Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.736 			\end{tabular}
+                      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+./bmr.tex:736: LaTeX Error: \begin{uncoverenv} on input line 714 ended by \end{tabular}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.736 			\end{tabular}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./bmr.tex:736: Missing $ inserted.
+<inserted text> 
+                $
+l.736 			\end{tabular}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./bmr.tex:737: LaTeX Error: \begin{uncoverenv} on input line 714 ended by \end{center}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.737 		\end{center}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./bmr.tex:738: LaTeX Error: \begin{uncoverenv} on input line 714 ended by \end{center}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.738 	\end{table}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./bmr.tex:738: LaTeX Error: \begin{actionenv} on input line 714 ended by \end{table}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.738 	\end{table}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./bmr.tex:743: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.743 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./bmr.tex:748: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.748 	\frametitle
+                  {Groups of Network Theories}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./bmr.tex:748: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.748 	\frametitle
+                  {Groups of Network Theories}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./bmr.tex:753: Undefined control sequence.
+<argument> {\CT@arc@ 
+                     \vline }
+l.753 			\begin{tabular}[c]{l|l|l}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./bmr.tex:753: Undefined control sequence.
+<argument> {\CT@arc@ 
+                     \vline }
+l.753 			\begin{tabular}[c]{l|l|l}
+                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./bmr.tex:758: Undefined control sequence.
+\hline ... \hrule \let \@width \@height {\CT@arc@ 
+                                                  \vline }\futurelet \reserv...
+l.758 				\hline
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./bmr.tex:762: Undefined control sequence.
+\hline ... \hrule \let \@width \@height {\CT@arc@ 
+                                                  \vline }\futurelet \reserv...
+l.762 				\hline
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./bmr.tex:774: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.774 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./bmr.tex:781: Undefined control sequence.
+<argument> {\CT@arc@ 
+                     \vline }
+l.781 ...{tabular}[c]{p{2.75cm}|p{4.5cm}|p{4.5cm}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./bmr.tex:781: Undefined control sequence.
+<argument> {\CT@arc@ 
+                     \vline }
+l.781 ...{tabular}[c]{p{2.75cm}|p{4.5cm}|p{4.5cm}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./bmr.tex:785: Undefined control sequence.
+\hline ... \hrule \let \@width \@height {\CT@arc@ 
+                                                  \vline }\futurelet \reserv...
+l.785 			\hline
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 787--788
 []|\OT1/cmss/m/n/10 Individual nodes/-groups of
  []
 
+./bmr.tex:789: Undefined control sequence.
+\hline ... \hrule \let \@width \@height {\CT@arc@ 
+                                                  \vline }\futurelet \reserv...
+l.789 ... as a whole --- aka, the forest \\ \hline
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 1953) in paragraph at lines 807--807
+
+Underfull \hbox (badness 1953) in paragraph at lines 791--792
 []|\OT1/cmss/m/n/10 (Information ex-change) Net-
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 807--807
+Underfull \hbox (badness 1783) in paragraph at lines 793--795
 \OT1/cmss/m/n/10 ing of or-ga-ni-za-tion-s/-mar-kets
  []
 
+./bmr.tex:795: Undefined control sequence.
+\hline ... \hrule \let \@width \@height {\CT@arc@ 
+                                                  \vline }\futurelet \reserv...
+l.795 			(information exchange) network \\ \hline
+                                                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 6284) in paragraph at lines 807--807
+
+Underfull \hbox (badness 6284) in paragraph at lines 799--802
 []|\OT1/cmss/m/n/10 What is the best re-port-
  []
 
-[27
+./bmr.tex:802: Undefined control sequence.
+\hline ... \hrule \let \@width \@height {\CT@arc@ 
+                                                  \vline }\futurelet \reserv...
+l.802 			\hline
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-]
-<images/baker_faulkner.png, id=874, 1043.9pt x 955.57pt>
+./bmr.tex:806: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.806 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+<images/baker_faulkner.png, id=756, 1043.9pt x 955.57pt>
 File: images/baker_faulkner.png Graphic file (type png)
 <use images/baker_faulkner.png>
-Package pdftex.def Info: images/baker_faulkner.png  used on input line 841.
+Package pdftex.def Info: images/baker_faulkner.png  used on input line 813.
 (pdftex.def)             Requested size: 190.89568pt x 174.73636pt.
- [28
+./bmr.tex:840: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.840 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
- <./images/baker_faulkner.png>]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 865.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 860.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [29
+)
+./bmr.tex:864: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.864 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [30
+./bmr.tex:883: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.883 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-]
-<images/switchgear.jpeg, id=969, 441.65pt x 331.2375pt>
+<images/switchgear.jpeg, id=759, 441.65pt x 331.2375pt>
 File: images/switchgear.jpeg Graphic file (type jpg)
 <use images/switchgear.jpeg>
-Package pdftex.def Info: images/switchgear.jpeg  used on input line 907.
+Package pdftex.def Info: images/switchgear.jpeg  used on input line 891.
 (pdftex.def)             Requested size: 107.09383pt x 80.31741pt.
-<images/transformer.jpeg, id=970, 803.0pt x 1211.52625pt>
+<images/transformer.jpeg, id=760, 803.0pt x 1211.52625pt>
 File: images/transformer.jpeg Graphic file (type jpg)
 <use images/transformer.jpeg>
-Package pdftex.def Info: images/transformer.jpeg  used on input line 907.
+Package pdftex.def Info: images/transformer.jpeg  used on input line 897.
 (pdftex.def)             Requested size: 56.69594pt x 85.53647pt.
-<images/turbine_generator.jpeg, id=971, 283.0575pt x 179.67125pt>
+<images/turbine_generator.jpeg, id=761, 283.0575pt x 179.67125pt>
 File: images/turbine_generator.jpeg Graphic file (type jpg)
 <use images/turbine_generator.jpeg>
-Package pdftex.def Info: images/turbine_generator.jpeg  used on input line 907.
+Package pdftex.def Info: images/turbine_generator.jpeg  used on input line 903.
 (pdftex.def)             Requested size: 125.99184pt x 79.974pt.
- [31
+./bmr.tex:906: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.906 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
- <./images/switchgear.jpeg> <./images/transformer.jpeg> <./images/turbine_generator.jpeg>]
-<images/centralization.png, id=1002, 658.46pt x 632.3625pt>
+<images/centralization.png, id=762, 658.46pt x 632.3625pt>
 File: images/centralization.png Graphic file (type png)
 <use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 950.
+Package pdftex.def Info: images/centralization.png  used on input line 942.
 (pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
- [32
+./bmr.tex:949: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.949 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
- <./images/centralization.png>]
 File: images/centralization.png Graphic file (type png)
 <use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 950.
-(pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
- [33
-
-]
-File: images/centralization.png Graphic file (type png)
-<use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 950.
-(pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
- [34
-
-]
-File: images/centralization.png Graphic file (type png)
-<use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 960.
+Package pdftex.def Info: images/centralization.png  used on input line 956.
 (pdftex.def)             Requested size: 245.244pt x 235.52756pt.
- [35
+./bmr.tex:959: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.959      \end{frame}
+                      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-]
-Underfull \hbox (badness 1655) in paragraph at lines 1009--1009
+./bmr.tex:960: Extra }, or forgotten \endgroup.
+l.960 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 976--981
 \OT1/cmss/m/n/9 processing re-quire-ments --- switchgear
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 1009--1009
+Underfull \hbox (badness 1178) in paragraph at lines 976--981
 \OT1/cmss/m/n/9 and trans-form-ers --- ex-hibit cen-tral-ize
  []
 
 File: images/centralization.png Graphic file (type png)
 <use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 1009.
+Package pdftex.def Info: images/centralization.png  used on input line 1001.
 (pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
+./bmr.tex:1008: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1008 \end{frame}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-Overfull \vbox (0.14772pt too high) detected at line 1009
- []
-
-[36
-
-]
-Underfull \hbox (badness 1655) in paragraph at lines 1009--1009
-\OT1/cmss/m/n/9 processing re-quire-ments --- switchgear
- []
-
-
-Underfull \hbox (badness 1178) in paragraph at lines 1009--1009
-\OT1/cmss/m/n/9 and trans-form-ers --- ex-hibit cen-tral-ize
- []
-
-File: images/centralization.png Graphic file (type png)
-<use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 1009.
-(pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
-
-Overfull \vbox (0.14772pt too high) detected at line 1009
- []
-
-[37
-
-]
-Underfull \hbox (badness 1655) in paragraph at lines 1009--1009
-\OT1/cmss/m/n/9 processing re-quire-ments --- switchgear
- []
-
-
-Underfull \hbox (badness 1178) in paragraph at lines 1009--1009
-\OT1/cmss/m/n/9 and trans-form-ers --- ex-hibit cen-tral-ize
- []
-
-File: images/centralization.png Graphic file (type png)
-<use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 1009.
-(pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
-
-Overfull \vbox (0.14772pt too high) detected at line 1009
- []
-
-[38
-
-]
-<images/two_by_two.png, id=1192, 369.38pt x 269.005pt>
+<images/two_by_two.png, id=765, 369.38pt x 269.005pt>
 File: images/two_by_two.png Graphic file (type png)
 <use images/two_by_two.png>
-Package pdftex.def Info: images/two_by_two.png  used on input line 1018.
+Package pdftex.def Info: images/two_by_two.png  used on input line 1014.
 (pdftex.def)             Requested size: 258.73332pt x 188.42276pt.
- [39
+./bmr.tex:1017: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1017 \end{frame}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
- <./images/two_by_two.png>]
-<images/individual.png, id=1224, 369.38pt x 704.6325pt>
+<images/individual.png, id=767, 369.38pt x 704.6325pt>
 File: images/individual.png Graphic file (type png)
 <use images/individual.png>
-Package pdftex.def Info: images/individual.png  used on input line 1045.
+Package pdftex.def Info: images/individual.png  used on input line 1026.
 (pdftex.def)             Requested size: 95.44783pt x 182.07118pt.
-<images/aggregated.png, id=1226, 369.38pt x 741.77126pt>
+<images/aggregated.png, id=769, 369.38pt x 741.77126pt>
 File: images/aggregated.png Graphic file (type png)
 <use images/aggregated.png>
-Package pdftex.def Info: images/aggregated.png  used on input line 1045.
+Package pdftex.def Info: images/aggregated.png  used on input line 1038.
 (pdftex.def)             Requested size: 95.44783pt x 191.66753pt.
- [40
+./bmr.tex:1044: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1044 \end{frame}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
- <./images/individual.png> <./images/aggregated.png>]
-File: images/individual.png Graphic file (type png)
-<use images/individual.png>
-Package pdftex.def Info: images/individual.png  used on input line 1045.
-(pdftex.def)             Requested size: 95.44783pt x 182.07118pt.
-File: images/aggregated.png Graphic file (type png)
-<use images/aggregated.png>
-Package pdftex.def Info: images/aggregated.png  used on input line 1045.
-(pdftex.def)             Requested size: 95.44783pt x 191.66753pt.
- [41
+./bmr.tex:1048: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.1048 	\frametitle
+                   {References}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
-] [42
+./bmr.tex:1048: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.1048 	\frametitle
+                   {References}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-]
+./bmr.tex:1050: Extra }, or forgotten \endgroup.
+\endframe ->\egroup 
+                    \begingroup \def \@currenvir {frame}
+l.1050  \end{frame}
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
 \tf@nav=\write8
 \openout8 = `bmr.nav'.
 
@@ -1873,32 +2431,67 @@ Package pdftex.def Info: images/aggregated.png  used on input line 1045.
 \tf@snm=\write10
 \openout10 = `bmr.snm'.
 
- (./bmr.aux)
-Package rerunfilecheck Info: File `bmr.out' has not changed.
-(rerunfilecheck)             Checksum: 48B730701E271702E554AB9FA7BBE08D;485.
+
+./bmr.tex:1053: LaTeX Error: \begin{frame} on input line 1047 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1053 \end{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(./bmr.aux)
+
+Package rerunfilecheck Warning: File `bmr.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `bmr.out':
+(rerunfilecheck)             Before: 48B730701E271702E554AB9FA7BBE08D;485
+(rerunfilecheck)             After:  7423A8E85DF7271B7203B2947769443E;392.
 Package logreq Info: Writing requests to 'bmr.run.xml'.
 \openout1 = `bmr.run.xml'.
 
- ) 
+./bmr.tex:1053: You can't use `\end' in internal vertical mode.
+\enddocument ...cument/end}\deadcycles \z@ \@@end 
+                                                  
+l.1053 \end{document}
+                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+./bmr.tex:1053: LaTeX Error: \begin{frame} on input line 1047 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1053 \end{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+! Emergency stop.
+<*> bmr.tex
+           
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 62587 strings out of 476041
- 1485153 string characters out of 5793164
- 2964176 words of memory out of 6000000
- 81836 multiletter control sequences out of 15000+600000
- 528764 words of font info for 90 fonts, out of 8000000 for 9000
+ 62533 strings out of 476041
+ 1484611 string characters out of 5793164
+ 2963858 words of memory out of 6000000
+ 81822 multiletter control sequences out of 15000+600000
+ 528760 words of font info for 90 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 128i,16n,122p,1128b,2203s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Navigation43} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Navigation47} has been referenced but does not exist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb>
-Output written on bmr.pdf (42 pages, 6737285 bytes).
-PDF statistics:
- 1411 PDF objects out of 1440 (max. 8388607)
- 1272 compressed objects within 13 object streams
- 95 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 128i,16n,122p,1128b,2340s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
