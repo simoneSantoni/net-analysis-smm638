@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.7.31)  14 OCT 2024 15:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.7.31)  14 OCT 2024 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -541,17 +541,7 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 \beamer@dima=\dimen292
 \beamer@dimb=\dimen293
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
-Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
-
-
-Package etex Warning: Extended allocation already in use.
-(etex)                etex.sty code will not be used.
-(etex)                To force etex package to load, add
-(etex)                \RequirePackage{etex}
-(etex)                at the start of the document.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
  (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
@@ -876,7 +866,17 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/latex/tikz-network/tikz-network.sty
 Package: tikz-network 2019/08/15 tikz-network v1.1
- (/usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
+
+
+Package etex Warning: Extended allocation already in use.
+(etex)                etex.sty code will not be used.
+(etex)                To force etex package to load, add
+(etex)                \RequirePackage{etex}
+(etex)                at the start of the document.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
  (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
@@ -889,8 +889,7 @@ Package: xfor 2009/02/05 v1.05 (NLCT)
 ) (/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
 \c@su@anzahl=\count372
-)
-(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
 Package: datatool-base 2019/09/27 v2.32 (NLCT)
  (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2019/09/27 v2.32 (NLCT)
@@ -1078,7 +1077,8 @@ Package siunitx Info: Option "detect-all" has been deprecated in this release.
 Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
  (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
-) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
 Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
  (/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
@@ -1109,8 +1109,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \sift@deathcycles=\count425
 \@vwid@loff=\dimen375
 \@vwid@roff=\dimen376
-))
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 \c@r@tfl@t=\count426
 \rotFPtop=\skip100
@@ -1389,30 +1388,30 @@ Package: xparse 2023-02-02 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 169.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 168.
 \@quotelevel=\count557
 \@quotereset=\count558
  (./bmr.aux)
 \openout1 = `bmr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1467,60 +1466,60 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 169.
+Package hyperref Info: Link coloring OFF on input line 168.
  (./bmr.out) (./bmr.out)
 \@outlinefile=\write7
 \openout7 = `bmr.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 169.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 168.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 169.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 168.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 169.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 169.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 168.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 169.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 169.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 169.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 168.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 169.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 169.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 169.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 168.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 169.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 169.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 169.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 168.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 169.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 169.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 168.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 169.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 168.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 169.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 169.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 169.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 169.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 169.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 168.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 169.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 169.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 168.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 168.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 169.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 168.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 169.
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 168.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 169.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 168.
  (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -1540,12 +1539,12 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks86
 \inpenc@posthook=\toks87
 )
-Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
+Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 169.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 168.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'english'...
@@ -1561,18 +1560,18 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'bmr.bbl' found.
  (./bmr.bbl)
-Package biblatex Info: Reference section=0 on input line 169.
-Package biblatex Info: Reference segment=0 on input line 169.
+Package biblatex Info: Reference section=0 on input line 168.
+Package biblatex Info: Reference segment=0 on input line 168.
  (./bmr.nav)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 173.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 172.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 173.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 172.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 173.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 172.
  (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -1581,27 +1580,7 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 
 ] (./bmr.toc) [3
 
-]
-./bmr.tex:202: Missing $ inserted.
-<inserted text> 
-                $
-l.202 \end{frame}
-                 
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./bmr.tex:202: Missing $ inserted.
-<inserted text> 
-                $
-l.202 \end{frame}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[4
+] [4
 
 ] [5
 
@@ -1611,7 +1590,7 @@ my insertion and my current dilemma will both disappear.
 <images/brokerage_and_closure.jpeg, id=252, 910.40125pt x 1365.1pt>
 File: images/brokerage_and_closure.jpeg Graphic file (type jpg)
 <use images/brokerage_and_closure.jpeg>
-Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 261.
+Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 260.
 (pdftex.def)             Requested size: 143.17175pt x 214.67111pt.
  [7
 
@@ -1639,11 +1618,11 @@ Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 2
 <images/ron_burt.jpeg, id=568, 1806.75pt x 1806.75pt>
 File: images/ron_burt.jpeg Graphic file (type jpg)
 <use images/ron_burt.jpeg>
-Package pdftex.def Info: images/ron_burt.jpeg  used on input line 618.
+Package pdftex.def Info: images/ron_burt.jpeg  used on input line 617.
 (pdftex.def)             Requested size: 171.80493pt x 171.78087pt.
 File: images/brokerage_and_closure.jpeg Graphic file (type jpg)
 <use images/brokerage_and_closure.jpeg>
-Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 618.
+Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 617.
 (pdftex.def)             Requested size: 133.62639pt x 200.36108pt.
  [18
 
@@ -1651,7 +1630,7 @@ Package pdftex.def Info: images/brokerage_and_closure.jpeg  used on input line 6
 <images/intr_org_net.png, id=599, 1504.62125pt x 1101.11375pt>
 File: images/intr_org_net.png Graphic file (type png)
 <use images/intr_org_net.png>
-Package pdftex.def Info: images/intr_org_net.png  used on input line 625.
+Package pdftex.def Info: images/intr_org_net.png  used on input line 624.
 (pdftex.def)             Requested size: 305.43423pt x 223.51196pt.
  [19
 
@@ -1661,7 +1640,7 @@ Package pdftex.def Info: images/intr_org_net.png  used on input line 625.
 <images/good_ideas.png, id=663, 1381.16pt x 957.5775pt>
 File: images/good_ideas.png Graphic file (type png)
 <use images/good_ideas.png>
-Package pdftex.def Info: images/good_ideas.png  used on input line 669.
+Package pdftex.def Info: images/good_ideas.png  used on input line 668.
 (pdftex.def)             Requested size: 305.43423pt x 211.74895pt.
  [21
 
@@ -1670,758 +1649,200 @@ Package pdftex.def Info: images/good_ideas.png  used on input line 669.
 ] (./bmr.toc) [23
 
 ]
-./bmr.tex:714: Undefined control sequence.
-\beamer@doifinframe ... \par \end {column} \megin 
-                                                  {column}{0.5\textwidth } \...
-l.714 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./bmr.tex:714: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.714 \end{frame}
-                 
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./bmr.tex:714: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.714 \end{frame}
-                 
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./bmr.tex:714: Missing } inserted.
-<inserted text> 
-                }
-l.714 \end{frame}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (157.85883pt too wide) detected at line 714
-[][][] $[]$[][][][][][] \OT1/cmss/m/n/10.95 column0.5 []
+Overfull \hbox (136.91481pt too wide) in paragraph at lines 714--714
+[][]  
  []
 
-./bmr.tex:714: Missing } inserted.
-<inserted text> 
-                }
-l.714 \end{frame}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
-
-Overfull \hbox (14.22636pt too wide) detected at line 714
- []
+Overfull \vbox (96.02043pt too high) detected at line 714
  []
 
-./bmr.tex:714: Extra }, or forgotten \endgroup.
-\endminipage ...pagefalse \color@endgroup \egroup 
-                                                  \expandafter \@iiiparbox \...
-l.714 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+[24
 
-./bmr.tex:714: Undefined control sequence.
-\endminipage ...\expandafter \@iiiparbox \@mpargs 
-                                                  {\unvbox \@tempboxa }
-l.714 \end{frame}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+] [25
 
-./bmr.tex:724: Missing number, treated as zero.
-<to be read again> 
-                   l
-l.724 				\textbf
-                 {Underlying model} &
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+] [26
 
-./bmr.tex:724: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   l
-l.724 				\textbf
-                 {Underlying model} &
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-./bmr.tex:724: Package calc Error: `l' invalid at this point.
-
-See the calc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.724 				\textbf
-                 {Underlying model} &
-I expected to see one of: + - * / )
-
-Runaway argument?
-{\@checkend {minipage}\expandafter \endgroup \if@endpe \@doendpe \fi \ETC.
-./bmr.tex:724: Paragraph ended before \calc@assign@generic was complete.
-<to be read again> 
-                   \par 
-l.724 				\textbf
-                 {Underlying model} &
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-./bmr.tex:724: Extra }, or forgotten \endgroup.
-\endminipage ...pagefalse \color@endgroup \egroup 
-                                                  \expandafter \@iiiparbox \...
-l.724 				\textbf
-                 {Underlying model} &
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./bmr.tex:724: Undefined control sequence.
-\endminipage ...\expandafter \@iiiparbox \@mpargs 
-                                                  {\unvbox \@tempboxa }
-l.724 				\textbf
-                 {Underlying model} &
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./bmr.tex:724: Missing number, treated as zero.
-<to be read again> 
-                   \begingroup 
-l.724 				\textbf
-                 {Underlying model} &
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./bmr.tex:724: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \begingroup 
-l.724 				\textbf
-                 {Underlying model} &
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-./bmr.tex:724: Package calc Error: `\begingroup ' invalid at this point.
-
-See the calc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.724 				\textbf
-                 {Underlying model} &
-I expected to see one of: + - * / )
-
-./bmr.tex:724: Misplaced alignment tab character &.
-l.724 				\textbf{Underlying model} &
-                                     
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./bmr.tex:725: Misplaced alignment tab character &.
-l.725 				\textbf{Social capital} &
-                                   
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./bmr.tex:727: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
-l.727 				\hline
-                
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-./bmr.tex:728: Misplaced alignment tab character &.
-l.728 				\textbf{Network flow} &
-                                 
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./bmr.tex:729: Misplaced alignment tab character &.
-l.729 				Capitalization (value creation) &
-                                           
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./bmr.tex:731: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \let \hskip \vskip \let \vrule \hrule \let...
-l.731 				\hline
-                
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-./bmr.tex:732: Misplaced alignment tab character &.
-l.732 				\textbf{Network architecture} &
-                                         
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./bmr.tex:733: Misplaced alignment tab character &.
-l.733 ...r{blue!20}{\color{black}{Coordination}} &
-                                                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./bmr.tex:736: Misplaced \crcr.
-\endarray ->\crcr 
-                  \egroup \egroup \@arrayright \gdef \@preamble {}\CT@end 
-l.736 			\end{tabular}
-                      
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./bmr.tex:736: Extra }, or forgotten \endgroup.
-\endarray ->\crcr \egroup 
-                          \egroup \@arrayright \gdef \@preamble {}\CT@end 
-l.736 			\end{tabular}
-                      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./bmr.tex:736: Extra }, or forgotten \endgroup.
-\endarray ->\crcr \egroup \egroup 
-                                  \@arrayright \gdef \@preamble {}\CT@end 
-l.736 			\end{tabular}
-                      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./bmr.tex:736: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.736 			\end{tabular}
-                      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-./bmr.tex:736: LaTeX Error: \begin{uncoverenv} on input line 714 ended by \end{tabular}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.736 			\end{tabular}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./bmr.tex:736: Missing $ inserted.
-<inserted text> 
-                $
-l.736 			\end{tabular}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-./bmr.tex:737: LaTeX Error: \begin{uncoverenv} on input line 714 ended by \end{center}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.737 		\end{center}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./bmr.tex:738: LaTeX Error: \begin{uncoverenv} on input line 714 ended by \end{center}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.738 	\end{table}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./bmr.tex:738: LaTeX Error: \begin{actionenv} on input line 714 ended by \end{table}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.738 	\end{table}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./bmr.tex:743: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.743 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./bmr.tex:748: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.748 	\frametitle
-                  {Groups of Network Theories}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./bmr.tex:748: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.748 	\frametitle
-                  {Groups of Network Theories}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./bmr.tex:753: Undefined control sequence.
-<argument> {\CT@arc@ 
-                     \vline }
-l.753 			\begin{tabular}[c]{l|l|l}
-                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./bmr.tex:753: Undefined control sequence.
-<argument> {\CT@arc@ 
-                     \vline }
-l.753 			\begin{tabular}[c]{l|l|l}
-                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./bmr.tex:758: Undefined control sequence.
-\hline ... \hrule \let \@width \@height {\CT@arc@ 
-                                                  \vline }\futurelet \reserv...
-l.758 				\hline
-                
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./bmr.tex:762: Undefined control sequence.
-\hline ... \hrule \let \@width \@height {\CT@arc@ 
-                                                  \vline }\futurelet \reserv...
-l.762 				\hline
-                
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./bmr.tex:774: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.774 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./bmr.tex:781: Undefined control sequence.
-<argument> {\CT@arc@ 
-                     \vline }
-l.781 ...{tabular}[c]{p{2.75cm}|p{4.5cm}|p{4.5cm}}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./bmr.tex:781: Undefined control sequence.
-<argument> {\CT@arc@ 
-                     \vline }
-l.781 ...{tabular}[c]{p{2.75cm}|p{4.5cm}|p{4.5cm}}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./bmr.tex:785: Undefined control sequence.
-\hline ... \hrule \let \@width \@height {\CT@arc@ 
-                                                  \vline }\futurelet \reserv...
-l.785 			\hline
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 787--788
+]
+Underfull \hbox (badness 10000) in paragraph at lines 806--806
 []|\OT1/cmss/m/n/10 Individual nodes/-groups of
  []
 
-./bmr.tex:789: Undefined control sequence.
-\hline ... \hrule \let \@width \@height {\CT@arc@ 
-                                                  \vline }\futurelet \reserv...
-l.789 ... as a whole --- aka, the forest \\ \hline
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 1953) in paragraph at lines 791--792
+Underfull \hbox (badness 1953) in paragraph at lines 806--806
 []|\OT1/cmss/m/n/10 (Information ex-change) Net-
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 793--795
+Underfull \hbox (badness 1783) in paragraph at lines 806--806
 \OT1/cmss/m/n/10 ing of or-ga-ni-za-tion-s/-mar-kets
  []
 
-./bmr.tex:795: Undefined control sequence.
-\hline ... \hrule \let \@width \@height {\CT@arc@ 
-                                                  \vline }\futurelet \reserv...
-l.795 			(information exchange) network \\ \hline
-                                                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 6284) in paragraph at lines 799--802
+Underfull \hbox (badness 6284) in paragraph at lines 806--806
 []|\OT1/cmss/m/n/10 What is the best re-port-
  []
 
-./bmr.tex:802: Undefined control sequence.
-\hline ... \hrule \let \@width \@height {\CT@arc@ 
-                                                  \vline }\futurelet \reserv...
-l.802 			\hline
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+[27
 
-./bmr.tex:806: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.806 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-<images/baker_faulkner.png, id=756, 1043.9pt x 955.57pt>
+]
+<images/baker_faulkner.png, id=874, 1043.9pt x 955.57pt>
 File: images/baker_faulkner.png Graphic file (type png)
 <use images/baker_faulkner.png>
-Package pdftex.def Info: images/baker_faulkner.png  used on input line 813.
+Package pdftex.def Info: images/baker_faulkner.png  used on input line 840.
 (pdftex.def)             Requested size: 190.89568pt x 174.73636pt.
-./bmr.tex:840: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.840 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+ [28
 
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 860.
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
+ <./images/baker_faulkner.png>]
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 864.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
-./bmr.tex:864: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.864 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+) [29
 
-./bmr.tex:883: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.883 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [30
 
-<images/switchgear.jpeg, id=759, 441.65pt x 331.2375pt>
+]
+<images/switchgear.jpeg, id=969, 441.65pt x 331.2375pt>
 File: images/switchgear.jpeg Graphic file (type jpg)
 <use images/switchgear.jpeg>
-Package pdftex.def Info: images/switchgear.jpeg  used on input line 891.
+Package pdftex.def Info: images/switchgear.jpeg  used on input line 906.
 (pdftex.def)             Requested size: 107.09383pt x 80.31741pt.
-<images/transformer.jpeg, id=760, 803.0pt x 1211.52625pt>
+<images/transformer.jpeg, id=970, 803.0pt x 1211.52625pt>
 File: images/transformer.jpeg Graphic file (type jpg)
 <use images/transformer.jpeg>
-Package pdftex.def Info: images/transformer.jpeg  used on input line 897.
+Package pdftex.def Info: images/transformer.jpeg  used on input line 906.
 (pdftex.def)             Requested size: 56.69594pt x 85.53647pt.
-<images/turbine_generator.jpeg, id=761, 283.0575pt x 179.67125pt>
+<images/turbine_generator.jpeg, id=971, 283.0575pt x 179.67125pt>
 File: images/turbine_generator.jpeg Graphic file (type jpg)
 <use images/turbine_generator.jpeg>
-Package pdftex.def Info: images/turbine_generator.jpeg  used on input line 903.
+Package pdftex.def Info: images/turbine_generator.jpeg  used on input line 906.
 (pdftex.def)             Requested size: 125.99184pt x 79.974pt.
-./bmr.tex:906: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.906 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+ [31
 
-<images/centralization.png, id=762, 658.46pt x 632.3625pt>
+ <./images/switchgear.jpeg> <./images/transformer.jpeg> <./images/turbine_generator.jpeg>]
+<images/centralization.png, id=1002, 658.46pt x 632.3625pt>
 File: images/centralization.png Graphic file (type png)
 <use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 942.
+Package pdftex.def Info: images/centralization.png  used on input line 949.
 (pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
-./bmr.tex:949: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.949 \end{frame}
-                 
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+ [32
 
+ <./images/centralization.png>]
 File: images/centralization.png Graphic file (type png)
 <use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 956.
+Package pdftex.def Info: images/centralization.png  used on input line 949.
+(pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
+ [33
+
+]
+File: images/centralization.png Graphic file (type png)
+<use images/centralization.png>
+Package pdftex.def Info: images/centralization.png  used on input line 949.
+(pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
+ [34
+
+]
+File: images/centralization.png Graphic file (type png)
+<use images/centralization.png>
+Package pdftex.def Info: images/centralization.png  used on input line 959.
 (pdftex.def)             Requested size: 245.244pt x 235.52756pt.
-./bmr.tex:959: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.959      \end{frame}
-                      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+ [35
 
-./bmr.tex:960: Extra }, or forgotten \endgroup.
-l.960 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-Underfull \hbox (badness 1655) in paragraph at lines 976--981
+]
+Underfull \hbox (badness 1655) in paragraph at lines 1008--1008
 \OT1/cmss/m/n/9 processing re-quire-ments --- switchgear
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 976--981
+Underfull \hbox (badness 1178) in paragraph at lines 1008--1008
 \OT1/cmss/m/n/9 and trans-form-ers --- ex-hibit cen-tral-ize
  []
 
 File: images/centralization.png Graphic file (type png)
 <use images/centralization.png>
-Package pdftex.def Info: images/centralization.png  used on input line 1001.
+Package pdftex.def Info: images/centralization.png  used on input line 1008.
 (pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
-./bmr.tex:1008: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.1008 \end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
 
-<images/two_by_two.png, id=765, 369.38pt x 269.005pt>
+Overfull \vbox (0.14772pt too high) detected at line 1008
+ []
+
+[36
+
+]
+Underfull \hbox (badness 1655) in paragraph at lines 1008--1008
+\OT1/cmss/m/n/9 processing re-quire-ments --- switchgear
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 1008--1008
+\OT1/cmss/m/n/9 and trans-form-ers --- ex-hibit cen-tral-ize
+ []
+
+File: images/centralization.png Graphic file (type png)
+<use images/centralization.png>
+Package pdftex.def Info: images/centralization.png  used on input line 1008.
+(pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
+
+Overfull \vbox (0.14772pt too high) detected at line 1008
+ []
+
+[37
+
+]
+Underfull \hbox (badness 1655) in paragraph at lines 1008--1008
+\OT1/cmss/m/n/9 processing re-quire-ments --- switchgear
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 1008--1008
+\OT1/cmss/m/n/9 and trans-form-ers --- ex-hibit cen-tral-ize
+ []
+
+File: images/centralization.png Graphic file (type png)
+<use images/centralization.png>
+Package pdftex.def Info: images/centralization.png  used on input line 1008.
+(pdftex.def)             Requested size: 190.89568pt x 183.32253pt.
+
+Overfull \vbox (0.14772pt too high) detected at line 1008
+ []
+
+[38
+
+]
+<images/two_by_two.png, id=1192, 369.38pt x 269.005pt>
 File: images/two_by_two.png Graphic file (type png)
 <use images/two_by_two.png>
-Package pdftex.def Info: images/two_by_two.png  used on input line 1014.
+Package pdftex.def Info: images/two_by_two.png  used on input line 1017.
 (pdftex.def)             Requested size: 258.73332pt x 188.42276pt.
-./bmr.tex:1017: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.1017 \end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+ [39
 
-<images/individual.png, id=767, 369.38pt x 704.6325pt>
+ <./images/two_by_two.png>]
+<images/individual.png, id=1224, 369.38pt x 704.6325pt>
 File: images/individual.png Graphic file (type png)
 <use images/individual.png>
-Package pdftex.def Info: images/individual.png  used on input line 1026.
+Package pdftex.def Info: images/individual.png  used on input line 1044.
 (pdftex.def)             Requested size: 95.44783pt x 182.07118pt.
-<images/aggregated.png, id=769, 369.38pt x 741.77126pt>
+<images/aggregated.png, id=1226, 369.38pt x 741.77126pt>
 File: images/aggregated.png Graphic file (type png)
 <use images/aggregated.png>
-Package pdftex.def Info: images/aggregated.png  used on input line 1038.
+Package pdftex.def Info: images/aggregated.png  used on input line 1044.
 (pdftex.def)             Requested size: 95.44783pt x 191.66753pt.
-./bmr.tex:1044: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.1044 \end{frame}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+ [40
 
-./bmr.tex:1048: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.1048 	\frametitle
-                   {References}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+ <./images/individual.png> <./images/aggregated.png>]
+File: images/individual.png Graphic file (type png)
+<use images/individual.png>
+Package pdftex.def Info: images/individual.png  used on input line 1044.
+(pdftex.def)             Requested size: 95.44783pt x 182.07118pt.
+File: images/aggregated.png Graphic file (type png)
+<use images/aggregated.png>
+Package pdftex.def Info: images/aggregated.png  used on input line 1044.
+(pdftex.def)             Requested size: 95.44783pt x 191.66753pt.
+ [41
 
-./bmr.tex:1048: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.1048 	\frametitle
-                   {References}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+] [42
 
-./bmr.tex:1050: Extra }, or forgotten \endgroup.
-\endframe ->\egroup 
-                    \begingroup \def \@currenvir {frame}
-l.1050  \end{frame}
-                   
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
+]
 \tf@nav=\write8
 \openout8 = `bmr.nav'.
 
@@ -2431,67 +1852,26 @@ deleted material, e.g., by typing `I$}'.
 \tf@snm=\write10
 \openout10 = `bmr.snm'.
 
-
-./bmr.tex:1053: LaTeX Error: \begin{frame} on input line 1047 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1053 \end{document}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-(./bmr.aux)
-
-Package rerunfilecheck Warning: File `bmr.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `bmr.out':
-(rerunfilecheck)             Before: 48B730701E271702E554AB9FA7BBE08D;485
-(rerunfilecheck)             After:  7423A8E85DF7271B7203B2947769443E;392.
+ (./bmr.aux)
+Package rerunfilecheck Info: File `bmr.out' has not changed.
+(rerunfilecheck)             Checksum: 48B730701E271702E554AB9FA7BBE08D;485.
 Package logreq Info: Writing requests to 'bmr.run.xml'.
 \openout1 = `bmr.run.xml'.
 
-./bmr.tex:1053: You can't use `\end' in internal vertical mode.
-\enddocument ...cument/end}\deadcycles \z@ \@@end 
-                                                  
-l.1053 \end{document}
-                     
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-./bmr.tex:1053: LaTeX Error: \begin{frame} on input line 1047 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1053 \end{document}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
-! Emergency stop.
-<*> bmr.tex
-           
-*** (job aborted, no legal \end found)
-
- 
+ ) 
 Here is how much of TeX's memory you used:
- 62533 strings out of 476041
- 1484611 string characters out of 5793164
+ 62575 strings out of 476041
+ 1485049 string characters out of 5793164
  2963858 words of memory out of 6000000
- 81822 multiletter control sequences out of 15000+600000
- 528760 words of font info for 90 fonts, out of 8000000 for 9000
+ 81826 multiletter control sequences out of 15000+600000
+ 528764 words of font info for 90 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 128i,16n,122p,1128b,2340s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 128i,16n,122p,1128b,2203s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb>
+Output written on bmr.pdf (42 pages, 6736975 bytes).
+PDF statistics:
+ 1409 PDF objects out of 1440 (max. 8388607)
+ 1270 compressed objects within 13 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+

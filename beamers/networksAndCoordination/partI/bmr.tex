@@ -1,5 +1,4 @@
 \documentclass[aspectratio=1610]{beamer}
-\RequirePackage{etex}
 
 % =================================== Colors ================================
 \definecolor{base_c}{rgb}{
@@ -61,7 +60,7 @@
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{pgfplots}
-\pgfplotsset{width=7cm,compat=1.17}
+\pgfplotsset{width=7cm,compat=1.18}
 \usepackage{venndiagram}
 % tikz exhibits
 \usepackage{tikz}
@@ -194,7 +193,7 @@
 			\textbf{10}\\
 			\hline
 			Value creation &  & $\bullet$ & $$ &  &  &  &  & \\	
-			Coordination &  &  &\bullet  & $\bullet$ &  &  &  & \\	
+			Coordination &  &  & $\bullet$  & $\bullet$ &  &  &  & \\	
 			Network change &  &  &  &  &  & $\bullet$ & $\bullet$ & $\bullet$\\	
 			Contagion &  &  &  &  &  & $\bullet$ &  & $\bullet$ \\	
 		\end{tabular}
@@ -689,7 +688,8 @@
 % =========================== Roles and Positons ============================
 \section{Coordination within and through Networks}
 
-\begin{frame}{Today's Class Focus}
+\begin{frame}
+  \frametitle{Today's Class Focus}
 \begin{columns}[c]
 	\begin{column}{0.5\textwidth}
 	\Large The attention revolves around \textcolor{base_c}
@@ -697,7 +697,7 @@
 	\textcolor{comp_c}{functioning of organizations and markets}.
 	
 	\end{column}
-	\megin{column}{0.5\textwidth}
+	\begin{column}{0.5\textwidth}
 		\begin{tikzpicture}[transform shape]
 			\foreach \x in {1,...,16}{%
 			  \pgfmathparse{(\x-1)*45+floor(\x/9)*22.5}
