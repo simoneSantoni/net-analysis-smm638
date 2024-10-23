@@ -1,0 +1,143 @@
+---
+# paper demographics
+date-modified: last-modified
+title: SMM638 ― week 4 tutorial on connectdeness
+author:
+  - name: Simone Santoni
+    affiliation:
+      name: Bayes Business School
+      address: 106 Bunhill Row, EC1Y 8TZ, London, United Kingdom
+    corresponding: true
+    email: simone.santoni.1@city.ac.uk
+    orcid: 0000-0002-5928-3901
+# metadata
+keywords: degree, degree distribution, centrality, connected components, clustering
+subject: network analysis
+title-meta: meta
+author-meta: Simone 
+date-meta: 16/10/2024
+# abstract
+abstract-title: This tutorial shows how to compute node and network connectdeness using Python's library NetworkX. The network data adopted in the notebook are illustrative examples and a few simulated networks.
+abstract:  This notebook achieves X, Y, and Z.
+# format of choice
+format:
+  # ** TeX **
+  #latex:
+  # ** PDF **
+  #pdf:
+  #  # engine
+  #  pdf-engine: pdflatex
+  #  # page layout
+  #  documentclass: article
+  #  papersize: letter
+  #  geometry:
+  #    - top=2.54cm
+  #    - right=2.54cm
+  #    - bottom=2.54cm
+  #    - left=2.54cm
+  #  # style
+  #  linestretch: 2
+  #  indent: true
+  #  # sections
+  #  number-sections: true
+  #  number-depth: 3
+  #  toc: false
+  #  # fonts
+  #  fonts:
+  #    fontenc: true
+  #    fontsize: 12
+  #    #mainfont:TeX Gyre Pagella
+  #    #mainfontoptions:
+  #    #  - Numbers=Lowercase
+  #    #  - Numbers=Proportional
+  #  # colors
+  #  colors:
+  #    linkcolor: blue
+  #    filecolor: red
+  #    citecolor: green
+  #    urlcolor: magenta
+  #    #colorlinks: true
+  #  # captions
+  #  fig-cap-location: bottom
+  #  tbl-cap-location: top
+  #  # footnotes
+  #  links-as-notes: true
+  #  reference-location: document
+  # ** HTML FORMAT **
+  html:
+    code-fold: true
+# code execution
+execute:
+  evaluate: false
+#bibliography: referencees.bib
+---
+
+## Table of contents
+
+
+## Notebook setup
+
+```{python}
+# load the necessary libraries
+import os
+import json
+import numpy as np
+import scipy as sp
+import matplotlib.pyplot as plt
+import pandas as pd
+import networkx as nx
+```
+
+## Data setup
+
+### Ingest data
+
+```{python}
+# check dir
+os.getcwd()
+os.chdir("../data/deezer_clean_data")
+# load json data in a single batch 
+with open("HR_genres.json", "r") as pipe:
+  data = json.load(pipe)
+```
+
+### Data wrangling
+
+```{python}
+
+edges = []
+
+for key in data.keys():
+  value = data[key]
+  for _ in value:
+    edges.append([key, _])
+
+```
+
+
+```{python}
+
+items = [0, 1, 2]
+for item in items:
+    print(item)
+
+```
+## Key features of the network
+
+## Projection of the two-mode network
+
+### Projection with respect to songs
+
+#### Bare-bone, NumPy projection
+
+
+#### NetworkX projection
+
+### Projection with respect to users
+
+## Relational similarity analysis
+
+### Similarity between users based on common likes
+
+
+### Similarity between songs based on co-holding of likers
