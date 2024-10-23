@@ -1,0 +1,66 @@
+---
+author: simone santoni
+title: Representing an organizational structure with NetworkX
+date: last-modified
+abstract: This notebook uses NetworkX to create a simplified model of an organizational structure
+abstract-title: Abstract
+---
+
+## Notebook setup
+
+### Load modules
+
+```{python}
+import matplotlib.pyplot as plt
+import networkx
+```
+
+### Creating network elements
+
+#### Employees (social space)
+
+```{python}
+employees = np.array(1, 11, 1)
+reporting = [(2, 1), (6, 1), (3, 2), (4, 2), (5, 6), (8, 6), (7, 2), (9, 6), (10, 6)]
+info_exch = [(3, 4), (3, 7), (3, 5), (4, 5), (5, 8), (8, 9), (9, 10), (3, 2), (5, 6), (10, 6), (3, 10), (2, 1), (6, 1), (2, 6)]
+```
+#### Tasks (task space)
+
+```{python}
+tasks = ["A", "B", "C"]
+tech_deps = [("A", "B"), ("B", "C")]
+```
+
+#### Teams
+
+```{python}
+teams = ["X", "Y", "Z"]
+```
+
+#### Employee - team affiliations
+
+```{python}
+emp_team = [("X", 3), ("X", 4), ("X", 7), ("Y", 5), ("Y", 8), ("Y", 9), ("Y", 10), ("Z", 4), ("Z", 7), ("Z", 5), ("Z", 8)]
+```
+
+#### Team - task affiliations
+
+```{python}
+team_task = [("A", "X"), ("B", "Y"), ("C", "Z")]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```

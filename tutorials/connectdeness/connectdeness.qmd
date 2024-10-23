@@ -7,9 +7,6 @@ author:
     affiliation:
       name: Bayes Business School
       address: 106 Bunhill Row, EC1Y 8TZ, London, United Kingdom
-    corresponding: true
-    email: simone.santoni.1@city.ac.uk
-    orcid: 0000-0002-5928-3901
 # metadata
 keywords: degree, degree distribution, centrality, connected components, clustering
 subject: network analysis
@@ -17,53 +14,10 @@ title-meta: meta
 author-meta: Simone 
 date-meta: 16/10/2024
 # abstract
-abstract: This tutorial shows how to compute node and network connectdeness using Python's library NetworkX. The network data adopted in the notebook are illustrative examples and a few simulated networks.
+abstract: This tutorial shows how to appreciate a network's connectdeness ties and structural holes/bridging ties using Python's library NetworkX. The network data adopted in the notebook are illustrative examples and a few simulated networks.
 abstract-title:  Abstract
 # format of choice
 format:
-  # ** TeX **
-  #latex:
-  # ** PDF **
-  #pdf:
-  #  # engine
-  #  pdf-engine: pdflatex
-  #  # page layout
-  #  documentclass: article
-  #  papersize: letter
-  #  geometry:
-  #    - top=2.54cm
-  #    - right=2.54cm
-  #    - bottom=2.54cm
-  #    - left=2.54cm
-  #  # style
-  #  linestretch: 2
-  #  indent: true
-  #  # sections
-  #  number-sections: true
-  #  number-depth: 3
-  #  toc: false
-  #  # fonts
-  #  fonts:
-  #    fontenc: true
-  #    fontsize: 12
-  #    #mainfont:TeX Gyre Pagella
-  #    #mainfontoptions:
-  #    #  - Numbers=Lowercase
-  #    #  - Numbers=Proportional
-  #  # colors
-  #  colors:
-  #    linkcolor: blue
-  #    filecolor: red
-  #    citecolor: green
-  #    urlcolor: magenta
-  #    #colorlinks: true
-  #  # captions
-  #  fig-cap-location: bottom
-  #  tbl-cap-location: top
-  #  # footnotes
-  #  links-as-notes: true
-  #  reference-location: document
-  # ** HTML FORMAT **
   html:
     code-fold: true
 # code execution
@@ -78,12 +32,14 @@ execute:
 ## Notebook setup
 
 ```{python}
+
 # load the necessary libraries
 from collections import Counter
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import networkx as nx
+
 ```
 
 ## Initialize a few networks 
@@ -91,40 +47,58 @@ import networkx as nx
 ### A star network
 
 ```{python}
+#| label: fig-statnet
+#| fig-cap: "A star network with five nodes"
+
 g0 = nx.Graph()
 g0.add_nodes_from([0, 1, 2, 3, 4])
 g0.add_edges_from([(0, 1), (0, 2), (0, 3), (0, 4)])
 nx.draw(g0, with_labels=True, node_size=500, node_color='lime')
+
 ```
 
 ### A denser network
 
 ```{python}
+
+#| label: fig-densernet
+#| fig-cap: "A denser network with five nodes"
 g1 = nx.Graph()
 g1.add_nodes_from([0, 1, 2, 3, 4])
 g1.add_edges_from(
     [(0, 1), (0, 2), (0, 3), (0, 4), (1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
 )
 nx.draw(g1, with_labels=True, node_size=500, node_color="magenta")
+
 ```
 
 ### A random network
 
 ```{python}
+
+#| label: fig-randomnet
+#| fig-cap: "A random network with 100 nodes"
 g2 = nx.erdos_renyi_graph(100, 5/100)
 nx.draw(g2, with_labels=False, node_size=50, node_color="cyan")
+
 ```
 
 ### A small-world network
 
 ```{python}
+
+#| label: fig-swnet
+#| fig-cap: "A small-world network with 100 nodes"
 g3 = nx.watts_strogatz_graph(100, 10, 10/100)
 nx.draw(g3, with_labels=False, node_size=50, node_color="red")
+
 ```
 
 ## Compute node connectdeness
 
 ### Node degree
+
+The degree of a node $v$ is the count of edges $(v, i)$ that involve $v$. For directed networks, we distinguish between in-degreee and out-degree, $v$'s number of incoming and outgoing ties (i.e., arrows).
 
 ```{python}
 g0_node_degree = nx.degree(g0)
@@ -132,7 +106,18 @@ g0_node_degree = nx.degree(g0)
 
 ### Average degree $<k>$
 
+The average degree $<k>$ of a network is computed as follows:
+
+\begin{equation}
+<k> = \frac{1}{N} \sum_{i = 1}^{N} k_{i}
+\end{equation}
+
+where $N$ is the number of nodes in the network.
+
 ```{python}
+
+#| labele: fig-avdegcomp
+#| fig-cap: "Average degree comparison -- start vs. denser network"
 # get average degree
 g0_k = np.mean([d for n, d in g0_node_degree])
 g1_k = np.mean([d for n, d in nx.degree(g1)])
@@ -156,11 +141,17 @@ nx.draw(g1, with_labels=True, node_size=500, node_color='magenta', ax=ax2)
 ax2.text(1.25, -1, 'B', fontdict={'fontsize': 16, 'fontweight': 'bold'})
 # show plot
 plt.show()
+
 ```
 
 ### Degree distribution
 
+The degree distribution of a network is the frequency distribution of its nodes across unique degrees.
+
 ```{python}
+
+#| label: fig-degdistcomp
+#| fig-cap: "Degree distribution comparison -- small-world vs. random network"
 # small world network
 ## get node degree
 g2_node_degree = nx.degree(g2)
@@ -194,7 +185,17 @@ plt.show()
 
 ### Clustering coefficient
 
+The clustering of a node $v$ is the fraction of possible triangles through that node that exist,
+
+\begin{equation}
+c_u = \frac{2 T(u)}{deg(u)(deg(u)-1)}
+\end{equation}
+
+where $T(v)$ is the number of triangles through node $v$ and $k(v)$ is the degree of $u$.
+
 ```{python}
+#| label: fig-clustdist
+#| fig-cap: "Clustering distribution comparison -- star vs. denser network"
 # compute clustering coefficient
 ## star network
 g0_clustering = nx.clustering(g0)
@@ -233,6 +234,8 @@ plt.show()
 ## Compute network connectedness
 
 ```{python}
+#| fig-cap: "A star network with five nodes"
+
 # check if the star network is connected
 nx.is_connected(g0)
 # return the nodes by connected component
@@ -271,6 +274,7 @@ them (edge weights are assumed to be one if the graph is
 unweighted).
 
 ```{python}
+#| fig-cap: "A star network with five nodes"
 nx.constraint(g0)
 nx.draw(g0, with_labels=True, node_size=500, node_color='lime')
 ```
@@ -291,13 +295,8 @@ If $s = t$, $\sigma(s, t) = 1$, and if $v \in {s, t}$,
 $\sigma(s, t|v) = 0$.
 
 ```{python}
+#| fig-cap: "A star network with five nodes"
 nx.betweenness_centrality(g0)
 nx.draw(g0, with_labels=True, node_size=500, node_color='lime')
 ```
 
-### Edge betweeness centrality
-
-```{python}
-nx.edge_betweenness_centrality(g0)
-nx.draw(g0, with_labels=True, node_size=500, node_color='lime')
-```
