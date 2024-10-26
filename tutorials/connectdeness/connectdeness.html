@@ -164,7 +164,7 @@ window.Quarto = {
 </section>
 <section id="notebook-setup" class="level2">
 <h2 class="anchored" data-anchor-id="notebook-setup">Notebook setup</h2>
-<div id="ad449f22" class="cell" data-execution_count="1">
+<div id="6823c47d" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the necessary libraries</span></span>
@@ -278,7 +278,7 @@ Figure&nbsp;4: A small-world network with 100 nodes
 <section id="node-degree" class="level3">
 <h3 class="anchored" data-anchor-id="node-degree">Node degree</h3>
 <p>The degree of a node <span class="math inline">\(v\)</span> is the count of edges <span class="math inline">\((v, i)\)</span> that involve <span class="math inline">\(v\)</span>. For directed networks, we distinguish between in-degreee and out-degree, <span class="math inline">\(v\)</span>’s number of incoming and outgoing ties (i.e., arrows).</p>
-<div id="fe295eb9" class="cell" data-execution_count="6">
+<div id="16f4f279" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>g0_node_degree <span class="op">=</span> nx.degree(g0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -292,7 +292,7 @@ Figure&nbsp;4: A small-world network with 100 nodes
 &lt;k&gt; = \frac{1}{N} \sum_{i = 1}^{N} k_{i}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(N\)</span> is the number of nodes in the network.</p>
-<div id="007ebbd2" class="cell" data-labele="fig-avdegcomp" data-execution_count="7">
+<div id="96465a83" class="cell" data-labele="fig-avdegcomp" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get average degree</span></span>
@@ -322,7 +322,7 @@ Figure&nbsp;4: A small-world network with 100 nodes
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="connectdeness_files/figure-html/cell-8-output-1.png" width="306" height="685" class="figure-img"></p>
+<p><img src="connectdeness_files/figure-html/cell-8-output-1.png" width="319" height="684" class="figure-img"></p>
 <figcaption>Average degree comparison – start vs.&nbsp;denser network</figcaption>
 </figure>
 </div>
@@ -369,7 +369,7 @@ Figure&nbsp;4: A small-world network with 100 nodes
 <div id="fig-degdistcomp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-degdistcomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="connectdeness_files/figure-html/fig-degdistcomp-output-1.png" width="537" height="376" class="figure-img">
+<img src="connectdeness_files/figure-html/fig-degdistcomp-output-1.png" width="532" height="376" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-degdistcomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Degree distribution comparison – small-world vs.&nbsp;random network
@@ -440,7 +440,7 @@ Figure&nbsp;6: Clustering distribution comparison – star vs.&nbsp;denser netwo
 </section>
 <section id="compute-network-connectedness" class="level2">
 <h2 class="anchored" data-anchor-id="compute-network-connectedness">Compute network connectedness</h2>
-<div id="1194dbdb" class="cell" data-execution_count="10">
+<div id="a4debc60" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check if the star network is connected</span></span>
@@ -477,7 +477,7 @@ Figure&nbsp;6: Clustering distribution comparison – star vs.&nbsp;denser netwo
 \ell(u, v) = \left(p_{uv} + \sum_{w \in N(v)} p_{uw} p_{wv}\right)^2,
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(N(v)\)</span> is the set of neighbors of <span class="math inline">\(v\)</span> and <span class="math inline">\(p_{uv}\)</span> is the normalized mutual weight of the (directed or undirected) edges joining <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>, for each vertex <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>. The <em>mutual weight</em> of <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> is the sum of the weights of edges joining them (edge weights are assumed to be one if the graph is unweighted).</p>
-<div id="b75f9aa1" class="cell" data-execution_count="11">
+<div id="82ca6520" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nx.constraint(g0)</span>
@@ -500,7 +500,7 @@ Figure&nbsp;6: Clustering distribution comparison – star vs.&nbsp;denser netwo
 c_B(v) =\sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(V\)</span> is the set of nodes, <span class="math inline">\(\sigma(s, t)\)</span> is the number of shortest <span class="math inline">\((s, t)\)</span>-paths, and <span class="math inline">\(\sigma(s, t|v)\)</span> is the number of those paths passing through some node <span class="math inline">\(v\)</span> other than <span class="math inline">\(s, t\)</span>. If <span class="math inline">\(s = t\)</span>, <span class="math inline">\(\sigma(s, t) = 1\)</span>, and if <span class="math inline">\(v \in {s, t}\)</span>, <span class="math inline">\(\sigma(s, t|v) = 0\)</span>.</p>
-<div id="ab13a1a4" class="cell" data-execution_count="12">
+<div id="34dbf612" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>nx.betweenness_centrality(g0)</span>

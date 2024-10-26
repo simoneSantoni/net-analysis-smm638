@@ -11,8 +11,10 @@ abstract-title: Abstract
 ### Load modules
 
 ```{python}
+from networkx.algorithms import bipartite
+import numpy as np
 import matplotlib.pyplot as plt
-import networkx
+import networkx as nx
 ```
 
 ### Creating network elements
@@ -20,7 +22,7 @@ import networkx
 #### Employees (social space)
 
 ```{python}
-employees = np.array(1, 11, 1)
+employees = np.arange(1, 11, 1)
 reporting = [(2, 1), (6, 1), (3, 2), (4, 2), (5, 6), (8, 6), (7, 2), (9, 6), (10, 6)]
 info_exch = [(3, 4), (3, 7), (3, 5), (4, 5), (5, 8), (8, 9), (9, 10), (3, 2), (5, 6), (10, 6), (3, 10), (2, 1), (6, 1), (2, 6)]
 ```
@@ -49,15 +51,74 @@ emp_team = [("X", 3), ("X", 4), ("X", 7), ("Y", 5), ("Y", 8), ("Y", 9), ("Y", 10
 team_task = [("A", "X"), ("B", "Y"), ("C", "Z")]
 ```
 
+## Initializing networks
 
+### Reporting network
 
+```{python}
+rn = nx.DiGraph()
+rn.add_nodes_from(employees)
+rn.add_edges_from(reporting)
+pos = {
+  1: (0, 3),
+  2: (-2, 2),
+  6: (2, 2),
+  3: (-3, 1),
+  4: (-2, 1),
+  7: (-1, 1),
+  5: (0.75, 1),
+  8: (1.5, 1),
+  9: (2.25, 1),
+  10: (3, 1)
+}
+nx.draw(rn, with_labels=True, node_color="grey", pos=pos)
+```
 
+### Information exchange
 
+```{python}
+ix = nx.Graph()
+ix.add_nodes_from(employees)
+ix.add_edges_from(info_exch)
+nx.draw(ix, with_labels=True, pos=pos, node_color="gray")
+```
 
+### Employee-team affiliations
 
+```{python}
+et = nx.Graph()
+et.add_nodes_from(employees, bipartite=0)
+et.add_nodes_from(teams, bipartite=1)
+et.add_edges_from(emp_team)
+nx.is_connected(et)
+top_nodes = {n for n, d in et.nodes(data=True) if d["bipartite"] == 0}
+bottom_nodes = set(et) - top_nodes
+```
 
+### Team-task affiliations (allocation)
 
+```{python}
+tt = nx.Graph()
+tt.add_nodes_from(teams, bipartite=0)
+tt.add_nodes_from(tasks, bipartite=1)
+tt.add_edges_from(team_task)
+nx.is_connected(tt)
+top_nodes = {n for n, d in tt.nodes(data=True) if d["bipartite"] == 0}
+bottom_nodes = set(et) - top_nodes
+```
 
+## Compute density metrics
+
+### Reporting network
+
+```{python}
+rn_ind = rn.in_degree()
+print(rn_ind)
+rn_out = rn.out_degree()
+print(rn_out)
+```
+
+### Information exchange network
 
 
 
