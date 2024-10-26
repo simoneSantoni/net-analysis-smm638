@@ -4,55 +4,51 @@ author: Simone Santoni
 abstract-title: Synopsis
 abstract: This document illustrates i. the business problem students are required to addres, ii. the dataset to be used to address the business problem, iii. the template that the students shall adopt to present their solution to the business problem.
 format:
-  ## ** TeX **
-  ##latex:
-  ## ** PDF **
-  #pdf:
-  #  # engine
-  #  pdf-engine: pdflatex
-  #  # page layout
-  #  documentclass: article
-  #  papersize: letter
-  #  geometry:
-  #    - top=2.54cm
-  #    - right=2.54cm
-  #    - bottom=2.54cm
-  #    - left=2.54cm
-  #  # style
-  #  linestretch: 1.1
-  #  indent: true
-  #  # sections
-  #  number-sections: true
-  #  number-depth: 3
-  #  toc: false
-  #  # fonts
-  #  fonts:
-  #    fontenc: true
-  #    fontsize: 11
-  #    #mainfont:TeX Gyre Pagella
-  #    #mainfontoptions:
-  #    #  - Numbers=Lowercase
-  #    #  - Numbers=Proportional
-  #  # colors
-  #  colors:
-  #    linkcolor: blue
-  #    filecolor: red
-  #    citecolor: green
-  #    urlcolor: magenta
-  #    #colorlinks: true
-  #  # captions
-  #  fig-cap-location: bottom
-  #  tbl-cap-location: top
-  #  # footnotes
-  #  links-as-notes: true
-  #  reference-location: document
+  # ** TeX **
+  #latex:
+  # ** PDF **
+  pdf:
+    # engine
+    pdf-engine: pdflatex
+    # page layout
+    documentclass: article
+    papersize: letter
+    geometry:
+      - top=2.54cm
+      - right=2.54cm
+      - bottom=2.54cm
+      - left=2.54cm
+    # style
+    linestretch: 1.1
+    indent: true
+    # sections
+    number-sections: true
+    number-depth: 3
+    toc: false
+    # fonts
+    fonts:
+      fontenc: true
+      fontsize: 11
+      #mainfont:TeX Gyre Pagella
+      #mainfontoptions:
+      #  - Numbers=Lowercase
+      #  - Numbers=Proportional
+    # colors
+    colors:
+      linkcolor: blue
+      filecolor: red
+      citecolor: green
+      urlcolor: magenta
+      #colorlinks: true
+    # captions
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    # footnotes
+    links-as-notes: true
+    reference-location: document
   # ** HTML FORMAT **
-  html:
-    code-fold: true
-  #docx:
-  #  toc: true
-  #  number-sections: true
-  #  highlight-style: github
+  #html:
+  #  code-fold: true
 ---
 
 ## Business problem description 
