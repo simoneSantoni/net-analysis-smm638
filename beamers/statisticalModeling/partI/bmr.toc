@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Session 1-5 Wrap Up}{3}{0}{1}
+\beamer@sectionintoc {2}{Network Mechanisms and Network Structure}{21}{0}{2}
+\beamer@subsectionintoc {2}{1}{ERGM 101}{25}{0}{2}
+\beamer@subsectionintoc {2}{2}{Searching for Network Mechanisms in Soundcloud}{26}{0}{2}
+\beamer@sectionintoc {3}{ERGM Estimation}{33}{0}{3}

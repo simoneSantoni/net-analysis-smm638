@@ -1,0 +1,4 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\beamer@sectionintoc {1}{Session 5 Wrap Up}{3}{0}{1}
+\beamer@sectionintoc {2}{Network Mechanisms and Network Structure}{24}{0}{2}
+\beamer@subsectionintoc {2}{1}{Searching for Network Mechanisms in Soundcloud}{29}{0}{2}

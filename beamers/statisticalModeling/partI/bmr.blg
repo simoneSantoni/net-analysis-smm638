@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[1] Config.pm:310> INFO - Logfile is 'bmr.blg'
+[168] biber:340> INFO - === Wed Nov 13, 2024, 15:35:45
+[198] Biber.pm:419> INFO - Reading 'bmr.bcf'
+[327] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
+[351] Biber.pm:4419> INFO - Processing section 0
+[372] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[374] bibtex.pm:1713> INFO - LaTeX decoding ...
+[396] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[546] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[547] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[547] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[547] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[561] bbl.pm:660> INFO - Writing 'bmr.bbl' with encoding 'UTF-8'
+[567] bbl.pm:763> INFO - Output to bmr.bbl

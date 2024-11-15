@@ -1,0 +1,280 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{easley2010}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ae8645460f8805b464c2d15ccfa24f67}{%
+           family={Easley},
+           familyi={E\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=e405ae3c720db1b0e447ff5b601b968f}{%
+           family={Kleinberg},
+           familyi={K\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge university press}%
+      }
+      \strng{namehash}{e3ab7bd4c129592e30673f6203f9b56b}
+      \strng{fullhash}{e3ab7bd4c129592e30673f6203f9b56b}
+      \strng{bibnamehash}{e3ab7bd4c129592e30673f6203f9b56b}
+      \strng{authorbibnamehash}{e3ab7bd4c129592e30673f6203f9b56b}
+      \strng{authornamehash}{e3ab7bd4c129592e30673f6203f9b56b}
+      \strng{authorfullhash}{e3ab7bd4c129592e30673f6203f9b56b}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Networks, crowds, and markets: Reasoning about a highly connected world}
+      \field{year}{2010}
+    \endentry
+    \entry{kossinets2009}{article}{}
+      \name{author}{2}{}{%
+        {{hash=17148c5330f732ac0a9d8f69f2c15a93}{%
+           family={Kossinets},
+           familyi={K\bibinitperiod},
+           given={Gueorgi},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8749174d8ea73cb9cc7eda222618b353}{%
+           family={Watts},
+           familyi={W\bibinitperiod},
+           given={Duncan\bibnamedelima J},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The University of Chicago Press}%
+      }
+      \strng{namehash}{e33b1fbac94dbf9b10fd413239111d5b}
+      \strng{fullhash}{e33b1fbac94dbf9b10fd413239111d5b}
+      \strng{bibnamehash}{e33b1fbac94dbf9b10fd413239111d5b}
+      \strng{authorbibnamehash}{e33b1fbac94dbf9b10fd413239111d5b}
+      \strng{authornamehash}{e33b1fbac94dbf9b10fd413239111d5b}
+      \strng{authorfullhash}{e33b1fbac94dbf9b10fd413239111d5b}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American journal of sociology}
+      \field{number}{2}
+      \field{title}{Origins of homophily in an evolving social network}
+      \field{volume}{115}
+      \field{year}{2009}
+      \field{pages}{405\bibrangedash 450}
+      \range{pages}{46}
+    \endentry
+    \entry{mcdonald2003}{article}{}
+      \name{author}{2}{}{%
+        {{hash=aef437fd21cbd3e3d2fbe6d6dafbd19a}{%
+           family={McDonald},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima L},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=626cca184fe4367cba428de4821e23be}{%
+           family={Westphal},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima D},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications}%
+      }
+      \strng{namehash}{8693d67df24f71a9255111c3be0a6f28}
+      \strng{fullhash}{8693d67df24f71a9255111c3be0a6f28}
+      \strng{bibnamehash}{8693d67df24f71a9255111c3be0a6f28}
+      \strng{authorbibnamehash}{8693d67df24f71a9255111c3be0a6f28}
+      \strng{authornamehash}{8693d67df24f71a9255111c3be0a6f28}
+      \strng{authorfullhash}{8693d67df24f71a9255111c3be0a6f28}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Administrative science quarterly}
+      \field{number}{1}
+      \field{title}{Getting by with the advice of their friends: CEOs' advice networks and firms' strategic responses to poor performance}
+      \field{volume}{48}
+      \field{year}{2003}
+      \field{pages}{1\bibrangedash 32}
+      \range{pages}{32}
+    \endentry
+    \entry{mcfarland2013}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d4f2a8426c8bacb6fe92a818130260ae}{%
+           family={McFarland},
+           familyi={M\bibinitperiod},
+           given={Daniel\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3147296c99a3f829087becd1a4eaec08}{%
+           family={Jurafsky},
+           familyi={J\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=949dbbd2a816d97d9cdf190c3fa60fdc}{%
+           family={Rawlings},
+           familyi={R\bibinitperiod},
+           given={Craig},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press Chicago, IL}%
+      }
+      \strng{namehash}{bc7460ffed05f55f060f3febadded16f}
+      \strng{fullhash}{bc7460ffed05f55f060f3febadded16f}
+      \strng{bibnamehash}{bc7460ffed05f55f060f3febadded16f}
+      \strng{authorbibnamehash}{bc7460ffed05f55f060f3febadded16f}
+      \strng{authornamehash}{bc7460ffed05f55f060f3febadded16f}
+      \strng{authorfullhash}{bc7460ffed05f55f060f3febadded16f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American journal of sociology}
+      \field{number}{6}
+      \field{title}{Making the connection: Social bonding in courtship situations}
+      \field{volume}{118}
+      \field{year}{2013}
+      \field{pages}{1596\bibrangedash 1649}
+      \range{pages}{54}
+    \endentry
+    \entry{mcpherson2001}{article}{}
+      \name{author}{3}{}{%
+        {{hash=40745d61073c99ee0def9458e6d38d5a}{%
+           family={McPherson},
+           familyi={M\bibinitperiod},
+           given={Miller},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2cc3684d579b36454501253f522f56ae}{%
+           family={Smith-Lovin},
+           familyi={S\bibinithyphendelim L\bibinitperiod},
+           given={Lynn},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f02d42a9cc100b9f9bea76683bf9e083}{%
+           family={Cook},
+           familyi={C\bibinitperiod},
+           given={James\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{0e25a687f890d873d629cb622398054c}
+      \strng{fullhash}{0e25a687f890d873d629cb622398054c}
+      \strng{bibnamehash}{0e25a687f890d873d629cb622398054c}
+      \strng{authorbibnamehash}{0e25a687f890d873d629cb622398054c}
+      \strng{authornamehash}{0e25a687f890d873d629cb622398054c}
+      \strng{authorfullhash}{0e25a687f890d873d629cb622398054c}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annual review of sociology}
+      \field{title}{Birds of a feather: Homophily in social networks}
+      \field{year}{2001}
+      \field{pages}{415\bibrangedash 444}
+      \range{pages}{30}
+    \endentry
+    \entry{moody_2001}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4ccf3224680990baa60b8958cf5203ad}{%
+           family={Moody},
+           familyi={M\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ccf3224680990baa60b8958cf5203ad}
+      \strng{fullhash}{4ccf3224680990baa60b8958cf5203ad}
+      \strng{bibnamehash}{4ccf3224680990baa60b8958cf5203ad}
+      \strng{authorbibnamehash}{4ccf3224680990baa60b8958cf5203ad}
+      \strng{authornamehash}{4ccf3224680990baa60b8958cf5203ad}
+      \strng{authorfullhash}{4ccf3224680990baa60b8958cf5203ad}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Journal of Sociology}
+      \field{number}{3}
+      \field{title}{Race, school integration, and friendship segregation in America}
+      \field{volume}{107}
+      \field{year}{2001}
+      \field{pages}{679\bibrangedash 716}
+      \range{pages}{38}
+    \endentry
+    \entry{scott2011}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e46b1f3c7bf03629ea0aefe16a966b33}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5cc9376cc48d7c6253b128ff232b4745}{%
+           family={Carrington},
+           familyi={C\bibinitperiod},
+           given={Peter\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE publications}%
+      }
+      \strng{namehash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{fullhash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{bibnamehash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{authorbibnamehash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{authornamehash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \strng{authorfullhash}{ca04cd3ca1be9b1375122b230d26d15c}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The SAGE Handbook of Social Network Analysis}
+      \field{year}{2011}
+    \endentry
+    \entry{snijders_2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e25df3941d6ce13c09ad2d002f03a434}{%
+           family={Snijders},
+           familyi={S\bibinitperiod},
+           given={Tom\bibnamedelima A.B.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e25df3941d6ce13c09ad2d002f03a434}
+      \strng{fullhash}{e25df3941d6ce13c09ad2d002f03a434}
+      \strng{bibnamehash}{e25df3941d6ce13c09ad2d002f03a434}
+      \strng{authorbibnamehash}{e25df3941d6ce13c09ad2d002f03a434}
+      \strng{authornamehash}{e25df3941d6ce13c09ad2d002f03a434}
+      \strng{authorfullhash}{e25df3941d6ce13c09ad2d002f03a434}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2326-8298}
+      \field{journaltitle}{Annual Review of Statistics and Its Application}
+      \field{number}{1}
+      \field{title}{{Stochastic Actor-Oriented Models for Network Dynamics}}
+      \field{volume}{4}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 21}
+      \range{pages}{21}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

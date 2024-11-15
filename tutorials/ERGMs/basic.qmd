@@ -1,0 +1,14 @@
+---
+title: Basic ERGM estimation
+author: Simone Santoni
+date: last-modified
+abstract-title: Synopsis
+abstract: Add abstract here
+format: 
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+TO BE RELEASED SHORTLY
+

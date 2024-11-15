@@ -1,0 +1,808 @@
+\documentclass[notes, aspectratio=1610]{beamer}
+
+% =================================== Colors ================================
+\definecolor{base_c}{rgb}{
+	0.1411764705882353, 0.6235294117647059, 0.33725490196078434
+	}
+\definecolor{comp_c}{rgb}{
+	0.6235294117647059, 0.1411764705882353, 0.42745098039215684
+	}
+\definecolor{tri_1}{rgb}{
+	0.33725490196078434, 0.1411764705882353, 0.6235294117647059
+	}
+\definecolor{tri_2}{rgb}{
+	0.6235294117647059, 0.33725490196078434, 0.1411764705882353
+	}
+\definecolor{white}{rgb}{1,1,1}
+\usepackage{color, colortbl}
+
+% ================================ Text boxes ==============================
+\usepackage[most]{tcolorbox}
+
+% ================================ Symbols ==============================
+%\usepackage{bbding}
+%\usepackage{pifont}
+%\usepackage{wasysym}
+%\usepackage{amssymb}
+
+% ========================= Theme =========================================
+\usetheme{Berkeley}
+\usecolortheme{spruce}
+% \setbeamercolor{itemize item}{fg=comp_c,bg=white}
+% \setbeamercolor{enumerate item}{fg=comp_c,bg=white}
+
+% ========================= Essential packages ============================
+% \usepackage{hyperref}
+% \hypersetup{
+%     colorlinks = false,
+%     linkcolor = comp_c,
+%     citecolor = tri_1,
+%     filecolor = tri_2,
+%     urlcolor = yellow
+% }
+
+% ========================= Frame notes systm ============================
+%\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen}
+
+% ========================= Plotting ======================================
+\usepackage{calc}
+\usepackage{tikz}
+\usetikzlibrary{arrows,
+                arrows.meta,
+                calc,
+		chains,
+                quotes,
+                positioning,
+		shapes,
+		topaths,
+                shapes.geometric}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.17}
+\usepackage{venndiagram}
+% tikz exhibits
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,fit,calc,positioning}
+\tikzstyle{box} = [
+	draw,
+	rectangle,
+	rounded corners,
+	thick,
+	node distance=7em,
+	text width=6em,
+	text centered,
+	minimum height=3.5em
+	]
+\tikzstyle{container} = [draw, rectangle, dashed, inner sep=2em]
+\tikzstyle{lineSq} = [draw, thick, -latex']
+\tikzset{
+	%Define standard arrow tip
+	>=stealth',
+	%Define style for boxes
+	punkt/.style={
+	       rectangle,
+	       rounded corners,
+	       draw=black, thick,
+	       text width=8em,
+	       minimum height=3em,
+	       text centered},
+	punkbig/.style={
+		   rectangle,
+		   rounded corners,
+		   draw=black, thick,
+		   text width=5em,
+		   minimum height=5em,
+		   text centered},
+	punkb/.style={
+		   rectangle,
+		   rounded corners,
+		   %draw=black, thick,
+		   text width=8em,
+		   minimum height=3em,
+		   text centered},
+	punkc/.style={
+	       circle,
+	       rounded corners,
+	       draw=black, thick,
+	       text width=1.5em,
+	       minimum height=1.5em,
+	       text centered},
+	% Define arrow style
+	pil/.style={
+	       ->,
+	       thick,
+	       shorten <=2pt,
+	       shorten >=2pt,}
+}
+
+% ============================= Network viz ===============================
+\usepackage{tikz-network}
+
+%% ============================== Tabular =================================
+\usepackage{booktabs}
+\usepackage{tabularx,ragged2e}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{siunitx}
+  \sisetup{detect-all}
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{threeparttable}
+\usepackage[justification=centering]{caption}
+
+%% ========================== Coding snippets =============================
+% Default fixed font does not support bold face
+%\usepackage{minted}
+%\usemintedstyle{vs}
+
+%% ============================= Math =====================================
+\usepackage{mathtools}
+
+% ========================= Infor on authors ==============================
+\title[Network Mechanisms]
+{Network Mechanisms and Network Structures}
+\subtitle{The Principle of Homophily}
+\author{S.~Santoni\inst{1}\inst{2}}
+\institute{
+	\inst{1}%
+	Bayes Business School
+	\and
+	\inst{2}%
+	Soundcloud
+	}
+\date{MSc in Business Analytics, 2022/23}
+
+% ========================= TOC  ==========================================
+\AtBeginSection[]
+{
+	\begin{frame}
+		       \frametitle{Outline}
+		       \tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+% ========================= References ===================================
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+% ========================= Document  ====================================
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+% =========================== Session 7 wrapup =============================
+\section{Wrap Up on Network Change}
+
+\begin{frame}
+	\frametitle{Network Theories across the Various Weeks of SMM638}
+	\begin{table}
+		\begin{tabular}[c]{l|c|c|c|c|c|c|c|c}
+			\textbf{Network theory} & 
+			\textbf{2} & 
+			\textbf{3} & 
+			\textbf{4} & 
+			\textbf{5} & 
+			\textbf{6} & 
+			\textbf{7} & 
+			\textbf{9} & 
+			\textbf{10}\\
+			\hline
+			Value creation &  & $\bullet$ & $\bullet$ &  &  &  &  & \\	
+			Coordination &  &  &  & $\bullet$ &  &  &  & \\	
+			Network change &  &  &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$\\	
+			Contagion &  &  &  &  &  & $\bullet$ &  & $\bullet$ \\	
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Groups of Network Theories}
+	\centering
+	\small
+	\begin{table}
+		\begin{center}
+			\begin{tabular}[c]{l|l|l}
+				% \hline
+				\textbf{Underlying model} & 
+				\textbf{Social capital} &
+				\textbf{Social homogeneity}\\
+				\hline
+				\textbf{Network flow} &
+				Capitalization (value creation) & 
+				\cellcolor{blue!20}{\color{black}{Contagion}}  \\
+				\hline
+				\textbf{Network architecture} & 
+				Coordination & 
+				Adaptation  (network change)\\
+				% \hline
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+	\vspace{1em}
+
+	\raggedright \small Source is~\cite[][page 47]{scott2011}
+\end{frame}
+
+\begin{frame}{Why do Network Mechanisms Matter?}{}
+	\begin{enumerate}
+		\item Network mechanisms can explain why networks look how 
+		they look!
+		\item If we know the network mechanisms, we can predict the
+		evolution of a network. E.g.,
+		\begin{itemize}
+			\item 
+			Who will pay attention to which market offers
+			\item 
+			Who will date whom
+			\item 
+			Who will adopt or reject whom's opinion
+		\end{itemize}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{What Are We Trying to Achieve in Sessions 6 and 7?}
+	\begin{table}
+		\begin{tabular}[c]{l|c|c|c|c|c|c|c|c}
+			\textbf{Network theory} & 
+			\textbf{2} & 
+			\textbf{3} & 
+			\textbf{4} & 
+			\textbf{5} & 
+			\textbf{6} & 
+			\textbf{7} & 
+			\textbf{9} & 
+			\textbf{10}\\
+			\hline
+			Value creation &  & $\bullet$ & $\bullet$ &  &  &  &  & \\	
+			Coordination &  &  &  & $\bullet$ &  &  &  & \\	
+			Network change &  &  &  &  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$\\	
+			Contagion &  &  &  &  &  & $\bullet$ &  & $\bullet$ \\	
+		\end{tabular}
+	\end{table}
+
+	\pause
+
+	\begin{itemize}
+		\item In session 6, we tried to discover the 
+		mixture of network 
+		mechanisms accounting for Soundcloud's network structure
+		\pause
+		\item In session 7, we learned how to quantify a key 
+		network mechanism and will connect it to the problem 
+		of contagion (critically important to explain offering 
+		popularity in markets)
+	\end{itemize}
+\end{frame}
+
+\subsection{Session 6}
+
+\begin{frame}
+	\frametitle{A Real-World Example: The Soundcloud Networks}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			\begin{figure}[!htbp]
+				\begin{tikzpicture}[scale=0.9, transform shape, multilayer=3d]
+				  %% separation between Layers
+				  \SetLayerDistance{-4.5}
+				  %% layer for activities
+				  \begin{Layer}[layer=1]
+				    %% plane
+				    \Plane[x = 0, y = 0, width = 3, height = 6, layer = 1,
+				      color = white, opacity = 0, style = {thick, gray}];
+				    %% label
+				    \node at (0, 3) [above right] {Offerings};
+				  \end{Layer}
+				  %% layer for actors
+				  \begin{Layer}[layer=2]
+				    \Plane[x = 0, y = 0, width = 3, height = 6, layer = 2,
+				      color = white, opacity = 0, style = {thick, gray}];
+				    %% plane
+				    \node at (0, 0) [below right] {Followership network};
+				  \end{Layer}
+				  %% vertices
+				  \Vertices{data/soundcloud_vertices.csv}
+				  %% edges
+				  \Edges{data/soundcloud_edges.csv}
+				\end{tikzpicture}
+			      \end{figure}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{small}
+
+			Some key general points emerging from the analysis of the 
+			Soundcloud example:
+			\begin{itemize}
+				\item
+				The same pair of nodes can be connected 
+				because of multiple relationships (i.e., `like,'
+				`repost,' `comment')
+				\item 
+				The nodes of a network may have the 
+				same type (e.g., `following') or 
+				different types (e.g., `like')
+				\item Analytically separated networks may be 
+				correlated (e.g., one tends to like her/his 
+				followings' likes)
+			\end{itemize}
+
+			\end{small}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Network Mechanisms in the Followership Network}{Popularity effects}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\centering 
+			\textbf{Indegree popularity}
+			
+			\input{images/indegree_pop.pgf}
+
+			\raggedright
+			\small
+			\textit{Synopsis:} certain nodes may develop a cumulative 
+			advantage --- a so-called rich-get-richer effect
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\centering 
+			\textbf{Outdegree popularity}
+			
+			\input{images/outdegree_pop.pgf}
+
+			\raggedright
+			\small
+			\textit{Synopsis:} certain nodes may develop a tendency 
+			to connect with many others
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Network Mechanisms in the Followership Network}{Reciprocity effect}
+	\centering 
+	\input{images/reciprocity.pgf}
+
+	\raggedright
+	\small 
+	\textit{Synopsis:} pairs of nodes may show a tendency to follow each 
+	other --- that is, to reciprocate each other's following choice 
+\end{frame}
+
+\begin{frame}{Network Mechanisms in the Followership Network}{Triadic closure}
+	\centering 
+	\input{images/triadic_closure.pgf}
+
+	\small
+	\textit{Synopsis:} ``My following's following is my following'' 
+\end{frame}
+
+\begin{frame}{Network Mechanisms in the Followership Network}{Balance}
+	\centering 
+	\input{images/balance.pgf}
+
+	\small 
+	\textit{Synopsis:} Pairs of (connected or disconnected) nodes may 
+	show the tendency to share `followings'
+\end{frame}
+
+\begin{frame}{Cross-Level Effects: From Following to Taste and Back}
+	{Membership closure}
+	\centering
+	\input{images/memberhip_closure.pgf}
+
+	\raggedright
+	\small 
+	\textit{Synopsis:} $1$ introduces $0$ to music style $B$;
+        $\{A, B\}$ is the set of music styles; $\{0, 1\}$ is
+	the set of users; `vertical' ties can be intended as a bipartite 
+	graph linking users and music styles via `likes,' `comments,' or
+	`reposts' (mainly, user preferences); dashed arrows denote ties 
+	at risk of emerging based on membership closure
+\end{frame}
+
+\begin{frame}{Cross-Level Effects: From Following to Preferences and Back}
+	{Focal closure}
+	\centering
+	\input{images/focal_closure.pgf}
+
+	\raggedright
+	\small
+	\textit{Synopsis:} $0$ follows $1$ because of shared taste/preferences; 
+	$\{A, B\}$ is the set of music styles; $\{0, 1\}$ is
+	the set of users; `vertical' ties can be intended as a bipartite 
+	graph linking users and music styles via `likes,' `comments,' or
+	`reposts'; dashed arrows denote ties at risk of emerging based on 
+	focal closure 
+\end{frame}
+
+\subsection{Session 7}
+
+\begin{frame}{Let Us Get Back to the Fundamental Question}{}
+\centering
+\Large 
+Why do networks look how they look?
+\end{frame}
+
+\begin{frame}{A Possible Answer: Homophily}{}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\item 
+			According to the homophily principle, similarity breeds 
+			connection
+			\pause 
+			\item 
+			Hence, networks are homogeneous concerning:
+			\begin{itemize}
+				\item 
+				Sociodemographic variables (e.g., age)
+			 	\item 
+				Reference social categories (e.g., being a knowledge worker)
+				\item 
+				Behaviors (e.g., purchasing choices)
+			\end{itemize}
+		\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=1\textwidth]{images/birds_of_a_feather.jpeg}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Theoretical Background}{}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/mcpherson_et_al.png}
+
+	\small
+	Source is \cite{mcpherson2001}
+\end{frame}
+
+\begin{frame}{Homophily in Practice: Example 1}
+	{Friendship and racial segregation in an American high-school}
+	\centering 
+	\includegraphics[width=0.75\textwidth]{images/moody_2001.png}
+
+	\raggedright
+	\small
+	Source is \cite{moody_2001}; nodes are color-coded to reflect 
+	student racial background; ties denote friendship between pairs 
+	of nodes
+\end{frame}
+
+\begin{frame}{Homophily in Practice: Example 2}
+	{Discovering cultural similarity is key for tie formation in speed dating}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[width=0.7\textwidth]{images/mcfarland_et_al.png}
+
+			\footnotesize
+			Source is \cite{mcfarland2013}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\includegraphics[width=0.7\textwidth]{images/romantic_relation.jpg}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Homophily in Practice: Example 3}
+	{Executives ask for advice from similar others in difficult times}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/mcdonald_westphal.png}
+
+	\footnotesize
+	Source is \cite{mcdonald2003}
+\end{frame}
+
+\begin{frame}{When Does a Network Exhibit Homophily?}{}
+	\centering 
+	\includegraphics[width=0.6\textwidth]{images/fig_4_2.png}
+
+	\footnotesize
+	\textit{Notes:} --- Nodes are color-coded concerning a key 
+	relevant attribute (e.g., gender)
+\end{frame}
+
+%\begin{frame}{There Are Two Families of Homophily Measures}{}
+%	\begin{columns}
+%		\begin{column}{0.5\textwidth}
+%			\centering 
+%			\textbf{Network-level measures}
+%
+%			\includegraphics[width=0.7\textwidth]{images/newman_2003.png}
+%
+%			Source is ...
+%
+%		\end{column}
+%		\begin{column}{0.5\textwidth}
+%			\centering 
+%			\textbf{Dyadic-level measures}
+%			
+%			\includegraphics[width=0.7\textwidth]{images/ertug_et_al_2018.png}
+%
+%			Source is ... 
+%		\end{column}
+%	\end{columns}
+%\end{frame}
+
+\begin{frame}{A Simple Homophily Measure Based on Frequencies}{Intuition}
+	Let us consider `gender' as the key feature of nodes: what would 
+	it mean for a network not to exhibit homophily?
+	\begin{itemize}
+		\item 
+		The proportion of male and female friends that a person has 
+		resembles the underlying male/female distribution in the full 
+		population
+		\pause 
+		\item 
+		In other words, ``if we were to randomly assign each node a 
+		gender according to the gender balance in the real network, then 
+		the number of cross-gender edges should not change 
+		significantly relatively to what is seen in the real network''
+	\end{itemize}
+
+Source is 
+\end{frame}
+
+\begin{frame}{A Simple Homophily Measure Based on Frequencies}
+	{The formal representation}
+	Let's consider a network containing a fraction $p$ of male nodes ($m$) 
+	and a fraction $q$ of female nodes ($f$), and denote the link between 
+	nodes $i$ and $j$ as $e_{i,j}$.
+
+	\vspace{2em}
+	
+	The no-homophily hypothesis implies what follows:
+	\begin{enumerate}
+	\item $pr(e_{ij} \ | \ i = m, \ j = m) = p * p$
+	\item $pr(e_{ij} \ | \ i = f, \ j = f) = q * q$
+	\item $pr(e_{ij} \ | \ i = m, \ j = f) = p * q$
+	\item $pr(e_{ij} \ | \ i = f, \ j = m) = q * p$
+	\end{enumerate}
+
+	\vspace{2em}
+
+	If the proportion of male-female ties deviates from $2*(p*q)$, then there is evidence of homophily in the network.
+
+\end{frame}
+
+\begin{frame}{Mechanisms Underlying the Homophily Principle}{}
+	There are two mechanisms through which homophily affects tie formation:
+	
+	\begin{itemize}
+	\item \textbf{Selection:} individual bond with others they perceive `similar' on 
+	salient dimensions
+	\item \textbf{Socialization:} individuals that directly, closely, frequently 
+	interact with each other become more and more `similar'
+	\end{itemize}
+
+	\vspace{1em}
+
+\small \textit{Note:} The relative strength of `selection' and `socialization' largely 
+depends on the attributes individuals use to assess interpersonal similarity. 
+Socialization does not operate for fixed demographic factors, whereas it 
+plays a central role when attitudes or behavior are used as a basis for similarity 
+\end{frame}
+
+\begin{frame}{Mechanisms Underlying the Homophily Principle}{The socialization mechanism}
+	\centering 
+
+	\small Probability to become a member of a community $i$ when $k$ friends 
+	are already part
+
+	\includegraphics[width=0.65\textwidth]{images/membership_closure.png}
+
+	\footnotesize Source is \cite{kossinets2009}
+\end{frame}
+
+\begin{frame}{Mechanisms Underlying the Homophily Principle}{The selection mechanism}
+	\centering 
+
+	\small Probability of inter-personal link formation when two members 
+	share $k$ classes
+
+	\includegraphics[width=0.7\textwidth]{images/focal_closure.png}
+
+	\footnotesize Source is \cite{kossinets2009}
+\end{frame}
+
+\begin{frame}{Mechanisms Underlying the Homophily Principle}{The interaction 
+	between selection and socialization}
+	\centering 
+
+	\small Similarity of two Wikipedia contributors' edits before and after 
+	the formation of an inter-personal link
+
+	\includegraphics[width=0.5\textwidth]{images/selection_and_socialization.png}
+
+	\footnotesize Source is \cite{easley2010}
+\end{frame}
+
+% ================== Modeling selection and social influence ================
+\section{Modeling Selection and Social Influence with SAOMs}
+
+\subsection{The Nuts and Bolts of SAOMs}
+
+\begin{frame}{Stochastic Actor Oriented Models}{The `what' and `who' aspects}
+	\begin{itemize}
+		\item 
+		\textbf{Scope:} SAOMs are a family of models that 
+		express empirically observed changes in network ties and 
+		inmany cases, changes in individual attributes as 
+		time-aggregated outcomes of a series of individual decisions 
+		\cite{snijders_2016}
+		\item
+		\textbf{The role of actors:} SAOMs model network change over time from the 
+		perspective of each actor, under the assumption that each actor 
+		has the option to adjust the structure of his or her network 
+		(by ``deciding'' whom to start, continue, or stop communicating 
+		with) or the level of a specific attribute (whether to increase 
+		or decrease the extent to which he or she perceives the team's 
+		climate as being positive). 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Stochastic Actor Oriented Models}{The `how' aspects}
+\begin{itemize}
+	\item SAOMS enable researchers to use data from a first measured 
+	timepoint to test whether a given set of hypothesized effects can 
+	produce the network structures and attribute levels measured at 
+	later timepoints
+	\item Central to these models is the idea that changes in network ties 
+	and actors' attributes occur continuously even though data on the state 
+	of the network and its actors are collected at discrete timepoints
+	\item These models also assume that the difference between observed 
+	timepoints can be broken down into probabilistic, sequential small 
+	steps, called ministeps
+	\begin{itemize}
+		\item At each ministep, a focal actor is randomly 
+	         selected and has the opportunity to make a single decision
+		\item In a network ministep, the actor has the opportunity to 
+		modify one of his or her outgoing ties by creating a tie to a 
+		new actor, terminating an existing tie, or maintaining current ties
+		\item In an attribute (or behavioral) ministep, the actor can 
+		modify (increase, decrease, or maintain) his or her level of a 
+		given attribute
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modeling Network and Behavioral Change with Rules}{}
+	\begin{itemize}
+	\item To model these changes, the researcher constructs, on the basis of 
+	theoretical and empirical considerations, a set of ``rules'' that 
+	might drive an actor's decision to change a network tie or adjust
+	the level of one of his or her attributes
+	\item Rules are grouped into four categories:
+		\begin{itemize}
+		\item Network evolution rules 
+		\item Attribute evolution rules 
+		\item Social selection rules 
+		\item Social influence rules 
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Modeling Network and Behavioral Change with Rules}{Network evolution rules}
+	\begin{itemize}
+	\item These rules determine \textbf{how ties develop given the structure of ties in 
+	the previous timepoints}
+	\item An example might be that individuals prefer 
+	to communicate with those who communicated with them in previous 
+	timepoints or that individuals prefer to communicate with those with 
+	whom many others communicated in previous timepoints
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Modeling Network and Behavioral Change with Rules}{Attribute evolution rules}
+	\begin{itemize}
+		\item  These rules determine how attributes evolve over time
+		\item An example might be that there is a general tendency for 
+		the attribute (negative affectivity, turnover intention, 
+		identification with a program) to increase over time
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Modeling Network and Behavioral Change with Rules}{Social selection rules}
+	\begin{itemize}
+		\item These rules describe how ties develop in response to 
+		actors' attributes (and ties) in the previous timepoint
+		\item For these rules, actors' attributes are considered to be 
+		the drivers of network ties
+		\item An example might be that people who have higher levels of 
+		negative affectivity talk to fewer others over time or that
+		people prefer to communicate with others whose levels of 
+		turnover intentions resemble their own
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Modeling Network and Behavioral Change with Rules}{Social influence rules}
+\begin{itemize}
+	\item These rules describe how actors' attributes change in response 
+	to ties (and attributes) in the previous timepoint
+	\item For these rules, the network is considered to drive actors' 
+	attributes
+	\item For example, communicating with fewer others over time may 
+	increase a person's turn-over intentions, or people may catch their 
+	network partners' levels of negative affectivity over time (emotional 
+	contagion)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Empirical Estimation Aspects}{Decision frequency and rules}
+	\begin{itemize}
+		\item SAOMs assume that whereas network and attribute data 
+		are collected at discrete timepoints, underlying time is 
+		continuous
+		\item At discrete, unobservable timepoints, a randomly 
+		selected actor gets an opportunity to change his or her outgoing 
+		ties (a network ministep) or level of the attribute (a 
+		behavioral ministep)
+		\item This implies two separate subprocesses that need to be 
+		modeled:
+		\begin{itemize}
+			\item The first subprocess involves modeling the 
+			frequency of change: how often a ministep occurs
+			\item The second subprocess models how change occurs: 
+			what changes occur once an actor is given an opportunity 
+			to change his or her network or attribute (in a network 
+			or behavioral ministep, respectively)
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{From Subprocesses to Objective Functions}
+	The above mentiond subprocesses are modeled as two interdependent 
+	mathematical functions termed objective functions:
+	
+	
+	\begin{equation}
+		f_{i}^{net}(x, y) = \sum_{k}\beta_{k}{net}s_{ik}^{net}
+	\end{equation}
+
+	\begin{equation}
+		f_{i}^{beh}(x, y) = \sum_{k}\beta_{k}{beh}s_{ik}^{beh}
+	\end{equation}
+
+	where equation 1 denotes the objective function that actor $i$ seeks 
+	to optimize in a network ministep, while equation 2 represents the 
+	objective function that actor $i$ seeks to optimize in an attribute 
+	(behavioral) ministep.
+
+	\small Notes: i) in each equation, $f_{i}(x,z)$ denotes the value of the objective 
+	function for actor $i$ for a given network state $x$ and $i$'s level of the 
+	attribute $z$; ii) The value of $f$ is dependent on a series of parameter 
+	values $b_{k}$, each of which is coupled to an effect, denoted $s_{ik}$; 
+	iii) n effect represents a subgraph count in the network neighborhood of 
+	the focal actor in a given ministep 
+\end{frame}
+
+\subsection{Modeling Friendship and Intention to Quit in the Workplace}
+
+\begin{frame}{}{}
+	\Large 
+	\centering
+	Let us model the co-evolution of a friendship network and intention 
+	to quit.
+\end{frame}
+
+
+% ============================ Bibliography =================================
+\begin{frame}
+	\frametitle{References}
+	\printbibliography
+ \end{frame} 
+
+% =========================== Document end ================================== 
+\end{document}

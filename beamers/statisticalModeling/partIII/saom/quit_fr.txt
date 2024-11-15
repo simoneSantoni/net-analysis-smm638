@@ -1,0 +1,2695 @@
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 29/11/2022 08:30:04
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 669070.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. rate:  rate quit (period 1)                            1.1603
+  6. rate:  rate quit (period 2)                            0.9183
+  7. eval:  quit linear shape                               0.3809
+  8. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Amount of behavioral change in period 1 on quit                     25.0000
+  6. Amount of behavioral change in period 2 on quit                     21.0000
+  7. quit centered sum                                                   13.0000
+  8. quit sum of cent. squares                                          103.6250
+
+ 8 parameters, 8 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2803 iterations.
+Parameter estimates based on 1803 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.   0.0230   7.0589   0.0033 
+  2.  -0.2860   6.6975  -0.0427 
+  3.  -1.0490  10.7981  -0.0971 
+  4.  -0.4140  10.3117  -0.0401 
+  5.   0.1920   4.3002   0.0446 
+  6.   0.1090   4.2616   0.0256 
+  7.   0.0510   7.0068   0.0073 
+  8.   1.0333  13.2761   0.0778 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1682 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2803 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.8230  (   1.5065)
+ 2. rate:  constant friendship rate (period 2)                     4.7056  (   0.9406)
+ 3. eval:  outdegree (density)                                    -2.2844  (   0.1560)
+ 4. eval:  reciprocity                                             2.6120  (   0.2481)
+
+Behavior Dynamics
+ 5. rate:  rate quit (period 1)                                    1.8227  (   0.6285)
+ 6. rate:  rate quit (period 2)                                    1.5508  (   0.4516)
+ 7. eval:  quit linear shape                                       0.4515  (   0.1819)
+ 8. eval:  quit quadratic shape                                   -0.1717  (   0.0841)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     2.269     -0.104      0.057     -0.044      0.113      0.003      0.019     -0.004
+    -0.073      0.885      0.005     -0.012      0.011     -0.039     -0.005      0.007
+     0.242      0.033      0.024     -0.031      0.014     -0.006     -0.001      0.000
+    -0.118     -0.051     -0.805      0.062     -0.013      0.010      0.001     -0.001
+     0.120      0.018      0.146     -0.081      0.395      0.049     -0.048      0.009
+     0.005     -0.091     -0.090      0.090      0.171      0.204     -0.029      0.009
+     0.071     -0.028     -0.049      0.016     -0.424     -0.351      0.033     -0.004
+    -0.035      0.084      0.027     -0.035      0.162      0.231     -0.267      0.007
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 3.99 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 29/11/2022 08:30:26
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 562573.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. rate:  rate quit (period 1)                            1.1603
+  6. rate:  rate quit (period 2)                            0.9183
+  7. eval:  quit linear shape                               0.3809
+  8. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Amount of behavioral change in period 1 on quit                     25.0000
+  6. Amount of behavioral change in period 2 on quit                     21.0000
+  7. quit centered sum                                                   13.0000
+  8. quit sum of cent. squares                                          103.6250
+
+ 8 parameters, 8 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2803 iterations.
+Parameter estimates based on 1803 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.2480   7.2645  -0.0341 
+  2.  -0.5170   6.6759  -0.0774 
+  3.  -0.3870  11.0371  -0.0351 
+  4.   0.0820  10.4947   0.0078 
+  5.   0.0300   4.2231   0.0071 
+  6.   0.2430   4.0727   0.0597 
+  7.  -0.0410   6.8317  -0.0060 
+  8.   0.4631  13.2175   0.0350 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1347 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2803 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.7597  (   1.2243)
+ 2. rate:  constant friendship rate (period 2)                     4.6661  (   0.8977)
+ 3. eval:  outdegree (density)                                    -2.2787  (   0.1602)
+ 4. eval:  reciprocity                                             2.6091  (   0.2751)
+
+Behavior Dynamics
+ 5. rate:  rate quit (period 1)                                    1.8146  (   0.4900)
+ 6. rate:  rate quit (period 2)                                    1.5833  (   0.4793)
+ 7. eval:  quit linear shape                                       0.4525  (   0.1749)
+ 8. eval:  quit quadratic shape                                   -0.1703  (   0.0865)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.499     -0.179      0.022     -0.015      0.053      0.052     -0.013     -0.006
+    -0.163      0.806     -0.001      0.001     -0.029     -0.084      0.015     -0.003
+     0.110     -0.009      0.026     -0.036     -0.009      0.010     -0.001      0.000
+    -0.044      0.005     -0.824      0.076      0.016     -0.023      0.001      0.000
+     0.088     -0.066     -0.116      0.118      0.240      0.020     -0.035      0.008
+     0.088     -0.196      0.126     -0.171      0.085      0.230     -0.025      0.009
+    -0.063      0.094     -0.025      0.010     -0.410     -0.296      0.031     -0.004
+    -0.056     -0.034     -0.011     -0.015      0.183      0.212     -0.277      0.007
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 3.84 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 29/11/2022 08:34:29
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 818244.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. rate:  rate quit (period 1)                            1.1603
+  6. rate:  rate quit (period 2)                            0.9183
+  7. eval:  quit linear shape                               0.3809
+  8. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Amount of behavioral change in period 1 on quit                     25.0000
+  6. Amount of behavioral change in period 2 on quit                     21.0000
+  7. quit centered sum                                                   13.0000
+  8. quit sum of cent. squares                                          103.6250
+
+ 8 parameters, 8 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2803 iterations.
+Parameter estimates based on 1803 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.   0.0480   7.2398   0.0066 
+  2.   0.2920   6.5205   0.0448 
+  3.  -0.3300  10.4445  -0.0316 
+  4.  -0.0420  10.0618  -0.0042 
+  5.  -0.1610   4.4577  -0.0361 
+  6.   0.1750   4.0023   0.0437 
+  7.   0.1560   7.0252   0.0222 
+  8.  -0.4998  12.8385  -0.0389 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1126 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2803 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.8142  (   1.1338)
+ 2. rate:  constant friendship rate (period 2)                     4.7319  (   1.0197)
+ 3. eval:  outdegree (density)                                    -2.2759  (   0.1490)
+ 4. eval:  reciprocity                                             2.5981  (   0.2551)
+
+Behavior Dynamics
+ 5. rate:  rate quit (period 1)                                    1.7967  (   0.5739)
+ 6. rate:  rate quit (period 2)                                    1.5674  (   0.5836)
+ 7. eval:  quit linear shape                                       0.4616  (   0.1889)
+ 8. eval:  quit quadratic shape                                   -0.1764  (   0.0879)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.285     -0.048     -0.007      0.028      0.202      0.013     -0.016     -0.003
+    -0.041      1.040      0.006      0.005      0.050     -0.045     -0.010     -0.008
+    -0.043      0.037      0.022     -0.030     -0.008     -0.005      0.003     -0.001
+     0.097      0.020     -0.788      0.065      0.002     -0.002     -0.002     -0.001
+     0.311      0.086     -0.093      0.011      0.329      0.063     -0.056      0.010
+     0.020     -0.076     -0.060     -0.013      0.189      0.341     -0.040      0.016
+    -0.077     -0.051      0.124     -0.040     -0.515     -0.359      0.036     -0.006
+    -0.032     -0.089     -0.048     -0.030      0.196      0.306     -0.335      0.008
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 3.89 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 22:29:31
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 822013.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. rate:  rate quit (period 1)                            1.1603
+  6. rate:  rate quit (period 2)                            0.9183
+  7. eval:  quit linear shape                               0.3809
+  8. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Amount of behavioral change in period 1 on quit                     25.0000
+  6. Amount of behavioral change in period 2 on quit                     21.0000
+  7. quit centered sum                                                   13.0000
+  8. quit sum of cent. squares                                          103.6250
+
+ 8 parameters, 8 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2803 iterations.
+Parameter estimates based on 1803 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.2390   7.1788  -0.0333 
+  2.   0.0470   6.6282   0.0071 
+  3.   0.1040  10.8647   0.0096 
+  4.   0.2960  10.6794   0.0277 
+  5.   0.0790   4.2580   0.0186 
+  6.   0.2410   3.9974   0.0603 
+  7.   0.0060   7.0069   0.0009 
+  8.   0.6226  13.3128   0.0468 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1009 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2803 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.7694  (   1.0996)
+ 2. rate:  constant friendship rate (period 2)                     4.7173  (   0.8840)
+ 3. eval:  outdegree (density)                                    -2.2719  (   0.1512)
+ 4. eval:  reciprocity                                             2.5957  (   0.2690)
+
+Behavior Dynamics
+ 5. rate:  rate quit (period 1)                                    1.8195  (   0.5076)
+ 6. rate:  rate quit (period 2)                                    1.5618  (   0.4527)
+ 7. eval:  quit linear shape                                       0.4544  (   0.1879)
+ 8. eval:  quit quadratic shape                                   -0.1710  (   0.0823)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.209     -0.067      0.011      0.001     -0.005      0.009      0.003      0.000
+    -0.069      0.781     -0.005     -0.016      0.000      0.012     -0.004     -0.004
+     0.066     -0.034      0.023     -0.033      0.004      0.000     -0.002      0.000
+     0.003     -0.068     -0.802      0.072     -0.020      0.000      0.006     -0.001
+    -0.009      0.000      0.047     -0.143      0.258      0.014     -0.043      0.006
+     0.019      0.030      0.000     -0.001      0.060      0.205     -0.021      0.005
+     0.014     -0.025     -0.078      0.125     -0.454     -0.242      0.035     -0.004
+     0.004     -0.053      0.004     -0.034      0.149      0.125     -0.271      0.007
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 3.94 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 22:36:53
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 477854.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. rate:  rate quit (period 1)                            1.1603
+  7. rate:  rate quit (period 2)                            0.9183
+  8. eval:  quit linear shape                               0.3809
+  9. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Amount of behavioral change in period 1 on quit                     25.0000
+  7. Amount of behavioral change in period 2 on quit                     21.0000
+  8. quit centered sum                                                   13.0000
+  9. quit sum of cent. squares                                          103.6250
+
+ 9 parameters, 9 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2887 iterations.
+Parameter estimates based on 1887 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.0510   7.5874  -0.0067 
+  2.   0.1850   6.5848   0.0281 
+  3.  -0.0880  15.0376  -0.0059 
+  4.   0.3040  13.5834   0.0224 
+  5.  -1.1687  21.6610  -0.0540 
+  6.   0.1380   4.2999   0.0321 
+  7.   0.0280   3.8346   0.0073 
+  8.   0.4260   6.9451   0.0613 
+  9.  -0.9196  12.8464  -0.0716 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1732 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2887 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     6.0652  (   1.2328)
+ 2. rate:  constant friendship rate (period 2)                     4.9082  (   1.0828)
+ 3. eval:  outdegree (density)                                    -2.5719  (   0.1715)
+ 4. eval:  reciprocity                                             2.4999  (   0.2561)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2197  (   0.2373)
+
+Behavior Dynamics
+ 6. rate:  rate quit (period 1)                                    1.8019  (   0.4855)
+ 7. rate:  rate quit (period 2)                                    1.5318  (   0.4954)
+ 8. eval:  quit linear shape                                       0.4590  (   0.1919)
+ 9. eval:  quit quadratic shape                                   -0.1742  (   0.0867)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.520     -0.134     -0.007      0.036     -0.022     -0.039     -0.017      0.020     -0.004
+    -0.100      1.172      0.039     -0.019     -0.060      0.040      0.088     -0.020      0.005
+    -0.031      0.212      0.029     -0.032     -0.021      0.006      0.004     -0.001      0.000
+     0.114     -0.069     -0.722      0.066      0.006     -0.009     -0.002      0.000      0.001
+    -0.075     -0.232     -0.520      0.093      0.056     -0.006     -0.004      0.001      0.000
+    -0.066      0.076      0.072     -0.074     -0.055      0.236      0.031     -0.046      0.007
+    -0.028      0.164      0.047     -0.016     -0.037      0.127      0.245     -0.025      0.007
+     0.085     -0.097     -0.028      0.003      0.027     -0.493     -0.259      0.037     -0.006
+    -0.041      0.057     -0.017      0.065     -0.013      0.171      0.158     -0.333      0.008
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 4.96 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 22:45:37
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 850009.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. eval:  gender alter                                    0.0000
+  7. eval:  gender ego                                      0.0000
+  8. eval:  gender similarity                               0.0000
+  9. eval:  quit alter                                      0.0000
+ 10. eval:  quit ego                                        0.0000
+ 11. eval:  quit similarity                                 0.0000
+ 12. rate:  rate quit (period 1)                            1.1603
+ 13. rate:  rate quit (period 2)                            0.9183
+ 14. eval:  quit linear shape                               0.3809
+ 15. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Sum indegrees x gender                                               0.9375
+  7. Sum outdegrees x gender                                              1.9375
+  8. Similarity on gender                                                26.4758
+  9. Sum indegrees x quit                                               -26.5312
+ 10. Sum outdegrees x quit                                              -16.5312
+ 11. Similarity on quit                                                  12.0514
+ 12. Amount of behavioral change in period 1 on quit                     25.0000
+ 13. Amount of behavioral change in period 2 on quit                     21.0000
+ 14. quit centered sum                                                   13.0000
+ 15. quit sum of cent. squares                                          103.6250
+
+ 15 parameters, 15 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 3266 iterations.
+Parameter estimates based on 2266 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.   0.3830   7.7426   0.0495 
+  2.   0.1040   6.4083   0.0162 
+  3.   0.4810  15.0186   0.0320 
+  4.   0.4160  13.6975   0.0304 
+  5.   1.5024  22.2943   0.0674 
+  6.  -0.1006   6.4751  -0.0155 
+  7.   0.0734   6.0899   0.0121 
+  8.   0.6404   6.9744   0.0918 
+  9.  -0.3918  17.7920  -0.0220 
+ 10.   0.1642  17.1558   0.0096 
+ 11.  -0.1943   2.6883  -0.0723 
+ 12.   0.1420   4.2589   0.0333 
+ 13.   0.1120   4.1338   0.0271 
+ 14.   0.0520   6.7175   0.0077 
+ 15.  -0.3152  13.2969  -0.0237 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1895 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 3266 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.8749  (   1.0857)
+ 2. rate:  constant friendship rate (period 2)                     4.6204  (   0.8728)
+ 3. eval:  outdegree (density)                                    -2.8064  (   0.2554)
+ 4. eval:  reciprocity                                             2.4862  (   0.3020)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2490  (   0.2473)
+ 6. eval:  gender alter                                           -0.1387  (   0.2399)
+ 7. eval:  gender ego                                             -0.0188  (   0.2527)
+ 8. eval:  gender similarity                                       0.2964  (   0.1853)
+ 9. eval:  quit alter                                             -0.1207  (   0.1689)
+10. eval:  quit ego                                                0.1323  (   0.1818)
+11. eval:  quit similarity                                         2.3802  (   1.1325)
+Behavior Dynamics
+
+12. rate:  rate quit (period 1)                                    1.8431  (   0.6300)
+13. rate:  rate quit (period 2)                                    1.5630  (   0.4560)
+14. eval:  quit linear shape                                       0.4498  (   0.1794)
+15. eval:  quit quadratic shape                                   -0.1701  (   0.0895)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.179     -0.016      0.061      0.002     -0.051     -0.020      0.027     -0.011     -0.020      0.000     -0.368      0.067     -0.017     -0.018      0.010
+    -0.017      0.762      0.022     -0.023     -0.013     -0.006     -0.003      0.029     -0.015      0.015     -0.124     -0.011     -0.007     -0.009      0.006
+     0.218      0.100      0.065     -0.052     -0.026      0.001     -0.005     -0.002      0.013     -0.016     -0.191      0.000     -0.004     -0.004      0.003
+     0.006     -0.087     -0.671      0.091      0.009     -0.005      0.008     -0.004     -0.014      0.017      0.077      0.011      0.003      0.000      0.000
+    -0.188     -0.062     -0.416      0.121      0.061      0.006     -0.002     -0.001      0.007     -0.001      0.007     -0.003     -0.007      0.002     -0.002
+    -0.075     -0.027      0.013     -0.072      0.105      0.058     -0.013     -0.004      0.012      0.000      0.003     -0.002      0.005      0.000      0.000
+     0.097     -0.013     -0.079      0.107     -0.034     -0.209      0.064      0.001     -0.005      0.016      0.003     -0.011     -0.012      0.002      0.000
+    -0.054      0.181     -0.038     -0.072     -0.014     -0.083      0.027      0.034     -0.002      0.002     -0.021     -0.004      0.003      0.001      0.000
+    -0.112     -0.099      0.306     -0.273      0.168      0.305     -0.112     -0.064      0.029     -0.021     -0.060     -0.005     -0.005      0.002     -0.001
+     0.001      0.097     -0.354      0.306     -0.033     -0.001      0.358      0.073     -0.697      0.033      0.057     -0.005      0.001      0.000      0.002
+    -0.299     -0.125     -0.659      0.225      0.024      0.011      0.009     -0.100     -0.315      0.277      1.282      0.002      0.083      0.016     -0.015
+     0.098     -0.020     -0.001      0.057     -0.019     -0.016     -0.066     -0.035     -0.051     -0.045      0.003      0.397      0.049     -0.053      0.010
+    -0.034     -0.017     -0.032      0.019     -0.058      0.042     -0.106      0.037     -0.060      0.013      0.160      0.171      0.208     -0.019      0.007
+    -0.091     -0.057     -0.094      0.006      0.051      0.004      0.036      0.015      0.069     -0.014      0.081     -0.473     -0.232      0.032     -0.006
+     0.105      0.080      0.139      0.004     -0.096      0.001     -0.008      0.017     -0.092      0.101     -0.149      0.179      0.167     -0.344      0.008
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 9.48 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 22:49:25
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 983527.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. eval:  gender alter                                    0.0000
+  7. eval:  gender ego                                      0.0000
+  8. eval:  gender similarity                               0.0000
+  9. eval:  quit alter                                      0.0000
+ 10. eval:  quit ego                                        0.0000
+ 11. eval:  quit similarity                                 0.0000
+ 12. rate:  rate quit (period 1)                            1.1603
+ 13. rate:  rate quit (period 2)                            0.9183
+ 14. eval:  quit linear shape                               0.3809
+ 15. eval:  quit quadratic shape                            0.0000
+ 16. eval:  quit average similarity                         0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Sum indegrees x gender                                               0.9375
+  7. Sum outdegrees x gender                                              1.9375
+  8. Similarity on gender                                                26.4758
+  9. Sum indegrees x quit                                               -26.5312
+ 10. Sum outdegrees x quit                                              -16.5312
+ 11. Similarity on quit                                                  12.0514
+ 12. Amount of behavioral change in period 1 on quit                     25.0000
+ 13. Amount of behavioral change in period 2 on quit                     21.0000
+ 14. quit centered sum                                                   13.0000
+ 15. quit sum of cent. squares                                          103.6250
+ 16. quit average similarity                                              6.5942
+
+ 16 parameters, 16 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 3322 iterations.
+Parameter estimates based on 2322 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.4540   7.9247  -0.0573 
+  2.   0.3660   6.6180   0.0553 
+  3.  -0.0100  14.4128  -0.0007 
+  4.   0.0820  13.0724   0.0063 
+  5.  -1.1424  20.9139  -0.0546 
+  6.  -0.3874   6.6813  -0.0580 
+  7.  -0.4294   6.3329  -0.0678 
+  8.  -0.0631   6.7997  -0.0093 
+  9.   1.5528  17.8397   0.0870 
+ 10.   1.0238  17.0729   0.0600 
+ 11.  -0.0749   2.7045  -0.0277 
+ 12.   0.1790   4.5716   0.0392 
+ 13.  -0.3420   3.8921  -0.0879 
+ 14.  -0.7090   8.2224  -0.0862 
+ 15.  -0.3152  15.0360  -0.0210 
+ 16.   0.0899   1.5684   0.0573 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.228 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 3322 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.9150  (   1.2806)
+ 2. rate:  constant friendship rate (period 2)                     4.6468  (   1.0761)
+ 3. eval:  outdegree (density)                                    -2.8491  (   0.2668)
+ 4. eval:  reciprocity                                             2.4164  (   0.2897)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2147  (   0.2478)
+ 6. eval:  gender alter                                           -0.1580  (   0.2472)
+ 7. eval:  gender ego                                              0.0130  (   0.2539)
+ 8. eval:  gender similarity                                       0.2710  (   0.1899)
+ 9. eval:  quit alter                                             -0.1295  (   0.1678)
+10. eval:  quit ego                                                0.1489  (   0.1776)
+11. eval:  quit similarity                                         2.6139  (   1.2212)
+Behavior Dynamics
+
+12. rate:  rate quit (period 1)                                    2.1251  (   0.7042)
+13. rate:  rate quit (period 2)                                    1.6130  (   0.5364)
+14. eval:  quit linear shape                                       0.5581  (   0.2845)
+15. eval:  quit quadratic shape                                   -0.0432  (   0.1027)
+16. eval:  quit average similarity                                 6.7108  (   3.9369)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.640      0.059      0.071      0.046     -0.045     -0.037      0.000     -0.007     -0.002     -0.026     -0.514     -0.073     -0.021      0.040     -0.012      0.397
+     0.042      1.158      0.092     -0.022     -0.046      0.005     -0.001      0.021      0.002     -0.002     -0.500     -0.028     -0.020      0.002     -0.005     -0.289
+     0.208      0.322      0.071     -0.037     -0.029      0.003      0.000     -0.006      0.014     -0.017     -0.241     -0.008     -0.008     -0.002      0.001     -0.007
+     0.125     -0.071     -0.484      0.084      0.007     -0.005      0.007     -0.002     -0.016      0.016      0.013     -0.018      0.005      0.001     -0.005     -0.239
+    -0.142     -0.172     -0.438      0.101      0.061      0.002     -0.001     -0.001      0.002      0.001      0.047     -0.005      0.004      0.000      0.001      0.026
+    -0.118      0.019      0.047     -0.067      0.033      0.061     -0.016     -0.002      0.018     -0.006      0.005      0.009      0.002     -0.010      0.001     -0.135
+    -0.001     -0.003     -0.007      0.091     -0.019     -0.254      0.064     -0.003     -0.002      0.015     -0.025      0.007      0.000     -0.003      0.000     -0.031
+    -0.030      0.100     -0.114     -0.029     -0.018     -0.046     -0.058      0.036     -0.003      0.003     -0.006      0.001     -0.003     -0.001     -0.001     -0.074
+    -0.011      0.009      0.303     -0.327      0.044      0.432     -0.052     -0.090      0.028     -0.021     -0.038     -0.001      0.001     -0.009      0.001     -0.003
+    -0.113     -0.011     -0.360      0.319      0.022     -0.132      0.338      0.093     -0.709      0.032      0.047      0.015      0.002      0.003     -0.001     -0.032
+    -0.328     -0.380     -0.738      0.036      0.156      0.017     -0.079     -0.024     -0.183      0.216      1.491      0.095      0.014     -0.007     -0.003      0.030
+    -0.081     -0.037     -0.042     -0.090     -0.029      0.053      0.037      0.011     -0.007      0.117      0.110      0.496      0.048     -0.096      0.006     -0.226
+    -0.031     -0.035     -0.056      0.035      0.027      0.014      0.002     -0.033      0.006      0.021      0.021      0.126      0.288     -0.047     -0.003     -0.395
+     0.109      0.008     -0.030      0.013      0.002     -0.136     -0.035     -0.010     -0.185      0.066     -0.021     -0.477     -0.305      0.081      0.002      0.605
+    -0.094     -0.047      0.049     -0.153      0.024      0.057     -0.018     -0.038      0.051     -0.045     -0.026      0.077     -0.050      0.063      0.011      0.132
+     0.079     -0.068     -0.006     -0.210      0.026     -0.139     -0.031     -0.099     -0.004     -0.045      0.006     -0.082     -0.187      0.540      0.325     15.499
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 10.99 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 22:49:47
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 589303.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. eval:  gender alter                                    0.0000
+  7. eval:  gender ego                                      0.0000
+  8. eval:  gender similarity                               0.0000
+  9. eval:  quit alter                                      0.0000
+ 10. eval:  quit ego                                        0.0000
+ 11. eval:  quit similarity                                 0.0000
+ 12. rate:  rate quit (period 1)                            1.1603
+ 13. rate:  rate quit (period 2)                            0.9183
+ 14. eval:  quit linear shape                               0.3809
+ 15. eval:  quit quadratic shape                            0.0000
+ 16. eval:  quit average similarity                         0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Sum indegrees x gender                                               0.9375
+  7. Sum outdegrees x gender                                              1.9375
+  8. Similarity on gender                                                26.4758
+  9. Sum indegrees x quit                                               -26.5312
+ 10. Sum outdegrees x quit                                              -16.5312
+ 11. Similarity on quit                                                  12.0514
+ 12. Amount of behavioral change in period 1 on quit                     25.0000
+ 13. Amount of behavioral change in period 2 on quit                     21.0000
+ 14. quit centered sum                                                   13.0000
+ 15. quit sum of cent. squares                                          103.6250
+ 16. quit average similarity                                              6.5942
+
+ 16 parameters, 16 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 3422 iterations.
+Parameter estimates based on 2422 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.0750   8.0780  -0.0093 
+  2.  -0.0280   6.6176  -0.0042 
+  3.  -0.6610  15.1675  -0.0436 
+  4.  -0.3340  13.5672  -0.0246 
+  5.  -0.7711  22.1339  -0.0348 
+  6.  -0.2622   6.7452  -0.0389 
+  7.  -0.3742   6.3724  -0.0587 
+  8.  -0.4098   6.8675  -0.0597 
+  9.   2.2384  17.9530   0.1247 
+ 10.   2.0404  17.4559   0.1169 
+ 11.  -0.0875   2.6872  -0.0326 
+ 12.   0.2180   4.6416   0.0470 
+ 13.   0.0010   3.8319   0.0003 
+ 14.   0.2310   7.7018   0.0300 
+ 15.  -0.0459  15.4674  -0.0030 
+ 16.   0.0720   1.5960   0.0451 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1691 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 3422 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.9491  (   1.2474)
+ 2. rate:  constant friendship rate (period 2)                     4.6038  (   1.0176)
+ 3. eval:  outdegree (density)                                    -2.8680  (   0.3524)
+ 4. eval:  reciprocity                                             2.4245  (   0.2934)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2220  (   0.2699)
+ 6. eval:  gender alter                                           -0.1467  (   0.2249)
+ 7. eval:  gender ego                                              0.0107  (   0.2702)
+ 8. eval:  gender similarity                                       0.2709  (   0.2021)
+ 9. eval:  quit alter                                             -0.1377  (   0.1920)
+10. eval:  quit ego                                                0.1586  (   0.2135)
+11. eval:  quit similarity                                         2.6587  (   1.5648)
+Behavior Dynamics
+
+12. rate:  rate quit (period 1)                                    2.1440  (   0.6824)
+13. rate:  rate quit (period 2)                                    1.6220  (   0.5456)
+14. eval:  quit linear shape                                       0.5632  (   0.2949)
+15. eval:  quit quadratic shape                                   -0.0449  (   0.1123)
+16. eval:  quit average similarity                                 6.6703  (   3.9663)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.556      0.110      0.151     -0.018     -0.065     -0.005     -0.014     -0.006      0.066     -0.073     -0.689      0.085     -0.079     -0.018      0.023     -0.046
+     0.086      1.036      0.114     -0.012     -0.048     -0.027      0.017      0.012      0.011     -0.021     -0.627     -0.056      0.007      0.007      0.005      0.116
+     0.343      0.317      0.124     -0.058     -0.045     -0.004     -0.015      0.001      0.029     -0.038     -0.439     -0.065     -0.043      0.003      0.005     -0.132
+    -0.049     -0.041     -0.565      0.086      0.018     -0.005      0.018     -0.006     -0.021      0.027      0.075      0.039      0.018     -0.005      0.000      0.032
+    -0.192     -0.176     -0.469      0.231      0.073      0.004      0.008     -0.001      0.000      0.006      0.059      0.023      0.010     -0.005      0.000      0.029
+    -0.019     -0.118     -0.046     -0.078      0.062      0.051     -0.016      0.000      0.007      0.001      0.038     -0.003      0.003      0.000     -0.001     -0.030
+    -0.041      0.063     -0.158      0.226      0.106     -0.267      0.073     -0.003     -0.004      0.022     -0.005      0.036      0.001     -0.006      0.002      0.027
+    -0.022      0.059      0.018     -0.103     -0.024     -0.010     -0.047      0.041     -0.001      0.000     -0.037      0.009     -0.008     -0.006      0.000     -0.065
+     0.277      0.059      0.435     -0.366     -0.002      0.164     -0.076     -0.015      0.037     -0.031     -0.105     -0.023     -0.026     -0.008      0.002     -0.088
+    -0.272     -0.097     -0.508      0.434      0.096      0.030      0.384      0.006     -0.763      0.046      0.116      0.035      0.031      0.003     -0.001      0.057
+    -0.353     -0.394     -0.796      0.163      0.140      0.108     -0.011     -0.116     -0.350      0.347      2.449      0.198      0.187     -0.007     -0.042      0.141
+     0.100     -0.081     -0.270      0.197      0.123     -0.022      0.194      0.065     -0.172      0.240      0.185      0.466      0.040     -0.062      0.011      0.124
+    -0.116      0.012     -0.223      0.110      0.071      0.024      0.008     -0.072     -0.249      0.269      0.219      0.106      0.298     -0.035     -0.007     -0.191
+    -0.049      0.025      0.033     -0.053     -0.068     -0.002     -0.077     -0.093     -0.143      0.044     -0.015     -0.309     -0.216      0.087      0.003      0.733
+     0.166      0.046      0.137     -0.009      0.010     -0.033      0.079     -0.001      0.105     -0.032     -0.239      0.141     -0.108      0.105      0.013      0.158
+    -0.009      0.029     -0.094      0.028      0.027     -0.033      0.025     -0.081     -0.116      0.067      0.023      0.046     -0.088      0.627      0.356     15.731
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 11.44 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:11:38
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 933669.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. rate:  rate quit (period 1)                            1.1603
+  6. rate:  rate quit (period 2)                            0.9183
+  7. eval:  quit linear shape                               0.3809
+  8. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Amount of behavioral change in period 1 on quit                     25.0000
+  6. Amount of behavioral change in period 2 on quit                     21.0000
+  7. quit centered sum                                                   13.0000
+  8. quit sum of cent. squares                                          103.6250
+
+ 8 parameters, 8 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2803 iterations.
+Parameter estimates based on 1803 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.   0.2510   7.3449   0.0342 
+  2.   0.5970   6.5245   0.0915 
+  3.  -0.2120  11.2260  -0.0189 
+  4.   0.0840  10.9333   0.0077 
+  5.  -0.0970   4.2416  -0.0229 
+  6.  -0.0070   3.7960  -0.0018 
+  7.  -0.2240   6.9116  -0.0324 
+  8.  -0.2040  13.0977  -0.0156 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1376 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2803 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.7486  (   1.1900)
+ 2. rate:  constant friendship rate (period 2)                     4.7735  (   0.9951)
+ 3. eval:  outdegree (density)                                    -2.2789  (   0.1541)
+ 4. eval:  reciprocity                                             2.6105  (   0.2648)
+
+Behavior Dynamics
+ 5. rate:  rate quit (period 1)                                    1.8134  (   0.5482)
+ 6. rate:  rate quit (period 2)                                    1.5488  (   0.4861)
+ 7. eval:  quit linear shape                                       0.4484  (   0.1795)
+ 8. eval:  quit quadratic shape                                   -0.1691  (   0.0863)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.416     -0.054      0.016     -0.004      0.010     -0.014      0.012     -0.011
+    -0.045      0.990      0.015     -0.018     -0.009     -0.007      0.000      0.001
+     0.087      0.101      0.024     -0.033     -0.006     -0.001      0.003     -0.001
+    -0.014     -0.070     -0.810      0.070      0.005     -0.004     -0.001      0.001
+     0.015     -0.016     -0.072      0.033      0.301      0.027     -0.037      0.012
+    -0.024     -0.014     -0.014     -0.034      0.101      0.236     -0.020      0.007
+     0.056      0.002      0.107     -0.012     -0.379     -0.232      0.032     -0.005
+    -0.109      0.012     -0.054      0.027      0.258      0.168     -0.303      0.007
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 3.8 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:11:45
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 141191.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. rate:  rate quit (period 1)                            1.1603
+  7. rate:  rate quit (period 2)                            0.9183
+  8. eval:  quit linear shape                               0.3809
+  9. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Amount of behavioral change in period 1 on quit                     25.0000
+  7. Amount of behavioral change in period 2 on quit                     21.0000
+  8. quit centered sum                                                   13.0000
+  9. quit sum of cent. squares                                          103.6250
+
+ 9 parameters, 9 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2877 iterations.
+Parameter estimates based on 1877 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.4350   7.6855  -0.0566 
+  2.   0.4940   6.4994   0.0760 
+  3.  -0.5250  15.5755  -0.0337 
+  4.  -0.3680  14.3552  -0.0256 
+  5.  -0.5755  22.8797  -0.0252 
+  6.   0.1110   4.3664   0.0254 
+  7.  -0.0380   3.9993  -0.0095 
+  8.   0.0070   6.9838   0.0010 
+  9.  -0.6139  13.1205  -0.0468 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1157 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2877 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     6.0613  (   1.1592)
+ 2. rate:  constant friendship rate (period 2)                     4.9271  (   1.2936)
+ 3. eval:  outdegree (density)                                    -2.5710  (   0.1806)
+ 4. eval:  reciprocity                                             2.4934  (   0.2720)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2273  (   0.2287)
+
+Behavior Dynamics
+ 6. rate:  rate quit (period 1)                                    1.8101  (   0.5030)
+ 7. rate:  rate quit (period 2)                                    1.5695  (   0.4479)
+ 8. eval:  quit linear shape                                       0.4502  (   0.1698)
+ 9. eval:  quit quadratic shape                                   -0.1761  (   0.0879)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.344     -0.160      0.034     -0.027     -0.036      0.043      0.005     -0.009      0.006
+    -0.107      1.673      0.046     -0.007     -0.081     -0.010     -0.017      0.024     -0.012
+     0.164      0.196      0.033     -0.038     -0.022      0.012     -0.006      0.000     -0.001
+    -0.086     -0.021     -0.772      0.074      0.011     -0.020      0.009      0.001      0.001
+    -0.136     -0.273     -0.541      0.179      0.052     -0.013      0.005     -0.002      0.000
+     0.074     -0.015      0.137     -0.148     -0.112      0.253      0.017     -0.027      0.006
+     0.009     -0.030     -0.069      0.074      0.046      0.076      0.201     -0.013      0.002
+    -0.044      0.110     -0.012      0.024     -0.063     -0.318     -0.169      0.029     -0.004
+     0.055     -0.108     -0.037      0.025      0.018      0.125      0.048     -0.270      0.008
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 4.79 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:11:50
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 175765.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. eval:  gender alter                                    0.0000
+  7. eval:  gender ego                                      0.0000
+  8. eval:  gender similarity                               0.0000
+  9. eval:  quit alter                                      0.0000
+ 10. eval:  quit ego                                        0.0000
+ 11. eval:  quit similarity                                 0.0000
+ 12. rate:  rate quit (period 1)                            1.1603
+ 13. rate:  rate quit (period 2)                            0.9183
+ 14. eval:  quit linear shape                               0.3809
+ 15. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Sum indegrees x gender                                               0.9375
+  7. Sum outdegrees x gender                                              1.9375
+  8. Similarity on gender                                                26.4758
+  9. Sum indegrees x quit                                               -26.5312
+ 10. Sum outdegrees x quit                                              -16.5312
+ 11. Similarity on quit                                                  12.0514
+ 12. Amount of behavioral change in period 1 on quit                     25.0000
+ 13. Amount of behavioral change in period 2 on quit                     21.0000
+ 14. quit centered sum                                                   13.0000
+ 15. quit sum of cent. squares                                          103.6250
+
+ 15 parameters, 15 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 3209 iterations.
+Parameter estimates based on 2209 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.0020   7.9487  -0.0003 
+  2.  -0.0950   6.7001  -0.0142 
+  3.   0.7190  15.7745   0.0456 
+  4.   1.0840  13.9922   0.0775 
+  5.   1.5395  22.9961   0.0669 
+  6.  -0.1824   6.5328  -0.0279 
+  7.  -0.0764   6.4646  -0.0118 
+  8.   0.3333   6.9709   0.0478 
+  9.  -0.4577  18.4157  -0.0249 
+ 10.  -0.2317  17.5022  -0.0132 
+ 11.   0.0786   2.7566   0.0285 
+ 12.  -0.0460   4.1935  -0.0110 
+ 13.   0.0130   3.8366   0.0034 
+ 14.   0.1630   7.3433   0.0222 
+ 15.   0.3343  12.2849   0.0272 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1339 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 3209 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.8599  (   1.0806)
+ 2. rate:  constant friendship rate (period 2)                     4.5653  (   0.9652)
+ 3. eval:  outdegree (density)                                    -2.8277  (   0.2656)
+ 4. eval:  reciprocity                                             2.5044  (   0.2765)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2530  (   0.2595)
+ 6. eval:  gender alter                                           -0.1604  (   0.2276)
+ 7. eval:  gender ego                                             -0.0032  (   0.2526)
+ 8. eval:  gender similarity                                       0.2923  (   0.1864)
+ 9. eval:  quit alter                                             -0.1299  (   0.1436)
+10. eval:  quit ego                                                0.1329  (   0.1689)
+11. eval:  quit similarity                                         2.4673  (   1.1992)
+Behavior Dynamics
+
+12. rate:  rate quit (period 1)                                    1.8044  (   0.5183)
+13. rate:  rate quit (period 2)                                    1.5539  (   0.4845)
+14. eval:  quit linear shape                                       0.4591  (   0.1811)
+15. eval:  quit quadratic shape                                   -0.1716  (   0.0871)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.168      0.121      0.058      0.016     -0.070     -0.016     -0.035      0.000      0.004     -0.036     -0.316     -0.092     -0.060      0.022     -0.011
+     0.116      0.932      0.066      0.021     -0.034     -0.016      0.002      0.003      0.009     -0.016     -0.457     -0.034     -0.064      0.012      0.001
+     0.203      0.256      0.071     -0.039     -0.042     -0.003     -0.011     -0.006      0.009     -0.016     -0.226      0.001     -0.025      0.005     -0.001
+     0.054      0.078     -0.533      0.076      0.013     -0.004      0.009      0.001     -0.011      0.015      0.022     -0.007      0.008     -0.004      0.000
+    -0.249     -0.135     -0.613      0.182      0.067      0.004      0.002      0.001      0.000      0.006      0.094     -0.002      0.003     -0.002      0.001
+    -0.067     -0.074     -0.043     -0.057      0.067      0.052     -0.013      0.001      0.008      0.002      0.021     -0.006      0.002      0.002     -0.002
+    -0.128      0.010     -0.171      0.135      0.031     -0.227      0.064      0.001      0.000      0.014      0.035     -0.005      0.006      0.000      0.001
+     0.002      0.017     -0.112      0.016      0.017      0.031      0.030      0.035      0.001      0.002     -0.012     -0.004     -0.002      0.001     -0.001
+     0.028      0.062      0.230     -0.274      0.007      0.238     -0.001      0.050      0.021     -0.015     -0.037     -0.005     -0.011      0.002      0.001
+    -0.196     -0.097     -0.355      0.322      0.126      0.058      0.323      0.074     -0.609      0.029      0.054      0.002      0.014     -0.003      0.000
+    -0.244     -0.395     -0.708      0.067      0.301      0.076      0.114     -0.056     -0.213      0.267      1.438      0.037      0.138     -0.023      0.002
+    -0.164     -0.067      0.006     -0.049     -0.014     -0.047     -0.040     -0.046     -0.062      0.026      0.059      0.269      0.028     -0.031      0.007
+    -0.114     -0.136     -0.191      0.063      0.026      0.016      0.046     -0.017     -0.153      0.175      0.238      0.113      0.235     -0.027      0.007
+     0.114      0.070      0.105     -0.072     -0.038      0.042     -0.010      0.040      0.095     -0.098     -0.108     -0.332     -0.307      0.033     -0.005
+    -0.122      0.010     -0.027     -0.004      0.026     -0.092      0.054     -0.085      0.096      0.001      0.014      0.164      0.156     -0.287      0.008
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 8.93 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:11:58
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 239502.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. eval:  gender alter                                    0.0000
+  7. eval:  gender ego                                      0.0000
+  8. eval:  gender similarity                               0.0000
+  9. eval:  quit alter                                      0.0000
+ 10. eval:  quit ego                                        0.0000
+ 11. eval:  quit similarity                                 0.0000
+ 12. rate:  rate quit (period 1)                            1.1603
+ 13. rate:  rate quit (period 2)                            0.9183
+ 14. eval:  quit linear shape                               0.3809
+ 15. eval:  quit quadratic shape                            0.0000
+ 16. eval:  quit average similarity                         0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Sum indegrees x gender                                               0.9375
+  7. Sum outdegrees x gender                                              1.9375
+  8. Similarity on gender                                                26.4758
+  9. Sum indegrees x quit                                               -26.5312
+ 10. Sum outdegrees x quit                                              -16.5312
+ 11. Similarity on quit                                                  12.0514
+ 12. Amount of behavioral change in period 1 on quit                     25.0000
+ 13. Amount of behavioral change in period 2 on quit                     21.0000
+ 14. quit centered sum                                                   13.0000
+ 15. quit sum of cent. squares                                          103.6250
+ 16. quit average similarity                                              6.5942
+
+ 16 parameters, 16 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 3322 iterations.
+Parameter estimates based on 2322 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.0230   8.0241  -0.0029 
+  2.  -0.3670   6.5404  -0.0561 
+  3.   0.9260  14.9733   0.0618 
+  4.   0.7060  13.3157   0.0530 
+  5.   1.0489  22.9028   0.0458 
+  6.  -0.2939   6.6865  -0.0440 
+  7.  -0.0409   6.5040  -0.0063 
+  8.   0.0195   7.0592   0.0028 
+  9.  -0.1814  18.5297  -0.0098 
+ 10.  -0.0474  17.4315  -0.0027 
+ 11.   0.1835   2.8323   0.0648 
+ 12.   0.5500   4.6537   0.1182 
+ 13.   0.2490   3.8298   0.0650 
+ 14.   0.2690   8.1588   0.0330 
+ 15.   1.2807  15.5419   0.0824 
+ 16.  -0.0581   1.6020  -0.0363 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.2311 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 3322 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.9587  (   1.3089)
+ 2. rate:  constant friendship rate (period 2)                     4.5962  (   1.0879)
+ 3. eval:  outdegree (density)                                    -2.8600  (   0.3354)
+ 4. eval:  reciprocity                                             2.4246  (   0.3110)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2179  (   0.2534)
+ 6. eval:  gender alter                                           -0.1622  (   0.2366)
+ 7. eval:  gender ego                                              0.0253  (   0.2919)
+ 8. eval:  gender similarity                                       0.2648  (   0.1904)
+ 9. eval:  quit alter                                             -0.1461  (   0.2047)
+10. eval:  quit ego                                                0.1628  (   0.2277)
+11. eval:  quit similarity                                         2.6659  (   1.5876)
+Behavior Dynamics
+
+12. rate:  rate quit (period 1)                                    2.1550  (   0.7255)
+13. rate:  rate quit (period 2)                                    1.6288  (   0.4763)
+14. eval:  quit linear shape                                       0.5593  (   0.2636)
+15. eval:  quit quadratic shape                                   -0.0433  (   0.1108)
+16. eval:  quit average similarity                                 6.5770  (   3.8258)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.713      0.131      0.137      0.056     -0.063     -0.014      0.016      0.028      0.056     -0.071     -0.883     -0.129     -0.010     -0.008     -0.007     -0.286
+     0.092      1.183      0.107      0.024     -0.052     -0.002      0.065      0.017      0.009     -0.005     -0.588     -0.051     -0.024     -0.012     -0.004     -0.484
+     0.312      0.293      0.112     -0.045     -0.037      0.006      0.003      0.004      0.032     -0.039     -0.434     -0.079     -0.010     -0.002     -0.005     -0.153
+     0.138      0.070     -0.435      0.097      0.010     -0.017      0.021     -0.007     -0.017      0.024      0.006      0.027     -0.002     -0.007      0.000     -0.150
+    -0.189     -0.189     -0.438      0.126      0.064     -0.005     -0.002     -0.004     -0.003      0.006      0.071      0.019      0.006     -0.002     -0.002     -0.079
+    -0.045     -0.009      0.076     -0.236     -0.086      0.056     -0.026      0.004      0.015     -0.009      0.027     -0.016     -0.015      0.003      0.002      0.094
+     0.041      0.206      0.028      0.235     -0.023     -0.377      0.085     -0.003     -0.010      0.027     -0.081      0.024      0.001     -0.007     -0.002     -0.168
+     0.113      0.083      0.068     -0.118     -0.088      0.082     -0.049      0.036      0.004     -0.003     -0.036      0.001     -0.006     -0.002      0.000     -0.001
+     0.209      0.042      0.461     -0.269     -0.056      0.318     -0.170      0.097      0.042     -0.038     -0.131     -0.037      0.004     -0.007     -0.001      0.012
+    -0.239     -0.021     -0.513      0.344      0.103     -0.172      0.406     -0.070     -0.820      0.052      0.144      0.046     -0.008      0.005      0.001     -0.021
+    -0.425     -0.340     -0.815      0.011      0.176      0.071     -0.174     -0.118     -0.404      0.399      2.521      0.307      0.039      0.044      0.029      1.324
+    -0.136     -0.064     -0.325      0.118      0.104     -0.090      0.112      0.007     -0.247      0.276      0.266      0.526      0.020     -0.055      0.017      0.181
+    -0.016     -0.047     -0.061     -0.015      0.051     -0.130      0.006     -0.065      0.037     -0.074      0.051      0.057      0.227     -0.029     -0.005     -0.135
+    -0.022     -0.043     -0.028     -0.083     -0.035      0.055     -0.094     -0.031     -0.130      0.077      0.105     -0.287     -0.230      0.069      0.004      0.546
+    -0.048     -0.030     -0.135     -0.011     -0.067      0.069     -0.071      0.018     -0.044      0.052      0.167      0.216     -0.090      0.138      0.012      0.211
+    -0.057     -0.116     -0.120     -0.126     -0.082      0.104     -0.150     -0.002      0.016     -0.024      0.218      0.065     -0.074      0.542      0.497     14.637
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 10.93 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:12:28
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 5694.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. eval:  gender alter                                    0.0000
+  7. eval:  gender ego                                      0.0000
+  8. eval:  gender similarity                               0.0000
+  9. eval:  quit alter                                      0.0000
+ 10. eval:  quit ego                                        0.0000
+ 11. eval:  quit similarity                                 0.0000
+ 12. rate:  rate quit (period 1)                            1.1603
+ 13. rate:  rate quit (period 2)                            0.9183
+ 14. eval:  quit linear shape                               0.3809
+ 15. eval:  quit quadratic shape                            0.0000
+ 16. eval:  quit average similarity                         0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Sum indegrees x gender                                               0.9375
+  7. Sum outdegrees x gender                                              1.9375
+  8. Similarity on gender                                                26.4758
+  9. Sum indegrees x quit                                               -26.5312
+ 10. Sum outdegrees x quit                                              -16.5312
+ 11. Similarity on quit                                                  12.0514
+ 12. Amount of behavioral change in period 1 on quit                     25.0000
+ 13. Amount of behavioral change in period 2 on quit                     21.0000
+ 14. quit centered sum                                                   13.0000
+ 15. quit sum of cent. squares                                          103.6250
+ 16. quit average similarity                                              6.5942
+
+ 16 parameters, 16 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 3322 iterations.
+Parameter estimates based on 2322 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.   0.2440   7.7758   0.0314 
+  2.  -0.0740   6.3135  -0.0117 
+  3.   0.4800  14.7402   0.0326 
+  4.   0.3940  13.2952   0.0296 
+  5.   0.4820  22.0916   0.0218 
+  6.   0.1570   6.4963   0.0242 
+  7.   0.0410   6.3705   0.0064 
+  8.   0.1699   7.0391   0.0241 
+  9.  -0.5630  18.4077  -0.0306 
+ 10.  -0.5850  17.5305  -0.0334 
+ 11.  -0.0730   2.6654  -0.0274 
+ 12.   0.0070   4.5743   0.0015 
+ 13.   0.1070   4.0149   0.0267 
+ 14.  -0.2220   8.3887  -0.0265 
+ 15.   0.0669  15.9824   0.0042 
+ 16.   0.1367   1.6073   0.0851 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1336 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 3322 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.9427  (   1.5824)
+ 2. rate:  constant friendship rate (period 2)                     4.6543  (   1.0467)
+ 3. eval:  outdegree (density)                                    -2.8555  (   0.2675)
+ 4. eval:  reciprocity                                             2.4154  (   0.2867)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2194  (   0.2514)
+ 6. eval:  gender alter                                           -0.1539  (   0.2307)
+ 7. eval:  gender ego                                              0.0041  (   0.2761)
+ 8. eval:  gender similarity                                       0.2738  (   0.1923)
+ 9. eval:  quit alter                                             -0.1355  (   0.1642)
+10. eval:  quit ego                                                0.1450  (   0.1797)
+11. eval:  quit similarity                                         2.6314  (   1.2722)
+Behavior Dynamics
+
+12. rate:  rate quit (period 1)                                    2.1037  (   0.8123)
+13. rate:  rate quit (period 2)                                    1.6257  (   0.4901)
+14. eval:  quit linear shape                                       0.5700  (   0.3149)
+15. eval:  quit quadratic shape                                   -0.0463  (   0.1112)
+16. eval:  quit average similarity                                 6.7114  (   4.4551)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     2.504     -0.020      0.121      0.022     -0.110     -0.044      0.035      0.019     -0.019      0.010     -0.702     -0.330     -0.007      0.117      0.030      1.628
+    -0.012      1.096      0.082     -0.034     -0.036     -0.008      0.017      0.016      0.024     -0.016     -0.364     -0.106     -0.011      0.048     -0.006      0.220
+     0.287      0.293      0.072     -0.034     -0.029     -0.001     -0.007      0.002      0.015     -0.019     -0.250     -0.052     -0.020      0.013      0.003      0.026
+     0.048     -0.112     -0.448      0.082      0.003     -0.004      0.009      0.001     -0.016      0.020     -0.024     -0.028     -0.006     -0.001     -0.002     -0.233
+    -0.276     -0.137     -0.432      0.038      0.063      0.004     -0.001     -0.002      0.001      0.001      0.054      0.026      0.005     -0.010     -0.002     -0.091
+    -0.121     -0.034     -0.018     -0.065      0.067      0.053     -0.016     -0.003      0.012     -0.002      0.005      0.016     -0.008     -0.012     -0.001     -0.097
+     0.079      0.060     -0.093      0.113     -0.015     -0.257      0.076     -0.004     -0.006      0.022      0.019      0.023      0.005      0.005      0.004      0.228
+     0.063      0.080      0.034      0.027     -0.042     -0.073     -0.075      0.037     -0.001      0.000     -0.038     -0.003     -0.008     -0.002     -0.002     -0.169
+    -0.071      0.139      0.350     -0.337      0.022      0.323     -0.138     -0.018      0.027     -0.021     -0.051      0.005     -0.008     -0.006      0.000     -0.043
+     0.035     -0.085     -0.396      0.381      0.017     -0.044      0.448      0.002     -0.721      0.032      0.054      0.009      0.007      0.005      0.002      0.106
+    -0.349     -0.274     -0.734     -0.066      0.169      0.017      0.054     -0.157     -0.246      0.238      1.619      0.347      0.122     -0.066     -0.016      0.363
+    -0.257     -0.125     -0.237     -0.122      0.127      0.087      0.102     -0.022      0.038      0.065      0.336      0.660      0.084     -0.135      0.012     -0.351
+    -0.009     -0.022     -0.149     -0.042      0.040     -0.071      0.040     -0.088     -0.097      0.078      0.195      0.211      0.240     -0.036      0.003     -0.082
+     0.235      0.145      0.152     -0.012     -0.125     -0.168      0.059     -0.029     -0.126      0.082     -0.165     -0.529     -0.230      0.099      0.003      0.842
+     0.170     -0.051      0.094     -0.051     -0.062     -0.036      0.142     -0.102      0.012      0.114     -0.112      0.127      0.061      0.099      0.012      0.205
+     0.231      0.047      0.022     -0.182     -0.082     -0.094      0.186     -0.197     -0.059      0.133      0.064     -0.097     -0.038      0.600      0.413     19.848
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 10.98 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:14:08
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 894358.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. rate:  rate quit (period 1)                            1.1603
+  6. rate:  rate quit (period 2)                            0.9183
+  7. eval:  quit linear shape                               0.3809
+  8. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Amount of behavioral change in period 1 on quit                     25.0000
+  6. Amount of behavioral change in period 2 on quit                     21.0000
+  7. quit centered sum                                                   13.0000
+  8. quit sum of cent. squares                                          103.6250
+
+ 8 parameters, 8 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2624 iterations.
+Parameter estimates based on 1624 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.2250   6.9856  -0.0322 
+  2.  -0.0470   6.4243  -0.0073 
+  3.  -0.0840  11.5075  -0.0073 
+  4.  -0.1760  10.7456  -0.0164 
+  5.   0.3160   4.4488   0.0710 
+  6.   0.1970   3.7974   0.0519 
+  7.   0.1890   6.8583   0.0276 
+  8.   0.1377  12.8284   0.0107 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1046 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2624 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.7273  (   1.2554)
+ 2. rate:  constant friendship rate (period 2)                     4.7115  (   0.9789)
+ 3. eval:  outdegree (density)                                    -2.2715  (   0.1596)
+ 4. eval:  reciprocity                                             2.5944  (   0.2709)
+
+Behavior Dynamics
+ 5. rate:  rate quit (period 1)                                    1.8291  (   0.4916)
+ 6. rate:  rate quit (period 2)                                    1.5644  (   0.5015)
+ 7. eval:  quit linear shape                                       0.4528  (   0.1682)
+ 8. eval:  quit quadratic shape                                   -0.1725  (   0.0822)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.576     -0.057     -0.017      0.045      0.113      0.028      0.004      0.005
+    -0.047      0.958     -0.002      0.002     -0.016     -0.042     -0.001      0.002
+    -0.085     -0.014      0.025     -0.035      0.000     -0.001      0.002     -0.001
+     0.132      0.009     -0.821      0.073     -0.001     -0.003     -0.003      0.003
+     0.183     -0.033      0.005     -0.009      0.242      0.017     -0.026      0.007
+     0.045     -0.086     -0.017     -0.022      0.068      0.251     -0.023      0.004
+     0.021     -0.008      0.077     -0.064     -0.320     -0.271      0.028     -0.003
+     0.050      0.026     -0.102      0.113      0.164      0.085     -0.240      0.007
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 3.64 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:14:54
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 523060.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. rate:  rate quit (period 1)                            1.1603
+  6. rate:  rate quit (period 2)                            0.9183
+  7. eval:  quit linear shape                               0.3809
+  8. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Amount of behavioral change in period 1 on quit                     25.0000
+  6. Amount of behavioral change in period 2 on quit                     21.0000
+  7. quit centered sum                                                   13.0000
+  8. quit sum of cent. squares                                          103.6250
+
+ 8 parameters, 8 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2734 iterations.
+Parameter estimates based on 1734 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.0730   7.5196  -0.0097 
+  2.  -0.1450   6.5283  -0.0222 
+  3.   0.0160  11.1221   0.0014 
+  4.  -0.2460  10.3504  -0.0238 
+  5.   0.1670   4.2927   0.0389 
+  6.  -0.1280   4.0591  -0.0315 
+  7.  -0.1170   7.0139  -0.0167 
+  8.   0.1658  13.0226   0.0127 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.0833 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2734 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.7432  (   1.1370)
+ 2. rate:  constant friendship rate (period 2)                     4.6745  (   0.9700)
+ 3. eval:  outdegree (density)                                    -2.2655  (   0.1488)
+ 4. eval:  reciprocity                                             2.5785  (   0.2597)
+
+Behavior Dynamics
+ 5. rate:  rate quit (period 1)                                    1.8255  (   0.5837)
+ 6. rate:  rate quit (period 2)                                    1.5441  (   0.4921)
+ 7. eval:  quit linear shape                                       0.4472  (   0.1779)
+ 8. eval:  quit quadratic shape                                   -0.1677  (   0.0865)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.293     -0.124      0.014      0.009      0.027     -0.002     -0.007     -0.013
+    -0.112      0.941      0.004      0.006      0.014     -0.009     -0.001      0.008
+     0.082      0.027      0.022     -0.030     -0.003      0.007      0.000      0.000
+     0.030      0.022     -0.787      0.067     -0.002     -0.012      0.001      0.000
+     0.041      0.025     -0.038     -0.016      0.341      0.024     -0.041      0.007
+    -0.003     -0.019      0.100     -0.091      0.084      0.242     -0.032      0.006
+    -0.034     -0.003     -0.016      0.027     -0.399     -0.363      0.032     -0.004
+    -0.128      0.090     -0.019      0.001      0.145      0.138     -0.266      0.007
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 3.83 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:15:48
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 360482.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. rate:  rate quit (period 1)                            1.1603
+  6. rate:  rate quit (period 2)                            0.9183
+  7. eval:  quit linear shape                               0.3809
+  8. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Amount of behavioral change in period 1 on quit                     25.0000
+  6. Amount of behavioral change in period 2 on quit                     21.0000
+  7. quit centered sum                                                   13.0000
+  8. quit sum of cent. squares                                          103.6250
+
+ 8 parameters, 8 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2803 iterations.
+Parameter estimates based on 1803 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.   0.0960   7.0937   0.0135 
+  2.   0.4500   6.7026   0.0671 
+  3.  -0.1300  10.8216  -0.0120 
+  4.  -0.2620  10.3786  -0.0252 
+  5.  -0.0050   4.2110  -0.0012 
+  6.   0.2120   3.9808   0.0533 
+  7.   0.3470   6.7485   0.0514 
+  8.  -0.4892  13.0841  -0.0374 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1089 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2803 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.7406  (   1.2922)
+ 2. rate:  constant friendship rate (period 2)                     4.7195  (   0.9175)
+ 3. eval:  outdegree (density)                                    -2.2667  (   0.1433)
+ 4. eval:  reciprocity                                             2.5828  (   0.2464)
+
+Behavior Dynamics
+ 5. rate:  rate quit (period 1)                                    1.8022  (   0.5114)
+ 6. rate:  rate quit (period 2)                                    1.5474  (   0.4456)
+ 7. eval:  quit linear shape                                       0.4581  (   0.1760)
+ 8. eval:  quit quadratic shape                                   -0.1720  (   0.0867)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.670     -0.085      0.021     -0.002      0.048      0.032     -0.015      0.016
+    -0.072      0.842     -0.001     -0.001     -0.020     -0.042      0.008     -0.001
+     0.111     -0.005      0.021     -0.028      0.002      0.000     -0.001      0.000
+    -0.008     -0.005     -0.796      0.061     -0.009      0.002      0.002      0.000
+     0.072     -0.043      0.021     -0.069      0.262      0.014     -0.035      0.009
+     0.055     -0.103      0.007      0.014      0.063      0.199     -0.017      0.009
+    -0.064      0.048     -0.048      0.040     -0.387     -0.215      0.031     -0.004
+     0.140     -0.011     -0.023      0.007      0.197      0.235     -0.239      0.008
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 3.83 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:15:55
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 954435.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. rate:  rate quit (period 1)                            1.1603
+  7. rate:  rate quit (period 2)                            0.9183
+  8. eval:  quit linear shape                               0.3809
+  9. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Amount of behavioral change in period 1 on quit                     25.0000
+  7. Amount of behavioral change in period 2 on quit                     21.0000
+  8. quit centered sum                                                   13.0000
+  9. quit sum of cent. squares                                          103.6250
+
+ 9 parameters, 9 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 2929 iterations.
+Parameter estimates based on 1929 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.7570   7.5051  -0.1009 
+  2.  -0.1430   6.3086  -0.0227 
+  3.   0.0940  15.1260   0.0062 
+  4.   0.0520  14.0776   0.0037 
+  5.  -0.2290  22.2812  -0.0103 
+  6.   0.2440   4.2552   0.0573 
+  7.   0.0940   4.0261   0.0233 
+  8.   0.1020   6.8376   0.0149 
+  9.  -0.1774  13.4991  -0.0131 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1348 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 2929 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     6.0203  (   1.4555)
+ 2. rate:  constant friendship rate (period 2)                     4.9002  (   1.1272)
+ 3. eval:  outdegree (density)                                    -2.5676  (   0.1760)
+ 4. eval:  reciprocity                                             2.4949  (   0.2599)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2269  (   0.2390)
+
+Behavior Dynamics
+ 6. rate:  rate quit (period 1)                                    1.8127  (   0.5440)
+ 7. rate:  rate quit (period 2)                                    1.5585  (   0.4399)
+ 8. eval:  quit linear shape                                       0.4505  (   0.1699)
+ 9. eval:  quit quadratic shape                                   -0.1724  (   0.0830)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     2.119     -0.088      0.015      0.008     -0.028      0.149      0.036     -0.008      0.004
+    -0.054      1.271      0.052     -0.036     -0.074      0.018     -0.048      0.003      0.003
+     0.060      0.264      0.031     -0.033     -0.023      0.001      0.003      0.000      0.000
+     0.022     -0.121     -0.725      0.068      0.007      0.007     -0.005     -0.001      0.001
+    -0.081     -0.273     -0.551      0.109      0.057     -0.011     -0.001      0.003      0.000
+     0.189      0.029      0.016      0.047     -0.085      0.296      0.033     -0.032      0.011
+     0.056     -0.097      0.042     -0.044     -0.009      0.138      0.194     -0.022      0.004
+    -0.031      0.015     -0.008     -0.022      0.070     -0.348     -0.296      0.029     -0.004
+     0.034      0.033      0.019      0.033      0.021      0.239      0.114     -0.271      0.007
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 5 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:16:00
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 560458.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. eval:  gender alter                                    0.0000
+  7. eval:  gender ego                                      0.0000
+  8. eval:  gender similarity                               0.0000
+  9. eval:  quit alter                                      0.0000
+ 10. eval:  quit ego                                        0.0000
+ 11. eval:  quit similarity                                 0.0000
+ 12. rate:  rate quit (period 1)                            1.1603
+ 13. rate:  rate quit (period 2)                            0.9183
+ 14. eval:  quit linear shape                               0.3809
+ 15. eval:  quit quadratic shape                            0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Sum indegrees x gender                                               0.9375
+  7. Sum outdegrees x gender                                              1.9375
+  8. Similarity on gender                                                26.4758
+  9. Sum indegrees x quit                                               -26.5312
+ 10. Sum outdegrees x quit                                              -16.5312
+ 11. Similarity on quit                                                  12.0514
+ 12. Amount of behavioral change in period 1 on quit                     25.0000
+ 13. Amount of behavioral change in period 2 on quit                     21.0000
+ 14. quit centered sum                                                   13.0000
+ 15. quit sum of cent. squares                                          103.6250
+
+ 15 parameters, 15 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 3366 iterations.
+Parameter estimates based on 2366 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.   0.0430   7.7905   0.0055 
+  2.   0.3380   6.5957   0.0512 
+  3.   0.0810  15.1568   0.0053 
+  4.   0.0440  14.0634   0.0031 
+  5.  -0.9654  22.0043  -0.0439 
+  6.   0.3674   6.7142   0.0547 
+  7.   0.6744   6.4000   0.1054 
+  8.   0.2962   6.8842   0.0430 
+  9.  -1.0833  18.2876  -0.0592 
+ 10.  -1.2323  17.2906  -0.0713 
+ 11.  -0.1301   2.7441  -0.0474 
+ 12.  -0.1110   4.3291  -0.0256 
+ 13.  -0.1400   4.0493  -0.0346 
+ 14.  -0.2490   7.1868  -0.0346 
+ 15.  -0.1459  13.3686  -0.0109 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.193 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 3366 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.8611  (   1.0919)
+ 2. rate:  constant friendship rate (period 2)                     4.6169  (   1.1702)
+ 3. eval:  outdegree (density)                                    -2.8064  (   0.2743)
+ 4. eval:  reciprocity                                             2.4861  (   0.2974)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2319  (   0.2661)
+ 6. eval:  gender alter                                           -0.1484  (   0.2366)
+ 7. eval:  gender ego                                              0.0024  (   0.2633)
+ 8. eval:  gender similarity                                       0.2905  (   0.1908)
+ 9. eval:  quit alter                                             -0.1193  (   0.1488)
+10. eval:  quit ego                                                0.1277  (   0.1614)
+11. eval:  quit similarity                                         2.4088  (   1.2209)
+Behavior Dynamics
+
+12. rate:  rate quit (period 1)                                    1.7981  (   0.5570)
+13. rate:  rate quit (period 2)                                    1.5493  (   0.4639)
+14. eval:  quit linear shape                                       0.4546  (   0.1960)
+15. eval:  quit quadratic shape                                   -0.1716  (   0.0960)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.192     -0.057      0.032      0.009     -0.049     -0.030      0.022      0.009      0.019     -0.025     -0.227     -0.056     -0.038      0.031     -0.008
+    -0.045      1.369      0.154     -0.091     -0.070      0.007     -0.014      0.022      0.034     -0.029     -0.625      0.030      0.023      0.006      0.006
+     0.108      0.480      0.075     -0.054     -0.034      0.004     -0.007      0.001      0.014     -0.014     -0.238      0.009     -0.015      0.006      0.000
+     0.026     -0.261     -0.662      0.088      0.008     -0.010      0.014     -0.004     -0.013      0.014      0.101     -0.004      0.015     -0.003      0.001
+    -0.169     -0.225     -0.464      0.102      0.071      0.000      0.001     -0.004     -0.003      0.009      0.036      0.003      0.003     -0.005      0.000
+    -0.117      0.025      0.063     -0.149      0.007      0.056     -0.021     -0.001      0.012     -0.001      0.010     -0.005      0.002     -0.001      0.001
+     0.078     -0.047     -0.104      0.182      0.021     -0.336      0.069     -0.003     -0.002      0.015     -0.004      0.014      0.018     -0.003      0.002
+     0.042      0.099      0.019     -0.078     -0.077     -0.025     -0.062      0.036      0.002      0.000     -0.032     -0.007     -0.008      0.004     -0.002
+     0.114      0.193      0.354     -0.298     -0.084      0.342     -0.044      0.064      0.022     -0.014     -0.060     -0.008     -0.007      0.003      0.000
+    -0.140     -0.155     -0.312      0.288      0.220     -0.015      0.344      0.011     -0.570      0.026      0.031      0.010      0.009     -0.004      0.002
+    -0.171     -0.438     -0.709      0.278      0.112      0.036     -0.011     -0.138     -0.332      0.155      1.491      0.001      0.060     -0.041      0.006
+    -0.092      0.046      0.058     -0.026      0.018     -0.039      0.098     -0.064     -0.092      0.110      0.002      0.310      0.052     -0.054      0.018
+    -0.076      0.042     -0.121      0.108      0.021      0.018      0.144     -0.093     -0.099      0.121      0.106      0.201      0.215     -0.030      0.010
+     0.145      0.026      0.117     -0.053     -0.089     -0.017     -0.066      0.111      0.098     -0.114     -0.171     -0.494     -0.330      0.038     -0.008
+    -0.081      0.056     -0.003      0.036     -0.004      0.033      0.097     -0.093     -0.019      0.118      0.055      0.342      0.218     -0.402      0.009
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 9.25 seconds.
+
+
+-----------------------------------
+New Analysis started.
+Date and time: 30/11/2022 23:16:09
+New results follow.
+-----------------------------------
+
+RSiena version 1.3.14 (07 Oct 22)
+
+
+@1
+Estimation by stochastic approximation algorithm.
+=================================================
+
+Random initialization of random number stream.
+Current random number seed is 641873.
+Effects object used: effs 
+Model Type:
+ Standard actor-oriented model
+Behavioral Model Type:
+ Standard behavior actor-oriented model ('restrict')
+Estimation method: unconditional moment estimation
+.
+
+Time duration for simulations in each period is 1.0.
+Standard errors are estimated with the likelihood ratio method.
+Dolby method (regression on scores) is used.
+Initial value of gain parameter is  0.2000000.
+Reduction factor for gain parameter is  0.5000000.
+Number of subphases in Phase 2 is 4.
+
+Initial parameter values are 
+  1. rate:  constant friendship rate (period 1)             4.7758
+  2. rate:  constant friendship rate (period 2)             4.0669
+  3. eval:  outdegree (density)                            -1.3977
+  4. eval:  reciprocity                                     0.0000
+  5. eval:  GWESP I -> K -> J (69)                          0.0000
+  6. eval:  gender alter                                    0.0000
+  7. eval:  gender ego                                      0.0000
+  8. eval:  gender similarity                               0.0000
+  9. eval:  quit alter                                      0.0000
+ 10. eval:  quit ego                                        0.0000
+ 11. eval:  quit similarity                                 0.0000
+ 12. rate:  rate quit (period 1)                            1.1603
+ 13. rate:  rate quit (period 2)                            0.9183
+ 14. eval:  quit linear shape                               0.3809
+ 15. eval:  quit quadratic shape                            0.0000
+ 16. eval:  quit average similarity                         0.0000
+
+
+Observed values of target statistics are
+  1. Amount of network change in period 1                                74.0000
+  2. Amount of network change in period 2                                63.0000
+  3. Number of ties                                                     121.0000
+  4. Number of reciprocated ties                                         78.0000
+  5. Numb. edgew. shrd prtns.by two path (69)                            62.9701
+  6. Sum indegrees x gender                                               0.9375
+  7. Sum outdegrees x gender                                              1.9375
+  8. Similarity on gender                                                26.4758
+  9. Sum indegrees x quit                                               -26.5312
+ 10. Sum outdegrees x quit                                              -16.5312
+ 11. Similarity on quit                                                  12.0514
+ 12. Amount of behavioral change in period 1 on quit                     25.0000
+ 13. Amount of behavioral change in period 2 on quit                     21.0000
+ 14. quit centered sum                                                   13.0000
+ 15. quit sum of cent. squares                                          103.6250
+ 16. quit average similarity                                              6.5942
+
+ 16 parameters, 16 statistics
+
+Estimation of derivatives by the LR method (type 1).
+
+
+@2
+End of stochastic approximation algorithm, phase 3.
+---------------------------------------------------
+
+Total of 3372 iterations.
+Parameter estimates based on 2372 iterations,
+convergence diagnostics, covariance and derivative matrices based on 1000 iterations.
+
+Information for convergence diagnosis.
+Averages, standard deviations, and t-ratios for deviations from targets:
+  1.  -0.0510   7.8642  -0.0065 
+  2.   0.0490   6.7620   0.0072 
+  3.  -0.8220  15.1964  -0.0541 
+  4.  -0.5900  13.6109  -0.0433 
+  5.  -0.9307  21.3914  -0.0435 
+  6.  -0.3196   6.3992  -0.0499 
+  7.   0.1634   6.2562   0.0261 
+  8.  -0.2546   7.1836  -0.0354 
+  9.  -0.1788  18.5499  -0.0096 
+ 10.  -0.3188  17.6211  -0.0181 
+ 11.  -0.1883   2.7830  -0.0676 
+ 12.   0.2210   4.5118   0.0490 
+ 13.   0.2540   4.0142   0.0633 
+ 14.   0.0810   8.0504   0.0101 
+ 15.  -0.3756  15.0658  -0.0249 
+ 16.   0.0239   1.5992   0.0150 
+
+Good convergence is indicated by the t-ratios being close to zero.
+
+Overall maximum convergence ratio =  0.1721 .
+
+
+
+@2
+Estimation Results.
+-------------------
+
+Regular end of estimation algorithm.
+Total of 3372 iteration steps.
+
+
+@3
+Estimates and standard errors
+                             
+Network Dynamics
+ 1. rate:  constant friendship rate (period 1)                     5.9452  (   1.1584)
+ 2. rate:  constant friendship rate (period 2)                     4.6596  (   0.9550)
+ 3. eval:  outdegree (density)                                    -2.8594  (   0.2682)
+ 4. eval:  reciprocity                                             2.4275  (   0.2956)
+ 5. eval:  GWESP I -> K -> J (69)                                  1.2107  (   0.2566)
+ 6. eval:  gender alter                                           -0.1670  (   0.2325)
+ 7. eval:  gender ego                                              0.0254  (   0.2581)
+ 8. eval:  gender similarity                                       0.2682  (   0.1877)
+ 9. eval:  quit alter                                             -0.1388  (   0.1794)
+10. eval:  quit ego                                                0.1549  (   0.1921)
+11. eval:  quit similarity                                         2.6078  (   1.3404)
+Behavior Dynamics
+
+12. rate:  rate quit (period 1)                                    2.1359  (   0.6964)
+13. rate:  rate quit (period 2)                                    1.6444  (   0.4961)
+14. eval:  quit linear shape                                       0.5648  (   0.2914)
+15. eval:  quit quadratic shape                                   -0.0451  (   0.1188)
+16. eval:  quit average similarity                                 6.7131  (   4.1194)
+
+
+@3
+Covariance matrices
+                   
+Covariance matrix of estimates (correlations below diagonal):
+     1.342      0.096      0.042      0.066     -0.020     -0.033      0.001      0.029     -0.016     -0.003     -0.372      0.067      0.016     -0.034      0.007     -0.464
+     0.086      0.912      0.062      0.000     -0.004     -0.009      0.015      0.016      0.023     -0.027     -0.429     -0.071      0.004     -0.005      0.008     -0.131
+     0.134      0.240      0.072     -0.037     -0.019     -0.002     -0.010     -0.004      0.018     -0.024     -0.269     -0.045     -0.005      0.003      0.007      0.090
+     0.191      0.001     -0.472      0.087      0.001     -0.009      0.009      0.000     -0.017      0.022      0.003      0.015     -0.010      0.005     -0.002     -0.106
+    -0.066     -0.018     -0.276      0.018      0.066      0.005      0.002     -0.001      0.010     -0.007     -0.003     -0.015      0.002     -0.008     -0.008     -0.253
+    -0.124     -0.040     -0.038     -0.124      0.082      0.054     -0.016     -0.005      0.011     -0.001      0.040     -0.018     -0.002     -0.006     -0.004     -0.165
+     0.005      0.061     -0.146      0.122      0.023     -0.262      0.067      0.001     -0.002      0.015      0.020      0.045      0.006     -0.008      0.001      0.031
+     0.134      0.090     -0.076      0.004     -0.028     -0.118      0.030      0.035     -0.001      0.001     -0.017      0.004     -0.001      0.001      0.001      0.019
+    -0.078      0.137      0.377     -0.329      0.214      0.270     -0.046     -0.028      0.032     -0.026     -0.081     -0.011      0.003     -0.013     -0.002     -0.093
+    -0.016     -0.146     -0.459      0.385     -0.147     -0.017      0.295      0.036     -0.752      0.037      0.092      0.018      0.000      0.009      0.001      0.068
+    -0.239     -0.335     -0.749      0.009     -0.008      0.128      0.057     -0.066     -0.336      0.356      1.797      0.271      0.080     -0.046     -0.033     -0.681
+     0.083     -0.107     -0.240      0.072     -0.083     -0.111      0.248      0.027     -0.086      0.136      0.290      0.485      0.069     -0.070      0.004     -0.002
+     0.028      0.009     -0.035     -0.071      0.018     -0.018      0.046     -0.006      0.036     -0.005      0.120      0.201      0.246     -0.051     -0.001     -0.383
+    -0.101     -0.018      0.033      0.059     -0.104     -0.083     -0.109      0.021     -0.251      0.163     -0.118     -0.345     -0.355      0.085      0.007      0.725
+     0.048      0.072      0.204     -0.070     -0.250     -0.152      0.019      0.062     -0.112      0.064     -0.206      0.047     -0.018      0.210      0.014      0.268
+    -0.097     -0.033      0.081     -0.087     -0.240     -0.172      0.029      0.025     -0.126      0.086     -0.123     -0.001     -0.188      0.604      0.547     16.969
+
+Derivative matrix of expected statistics X by parameters and
+covariance/correlation matrix of X can be found using
+summary(ans) within R, or by using the 'verbose' option in Siena07.
+ 
+Total computation time 10.83 seconds.
