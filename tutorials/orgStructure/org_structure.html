@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="simone santoni">
-<meta name="dcterms.date" content="2024-10-23">
+<meta name="dcterms.date" content="2024-11-25">
 
 <title>Representing an organizational structure with NetworkX</title>
 <style>
@@ -65,10 +65,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="org_structure_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="org_structure_files/libs/quarto-html/anchor.min.js"></script>
 <link href="org_structure_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="org_structure_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="org_structure_files/libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="org_structure_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="org_structure_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="org_structure_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="org_structure_files/libs/bootstrap/bootstrap-f8483f946125a9c1807e345ed6590537.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 23, 2024</p>
+      <p class="date">November 25, 2024</p>
     </div>
   </div>
   
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="notebook-setup">Notebook setup</h2>
 <section id="load-modules" class="level3">
 <h3 class="anchored" data-anchor-id="load-modules">Load modules</h3>
-<div id="429a409a" class="cell" data-execution_count="1">
+<div id="afc59fdd" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> networkx.algorithms <span class="im">import</span> bipartite</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="creating-network-elements">Creating network elements</h3>
 <section id="employees-social-space" class="level4">
 <h4 class="anchored" data-anchor-id="employees-social-space">Employees (social space)</h4>
-<div id="c028c6bd" class="cell" data-execution_count="2">
+<div id="b8deb00b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>employees <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>, <span class="dv">1</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>reporting <span class="op">=</span> [(<span class="dv">2</span>, <span class="dv">1</span>), (<span class="dv">6</span>, <span class="dv">1</span>), (<span class="dv">3</span>, <span class="dv">2</span>), (<span class="dv">4</span>, <span class="dv">2</span>), (<span class="dv">5</span>, <span class="dv">6</span>), (<span class="dv">8</span>, <span class="dv">6</span>), (<span class="dv">7</span>, <span class="dv">2</span>), (<span class="dv">9</span>, <span class="dv">6</span>), (<span class="dv">10</span>, <span class="dv">6</span>)]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>info_exch <span class="op">=</span> [(<span class="dv">3</span>, <span class="dv">4</span>), (<span class="dv">3</span>, <span class="dv">7</span>), (<span class="dv">3</span>, <span class="dv">5</span>), (<span class="dv">4</span>, <span class="dv">5</span>), (<span class="dv">5</span>, <span class="dv">8</span>), (<span class="dv">8</span>, <span class="dv">9</span>), (<span class="dv">9</span>, <span class="dv">10</span>), (<span class="dv">3</span>, <span class="dv">2</span>), (<span class="dv">5</span>, <span class="dv">6</span>), (<span class="dv">10</span>, <span class="dv">6</span>), (<span class="dv">3</span>, <span class="dv">10</span>), (<span class="dv">2</span>, <span class="dv">1</span>), (<span class="dv">6</span>, <span class="dv">1</span>), (<span class="dv">2</span>, <span class="dv">6</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -139,26 +139,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="tasks-task-space" class="level4">
 <h4 class="anchored" data-anchor-id="tasks-task-space">Tasks (task space)</h4>
-<div id="381ed40f" class="cell" data-execution_count="3">
+<div id="45668acb" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tasks <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tech_deps <span class="op">=</span> [(<span class="st">"A"</span>, <span class="st">"B"</span>), (<span class="st">"B"</span>, <span class="st">"C"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="teams" class="level4">
 <h4 class="anchored" data-anchor-id="teams">Teams</h4>
-<div id="9aab3dbf" class="cell" data-execution_count="4">
+<div id="921d6977" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>teams <span class="op">=</span> [<span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="employee---team-affiliations" class="level4">
 <h4 class="anchored" data-anchor-id="employee---team-affiliations">Employee - team affiliations</h4>
-<div id="3823cd68" class="cell" data-execution_count="5">
+<div id="bdf7eab5" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>emp_team <span class="op">=</span> [(<span class="st">"X"</span>, <span class="dv">3</span>), (<span class="st">"X"</span>, <span class="dv">4</span>), (<span class="st">"X"</span>, <span class="dv">7</span>), (<span class="st">"Y"</span>, <span class="dv">5</span>), (<span class="st">"Y"</span>, <span class="dv">8</span>), (<span class="st">"Y"</span>, <span class="dv">9</span>), (<span class="st">"Y"</span>, <span class="dv">10</span>), (<span class="st">"Z"</span>, <span class="dv">4</span>), (<span class="st">"Z"</span>, <span class="dv">7</span>), (<span class="st">"Z"</span>, <span class="dv">5</span>), (<span class="st">"Z"</span>, <span class="dv">8</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="team---task-affiliations" class="level4">
 <h4 class="anchored" data-anchor-id="team---task-affiliations">Team - task affiliations</h4>
-<div id="13ef2a60" class="cell" data-execution_count="6">
+<div id="1d7e54cc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>team_task <span class="op">=</span> [(<span class="st">"A"</span>, <span class="st">"X"</span>), (<span class="st">"B"</span>, <span class="st">"Y"</span>), (<span class="st">"C"</span>, <span class="st">"Z"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -168,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="initializing-networks">Initializing networks</h2>
 <section id="reporting-network" class="level3">
 <h3 class="anchored" data-anchor-id="reporting-network">Reporting network</h3>
-<div id="5084ddf5" class="cell" data-execution_count="7">
+<div id="0c20e096" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rn <span class="op">=</span> nx.DiGraph()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>rn.add_nodes_from(employees)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>rn.add_edges_from(reporting)</span>
@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="information-exchange" class="level3">
 <h3 class="anchored" data-anchor-id="information-exchange">Information exchange</h3>
-<div id="81d69647" class="cell" data-execution_count="8">
+<div id="9bf59e92" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ix <span class="op">=</span> nx.Graph()</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ix.add_nodes_from(employees)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>ix.add_edges_from(info_exch)</span>
@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="employee-team-affiliations" class="level3">
 <h3 class="anchored" data-anchor-id="employee-team-affiliations">Employee-team affiliations</h3>
-<div id="6665cf26" class="cell" data-execution_count="9">
+<div id="f53fad4f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>et <span class="op">=</span> nx.Graph()</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>et.add_nodes_from(employees, bipartite<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>et.add_nodes_from(teams, bipartite<span class="op">=</span><span class="dv">1</span>)</span>
@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="team-task-affiliations-allocation" class="level3">
 <h3 class="anchored" data-anchor-id="team-task-affiliations-allocation">Team-task affiliations (allocation)</h3>
-<div id="2a62221a" class="cell" data-execution_count="10">
+<div id="e5f34959" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tt <span class="op">=</span> nx.Graph()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>tt.add_nodes_from(teams, bipartite<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>tt.add_nodes_from(tasks, bipartite<span class="op">=</span><span class="dv">1</span>)</span>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="compute-density-metrics">Compute density metrics</h2>
 <section id="reporting-network-1" class="level3">
 <h3 class="anchored" data-anchor-id="reporting-network-1">Reporting network</h3>
-<div id="59575af1" class="cell" data-execution_count="11">
+<div id="e60816a5" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>rn_ind <span class="op">=</span> rn.in_degree()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rn_ind)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>rn_out <span class="op">=</span> rn.out_degree()</span>
@@ -340,8 +340,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -452,7 +450,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

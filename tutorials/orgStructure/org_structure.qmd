@@ -117,11 +117,3 @@ print(rn_ind)
 rn_out = rn.out_degree()
 print(rn_out)
 ```
-
-### Information exchange network
-
-
-
-
-
-```
