@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.55">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Simone Santoni">
+<meta name="dcterms.date" content="2024-11-20">
+
+<title>Basic ERGM estimation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="basic_files/libs/clipboard/clipboard.min.js"></script>
+<script src="basic_files/libs/quarto-html/quarto.js"></script>
+<script src="basic_files/libs/quarto-html/popper.min.js"></script>
+<script src="basic_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="basic_files/libs/quarto-html/anchor.min.js"></script>
+<link href="basic_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="basic_files/libs/quarto-html/quarto-syntax-highlighting-498cd1ba3bbc9297b15a5370414d2c3a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="basic_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="basic_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="basic_files/libs/bootstrap/bootstrap-d4883be49266d4041de2c78e9921582c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of Contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#notebook-setup" id="toc-notebook-setup" class="nav-link active" data-scroll-target="#notebook-setup"><span class="header-section-number">1</span> Notebook setup</a>
+  <ul class="collapse">
+  <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link" data-scroll-target="#load-libraries"><span class="header-section-number">1.1</span> Load libraries</a></li>
+  <li><a href="#load-data" id="toc-load-data" class="nav-link" data-scroll-target="#load-data"><span class="header-section-number">1.2</span> Load data</a></li>
+  </ul></li>
+  <li><a href="#ergm-101" id="toc-ergm-101" class="nav-link" data-scroll-target="#ergm-101"><span class="header-section-number">2</span> ERGM 101</a>
+  <ul class="collapse">
+  <li><a href="#the-general-form-of-ergm" id="toc-the-general-form-of-ergm" class="nav-link" data-scroll-target="#the-general-form-of-ergm"><span class="header-section-number">2.1</span> The General Form of ERGM</a></li>
+  <li><a href="#examples-of-model-effects" id="toc-examples-of-model-effects" class="nav-link" data-scroll-target="#examples-of-model-effects"><span class="header-section-number">2.2</span> Examples of Model Effects</a></li>
+  <li><a href="#how-do-i-compute-the-change-statistic-deltagy-x" id="toc-how-do-i-compute-the-change-statistic-deltagy-x" class="nav-link" data-scroll-target="#how-do-i-compute-the-change-statistic-deltagy-x"><span class="header-section-number">2.3</span> How Do I Compute the Change Statistic <span class="math inline">\(\delta[g(y, X)]\)</span>?</a></li>
+  </ul></li>
+  <li><a href="#arrange-network-data" id="toc-arrange-network-data" class="nav-link" data-scroll-target="#arrange-network-data"><span class="header-section-number">3</span> Arrange network data</a></li>
+  <li><a href="#network-descriptives" id="toc-network-descriptives" class="nav-link" data-scroll-target="#network-descriptives"><span class="header-section-number">4</span> Network descriptives</a>
+  <ul class="collapse">
+  <li><a href="#network-visualization" id="toc-network-visualization" class="nav-link" data-scroll-target="#network-visualization"><span class="header-section-number">4.1</span> Network visualization</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">4.2</span> Descriptive statistics</a></li>
+  </ul></li>
+  <li><a href="#ergm-estimation" id="toc-ergm-estimation" class="nav-link" data-scroll-target="#ergm-estimation"><span class="header-section-number">5</span> ERGM estimation</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="basic.ipynb" download="basic.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li><li><a href="basic.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="../../basic.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Basic ERGM estimation</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Simone Santoni </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 20, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Synopsis</div>
+    This notebook shows how to fit a basic ERGM on a one-mode, directed network dataset
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="notebook-setup" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Notebook setup</h1>
+<section id="load-libraries" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="load-libraries"><span class="header-section-number">1.1</span> Load libraries</h2>
+<p>We need to load three libraries:</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/car/car.pdf"><code>car</code></a>, which stands for ‘Companion to Applied Regression,’ provides utility functions regarding regression models</li>
+<li><a href="https://cran.r-project.org/web/packages/sna/index.html"><code>sna</code></a>, a <a href="https://statnet.org/">Statnet</a>’s library, includes many network descriptives</li>
+<li><a href=""><code>ergm</code></a>, another <a href="https://statnet.org/">Statnet</a>’s library, implements ERGMs.</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sna)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ergm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="load-data" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="load-data"><span class="header-section-number">1.2</span> Load data</h2>
+<p>This tutorial will use a toy dataset regarding the friendship relationship in a small school (see Rawlings et al., 2023). The data, which are available in the GitHub repository https://github.com/JeffreyAlanSmith, comprise two files: <code>example_schoolmat,csv</code> regards the friendship relationship, while <code>example_schooldata.csv</code> concerns node-level attributes (i.e., the characteristics of students).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># relational data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url1 <span class="ot">&lt;-</span> <span class="st">"https://github.com/JeffreyAlanSmith/Integrated_Network_Science/raw/master/data/example_schoolmat.csv"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>school_mat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> url1, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># node attributes</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>url2 <span class="ot">&lt;-</span> <span class="st">"https://github.com/JeffreyAlanSmith/Integrated_Network_Science/raw/master/data/example_schooldata.csv"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>school_attributes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> url2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="ergm-101" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> ERGM 101</h1>
+<p><strong>What is the objective of ERGMs?</strong></p>
+<p>ERGMs test how and to what extent an observed network exhibits certain tie formation mechanisms. Example of tie formation mechanisms include (but they are not limited to):</p>
+<ul>
+<li>In-degree centrality, the tendency of a node <span class="math inline">\(i\)</span> to receive ties</li>
+<li>Out-degree centrality, the tendency of a node <span class="math inline">\(i\)</span> to send ties</li>
+<li>Reciprocity, a <em>dyadic</em> tendency such that <span class="math inline">\(i \rightarrow j\)</span> &amp; <span class="math inline">\(j \rightarrow i\)</span></li>
+<li>Transitive closure, a <em>triadic</em> tendency such that i.e., <span class="math inline">\(i \rightarrow j\)</span> &amp; <span class="math inline">\(j \rightarrow w\)</span> &amp; <span class="math inline">\(i \rightarrow w\)</span></li>
+<li>Balance, the tendency for two nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> to share alters <span class="math inline">\(a = {a_{1}, a_{2}, ..., a_{n}}\)</span></li>
+<li>Node attributes, i.e., node <span class="math inline">\(i\)</span>’s qualities</li>
+<li>Dyadic attributes, i.e., the similarity (or differences) in nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> qualities</li>
+</ul>
+<p><strong>What is the intuition behind ERGMs?</strong></p>
+<p>ERGMs consider observed networks as mixtures of network effects</p>
+<section id="the-general-form-of-ergm" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-general-form-of-ergm"><span class="header-section-number">2.1</span> The General Form of ERGM</h2>
+<p>ERGMs estimate the probabilities that the observed network <span class="math inline">\(y\)</span> comes from the class <span class="math inline">\(Y\)</span> based on a set of endogenous and exogenous tie formation explanations (aka ‘model effects’). ERGM’s general form is the following:</p>
+<p><span class="math display">\[\begin{equation}\label{eq:ergm_gen_form}
+Pr(Y = y|X) = \frac{exp[\theta^{T}g(y,X)]}{k(\theta)}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\theta^{T}\)</span> is the vector of regression coefficients regarding the model effects <span class="math inline">\(g(y, X)\)</span>, and <span class="math inline">\(k(\theta)\)</span> is the summation of the numerator’s value over the set of all possible networks <span class="math inline">\(y\)</span>.</p>
+<p>To better understand ERGM’s general form, we can dispense the numerator of the previous equation as follows:</p>
+<p><span class="math display">\[\begin{equation}
+  [\theta_{1}, \theta_{2}, ..., \theta_{n}]\begin{bmatrix}
+           g_{1}(y) \\
+           g_{2}(y) \\
+           \vdots \\
+           g_{n}(y)
+        \end{bmatrix}
+        = \sum_{i=1}^{n} \theta_{i} \cdot g_{i}(y)
+  \end{equation}\]</span></p>
+<p>This equation highlights that the probability of observing a particular network in a set of networks―e.g., ten-node networks exhibiting significant in-degree popularity and reciprocity―as a function of many <span class="math inline">\(g(y)\)</span>. We can also dispense the equation in terms of the log odds of an edge:</p>
+<p><span class="math display">\[\begin{equation}
+logit(Y_{ij} = 1) = \theta^{T} \cdot \delta[g(y, X)]_{ij}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\delta[(y, X)]\)</span> is the ‘change’ statistic, that is, the change in <span class="math inline">\(g(y,X)\)</span> when the value of only the <span class="math inline">\(ij\)</span> dyad is changed from 0 to 1.</p>
+</section>
+<section id="examples-of-model-effects" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="examples-of-model-effects"><span class="header-section-number">2.2</span> Examples of Model Effects</h2>
+<div id="fig-model-effects" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model-effects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-model-effects" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-A" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imgs/model_effects_1.png" id="fig-A" class="img-fluid figure-img" data-ref-parent="fig-model-effects">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-model-effects" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-B" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-B-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imgs/model_effects_2.png" id="fig-B" class="img-fluid figure-img" data-ref-parent="fig-model-effects">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-B-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-effects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Model Effects reported in <a href="https://www.cambridge.org/core/books/network-analysis/C9202FD5420BE99225FEED4B6214DBB7">Rawlings et al.&nbsp;(2023, pp.&nbsp;322-323)</a>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="how-do-i-compute-the-change-statistic-deltagy-x" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="how-do-i-compute-the-change-statistic-deltagy-x"><span class="header-section-number">2.3</span> How Do I Compute the Change Statistic <span class="math inline">\(\delta[g(y, X)]\)</span>?</h2>
+<p>ERGM libraries, like R’s <code>ergm</code>, do that for you. However, it is important that you familiarize yourself with computing the change statistic <span class="math inline">\(\delta[g(y, X)]\)</span>. Here are two key premises:</p>
+<ul>
+<li>Mainly, the procedure aims to create the regressors for the above-displayed Logit model. For example, one may want to regress the likelihood to observe a tie from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> against <span class="math inline">\(i\)</span> and/or <span class="math inline">\(j\)</span>’s degree, the existence of the tie from <span class="math inline">\(j\)</span> to <span class="math inline">\(i\)</span>, the fact that <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are involved in a triad to which a third node <span class="math inline">\(w\)</span>, and so on and so forth</li>
+<li>Overall, the procedure consists of a ‘thought experiment.’ For each tie involving a pair of nodes <span class="math inline">\(\{i, j\}\)</span>, we ask ourselves:
+<ul>
+<li>“Does adding the tie from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> make the relationship ‘reciprocal’, that is, <span class="math inline">\(i \rightarrow j\)</span> &amp; <span class="math inline">\(j \rightarrow i\)</span>?”</li>
+<li>“Does adding the tie from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> m ,ake the triad involving <span class="math inline">\(i\)</span>, <span class="math inline">\(j\)</span>, and <span class="math inline">\(w\)</span> transitive?”</li>
+<li>“Is the tie from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> involving two similar (equivalent) or dissimilar (different) nodes”</li>
+</ul></li>
+</ul>
+<p>The below-displayed figure illustrates this kind of thought experiment visually. The algorithm will replicate the thought experiment for us, iterating over all possible pairs of node ${i, j} creating the input for the Logit regression. The final dataset will have <span class="math inline">\(N \cdot (N -1)\)</span> rows (aka ties) and <span class="math inline">\(K + 1\)</span> columns, where <span class="math inline">\(K\)</span> is the number of selected model effects. The <span class="math inline">\(+ 1\)</span> signifies the column with the dependent variable information (aka, whether a tie is present or absent).</p>
+<p><img src="imgs/thought_exp.png" id="fig-thought-exp" class="img-fluid" alt="Thought experiments regarding the impact of i \rightarrow j on model effects. Source is Rawlings et al.&nbsp;(2023, p.&nbsp;320)">. To browse the model effects available in <code>ergm</code>, we call <code>?ergmTerms</code> in R/radian shells. Another helpful command is <code>vignette("ergm-term-crossRef")</code>, which retrieves a tables that summarize the keywords for terms (with tables for commonly used terms, operator terms, and all terms), definitions for all terms, and a list of keywords with the terms they refer to.</p>
+</section>
+</section>
+<section id="arrange-network-data" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Arrange network data</h1>
+<p><strong>!! Warning ¡¡</strong>: <code>ergm</code>, like the other libraries in <code>statnet</code>, does not integrate with <code>tidyverse</code>. Hence, we have to rely on R builtin objects when it comes manipulating the network data to pass to <code>ergm</code> as input. First, we create a matrix object containing friendship data.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>school_mat <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(school_mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>For the sake of redundancy, we recode the values in <code>school_attributes$gender</code>. Then, we wrap the node attributes up in a list.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>school_attributes<span class="sc">$</span>gender_recode <span class="ot">&lt;-</span> <span class="fu">recode</span>(school_attributes<span class="sc">$</span>gender,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">as.factor =</span> F,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"0 = 'male'; 1 = 'female'"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>attribute_list <span class="ot">&lt;-</span> <span class="fu">do.call</span>(list, school_attributes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now, we can create a <code>statnet</code>’s network object as follows:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>school_net <span class="ot">&lt;-</span> <span class="fu">network</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> school_mat, <span class="at">directed =</span> T,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">vertex.attr =</span> attribute_list</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="network-descriptives" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Network descriptives</h1>
+<p>Using the <code>sna</code> library, we can compute a set of network descriptives. For example, we can calculate the network’s density, the average in-degree and out-degree, the reciprocity, and the transitivity. To start, we may want to retrieve the key features of <code>school_net</code>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>school_net</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> Network attributes:
+  vertices = 32 
+  directed = TRUE 
+  hyper = FALSE 
+  loops = FALSE 
+  multiple = FALSE 
+  bipartite = FALSE 
+  total edges= 124 
+    missing edges= 0 
+    non-missing edges= 124 
+
+ Vertex attribute names: 
+    gender gender_recode grade ids ses vertex.names 
+
+No edge attributes</code></pre>
+</div>
+</div>
+<section id="network-visualization" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="network-visualization"><span class="header-section-number">4.1</span> Network visualization</h2>
+<p>Then, we may want to familiarize ourselves with the network’s structure by plotting it.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(school_net)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="basic_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>By plotting the network, we can also explore how node attributes resolve in the network’s structure. For example, we can color the nodes according to gender and grade.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">recode</span>(school_attributes<span class="sc">$</span>gender,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">as.factor =</span> F,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"0 = 'blue'; 1 = 'pink'"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(school_net, <span class="at">vertex.col =</span> cols)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="basic_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Is there any preliminary evidence regarding gender-driven homophily in the network?</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(school_net, <span class="at">vertex.col =</span> school_attributes<span class="sc">$</span>grade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="basic_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>How about grade-driven homophily?</p>
+</section>
+<section id="descriptive-statistics" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">4.2</span> Descriptive statistics</h2>
+<p>The <code>sna</code> library provides a set of functions to compute network descriptives. For example, we can calculate the network’s density, the average in-degree and out-degree, the reciprocity, and the transitivity. Let us start by computing network density.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gden</span>(school_net)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.125</code></pre>
+</div>
+</div>
+<p>Is 0.125 a high or low density value? How does it compare to the density of other networks? We can run a Conditional Uniform Graph Test (CGU) test to compare the density of <code>school_net</code> with the density of a random network. Here is how to do it:</p>
+<ul>
+<li>We compare the observed statistic with the values ​​that one would see in a random network of the same size
+<ul>
+<li>As a researcher, you specify the baseline model of interest, specifying how to conswtruct the random network</li>
+<li>This sets the comparison of interest, effectively holding certain desired features constant and allowing others to vary randomly</li>
+</ul></li>
+<li>Then, we assess whether the observed statistic is above/below (or similar to) what one would expect by chance</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cug.test</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">dat =</span> school_net, <span class="at">FUN =</span> <span class="st">"gden"</span>, <span class="at">cmode =</span> <span class="st">"size"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Univariate Conditional Uniform Graph Test
+
+Conditioning Method: size 
+Graph Type: digraph 
+Diagonal Used: FALSE 
+Replications: 1000 
+
+Observed Value: 0.125 
+Pr(X&gt;=Obs): 1 
+Pr(X&lt;=Obs): 0 </code></pre>
+</div>
+</div>
+<p>Let us consider the reciprocity of the network. How can we compute it?</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grecip</span>(school_net, <span class="at">measure =</span> <span class="st">"dyadic.nonnull"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Mut 
+0.4090909 </code></pre>
+</div>
+</div>
+<p>~40% of the ties are reciprocated in the friendhsip network. Is this a high or low value? How does it compare to the reciprocity of other networks? We can run a CGU test to compare the reciprocity of <code>school_net</code> with the reciprocity of a random network. Here is how to do it:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cug.test</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">dat =</span> school_net, <span class="at">FUN =</span> <span class="st">"grecip"</span>,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">FUN.args =</span> <span class="fu">list</span>(<span class="at">measure =</span> <span class="st">"dyadic.nonnull"</span>), <span class="at">cmode =</span> <span class="st">"edges"</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Univariate Conditional Uniform Graph Test
+
+Conditioning Method: edges 
+Graph Type: digraph 
+Diagonal Used: FALSE 
+Replications: 1000 
+
+Observed Value: 0.4090909 
+Pr(X&gt;=Obs): 0 
+Pr(X&lt;=Obs): 1 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="ergm-estimation" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> ERGM estimation</h1>
+<!-- -->
+
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb19" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Basic ERGM estimation</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Simone Santoni</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="an">abstract-title:</span><span class="co"> Synopsis</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="an">abstract:</span><span class="co"> This notebook shows how to fit a basic ERGM on a one-mode, directed network dataset</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="an">warning:</span><span class="co"> false</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: Table of Contents </span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 2</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co">    citations-hover: false</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co">    footnotes-hover: false</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co">    crossrefs-hover: false</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: journal</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 9</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 6</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co">  ipynb: default</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="co">  #typst: default</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="co">  docx: default</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co">  typst: default</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="co">  #pdf:</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="co">  #  documentclass: scrartcl</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a><span class="co">  #  papersize: letter</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="fu"># Notebook setup</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Load libraries</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>We need to load three libraries:</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span><span class="co">[</span><span class="ot">`car`</span><span class="co">](https://cran.r-project.org/web/packages/car/car.pdf)</span>, which stands for 'Companion to Applied Regression,' provides utility functions regarding regression models</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span><span class="co">[</span><span class="ot">`sna`</span><span class="co">](https://cran.r-project.org/web/packages/sna/index.html)</span>, a <span class="co">[</span><span class="ot">Statnet</span><span class="co">](https://statnet.org/)</span>'s library, includes many network descriptives</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span><span class="co">[</span><span class="ot">`ergm`</span><span class="co">]()</span>, another <span class="co">[</span><span class="ot">Statnet</span><span class="co">](https://statnet.org/)</span>'s library, implements ERGMs.</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sna)</span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ergm)</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Load data</span></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>This tutorial will use a toy dataset regarding the friendship relationship in a small school (see Rawlings et al., 2023). The data, which are available in the GitHub repository https://github.com/JeffreyAlanSmith, comprise two files: <span class="in">`example_schoolmat,csv`</span> regards the friendship relationship, while <span class="in">`example_schooldata.csv`</span> concerns node-level attributes (i.e., the characteristics of students).</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a><span class="co"># relational data</span></span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>url1 <span class="ot">&lt;-</span> <span class="st">"https://github.com/JeffreyAlanSmith/Integrated_Network_Science/raw/master/data/example_schoolmat.csv"</span></span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>school_mat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> url1, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a><span class="co"># node attributes</span></span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a>url2 <span class="ot">&lt;-</span> <span class="st">"https://github.com/JeffreyAlanSmith/Integrated_Network_Science/raw/master/data/example_schooldata.csv"</span></span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a>school_attributes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> url2)</span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a><span class="fu"># ERGM 101</span></span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a>**What is the objective of ERGMs?**</span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>ERGMs test how and to what extent an observed network exhibits certain tie formation mechanisms. Example of tie formation mechanisms include (but they are not limited to):</span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>In-degree centrality, the tendency of a node $i$ to receive ties</span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>Out-degree centrality, the tendency of a node $i$ to send ties</span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>Reciprocity, a *dyadic* tendency such that $i \rightarrow j$ &amp; $j \rightarrow i$</span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>Transitive closure, a *triadic* tendency such that i.e., $i \rightarrow j$ &amp; </span>
+<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a>    $j \rightarrow w$ &amp; $i \rightarrow w$</span>
+<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>Balance, the tendency for two nodes $i$ and $j$ to share alters </span>
+<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a>    $a = {a_{1}, a_{2}, ..., a_{n}}$</span>
+<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>Node attributes, i.e., node $i$'s qualities</span>
+<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>Dyadic attributes, i.e., the similarity (or differences) in nodes $i$ and $j$ qualities</span>
+<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a>**What is the intuition behind ERGMs?**</span>
+<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a>ERGMs consider observed networks as mixtures of network effects</span>
+<span id="cb19-84"><a href="#cb19-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-85"><a href="#cb19-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## The General Form of ERGM</span></span>
+<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a>ERGMs estimate the probabilities that the observed network $y$ comes from the class $Y$ based on a set of endogenous and exogenous tie formation explanations (aka 'model effects'). ERGM's general form is the following:</span>
+<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a>\begin{equation}\label{eq:ergm_gen_form}</span>
+<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a>Pr(Y = y|X) = \frac{exp<span class="co">[</span><span class="ot">\theta^{T}g(y,X)</span><span class="co">]</span>}{k(\theta)}</span>
+<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb19-92"><a href="#cb19-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-93"><a href="#cb19-93" aria-hidden="true" tabindex="-1"></a>where $\theta^{T}$ is the vector of regression coefficients regarding the model effects $g(y, X)$, and $k(\theta)$ is the summation of the numerator's value over the set of all possible networks $y$.</span>
+<span id="cb19-94"><a href="#cb19-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-95"><a href="#cb19-95" aria-hidden="true" tabindex="-1"></a>To better understand ERGM's general form, we can dispense the numerator of the previous equation as follows:</span>
+<span id="cb19-96"><a href="#cb19-96" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-97"><a href="#cb19-97" aria-hidden="true" tabindex="-1"></a>  \begin{equation}</span>
+<span id="cb19-98"><a href="#cb19-98" aria-hidden="true" tabindex="-1"></a>  <span class="co">[</span><span class="ot">\theta_{1}, \theta_{2}, ..., \theta_{n}</span><span class="co">]</span>\begin{bmatrix}</span>
+<span id="cb19-99"><a href="#cb19-99" aria-hidden="true" tabindex="-1"></a>           g_{1}(y) <span class="sc">\\</span></span>
+<span id="cb19-100"><a href="#cb19-100" aria-hidden="true" tabindex="-1"></a>           g_{2}(y) <span class="sc">\\</span></span>
+<span id="cb19-101"><a href="#cb19-101" aria-hidden="true" tabindex="-1"></a>           \vdots <span class="sc">\\</span></span>
+<span id="cb19-102"><a href="#cb19-102" aria-hidden="true" tabindex="-1"></a>           g_{n}(y)</span>
+<span id="cb19-103"><a href="#cb19-103" aria-hidden="true" tabindex="-1"></a>        \end{bmatrix}</span>
+<span id="cb19-104"><a href="#cb19-104" aria-hidden="true" tabindex="-1"></a>        = \sum_{i=1}^{n} \theta_{i} \cdot g_{i}(y)</span>
+<span id="cb19-105"><a href="#cb19-105" aria-hidden="true" tabindex="-1"></a>  \end{equation}</span>
+<span id="cb19-106"><a href="#cb19-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-107"><a href="#cb19-107" aria-hidden="true" tabindex="-1"></a>This equation highlights that the probability of observing a particular network in a set of networks―e.g., ten-node networks exhibiting significant in-degree popularity and reciprocity―as a function of many $g(y)$. We can also dispense the equation in terms of the log odds of an edge:</span>
+<span id="cb19-108"><a href="#cb19-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-109"><a href="#cb19-109" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb19-110"><a href="#cb19-110" aria-hidden="true" tabindex="-1"></a>logit(Y_{ij} = 1) = \theta^{T} \cdot \delta<span class="co">[</span><span class="ot">g(y, X)</span><span class="co">]</span>_{ij}</span>
+<span id="cb19-111"><a href="#cb19-111" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb19-112"><a href="#cb19-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-113"><a href="#cb19-113" aria-hidden="true" tabindex="-1"></a>where $\delta<span class="co">[</span><span class="ot">(y, X)</span><span class="co">]</span>$ is the 'change' statistic, that is, the change in $g(y,X)$ when the value of only the $ij$ dyad is changed from 0 to 1.</span>
+<span id="cb19-114"><a href="#cb19-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-115"><a href="#cb19-115" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples of Model Effects</span></span>
+<span id="cb19-116"><a href="#cb19-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-117"><a href="#cb19-117" aria-hidden="true" tabindex="-1"></a>:::: {#fig-model-effects layout-ncol=2}</span>
+<span id="cb19-118"><a href="#cb19-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-119"><a href="#cb19-119" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgs/model_effects_1.png)</span>{#fig-A}</span>
+<span id="cb19-120"><a href="#cb19-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-121"><a href="#cb19-121" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgs/model_effects_2.png)</span>{#fig-B}</span>
+<span id="cb19-122"><a href="#cb19-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-123"><a href="#cb19-123" aria-hidden="true" tabindex="-1"></a>Model Effects reported in <span class="co">[</span><span class="ot">Rawlings et al. (2023, pp. 322-323)</span><span class="co">](https://www.cambridge.org/core/books/network-analysis/C9202FD5420BE99225FEED4B6214DBB7)</span></span>
+<span id="cb19-124"><a href="#cb19-124" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb19-125"><a href="#cb19-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-126"><a href="#cb19-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## How Do I Compute the Change Statistic $\delta[g(y, X)]$?</span></span>
+<span id="cb19-127"><a href="#cb19-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-128"><a href="#cb19-128" aria-hidden="true" tabindex="-1"></a>ERGM libraries, like R's <span class="in">`ergm`</span>, do that for you. However, it is important that you familiarize yourself with computing the change statistic $\delta<span class="co">[</span><span class="ot">g(y, X)</span><span class="co">]</span>$. Here are two key premises:</span>
+<span id="cb19-129"><a href="#cb19-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-130"><a href="#cb19-130" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>Mainly, the procedure aims to create the regressors for the above-displayed Logit model. For example, one may want to regress the likelihood to observe a tie from $i$ to $j$ against $i$ and/or $j$'s degree, the existence of the tie from $j$ to $i$, the fact that $i$ and $j$ are involved in a triad to which a third node $w$, and so on and so forth</span>
+<span id="cb19-131"><a href="#cb19-131" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>Overall, the procedure consists of a 'thought experiment.' For each tie involving a pair of nodes $<span class="sc">\{</span>i, j<span class="sc">\}</span>$, we ask ourselves: </span>
+<span id="cb19-132"><a href="#cb19-132" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>"Does adding the tie from $i$ to $j$ make the relationship 'reciprocal', that is, $i \rightarrow j$ &amp; $j \rightarrow i$?" </span>
+<span id="cb19-133"><a href="#cb19-133" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>"Does adding the tie from $i$ to $j$ m ,ake the triad involving $i$, $j$, and $w$ transitive?"</span>
+<span id="cb19-134"><a href="#cb19-134" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>"Is the tie from $i$ to $j$ involving two similar (equivalent) or dissimilar (different) nodes"</span>
+<span id="cb19-135"><a href="#cb19-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-136"><a href="#cb19-136" aria-hidden="true" tabindex="-1"></a>The below-displayed figure illustrates this kind of thought experiment visually. The algorithm will replicate the thought experiment for us, iterating over all possible pairs of node $<span class="sc">\{</span>i, j<span class="sc">\}</span> creating the input for the Logit regression. The final dataset will have $N \cdot (N -1)$ rows (aka ties) and $K + 1$ columns, where $K$ is the number of selected model effects. The $+ 1$ signifies the column with the dependent variable information (aka, whether a tie is present or absent).</span>
+<span id="cb19-137"><a href="#cb19-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-138"><a href="#cb19-138" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Thought experiments regarding the impact of $i \rightarrow j$ on model effects. Source is [Rawlings et al. (2023, p. 320)](https://www.cambridge.org/core/books/network-analysis/C9202FD5420BE99225FEED4B6214DBB7)</span><span class="co">](imgs/thought_exp.png)</span>{#fig-thought-exp}. To browse the model effects available in <span class="in">`ergm`</span>, we call <span class="in">`?ergmTerms`</span> in R/radian shells. Another helpful command is <span class="in">`vignette("ergm-term-crossRef")`</span>, which retrieves a tables that summarize the keywords for terms (with tables for commonly used terms, operator terms, and all terms), definitions for all terms, and a list of keywords with the terms they refer to.</span>
+<span id="cb19-139"><a href="#cb19-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-140"><a href="#cb19-140" aria-hidden="true" tabindex="-1"></a><span class="fu"># Arrange network data</span></span>
+<span id="cb19-141"><a href="#cb19-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-142"><a href="#cb19-142" aria-hidden="true" tabindex="-1"></a>**!! Warning ¡¡**: <span class="in">`ergm`</span>, like the other libraries in <span class="in">`statnet`</span>, does not integrate with <span class="in">`tidyverse`</span>. Hence, we have to rely on R builtin objects when it comes manipulating the network data to pass to <span class="in">`ergm`</span> as input. First, we create a matrix object containing friendship data.</span>
+<span id="cb19-143"><a href="#cb19-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-146"><a href="#cb19-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-147"><a href="#cb19-147" aria-hidden="true" tabindex="-1"></a>school_mat <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(school_mat)</span>
+<span id="cb19-148"><a href="#cb19-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-149"><a href="#cb19-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-150"><a href="#cb19-150" aria-hidden="true" tabindex="-1"></a>For the sake of redundancy, we recode the values in <span class="in">`school_attributes$gender`</span>. Then, we wrap the node attributes up in a list.</span>
+<span id="cb19-151"><a href="#cb19-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-154"><a href="#cb19-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-155"><a href="#cb19-155" aria-hidden="true" tabindex="-1"></a>school_attributes<span class="sc">$</span>gender_recode <span class="ot">&lt;-</span> <span class="fu">recode</span>(school_attributes<span class="sc">$</span>gender,</span>
+<span id="cb19-156"><a href="#cb19-156" aria-hidden="true" tabindex="-1"></a>        <span class="at">as.factor =</span> F,</span>
+<span id="cb19-157"><a href="#cb19-157" aria-hidden="true" tabindex="-1"></a>        <span class="st">"0 = 'male'; 1 = 'female'"</span></span>
+<span id="cb19-158"><a href="#cb19-158" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-159"><a href="#cb19-159" aria-hidden="true" tabindex="-1"></a>attribute_list <span class="ot">&lt;-</span> <span class="fu">do.call</span>(list, school_attributes)</span>
+<span id="cb19-160"><a href="#cb19-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-161"><a href="#cb19-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-162"><a href="#cb19-162" aria-hidden="true" tabindex="-1"></a>Now, we can create a <span class="in">`statnet`</span>'s network object as follows:</span>
+<span id="cb19-163"><a href="#cb19-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-166"><a href="#cb19-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-167"><a href="#cb19-167" aria-hidden="true" tabindex="-1"></a>school_net <span class="ot">&lt;-</span> <span class="fu">network</span>(</span>
+<span id="cb19-168"><a href="#cb19-168" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> school_mat, <span class="at">directed =</span> T,</span>
+<span id="cb19-169"><a href="#cb19-169" aria-hidden="true" tabindex="-1"></a>        <span class="at">vertex.attr =</span> attribute_list</span>
+<span id="cb19-170"><a href="#cb19-170" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-171"><a href="#cb19-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-172"><a href="#cb19-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-173"><a href="#cb19-173" aria-hidden="true" tabindex="-1"></a><span class="fu"># Network descriptives</span></span>
+<span id="cb19-174"><a href="#cb19-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-175"><a href="#cb19-175" aria-hidden="true" tabindex="-1"></a>Using the <span class="in">`sna`</span> library, we can compute a set of network descriptives. For example, we can calculate the network's density, the average in-degree and out-degree, the reciprocity, and the transitivity. To start, we may want to retrieve the key features of <span class="in">`school_net`</span>.</span>
+<span id="cb19-176"><a href="#cb19-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-179"><a href="#cb19-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-180"><a href="#cb19-180" aria-hidden="true" tabindex="-1"></a>school_net</span>
+<span id="cb19-181"><a href="#cb19-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-182"><a href="#cb19-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-183"><a href="#cb19-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Network visualization</span></span>
+<span id="cb19-184"><a href="#cb19-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-185"><a href="#cb19-185" aria-hidden="true" tabindex="-1"></a>Then, we may want to familiarize ourselves with the network's structure by plotting it.</span>
+<span id="cb19-186"><a href="#cb19-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-189"><a href="#cb19-189" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-190"><a href="#cb19-190" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(school_net)</span>
+<span id="cb19-191"><a href="#cb19-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-192"><a href="#cb19-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-193"><a href="#cb19-193" aria-hidden="true" tabindex="-1"></a>By plotting the network, we can also explore how node attributes resolve in the network's structure. For example, we can color the nodes according to gender and grade.</span>
+<span id="cb19-194"><a href="#cb19-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-197"><a href="#cb19-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-198"><a href="#cb19-198" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">recode</span>(school_attributes<span class="sc">$</span>gender,</span>
+<span id="cb19-199"><a href="#cb19-199" aria-hidden="true" tabindex="-1"></a>        <span class="at">as.factor =</span> F,</span>
+<span id="cb19-200"><a href="#cb19-200" aria-hidden="true" tabindex="-1"></a>        <span class="st">"0 = 'blue'; 1 = 'pink'"</span></span>
+<span id="cb19-201"><a href="#cb19-201" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-202"><a href="#cb19-202" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(school_net, <span class="at">vertex.col =</span> cols)</span>
+<span id="cb19-203"><a href="#cb19-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-204"><a href="#cb19-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-205"><a href="#cb19-205" aria-hidden="true" tabindex="-1"></a>Is there any preliminary evidence regarding gender-driven homophily in the network?</span>
+<span id="cb19-206"><a href="#cb19-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-209"><a href="#cb19-209" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-210"><a href="#cb19-210" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(school_net, <span class="at">vertex.col =</span> school_attributes<span class="sc">$</span>grade)</span>
+<span id="cb19-211"><a href="#cb19-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-212"><a href="#cb19-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-213"><a href="#cb19-213" aria-hidden="true" tabindex="-1"></a>How about grade-driven homophily?</span>
+<span id="cb19-214"><a href="#cb19-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-215"><a href="#cb19-215" aria-hidden="true" tabindex="-1"></a><span class="fu">## Descriptive statistics</span></span>
+<span id="cb19-216"><a href="#cb19-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-217"><a href="#cb19-217" aria-hidden="true" tabindex="-1"></a>The <span class="in">`sna`</span> library provides a set of functions to compute network descriptives. For example, we can calculate the network's density, the average in-degree and out-degree, the reciprocity, and the transitivity. Let us start by computing network density.</span>
+<span id="cb19-218"><a href="#cb19-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-221"><a href="#cb19-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-222"><a href="#cb19-222" aria-hidden="true" tabindex="-1"></a><span class="fu">gden</span>(school_net)</span>
+<span id="cb19-223"><a href="#cb19-223" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-224"><a href="#cb19-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-225"><a href="#cb19-225" aria-hidden="true" tabindex="-1"></a>Is 0.125 a high or low density value? How does it compare to the density of other networks? We can run a Conditional Uniform Graph Test (CGU) test to compare the density of <span class="in">`school_net`</span> with the density of a random network. Here is how to do it:</span>
+<span id="cb19-226"><a href="#cb19-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-227"><a href="#cb19-227" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>We compare the observed statistic with the values ​​that one would see in a random network of the same size</span>
+<span id="cb19-228"><a href="#cb19-228" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>As a researcher, you specify the baseline model of interest, specifying how to conswtruct the random network</span>
+<span id="cb19-229"><a href="#cb19-229" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>This sets the comparison of interest, effectively holding certain desired features constant and allowing others to vary randomly</span>
+<span id="cb19-230"><a href="#cb19-230" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>Then, we assess whether the observed statistic is above/below (or similar to) what one would expect by chance</span>
+<span id="cb19-231"><a href="#cb19-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-234"><a href="#cb19-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-235"><a href="#cb19-235" aria-hidden="true" tabindex="-1"></a><span class="fu">cug.test</span>(</span>
+<span id="cb19-236"><a href="#cb19-236" aria-hidden="true" tabindex="-1"></a>        <span class="at">dat =</span> school_net, <span class="at">FUN =</span> <span class="st">"gden"</span>, <span class="at">cmode =</span> <span class="st">"size"</span></span>
+<span id="cb19-237"><a href="#cb19-237" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb19-238"><a href="#cb19-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-239"><a href="#cb19-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-240"><a href="#cb19-240" aria-hidden="true" tabindex="-1"></a>Let us consider the reciprocity of the network. How can we compute it?</span>
+<span id="cb19-241"><a href="#cb19-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-244"><a href="#cb19-244" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-245"><a href="#cb19-245" aria-hidden="true" tabindex="-1"></a><span class="fu">grecip</span>(school_net, <span class="at">measure =</span> <span class="st">"dyadic.nonnull"</span>)</span>
+<span id="cb19-246"><a href="#cb19-246" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-247"><a href="#cb19-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-248"><a href="#cb19-248" aria-hidden="true" tabindex="-1"></a>~40% of the ties are reciprocated in the friendhsip network. Is this a high or low value? How does it compare to the reciprocity of other networks? We can run a CGU test to compare the reciprocity of <span class="in">`school_net`</span> with the reciprocity of a random network. Here is how to do it:</span>
+<span id="cb19-249"><a href="#cb19-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-252"><a href="#cb19-252" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-253"><a href="#cb19-253" aria-hidden="true" tabindex="-1"></a><span class="fu">cug.test</span>(</span>
+<span id="cb19-254"><a href="#cb19-254" aria-hidden="true" tabindex="-1"></a>        <span class="at">dat =</span> school_net, <span class="at">FUN =</span> <span class="st">"grecip"</span>,</span>
+<span id="cb19-255"><a href="#cb19-255" aria-hidden="true" tabindex="-1"></a>        <span class="at">FUN.args =</span> <span class="fu">list</span>(<span class="at">measure =</span> <span class="st">"dyadic.nonnull"</span>), <span class="at">cmode =</span> <span class="st">"edges"</span></span>
+<span id="cb19-256"><a href="#cb19-256" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb19-257"><a href="#cb19-257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb19-258"><a href="#cb19-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-259"><a href="#cb19-259" aria-hidden="true" tabindex="-1"></a><span class="fu"># ERGM estimation</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
