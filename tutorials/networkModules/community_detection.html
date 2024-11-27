@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Simone Santoni">
-<meta name="dcterms.date" content="2024-11-26">
+<meta name="dcterms.date" content="2024-11-27">
 
 <title>Community Detection</title>
 <style>
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 26, 2024</p>
+      <p class="date">November 27, 2024</p>
     </div>
   </div>
   
@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="notebook-setup" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Notebook setup</h1>
 <p>For this tutorial, we rely on ‘usual suspects’ Python packages, like <code>numpy</code>, <code>matplotlib</code>, and <code>networkx</code>. The latter is the most popular Python package for the creation, manipulation, and study of the structure small to moderate size networks.</p>
-<div id="7efae7fc" class="cell" data-execution_count="1">
+<div id="9dccbf49" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -143,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="load-karate-club-network" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Load Karate Club network</h1>
 <p>The Karate Club dataset is a well-known social network dataset representing the friendships between 34 members of a karate club at a US university in the 1970s<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The network consists of 34 nodes and 78 edges, where nodes represent members and edges represent friendships. The dataset is often used for testing community detection algorithms, as it naturally splits into two communities due to a conflict between the club’s instructor and the administrator, leading to the formation of two separate clubs.</p>
-<div id="5ea64e0a" class="cell" data-execution_count="2">
+<div id="74c91d22" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> nx.karate_club_graph()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -214,7 +214,7 @@ Figure&nbsp;2: Edge betweenness centrality in the Karate Club network
 </div>
 </div>
 <p>The visual inspection of edge betweenness centrality suggests that the edge connecting nodes <code>0</code> and <code>31</code> has the highest centrality. We can check this by sorting the edges by centrality and examining the top five edges.</p>
-<div id="4cbf83e4" class="cell" data-execution_count="5">
+<div id="0b872c0f" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>edge_betweenness_sorted <span class="op">=</span> <span class="bu">sorted</span>(edge_betweenness.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
@@ -225,7 +225,7 @@ Figure&nbsp;2: Edge betweenness centrality in the Karate Club network
 </div>
 </div>
 <p>The second step consists of removing the <code>0-31</code> and recalculating the centrality of the remaining edges. It is straight-forward that <code>G</code> will still be connected. In other words, we will not be able to see the two groups of nodes that get disconnected because of the removal one specific edge. Therefore, we will not have identified any partitioning of the network, that is, community structure. The process is repeated until the network breaks down into two connected components least.</p>
-<div id="14d9a523" class="cell" data-execution_count="6">
+<div id="e694df7a" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove edge 0-31</span></span>
@@ -275,7 +275,7 @@ Figure&nbsp;3: Visualization of the Karate Club network after removing the edge 
 </div>
 <p>The intuition behind the Girvan-Newman algorithm is that edges connecting different communities have higher betweenness centrality, as they are crucial for connecting the communities. By iteratively removing these edges, the algorithm effectively identifies the communities in the network. For example, <a href="#fig-karate-club-removed-edge" class="quarto-xref">Figure&nbsp;3</a> shows the <code>G</code> is at risk to get disconnected if edges like <code>0-2</code>, <code>0-8</code>, and <code>19-33</code> are removed.</p>
 <p>Luckily, <code>networkx</code> provides a convenient function <code>community.girvan_newman</code> to automate the process of community detection using the Girvan-Newman algorithm. The function returns an iterator over the discovered communities, allowing us to stop the algorithm at a specific number of communities. Let us apply the Girvan-Newman algorithm to the Karate Club network and visualize the communities.</p>
-<div id="faf10cec" class="cell" data-execution_count="8">
+<div id="f941427e" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we must re-add the edge 0-31 to the graph</span></span>
@@ -290,7 +290,7 @@ Figure&nbsp;3: Visualization of the Karate Club network after removing the edge 
 </div>
 </div>
 <p>By default, the Girvan-Newman algorithm stops when the graph is partitioned into two communities. However, we can specify the desired number of communities by stopping the algorithm at a specific level. For example, we can stop the algorithm at the third level to obtain three communities.</p>
-<div id="ae2ba2c7" class="cell" data-execution_count="9">
+<div id="71836176" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> itertools</span>
@@ -432,7 +432,7 @@ Figure&nbsp;6: Visualization of the Karate Club network with four communities
 <p>In the second phase, the algorithm aggregates nodes belonging to the same community into a single node, creating a new, smaller network. Edges between the new nodes are weighted by the sum of the weights of the edges between the original nodes in the corresponding communities. The first phase is then reapplied to this new network.</p>
 <p>These two phases are repeated iteratively until the modularity no longer increases significantly. The result is a hierarchical decomposition of the network into communities, which can be represented at different levels of granularity. The Louvain algorithm is efficient and can handle large networks, making it widely used in various applications, including social network analysis, biology, and information retrieval.</p>
 <p>Let us consider an example of applying the Louvain algorithm to the Karate Club network. The <code>community</code> module in <code>networkx</code> provides an implementation of the Louvain algorithm, which we can use to detect communities in the network.</p>
-<div id="16dee801" class="cell" data-execution_count="13">
+<div id="fc2f03a8" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Louvain algorithm fit</span></span>

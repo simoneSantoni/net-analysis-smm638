@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Simone Santoni">
-<meta name="dcterms.date" content="2024-11-26">
+<meta name="dcterms.date" content="2024-11-27">
 
 <title>Manipulating Two-Mode (Bipartite) Networks</title>
 <style>
@@ -143,7 +143,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 26, 2024</p>
+      <p class="date">November 27, 2024</p>
     </div>
   </div>
   
@@ -164,7 +164,7 @@ window.Quarto = {
 <section id="notebook-setup" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Notebook setup</h1>
 <p>We are using <code>NumPy</code> for data simulation, <code>NetworkX</code> for network manipulation, and <code>Pandas</code> for data wrangling.</p>
-<div id="e92c9341" class="cell" data-execution_count="1">
+<div id="52fc6eb6" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -179,7 +179,7 @@ window.Quarto = {
 <section id="fake-data" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Fake data</h1>
 <p>We simulate an incidence matrix with 100 mode-1/bottom nodes (e.g., individuals) and 10 mode-2/top nodes (e.g., products).</p>
-<div id="46ae03bb" class="cell" data-execution_count="2">
+<div id="f46cb1f2" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># numpy simulation</span></span>
@@ -201,7 +201,7 @@ window.Quarto = {
 <section id="graph-creation" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Graph creation</h1>
 <p>We initialize a graph object and add nodes and edges as per the simulated incidence matrix. As you can see from the below-displayed graph, we pass the nodes in two chunks, one for each mode. Specifically, we distinguish between mode-1/bottom nodes and mode-2/top nodes by setting the <code>bipartite</code> attribute to 0 and 1, respectively. Then, we check whether the graph is bipartite, i.e., there are no edges connecting nodes of the same mode.</p>
-<div id="340f7ecf" class="cell" data-execution_count="3">
+<div id="4a9c6fba" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># empty graph</span></span>
@@ -230,7 +230,7 @@ Z = X^T \times X
 <section id="unweighted-projections-of-the-two-mode-networks" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="unweighted-projections-of-the-two-mode-networks"><span class="header-section-number">4.1</span> Unweighted projections of the two-mode networks</h2>
 <p>The unweighted projected graph is the projection of the bipartite network <code>bg</code> onto the specified nodes. The nodes retain their attributes and are connected in the resulting graph if they have an edge to a common node in the original graph.</p>
-<div id="de91a06b" class="cell" data-execution_count="4">
+<div id="be661647" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>g_b <span class="op">=</span> bp.projected_graph(bg, bottom_nodes)</span>
@@ -264,7 +264,7 @@ Z = X^T \times X
 Figure&nbsp;1: Unweighted projections of the two-mode networks
 </figcaption>
 <div aria-describedby="fig-unweighted-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="projection_files/figure-html/fig-unweighted-projections-output-1.png" width="689" height="463" class="figure-img">
+<img src="projection_files/figure-html/fig-unweighted-projections-output-1.png" width="689" height="469" class="figure-img">
 </div>
 </figure>
 </div>
@@ -274,7 +274,7 @@ Figure&nbsp;1: Unweighted projections of the two-mode networks
 <section id="weighted-projections-of-the-two-mode-networks" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="weighted-projections-of-the-two-mode-networks"><span class="header-section-number">4.2</span> Weighted projections of the two-mode networks</h2>
 <p>The weighted projected graph is the projection of the bipartite network <code>bg</code> onto the specified nodes with weights representing the number of shared neighbors or the ratio between actual shared neighbors and possible shared neighbors if ratio is True. The nodes retain their attributes and are connected in the resulting graph if they have an edge to a common node in the original graph.</p>
-<div id="790ef54f" class="cell" data-execution_count="6">
+<div id="be0bd31e" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>g_b_w <span class="op">=</span> bp.weighted_projected_graph(bg, bottom_nodes, ratio<span class="op">=</span><span class="va">True</span>)</span>
@@ -330,7 +330,7 @@ Figure&nbsp;1: Unweighted projections of the two-mode networks
 Figure&nbsp;2: Weighted projections of the two-mode networks
 </figcaption>
 <div aria-describedby="fig-weighted-projections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="projection_files/figure-html/fig-weighted-projections-output-1.png" width="689" height="464" class="figure-img">
+<img src="projection_files/figure-html/fig-weighted-projections-output-1.png" width="689" height="495" class="figure-img">
 </div>
 </figure>
 </div>
@@ -341,7 +341,7 @@ Figure&nbsp;2: Weighted projections of the two-mode networks
 <section id="writing-projections-to-files" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Writing projections to files</h1>
 <p>Finally, we write the projections to files.</p>
-<div id="89db316f" class="cell" data-execution_count="8">
+<div id="268be88d" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> <span class="st">'data'</span></span>

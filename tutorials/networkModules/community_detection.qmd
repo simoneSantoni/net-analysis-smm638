@@ -371,4 +371,9 @@ nx.draw(
 Considering the weighted network, the Louvain algorithm yields some notable results:
 
 + The strong ties between nodes `0`, `4`m, and `10` make nodes `0` and `4` part of the same community, despite the redundant ties to nodes `5`, `6` and `15` (compare @fig-karate-club-louvain-communities and @fig-karate-club-louvain-communities-weighted)
-+ Nodes located at the boarder of the communities are more likely to be assigned to the community with which they share the strongest ties. For example, node `9` is assigned to the same community as node `30`; node `19` is assigned to to the same community as node `3`.
++ Nodes located at the boarder of the communities are more likely to be assigned to the community with which they share the strongest ties. For example, node `9` is assigned to the same community as node `30`; node `19` is assigned to to the same community as node `3`
+
+```{shell}
+conda install -c conda-forge python-louvain
+
+```

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Simone Santoni">
-<meta name="dcterms.date" content="2024-11-25">
+<meta name="dcterms.date" content="2024-11-27">
 
 <title>SMM638 Final Course Project Description</title>
 <style>
@@ -145,7 +145,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 25, 2024</p>
+      <p class="date">November 27, 2024</p>
     </div>
   </div>
   
@@ -228,7 +228,7 @@ Z =
 <section id="friendship-networks" class="level2 page-columns page-full" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="friendship-networks"><span class="header-section-number">2.1</span> Friendship networks</h2>
 <p>For illustrative purposes, let us inspect the friendship network for the case of Croatia. First, we load <code>Pandas</code> and <code>NetworkX</code>, then we load the data:</p>
-<div id="e367780f" class="cell" data-execution_count="1">
+<div id="20875eaa" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load modules</span></span>
@@ -284,7 +284,7 @@ Z =
 </div>
 </div>
 <p>The data preview shows that the friendship network for Croatia is a list of edges, where each edge is a pair of user identifiers. The data can be used to create a network object using <code>NetworkX</code>:</p>
-<div id="c04933da" class="cell" data-execution_count="2">
+<div id="ae6f1467" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fr_g <span class="op">=</span> nx.from_pandas_edgelist(fr, source<span class="op">=</span><span class="st">'node_1'</span>, target<span class="op">=</span><span class="st">'node_2'</span>)</span>
@@ -292,7 +292,7 @@ Z =
 </details>
 </div>
 <p>Using code introspection, it is possible to see that the network object <code>fr_g</code> is a NetworkX object of type <code>Graph</code> and that it has 54,573 nodes and 498,202 edges. To familiarize with the data, we test if <code>fr_g</code> is connected:</p>
-<div id="1b284cf8" class="cell" data-execution_count="3">
+<div id="416720d3" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nx.is_connected(fr_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -368,7 +368,7 @@ Figure&nbsp;2: Friendship network for Croatia (N=54,573)
 <section id="music-genre-preferences" class="level2 page-columns page-full" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="music-genre-preferences"><span class="header-section-number">2.2</span> Music genre preferences</h2>
 <p>Building on the previous sub-section, we consider the preferences of users as per <code>HR_genres.json</code> files. These files are JSON files, which can be loaded using the <code>json</code> module:</p>
-<div id="d0e78547" class="cell" data-execution_count="6">
+<div id="4959f207" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
@@ -388,7 +388,7 @@ Figure&nbsp;2: Friendship network for Croatia (N=54,573)
 </div>
 </div>
 <p>At this stage, we have a dictionary where each key is a user identifier and the corresponding value is a list of genres that the user likes. For example, above is the list of music genres that user <code>11542</code> likes. We can convert the dictionary into a <code>Pandas</code> DataFrame drawing upon Pandas’ <code>json_normalize</code> function:</p>
-<div id="e7435ec3" class="cell" data-execution_count="7">
+<div id="4e3bb13d" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pr <span class="op">=</span> pd.json_normalize(pr_json).T</span>
@@ -434,7 +434,7 @@ Figure&nbsp;2: Friendship network for Croatia (N=54,573)
 </div>
 </div>
 <p>The data preview shows that the DataFrame <code>pr</code> has a single column, <code>genres</code>, which contains lists of genres that users like. To make the data more amenable to analysis, we can explode the lists of genres into separate rows drawing upon Pandas’ <code>explode</code> function:</p>
-<div id="62256c8a" class="cell" data-execution_count="8">
+<div id="1c393180" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pr <span class="op">=</span> pr.explode(<span class="st">'genres'</span>)</span>
