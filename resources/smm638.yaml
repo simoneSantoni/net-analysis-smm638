@@ -29,3 +29,4 @@ dependencies:
   - r-tergm
   - r-tsna
   - r-ergm
+  - r-car
