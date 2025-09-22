@@ -1,0 +1,24 @@
+---
+title: "Course Schedule"
+---
+
+| Module                             | Date                               | Topics                                                                                                |
+| --                                 | --                                 | --                                                                                                    |
+| Getting started with R             | 09-22 (stream A), 09-22 (stream B) | Installing R and RStudio - R as calculator - RStudio interface - R projects                           |
+| R language fundamentals            | 09-24 (stream A), 09-25 (stream B) | Objects and assignment - vectors - lists - data frames - factors - functions                          |
+| Introduction to tidyverse          | 09-25 (stream A), 09-26 (stream B) | Tidyverse ecosystem - data import with readr - basic dplyr operations - tidyr principles              |
+| Data types in tidyverse            | 09-30 (stream A), 09-30 (stream B) | Character strings - factors in tidyverse - dates and times with lubridate - categorical data          |
+| Data wrangling with dplyr          | 10-3 (stream A), 10-1 (stream B)   | Filtering and selecting - mutating - grouping and summarizing - joining datasets                      |
+| Organizing tabular data with tidyr | 10-10 (stream A), 10-8 (stream B)  | Pivoting data (wide to long, long to wide) - separating and uniting columns - handling missing values |
+
+::: {.callout-note}
+## Adjustments and Updates
+
+This schedule is subject to change based on:
+
+- Class progress and needs
+- University calendar changes
+- Unexpected closures
+
+All changes will be announced in class and posted on the course website.
+:::

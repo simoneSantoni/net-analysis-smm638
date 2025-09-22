@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Blue to yellow horizontal gradient -->
+    <linearGradient id="hexGradientDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c55600;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c55600;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Hexagon shape -->
+  <polygon points="100,20 170,60 170,140 100,180 30,140 30,60"
+           fill="url(#hexGradientDark)"
+           stroke="#e0e0e0"
+           stroke-width="4"/>
+
+  <!-- Module code text -->
+  <text x="100" y="100" text-anchor="middle" font-family="monospace" font-size="28" font-weight="bold" fill="#e0e0e0">
+    IND215
+  </text>
+  <text x="100" y="130" text-anchor="middle" font-family="monospace" font-size="18" font-weight="bold" fill="#e0e0e0">
+    Intro to R
+  </text>
+</svg>

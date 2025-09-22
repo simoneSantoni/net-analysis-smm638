@@ -1,0 +1,197 @@
+---
+title: "Course Support"
+---
+
+Learning to program can be challenging, but you don't have to do it alone.
+This page provides information about all the support resources available to
+help you succeed in IND216.
+
+::: {.callout-tip}
+**Where to get help**:
+
+- **Installation issues** → Office hours or lab sessions
+- **Coding questions** → Course forum, then office hours
+- **Conceptual questions** → Lecture Q&A or course forum
+- **Project guidance** → Schedule appointment with instructor
+- **Technical emergencies** → Email instructor directly
+:::
+
+## Support Resources
+
+### Course Forum
+
+Access the course forum through module IND216's Moodle website for:
+
+- Asking questions (conceptual or technical)
+- Sharing helpful resources
+- Discussing course material
+- Finding study partners
+
+**Forum Guidelines**:
+
+1. Search before posting (your question may be answered)
+2. Use descriptive titles
+3. Include error messages and code snippets
+4. Be respectful and helpful
+5. Don't share complete assignment solutions
+
+### Email Support
+
+**Instructor email**: [Sangseok.Lee@bayes.ac.uk](sangseok.lee@bayes.ac.uk)
+
+**When to email**:
+
+- Personal matters (illness, accommodations)
+- Scheduling appointments
+- Urgent technical issues
+- Administrative questions
+
+**Response time**: 24-48 hours on weekdays
+
+**Email tips**:
+
+- Use clear subject line: "IND216: [Topic]"
+- Include your student ID
+- Be specific about your issue
+- Attach relevant files if needed
+
+## Common Issues and Solutions
+
+### Installation Problems
+
+::: {.callout-warning}
+**Common Installation Issues**:
+
+**Problem**: Anaconda won't install
+
+- **Quick fix attempt**: Check system requirements, disable antivirus temporarily, run as administrator
+
+**Problem**: Jupyter won't start
+
+- **Quick fix attempt**: Update Anaconda, check firewall settings, try different browser
+
+**Quick fix attempt**: Packages won't import
+
+- **Quick fix attempt**: Verify installation with `conda list`, reinstall package, check environment
+:::
+
+### Coding Challenges
+
+**"I don't know where to start"**:
+
+1. Break the problem into smaller steps
+2. Write pseudocode first
+3. Start with the simplest part
+4. Use print statements to debug
+5. Look at similar examples
+
+**"My code doesn't work"**:
+
+1. Read error messages carefully
+2. Check for typos and syntax errors
+3. Verify data types
+4. Test with simple inputs
+5. Use debugging tools
+
+**"I don't understand the concept"**:
+
+1. Review lecture notes
+2. Try additional examples
+3. Watch supplementary videos
+4. Ask on the forum
+5. Attend office hours
+
+## Study Resources
+
+### Recommended Learning Path
+
+1. **Before Class**:
+   - Review previous material
+   - Read assigned sections
+   - Note questions
+
+2. **During Class**:
+   - Take active notes
+   - Try examples
+   - Ask questions
+
+3. **After Class**:
+   - Review notes same day
+   - Complete exercises
+   - Practice additional problems
+
+### Peer Support
+
+**Study Groups**:
+
+- Form groups of 3-4 students
+- Meet regularly to review material
+- Work through problems together
+- Share different approaches
+
+**Peer Tutoring**:
+
+- Advanced students available for tutoring
+- Sign up through course website
+- Free service for enrolled students
+
+## Mental Health and Wellbeing
+
+Programming can be frustrating at times. Remember:
+
+::: {.callout-note}
+**It's normal to**:
+
+- Feel stuck sometimes
+- Need multiple attempts
+- Make lots of errors
+- Need to ask for help
+- Take breaks when frustrated
+:::
+
+**Campus Resources**: See ["Your halth and
+wellbeing"](https://www.citystgeorges.ac.uk/prospective-students/student-life/student-wellbeing/your-health-wellbeing)
+page, hosted in the Uni's website.
+
+### Personal Emergencies
+
+**Illness or emergency**:
+- Email instructor ASAP
+- Provide documentation if extended
+- Discuss makeup options
+- Don't fall behind
+
+## FAQ
+
+**Q: How much time should I spend on this course?**
+A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).
+
+**Q: Can I use AI tools like ChatGPT?**
+A: You may use them for learning and understanding concepts, but submitted code must be your own work. Always cite any assistance received.
+
+**Q: What if I'm falling behind?**
+A: Seek help immediately. The course builds on itself, so early gaps become bigger problems later.
+
+**Q: Do I need a powerful computer?**
+A: No, basic Python programming doesn't require much computing power. Any computer from the last 5 years should work fine.
+
+**Q: Can I use a different IDE than recommended?**
+A: Yes, but you're responsible for any setup issues. We can only provide support for recommended tools.
+
+## Success Tips
+
+::: {.callout-tip}
+
+**Top tips from successful students**:
+
+1. **Start early** - Don't wait until the deadline
+2. **Practice daily** - Even 20 minutes helps
+3. **Make mistakes** - They're learning opportunities
+4. **Ask questions** - No question is too basic
+5. **Help others** - Teaching reinforces learning
+6. **Take breaks** - Fresh eyes spot errors
+7. **Document everything** - Comment your code
+8. **Stay organized** - Use folders and naming conventions
+:::
+
+Remember: We want you to succeed! Don't hesitate to reach out when you need help.

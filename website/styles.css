@@ -1,0 +1,57 @@
+/* Custom styles for IND216 Python course */
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.code-block {
+  background-color: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.exercise-box {
+  background-color: #e7f3ff;
+  border: 1px solid #b3d7ff;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.exercise-box h3 {
+  color: #0056b3;
+  margin-top: 0;
+}
+
+.tip-box {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.warning-box {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Improve code readability */
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+}
+
+/* Style inline code */
+code {
+  background-color: #f1f3f4;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}

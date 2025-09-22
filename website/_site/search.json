@@ -1,0 +1,535 @@
+[
+  {
+    "objectID": "modules/module-1/installing-r.html",
+    "href": "modules/module-1/installing-r.html",
+    "title": "Installing R and RStudio",
+    "section": "",
+    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing.",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#introduction",
+    "href": "modules/module-1/installing-r.html#introduction",
+    "title": "Installing R and RStudio",
+    "section": "",
+    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing.",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#why-r-and-rstudio",
+    "href": "modules/module-1/installing-r.html#why-r-and-rstudio",
+    "title": "Installing R and RStudio",
+    "section": "Why R and RStudio?",
+    "text": "Why R and RStudio?\nBefore diving into installation, let’s understand what we’re installing:\nR is the core programming language that provides:\n\nComprehensive statistical and graphical capabilities\nExtensive package ecosystem (CRAN)\nActive community and continuous development\nFree and open-source\n\nRStudio is an Integrated Development Environment (IDE) that makes working with R much easier by providing:\n\nSyntax highlighting and code completion\nIntegrated help and documentation\nProject management tools\nBuilt-in plotting and data viewing\nPackage management interface\n\nThink of R as the engine and RStudio as the comfortable cockpit that makes driving the engine a pleasant experience.",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#installation-steps",
+    "href": "modules/module-1/installing-r.html#installation-steps",
+    "title": "Installing R and RStudio",
+    "section": "Installation Steps",
+    "text": "Installation Steps\n\nStep 1: Install R\nR must be installed first, as RStudio depends on it.\n\nFor Windows:\n\nGo to the CRAN website\nClick “Download R for Windows”\nClick “base” (for first-time users)\nDownload the latest version (currently R 4.4.x)\nRun the downloaded installer and follow the prompts\nUse default settings unless you have specific preferences\n\n\n\nFor macOS:\n\nGo to the CRAN website\nClick “Download R for macOS”\nDownload the appropriate installer:\n\nFor Apple Silicon Macs (M1/M2): R-4.4.x-arm64.pkg\nFor Intel Macs: R-4.4.x-x86_64.pkg\n\nOpen the downloaded .pkg file and follow the installation steps\n\n\n\nFor Linux:\nMost Linux distributions include R in their package repositories. For Ubuntu/Debian:\nsudo apt update\nsudo apt install r-base r-base-dev\nFor more detailed Linux instructions, visit the CRAN Linux page.\n\n\n\nStep 2: Install RStudio Desktop\nAfter installing R successfully:\n\nGo to the RStudio download page\nScroll down to “All Installers and Tarballs”\nChoose the appropriate installer for your operating system:\n\nWindows: .exe installer\nmacOS: .dmg installer\nLinux: .deb or .rpm package\n\nDownload and run the installer\nFollow the installation prompts",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#verifying-your-installation",
+    "href": "modules/module-1/installing-r.html#verifying-your-installation",
+    "title": "Installing R and RStudio",
+    "section": "Verifying Your Installation",
+    "text": "Verifying Your Installation\nLet’s make sure everything is working correctly:\n\nTest R Installation\n\nOpen RStudio (it should automatically find your R installation)\nIn the Console pane (usually bottom-left), you should see something like:\n\nR version 4.4.1 (2024-06-14) -- \"Race for Your Life\"\nCopyright (C) 2024 The R Foundation for Statistical Computing\nPlatform: x86_64-pc-linux-gnu (64-bit)\n...\nType 'q()' to quit R.\n\n&gt;\n\nTry a simple command:\n\n\n# Test basic arithmetic\n2 + 2\n\n# Check R version\nR.version.string\n\n# Get help\nhelp(mean)\n\nIf these work without errors, congratulations! Your R installation is successful.",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#essential-configuration",
+    "href": "modules/module-1/installing-r.html#essential-configuration",
+    "title": "Installing R and RStudio",
+    "section": "Essential Configuration",
+    "text": "Essential Configuration\n\nSetting Your Working Directory\nIt’s helpful to organize your R work in a dedicated folder:\n\n# Check current working directory\ngetwd()\n\n# Set working directory (adjust path as needed)\nsetwd(\"~/Documents/R-Projects\")\n\n# Or better yet, use RStudio Projects (covered in next module)\n\n\n\nInstalling Essential Packages\nR’s power comes from its packages. Let’s install some essential ones:\n\n# Install the tidyverse (collection of data science packages)\ninstall.packages(\"tidyverse\")\n\n# Install other useful packages\ninstall.packages(c(\"here\", \"rmarkdown\", \"devtools\"))\n\n# Load a package to test\nlibrary(tidyverse)",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#package-management-fundamentals",
+    "href": "modules/module-1/installing-r.html#package-management-fundamentals",
+    "title": "Installing R and RStudio",
+    "section": "Package Management Fundamentals",
+    "text": "Package Management Fundamentals\nUnderstanding package management is crucial for R success:\n\nCRAN Packages\n\n# Install from CRAN (most common)\ninstall.packages(\"package_name\")\n\n# Install multiple packages\ninstall.packages(c(\"dplyr\", \"ggplot2\", \"readr\"))\n\n# Update packages\nupdate.packages()\n\n# Remove packages\nremove.packages(\"package_name\")\n\n\n\nLoading Packages\n\n# Load package for current session\nlibrary(dplyr)\n\n# Alternative loading method\nrequire(dplyr)\n\n# Check installed packages\ninstalled.packages()\n\n# Check loaded packages\nsearch()",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#rstudio-layout-overview",
+    "href": "modules/module-1/installing-r.html#rstudio-layout-overview",
+    "title": "Installing R and RStudio",
+    "section": "RStudio Layout Overview",
+    "text": "RStudio Layout Overview\nWhen you first open RStudio, you’ll see four panes:\n\nConsole (bottom-left): Where R commands are executed\nSource (top-left): Text editor for scripts and documents\nEnvironment/History (top-right): Variables and command history\nFiles/Plots/Packages/Help (bottom-right): File browser, plots, package manager, and help\n\nDon’t worry if this seems overwhelming – we’ll explore each pane in detail in the next lesson!",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#common-installation-issues",
+    "href": "modules/module-1/installing-r.html#common-installation-issues",
+    "title": "Installing R and RStudio",
+    "section": "Common Installation Issues",
+    "text": "Common Installation Issues\n\n“R not found” Error in RStudio\n\nSolution: Reinstall R first, then RStudio\nRStudio needs to detect your R installation\n\n\n\nPackage Installation Fails\n\nWindows: Install Rtools from CRAN\nmacOS: Install Xcode command line tools: xcode-select --install\nAll platforms: Try installing packages from a different mirror\n\n\n\nPermission Issues\n\nSolution: Run RStudio as administrator (Windows) or use sudo (Linux/macOS) for package installation",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#alternative-installation-methods",
+    "href": "modules/module-1/installing-r.html#alternative-installation-methods",
+    "title": "Installing R and RStudio",
+    "section": "Alternative Installation Methods",
+    "text": "Alternative Installation Methods\n\nUsing Package Managers\n\nWindows - Chocolatey:\nchoco install r.project rstudio\n\n\nmacOS - Homebrew:\nbrew install --cask r rstudio\n\n\nLinux - Conda:\nconda install -c r r-base rstudio",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#next-steps",
+    "href": "modules/module-1/installing-r.html#next-steps",
+    "title": "Installing R and RStudio",
+    "section": "Next Steps",
+    "text": "Next Steps\nNow that you have R and RStudio installed:\n\nExplore the RStudio Interface\nTry R as a Calculator\nLearn about R Scripts and Projects",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#resources-for-further-learning",
+    "href": "modules/module-1/installing-r.html#resources-for-further-learning",
+    "title": "Installing R and RStudio",
+    "section": "Resources for Further Learning",
+    "text": "Resources for Further Learning\n\nRStudio Education\nR for Data Science book (free online)\nCRAN Task Views\nRStudio Cheat Sheets\n\n\n\n\n\n\n\nPro Tip\n\n\n\nCreate a dedicated folder for your R projects and always use RStudio Projects to manage your work. This keeps your files organized and makes your analysis reproducible!",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "modules/module-1/installing-r.html#congratulations",
+    "href": "modules/module-1/installing-r.html#congratulations",
+    "title": "Installing R and RStudio",
+    "section": "Congratulations!",
+    "text": "Congratulations!\nYou’ve successfully set up your R environment! You’re now ready to start your data science journey with R.",
+    "crumbs": [
+      "Module 1: Getting Started with R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "course/team.html",
+    "href": "course/team.html",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Sangseok (Joseph) Lee\nInstructor\nPh.D. student in strategy at the Bayes Business School\n📬 Sangseok.Lee@bayes.ac.uk\n\n\n\n\nSimone Santoni\nModule leader\nAssociate professor in strategy at the Bayes Business School\n📬 Simone.Santoni.1@city.ac.uk",
+    "crumbs": [
+      "Course Information",
+      "Teaching team"
+    ]
+  },
+  {
+    "objectID": "course/support.html",
+    "href": "course/support.html",
+    "title": "Course Support",
+    "section": "",
+    "text": "Learning to program can be challenging, but you don’t have to do it alone. This page provides information about all the support resources available to help you succeed in IND216.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#support-resources",
+    "href": "course/support.html#support-resources",
+    "title": "Course Support",
+    "section": "Support Resources",
+    "text": "Support Resources\n\nCourse Forum\nAccess the course forum through module IND216’s Moodle website for:\n\nAsking questions (conceptual or technical)\nSharing helpful resources\nDiscussing course material\nFinding study partners\n\nForum Guidelines:\n\nSearch before posting (your question may be answered)\nUse descriptive titles\nInclude error messages and code snippets\nBe respectful and helpful\nDon’t share complete assignment solutions\n\n\n\nEmail Support\nInstructor email: Sangseok.Lee@bayes.ac.uk\nWhen to email:\n\nPersonal matters (illness, accommodations)\nScheduling appointments\nUrgent technical issues\nAdministrative questions\n\nResponse time: 24-48 hours on weekdays\nEmail tips:\n\nUse clear subject line: “IND216: [Topic]”\nInclude your student ID\nBe specific about your issue\nAttach relevant files if needed",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#common-issues-and-solutions",
+    "href": "course/support.html#common-issues-and-solutions",
+    "title": "Course Support",
+    "section": "Common Issues and Solutions",
+    "text": "Common Issues and Solutions\n\nInstallation Problems\n\n\n\n\n\n\nCommon Installation Issues:\nProblem: Anaconda won’t install\n\nQuick fix attempt: Check system requirements, disable antivirus temporarily, run as administrator\n\nProblem: Jupyter won’t start\n\nQuick fix attempt: Update Anaconda, check firewall settings, try different browser\n\nQuick fix attempt: Packages won’t import\n\nQuick fix attempt: Verify installation with conda list, reinstall package, check environment\n\n\n\n\n\n\nCoding Challenges\n“I don’t know where to start”:\n\nBreak the problem into smaller steps\nWrite pseudocode first\nStart with the simplest part\nUse print statements to debug\nLook at similar examples\n\n“My code doesn’t work”:\n\nRead error messages carefully\nCheck for typos and syntax errors\nVerify data types\nTest with simple inputs\nUse debugging tools\n\n“I don’t understand the concept”:\n\nReview lecture notes\nTry additional examples\nWatch supplementary videos\nAsk on the forum\nAttend office hours",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#study-resources",
+    "href": "course/support.html#study-resources",
+    "title": "Course Support",
+    "section": "Study Resources",
+    "text": "Study Resources\n\nRecommended Learning Path\n\nBefore Class:\n\nReview previous material\nRead assigned sections\nNote questions\n\nDuring Class:\n\nTake active notes\nTry examples\nAsk questions\n\nAfter Class:\n\nReview notes same day\nComplete exercises\nPractice additional problems\n\n\n\n\nPeer Support\nStudy Groups:\n\nForm groups of 3-4 students\nMeet regularly to review material\nWork through problems together\nShare different approaches\n\nPeer Tutoring:\n\nAdvanced students available for tutoring\nSign up through course website\nFree service for enrolled students",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#mental-health-and-wellbeing",
+    "href": "course/support.html#mental-health-and-wellbeing",
+    "title": "Course Support",
+    "section": "Mental Health and Wellbeing",
+    "text": "Mental Health and Wellbeing\nProgramming can be frustrating at times. Remember:\n\n\n\n\n\n\nIt’s normal to:\n\nFeel stuck sometimes\nNeed multiple attempts\nMake lots of errors\nNeed to ask for help\nTake breaks when frustrated\n\n\n\n\nCampus Resources: See “Your halth and wellbeing” page, hosted in the Uni’s website.\n\nPersonal Emergencies\nIllness or emergency: - Email instructor ASAP - Provide documentation if extended - Discuss makeup options - Don’t fall behind",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#faq",
+    "href": "course/support.html#faq",
+    "title": "Course Support",
+    "section": "FAQ",
+    "text": "FAQ\nQ: How much time should I spend on this course? A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).\nQ: Can I use AI tools like ChatGPT? A: You may use them for learning and understanding concepts, but submitted code must be your own work. Always cite any assistance received.\nQ: What if I’m falling behind? A: Seek help immediately. The course builds on itself, so early gaps become bigger problems later.\nQ: Do I need a powerful computer? A: No, basic Python programming doesn’t require much computing power. Any computer from the last 5 years should work fine.\nQ: Can I use a different IDE than recommended? A: Yes, but you’re responsible for any setup issues. We can only provide support for recommended tools.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#success-tips",
+    "href": "course/support.html#success-tips",
+    "title": "Course Support",
+    "section": "Success Tips",
+    "text": "Success Tips\n\n\n\n\n\n\nTop tips from successful students:\n\nStart early - Don’t wait until the deadline\nPractice daily - Even 20 minutes helps\nMake mistakes - They’re learning opportunities\nAsk questions - No question is too basic\nHelp others - Teaching reinforces learning\nTake breaks - Fresh eyes spot errors\nDocument everything - Comment your code\nStay organized - Use folders and naming conventions\n\n\n\n\nRemember: We want you to succeed! Don’t hesitate to reach out when you need help.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/info.html",
+    "href": "course/info.html",
+    "title": "Course Information",
+    "section": "",
+    "text": "IND215 - Introduction to R for Analytics is designed specifically for MSc students in analytics who want to develop practical programming skills for data analysis. This course provides a foundation in R programming with a focus on statistical computing, data manipulation, and the tidyverse ecosystem."
+  },
+  {
+    "objectID": "course/info.html#course-overview",
+    "href": "course/info.html#course-overview",
+    "title": "Course Information",
+    "section": "",
+    "text": "IND215 - Introduction to R for Analytics is designed specifically for MSc students in analytics who want to develop practical programming skills for data analysis. This course provides a foundation in R programming with a focus on statistical computing, data manipulation, and the tidyverse ecosystem."
+  },
+  {
+    "objectID": "course/info.html#learning-philosophy",
+    "href": "course/info.html#learning-philosophy",
+    "title": "Course Information",
+    "section": "Learning Philosophy",
+    "text": "Learning Philosophy\nThis course takes a practical, hands-on approach to learning R. Rather than covering every aspect of the language, we focus on the fundamental concepts and packages that analytics professionals use daily:\n\nPractical Focus: Learn by doing with real-world examples and exercises\nAnalytics-Oriented: Emphasis on statistical thinking, data manipulation, and visualization\nProgressive Learning: Build skills incrementally from basic R concepts to tidyverse mastery\nModern Tools: Use current best practices and the tidyverse ecosystem"
+  },
+  {
+    "objectID": "course/info.html#course-structure",
+    "href": "course/info.html#course-structure",
+    "title": "Course Information",
+    "section": "Course Structure",
+    "text": "Course Structure\nThe course is organized into four substantive modules:\n\nModule 1: Getting Started with R\n\nR and RStudio installation and setup\nR as a calculator and basic operations\nUnderstanding the RStudio interface\nCreating and managing R scripts and projects\n\n\n\nModule 2: R Fundamentals\n\nObjects, assignment, and basic data types\nVectors, lists, and data frames\nFactors and their importance in statistical analysis\nControl structures (if statements, loops) and functions\nFile handling and data import/export\n\n\n\nModule 3: Introduction to Tidyverse\n\nUnderstanding the tidyverse philosophy\nData import with readr\nBasic data manipulation with dplyr\nData tidying principles with tidyr\n\n\n\nModule 4: Data Wrangling with dplyr\n\nFiltering, selecting, and arranging data\nCreating new variables with mutate\nGrouping and summarizing data\nJoining datasets and advanced data manipulation"
+  },
+  {
+    "objectID": "course/info.html#learning-objectives",
+    "href": "course/info.html#learning-objectives",
+    "title": "Course Information",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this course, students will be able to:\n\nSet up and manage R environments for data analysis projects using RStudio\nWrite clean, efficient R code following tidyverse principles and best practices\nManipulate and analyze data using base R and tidyverse functions\nProcess and transform datasets using dplyr for data wrangling\nImport and export data from various file formats using readr and base R\nCreate reproducible data analysis workflows with R scripts and R Markdown\nApply statistical thinking to data exploration and basic analysis tasks"
+  },
+  {
+    "objectID": "course/info.html#prerequisites",
+    "href": "course/info.html#prerequisites",
+    "title": "Course Information",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nNo prior programming experience required\nBasic computer literacy (file management, using applications)\nWillingness to learn through trial and error\nAccess to a computer for hands-on practice"
+  },
+  {
+    "objectID": "course/info.html#software-requirements",
+    "href": "course/info.html#software-requirements",
+    "title": "Course Information",
+    "section": "Software Requirements",
+    "text": "Software Requirements\n\nR 4.0+ (we recommend R 4.3 or newer)\nRStudio Desktop (latest version for the best experience)\nEssential R packages (tidyverse, readr, dplyr, ggplot2, and others)\nGit for version control (optional but recommended)"
+  },
+  {
+    "objectID": "course/info.html#assessment-and-practice",
+    "href": "course/info.html#assessment-and-practice",
+    "title": "Course Information",
+    "section": "Assessment and Practice",
+    "text": "Assessment and Practice\nThis course emphasizes practical skill development through:\n\nInteractive exercises embedded in each module\nHands-on coding assignments using real datasets\nProgressive projects that build on previous concepts\nSelf-assessment opportunities to check understanding"
+  },
+  {
+    "objectID": "course/info.html#getting-help",
+    "href": "course/info.html#getting-help",
+    "title": "Course Information",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nUse the course materials and examples as your first reference\nPractice with the provided exercises and datasets\nConsult Python documentation and community resources\nAsk questions during class sessions or office hours"
+  },
+  {
+    "objectID": "course/info.html#success-tips",
+    "href": "course/info.html#success-tips",
+    "title": "Course Information",
+    "section": "Success Tips",
+    "text": "Success Tips\n\nPractice regularly: Programming is a skill that improves with consistent practice\nStart small: Begin with simple examples and gradually tackle more complex problems\nRead error messages: They often contain helpful information about what went wrong\nUse online resources: The R community has excellent documentation and tutorials\nDon’t be afraid to experiment: Try different approaches and see what works\nThink in data frames: Most R operations work naturally with tabular data"
+  },
+  {
+    "objectID": "course/info.html#course-resources",
+    "href": "course/info.html#course-resources",
+    "title": "Course Information",
+    "section": "Course Resources",
+    "text": "Course Resources\n\nOfficial R Documentation: r-project.org\nRStudio Resources: rstudio.com\nTidyverse Documentation: tidyverse.org\nR for Data Science Book: r4ds.had.co.nz"
+  },
+  {
+    "objectID": "course/schedule.html",
+    "href": "course/schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Module\nDate\nTopics\n\n\n\n\nGetting started with R\n09-22 (stream A), 09-22 (stream B)\nInstalling R and RStudio - R as calculator - RStudio interface - R projects\n\n\nR language fundamentals\n09-24 (stream A), 09-25 (stream B)\nObjects and assignment - vectors - lists - data frames - factors - functions\n\n\nIntroduction to tidyverse\n09-25 (stream A), 09-26 (stream B)\nTidyverse ecosystem - data import with readr - basic dplyr operations - tidyr principles\n\n\nData types in tidyverse\n09-30 (stream A), 09-30 (stream B)\nCharacter strings - factors in tidyverse - dates and times with lubridate - categorical data\n\n\nData wrangling with dplyr\n10-3 (stream A), 10-1 (stream B)\nFiltering and selecting - mutating - grouping and summarizing - joining datasets\n\n\nOrganizing tabular data with tidyr\n10-10 (stream A), 10-8 (stream B)\nPivoting data (wide to long, long to wide) - separating and uniting columns - handling missing values\n\n\n\n\n\n\n\n\n\nAdjustments and Updates\n\n\n\nThis schedule is subject to change based on:\n\nClass progress and needs\nUniversity calendar changes\nUnexpected closures\n\nAll changes will be announced in class and posted on the course website.",
+    "crumbs": [
+      "Course Information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html",
+    "href": "course/syllabus.html",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "This course provides a comprehensive foundation in network analysis for analytics students. By the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\nBy completing this course, you will develop expertise in:\n\nNetwork Theory Fundamentals: Understanding basic network concepts, terminology, and the mathematical foundations underlying network analysis\nData Collection & Preparation: Gathering, cleaning, and structuring network data from various sources including social media, organizational systems, and collaboration platforms\nNetwork Visualization: Creating compelling visual representations of networks using tools like R (igraph, ggraph) and Python (NetworkX, matplotlib)\nCentrality Analysis: Computing and interpreting various centrality measures (degree, betweenness, closeness, eigenvector) to identify influential nodes\nCommunity Detection: Applying algorithms to discover clusters, modules, and communities within complex networks\nStatistical Network Modeling: Understanding and applying Exponential Random Graph Models (ERGMs) and other statistical approaches\nBusiness Applications: Translating network insights into actionable business recommendations for marketing, operations, and strategy\nProgramming Skills: Developing proficiency in R and Python for network analysis workflows\n\n\n\n\n\n\nOur approach emphasizes learning by doing. Rather than memorizing notions and syntax, you’ll build practical skills through:\n\n🎯 Hands-on exercises with real datasets\n🔄 Iterative learning that builds on previous concepts\n🌟 Industry-relevant examples and case studies\n🤝 Collaborative problem-solving in group sessions",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#introduction-to-r",
+    "href": "course/syllabus.html#introduction-to-r",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "This course provides a comprehensive foundation in R programming tailored for analytics. By the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nSet up and manage R environments for data analysis projects using RStudio\nR Fundamentals: Master R’s syntax, data structures, and statistical computing concepts\nWrite clean, efficient R code using tidyverse principles and best practices\nManipulate and analyze data using base R and tidyverse functions\nProcess and transform datasets using dplyr for advanced data wrangling\nDevelop reproducible data analysis workflows with R scripts and R Markdown\nDebug and troubleshoot common R programming issues\nApply statistical thinking to real-world analytics problems\n\n\n\n\n\n\nOur approach emphasizes learning by doing. Rather than memorizing syntax, you’ll build practical skills through:\n\n🎯 Hands-on exercises with real datasets\n🔄 Iterative learning that builds on previous concepts\n🌟 Industry-relevant examples and case studies\n🤝 Collaborative problem-solving in group sessions",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#module-structure",
+    "href": "course/syllabus.html#module-structure",
+    "title": "Course Syllabus",
+    "section": "Module Structure",
+    "text": "Module Structure\nThe course is organized into six progressive modules, each building upon the previous:\n\n📚 Module 1: Getting Started with R\nDuration: Week 1\nSet up your R environment and learn the basics of working with RStudio, R scripts, and essential development practices.\nKey Topics: R and RStudio installation, R as calculator, RStudio interface, R projects\n\n\n🔧 Module 2: R Language Fundamentals\nDuration: Weeks 2\nMaster R’s fundamental building blocks including data types, data structures, and control flow.\nKey Topics: Objects, assignment, vectors, lists, data frames, factors, functions, control structures\n\n\n📊 Module 3: Introduction to Tidyverse\nDuration: Week 3\nExplore the tidyverse philosophy and learn essential packages for modern R programming.\nKey Topics: Tidyverse ecosystem, data import with readr, basic dplyr operations, tidyr principles\n\n\n🎯 Module 4: Data Types in Tidyverse\nDuration: Week 4\nDeepen your understanding of data types within the tidyverse framework and learn to work effectively with different data structures.\nKey Topics: Character strings, factors in tidyverse, dates and times with lubridate, categorical data handling\n\n\n📈 Module 5: Data Wrangling with dplyr\nDuration: Week 5\nMaster advanced data manipulation techniques using dplyr for comprehensive data wrangling.\nKey Topics: Filtering, selecting, mutating, grouping, summarizing, joining datasets\n\n\n📋 Module 6: Organizing Tabular Data with tidyr\nDuration: Week 6\nMaster data reshaping and organization techniques to transform messy data into tidy formats suitable for analysis.\nKey Topics: Pivoting data (wide to long, long to wide), separating and uniting columns, handling missing values, nested data structures",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#learning-approach",
+    "href": "course/syllabus.html#learning-approach",
+    "title": "Course Syllabus",
+    "section": "Learning Approach",
+    "text": "Learning Approach\n\nInteractive Learning Environment\nWe believe in active learning where you’ll:\n\n\nDuring Sessions\n\nLive coding demonstrations\nPair programming exercises\nGroup problem-solving\nQ&A discussions\n\n\n\nBetween Sessions\n\nPractice exercises\nReading assignments\nMini-projects\nPeer review activities\n\n\n\n\n\nAssessment Methods\n\nFormal Assessment\n\n\nIn-Class Participation (20%) - Active contribution to case discussions - Engagement in group exercises - Quality of questions and insights - Peer collaboration effectiveness\n\n\nMid-Term Project (40%) - Team-based network analysis project - Real-world dataset application - Technical implementation and visualization - Business insights and recommendations\n\n\nFinal Course Project (40%) - Individual capstone project - Original network analysis research - Comprehensive report and presentation - Integration of course concepts\n\n\n\n\nContinuous Self-Assessment\nWhile formal assessment provides external validation, self-assessment forms the cornerstone of learning in this module. Students are encouraged to:\n\nMonitor their understanding during lectures and practical sessions\nComplete problem sets independently to identify knowledge gaps\nActively seek and incorporate feedback from instructors\nTrack their progress against module learning objectives",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-materials",
+    "href": "course/syllabus.html#course-materials",
+    "title": "Course Syllabus",
+    "section": "Course Materials",
+    "text": "Course Materials\n\n💻 Required Software\n\n\n\n\n\n\nEssential Tools\n\n\n\nProgramming Languages: - R (version 4.0+) with RStudio - Python (version 3.8+) with Jupyter notebooks\nKey R Packages: - igraph - Core network analysis functionality - ggraph - Network visualization with grammar of graphics - tidygraph - Tidy network analysis workflows - statnet - Statistical network modeling - networkD3 - Interactive network visualizations\nKey Python Libraries: - NetworkX - Comprehensive network analysis - matplotlib and seaborn - Static visualizations - plotly - Interactive network plots - pandas and numpy - Data manipulation - scipy - Scientific computing for networks\n\n\n\n\n📖 Recommended Textbooks\nPrimary References: - Wasserman, S., & Faust, K. (1994). Social Network Analysis: Methods and Applications. Cambridge University Press. - Newman, M. (2010). Networks: An Introduction. Oxford University Press. - Scott, J. (2017). Social Network Analysis (4th ed.). SAGE Publications.\nSupplementary Materials: - Borgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). Analyzing Social Networks (2nd ed.). SAGE Publications. - Barabási, A. L. (2016). Network Science. Cambridge University Press. - Luke, D. A. (2015). A User’s Guide to Network Analysis in R. Springer.\n\n\n🎈 Online Resources\nCourse-Specific: - Course GitHub repository with code examples and datasets - Moodle discussion forums for Q&A and collaboration - Weekly video tutorials and walkthroughs\nExternal Learning: - Network Science Book by Albert-László Barabási (free online) - CRAN Task View: Social Network Analysis - NetworkX Documentation - R Graph Gallery - Network Section - Gephi - Open-source network visualization platform",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-policies",
+    "href": "course/syllabus.html#course-policies",
+    "title": "Course Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nAttendance and Participation\n\nRegular attendance is mandatory for SMM638\nActive participation in class discussions encouraged\n\n\n\nGetting Help\n\n\n\n\n\n\n\nMoodle Forum: Available on course website, expect a reply within 24-48 hours in weekdays\nEmail instructor: simone.santoni.1@city.ac.uk\nOffice Hours: In-depth conceptual discussions (reach out to simone.santoni.1@city.ac.uk to book your appointment)\nPeer Study Groups: Self-organized, facilitated by instructor\n\n\n\n\n\n\nAccommodations\nStudents with documented disabilities who may need accommodations should liaise with the course officer as soon as possible. All discussions will remain confidential. Students should also contact the Office of Disability Services to verify their eligibility for reasonable accommodations.\n\n\nChanges to Syllabus\nThe instructor reserves the right to modify this syllabus as needed. Any changes will be announced in class and posted on the course website with adequate notice.",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Network Analytics－SMM638",
+    "section": "",
+    "text": "This interactive website provides a comprehensive four-part introduction to R programming specifically designed for students in analytics curricula. The course emphasizes R’s language fundamentals, the tidyverse ecosystem, and data manipulation for statistical computing and data science."
+  },
+  {
+    "objectID": "index.html#welcome-to-ind215",
+    "href": "index.html#welcome-to-ind215",
+    "title": "Network Analytics－SMM638",
+    "section": "",
+    "text": "This interactive website provides a comprehensive four-part introduction to R programming specifically designed for students in analytics curricula. The course emphasizes R’s language fundamentals, the tidyverse ecosystem, and data manipulation for statistical computing and data science."
+  },
+  {
+    "objectID": "index.html#why-r-for-analytics",
+    "href": "index.html#why-r-for-analytics",
+    "title": "Network Analytics－SMM638",
+    "section": "Why R for Analytics?",
+    "text": "Why R for Analytics?\nR has been the gold standard for statistical computing and data analysis for good reasons:\n\n🌟 Statistical Foundation\n\nCreated by statisticians for statistical analysis\nStandard tool in academia, research, and data science\nPreferred language for statistical modeling and hypothesis testing\n\n\n\n💪 Rich Ecosystem\n\nComprehensive statistical libraries (stats, MASS)\nElegant data manipulation (tidyverse: dplyr, tidyr, ggplot2)\nAdvanced visualization capabilities (ggplot2, plotly, shiny)\nMachine learning and predictive modeling (caret, randomForest)\n\n\n\n🎯 Data-First Design\n\nBuilt-in support for statistical data types (factors, time series)\nVectorized operations for efficient data processing\nSeamless integration with databases and file formats\nInteractive data exploration and analysis\nPublication-ready graphics and reports"
+  },
+  {
+    "objectID": "index.html#the-r-learning-journey-a-humorous-reality-check",
+    "href": "index.html#the-r-learning-journey-a-humorous-reality-check",
+    "title": "Network Analytics－SMM638",
+    "section": "The R Learning Journey: A Humorous Reality Check",
+    "text": "The R Learning Journey: A Humorous Reality Check\nLearning R is an adventure filled with “aha!” moments, head-scratching confusion, and the occasional existential crisis about why your data frame suddenly became a factor (again). Every R programmer has traveled this path, from their first 2 + 2 to their thousandth Google search about why their ggplot won’t cooperate.\nBelow is a humorous, fictitious R function that captures the universal experiences every R learner encounters. As you progress through this course, you’ll gradually understand why each of these moments is both frustrating and funny. Consider it a preview of coming attractions – if you don’t find it amusing now, bookmark it and return after a few weeks of R. You’ll be laughing (or crying) in recognition!\n\nThe Universal R Learning Timeline\nThis function documents real phenomena you’ll encounter: - Days 1-10: The honeymoon phase where everything seems logical until you meet factors - Days 10-100: The valley of despair where you discover R’s “quirks” - Days 100-365: The plateau of productivity where you can actually wrangle data (while still Googling constantly) - Days 365+: The eternal journey where you realize the tidyverse keeps evolving\n\nr_newbie_experience &lt;- function(day) {\n  # Simulates the emotional journey of learning R.\n  # Warning: Results may vary. Side effects include: false confidence,\n  # existential dread about factors, sudden urges to pipe everything,\n  # and an unhealthy relationship with Stack Overflow.\n  #\n  # Note: This function is 100% accurate based on extensive field research\n  # (aka crying over RStudio worldwide).\n\n  experiences &lt;- list(\n    `1` = \"2 + 2  # I AM A DATA SCIENTIST NOW!!!\",\n    `2` = \"x &lt;- 'R is easy'  # This arrow thing is cool!\",\n    `3` = \"c(1, 2, 3)  # Everything is a vector? Even single numbers?!\",\n    `4` = \"data.frame(x = 1:3, y = 4:6)  # Look at me making data!\",\n    `5` = \"my_data$new_column &lt;- 'value'  # Dollar signs everywhere!\",\n    `6` = \"factor(c('A', 'B', 'A'))  # Why are my letters ordered weird?\",\n    `7` = \"mean(c(1, 2, NA))  # Returns NA. R is broken.\",\n    `8` = \"mean(c(1, 2, NA), na.rm = TRUE)  # Oh... that's embarrassing\",\n    `9` = \"library(tidyverse)  # Installed 47 packages. Is this normal?\",\n    `10` = \"data %&gt;% filter()  # What is this pipe thing?\",\n    `12` = \"ggplot(data, aes(x, y)) + geom_point()  # I made a chart!\",\n    `14` = \"install.packages('everything')  # Package not found. Dreams crushed.\",\n    `15` = \"subset(data, condition)  # Why does everyone say this is bad?\",\n    `18` = \"data %&gt;% select(everything())  # Pipe addiction begins\",\n    `20` = \"for(i in 1:10) print(i)  # Loops work but everyone judges me\",\n    `25` = \"apply(matrix, 1, function(x) sum(x))  # Functions have functions?\",\n    `30` = \"str(object)  # Everything has structure. Mind = blown\",\n    `35` = \"read.csv('file.csv')  # Why are my numbers now factors?!\",\n    `40` = \"stringsAsFactors = FALSE  # The magic incantation\",\n    `45` = \"data$column[data$other_column == 'value']  # Bracket hell\",\n    `50` = \"library(dplyr); data %&gt;% filter(column == 'value')  # Enlightenment\",\n    `55` = \"Error: object 'column' not found  # But I can see it right there!\",\n    `60` = \"data %&gt;% mutate(new = old * 2)  # Mutate sounds violent\",\n    `65` = \"group_by(category) %&gt;% summarise(mean = mean(value))  # I'm a wizard!\",\n    `70` = \"left_join(df1, df2, by = 'id')  # Joins without SQL?\",\n    `75` = \"pivot_longer(data, cols = everything())  # Reshape magic\",\n    `80` = \"ggplot() + theme_minimal() + labs() + scale_x_continuous()  # Layered grammar\",\n    `85` = \"ggsave('plot.png', width = 8, height = 6, dpi = 300)  # Publication ready!\",\n    `90` = \"map(list, ~function(.x))  # Functional programming in R?\",\n    `95` = \"case_when(condition1 ~ result1, TRUE ~ default)  # Vectorized if-else\",\n    `100` = \"data[data$x &gt; 5 & data$y &lt; 10, ]  # Back to base R. Feeling dirty.\",\n    `110` = \"glue('Hello {name}!')  # String interpolation discovered\",\n    `120` = \"# Started answering R questions (incorrectly) on Stack Overflow\",\n    `130` = \"options(stringsAsFactors = FALSE)  # Set global defaults\",\n    `140` = \"library(here); here('data', 'file.csv')  # Path management zen\",\n    `150` = \"renv::init()  # Environment management. Finally!\",\n    `180` = \"Discovered R Markdown. Rewrote everything. Literate programming!\",\n    `200` = \"shiny::fluidPage()  # Interactive web apps in R?!\",\n    `250` = \"data.table vs dplyr debates. Chose sides. Lost friends.\",\n    `300` = \"Rcpp::cppFunction()  # C++ in R. Peak performance.\",\n    `365` = \"# Still googling 'how to exit vim' but my R analysis is solid\",\n    `400` = \"targets::tar_make()  # Pipeline management. Professional level.\",\n    `500` = \"Writing R packages. DESCRIPTION file mysteries solved.\",\n    `600` = \"CRAN submission. Peer review trauma begins.\",\n    `700` = \"Dreams in dplyr. Nightmares about factors.\",\n    `800` = \"Discovered {{}}.  Tidy evaluation everywhere.\",\n    `900` = \"10 years later: Still finding new CRAN packages daily\",\n    `1000` = \"Achieved enlightenment: Everything is a list (even data frames)\"\n  )\n\n  # Special milestone messages\n  if (day &lt; 0) {\n    return(\"Error: Time travel not yet implemented in R 4.x (check CRAN)\")\n  } else if (day == 0) {\n    return(\"Day 0: Googling 'R vs Excel' (preparing for enlightenment)\")\n  } else if (day == 42) {\n    return(\"Day 42: The answer to life, universe, and missing values\")\n  } else if (day == 404) {\n    return(\"Day 404: Object not found. Try ls() again later.\")\n  } else if (day == 418) {\n    return(\"Day 418: I'm a teapot. Also, discovered Easter eggs in R\")\n  } else if (day == 314) {\n    return(paste0(\"Day \", day, \": pi  # Built-in constant. Math rocks!\"))\n  } else if (as.character(day) %in% names(experiences)) {\n    return(experiences[[as.character(day)]])\n  } else if (day &gt; 1000) {\n    return(paste0(\"Day \", day, \": Realized the real R was the data we wrangled along the way\"))\n  } else if (day &gt; 365) {\n    return(paste0(\"Day \", day, \": Still discovering that everything is a vector (even confusion)\"))\n  } else {\n    states &lt;- c(\n      \"Alternating between 'I'm a data wizard' and 'I know nothing'\",\n      \"Debugging code that worked yesterday without changes\",\n      \"Adding print() statements everywhere like breadcrumbs\",\n      \"Copy-pasting from Stack Overflow with pride\",\n      \"Explaining to rubber duck why dplyr should work\",\n      \"Discovering the bug was a missing comma. Again.\",\n      \"Refactoring working code because 'tidyverse is cleaner'\",\n      \"Breaking production on a Friday at 4:59 PM\"\n    )\n    return(paste0(\"Day \", day, \": \", sample(states, 1)))\n  }\n}\n\n# Test the journey with milestone days\ncat(\"=== The R Newbie Journey: Extended Director's Cut ===\\n\\n\")\ntest_days &lt;- c(0, 1, 4, 9, 30, 42, 60, 100, 365, 404, 418, 500, 1000)\nfor (day in test_days) {\n  cat(sprintf(\"Day %4d: %s\\n\", day, r_newbie_experience(day)))\n}"
+  },
+  {
+    "objectID": "index.html#ready-to-begin",
+    "href": "index.html#ready-to-begin",
+    "title": "Network Analytics－SMM638",
+    "section": "Ready to Begin?",
+    "text": "Ready to Begin?\nStart your R journey by:\n\n📚 Reading the Course Syllabus\n📅 Reviewing the Course Schedule\n💻 Setting up R and RStudio with our Getting Started Guide"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html",
+    "href": "sessions/session-1/introduction_to_network_analytics.html",
+    "title": "Installing R and RStudio",
+    "section": "",
+    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing."
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#introduction",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#introduction",
+    "title": "Installing R and RStudio",
+    "section": "",
+    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing."
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#why-r-and-rstudio",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#why-r-and-rstudio",
+    "title": "Installing R and RStudio",
+    "section": "Why R and RStudio?",
+    "text": "Why R and RStudio?\nBefore diving into installation, let’s understand what we’re installing:\nR is the core programming language that provides:\n\nComprehensive statistical and graphical capabilities\nExtensive package ecosystem (CRAN)\nActive community and continuous development\nFree and open-source\n\nRStudio is an Integrated Development Environment (IDE) that makes working with R much easier by providing:\n\nSyntax highlighting and code completion\nIntegrated help and documentation\nProject management tools\nBuilt-in plotting and data viewing\nPackage management interface\n\nThink of R as the engine and RStudio as the comfortable cockpit that makes driving the engine a pleasant experience."
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#installation-steps",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#installation-steps",
+    "title": "Installing R and RStudio",
+    "section": "Installation Steps",
+    "text": "Installation Steps\n\nStep 1: Install R\nR must be installed first, as RStudio depends on it.\n\nFor Windows:\n\nGo to the CRAN website\nClick “Download R for Windows”\nClick “base” (for first-time users)\nDownload the latest version (currently R 4.4.x)\nRun the downloaded installer and follow the prompts\nUse default settings unless you have specific preferences\n\n\n\nFor macOS:\n\nGo to the CRAN website\nClick “Download R for macOS”\nDownload the appropriate installer:\n\nFor Apple Silicon Macs (M1/M2): R-4.4.x-arm64.pkg\nFor Intel Macs: R-4.4.x-x86_64.pkg\n\nOpen the downloaded .pkg file and follow the installation steps\n\n\n\nFor Linux:\nMost Linux distributions include R in their package repositories. For Ubuntu/Debian:\nsudo apt update\nsudo apt install r-base r-base-dev\nFor more detailed Linux instructions, visit the CRAN Linux page.\n\n\n\nStep 2: Install RStudio Desktop\nAfter installing R successfully:\n\nGo to the RStudio download page\nScroll down to “All Installers and Tarballs”\nChoose the appropriate installer for your operating system:\n\nWindows: .exe installer\nmacOS: .dmg installer\nLinux: .deb or .rpm package\n\nDownload and run the installer\nFollow the installation prompts"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#verifying-your-installation",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#verifying-your-installation",
+    "title": "Installing R and RStudio",
+    "section": "Verifying Your Installation",
+    "text": "Verifying Your Installation\nLet’s make sure everything is working correctly:\n\nTest R Installation\n\nOpen RStudio (it should automatically find your R installation)\nIn the Console pane (usually bottom-left), you should see something like:\n\nR version 4.4.1 (2024-06-14) -- \"Race for Your Life\"\nCopyright (C) 2024 The R Foundation for Statistical Computing\nPlatform: x86_64-pc-linux-gnu (64-bit)\n...\nType 'q()' to quit R.\n\n&gt;\n\nTry a simple command:\n\n\n# Test basic arithmetic\n2 + 2\n\n# Check R version\nR.version.string\n\n# Get help\nhelp(mean)\n\nIf these work without errors, congratulations! Your R installation is successful."
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#essential-configuration",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#essential-configuration",
+    "title": "Installing R and RStudio",
+    "section": "Essential Configuration",
+    "text": "Essential Configuration\n\nSetting Your Working Directory\nIt’s helpful to organize your R work in a dedicated folder:\n\n# Check current working directory\ngetwd()\n\n# Set working directory (adjust path as needed)\nsetwd(\"~/Documents/R-Projects\")\n\n# Or better yet, use RStudio Projects (covered in next module)\n\n\n\nInstalling Essential Packages\nR’s power comes from its packages. Let’s install some essential ones:\n\n# Install the tidyverse (collection of data science packages)\ninstall.packages(\"tidyverse\")\n\n# Install other useful packages\ninstall.packages(c(\"here\", \"rmarkdown\", \"devtools\"))\n\n# Load a package to test\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#package-management-fundamentals",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#package-management-fundamentals",
+    "title": "Installing R and RStudio",
+    "section": "Package Management Fundamentals",
+    "text": "Package Management Fundamentals\nUnderstanding package management is crucial for R success:\n\nCRAN Packages\n\n# Install from CRAN (most common)\ninstall.packages(\"package_name\")\n\n# Install multiple packages\ninstall.packages(c(\"dplyr\", \"ggplot2\", \"readr\"))\n\n# Update packages\nupdate.packages()\n\n# Remove packages\nremove.packages(\"package_name\")\n\n\n\nLoading Packages\n\n# Load package for current session\nlibrary(dplyr)\n\n# Alternative loading method\nrequire(dplyr)\n\n# Check installed packages\ninstalled.packages()\n\n# Check loaded packages\nsearch()"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#rstudio-layout-overview",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#rstudio-layout-overview",
+    "title": "Installing R and RStudio",
+    "section": "RStudio Layout Overview",
+    "text": "RStudio Layout Overview\nWhen you first open RStudio, you’ll see four panes:\n\nConsole (bottom-left): Where R commands are executed\nSource (top-left): Text editor for scripts and documents\nEnvironment/History (top-right): Variables and command history\nFiles/Plots/Packages/Help (bottom-right): File browser, plots, package manager, and help\n\nDon’t worry if this seems overwhelming – we’ll explore each pane in detail in the next lesson!"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#common-installation-issues",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#common-installation-issues",
+    "title": "Installing R and RStudio",
+    "section": "Common Installation Issues",
+    "text": "Common Installation Issues\n\n“R not found” Error in RStudio\n\nSolution: Reinstall R first, then RStudio\nRStudio needs to detect your R installation\n\n\n\nPackage Installation Fails\n\nWindows: Install Rtools from CRAN\nmacOS: Install Xcode command line tools: xcode-select --install\nAll platforms: Try installing packages from a different mirror\n\n\n\nPermission Issues\n\nSolution: Run RStudio as administrator (Windows) or use sudo (Linux/macOS) for package installation"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#alternative-installation-methods",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#alternative-installation-methods",
+    "title": "Installing R and RStudio",
+    "section": "Alternative Installation Methods",
+    "text": "Alternative Installation Methods\n\nUsing Package Managers\n\nWindows - Chocolatey:\nchoco install r.project rstudio\n\n\nmacOS - Homebrew:\nbrew install --cask r rstudio\n\n\nLinux - Conda:\nconda install -c r r-base rstudio"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#next-steps",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#next-steps",
+    "title": "Installing R and RStudio",
+    "section": "Next Steps",
+    "text": "Next Steps\nNow that you have R and RStudio installed:\n\nExplore the RStudio Interface\nTry R as a Calculator\nLearn about R Scripts and Projects"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#resources-for-further-learning",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#resources-for-further-learning",
+    "title": "Installing R and RStudio",
+    "section": "Resources for Further Learning",
+    "text": "Resources for Further Learning\n\nRStudio Education\nR for Data Science book (free online)\nCRAN Task Views\nRStudio Cheat Sheets\n\n\n\n\n\n\n\nPro Tip\n\n\n\nCreate a dedicated folder for your R projects and always use RStudio Projects to manage your work. This keeps your files organized and makes your analysis reproducible!"
+  },
+  {
+    "objectID": "sessions/session-1/introduction_to_network_analytics.html#congratulations",
+    "href": "sessions/session-1/introduction_to_network_analytics.html#congratulations",
+    "title": "Installing R and RStudio",
+    "section": "Congratulations!",
+    "text": "Congratulations!\nYou’ve successfully set up your R environment! You’re now ready to start your data science journey with R."
+  },
+  {
+    "objectID": "course/syllabus.html#network-analytics",
+    "href": "course/syllabus.html#network-analytics",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "This course provides a comprehensive foundation in network analysis for analytics students. By the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\nBy completing this course, you will develop expertise in:\n\nNetwork Theory Fundamentals: Understanding basic network concepts, terminology, and the mathematical foundations underlying network analysis\nData Collection & Preparation: Gathering, cleaning, and structuring network data from various sources including social media, organizational systems, and collaboration platforms\nNetwork Visualization: Creating compelling visual representations of networks using tools like R (igraph, ggraph) and Python (NetworkX, matplotlib)\nCentrality Analysis: Computing and interpreting various centrality measures (degree, betweenness, closeness, eigenvector) to identify influential nodes\nCommunity Detection: Applying algorithms to discover clusters, modules, and communities within complex networks\nStatistical Network Modeling: Understanding and applying Exponential Random Graph Models (ERGMs) and other statistical approaches\nBusiness Applications: Translating network insights into actionable business recommendations for marketing, operations, and strategy\nProgramming Skills: Developing proficiency in R and Python for network analysis workflows\n\n\n\n\n\n\nOur approach emphasizes learning by doing. Rather than memorizing notions and syntax, you’ll build practical skills through:\n\n🎯 Hands-on exercises with real datasets\n🔄 Iterative learning that builds on previous concepts\n🌟 Industry-relevant examples and case studies\n🤝 Collaborative problem-solving in group sessions",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#session-structure",
+    "href": "course/syllabus.html#session-structure",
+    "title": "Course Syllabus",
+    "section": "Session Structure",
+    "text": "Session Structure\nThe course is organized around ten weeks, each building upon the previous:\n\n📚 Session 1: Introduction to network analytics\nDuration: Week 1\n\nKey network concepts\nReal-world networks: Economic and organizational aspects\nSoundcloud example\nR and Python setup for network analytics\n\n\n\n🔧 Session 2: Network metrics\nDuration: Weeks 2\n\nTaxonomy of network metrics: node-, meso-, macro-level indicators\nZooming on network centrality\n\nConcept\nMechanisms\nConsequences\n\nFrom centrality to social influence\n\n\n\n📊 Session 3: Business case discussion on social influence\nDuration: Week 3\n\nCentrality and social influence in BeerAdvocate\nCollective discussion\nSolution implementation in R\n\n\n\n🎯 Session 4: Organizational network analysis\nDuration: Week 4\n\nUsing network methods to represent and understand information flows\nPositions and roles in networks\n\n\n\n📈 Session 5: Business case discussion on organizational network analysis\nDuration: Week 5\n\nAppreciating roles’ role in OSS development\n\n\n\n📋 Session 6: Students presentations\n\nMTP presentations\n\n\n\n🔍 Session 7: Network modularity\nDuration: Week 7\n\nUnderstanding network structure beyond individual nodes\nCore-periphery models and identification\nCommunity detection algorithms (modularity optimization, Louvain method)\nBlock-modeling for role analysis\nApplications in organizational and social networks\n\n\n\n📱 Session 8: Case discussion on community detection\nDuration: Week 8\n\nAnalyzing relational similarity among music listeners\nCase study based on Spotify/music platform data\nImplementation of community detection algorithms\nBusiness implications for recommendation systems\nReference: Poetic article on music communities\n\n\n\n💡 Session 9: Networks, creativity, and innovation\nDuration: Week 9\n\nThe role of network position in innovation and creativity\nStructural holes theory and brokerage benefits\nCase study based on Ronald Burt’s research on innovation within firms\nMeasuring and fostering innovative network positions\nApplications to R&D teams and knowledge workers\n\n\n\n🎓 Session 10: Final presentations and course wrap-up\nDuration: Week 10\n\nStudent final project presentations\nPeer feedback and discussion\nCourse synthesis and real-world applications\nFuture directions in network analytics",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  }
+]

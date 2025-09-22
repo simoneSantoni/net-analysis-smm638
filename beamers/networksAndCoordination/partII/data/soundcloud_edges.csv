@@ -1,9 +1,0 @@
-u,v,label,lw,color,opacity,bend,Direct,fontscale,style
-e,f,,1,black,1,30,true,1.25,
-f,e,,1,black,1,30,true,1.25,
-g,e,,1,black,1,30,true,1.25,
-e,a,Comment,1,base_c,1,12,true,1.25,dotted
-h,d,Comment,1,base_c,1,12,true,1.25,dotted
-e,a,Repost,1,tri_1,1,-12,true,1.25,dashed
-f,b,Like,1,tri_2,1,-12,true,1.25
-h,d,Like,1,tri_2,1,-12,true,1.25

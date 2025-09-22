@@ -1,7 +1,0 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\beamer@sectionintoc {1}{Wrap Up on Network Change}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Session 6}{10}{0}{1}
-\beamer@subsectionintoc {1}{2}{Session 7}{17}{0}{1}
-\beamer@sectionintoc {2}{Modeling Selection and Social Influence with SAOMs}{32}{0}{2}
-\beamer@subsectionintoc {2}{1}{The Nuts and Bolts of SAOMs}{33}{0}{2}
-\beamer@subsectionintoc {2}{2}{Modeling Friendship and Intention to Quit in the Workplace}{42}{0}{2}

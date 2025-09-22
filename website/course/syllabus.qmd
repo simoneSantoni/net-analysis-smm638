@@ -1,0 +1,264 @@
+---
+title: "Course Syllabus"
+---
+
+## Network Analytics
+
+### What You'll Learn
+
+This course provides a comprehensive foundation in network analysis for
+analytics students. By the end of this module, you will be able to:
+
+::: {.callout-note}
+## Core Competencies
+
+By completing this course, you will develop expertise in:
+
+- **Network Theory Fundamentals**: Understanding basic network concepts, terminology, and the mathematical foundations underlying network analysis
+- **Data Collection & Preparation**: Gathering, cleaning, and structuring network data from various sources including social media, organizational systems, and collaboration platforms
+- **Network Visualization**: Creating compelling visual representations of networks using tools like R (igraph, ggraph) and Python (NetworkX, matplotlib)
+- **Centrality Analysis**: Computing and interpreting various centrality measures (degree, betweenness, closeness, eigenvector) to identify influential nodes
+- **Community Detection**: Applying algorithms to discover clusters, modules, and communities within complex networks
+- **Statistical Network Modeling**: Understanding and applying Exponential Random Graph Models (ERGMs) and other statistical approaches
+- **Business Applications**: Translating network insights into actionable business recommendations for marketing, operations, and strategy
+- **Programming Skills**: Developing proficiency in R and Python for network analysis workflows
+:::
+
+### Course Philosophy
+
+Our approach emphasizes **learning by doing**. Rather than memorizing notions and syntax,
+you'll build practical skills through:
+
+- 🎯 **Hands-on exercises** with real datasets
+- 🔄 **Iterative learning** that builds on previous concepts
+- 🌟 **Industry-relevant** examples and case studies
+- 🤝 **Collaborative problem-solving** in group sessions
+
+## Session Structure
+
+The course is organized around ten weeks, each building upon the
+previous:
+
+### 📚 Session 1: Introduction to network analytics
+**Duration**: Week 1
+
+- Key network concepts
+- Real-world networks: Economic and organizational aspects
+- Soundcloud example
+- R and Python setup for network analytics
+
+### 🔧 Session 2: Network metrics
+**Duration**: Weeks 2
+
+- Taxonomy of network metrics: node-, meso-, macro-level indicators
+- Zooming on network centrality
+  - Concept
+  - Mechanisms
+  - Consequences
+- From centrality to social influence
+
+### 📊 Session 3: Business case discussion on social influence
+**Duration**: Week 3
+
+- Centrality and social influence in BeerAdvocate
+- Collective discussion
+- Solution implementation in R
+
+### 🎯 Session 4: Organizational network analysis
+**Duration**: Week 4
+
+- Using network methods to represent and understand information flows
+- Positions and roles in networks
+
+### 📈 Session 5: Business case discussion on organizational network analysis
+**Duration**: Week 5
+
+- Appreciating roles' role in OSS development
+
+### 📋 Session 6: Students presentations
+
+- MTP presentations
+
+### 🔍 Session 7: Network modularity
+**Duration**: Week 7
+
+- Understanding network structure beyond individual nodes
+- Core-periphery models and identification
+- Community detection algorithms (modularity optimization, Louvain method)
+- Block-modeling for role analysis
+- Applications in organizational and social networks
+
+### 📱 Session 8: Case discussion on community detection
+**Duration**: Week 8
+
+- Analyzing relational similarity among music listeners
+- Case study based on Spotify/music platform data
+- Implementation of community detection algorithms
+- Business implications for recommendation systems
+- Reference: [Poetic article on music communities](https://www.sciencedirect.com/science/article/pii/S0304422X25000336)
+
+### 💡 Session 9: Networks, creativity, and innovation
+**Duration**: Week 9
+
+- The role of network position in innovation and creativity
+- Structural holes theory and brokerage benefits
+- Case study based on Ronald Burt's research on innovation within firms
+- Measuring and fostering innovative network positions
+- Applications to R&D teams and knowledge workers
+
+### 🎓 Session 10: Final presentations and course wrap-up
+**Duration**: Week 10
+
+- Student final project presentations
+- Peer feedback and discussion
+- Course synthesis and real-world applications
+- Future directions in network analytics
+
+## Learning Approach
+
+### Interactive Learning Environment
+
+We believe in **active learning** where you'll:
+
+::: {.grid}
+::: {.g-col-6}
+**During Sessions**
+
+- Live coding demonstrations
+- Pair programming exercises
+- Group problem-solving
+- Q&A discussions
+:::
+
+::: {.g-col-6}
+**Between Sessions**
+
+- Practice exercises
+- Reading assignments
+- Mini-projects
+- Peer review activities
+:::
+:::
+
+### Assessment Methods
+
+#### Formal Assessment
+
+::: {.grid}
+::: {.g-col-4}
+**In-Class Participation (20%)**
+- Active contribution to case discussions
+- Engagement in group exercises
+- Quality of questions and insights
+- Peer collaboration effectiveness
+:::
+
+::: {.g-col-4}
+**Mid-Term Project (40%)**
+- Team-based network analysis project
+- Real-world dataset application
+- Technical implementation and visualization
+- Business insights and recommendations
+:::
+
+::: {.g-col-4}
+**Final Course Project (40%)**
+- Individual capstone project
+- Original network analysis research
+- Comprehensive report and presentation
+- Integration of course concepts
+:::
+:::
+
+#### Continuous Self-Assessment
+While formal assessment provides external validation, self-assessment forms
+the cornerstone of learning in this module. Students are encouraged to:
+
+- Monitor their understanding during lectures and practical sessions
+- Complete problem sets independently to identify knowledge gaps
+- Actively seek and incorporate feedback from instructors
+- Track their progress against module learning objectives
+
+## Course Materials
+
+### 💻 Required Software
+
+::: {.callout-important}
+## Essential Tools
+
+**Programming Languages:**
+- **R** (version 4.0+) with RStudio
+- **Python** (version 3.8+) with Jupyter notebooks
+
+**Key R Packages:**
+- `igraph` - Core network analysis functionality
+- `ggraph` - Network visualization with grammar of graphics
+- `tidygraph` - Tidy network analysis workflows
+- `statnet` - Statistical network modeling
+- `networkD3` - Interactive network visualizations
+
+**Key Python Libraries:**
+- `NetworkX` - Comprehensive network analysis
+- `matplotlib` and `seaborn` - Static visualizations
+- `plotly` - Interactive network plots
+- `pandas` and `numpy` - Data manipulation
+- `scipy` - Scientific computing for networks
+:::
+
+### 📖 Recommended Textbooks
+
+**Primary References:**
+- Wasserman, S., & Faust, K. (1994). *Social Network Analysis: Methods and Applications*. Cambridge University Press.
+- Newman, M. (2010). *Networks: An Introduction*. Oxford University Press.
+- Scott, J. (2017). *Social Network Analysis* (4th ed.). SAGE Publications.
+
+**Supplementary Materials:**
+- Borgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). *Analyzing Social Networks* (2nd ed.). SAGE Publications.
+- Barabási, A. L. (2016). *Network Science*. Cambridge University Press.
+- Luke, D. A. (2015). *A User's Guide to Network Analysis in R*. Springer.
+
+### 🎈 Online Resources
+
+**Course-Specific:**
+- Course GitHub repository with code examples and datasets
+- Moodle discussion forums for Q&A and collaboration
+- Weekly video tutorials and walkthroughs
+
+**External Learning:**
+- [Network Science Book](http://networksciencebook.com/) by Albert-László Barabási (free online)
+- [CRAN Task View: Social Network Analysis](https://cran.r-project.org/web/views/SocialNetworks.html)
+- [NetworkX Documentation](https://networkx.org/documentation/stable/)
+- [R Graph Gallery - Network Section](https://r-graph-gallery.com/network.html)
+- [Gephi](https://gephi.org/) - Open-source network visualization platform
+
+## Course Policies
+
+### Attendance and Participation
+- Regular attendance is mandatory for SMM638
+- Active participation in class discussions encouraged
+
+### Getting Help
+
+::: {.callout-tip}
+1. **Moodle Forum**: Available on course website, expect a reply within 24-48
+   hours in weekdays
+2. **Email instructor**:
+   [simone.santoni.1@city.ac.uk](simone.santoni.1@city.ac.uk)
+3. **Office Hours**: In-depth conceptual discussions (reach out to
+   [simone.santoni.1@city.ac.uk](simone.santoni.1@city.ac.uk) to book your
+   appointment)
+4. **Peer Study Groups**: Self-organized, facilitated by instructor
+:::
+
+### Accommodations
+
+Students with documented disabilities who may need accommodations should
+liaise with the course officer as soon as possible. All discussions will
+remain confidential. Students should also contact the Office of Disability
+Services to verify their eligibility for reasonable accommodations.
+
+### Changes to Syllabus
+
+The instructor reserves the right to modify this syllabus as needed. Any
+changes will be announced in class and posted on the course website with
+adequate notice.

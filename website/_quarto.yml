@@ -1,0 +1,83 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "**/*.qmd"
+
+website:
+  title: "SMM638 - Netowkr Analytics"
+  description: "MSc Module on R Programming for Analytics - Learn R fundamentals and the tidyverse for data wrangling and statistical computing"
+  site-url: https://simonesantoni.github.io/net-analysis-smm638
+  repo-url: https://github.com/simoneSantoni/net-analysis-smm638
+
+  page-navigation: true
+
+  page-footer:
+    left: |
+      &copy; 2025 Simone Santoni
+    center: |
+      [SMM638 - Network Analytics](https://simonesantoni.github.io/net-analysis-smm638)
+    right: |
+      Made with [Quarto](https://quarto.org/)
+
+  sidebar:
+    style: docked
+    search: true
+    logo: imgs/r-module-icon-light.svg
+    #title: "SMM638"
+    tools:
+      - icon: github
+        href: https://github.com/simoneSantoni/net-analysis-smm638
+        text: "Repository"
+      - icon: pencil-square
+        href: https://github.com/simoneSantoni/net-analysis-smm638/edit/master/{{< meta quarto:source >}}
+        text: "Edit this page"
+      - icon: bug
+        href: https://github.com/simoneSantoni/net-analysis-smm638/issues/new
+        text: "Report an issue"
+    contents:
+      - section: "Course Information"
+        contents:
+          - text: "Syllabus"
+            href: course/syllabus.qmd
+          - text: "Schedule"
+            href: course/schedule.qmd
+          - text: "Support"
+            href: course/support.qmd
+          - text: "Teaching team"
+            href: course/team.qmd
+
+      - section: "Module 1: Getting Started with R"
+        contents:
+          - text: "Installing R and RStudio"
+            href: modules/module-1/installing-r.qmd
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    number-sections: false
+    number-depth: 3
+    callout-appearance: simple
+    callout-icon: false
+    citations-hover: true
+    footnotes-hover: true
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false
+  message: false
+
+jupyter:
+  kernelspec:
+    name: "ir"
+    language: "R"
+    display_name: "R (ind215)"

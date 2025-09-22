@@ -1,0 +1,108 @@
+---
+title: "Course Information"
+---
+
+## Course Overview
+
+IND215 - Introduction to R for Analytics is designed specifically for MSc
+students in analytics who want to develop practical programming skills for
+data analysis. This course provides a foundation in R programming with a focus
+on statistical computing, data manipulation, and the tidyverse ecosystem.
+
+## Learning Philosophy
+
+This course takes a practical, hands-on approach to learning R. Rather than
+covering every aspect of the language, we focus on the fundamental concepts
+and packages that analytics professionals use daily:
+
+- **Practical Focus**: Learn by doing with real-world examples and exercises
+- **Analytics-Oriented**: Emphasis on statistical thinking, data manipulation, and visualization
+- **Progressive Learning**: Build skills incrementally from basic R concepts to tidyverse mastery
+- **Modern Tools**: Use current best practices and the tidyverse ecosystem
+
+## Course Structure
+
+The course is organized into four substantive modules:
+
+### Module 1: Getting Started with R
+- R and RStudio installation and setup
+- R as a calculator and basic operations
+- Understanding the RStudio interface
+- Creating and managing R scripts and projects
+
+### Module 2: R Fundamentals
+- Objects, assignment, and basic data types
+- Vectors, lists, and data frames
+- Factors and their importance in statistical analysis
+- Control structures (if statements, loops) and functions
+- File handling and data import/export
+
+### Module 3: Introduction to Tidyverse
+- Understanding the tidyverse philosophy
+- Data import with readr
+- Basic data manipulation with dplyr
+- Data tidying principles with tidyr
+
+### Module 4: Data Wrangling with dplyr
+- Filtering, selecting, and arranging data
+- Creating new variables with mutate
+- Grouping and summarizing data
+- Joining datasets and advanced data manipulation
+
+## Learning Objectives
+
+By the end of this course, students will be able to:
+
+1. **Set up and manage R environments** for data analysis projects using RStudio
+2. **Write clean, efficient R code** following tidyverse principles and best practices
+3. **Manipulate and analyze data** using base R and tidyverse functions
+4. **Process and transform datasets** using dplyr for data wrangling
+5. **Import and export data** from various file formats using readr and base R
+6. **Create reproducible data analysis workflows** with R scripts and R Markdown
+7. **Apply statistical thinking** to data exploration and basic analysis tasks
+
+## Prerequisites
+
+- **No prior programming experience required**
+- Basic computer literacy (file management, using applications)
+- Willingness to learn through trial and error
+- Access to a computer for hands-on practice
+
+## Software Requirements
+
+- **R 4.0+** (we recommend R 4.3 or newer)
+- **RStudio Desktop** (latest version for the best experience)
+- **Essential R packages** (tidyverse, readr, dplyr, ggplot2, and others)
+- **Git** for version control (optional but recommended)
+
+## Assessment and Practice
+
+This course emphasizes practical skill development through:
+
+- **Interactive exercises** embedded in each module
+- **Hands-on coding assignments** using real datasets
+- **Progressive projects** that build on previous concepts
+- **Self-assessment opportunities** to check understanding
+
+## Getting Help
+
+- Use the course materials and examples as your first reference
+- Practice with the provided exercises and datasets
+- Consult Python documentation and community resources
+- Ask questions during class sessions or office hours
+
+## Success Tips
+
+1. **Practice regularly**: Programming is a skill that improves with consistent practice
+2. **Start small**: Begin with simple examples and gradually tackle more complex problems
+3. **Read error messages**: They often contain helpful information about what went wrong
+4. **Use online resources**: The R community has excellent documentation and tutorials
+5. **Don't be afraid to experiment**: Try different approaches and see what works
+6. **Think in data frames**: Most R operations work naturally with tabular data
+
+## Course Resources
+
+- **Official R Documentation**: [r-project.org](https://www.r-project.org/other-docs.html)
+- **RStudio Resources**: [rstudio.com](https://rstudio.com/resources/)
+- **Tidyverse Documentation**: [tidyverse.org](https://www.tidyverse.org/)
+- **R for Data Science Book**: [r4ds.had.co.nz](https://r4ds.had.co.nz/)

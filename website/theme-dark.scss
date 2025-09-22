@@ -1,0 +1,306 @@
+/*-- scss:defaults --*/
+
+// Dark theme colors
+$primary: #3498db;
+$secondary: #e74c3c;
+$success: #27ae60;
+$info: #5dade2;
+$warning: #f39c12;
+$danger: #e74c3c;
+$light: #2c3e50;
+$dark: #ecf0f1;
+
+// Body
+$body-bg: #1a1a1a;
+$body-color: #e0e0e0;
+$link-color: #5dade2;
+$link-hover-color: #85c1f5;
+
+// Code
+$code-bg: #0d1117; // Much darker background for better contrast
+$code-color: #e6edf3; // Lighter text for better readability
+
+// Navigation
+$navbar-bg: #0d0d0d;
+$navbar-fg: #e0e0e0;
+$sidebar-bg: #228b22;
+$sidebar-fg: #ffffff;
+$sidebar-hl: #ffe6e6;
+
+/*-- scss:rules --*/
+
+// Import fonts
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+// Dark theme specific overrides
+.hero-banner {
+  background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
+}
+
+.viz-principle {
+  background-color: #1e2a3a;
+  border-left-color: #5dade2;
+}
+
+//.code-example {
+//  background-color: #2c3e50;
+//  border-color: #34495e;
+//}
+
+.week-card {
+  background-color: #2c3e50;
+  border-color: #34495e;
+
+  h3 {
+    color: #5dade2;
+  }
+}
+
+.assignment-badge {
+  &.lab {
+    background-color: #1e2a3a;
+    color: #5dade2;
+  }
+
+  &.homework {
+    background-color: #3e2a1a;
+    color: #f39c12;
+  }
+
+  &.project {
+    background-color: #1a3e2a;
+    color: #27ae60;
+  }
+}
+
+.table {
+  thead th {
+    background-color: #2c3e50;
+  }
+}
+
+.callout {
+  background-color: #2c3e50;
+
+  &.callout-note {
+    border-left-color: #5dade2;
+  }
+
+  &.callout-warning {
+    border-left-color: #f39c12;
+  }
+
+  &.callout-important {
+    border-left-color: #e74c3c;
+  }
+
+  &.callout-tip {
+    border-left-color: #27ae60;
+  }
+}
+
+.nav-footer {
+  border-top-color: #34495e;
+}
+
+// Next section navigation
+.next-section-nav {
+  border-top-color: #34495e;
+
+  .next-link {
+    background-color: #cb3c33;
+
+    &:hover {
+      background-color: #a53028;
+    }
+  }
+}
+
+// Code cells and syntax highlighting
+.cell-code {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+}
+
+.sourceCode {
+  background-color: #0d1117 !important;
+  color: #e6edf3;
+
+  pre {
+    background-color: #0d1117 !important;
+    color: #e6edf3;
+  }
+
+  code {
+    background-color: #0d1117 !important;
+    color: #e6edf3;
+  }
+}
+
+// Inline code
+code:not(.sourceCode) {
+  background-color: #161b22;
+  color: #79c0ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+// Code blocks
+pre {
+  background-color: #0d1117 !important;
+  color: #e6edf3 !important;
+  border: 1px solid #30363d;
+
+  code {
+    background-color: transparent !important;
+    color: #e6edf3 !important;
+  }
+}
+
+// Code copy button
+.code-copy-button {
+  background-color: #21262d;
+  color: #8b949e;
+  border: 1px solid #30363d;
+
+  &:hover {
+    background-color: #30363d;
+    color: #c9d1d9;
+  }
+}
+
+// Theme-specific logo handling
+body.quarto-dark {
+  .sidebar-logo {
+    content: url("imgs/module-icon-dark.svg");
+  }
+}
+
+// Center sidebar tools
+.sidebar-tools-main {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+// Syntax highlighting colors for better visibility
+.sourceCode {
+  // Keywords (def, if, for, etc.)
+  .kw {
+    color: #ff7b72;
+  }
+
+  // Strings
+  .st {
+    color: #a5d6ff;
+  }
+
+  // Comments
+  .co {
+    color: #8b949e;
+  }
+
+  // Numbers
+  .dv,
+  .fl {
+    color: #79c0ff;
+  }
+
+  // Built-in functions
+  .bu {
+    color: #d2a8ff;
+  }
+
+  // Operators
+  .op {
+    color: #ff7b72;
+  }
+
+  // Variables and function names
+  .va {
+    color: #ffa657;
+  }
+
+  // Decorators
+  .at {
+    color: #d2a8ff;
+  }
+
+  // Imports
+  .im {
+    color: #ff7b72;
+  }
+}
+
+// Custom boxes for exercises and warnings - Dark theme
+.exercise-box {
+  background-color: #1a2332;
+  border: 2px solid #5dade2;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+
+  h3 {
+    color: #5dade2;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  code:not(.sourceCode) {
+    background-color: #161b22;
+    color: #79c0ff;
+  }
+}
+
+.warning-box {
+  background-color: #2d2416;
+  border: 2px solid #f39c12;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+
+  h3 {
+    color: #f39c12;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  ol,
+  ul {
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: #f5b041;
+  }
+}
+
+// Figure styling - Dark theme
+.figure {
+  margin: 2rem auto;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  figcaption,
+  p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #8b949e;
+    font-style: italic;
+  }
+}
