@@ -1,0 +1,10 @@
+---
+title: "Week 5"
+subtitle: "Dyads, triads, and network dynamics - case discussion"
+callout-appearance: "default"
+---
+
+::: {.callout-note}
+Content coming soon.
+
+:::

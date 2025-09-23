@@ -1,0 +1,10 @@
+---
+title: "Week 7"
+subtitle: "Network cohesion and community"
+callout-appearance: "default"
+---
+
+::: {.callout-note}
+Content coming soon.
+
+:::

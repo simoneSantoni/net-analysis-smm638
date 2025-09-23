@@ -1,0 +1,10 @@
+---
+title: "Week 4"
+subtitle: "Dyads, triads, and network dynamics"
+callout-appearance: "default"
+---
+
+::: {.callout-note}
+Content coming soon.
+
+:::

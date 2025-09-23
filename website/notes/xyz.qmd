@@ -1,0 +1,16 @@
+---
+title: "Supplemental Notes"
+---
+
+## Additional Resources
+
+This section contains supplemental materials and advanced topics not covered in the main course.
+
+### Coming Soon
+- Advanced network models (ERGM, TERGM)
+- Machine learning on graphs
+- Temporal network analysis
+- Multilayer networks
+- Network sampling techniques
+
+Check back for updates throughout the course.

@@ -1,234 +1,341 @@
 [
   {
-    "objectID": "modules/module-1/installing-r.html",
-    "href": "modules/module-1/installing-r.html",
-    "title": "Installing R and RStudio",
+    "objectID": "weeks/week-9/main.html",
+    "href": "weeks/week-9/main.html",
+    "title": "Week 9",
     "section": "",
-    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing.",
+    "text": "Note\n\n\n\nContent coming soon.",
     "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
+      "Weekly materials",
+      "Week 9"
     ]
   },
   {
-    "objectID": "modules/module-1/installing-r.html#introduction",
-    "href": "modules/module-1/installing-r.html#introduction",
-    "title": "Installing R and RStudio",
+    "objectID": "weeks/week-7/main.html",
+    "href": "weeks/week-7/main.html",
+    "title": "Week 7",
     "section": "",
-    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing.",
+    "text": "Week 7 Content\nContent coming soon.",
     "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
+      "Weekly materials",
+      "Week 7"
     ]
   },
   {
-    "objectID": "modules/module-1/installing-r.html#why-r-and-rstudio",
-    "href": "modules/module-1/installing-r.html#why-r-and-rstudio",
-    "title": "Installing R and RStudio",
-    "section": "Why R and RStudio?",
-    "text": "Why R and RStudio?\nBefore diving into installation, let’s understand what we’re installing:\nR is the core programming language that provides:\n\nComprehensive statistical and graphical capabilities\nExtensive package ecosystem (CRAN)\nActive community and continuous development\nFree and open-source\n\nRStudio is an Integrated Development Environment (IDE) that makes working with R much easier by providing:\n\nSyntax highlighting and code completion\nIntegrated help and documentation\nProject management tools\nBuilt-in plotting and data viewing\nPackage management interface\n\nThink of R as the engine and RStudio as the comfortable cockpit that makes driving the engine a pleasant experience.",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#installation-steps",
-    "href": "modules/module-1/installing-r.html#installation-steps",
-    "title": "Installing R and RStudio",
-    "section": "Installation Steps",
-    "text": "Installation Steps\n\nStep 1: Install R\nR must be installed first, as RStudio depends on it.\n\nFor Windows:\n\nGo to the CRAN website\nClick “Download R for Windows”\nClick “base” (for first-time users)\nDownload the latest version (currently R 4.4.x)\nRun the downloaded installer and follow the prompts\nUse default settings unless you have specific preferences\n\n\n\nFor macOS:\n\nGo to the CRAN website\nClick “Download R for macOS”\nDownload the appropriate installer:\n\nFor Apple Silicon Macs (M1/M2): R-4.4.x-arm64.pkg\nFor Intel Macs: R-4.4.x-x86_64.pkg\n\nOpen the downloaded .pkg file and follow the installation steps\n\n\n\nFor Linux:\nMost Linux distributions include R in their package repositories. For Ubuntu/Debian:\nsudo apt update\nsudo apt install r-base r-base-dev\nFor more detailed Linux instructions, visit the CRAN Linux page.\n\n\n\nStep 2: Install RStudio Desktop\nAfter installing R successfully:\n\nGo to the RStudio download page\nScroll down to “All Installers and Tarballs”\nChoose the appropriate installer for your operating system:\n\nWindows: .exe installer\nmacOS: .dmg installer\nLinux: .deb or .rpm package\n\nDownload and run the installer\nFollow the installation prompts",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#verifying-your-installation",
-    "href": "modules/module-1/installing-r.html#verifying-your-installation",
-    "title": "Installing R and RStudio",
-    "section": "Verifying Your Installation",
-    "text": "Verifying Your Installation\nLet’s make sure everything is working correctly:\n\nTest R Installation\n\nOpen RStudio (it should automatically find your R installation)\nIn the Console pane (usually bottom-left), you should see something like:\n\nR version 4.4.1 (2024-06-14) -- \"Race for Your Life\"\nCopyright (C) 2024 The R Foundation for Statistical Computing\nPlatform: x86_64-pc-linux-gnu (64-bit)\n...\nType 'q()' to quit R.\n\n&gt;\n\nTry a simple command:\n\n\n# Test basic arithmetic\n2 + 2\n\n# Check R version\nR.version.string\n\n# Get help\nhelp(mean)\n\nIf these work without errors, congratulations! Your R installation is successful.",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#essential-configuration",
-    "href": "modules/module-1/installing-r.html#essential-configuration",
-    "title": "Installing R and RStudio",
-    "section": "Essential Configuration",
-    "text": "Essential Configuration\n\nSetting Your Working Directory\nIt’s helpful to organize your R work in a dedicated folder:\n\n# Check current working directory\ngetwd()\n\n# Set working directory (adjust path as needed)\nsetwd(\"~/Documents/R-Projects\")\n\n# Or better yet, use RStudio Projects (covered in next module)\n\n\n\nInstalling Essential Packages\nR’s power comes from its packages. Let’s install some essential ones:\n\n# Install the tidyverse (collection of data science packages)\ninstall.packages(\"tidyverse\")\n\n# Install other useful packages\ninstall.packages(c(\"here\", \"rmarkdown\", \"devtools\"))\n\n# Load a package to test\nlibrary(tidyverse)",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#package-management-fundamentals",
-    "href": "modules/module-1/installing-r.html#package-management-fundamentals",
-    "title": "Installing R and RStudio",
-    "section": "Package Management Fundamentals",
-    "text": "Package Management Fundamentals\nUnderstanding package management is crucial for R success:\n\nCRAN Packages\n\n# Install from CRAN (most common)\ninstall.packages(\"package_name\")\n\n# Install multiple packages\ninstall.packages(c(\"dplyr\", \"ggplot2\", \"readr\"))\n\n# Update packages\nupdate.packages()\n\n# Remove packages\nremove.packages(\"package_name\")\n\n\n\nLoading Packages\n\n# Load package for current session\nlibrary(dplyr)\n\n# Alternative loading method\nrequire(dplyr)\n\n# Check installed packages\ninstalled.packages()\n\n# Check loaded packages\nsearch()",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#rstudio-layout-overview",
-    "href": "modules/module-1/installing-r.html#rstudio-layout-overview",
-    "title": "Installing R and RStudio",
-    "section": "RStudio Layout Overview",
-    "text": "RStudio Layout Overview\nWhen you first open RStudio, you’ll see four panes:\n\nConsole (bottom-left): Where R commands are executed\nSource (top-left): Text editor for scripts and documents\nEnvironment/History (top-right): Variables and command history\nFiles/Plots/Packages/Help (bottom-right): File browser, plots, package manager, and help\n\nDon’t worry if this seems overwhelming – we’ll explore each pane in detail in the next lesson!",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#common-installation-issues",
-    "href": "modules/module-1/installing-r.html#common-installation-issues",
-    "title": "Installing R and RStudio",
-    "section": "Common Installation Issues",
-    "text": "Common Installation Issues\n\n“R not found” Error in RStudio\n\nSolution: Reinstall R first, then RStudio\nRStudio needs to detect your R installation\n\n\n\nPackage Installation Fails\n\nWindows: Install Rtools from CRAN\nmacOS: Install Xcode command line tools: xcode-select --install\nAll platforms: Try installing packages from a different mirror\n\n\n\nPermission Issues\n\nSolution: Run RStudio as administrator (Windows) or use sudo (Linux/macOS) for package installation",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#alternative-installation-methods",
-    "href": "modules/module-1/installing-r.html#alternative-installation-methods",
-    "title": "Installing R and RStudio",
-    "section": "Alternative Installation Methods",
-    "text": "Alternative Installation Methods\n\nUsing Package Managers\n\nWindows - Chocolatey:\nchoco install r.project rstudio\n\n\nmacOS - Homebrew:\nbrew install --cask r rstudio\n\n\nLinux - Conda:\nconda install -c r r-base rstudio",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#next-steps",
-    "href": "modules/module-1/installing-r.html#next-steps",
-    "title": "Installing R and RStudio",
-    "section": "Next Steps",
-    "text": "Next Steps\nNow that you have R and RStudio installed:\n\nExplore the RStudio Interface\nTry R as a Calculator\nLearn about R Scripts and Projects",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#resources-for-further-learning",
-    "href": "modules/module-1/installing-r.html#resources-for-further-learning",
-    "title": "Installing R and RStudio",
-    "section": "Resources for Further Learning",
-    "text": "Resources for Further Learning\n\nRStudio Education\nR for Data Science book (free online)\nCRAN Task Views\nRStudio Cheat Sheets\n\n\n\n\n\n\n\nPro Tip\n\n\n\nCreate a dedicated folder for your R projects and always use RStudio Projects to manage your work. This keeps your files organized and makes your analysis reproducible!",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "modules/module-1/installing-r.html#congratulations",
-    "href": "modules/module-1/installing-r.html#congratulations",
-    "title": "Installing R and RStudio",
-    "section": "Congratulations!",
-    "text": "Congratulations!\nYou’ve successfully set up your R environment! You’re now ready to start your data science journey with R.",
-    "crumbs": [
-      "Module 1: Getting Started with R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "course/team.html",
-    "href": "course/team.html",
-    "title": "Teaching team",
+    "objectID": "weeks/week-5/main.html",
+    "href": "weeks/week-5/main.html",
+    "title": "Week 5",
     "section": "",
-    "text": "Sangseok (Joseph) Lee\nInstructor\nPh.D. student in strategy at the Bayes Business School\n📬 Sangseok.Lee@bayes.ac.uk\n\n\n\n\nSimone Santoni\nModule leader\nAssociate professor in strategy at the Bayes Business School\n📬 Simone.Santoni.1@city.ac.uk",
+    "text": "Week 5 Content\nContent coming soon.",
     "crumbs": [
-      "Course Information",
-      "Teaching team"
+      "Weekly materials",
+      "Week 5"
     ]
   },
   {
-    "objectID": "course/support.html",
-    "href": "course/support.html",
-    "title": "Course Support",
+    "objectID": "weeks/week-3/main.html",
+    "href": "weeks/week-3/main.html",
+    "title": "Week 3",
     "section": "",
-    "text": "Learning to program can be challenging, but you don’t have to do it alone. This page provides information about all the support resources available to help you succeed in IND216.",
+    "text": "Note\n\n\n\nContent coming soon.",
     "crumbs": [
-      "Course Information",
-      "Support"
+      "Weekly materials",
+      "Week 3"
     ]
   },
   {
-    "objectID": "course/support.html#support-resources",
-    "href": "course/support.html#support-resources",
-    "title": "Course Support",
-    "section": "Support Resources",
-    "text": "Support Resources\n\nCourse Forum\nAccess the course forum through module IND216’s Moodle website for:\n\nAsking questions (conceptual or technical)\nSharing helpful resources\nDiscussing course material\nFinding study partners\n\nForum Guidelines:\n\nSearch before posting (your question may be answered)\nUse descriptive titles\nInclude error messages and code snippets\nBe respectful and helpful\nDon’t share complete assignment solutions\n\n\n\nEmail Support\nInstructor email: Sangseok.Lee@bayes.ac.uk\nWhen to email:\n\nPersonal matters (illness, accommodations)\nScheduling appointments\nUrgent technical issues\nAdministrative questions\n\nResponse time: 24-48 hours on weekdays\nEmail tips:\n\nUse clear subject line: “IND216: [Topic]”\nInclude your student ID\nBe specific about your issue\nAttach relevant files if needed",
+    "objectID": "weeks/week-10/main.html",
+    "href": "weeks/week-10/main.html",
+    "title": "Week 10",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
     "crumbs": [
-      "Course Information",
-      "Support"
+      "Weekly materials",
+      "Week 10"
     ]
   },
   {
-    "objectID": "course/support.html#common-issues-and-solutions",
-    "href": "course/support.html#common-issues-and-solutions",
-    "title": "Course Support",
-    "section": "Common Issues and Solutions",
-    "text": "Common Issues and Solutions\n\nInstallation Problems\n\n\n\n\n\n\nCommon Installation Issues:\nProblem: Anaconda won’t install\n\nQuick fix attempt: Check system requirements, disable antivirus temporarily, run as administrator\n\nProblem: Jupyter won’t start\n\nQuick fix attempt: Update Anaconda, check firewall settings, try different browser\n\nQuick fix attempt: Packages won’t import\n\nQuick fix attempt: Verify installation with conda list, reinstall package, check environment\n\n\n\n\n\n\nCoding Challenges\n“I don’t know where to start”:\n\nBreak the problem into smaller steps\nWrite pseudocode first\nStart with the simplest part\nUse print statements to debug\nLook at similar examples\n\n“My code doesn’t work”:\n\nRead error messages carefully\nCheck for typos and syntax errors\nVerify data types\nTest with simple inputs\nUse debugging tools\n\n“I don’t understand the concept”:\n\nReview lecture notes\nTry additional examples\nWatch supplementary videos\nAsk on the forum\nAttend office hours",
+    "objectID": "useful_links.html",
+    "href": "useful_links.html",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks",
     "crumbs": [
       "Course Information",
-      "Support"
+      "Useful links"
     ]
   },
   {
-    "objectID": "course/support.html#study-resources",
-    "href": "course/support.html#study-resources",
-    "title": "Course Support",
-    "section": "Study Resources",
-    "text": "Study Resources\n\nRecommended Learning Path\n\nBefore Class:\n\nReview previous material\nRead assigned sections\nNote questions\n\nDuring Class:\n\nTake active notes\nTry examples\nAsk questions\n\nAfter Class:\n\nReview notes same day\nComplete exercises\nPractice additional problems\n\n\n\n\nPeer Support\nStudy Groups:\n\nForm groups of 3-4 students\nMeet regularly to review material\nWork through problems together\nShare different approaches\n\nPeer Tutoring:\n\nAdvanced students available for tutoring\nSign up through course website\nFree service for enrolled students",
+    "objectID": "useful_links.html#course-resources",
+    "href": "useful_links.html#course-resources",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks",
     "crumbs": [
       "Course Information",
-      "Support"
+      "Useful links"
     ]
   },
   {
-    "objectID": "course/support.html#mental-health-and-wellbeing",
-    "href": "course/support.html#mental-health-and-wellbeing",
-    "title": "Course Support",
-    "section": "Mental Health and Wellbeing",
-    "text": "Mental Health and Wellbeing\nProgramming can be frustrating at times. Remember:\n\n\n\n\n\n\nIt’s normal to:\n\nFeel stuck sometimes\nNeed multiple attempts\nMake lots of errors\nNeed to ask for help\nTake breaks when frustrated\n\n\n\n\nCampus Resources: See “Your halth and wellbeing” page, hosted in the Uni’s website.\n\nPersonal Emergencies\nIllness or emergency: - Email instructor ASAP - Provide documentation if extended - Discuss makeup options - Don’t fall behind",
+    "objectID": "project/midTermProject/main.html",
+    "href": "project/midTermProject/main.html",
+    "title": "Mid-Term Project",
+    "section": "",
+    "text": "The mid-term project is a team-based analysis of a real-world network dataset. This project allows you to apply network analytics concepts learned in the first half of the course to solve practical business problems.\n\n\n\nFormat: Team project (3-4 students)\nWeight: 40% of final grade\nDuration: 3 weeks\nDue Date: Week 6\nDeliverables: Report + Code + Presentation",
     "crumbs": [
-      "Course Information",
-      "Support"
+      "Project",
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "course/support.html#faq",
-    "href": "course/support.html#faq",
-    "title": "Course Support",
-    "section": "FAQ",
-    "text": "FAQ\nQ: How much time should I spend on this course? A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).\nQ: Can I use AI tools like ChatGPT? A: You may use them for learning and understanding concepts, but submitted code must be your own work. Always cite any assistance received.\nQ: What if I’m falling behind? A: Seek help immediately. The course builds on itself, so early gaps become bigger problems later.\nQ: Do I need a powerful computer? A: No, basic Python programming doesn’t require much computing power. Any computer from the last 5 years should work fine.\nQ: Can I use a different IDE than recommended? A: Yes, but you’re responsible for any setup issues. We can only provide support for recommended tools.",
+    "objectID": "project/midTermProject/main.html#project-overview",
+    "href": "project/midTermProject/main.html#project-overview",
+    "title": "Mid-Term Project",
+    "section": "",
+    "text": "The mid-term project is a team-based analysis of a real-world network dataset. This project allows you to apply network analytics concepts learned in the first half of the course to solve practical business problems.\n\n\n\nFormat: Team project (3-4 students)\nWeight: 40% of final grade\nDuration: 3 weeks\nDue Date: Week 6\nDeliverables: Report + Code + Presentation",
     "crumbs": [
-      "Course Information",
-      "Support"
+      "Project",
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "course/support.html#success-tips",
-    "href": "course/support.html#success-tips",
-    "title": "Course Support",
-    "section": "Success Tips",
-    "text": "Success Tips\n\n\n\n\n\n\nTop tips from successful students:\n\nStart early - Don’t wait until the deadline\nPractice daily - Even 20 minutes helps\nMake mistakes - They’re learning opportunities\nAsk questions - No question is too basic\nHelp others - Teaching reinforces learning\nTake breaks - Fresh eyes spot errors\nDocument everything - Comment your code\nStay organized - Use folders and naming conventions\n\n\n\n\nRemember: We want you to succeed! Don’t hesitate to reach out when you need help.",
+    "objectID": "project/midTermProject/main.html#project-objectives",
+    "href": "project/midTermProject/main.html#project-objectives",
+    "title": "Mid-Term Project",
+    "section": "Project Objectives",
+    "text": "Project Objectives\nBy completing this project, you will:\n\nApply network analysis techniques to real data\nInterpret network metrics in business context\nCollaborate effectively in a team setting\nCommunicate technical findings to non-technical audiences\nDevelop reproducible analysis workflows",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#dataset-options",
+    "href": "project/midTermProject/main.html#dataset-options",
+    "title": "Mid-Term Project",
+    "section": "Dataset Options",
+    "text": "Dataset Options\nChoose one of the following datasets or propose your own:\n\n1. Corporate Board Networks\n\nData: Board member connections across S&P 500 companies\nQuestions: How do board interlocks affect corporate governance? Which companies are most central?\nSource: BoardEx or manually collected\n\n\n\n2. Product Co-purchase Networks\n\nData: Amazon product co-purchase data\nQuestions: How can we improve recommendation systems? What product communities exist?\nSource: Stanford Network Dataset\n\n\n\n3. Social Media Influence Networks\n\nData: Twitter follower networks or Reddit interactions\nQuestions: Who are the key influencers? How does information spread?\nSource: Twitter API or Reddit dataset\n\n\n\n4. Supply Chain Networks\n\nData: Supplier-manufacturer relationships\nQuestions: What are the vulnerabilities? How to optimize the network?\nSource: Industry databases or case studies\n\n\n\n5. Custom Dataset\n\nPropose your own dataset related to your interests\nMust be approved by instructor by Week 3",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#project-requirements",
+    "href": "project/midTermProject/main.html#project-requirements",
+    "title": "Mid-Term Project",
+    "section": "Project Requirements",
+    "text": "Project Requirements\n\nTechnical Requirements\nYour analysis must include:\n\nData Collection & Preprocessing\n\nDocument data sources\nClean and structure network data\nHandle missing values appropriately\n\nExploratory Network Analysis\n\nBasic network statistics\nDegree distributions\nNetwork visualization\n\nCentrality Analysis\n\nCalculate at least 3 centrality measures\nCompare and interpret results\nIdentify key nodes\n\nAdvanced Analysis (choose at least one)\n\nCommunity detection\nCore-periphery analysis\nNetwork motifs\nTemporal analysis (if applicable)\n\nStatistical Testing\n\nTest at least one hypothesis\nUse appropriate methods (CUG, permutation tests)\nReport significance levels\n\n\n\n\nDeliverables\n\n1. Written Report (2,500 words)\nStructure: - Executive Summary (250 words) - Introduction - Problem statement and objectives - Literature Review - Brief context from academic/industry sources - Methodology - Data collection and analytical approach - Results - Key findings with visualizations - Business Implications - Actionable recommendations - Limitations - Data and methodological constraints - References - Academic and industry sources\n\n\n2. Code Repository\n\nWell-documented R/Python code\nREADME file with instructions\nRequirements file for dependencies\nData files or download instructions\n\n\n\n3. Presentation (15 minutes)\n\n10 minutes presentation\n5 minutes Q&A\nFocus on business insights\nMaximum 10 slides",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#grading-rubric",
+    "href": "project/midTermProject/main.html#grading-rubric",
+    "title": "Mid-Term Project",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n\n\n\n\n\n\n\n\nComponent\nWeight\nCriteria\n\n\n\n\nTechnical Analysis\n30%\nCorrect implementation, appropriate methods, code quality\n\n\nBusiness Insights\n30%\nRelevance, actionability, strategic thinking\n\n\nReport Quality\n20%\nStructure, clarity, visualizations\n\n\nPresentation\n10%\nClarity, engagement, Q&A handling\n\n\nTeamwork\n10%\nEqual contribution, peer evaluation",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#timeline",
+    "href": "project/midTermProject/main.html#timeline",
+    "title": "Mid-Term Project",
+    "section": "Timeline",
+    "text": "Timeline\n\n\n\nWeek\nMilestone\n\n\n\n\nWeek 3\nForm teams, select dataset\n\n\nWeek 4\nData collection, initial analysis\n\n\nWeek 5\nComplete analysis, write report\n\n\nWeek 6\nSubmit report, presentations",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#tips-for-success",
+    "href": "project/midTermProject/main.html#tips-for-success",
+    "title": "Mid-Term Project",
+    "section": "Tips for Success",
+    "text": "Tips for Success\n\n\n\n\n\n\nBest Practices\n\n\n\n\nStart Early: Data collection often takes longer than expected\nDivide Work: Assign clear roles and responsibilities\nMeet Regularly: Schedule weekly team meetings\nVersion Control: Use Git for collaborative coding\nBackup Data: Keep multiple copies of your dataset\nPractice Presentation: Rehearse before the final day",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#common-pitfalls-to-avoid",
+    "href": "project/midTermProject/main.html#common-pitfalls-to-avoid",
+    "title": "Mid-Term Project",
+    "section": "Common Pitfalls to Avoid",
+    "text": "Common Pitfalls to Avoid\n\nOver-complicating: Focus on clear insights over complex methods\nPoor Visualizations: Ensure networks are readable and meaningful\nIgnoring Business Context: Always relate findings to practical applications\nUnequal Contribution: Use project management tools to track work",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#resources",
+    "href": "project/midTermProject/main.html#resources",
+    "title": "Mid-Term Project",
+    "section": "Resources",
+    "text": "Resources\n\nTemplates\n\nReport Template\nPresentation Template\n\n\n\nExample Projects\n\nPrevious year’s best projects (available on Moodle)\nPublished network analysis case studies\n\n\n\nSupport\n\nOffice hours for project consultation\nMoodle forum for questions\nPeer review sessions in Week 5",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#submission-instructions",
+    "href": "project/midTermProject/main.html#submission-instructions",
+    "title": "Mid-Term Project",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\n\nReport: PDF format via Moodle\nCode: GitHub repository link\nPresentation: PowerPoint/PDF via Moodle\nPeer Evaluation: Complete online form\n\nAll materials due by 23:59 on Friday of Week 6.\n\n\n\n\n\n\n\nAcademic Integrity\n\n\n\nAll team members must contribute equally. Plagiarism or unequal contribution will result in individual penalties. Use of AI tools must be disclosed in methodology section.",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "course/useful_links.html",
+    "href": "course/useful_links.html",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks"
+  },
+  {
+    "objectID": "course/useful_links.html#course-resources",
+    "href": "course/useful_links.html#course-resources",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks"
+  },
+  {
+    "objectID": "course/syllabus.html",
+    "href": "course/syllabus.html",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nAnalyze network evolution and dynamics over time\nModel network formation and behavior\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes: - Understand fundamental network concepts and terminology - Differentiate between network types (one-mode, two-mode, signed, weighted) - Set up R/Python environment for network analysis - Perform basic network data management and visualization\nTopics Covered: - Network elements: nodes, edges, dyads, triads - Real-world network examples (economic, organizational, social) - Taxonomy of network measures (node, meso, macro levels) - Introduction to network analysis software\nCase Study: Royal Caribbean Cruises (RCB) network strategy\n\n\n\nWeeks 2-3\nLearning Outcomes: - Calculate and interpret various centrality measures - Understand when to apply different centrality metrics - Analyze the relationship between centrality and outcomes - Implement centrality algorithms in R/Python\nTopics Covered: - Degree centrality and its variants - Closeness centrality and information flow - Betweenness centrality and brokerage - Eigenvector centrality and influence - PageRank and its applications - Local clustering coefficient\nCase Study: Identifying the right social media influencer\n\n\n\nWeeks 4-5\nLearning Outcomes: - Analyze dyadic patterns and relationships - Understand triadic closure and its implications - Test network hypotheses using CUG tests - Model homophily and its effects\nTopics Covered: - Reciprocity and mutuality - Homophily and selection effects - Triadic census and transitivity - Conditional Uniform Graph (CUG) tests - Network evolution patterns\nCase Study: Soundcloud user recommendation networks\n\n\n\nWeeks 7-8\nLearning Outcomes: - Measure network cohesion at multiple levels - Apply community detection algorithms - Interpret community structure for business insights - Implement blockmodeling techniques\nTopics Covered: - Network density and cohesion metrics - Core-periphery structures - Community detection algorithms (Louvain, modularity optimization) - Topicmodeling and role analysis - Hierarchical clustering of networks\nCase Study: Customer segmentation in the beer market\n\n\n\nWeeks 9-10\nLearning Outcomes: - Analyze the strategic value of network positions - Understand closure vs. brokerage trade-offs - Apply network insights to career development - Design network interventions\nTopics Covered: - Structural holes and brokerage opportunities - Network closure and social capital - The strength of weak ties - Network position and innovation - Career implications of network structure\nCase Study: Employee creativity and innovation networks",
     "crumbs": [
       "Course Information",
-      "Support"
+      "Syllabus"
     ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-overview",
+    "href": "course/syllabus.html#course-overview",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nAnalyze network evolution and dynamics over time\nModel network formation and behavior\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes: - Understand fundamental network concepts and terminology - Differentiate between network types (one-mode, two-mode, signed, weighted) - Set up R/Python environment for network analysis - Perform basic network data management and visualization\nTopics Covered: - Network elements: nodes, edges, dyads, triads - Real-world network examples (economic, organizational, social) - Taxonomy of network measures (node, meso, macro levels) - Introduction to network analysis software\nCase Study: Royal Caribbean Cruises (RCB) network strategy\n\n\n\nWeeks 2-3\nLearning Outcomes: - Calculate and interpret various centrality measures - Understand when to apply different centrality metrics - Analyze the relationship between centrality and outcomes - Implement centrality algorithms in R/Python\nTopics Covered: - Degree centrality and its variants - Closeness centrality and information flow - Betweenness centrality and brokerage - Eigenvector centrality and influence - PageRank and its applications - Local clustering coefficient\nCase Study: Identifying the right social media influencer\n\n\n\nWeeks 4-5\nLearning Outcomes: - Analyze dyadic patterns and relationships - Understand triadic closure and its implications - Test network hypotheses using CUG tests - Model homophily and its effects\nTopics Covered: - Reciprocity and mutuality - Homophily and selection effects - Triadic census and transitivity - Conditional Uniform Graph (CUG) tests - Network evolution patterns\nCase Study: Soundcloud user recommendation networks\n\n\n\nWeeks 7-8\nLearning Outcomes: - Measure network cohesion at multiple levels - Apply community detection algorithms - Interpret community structure for business insights - Implement blockmodeling techniques\nTopics Covered: - Network density and cohesion metrics - Core-periphery structures - Community detection algorithms (Louvain, modularity optimization) - Topicmodeling and role analysis - Hierarchical clustering of networks\nCase Study: Customer segmentation in the beer market\n\n\n\nWeeks 9-10\nLearning Outcomes: - Analyze the strategic value of network positions - Understand closure vs. brokerage trade-offs - Apply network insights to career development - Design network interventions\nTopics Covered: - Structural holes and brokerage opportunities - Network closure and social capital - The strength of weak ties - Network position and innovation - Career implications of network structure\nCase Study: Employee creativity and innovation networks",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#module-schedule",
+    "href": "course/syllabus.html#module-schedule",
+    "title": "Course Syllabus",
+    "section": "Module Schedule",
+    "text": "Module Schedule\n\n📅 Weekly Breakdown\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nKey Concepts\nCase Study\n\n\n\n\n1\nIntroduction to Network Analytics\nNetwork fundamentals, types, terminology\nRCB Network Analysis\n\n\n2\nNetwork Centrality I\nDegree, closeness centrality\nSocial Media Influencers\n\n\n3\nNetwork Centrality II\nBetweenness, eigenvector, PageRank\n-\n\n\n4\nDyadic Analysis\nReciprocity, homophily, assortativity\nSoundcloud Recommendations\n\n\n5\nTriadic Analysis & CUG\nTransitivity, triadic closure, testing\n-\n\n\n6\nReading Week\n-\n-\n\n\n7\nNetwork Cohesion\nDensity, components, k-cores\nBeer Market Segmentation\n\n\n8\nCommunity Detection\nModularity, clustering algorithms\n-\n\n\n9\nNetwork Position\nStructural holes, brokerage, closure\nEmployee Creativity\n\n\n10\nAdvanced Topics\nDynamic networks, multilayer networks\n-\n\n\n\n\n\n🔧 Block 1: Introduction to Network Analytics\nWeek 1\nLearning Outcomes: - Understand fundamental network concepts and terminology - Differentiate between network types (one-mode, two-mode, signed, weighted) - Set up R/Python environment for network analysis - Perform basic network data management and visualization\nTopics Covered: - Network elements: nodes, edges, dyads, triads - Real-world network examples (economic, organizational, social) - Taxonomy of network measures (node, meso, macro levels) - Introduction to network analysis software\nCase Study: Royal Caribbean Cruises (RCB) network strategy\n\n\n🎯 Block 2: Network Centrality\nWeeks 2-3\nLearning Outcomes: - Calculate and interpret various centrality measures - Understand when to apply different centrality metrics - Analyze the relationship between centrality and outcomes - Implement centrality algorithms in R/Python\nTopics Covered: - Degree centrality and its variants - Closeness centrality and information flow - Betweenness centrality and brokerage - Eigenvector centrality and influence - PageRank and its applications - Local clustering coefficient\nCase Study: Identifying the right social media influencer\n\n\n🔄 Block 3: Dyads, Triads, and Network Dynamics\nWeeks 4-5\nLearning Outcomes: - Analyze dyadic patterns and relationships - Understand triadic closure and its implications - Test network hypotheses using CUG tests - Model homophily and its effects\nTopics Covered: - Reciprocity and mutuality - Homophily and selection effects - Triadic census and transitivity - Conditional Uniform Graph (CUG) tests - Network evolution patterns\nCase Study: Soundcloud user recommendation networks\n\n\n🏘️ Block 4: Network Cohesion and Communities\nWeeks 7-8\nLearning Outcomes: - Measure network cohesion at multiple levels - Apply community detection algorithms - Interpret community structure for business insights - Implement blockmodeling techniques\nTopics Covered: - Network density and cohesion metrics - Core-periphery structures - Community detection algorithms (Louvain, modularity optimization) - Blockmodeling and role analysis - Hierarchical clustering of networks\nCase Study: Customer segmentation in the beer market\n\n\n💡 Block 5: Network Position and Performance\nWeeks 9-10\nLearning Outcomes: - Analyze the strategic value of network positions - Understand closure vs. brokerage trade-offs - Apply network insights to career development - Design network interventions\nTopics Covered: - Structural holes and brokerage opportunities - Network closure and social capital - The strength of weak ties - Network position and innovation - Career implications of network structure\nCase Study: Employee creativity and innovation networks",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#assessment-strategy",
+    "href": "course/syllabus.html#assessment-strategy",
+    "title": "Course Syllabus",
+    "section": "Assessment Strategy",
+    "text": "Assessment Strategy\n\n📊 Assessment Components\n\n\nClass Participation (20%) - Active engagement in discussions - Quality of questions and insights - Peer collaboration - In-class exercises\nOngoing throughout term\n\n\nMid-Term Project (40%) - Team-based analysis (3-4 students) - Real-world dataset - Technical implementation - Business recommendations - 15-minute presentation\nDue: Week 6\n\n\nFinal Project (40%) - Individual research project - Original network analysis - Comprehensive report (3,000 words) - Code documentation - 10-minute presentation\nDue: Week 11\n\n\n\n\n📝 Assessment Criteria\nAll assessments will be evaluated on:\n\nTechnical Proficiency (30%)\n\nCorrect implementation of methods\nCode quality and documentation\nAppropriate use of techniques\n\nAnalytical Rigor (30%)\n\nSound methodology\nProper interpretation of results\nStatistical validity\n\nBusiness Relevance (30%)\n\nClear problem definition\nActionable insights\nStrategic recommendations\n\nCommunication (10%)\n\nClear presentation\nEffective visualizations\nProfessional writing",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-resources",
+    "href": "course/syllabus.html#course-resources",
+    "title": "Course Syllabus",
+    "section": "Course Resources",
+    "text": "Course Resources\n\n💻 Technical Requirements\n\n\n\n\n\n\nEssential Software Setup\n\n\n\nProgramming Environments: - R (version 4.3+) with RStudio - Python (version 3.9+) with Jupyter Lab/Notebooks - Git for version control\nR Package Ecosystem:\n# Core packages\ninstall.packages(c(\"igraph\", \"tidygraph\", \"ggraph\"))\n\n# Statistical modeling\ninstall.packages(c(\"statnet\", \"ergm\", \"btergm\"))\n\n# Visualization\ninstall.packages(c(\"networkD3\", \"visNetwork\", \"graphlayouts\"))\n\n# Data manipulation\ninstall.packages(c(\"tidyverse\", \"data.table\"))\nPython Libraries:\n# Core libraries\npip install networkx pandas numpy matplotlib seaborn\n\n# Advanced analysis\npip install python-louvain community graph-tool\n\n# Interactive visualization\npip install plotly bokeh pyvis\n\n\n\n\n📚 Reading List\nCore Textbooks:\n\nNewman, M. (2018). Networks (2nd ed.). Oxford University Press.\n\nComprehensive mathematical treatment\nExcellent for understanding algorithms\n\nBorgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). Analyzing Social Networks (2nd ed.). SAGE.\n\nPractical, application-focused\nGood balance of theory and practice\n\nLuke, D. A. (2015). A User’s Guide to Network Analysis in R. Springer.\n\nR-specific implementation guide\nStep-by-step tutorials\n\n\nSupplementary Readings:\n\nBarabási, A. L. (2016). Network Science. Cambridge University Press. Free online\nJackson, M. O. (2019). The Human Network. Pantheon Books.\nWatts, D. J. (2003). Six Degrees: The Science of a Connected Age. Norton.\n\n\n\n🌐 Online Resources\nCourse Materials: - GitHub repository: github.com/simoneSantoni/net-analysis-smm638 - Moodle page with lectures and assignments - Slack workspace for discussions\nExternal Resources: - NetworkX Documentation - igraph R Tutorial - Awesome Network Analysis - INSNA - International Network for Social Network Analysis",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-policies",
+    "href": "course/syllabus.html#course-policies",
+    "title": "Course Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\n📋 Attendance and Participation\n\nAttendance: Mandatory for all sessions (80% minimum required)\nPunctuality: Sessions start promptly; late arrivals disrupt learning\nPreparation: Complete readings and exercises before class\nEngagement: Active participation expected in all activities\n\n\n\n🤝 Collaboration Policy\n\nTeamwork: Encouraged for designated group projects\nIndividual Work: Must be completed independently\nCode Sharing: Allowed for learning, not for assignments\nCitation: Always attribute sources and collaborators\n\n\n\n📧 Communication\n\n\n\n\n\n\nGetting Help\n\n\n\n\nMoodle Forum: First point of contact for content questions\n\nResponse time: 24-48 hours on weekdays\n\nOffice Hours: Wednesdays 14:00-16:00 (by appointment)\n\nBook via: simone.santoni.1@city.ac.uk\n\nEmail: For personal/administrative matters only\n\nUse clear subject lines: “SMM638 - [Topic]”\n\nPeer Support: Join study groups on Slack\n\n\n\n\n\n♿ Accessibility and Accommodations\nStudents requiring accommodations should: 1. Contact Student Services for documentation 2. Notify instructor within first two weeks 3. Discuss specific needs and arrangements\nAll accommodations will be made in accordance with university policies.\n\n\n📝 Academic Integrity\n\nPlagiarism: Zero tolerance; all work must be original\nCollaboration: Clearly acknowledge all contributions\nData Sources: Properly cite all datasets used\nCode Attribution: Credit all borrowed/adapted code\n\nViolations will be reported to the Academic Misconduct Committee.\n\n\n🔄 Syllabus Modifications\nThis syllabus may be adjusted to: - Accommodate class progress - Incorporate current events/examples - Respond to student feedback\nAll changes will be announced via Moodle with one week’s notice.\n\n\n\n\n\n\n\nReady to Start?\n\n\n\nNetwork Analytics is a powerful lens for understanding our interconnected world. This module will challenge you to think structurally about business problems and equip you with tools to uncover hidden patterns in complex systems.\nLet’s build networks together! 🌐",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/schedule.html",
+    "href": "course/schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "📅 Weekly Breakdown\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nPrepare\nSlides\nCase\nLab\nProject\n\n\n\n\n1\nIntroduction to network analytics\n\n\n\n\n\n\n\n2\nNetwork Centrality\n\n\n\n\n\n\n\n3\n…\n\n\n\n\n\n\n\n4\nDyads, triads, and network dynamics\n\n\n\n\n\n\n\n5\n…\n\n\n\n\n\n\n\n6\nMid-term project\n\n\n\n\n\n\n\n7\nNetwork cohesion and communities\n\n\n\n\n\n\n\n8\n…\n\n\n\n\n\n\n\n9\nNetwork position and performance\n\n\n\n\n\n\n\n10\n…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdjustments and Updates\n\n\n\nThis schedule is subject to change based on:\n\nClass progress and needs\nUniversity calendar changes\nUnexpected closures\n\nAll changes will be announced in class and posted on the course website.",
+    "crumbs": [
+      "Course Information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/faq.html",
+    "href": "course/faq.html",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference."
+  },
+  {
+    "objectID": "course/faq.html#general-questions",
+    "href": "course/faq.html#general-questions",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference."
+  },
+  {
+    "objectID": "course/faq.html#course-logistics",
+    "href": "course/faq.html#course-logistics",
+    "title": "Frequently Asked Questions",
+    "section": "Course Logistics",
+    "text": "Course Logistics\n\nHow much time should I dedicate to this course?\nExpect to spend 8-10 hours per week: - 3 hours: Lectures and tutorials - 3-4 hours: Readings and videos - 2-3 hours: Assignments and practice\n\n\nCan I audit the course?\nPlease contact the instructor to discuss auditing options. Priority is given to enrolled students.\n\n\nAre lectures recorded?\nYes, all lectures are recorded and available on Moodle within 24 hours. However, live attendance is strongly encouraged for interactive elements."
+  },
+  {
+    "objectID": "course/faq.html#technical-questions",
+    "href": "course/faq.html#technical-questions",
+    "title": "Frequently Asked Questions",
+    "section": "Technical Questions",
+    "text": "Technical Questions\n\nWhat computer specifications do I need?\n\nRAM: 8GB minimum (16GB recommended)\nStorage: 10GB free space\nOS: Windows 10+, macOS 10.14+, or Linux\nInternet connection for package downloads\n\n\n\nHow do I install the required software?\nDetailed installation guides are provided in Week 1 materials. We also offer installation support sessions.\n\n\nCan I use cloud-based tools instead?\nYes! Options include: - Google Colab (Python) - RStudio Cloud - Binder for Jupyter notebooks"
+  },
+  {
+    "objectID": "course/faq.html#assessment",
+    "href": "course/faq.html#assessment",
+    "title": "Frequently Asked Questions",
+    "section": "Assessment",
+    "text": "Assessment\n\nCan I work with others on assignments?\n\nMid-term project: Yes (teams of 3-4)\nFinal project: No (individual work)\nWeekly exercises: Discussion encouraged, but submit your own work\n\n\n\nWhat if I submit late?\nLate submissions receive a 10% penalty per day. Extensions may be granted for documented emergencies.\n\n\nHow are projects graded?\nProjects are evaluated on: - Technical correctness (30%) - Analytical depth (30%) - Business relevance (30%) - Presentation quality (10%)"
+  },
+  {
+    "objectID": "course/faq.html#career-applications",
+    "href": "course/faq.html#career-applications",
+    "title": "Frequently Asked Questions",
+    "section": "Career & Applications",
+    "text": "Career & Applications\n\nHow is network analytics used in industry?\nCommon applications include: - Social media analysis - Supply chain optimization - Fraud detection - Recommendation systems - Organizational design - Market structure analysis\n\n\nWhat career paths benefit from network analytics?\n\nData Scientists\nBusiness Analysts\nMarketing Analysts\nOperations Research\nManagement Consultants\nSocial Media Strategists\n\n\n\nWill this help with my dissertation/thesis?\nAbsolutely! Network analysis is increasingly used in business research. We can discuss how to apply these methods to your research interests."
+  },
+  {
+    "objectID": "course/faq.html#getting-help",
+    "href": "course/faq.html#getting-help",
+    "title": "Frequently Asked Questions",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nI’m struggling with the material. What should I do?\n\nAttend office hours\nPost questions on Moodle forums\nForm study groups with classmates\nReview recorded lectures\nSchedule one-on-one meeting with instructor\n\n\n\nWhere can I find additional practice problems?\n\nEnd of chapter exercises in textbooks\nGitHub repository practice sets\nOnline courses (Coursera, DataCamp)\nKaggle competitions\n\n\n\nWhat if I have accessibility needs?\nPlease contact Student Services and the instructor as soon as possible. We’ll work together to ensure appropriate accommodations.\n\n\n\n\n\n\n\nStill have questions?\n\n\n\nPost on the Moodle forum or email the instructor at simone.santoni.1@city.ac.uk"
   },
   {
     "objectID": "course/info.html",
@@ -308,228 +415,549 @@
     "text": "Course Resources\n\nOfficial R Documentation: r-project.org\nRStudio Resources: rstudio.com\nTidyverse Documentation: tidyverse.org\nR for Data Science Book: r4ds.had.co.nz"
   },
   {
-    "objectID": "course/schedule.html",
-    "href": "course/schedule.html",
-    "title": "Course Schedule",
+    "objectID": "course/support.html",
+    "href": "course/support.html",
+    "title": "Course Support",
     "section": "",
-    "text": "Module\nDate\nTopics\n\n\n\n\nGetting started with R\n09-22 (stream A), 09-22 (stream B)\nInstalling R and RStudio - R as calculator - RStudio interface - R projects\n\n\nR language fundamentals\n09-24 (stream A), 09-25 (stream B)\nObjects and assignment - vectors - lists - data frames - factors - functions\n\n\nIntroduction to tidyverse\n09-25 (stream A), 09-26 (stream B)\nTidyverse ecosystem - data import with readr - basic dplyr operations - tidyr principles\n\n\nData types in tidyverse\n09-30 (stream A), 09-30 (stream B)\nCharacter strings - factors in tidyverse - dates and times with lubridate - categorical data\n\n\nData wrangling with dplyr\n10-3 (stream A), 10-1 (stream B)\nFiltering and selecting - mutating - grouping and summarizing - joining datasets\n\n\nOrganizing tabular data with tidyr\n10-10 (stream A), 10-8 (stream B)\nPivoting data (wide to long, long to wide) - separating and uniting columns - handling missing values\n\n\n\n\n\n\n\n\n\nAdjustments and Updates\n\n\n\nThis schedule is subject to change based on:\n\nClass progress and needs\nUniversity calendar changes\nUnexpected closures\n\nAll changes will be announced in class and posted on the course website.",
+    "text": "Learning to program can be challenging, but you don’t have to do it alone. This page provides information about all the support resources available to help you succeed in IND216.",
     "crumbs": [
       "Course Information",
-      "Schedule"
+      "Support"
     ]
   },
   {
-    "objectID": "course/syllabus.html",
-    "href": "course/syllabus.html",
-    "title": "Course Syllabus",
+    "objectID": "course/support.html#support-resources",
+    "href": "course/support.html#support-resources",
+    "title": "Course Support",
+    "section": "Support Resources",
+    "text": "Support Resources\n\nCourse Forum\nAccess the course forum through module IND216’s Moodle website for:\n\nAsking questions (conceptual or technical)\nSharing helpful resources\nDiscussing course material\nFinding study partners\n\nForum Guidelines:\n\nSearch before posting (your question may be answered)\nUse descriptive titles\nInclude error messages and code snippets\nBe respectful and helpful\nDon’t share complete assignment solutions\n\n\n\nEmail Support\nInstructor email: Sangseok.Lee@bayes.ac.uk\nWhen to email:\n\nPersonal matters (illness, accommodations)\nScheduling appointments\nUrgent technical issues\nAdministrative questions\n\nResponse time: 24-48 hours on weekdays\nEmail tips:\n\nUse clear subject line: “IND216: [Topic]”\nInclude your student ID\nBe specific about your issue\nAttach relevant files if needed",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#common-issues-and-solutions",
+    "href": "course/support.html#common-issues-and-solutions",
+    "title": "Course Support",
+    "section": "Common Issues and Solutions",
+    "text": "Common Issues and Solutions\n\nInstallation Problems\n\n\n\n\n\n\nCommon Installation Issues:\nProblem: Anaconda won’t install\n\nQuick fix attempt: Check system requirements, disable antivirus temporarily, run as administrator\n\nProblem: Jupyter won’t start\n\nQuick fix attempt: Update Anaconda, check firewall settings, try different browser\n\nQuick fix attempt: Packages won’t import\n\nQuick fix attempt: Verify installation with conda list, reinstall package, check environment\n\n\n\n\n\n\nCoding Challenges\n“I don’t know where to start”:\n\nBreak the problem into smaller steps\nWrite pseudocode first\nStart with the simplest part\nUse print statements to debug\nLook at similar examples\n\n“My code doesn’t work”:\n\nRead error messages carefully\nCheck for typos and syntax errors\nVerify data types\nTest with simple inputs\nUse debugging tools\n\n“I don’t understand the concept”:\n\nReview lecture notes\nTry additional examples\nWatch supplementary videos\nAsk on the forum\nAttend office hours",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#study-resources",
+    "href": "course/support.html#study-resources",
+    "title": "Course Support",
+    "section": "Study Resources",
+    "text": "Study Resources\n\nRecommended Learning Path\n\nBefore Class:\n\nReview previous material\nRead assigned sections\nNote questions\n\nDuring Class:\n\nTake active notes\nTry examples\nAsk questions\n\nAfter Class:\n\nReview notes same day\nComplete exercises\nPractice additional problems\n\n\n\n\nPeer Support\nStudy Groups:\n\nForm groups of 3-4 students\nMeet regularly to review material\nWork through problems together\nShare different approaches\n\nPeer Tutoring:\n\nAdvanced students available for tutoring\nSign up through course website\nFree service for enrolled students",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#mental-health-and-wellbeing",
+    "href": "course/support.html#mental-health-and-wellbeing",
+    "title": "Course Support",
+    "section": "Mental Health and Wellbeing",
+    "text": "Mental Health and Wellbeing\nProgramming can be frustrating at times. Remember:\n\n\n\n\n\n\nIt’s normal to:\n\nFeel stuck sometimes\nNeed multiple attempts\nMake lots of errors\nNeed to ask for help\nTake breaks when frustrated\n\n\n\n\nCampus Resources: See “Your halth and wellbeing” page, hosted in the Uni’s website.\n\nPersonal Emergencies\nIllness or emergency: - Email instructor ASAP - Provide documentation if extended - Discuss makeup options - Don’t fall behind",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#faq",
+    "href": "course/support.html#faq",
+    "title": "Course Support",
+    "section": "FAQ",
+    "text": "FAQ\nQ: How much time should I spend on this course? A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).\nQ: Can I use AI tools like ChatGPT? A: You may use them for learning and understanding concepts, but submitted code must be your own work. Always cite any assistance received.\nQ: What if I’m falling behind? A: Seek help immediately. The course builds on itself, so early gaps become bigger problems later.\nQ: Do I need a powerful computer? A: No, basic Python programming doesn’t require much computing power. Any computer from the last 5 years should work fine.\nQ: Can I use a different IDE than recommended? A: Yes, but you’re responsible for any setup issues. We can only provide support for recommended tools.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#success-tips",
+    "href": "course/support.html#success-tips",
+    "title": "Course Support",
+    "section": "Success Tips",
+    "text": "Success Tips\n\n\n\n\n\n\nTop tips from successful students:\n\nStart early - Don’t wait until the deadline\nPractice daily - Even 20 minutes helps\nMake mistakes - They’re learning opportunities\nAsk questions - No question is too basic\nHelp others - Teaching reinforces learning\nTake breaks - Fresh eyes spot errors\nDocument everything - Comment your code\nStay organized - Use folders and naming conventions\n\n\n\n\nRemember: We want you to succeed! Don’t hesitate to reach out when you need help.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/team.html",
+    "href": "course/team.html",
+    "title": "Teaching team",
     "section": "",
-    "text": "This course provides a comprehensive foundation in network analysis for analytics students. By the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\nBy completing this course, you will develop expertise in:\n\nNetwork Theory Fundamentals: Understanding basic network concepts, terminology, and the mathematical foundations underlying network analysis\nData Collection & Preparation: Gathering, cleaning, and structuring network data from various sources including social media, organizational systems, and collaboration platforms\nNetwork Visualization: Creating compelling visual representations of networks using tools like R (igraph, ggraph) and Python (NetworkX, matplotlib)\nCentrality Analysis: Computing and interpreting various centrality measures (degree, betweenness, closeness, eigenvector) to identify influential nodes\nCommunity Detection: Applying algorithms to discover clusters, modules, and communities within complex networks\nStatistical Network Modeling: Understanding and applying Exponential Random Graph Models (ERGMs) and other statistical approaches\nBusiness Applications: Translating network insights into actionable business recommendations for marketing, operations, and strategy\nProgramming Skills: Developing proficiency in R and Python for network analysis workflows\n\n\n\n\n\n\nOur approach emphasizes learning by doing. Rather than memorizing notions and syntax, you’ll build practical skills through:\n\n🎯 Hands-on exercises with real datasets\n🔄 Iterative learning that builds on previous concepts\n🌟 Industry-relevant examples and case studies\n🤝 Collaborative problem-solving in group sessions",
+    "text": "Sangseok (Joseph) Lee\nInstructor\nPh.D. student in strategy at the Bayes Business School\n📬 Sangseok.Lee@bayes.ac.uk\n\n\n\n\nSimone Santoni\nModule leader\nAssociate professor in strategy at the Bayes Business School\n📬 Simone.Santoni.1@city.ac.uk",
     "crumbs": [
       "Course Information",
-      "Syllabus"
+      "Teaching team"
     ]
   },
   {
-    "objectID": "course/syllabus.html#introduction-to-r",
-    "href": "course/syllabus.html#introduction-to-r",
-    "title": "Course Syllabus",
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "Frequently Asked Questions",
     "section": "",
-    "text": "This course provides a comprehensive foundation in R programming tailored for analytics. By the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nSet up and manage R environments for data analysis projects using RStudio\nR Fundamentals: Master R’s syntax, data structures, and statistical computing concepts\nWrite clean, efficient R code using tidyverse principles and best practices\nManipulate and analyze data using base R and tidyverse functions\nProcess and transform datasets using dplyr for advanced data wrangling\nDevelop reproducible data analysis workflows with R scripts and R Markdown\nDebug and troubleshoot common R programming issues\nApply statistical thinking to real-world analytics problems\n\n\n\n\n\n\nOur approach emphasizes learning by doing. Rather than memorizing syntax, you’ll build practical skills through:\n\n🎯 Hands-on exercises with real datasets\n🔄 Iterative learning that builds on previous concepts\n🌟 Industry-relevant examples and case studies\n🤝 Collaborative problem-solving in group sessions",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference.",
     "crumbs": [
       "Course Information",
-      "Syllabus"
+      "FAQ"
     ]
   },
   {
-    "objectID": "course/syllabus.html#module-structure",
-    "href": "course/syllabus.html#module-structure",
-    "title": "Course Syllabus",
-    "section": "Module Structure",
-    "text": "Module Structure\nThe course is organized into six progressive modules, each building upon the previous:\n\n📚 Module 1: Getting Started with R\nDuration: Week 1\nSet up your R environment and learn the basics of working with RStudio, R scripts, and essential development practices.\nKey Topics: R and RStudio installation, R as calculator, RStudio interface, R projects\n\n\n🔧 Module 2: R Language Fundamentals\nDuration: Weeks 2\nMaster R’s fundamental building blocks including data types, data structures, and control flow.\nKey Topics: Objects, assignment, vectors, lists, data frames, factors, functions, control structures\n\n\n📊 Module 3: Introduction to Tidyverse\nDuration: Week 3\nExplore the tidyverse philosophy and learn essential packages for modern R programming.\nKey Topics: Tidyverse ecosystem, data import with readr, basic dplyr operations, tidyr principles\n\n\n🎯 Module 4: Data Types in Tidyverse\nDuration: Week 4\nDeepen your understanding of data types within the tidyverse framework and learn to work effectively with different data structures.\nKey Topics: Character strings, factors in tidyverse, dates and times with lubridate, categorical data handling\n\n\n📈 Module 5: Data Wrangling with dplyr\nDuration: Week 5\nMaster advanced data manipulation techniques using dplyr for comprehensive data wrangling.\nKey Topics: Filtering, selecting, mutating, grouping, summarizing, joining datasets\n\n\n📋 Module 6: Organizing Tabular Data with tidyr\nDuration: Week 6\nMaster data reshaping and organization techniques to transform messy data into tidy formats suitable for analysis.\nKey Topics: Pivoting data (wide to long, long to wide), separating and uniting columns, handling missing values, nested data structures",
-    "crumbs": [
-      "Course Information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course/syllabus.html#learning-approach",
-    "href": "course/syllabus.html#learning-approach",
-    "title": "Course Syllabus",
-    "section": "Learning Approach",
-    "text": "Learning Approach\n\nInteractive Learning Environment\nWe believe in active learning where you’ll:\n\n\nDuring Sessions\n\nLive coding demonstrations\nPair programming exercises\nGroup problem-solving\nQ&A discussions\n\n\n\nBetween Sessions\n\nPractice exercises\nReading assignments\nMini-projects\nPeer review activities\n\n\n\n\n\nAssessment Methods\n\nFormal Assessment\n\n\nIn-Class Participation (20%) - Active contribution to case discussions - Engagement in group exercises - Quality of questions and insights - Peer collaboration effectiveness\n\n\nMid-Term Project (40%) - Team-based network analysis project - Real-world dataset application - Technical implementation and visualization - Business insights and recommendations\n\n\nFinal Course Project (40%) - Individual capstone project - Original network analysis research - Comprehensive report and presentation - Integration of course concepts\n\n\n\n\nContinuous Self-Assessment\nWhile formal assessment provides external validation, self-assessment forms the cornerstone of learning in this module. Students are encouraged to:\n\nMonitor their understanding during lectures and practical sessions\nComplete problem sets independently to identify knowledge gaps\nActively seek and incorporate feedback from instructors\nTrack their progress against module learning objectives",
-    "crumbs": [
-      "Course Information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course/syllabus.html#course-materials",
-    "href": "course/syllabus.html#course-materials",
-    "title": "Course Syllabus",
-    "section": "Course Materials",
-    "text": "Course Materials\n\n💻 Required Software\n\n\n\n\n\n\nEssential Tools\n\n\n\nProgramming Languages: - R (version 4.0+) with RStudio - Python (version 3.8+) with Jupyter notebooks\nKey R Packages: - igraph - Core network analysis functionality - ggraph - Network visualization with grammar of graphics - tidygraph - Tidy network analysis workflows - statnet - Statistical network modeling - networkD3 - Interactive network visualizations\nKey Python Libraries: - NetworkX - Comprehensive network analysis - matplotlib and seaborn - Static visualizations - plotly - Interactive network plots - pandas and numpy - Data manipulation - scipy - Scientific computing for networks\n\n\n\n\n📖 Recommended Textbooks\nPrimary References: - Wasserman, S., & Faust, K. (1994). Social Network Analysis: Methods and Applications. Cambridge University Press. - Newman, M. (2010). Networks: An Introduction. Oxford University Press. - Scott, J. (2017). Social Network Analysis (4th ed.). SAGE Publications.\nSupplementary Materials: - Borgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). Analyzing Social Networks (2nd ed.). SAGE Publications. - Barabási, A. L. (2016). Network Science. Cambridge University Press. - Luke, D. A. (2015). A User’s Guide to Network Analysis in R. Springer.\n\n\n🎈 Online Resources\nCourse-Specific: - Course GitHub repository with code examples and datasets - Moodle discussion forums for Q&A and collaboration - Weekly video tutorials and walkthroughs\nExternal Learning: - Network Science Book by Albert-László Barabási (free online) - CRAN Task View: Social Network Analysis - NetworkX Documentation - R Graph Gallery - Network Section - Gephi - Open-source network visualization platform",
-    "crumbs": [
-      "Course Information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course/syllabus.html#course-policies",
-    "href": "course/syllabus.html#course-policies",
-    "title": "Course Syllabus",
-    "section": "Course Policies",
-    "text": "Course Policies\n\nAttendance and Participation\n\nRegular attendance is mandatory for SMM638\nActive participation in class discussions encouraged\n\n\n\nGetting Help\n\n\n\n\n\n\n\nMoodle Forum: Available on course website, expect a reply within 24-48 hours in weekdays\nEmail instructor: simone.santoni.1@city.ac.uk\nOffice Hours: In-depth conceptual discussions (reach out to simone.santoni.1@city.ac.uk to book your appointment)\nPeer Study Groups: Self-organized, facilitated by instructor\n\n\n\n\n\n\nAccommodations\nStudents with documented disabilities who may need accommodations should liaise with the course officer as soon as possible. All discussions will remain confidential. Students should also contact the Office of Disability Services to verify their eligibility for reasonable accommodations.\n\n\nChanges to Syllabus\nThe instructor reserves the right to modify this syllabus as needed. Any changes will be announced in class and posted on the course website with adequate notice.",
-    "crumbs": [
-      "Course Information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Network Analytics－SMM638",
+    "objectID": "faq.html#general-questions",
+    "href": "faq.html#general-questions",
+    "title": "Frequently Asked Questions",
     "section": "",
-    "text": "This interactive website provides a comprehensive four-part introduction to R programming specifically designed for students in analytics curricula. The course emphasizes R’s language fundamentals, the tidyverse ecosystem, and data manipulation for statistical computing and data science."
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference.",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
   },
   {
-    "objectID": "index.html#welcome-to-ind215",
-    "href": "index.html#welcome-to-ind215",
-    "title": "Network Analytics－SMM638",
+    "objectID": "faq.html#course-logistics",
+    "href": "faq.html#course-logistics",
+    "title": "Frequently Asked Questions",
+    "section": "Course Logistics",
+    "text": "Course Logistics\n\nHow much time should I dedicate to this course?\nExpect to spend 8-10 hours per week: - 3 hours: Lectures and tutorials - 3-4 hours: Readings and videos - 2-3 hours: Assignments and practice\n\n\nCan I audit the course?\nPlease contact the instructor to discuss auditing options. Priority is given to enrolled students.\n\n\nAre lectures recorded?\nYes, all lectures are recorded and available on Moodle within 24 hours. However, live attendance is strongly encouraged for interactive elements.",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#technical-questions",
+    "href": "faq.html#technical-questions",
+    "title": "Frequently Asked Questions",
+    "section": "Technical Questions",
+    "text": "Technical Questions\n\nWhat computer specifications do I need?\n\nRAM: 8GB minimum (16GB recommended)\nStorage: 10GB free space\nOS: Windows 10+, macOS 10.14+, or Linux\nInternet connection for package downloads\n\n\n\nHow do I install the required software?\nDetailed installation guides are provided in Week 1 materials. We also offer installation support sessions.\n\n\nCan I use cloud-based tools instead?\nYes! Options include: - Google Colab (Python) - RStudio Cloud - Binder for Jupyter notebooks",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#assessment",
+    "href": "faq.html#assessment",
+    "title": "Frequently Asked Questions",
+    "section": "Assessment",
+    "text": "Assessment\n\nCan I work with others on assignments?\n\nMid-term project: Yes (teams of 3-4)\nFinal project: No (individual work)\nWeekly exercises: Discussion encouraged, but submit your own work\n\n\n\nWhat if I submit late?\nLate submissions receive a 10% penalty per day. Extensions may be granted for documented emergencies.\n\n\nHow are projects graded?\nProjects are evaluated on: - Technical correctness (30%) - Analytical depth (30%) - Business relevance (30%) - Presentation quality (10%)",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#career-applications",
+    "href": "faq.html#career-applications",
+    "title": "Frequently Asked Questions",
+    "section": "Career & Applications",
+    "text": "Career & Applications\n\nHow is network analytics used in industry?\nCommon applications include: - Social media analysis - Supply chain optimization - Fraud detection - Recommendation systems - Organizational design - Market structure analysis\n\n\nWhat career paths benefit from network analytics?\n\nData Scientists\nBusiness Analysts\nMarketing Analysts\nOperations Research\nManagement Consultants\nSocial Media Strategists\n\n\n\nWill this help with my dissertation/thesis?\nAbsolutely! Network analysis is increasingly used in business research. We can discuss how to apply these methods to your research interests.",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#getting-help",
+    "href": "faq.html#getting-help",
+    "title": "Frequently Asked Questions",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nI’m struggling with the material. What should I do?\n\nAttend office hours\nPost questions on Moodle forums\nForm study groups with classmates\nReview recorded lectures\nSchedule one-on-one meeting with instructor\n\n\n\nWhere can I find additional practice problems?\n\nEnd of chapter exercises in textbooks\nGitHub repository practice sets\nOnline courses (Coursera, DataCamp)\nKaggle competitions\n\n\n\nWhat if I have accessibility needs?\nPlease contact Student Services and the instructor as soon as possible. We’ll work together to ensure appropriate accommodations.\n\n\n\n\n\n\n\nStill have questions?\n\n\n\nPost on the Moodle forum or email the instructor at simone.santoni.1@city.ac.uk",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "notes/xyz.html",
+    "href": "notes/xyz.html",
+    "title": "Supplemental Notes",
     "section": "",
-    "text": "This interactive website provides a comprehensive four-part introduction to R programming specifically designed for students in analytics curricula. The course emphasizes R’s language fundamentals, the tidyverse ecosystem, and data manipulation for statistical computing and data science."
+    "text": "This section contains supplemental materials and advanced topics not covered in the main course.\n\n\n\nAdvanced network models (ERGM, TERGM)\nMachine learning on graphs\nTemporal network analysis\nMultilayer networks\nNetwork sampling techniques\n\nCheck back for updates throughout the course.",
+    "crumbs": [
+      "Supplemental notes",
+      "XYZ"
+    ]
   },
   {
-    "objectID": "index.html#why-r-for-analytics",
-    "href": "index.html#why-r-for-analytics",
-    "title": "Network Analytics－SMM638",
-    "section": "Why R for Analytics?",
-    "text": "Why R for Analytics?\nR has been the gold standard for statistical computing and data analysis for good reasons:\n\n🌟 Statistical Foundation\n\nCreated by statisticians for statistical analysis\nStandard tool in academia, research, and data science\nPreferred language for statistical modeling and hypothesis testing\n\n\n\n💪 Rich Ecosystem\n\nComprehensive statistical libraries (stats, MASS)\nElegant data manipulation (tidyverse: dplyr, tidyr, ggplot2)\nAdvanced visualization capabilities (ggplot2, plotly, shiny)\nMachine learning and predictive modeling (caret, randomForest)\n\n\n\n🎯 Data-First Design\n\nBuilt-in support for statistical data types (factors, time series)\nVectorized operations for efficient data processing\nSeamless integration with databases and file formats\nInteractive data exploration and analysis\nPublication-ready graphics and reports"
+    "objectID": "notes/xyz.html#additional-resources",
+    "href": "notes/xyz.html#additional-resources",
+    "title": "Supplemental Notes",
+    "section": "",
+    "text": "This section contains supplemental materials and advanced topics not covered in the main course.\n\n\n\nAdvanced network models (ERGM, TERGM)\nMachine learning on graphs\nTemporal network analysis\nMultilayer networks\nNetwork sampling techniques\n\nCheck back for updates throughout the course.",
+    "crumbs": [
+      "Supplemental notes",
+      "XYZ"
+    ]
   },
   {
-    "objectID": "index.html#the-r-learning-journey-a-humorous-reality-check",
-    "href": "index.html#the-r-learning-journey-a-humorous-reality-check",
-    "title": "Network Analytics－SMM638",
-    "section": "The R Learning Journey: A Humorous Reality Check",
-    "text": "The R Learning Journey: A Humorous Reality Check\nLearning R is an adventure filled with “aha!” moments, head-scratching confusion, and the occasional existential crisis about why your data frame suddenly became a factor (again). Every R programmer has traveled this path, from their first 2 + 2 to their thousandth Google search about why their ggplot won’t cooperate.\nBelow is a humorous, fictitious R function that captures the universal experiences every R learner encounters. As you progress through this course, you’ll gradually understand why each of these moments is both frustrating and funny. Consider it a preview of coming attractions – if you don’t find it amusing now, bookmark it and return after a few weeks of R. You’ll be laughing (or crying) in recognition!\n\nThe Universal R Learning Timeline\nThis function documents real phenomena you’ll encounter: - Days 1-10: The honeymoon phase where everything seems logical until you meet factors - Days 10-100: The valley of despair where you discover R’s “quirks” - Days 100-365: The plateau of productivity where you can actually wrangle data (while still Googling constantly) - Days 365+: The eternal journey where you realize the tidyverse keeps evolving\n\nr_newbie_experience &lt;- function(day) {\n  # Simulates the emotional journey of learning R.\n  # Warning: Results may vary. Side effects include: false confidence,\n  # existential dread about factors, sudden urges to pipe everything,\n  # and an unhealthy relationship with Stack Overflow.\n  #\n  # Note: This function is 100% accurate based on extensive field research\n  # (aka crying over RStudio worldwide).\n\n  experiences &lt;- list(\n    `1` = \"2 + 2  # I AM A DATA SCIENTIST NOW!!!\",\n    `2` = \"x &lt;- 'R is easy'  # This arrow thing is cool!\",\n    `3` = \"c(1, 2, 3)  # Everything is a vector? Even single numbers?!\",\n    `4` = \"data.frame(x = 1:3, y = 4:6)  # Look at me making data!\",\n    `5` = \"my_data$new_column &lt;- 'value'  # Dollar signs everywhere!\",\n    `6` = \"factor(c('A', 'B', 'A'))  # Why are my letters ordered weird?\",\n    `7` = \"mean(c(1, 2, NA))  # Returns NA. R is broken.\",\n    `8` = \"mean(c(1, 2, NA), na.rm = TRUE)  # Oh... that's embarrassing\",\n    `9` = \"library(tidyverse)  # Installed 47 packages. Is this normal?\",\n    `10` = \"data %&gt;% filter()  # What is this pipe thing?\",\n    `12` = \"ggplot(data, aes(x, y)) + geom_point()  # I made a chart!\",\n    `14` = \"install.packages('everything')  # Package not found. Dreams crushed.\",\n    `15` = \"subset(data, condition)  # Why does everyone say this is bad?\",\n    `18` = \"data %&gt;% select(everything())  # Pipe addiction begins\",\n    `20` = \"for(i in 1:10) print(i)  # Loops work but everyone judges me\",\n    `25` = \"apply(matrix, 1, function(x) sum(x))  # Functions have functions?\",\n    `30` = \"str(object)  # Everything has structure. Mind = blown\",\n    `35` = \"read.csv('file.csv')  # Why are my numbers now factors?!\",\n    `40` = \"stringsAsFactors = FALSE  # The magic incantation\",\n    `45` = \"data$column[data$other_column == 'value']  # Bracket hell\",\n    `50` = \"library(dplyr); data %&gt;% filter(column == 'value')  # Enlightenment\",\n    `55` = \"Error: object 'column' not found  # But I can see it right there!\",\n    `60` = \"data %&gt;% mutate(new = old * 2)  # Mutate sounds violent\",\n    `65` = \"group_by(category) %&gt;% summarise(mean = mean(value))  # I'm a wizard!\",\n    `70` = \"left_join(df1, df2, by = 'id')  # Joins without SQL?\",\n    `75` = \"pivot_longer(data, cols = everything())  # Reshape magic\",\n    `80` = \"ggplot() + theme_minimal() + labs() + scale_x_continuous()  # Layered grammar\",\n    `85` = \"ggsave('plot.png', width = 8, height = 6, dpi = 300)  # Publication ready!\",\n    `90` = \"map(list, ~function(.x))  # Functional programming in R?\",\n    `95` = \"case_when(condition1 ~ result1, TRUE ~ default)  # Vectorized if-else\",\n    `100` = \"data[data$x &gt; 5 & data$y &lt; 10, ]  # Back to base R. Feeling dirty.\",\n    `110` = \"glue('Hello {name}!')  # String interpolation discovered\",\n    `120` = \"# Started answering R questions (incorrectly) on Stack Overflow\",\n    `130` = \"options(stringsAsFactors = FALSE)  # Set global defaults\",\n    `140` = \"library(here); here('data', 'file.csv')  # Path management zen\",\n    `150` = \"renv::init()  # Environment management. Finally!\",\n    `180` = \"Discovered R Markdown. Rewrote everything. Literate programming!\",\n    `200` = \"shiny::fluidPage()  # Interactive web apps in R?!\",\n    `250` = \"data.table vs dplyr debates. Chose sides. Lost friends.\",\n    `300` = \"Rcpp::cppFunction()  # C++ in R. Peak performance.\",\n    `365` = \"# Still googling 'how to exit vim' but my R analysis is solid\",\n    `400` = \"targets::tar_make()  # Pipeline management. Professional level.\",\n    `500` = \"Writing R packages. DESCRIPTION file mysteries solved.\",\n    `600` = \"CRAN submission. Peer review trauma begins.\",\n    `700` = \"Dreams in dplyr. Nightmares about factors.\",\n    `800` = \"Discovered {{}}.  Tidy evaluation everywhere.\",\n    `900` = \"10 years later: Still finding new CRAN packages daily\",\n    `1000` = \"Achieved enlightenment: Everything is a list (even data frames)\"\n  )\n\n  # Special milestone messages\n  if (day &lt; 0) {\n    return(\"Error: Time travel not yet implemented in R 4.x (check CRAN)\")\n  } else if (day == 0) {\n    return(\"Day 0: Googling 'R vs Excel' (preparing for enlightenment)\")\n  } else if (day == 42) {\n    return(\"Day 42: The answer to life, universe, and missing values\")\n  } else if (day == 404) {\n    return(\"Day 404: Object not found. Try ls() again later.\")\n  } else if (day == 418) {\n    return(\"Day 418: I'm a teapot. Also, discovered Easter eggs in R\")\n  } else if (day == 314) {\n    return(paste0(\"Day \", day, \": pi  # Built-in constant. Math rocks!\"))\n  } else if (as.character(day) %in% names(experiences)) {\n    return(experiences[[as.character(day)]])\n  } else if (day &gt; 1000) {\n    return(paste0(\"Day \", day, \": Realized the real R was the data we wrangled along the way\"))\n  } else if (day &gt; 365) {\n    return(paste0(\"Day \", day, \": Still discovering that everything is a vector (even confusion)\"))\n  } else {\n    states &lt;- c(\n      \"Alternating between 'I'm a data wizard' and 'I know nothing'\",\n      \"Debugging code that worked yesterday without changes\",\n      \"Adding print() statements everywhere like breadcrumbs\",\n      \"Copy-pasting from Stack Overflow with pride\",\n      \"Explaining to rubber duck why dplyr should work\",\n      \"Discovering the bug was a missing comma. Again.\",\n      \"Refactoring working code because 'tidyverse is cleaner'\",\n      \"Breaking production on a Friday at 4:59 PM\"\n    )\n    return(paste0(\"Day \", day, \": \", sample(states, 1)))\n  }\n}\n\n# Test the journey with milestone days\ncat(\"=== The R Newbie Journey: Extended Director's Cut ===\\n\\n\")\ntest_days &lt;- c(0, 1, 4, 9, 30, 42, 60, 100, 365, 404, 418, 500, 1000)\nfor (day in test_days) {\n  cat(sprintf(\"Day %4d: %s\\n\", day, r_newbie_experience(day)))\n}"
+    "objectID": "project/finalCourseProject/main.html",
+    "href": "project/finalCourseProject/main.html",
+    "title": "Final Course Project",
+    "section": "",
+    "text": "The final project is an individual, comprehensive network analysis that demonstrates mastery of concepts covered throughout the course. This capstone project allows you to pursue your own research interests while applying advanced network analytics techniques.\n\n\n\nFormat: Individual project\nWeight: 40% of final grade\nDuration: 4 weeks\nDue Date: Week 11 (one week after course ends)\nDeliverables: Research paper + Code + Presentation",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
   },
   {
-    "objectID": "index.html#ready-to-begin",
-    "href": "index.html#ready-to-begin",
-    "title": "Network Analytics－SMM638",
-    "section": "Ready to Begin?",
-    "text": "Ready to Begin?\nStart your R journey by:\n\n📚 Reading the Course Syllabus\n📅 Reviewing the Course Schedule\n💻 Setting up R and RStudio with our Getting Started Guide"
+    "objectID": "project/finalCourseProject/main.html#project-overview",
+    "href": "project/finalCourseProject/main.html#project-overview",
+    "title": "Final Course Project",
+    "section": "",
+    "text": "The final project is an individual, comprehensive network analysis that demonstrates mastery of concepts covered throughout the course. This capstone project allows you to pursue your own research interests while applying advanced network analytics techniques.\n\n\n\nFormat: Individual project\nWeight: 40% of final grade\nDuration: 4 weeks\nDue Date: Week 11 (one week after course ends)\nDeliverables: Research paper + Code + Presentation",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
   },
   {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html",
-    "href": "sessions/session-1/introduction_to_network_analytics.html",
+    "objectID": "project/finalCourseProject/main.html#project-objectives",
+    "href": "project/finalCourseProject/main.html#project-objectives",
+    "title": "Final Course Project",
+    "section": "Project Objectives",
+    "text": "Project Objectives\nThe final project should:\n\nDemonstrate comprehensive understanding of network analytics\nApply advanced techniques beyond basic centrality measures\nGenerate original insights from network data\nContribute meaningful analysis to your field of interest\nShowcase technical and analytical skills to potential employers",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#project-scope",
+    "href": "project/finalCourseProject/main.html#project-scope",
+    "title": "Final Course Project",
+    "section": "Project Scope",
+    "text": "Project Scope\n\nOption A: Original Research\nConduct original network analysis research on a topic of your choice: - Formulate research questions - Collect or identify appropriate data - Apply advanced methods - Generate novel insights\n\n\nOption B: Replication & Extension\nReplicate and extend published network analysis: - Choose a published paper - Replicate key findings - Extend with new data or methods - Provide critical evaluation\n\n\nOption C: Business Case Study\nDevelop an in-depth business case using network analytics: - Identify real business problem - Collect relevant network data - Provide actionable recommendations - Include implementation plan",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#requirements",
+    "href": "project/finalCourseProject/main.html#requirements",
+    "title": "Final Course Project",
+    "section": "Requirements",
+    "text": "Requirements\n\nTechnical Requirements\nYour project must demonstrate proficiency in:\n\nData Management\n\nData collection/acquisition\nCleaning and preprocessing\nHandling large-scale networks (if applicable)\n\nCore Analysis (all required)\n\nMultiple centrality measures\nNetwork structure analysis\nStatistical testing/validation\n\nAdvanced Techniques (choose at least 2)\n\nCommunity detection algorithms\nNetwork dynamics/evolution\nMultilayer/multiplex networks\nNetwork regression models (QAP, ERGM)\nMachine learning on networks\nLink prediction\nDiffusion/contagion models\n\nVisualization\n\nStatic network visualizations\nInteractive visualizations (bonus)\nClear, publication-quality figures\n\n\n\n\nDeliverables\n\n1. Research Paper (3,000-4,000 words)\nStructure:\n\nAbstract (200 words)\n\nProblem statement\nMethods used\nKey findings\nImplications\n\nIntroduction (500 words)\n\nBackground and motivation\nResearch questions/objectives\nContribution statement\n\nLiterature Review (700 words)\n\nTheoretical framework\nRelated work\nResearch gap\n\nMethodology (800 words)\n\nData description\nNetwork construction\nAnalytical approaches\nValidation methods\n\nResults (1,000 words)\n\nDescriptive statistics\nMain findings\nRobustness checks\n\nDiscussion (600 words)\n\nInterpretation of results\nTheoretical implications\nPractical applications\nLimitations\n\nConclusion (200 words)\n\nSummary of findings\nFuture research\n\nReferences (not included in word count)\n\nMinimum 20 academic sources\nProper citation format\n\n\n\n\n2. Technical Appendix\n\nComplete, documented code\nReproducibility instructions\nAdditional figures/tables\nSensitivity analyses\n\n\n\n3. GitHub Repository\nRequired elements:\nproject/\n├── README.md          # Project overview and instructions\n├── data/             \n│   ├── raw/          # Original data files\n│   └── processed/    # Cleaned data\n├── code/\n│   ├── 01_data_prep.R/py\n│   ├── 02_analysis.R/py\n│   └── 03_visualization.R/py\n├── results/\n│   ├── figures/\n│   └── tables/\n├── docs/\n│   └── paper.pdf\n└── requirements.txt   # Dependencies\n\n\n4. Presentation (10 minutes)\n\n8 minutes presentation\n2 minutes Q&A\nFocus on key insights\nDemonstrate technical competence",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#grading-criteria",
+    "href": "project/finalCourseProject/main.html#grading-criteria",
+    "title": "Final Course Project",
+    "section": "Grading Criteria",
+    "text": "Grading Criteria\n\n\n\n\n\n\n\n\nComponent\nWeight\nDetailed Criteria\n\n\n\n\nResearch Quality\n30%\nOriginality, rigor, contribution\n\n\nTechnical Proficiency\n25%\nCode quality, method selection, implementation\n\n\nAnalysis & Insights\n25%\nDepth of analysis, validity of conclusions\n\n\nCommunication\n15%\nWriting clarity, visualization quality\n\n\nPresentation\n5%\nOral communication, slide design\n\n\n\n\nGrading Rubric Details\nA (85-100%): Exceptional work suitable for conference presentation - Novel insights or methodological contribution - Flawless technical execution - Publication-quality writing and visualizations\nB (70-84%): Strong work meeting all requirements - Solid application of advanced techniques - Clear business/research value - Minor technical or presentation issues\nC (60-69%): Adequate work with room for improvement - Basic requirements met - Limited use of advanced techniques - Some technical or analytical errors\nD (50-59%): Below expectations - Missing key requirements - Significant technical errors - Poor communication",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#project-ideas-by-industry",
+    "href": "project/finalCourseProject/main.html#project-ideas-by-industry",
+    "title": "Final Course Project",
+    "section": "Project Ideas by Industry",
+    "text": "Project Ideas by Industry\n\nFinance\n\nInterbank lending networks\nStock correlation networks\nCryptocurrency transaction networks\nCorporate ownership structures\n\n\n\nMarketing\n\nBrand association networks\nCustomer journey networks\nInfluencer marketing effectiveness\nWord-of-mouth propagation\n\n\n\nTechnology\n\nOpen source collaboration networks\nPatent citation networks\nAPI dependency networks\nDeveloper community analysis\n\n\n\nHealthcare\n\nDisease comorbidity networks\nHospital referral networks\nDrug interaction networks\nResearch collaboration networks\n\n\n\nConsulting/Strategy\n\nIndustry ecosystem mapping\nCompetitive dynamics networks\nKnowledge transfer networks\nM&A target identification",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#timeline",
+    "href": "project/finalCourseProject/main.html#timeline",
+    "title": "Final Course Project",
+    "section": "Timeline",
+    "text": "Timeline\n\n\n\nWeek\nMilestone\nDeliverable\n\n\n\n\nWeek 7\nTopic selection\n1-page proposal\n\n\nWeek 8\nData collection\nData summary\n\n\nWeek 9\nInitial analysis\nProgress report\n\n\nWeek 10\nComplete analysis\nDraft sections\n\n\nWeek 11\nFinal submission\nAll materials",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#resources-support",
+    "href": "project/finalCourseProject/main.html#resources-support",
+    "title": "Final Course Project",
+    "section": "Resources & Support",
+    "text": "Resources & Support\n\nDatasets\n\nNetwork Repository\nStanford Large Network Dataset Collection\nKONECT\nIndustry-specific databases (access via library)\n\n\n\nTools & Libraries\n\nAdvanced R packages: RSiena, tergm, latentnet\nPython libraries: graph-tool, networkit, stellar-graph\nVisualization: Gephi, Cytoscape, D3.js\n\n\n\nWriting Resources\n\nAcademic Phrasebank\nLibrary writing center consultations\nPrevious high-scoring projects (on Moodle)\n\n\n\nOffice Hours\n\nExtended office hours during project period\nIndividual project consultations available\nBook via email with specific questions",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#frequently-asked-questions",
+    "href": "project/finalCourseProject/main.html#frequently-asked-questions",
+    "title": "Final Course Project",
+    "section": "Frequently Asked Questions",
+    "text": "Frequently Asked Questions\nQ: Can I use my workplace data? A: Yes, with proper anonymization and company permission.\nQ: How much code should I include? A: Core analysis in appendix, full code in GitHub.\nQ: Can I collaborate with others? A: Discussion yes, but all work must be individual.\nQ: What if my analysis doesn’t show significant results? A: Negative results are valid if properly analyzed and discussed.",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#submission-checklist",
+    "href": "project/finalCourseProject/main.html#submission-checklist",
+    "title": "Final Course Project",
+    "section": "Submission Checklist",
+    "text": "Submission Checklist\n\nResearch paper (PDF)\nGitHub repository link\nPresentation slides\nData availability statement\nCode runs without errors\nREADME with clear instructions\nAll sources properly cited\nSubmitted before deadline\n\n\n\n\n\n\n\n\nImportant Notes\n\n\n\n\nStart early - Data issues always arise\nBackup everything - Use version control\nTest reproducibility - Have a peer try running your code\nProofread carefully - Consider professional editing\nPractice presentation - Time yourself\n\nLate submissions: 10% penalty per day\n\n\n\n\n\n\n\n\nSuccess Tips\n\n\n\nThe best projects often: - Address real problems - Use creative data sources - Apply methods appropriately - Tell compelling stories - Include excellent visualizations",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html",
+    "href": "weeks/week-1/main.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Important\n\n\n\n\n;\n\n;",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#introduction",
+    "href": "weeks/week-1/main.html#introduction",
     "title": "Installing R and RStudio",
     "section": "",
-    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing."
+    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
   },
   {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#introduction",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#introduction",
-    "title": "Installing R and RStudio",
-    "section": "",
-    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing."
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#why-r-and-rstudio",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#why-r-and-rstudio",
+    "objectID": "weeks/week-1/main.html#why-r-and-rstudio",
+    "href": "weeks/week-1/main.html#why-r-and-rstudio",
     "title": "Installing R and RStudio",
     "section": "Why R and RStudio?",
-    "text": "Why R and RStudio?\nBefore diving into installation, let’s understand what we’re installing:\nR is the core programming language that provides:\n\nComprehensive statistical and graphical capabilities\nExtensive package ecosystem (CRAN)\nActive community and continuous development\nFree and open-source\n\nRStudio is an Integrated Development Environment (IDE) that makes working with R much easier by providing:\n\nSyntax highlighting and code completion\nIntegrated help and documentation\nProject management tools\nBuilt-in plotting and data viewing\nPackage management interface\n\nThink of R as the engine and RStudio as the comfortable cockpit that makes driving the engine a pleasant experience."
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#installation-steps",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#installation-steps",
-    "title": "Installing R and RStudio",
-    "section": "Installation Steps",
-    "text": "Installation Steps\n\nStep 1: Install R\nR must be installed first, as RStudio depends on it.\n\nFor Windows:\n\nGo to the CRAN website\nClick “Download R for Windows”\nClick “base” (for first-time users)\nDownload the latest version (currently R 4.4.x)\nRun the downloaded installer and follow the prompts\nUse default settings unless you have specific preferences\n\n\n\nFor macOS:\n\nGo to the CRAN website\nClick “Download R for macOS”\nDownload the appropriate installer:\n\nFor Apple Silicon Macs (M1/M2): R-4.4.x-arm64.pkg\nFor Intel Macs: R-4.4.x-x86_64.pkg\n\nOpen the downloaded .pkg file and follow the installation steps\n\n\n\nFor Linux:\nMost Linux distributions include R in their package repositories. For Ubuntu/Debian:\nsudo apt update\nsudo apt install r-base r-base-dev\nFor more detailed Linux instructions, visit the CRAN Linux page.\n\n\n\nStep 2: Install RStudio Desktop\nAfter installing R successfully:\n\nGo to the RStudio download page\nScroll down to “All Installers and Tarballs”\nChoose the appropriate installer for your operating system:\n\nWindows: .exe installer\nmacOS: .dmg installer\nLinux: .deb or .rpm package\n\nDownload and run the installer\nFollow the installation prompts"
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#verifying-your-installation",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#verifying-your-installation",
-    "title": "Installing R and RStudio",
-    "section": "Verifying Your Installation",
-    "text": "Verifying Your Installation\nLet’s make sure everything is working correctly:\n\nTest R Installation\n\nOpen RStudio (it should automatically find your R installation)\nIn the Console pane (usually bottom-left), you should see something like:\n\nR version 4.4.1 (2024-06-14) -- \"Race for Your Life\"\nCopyright (C) 2024 The R Foundation for Statistical Computing\nPlatform: x86_64-pc-linux-gnu (64-bit)\n...\nType 'q()' to quit R.\n\n&gt;\n\nTry a simple command:\n\n\n# Test basic arithmetic\n2 + 2\n\n# Check R version\nR.version.string\n\n# Get help\nhelp(mean)\n\nIf these work without errors, congratulations! Your R installation is successful."
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#essential-configuration",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#essential-configuration",
-    "title": "Installing R and RStudio",
-    "section": "Essential Configuration",
-    "text": "Essential Configuration\n\nSetting Your Working Directory\nIt’s helpful to organize your R work in a dedicated folder:\n\n# Check current working directory\ngetwd()\n\n# Set working directory (adjust path as needed)\nsetwd(\"~/Documents/R-Projects\")\n\n# Or better yet, use RStudio Projects (covered in next module)\n\n\n\nInstalling Essential Packages\nR’s power comes from its packages. Let’s install some essential ones:\n\n# Install the tidyverse (collection of data science packages)\ninstall.packages(\"tidyverse\")\n\n# Install other useful packages\ninstall.packages(c(\"here\", \"rmarkdown\", \"devtools\"))\n\n# Load a package to test\nlibrary(tidyverse)"
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#package-management-fundamentals",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#package-management-fundamentals",
-    "title": "Installing R and RStudio",
-    "section": "Package Management Fundamentals",
-    "text": "Package Management Fundamentals\nUnderstanding package management is crucial for R success:\n\nCRAN Packages\n\n# Install from CRAN (most common)\ninstall.packages(\"package_name\")\n\n# Install multiple packages\ninstall.packages(c(\"dplyr\", \"ggplot2\", \"readr\"))\n\n# Update packages\nupdate.packages()\n\n# Remove packages\nremove.packages(\"package_name\")\n\n\n\nLoading Packages\n\n# Load package for current session\nlibrary(dplyr)\n\n# Alternative loading method\nrequire(dplyr)\n\n# Check installed packages\ninstalled.packages()\n\n# Check loaded packages\nsearch()"
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#rstudio-layout-overview",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#rstudio-layout-overview",
-    "title": "Installing R and RStudio",
-    "section": "RStudio Layout Overview",
-    "text": "RStudio Layout Overview\nWhen you first open RStudio, you’ll see four panes:\n\nConsole (bottom-left): Where R commands are executed\nSource (top-left): Text editor for scripts and documents\nEnvironment/History (top-right): Variables and command history\nFiles/Plots/Packages/Help (bottom-right): File browser, plots, package manager, and help\n\nDon’t worry if this seems overwhelming – we’ll explore each pane in detail in the next lesson!"
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#common-installation-issues",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#common-installation-issues",
-    "title": "Installing R and RStudio",
-    "section": "Common Installation Issues",
-    "text": "Common Installation Issues\n\n“R not found” Error in RStudio\n\nSolution: Reinstall R first, then RStudio\nRStudio needs to detect your R installation\n\n\n\nPackage Installation Fails\n\nWindows: Install Rtools from CRAN\nmacOS: Install Xcode command line tools: xcode-select --install\nAll platforms: Try installing packages from a different mirror\n\n\n\nPermission Issues\n\nSolution: Run RStudio as administrator (Windows) or use sudo (Linux/macOS) for package installation"
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#alternative-installation-methods",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#alternative-installation-methods",
-    "title": "Installing R and RStudio",
-    "section": "Alternative Installation Methods",
-    "text": "Alternative Installation Methods\n\nUsing Package Managers\n\nWindows - Chocolatey:\nchoco install r.project rstudio\n\n\nmacOS - Homebrew:\nbrew install --cask r rstudio\n\n\nLinux - Conda:\nconda install -c r r-base rstudio"
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#next-steps",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#next-steps",
-    "title": "Installing R and RStudio",
-    "section": "Next Steps",
-    "text": "Next Steps\nNow that you have R and RStudio installed:\n\nExplore the RStudio Interface\nTry R as a Calculator\nLearn about R Scripts and Projects"
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#resources-for-further-learning",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#resources-for-further-learning",
-    "title": "Installing R and RStudio",
-    "section": "Resources for Further Learning",
-    "text": "Resources for Further Learning\n\nRStudio Education\nR for Data Science book (free online)\nCRAN Task Views\nRStudio Cheat Sheets\n\n\n\n\n\n\n\nPro Tip\n\n\n\nCreate a dedicated folder for your R projects and always use RStudio Projects to manage your work. This keeps your files organized and makes your analysis reproducible!"
-  },
-  {
-    "objectID": "sessions/session-1/introduction_to_network_analytics.html#congratulations",
-    "href": "sessions/session-1/introduction_to_network_analytics.html#congratulations",
-    "title": "Installing R and RStudio",
-    "section": "Congratulations!",
-    "text": "Congratulations!\nYou’ve successfully set up your R environment! You’re now ready to start your data science journey with R."
-  },
-  {
-    "objectID": "course/syllabus.html#network-analytics",
-    "href": "course/syllabus.html#network-analytics",
-    "title": "Course Syllabus",
-    "section": "",
-    "text": "This course provides a comprehensive foundation in network analysis for analytics students. By the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\nBy completing this course, you will develop expertise in:\n\nNetwork Theory Fundamentals: Understanding basic network concepts, terminology, and the mathematical foundations underlying network analysis\nData Collection & Preparation: Gathering, cleaning, and structuring network data from various sources including social media, organizational systems, and collaboration platforms\nNetwork Visualization: Creating compelling visual representations of networks using tools like R (igraph, ggraph) and Python (NetworkX, matplotlib)\nCentrality Analysis: Computing and interpreting various centrality measures (degree, betweenness, closeness, eigenvector) to identify influential nodes\nCommunity Detection: Applying algorithms to discover clusters, modules, and communities within complex networks\nStatistical Network Modeling: Understanding and applying Exponential Random Graph Models (ERGMs) and other statistical approaches\nBusiness Applications: Translating network insights into actionable business recommendations for marketing, operations, and strategy\nProgramming Skills: Developing proficiency in R and Python for network analysis workflows\n\n\n\n\n\n\nOur approach emphasizes learning by doing. Rather than memorizing notions and syntax, you’ll build practical skills through:\n\n🎯 Hands-on exercises with real datasets\n🔄 Iterative learning that builds on previous concepts\n🌟 Industry-relevant examples and case studies\n🤝 Collaborative problem-solving in group sessions",
+    "text": "Why R and RStudio?\nBefore diving into installation, let’s understand what we’re installing:\nR is the core programming language that provides:\n\nComprehensive statistical and graphical capabilities\nExtensive package ecosystem (CRAN)\nActive community and continuous development\nFree and open-source\n\nRStudio is an Integrated Development Environment (IDE) that makes working with R much easier by providing:\n\nSyntax highlighting and code completion\nIntegrated help and documentation\nProject management tools\nBuilt-in plotting and data viewing\nPackage management interface\n\nThink of R as the engine and RStudio as the comfortable cockpit that makes driving the engine a pleasant experience.",
     "crumbs": [
-      "Course Information",
-      "Syllabus"
+      "Weekly materials",
+      "Week 1"
     ]
   },
   {
-    "objectID": "course/syllabus.html#session-structure",
-    "href": "course/syllabus.html#session-structure",
-    "title": "Course Syllabus",
-    "section": "Session Structure",
-    "text": "Session Structure\nThe course is organized around ten weeks, each building upon the previous:\n\n📚 Session 1: Introduction to network analytics\nDuration: Week 1\n\nKey network concepts\nReal-world networks: Economic and organizational aspects\nSoundcloud example\nR and Python setup for network analytics\n\n\n\n🔧 Session 2: Network metrics\nDuration: Weeks 2\n\nTaxonomy of network metrics: node-, meso-, macro-level indicators\nZooming on network centrality\n\nConcept\nMechanisms\nConsequences\n\nFrom centrality to social influence\n\n\n\n📊 Session 3: Business case discussion on social influence\nDuration: Week 3\n\nCentrality and social influence in BeerAdvocate\nCollective discussion\nSolution implementation in R\n\n\n\n🎯 Session 4: Organizational network analysis\nDuration: Week 4\n\nUsing network methods to represent and understand information flows\nPositions and roles in networks\n\n\n\n📈 Session 5: Business case discussion on organizational network analysis\nDuration: Week 5\n\nAppreciating roles’ role in OSS development\n\n\n\n📋 Session 6: Students presentations\n\nMTP presentations\n\n\n\n🔍 Session 7: Network modularity\nDuration: Week 7\n\nUnderstanding network structure beyond individual nodes\nCore-periphery models and identification\nCommunity detection algorithms (modularity optimization, Louvain method)\nBlock-modeling for role analysis\nApplications in organizational and social networks\n\n\n\n📱 Session 8: Case discussion on community detection\nDuration: Week 8\n\nAnalyzing relational similarity among music listeners\nCase study based on Spotify/music platform data\nImplementation of community detection algorithms\nBusiness implications for recommendation systems\nReference: Poetic article on music communities\n\n\n\n💡 Session 9: Networks, creativity, and innovation\nDuration: Week 9\n\nThe role of network position in innovation and creativity\nStructural holes theory and brokerage benefits\nCase study based on Ronald Burt’s research on innovation within firms\nMeasuring and fostering innovative network positions\nApplications to R&D teams and knowledge workers\n\n\n\n🎓 Session 10: Final presentations and course wrap-up\nDuration: Week 10\n\nStudent final project presentations\nPeer feedback and discussion\nCourse synthesis and real-world applications\nFuture directions in network analytics",
+    "objectID": "weeks/week-1/main.html#installation-steps",
+    "href": "weeks/week-1/main.html#installation-steps",
+    "title": "Installing R and RStudio",
+    "section": "Installation Steps",
+    "text": "Installation Steps\n\nStep 1: Install R\nR must be installed first, as RStudio depends on it.\n\nFor Windows:\n\nGo to the CRAN website\nClick “Download R for Windows”\nClick “base” (for first-time users)\nDownload the latest version (currently R 4.4.x)\nRun the downloaded installer and follow the prompts\nUse default settings unless you have specific preferences\n\n\n\nFor macOS:\n\nGo to the CRAN website\nClick “Download R for macOS”\nDownload the appropriate installer:\n\nFor Apple Silicon Macs (M1/M2): R-4.4.x-arm64.pkg\nFor Intel Macs: R-4.4.x-x86_64.pkg\n\nOpen the downloaded .pkg file and follow the installation steps\n\n\n\nFor Linux:\nMost Linux distributions include R in their package repositories. For Ubuntu/Debian:\nsudo apt update\nsudo apt install r-base r-base-dev\nFor more detailed Linux instructions, visit the CRAN Linux page.\n\n\n\nStep 2: Install RStudio Desktop\nAfter installing R successfully:\n\nGo to the RStudio download page\nScroll down to “All Installers and Tarballs”\nChoose the appropriate installer for your operating system:\n\nWindows: .exe installer\nmacOS: .dmg installer\nLinux: .deb or .rpm package\n\nDownload and run the installer\nFollow the installation prompts",
     "crumbs": [
-      "Course Information",
-      "Syllabus"
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#verifying-your-installation",
+    "href": "weeks/week-1/main.html#verifying-your-installation",
+    "title": "Installing R and RStudio",
+    "section": "Verifying Your Installation",
+    "text": "Verifying Your Installation\nLet’s make sure everything is working correctly:\n\nTest R Installation\n\nOpen RStudio (it should automatically find your R installation)\nIn the Console pane (usually bottom-left), you should see something like:\n\nR version 4.4.1 (2024-06-14) -- \"Race for Your Life\"\nCopyright (C) 2024 The R Foundation for Statistical Computing\nPlatform: x86_64-pc-linux-gnu (64-bit)\n...\nType 'q()' to quit R.\n\n&gt;\n\nTry a simple command:\n\n\n# Test basic arithmetic\n2 + 2\n\n# Check R version\nR.version.string\n\n# Get help\nhelp(mean)\n\nIf these work without errors, congratulations! Your R installation is successful.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#essential-configuration",
+    "href": "weeks/week-1/main.html#essential-configuration",
+    "title": "Installing R and RStudio",
+    "section": "Essential Configuration",
+    "text": "Essential Configuration\n\nSetting Your Working Directory\nIt’s helpful to organize your R work in a dedicated folder:\n\n# Check current working directory\ngetwd()\n\n# Set working directory (adjust path as needed)\nsetwd(\"~/Documents/R-Projects\")\n\n# Or better yet, use RStudio Projects (covered in next module)\n\n\n\nInstalling Essential Packages\nR’s power comes from its packages. Let’s install some essential ones:\n\n# Install the tidyverse (collection of data science packages)\ninstall.packages(\"tidyverse\")\n\n# Install other useful packages\ninstall.packages(c(\"here\", \"rmarkdown\", \"devtools\"))\n\n# Load a package to test\nlibrary(tidyverse)",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#package-management-fundamentals",
+    "href": "weeks/week-1/main.html#package-management-fundamentals",
+    "title": "Installing R and RStudio",
+    "section": "Package Management Fundamentals",
+    "text": "Package Management Fundamentals\nUnderstanding package management is crucial for R success:\n\nCRAN Packages\n\n# Install from CRAN (most common)\ninstall.packages(\"package_name\")\n\n# Install multiple packages\ninstall.packages(c(\"dplyr\", \"ggplot2\", \"readr\"))\n\n# Update packages\nupdate.packages()\n\n# Remove packages\nremove.packages(\"package_name\")\n\n\n\nLoading Packages\n\n# Load package for current session\nlibrary(dplyr)\n\n# Alternative loading method\nrequire(dplyr)\n\n# Check installed packages\ninstalled.packages()\n\n# Check loaded packages\nsearch()",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#rstudio-layout-overview",
+    "href": "weeks/week-1/main.html#rstudio-layout-overview",
+    "title": "Installing R and RStudio",
+    "section": "RStudio Layout Overview",
+    "text": "RStudio Layout Overview\nWhen you first open RStudio, you’ll see four panes:\n\nConsole (bottom-left): Where R commands are executed\nSource (top-left): Text editor for scripts and documents\nEnvironment/History (top-right): Variables and command history\nFiles/Plots/Packages/Help (bottom-right): File browser, plots, package manager, and help\n\nDon’t worry if this seems overwhelming – we’ll explore each pane in detail in the next lesson!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#common-installation-issues",
+    "href": "weeks/week-1/main.html#common-installation-issues",
+    "title": "Installing R and RStudio",
+    "section": "Common Installation Issues",
+    "text": "Common Installation Issues\n\n“R not found” Error in RStudio\n\nSolution: Reinstall R first, then RStudio\nRStudio needs to detect your R installation\n\n\n\nPackage Installation Fails\n\nWindows: Install Rtools from CRAN\nmacOS: Install Xcode command line tools: xcode-select --install\nAll platforms: Try installing packages from a different mirror\n\n\n\nPermission Issues\n\nSolution: Run RStudio as administrator (Windows) or use sudo (Linux/macOS) for package installation",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#alternative-installation-methods",
+    "href": "weeks/week-1/main.html#alternative-installation-methods",
+    "title": "Installing R and RStudio",
+    "section": "Alternative Installation Methods",
+    "text": "Alternative Installation Methods\n\nUsing Package Managers\n\nWindows - Chocolatey:\nchoco install r.project rstudio\n\n\nmacOS - Homebrew:\nbrew install --cask r rstudio\n\n\nLinux - Conda:\nconda install -c r r-base rstudio",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#next-steps",
+    "href": "weeks/week-1/main.html#next-steps",
+    "title": "Installing R and RStudio",
+    "section": "Next Steps",
+    "text": "Next Steps\nNow that you have R and RStudio installed:\n\nExplore the RStudio Interface (coming soon)\nTry R as a Calculator (coming soon)\nLearn about R Scripts and Projects (coming soon)",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#resources-for-further-learning",
+    "href": "weeks/week-1/main.html#resources-for-further-learning",
+    "title": "Installing R and RStudio",
+    "section": "Resources for Further Learning",
+    "text": "Resources for Further Learning\n\nRStudio Education\nR for Data Science book (free online)\nCRAN Task Views\nRStudio Cheat Sheets\n\n\n\n\n\n\n\nPro Tip\n\n\n\nCreate a dedicated folder for your R projects and always use RStudio Projects to manage your work. This keeps your files organized and makes your analysis reproducible!",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#congratulations",
+    "href": "weeks/week-1/main.html#congratulations",
+    "title": "Installing R and RStudio",
+    "section": "Congratulations!",
+    "text": "Congratulations!\nYou’ve successfully set up your R environment! You’re now ready to start your data science journey with R.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-2/main.html",
+    "href": "weeks/week-2/main.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html",
+    "href": "weeks/week-4/main.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Week 4 Content\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-6/main.html",
+    "href": "weeks/week-6/main.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "Week 6 Content\nContent coming soon."
+  },
+  {
+    "objectID": "weeks/week-8/main.html",
+    "href": "weeks/week-8/main.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Week 8 Content\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 8"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#prepare",
+    "href": "weeks/week-1/main.html#prepare",
+    "title": "Week 1",
+    "section": "Prepare",
+    "text": "Prepare",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#participate",
+    "href": "weeks/week-1/main.html#participate",
+    "title": "Week 1",
+    "section": "Participate",
+    "text": "Participate",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#practice",
+    "href": "weeks/week-1/main.html#practice",
+    "title": "Week 1",
+    "section": "Practice",
+    "text": "Practice",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#perform",
+    "href": "weeks/week-1/main.html#perform",
+    "title": "Week 1",
+    "section": "Perform",
+    "text": "Perform",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#important",
+    "href": "weeks/week-1/main.html#important",
+    "title": "Week 1",
+    "section": "",
+    "text": ";\n\n;",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
     ]
   }
 ]

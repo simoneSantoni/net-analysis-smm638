@@ -1,0 +1,25 @@
+---
+title: "Week 1"
+subtitle: "Introduction to network analysis"
+callout-appearance: default
+---
+
+::: {.callout-note}
+## Important
+- ;
+  - ;
+
+:::
+
+## Prepare
+
+
+
+## Participate
+
+
+## Practice
+
+
+## Perform
+

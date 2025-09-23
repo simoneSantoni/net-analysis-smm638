@@ -1,7 +1,8 @@
 ---
 title: "Network Analytics－SMM638"
-subtitle: "A curated set of materials on network analytics for students"
+subtitle: "Materials on network theory, methods, and tools for analytics students"
 ---
 
 ## Welcome to SMM638
+
 

@@ -1,0 +1,185 @@
+---
+title: "Mid-Term Project"
+subtitle: "Network Analysis of Real-World Systems"
+---
+
+## Project Overview
+
+The mid-term project is a team-based analysis of a real-world network dataset. This project allows you to apply network analytics concepts learned in the first half of the course to solve practical business problems.
+
+### Key Information
+
+- **Format**: Team project (3-4 students)
+- **Weight**: 40% of final grade
+- **Duration**: 3 weeks
+- **Due Date**: Week 6
+- **Deliverables**: Report + Code + Presentation
+
+## Project Objectives
+
+By completing this project, you will:
+
+1. **Apply** network analysis techniques to real data
+2. **Interpret** network metrics in business context
+3. **Collaborate** effectively in a team setting
+4. **Communicate** technical findings to non-technical audiences
+5. **Develop** reproducible analysis workflows
+
+## Dataset Options
+
+Choose one of the following datasets or propose your own:
+
+### 1. Corporate Board Networks
+- **Data**: Board member connections across S&P 500 companies
+- **Questions**: How do board interlocks affect corporate governance? Which companies are most central?
+- **Source**: BoardEx or manually collected
+
+### 2. Product Co-purchase Networks
+- **Data**: Amazon product co-purchase data
+- **Questions**: How can we improve recommendation systems? What product communities exist?
+- **Source**: [Stanford Network Dataset](https://snap.stanford.edu/data/amazon-meta.html)
+
+### 3. Social Media Influence Networks
+- **Data**: Twitter follower networks or Reddit interactions
+- **Questions**: Who are the key influencers? How does information spread?
+- **Source**: Twitter API or Reddit dataset
+
+### 4. Supply Chain Networks
+- **Data**: Supplier-manufacturer relationships
+- **Questions**: What are the vulnerabilities? How to optimize the network?
+- **Source**: Industry databases or case studies
+
+### 5. Custom Dataset
+- Propose your own dataset related to your interests
+- Must be approved by instructor by Week 3
+
+## Project Requirements
+
+### Technical Requirements
+
+Your analysis must include:
+
+1. **Data Collection & Preprocessing**
+   - Document data sources
+   - Clean and structure network data
+   - Handle missing values appropriately
+
+2. **Exploratory Network Analysis**
+   - Basic network statistics
+   - Degree distributions
+   - Network visualization
+
+3. **Centrality Analysis**
+   - Calculate at least 3 centrality measures
+   - Compare and interpret results
+   - Identify key nodes
+
+4. **Advanced Analysis** (choose at least one)
+   - Community detection
+   - Core-periphery analysis
+   - Network motifs
+   - Temporal analysis (if applicable)
+
+5. **Statistical Testing**
+   - Test at least one hypothesis
+   - Use appropriate methods (CUG, permutation tests)
+   - Report significance levels
+
+### Deliverables
+
+#### 1. Written Report (2,500 words)
+
+Structure:
+- **Executive Summary** (250 words)
+- **Introduction** - Problem statement and objectives
+- **Literature Review** - Brief context from academic/industry sources
+- **Methodology** - Data collection and analytical approach
+- **Results** - Key findings with visualizations
+- **Business Implications** - Actionable recommendations
+- **Limitations** - Data and methodological constraints
+- **References** - Academic and industry sources
+
+#### 2. Code Repository
+
+- Well-documented R/Python code
+- README file with instructions
+- Requirements file for dependencies
+- Data files or download instructions
+
+#### 3. Presentation (15 minutes)
+
+- 10 minutes presentation
+- 5 minutes Q&A
+- Focus on business insights
+- Maximum 10 slides
+
+## Grading Rubric
+
+| Component | Weight | Criteria |
+|-----------|--------|----------|
+| **Technical Analysis** | 30% | Correct implementation, appropriate methods, code quality |
+| **Business Insights** | 30% | Relevance, actionability, strategic thinking |
+| **Report Quality** | 20% | Structure, clarity, visualizations |
+| **Presentation** | 10% | Clarity, engagement, Q&A handling |
+| **Teamwork** | 10% | Equal contribution, peer evaluation |
+
+## Timeline
+
+| Week | Milestone |
+|------|-----------|
+| **Week 3** | Form teams, select dataset |
+| **Week 4** | Data collection, initial analysis |
+| **Week 5** | Complete analysis, write report |
+| **Week 6** | Submit report, presentations |
+
+## Tips for Success
+
+::: {.callout-tip}
+## Best Practices
+
+1. **Start Early**: Data collection often takes longer than expected
+2. **Divide Work**: Assign clear roles and responsibilities
+3. **Meet Regularly**: Schedule weekly team meetings
+4. **Version Control**: Use Git for collaborative coding
+5. **Backup Data**: Keep multiple copies of your dataset
+6. **Practice Presentation**: Rehearse before the final day
+:::
+
+## Common Pitfalls to Avoid
+
+- **Over-complicating**: Focus on clear insights over complex methods
+- **Poor Visualizations**: Ensure networks are readable and meaningful
+- **Ignoring Business Context**: Always relate findings to practical applications
+- **Unequal Contribution**: Use project management tools to track work
+
+## Resources
+
+### Templates
+- [Report Template](https://github.com/simoneSantoni/net-analysis-smm638/templates)
+- [Presentation Template](https://github.com/simoneSantoni/net-analysis-smm638/templates)
+
+### Example Projects
+- Previous year's best projects (available on Moodle)
+- Published network analysis case studies
+
+### Support
+- Office hours for project consultation
+- Moodle forum for questions
+- Peer review sessions in Week 5
+
+## Submission Instructions
+
+1. **Report**: PDF format via Moodle
+2. **Code**: GitHub repository link
+3. **Presentation**: PowerPoint/PDF via Moodle
+4. **Peer Evaluation**: Complete online form
+
+All materials due by **23:59 on Friday of Week 6**.
+
+---
+
+::: {.callout-important}
+## Academic Integrity
+
+All team members must contribute equally. Plagiarism or unequal contribution will result in individual penalties. Use of AI tools must be disclosed in methodology section.
+:::

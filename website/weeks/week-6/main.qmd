@@ -1,0 +1,10 @@
+---
+title: "Week 6"
+subtitle: "Mid-term project presentation"
+callout-appearance: "default"
+---
+
+::: {.callout-note}
+Content coming soon.
+
+:::

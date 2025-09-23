@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course Syllabus – SMM638 - Netowkr Analytics</title>
+<title>Course Syllabus – SMM638 - Network Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -266,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/simoneSantoni/net-analysis-smm638" title="Repository" class="quarto-navigation-tool px-1" aria-label="Repository"><i class="bi bi-github"></i></a>
-    <a href="https://github.com/simoneSantoni/net-analysis-smm638/edit/master/{{< meta quarto:source >}}" title="Edit this page" class="quarto-navigation-tool px-1" aria-label="Edit this page"><i class="bi bi-pencil-square"></i></a>
+    <a href="https://github.com/simoneSantoni/net-analysis-smm638/edit/master" title="Edit this page" class="quarto-navigation-tool px-1" aria-label="Edit this page"><i class="bi bi-pencil-square"></i></a>
     <a href="https://github.com/simoneSantoni/net-analysis-smm638/issues/new" title="Report an issue" class="quarto-navigation-tool px-1" aria-label="Report an issue"><i class="bi bi-bug"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -311,12 +346,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Teaching team</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../useful_links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Module 1: Getting Started with R</span></a>
+ <span class="menu-text">Project</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,8 +371,102 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/module-1/installing-r.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Installing R and RStudio</span></a>
+  <a href="../project/midTermProject/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mid-term project</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../project/finalCourseProject/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final course project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Weekly materials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-1/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-2/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-3/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-4/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-5/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-5/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-7/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-8/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-9/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-10/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Supplemental notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/xyz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">XYZ</span></a>
   </div>
 </li>
       </ul>
@@ -340,41 +481,36 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#network-analytics" id="toc-network-analytics" class="nav-link active" data-scroll-target="#network-analytics">Network Analytics</a>
+  <li><a href="#course-overview" id="toc-course-overview" class="nav-link active" data-scroll-target="#course-overview">Course Overview</a>
   <ul class="collapse">
-  <li><a href="#what-youll-learn" id="toc-what-youll-learn" class="nav-link" data-scroll-target="#what-youll-learn">What You’ll Learn</a></li>
-  <li><a href="#course-philosophy" id="toc-course-philosophy" class="nav-link" data-scroll-target="#course-philosophy">Course Philosophy</a></li>
+  <li><a href="#module-description" id="toc-module-description" class="nav-link" data-scroll-target="#module-description">🎯 Module Description</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">🌟 Learning Objectives</a></li>
+  <li><a href="#module-relevance" id="toc-module-relevance" class="nav-link" data-scroll-target="#module-relevance">📊 Module Relevance</a></li>
+  <li><a href="#topic-1-introduction-to-network-analytics" id="toc-topic-1-introduction-to-network-analytics" class="nav-link" data-scroll-target="#topic-1-introduction-to-network-analytics">🔧 Topic 1: Introduction to Network Analytics</a></li>
+  <li><a href="#topic-2-network-centrality" id="toc-topic-2-network-centrality" class="nav-link" data-scroll-target="#topic-2-network-centrality">🎯 Topic 2: Network Centrality</a></li>
+  <li><a href="#topic-3-dyads-triads-and-network-dynamics" id="toc-topic-3-dyads-triads-and-network-dynamics" class="nav-link" data-scroll-target="#topic-3-dyads-triads-and-network-dynamics">🔄 Topic 3: Dyads, Triads, and Network Dynamics</a></li>
+  <li><a href="#topic-4-network-cohesion-and-communities" id="toc-topic-4-network-cohesion-and-communities" class="nav-link" data-scroll-target="#topic-4-network-cohesion-and-communities">🏘️ Topic 4: Network Cohesion and Communities</a></li>
+  <li><a href="#topic-5-network-position-and-performance" id="toc-topic-5-network-position-and-performance" class="nav-link" data-scroll-target="#topic-5-network-position-and-performance">💡 Topic 5: Network Position and Performance</a></li>
   </ul></li>
-  <li><a href="#session-structure" id="toc-session-structure" class="nav-link" data-scroll-target="#session-structure">Session Structure</a>
+  <li><a href="#assessment-strategy" id="toc-assessment-strategy" class="nav-link" data-scroll-target="#assessment-strategy">Assessment Strategy</a>
   <ul class="collapse">
-  <li><a href="#session-1-introduction-to-network-analytics" id="toc-session-1-introduction-to-network-analytics" class="nav-link" data-scroll-target="#session-1-introduction-to-network-analytics">📚 Session 1: Introduction to network analytics</a></li>
-  <li><a href="#session-2-network-metrics" id="toc-session-2-network-metrics" class="nav-link" data-scroll-target="#session-2-network-metrics">🔧 Session 2: Network metrics</a></li>
-  <li><a href="#session-3-business-case-discussion-on-social-influence" id="toc-session-3-business-case-discussion-on-social-influence" class="nav-link" data-scroll-target="#session-3-business-case-discussion-on-social-influence">📊 Session 3: Business case discussion on social influence</a></li>
-  <li><a href="#session-4-organizational-network-analysis" id="toc-session-4-organizational-network-analysis" class="nav-link" data-scroll-target="#session-4-organizational-network-analysis">🎯 Session 4: Organizational network analysis</a></li>
-  <li><a href="#session-5-business-case-discussion-on-organizational-network-analysis" id="toc-session-5-business-case-discussion-on-organizational-network-analysis" class="nav-link" data-scroll-target="#session-5-business-case-discussion-on-organizational-network-analysis">📈 Session 5: Business case discussion on organizational network analysis</a></li>
-  <li><a href="#session-6-students-presentations" id="toc-session-6-students-presentations" class="nav-link" data-scroll-target="#session-6-students-presentations">📋 Session 6: Students presentations</a></li>
-  <li><a href="#session-7-network-modularity" id="toc-session-7-network-modularity" class="nav-link" data-scroll-target="#session-7-network-modularity">🔍 Session 7: Network modularity</a></li>
-  <li><a href="#session-8-case-discussion-on-community-detection" id="toc-session-8-case-discussion-on-community-detection" class="nav-link" data-scroll-target="#session-8-case-discussion-on-community-detection">📱 Session 8: Case discussion on community detection</a></li>
-  <li><a href="#session-9-networks-creativity-and-innovation" id="toc-session-9-networks-creativity-and-innovation" class="nav-link" data-scroll-target="#session-9-networks-creativity-and-innovation">💡 Session 9: Networks, creativity, and innovation</a></li>
-  <li><a href="#session-10-final-presentations-and-course-wrap-up" id="toc-session-10-final-presentations-and-course-wrap-up" class="nav-link" data-scroll-target="#session-10-final-presentations-and-course-wrap-up">🎓 Session 10: Final presentations and course wrap-up</a></li>
+  <li><a href="#assessment-components" id="toc-assessment-components" class="nav-link" data-scroll-target="#assessment-components">📊 Assessment Components</a></li>
+  <li><a href="#assessment-criteria" id="toc-assessment-criteria" class="nav-link" data-scroll-target="#assessment-criteria">📝 Assessment Criteria</a></li>
   </ul></li>
-  <li><a href="#learning-approach" id="toc-learning-approach" class="nav-link" data-scroll-target="#learning-approach">Learning Approach</a>
+  <li><a href="#course-resources" id="toc-course-resources" class="nav-link" data-scroll-target="#course-resources">Course Resources</a>
   <ul class="collapse">
-  <li><a href="#interactive-learning-environment" id="toc-interactive-learning-environment" class="nav-link" data-scroll-target="#interactive-learning-environment">Interactive Learning Environment</a></li>
-  <li><a href="#assessment-methods" id="toc-assessment-methods" class="nav-link" data-scroll-target="#assessment-methods">Assessment Methods</a></li>
-  </ul></li>
-  <li><a href="#course-materials" id="toc-course-materials" class="nav-link" data-scroll-target="#course-materials">Course Materials</a>
-  <ul class="collapse">
-  <li><a href="#required-software" id="toc-required-software" class="nav-link" data-scroll-target="#required-software">💻 Required Software</a></li>
-  <li><a href="#recommended-textbooks" id="toc-recommended-textbooks" class="nav-link" data-scroll-target="#recommended-textbooks">📖 Recommended Textbooks</a></li>
-  <li><a href="#online-resources" id="toc-online-resources" class="nav-link" data-scroll-target="#online-resources">🎈 Online Resources</a></li>
+  <li><a href="#technical-requirements" id="toc-technical-requirements" class="nav-link" data-scroll-target="#technical-requirements">💻 Technical Requirements</a></li>
+  <li><a href="#reading-list" id="toc-reading-list" class="nav-link" data-scroll-target="#reading-list">📚 Reading List</a></li>
+  <li><a href="#online-resources" id="toc-online-resources" class="nav-link" data-scroll-target="#online-resources">🌐 Online Resources</a></li>
   </ul></li>
   <li><a href="#course-policies" id="toc-course-policies" class="nav-link" data-scroll-target="#course-policies">Course Policies</a>
   <ul class="collapse">
-  <li><a href="#attendance-and-participation" id="toc-attendance-and-participation" class="nav-link" data-scroll-target="#attendance-and-participation">Attendance and Participation</a></li>
-  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
-  <li><a href="#accommodations" id="toc-accommodations" class="nav-link" data-scroll-target="#accommodations">Accommodations</a></li>
-  <li><a href="#changes-to-syllabus" id="toc-changes-to-syllabus" class="nav-link" data-scroll-target="#changes-to-syllabus">Changes to Syllabus</a></li>
+  <li><a href="#attendance-and-participation" id="toc-attendance-and-participation" class="nav-link" data-scroll-target="#attendance-and-participation">📋 Attendance and Participation</a></li>
+  <li><a href="#collaboration-policy" id="toc-collaboration-policy" class="nav-link" data-scroll-target="#collaboration-policy">🤝 Collaboration Policy</a></li>
+  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">📧 Communication</a></li>
+  <li><a href="#accessibility-and-accommodations" id="toc-accessibility-and-accommodations" class="nav-link" data-scroll-target="#accessibility-and-accommodations">♿ Accessibility and Accommodations</a></li>
+  <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">📝 Academic Integrity</a></li>
+  <li><a href="#syllabus-modifications" id="toc-syllabus-modifications" class="nav-link" data-scroll-target="#syllabus-modifications">🔄 Syllabus Modifications</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -386,6 +522,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/syllabus.html">Course Information</a></li><li class="breadcrumb-item"><a href="../course/syllabus.html">Syllabus</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Course Syllabus</h1>
+<p class="subtitle lead">SMM638 - Network Analytics | Term I 2024/25</p>
 </div>
 
 
@@ -402,11 +539,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="network-analytics" class="level2">
-<h2 class="anchored" data-anchor-id="network-analytics">Network Analytics</h2>
-<section id="what-youll-learn" class="level3">
-<h3 class="anchored" data-anchor-id="what-youll-learn">What You’ll Learn</h3>
-<p>This course provides a comprehensive foundation in network analysis for analytics students. By the end of this module, you will be able to:</p>
+<section id="course-overview" class="level2">
+<h2 class="anchored" data-anchor-id="course-overview">Course Overview</h2>
+<section id="module-description" class="level3">
+<h3 class="anchored" data-anchor-id="module-description">🎯 Module Description</h3>
+<p>Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.</p>
+</section>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">🌟 Learning Objectives</h3>
+<p>By the end of this module, you will be able to:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -417,251 +558,290 @@ Core Competencies
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>By completing this course, you will develop expertise in:</p>
+<ol type="1">
+<li><strong>Theoretical Foundation</strong>
 <ul>
-<li><strong>Network Theory Fundamentals</strong>: Understanding basic network concepts, terminology, and the mathematical foundations underlying network analysis</li>
-<li><strong>Data Collection &amp; Preparation</strong>: Gathering, cleaning, and structuring network data from various sources including social media, organizational systems, and collaboration platforms</li>
-<li><strong>Network Visualization</strong>: Creating compelling visual representations of networks using tools like R (igraph, ggraph) and Python (NetworkX, matplotlib)</li>
-<li><strong>Centrality Analysis</strong>: Computing and interpreting various centrality measures (degree, betweenness, closeness, eigenvector) to identify influential nodes</li>
-<li><strong>Community Detection</strong>: Applying algorithms to discover clusters, modules, and communities within complex networks</li>
-<li><strong>Statistical Network Modeling</strong>: Understanding and applying Exponential Random Graph Models (ERGMs) and other statistical approaches</li>
-<li><strong>Business Applications</strong>: Translating network insights into actionable business recommendations for marketing, operations, and strategy</li>
-<li><strong>Programming Skills</strong>: Developing proficiency in R and Python for network analysis workflows</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="course-philosophy" class="level3">
-<h3 class="anchored" data-anchor-id="course-philosophy">Course Philosophy</h3>
-<p>Our approach emphasizes <strong>learning by doing</strong>. Rather than memorizing notions and syntax, you’ll build practical skills through:</p>
-<ul>
-<li>🎯 <strong>Hands-on exercises</strong> with real datasets</li>
-<li>🔄 <strong>Iterative learning</strong> that builds on previous concepts</li>
-<li>🌟 <strong>Industry-relevant</strong> examples and case studies</li>
-<li>🤝 <strong>Collaborative problem-solving</strong> in group sessions</li>
-</ul>
-</section>
-</section>
-<section id="session-structure" class="level2">
-<h2 class="anchored" data-anchor-id="session-structure">Session Structure</h2>
-<p>The course is organized around ten weeks, each building upon the previous:</p>
-<section id="session-1-introduction-to-network-analytics" class="level3">
-<h3 class="anchored" data-anchor-id="session-1-introduction-to-network-analytics">📚 Session 1: Introduction to network analytics</h3>
-<p><strong>Duration</strong>: Week 1</p>
-<ul>
-<li>Key network concepts</li>
-<li>Real-world networks: Economic and organizational aspects</li>
-<li>Soundcloud example</li>
-<li>R and Python setup for network analytics</li>
-</ul>
-</section>
-<section id="session-2-network-metrics" class="level3">
-<h3 class="anchored" data-anchor-id="session-2-network-metrics">🔧 Session 2: Network metrics</h3>
-<p><strong>Duration</strong>: Weeks 2</p>
-<ul>
-<li>Taxonomy of network metrics: node-, meso-, macro-level indicators</li>
-<li>Zooming on network centrality
-<ul>
-<li>Concept</li>
-<li>Mechanisms</li>
-<li>Consequences</li>
+<li>Master fundamental network concepts, terminology, and mathematical foundations</li>
+<li>Understand different types of networks (social, organizational, technological)</li>
+<li>Apply network theory to real-world business problems</li>
 </ul></li>
-<li>From centrality to social influence</li>
-</ul>
-</section>
-<section id="session-3-business-case-discussion-on-social-influence" class="level3">
-<h3 class="anchored" data-anchor-id="session-3-business-case-discussion-on-social-influence">📊 Session 3: Business case discussion on social influence</h3>
-<p><strong>Duration</strong>: Week 3</p>
+<li><strong>Technical Skills</strong>
 <ul>
-<li>Centrality and social influence in BeerAdvocate</li>
-<li>Collective discussion</li>
-<li>Solution implementation in R</li>
-</ul>
-</section>
-<section id="session-4-organizational-network-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="session-4-organizational-network-analysis">🎯 Session 4: Organizational network analysis</h3>
-<p><strong>Duration</strong>: Week 4</p>
+<li>Collect, clean, and structure network data from multiple sources</li>
+<li>Implement network analysis algorithms in R and Python</li>
+<li>Create compelling visualizations of complex network structures</li>
+<li>Perform statistical analysis on network data</li>
+</ul></li>
+<li><strong>Analytical Capabilities</strong>
 <ul>
-<li>Using network methods to represent and understand information flows</li>
-<li>Positions and roles in networks</li>
-</ul>
-</section>
-<section id="session-5-business-case-discussion-on-organizational-network-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="session-5-business-case-discussion-on-organizational-network-analysis">📈 Session 5: Business case discussion on organizational network analysis</h3>
-<p><strong>Duration</strong>: Week 5</p>
+<li>Calculate and interpret centrality measures to identify key actors</li>
+<li>Detect communities and clusters within networks</li>
+<li>Analyze network evolution and dynamics over time</li>
+<li>Model network formation and behavior</li>
+</ul></li>
+<li><strong>Business Applications</strong>
 <ul>
-<li>Appreciating roles’ role in OSS development</li>
-</ul>
-</section>
-<section id="session-6-students-presentations" class="level3">
-<h3 class="anchored" data-anchor-id="session-6-students-presentations">📋 Session 6: Students presentations</h3>
-<ul>
-<li>MTP presentations</li>
-</ul>
-</section>
-<section id="session-7-network-modularity" class="level3">
-<h3 class="anchored" data-anchor-id="session-7-network-modularity">🔍 Session 7: Network modularity</h3>
-<p><strong>Duration</strong>: Week 7</p>
-<ul>
-<li>Understanding network structure beyond individual nodes</li>
-<li>Core-periphery models and identification</li>
-<li>Community detection algorithms (modularity optimization, Louvain method)</li>
-<li>Block-modeling for role analysis</li>
-<li>Applications in organizational and social networks</li>
-</ul>
-</section>
-<section id="session-8-case-discussion-on-community-detection" class="level3">
-<h3 class="anchored" data-anchor-id="session-8-case-discussion-on-community-detection">📱 Session 8: Case discussion on community detection</h3>
-<p><strong>Duration</strong>: Week 8</p>
-<ul>
-<li>Analyzing relational similarity among music listeners</li>
-<li>Case study based on Spotify/music platform data</li>
-<li>Implementation of community detection algorithms</li>
-<li>Business implications for recommendation systems</li>
-<li>Reference: <a href="https://www.sciencedirect.com/science/article/pii/S0304422X25000336">Poetic article on music communities</a></li>
-</ul>
-</section>
-<section id="session-9-networks-creativity-and-innovation" class="level3">
-<h3 class="anchored" data-anchor-id="session-9-networks-creativity-and-innovation">💡 Session 9: Networks, creativity, and innovation</h3>
-<p><strong>Duration</strong>: Week 9</p>
-<ul>
-<li>The role of network position in innovation and creativity</li>
-<li>Structural holes theory and brokerage benefits</li>
-<li>Case study based on Ronald Burt’s research on innovation within firms</li>
-<li>Measuring and fostering innovative network positions</li>
-<li>Applications to R&amp;D teams and knowledge workers</li>
-</ul>
-</section>
-<section id="session-10-final-presentations-and-course-wrap-up" class="level3">
-<h3 class="anchored" data-anchor-id="session-10-final-presentations-and-course-wrap-up">🎓 Session 10: Final presentations and course wrap-up</h3>
-<p><strong>Duration</strong>: Week 10</p>
-<ul>
-<li>Student final project presentations</li>
-<li>Peer feedback and discussion</li>
-<li>Course synthesis and real-world applications</li>
-<li>Future directions in network analytics</li>
-</ul>
-</section>
-</section>
-<section id="learning-approach" class="level2">
-<h2 class="anchored" data-anchor-id="learning-approach">Learning Approach</h2>
-<section id="interactive-learning-environment" class="level3">
-<h3 class="anchored" data-anchor-id="interactive-learning-environment">Interactive Learning Environment</h3>
-<p>We believe in <strong>active learning</strong> where you’ll:</p>
-<div class="grid">
-<div class="g-col-6">
-<p><strong>During Sessions</strong></p>
-<ul>
-<li>Live coding demonstrations</li>
-<li>Pair programming exercises</li>
-<li>Group problem-solving</li>
-<li>Q&amp;A discussions</li>
-</ul>
-</div>
-<div class="g-col-6">
-<p><strong>Between Sessions</strong></p>
-<ul>
-<li>Practice exercises</li>
-<li>Reading assignments</li>
-<li>Mini-projects</li>
-<li>Peer review activities</li>
-</ul>
+<li>Transform network insights into actionable business strategies</li>
+<li>Apply network analysis to marketing, operations, and organizational design</li>
+<li>Evaluate the impact of network position on performance</li>
+<li>Design network interventions for business outcomes</li>
+</ul></li>
+</ol>
 </div>
 </div>
 </section>
-<section id="assessment-methods" class="level3">
-<h3 class="anchored" data-anchor-id="assessment-methods">Assessment Methods</h3>
-<section id="formal-assessment" class="level4">
-<h4 class="anchored" data-anchor-id="formal-assessment">Formal Assessment</h4>
+<section id="module-relevance" class="level3">
+<h3 class="anchored" data-anchor-id="module-relevance">📊 Module Relevance</h3>
+<p>In today’s interconnected world, understanding networks is crucial for:</p>
+<ul>
+<li><strong>Marketing</strong>: Influencer identification, viral marketing, customer segmentation</li>
+<li><strong>Operations</strong>: Supply chain optimization, knowledge management, innovation diffusion</li>
+<li><strong>Strategy</strong>: Partnership formation, competitive analysis, ecosystem mapping</li>
+<li><strong>HR</strong>: Organizational design, team composition, talent management</li>
+</ul>
+</section>
+<section id="topic-1-introduction-to-network-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="topic-1-introduction-to-network-analytics">🔧 Topic 1: Introduction to Network Analytics</h3>
+<p><strong>Week 1</strong></p>
+<p><strong>Learning Outcomes:</strong> - Understand fundamental network concepts and terminology - Differentiate between network types (one-mode, two-mode, signed, weighted) - Set up R/Python environment for network analysis - Perform basic network data management and visualization</p>
+<p><strong>Topics Covered:</strong> - Network elements: nodes, edges, dyads, triads - Real-world network examples (economic, organizational, social) - Taxonomy of network measures (node, meso, macro levels) - Introduction to network analysis software</p>
+<p><strong>Case Study:</strong> Royal Caribbean Cruises (RCB) network strategy</p>
+</section>
+<section id="topic-2-network-centrality" class="level3">
+<h3 class="anchored" data-anchor-id="topic-2-network-centrality">🎯 Topic 2: Network Centrality</h3>
+<p><strong>Weeks 2-3</strong></p>
+<p><strong>Learning Outcomes:</strong> - Calculate and interpret various centrality measures - Understand when to apply different centrality metrics - Analyze the relationship between centrality and outcomes - Implement centrality algorithms in R/Python</p>
+<p><strong>Topics Covered:</strong> - Degree centrality and its variants - Closeness centrality and information flow - Betweenness centrality and brokerage - Eigenvector centrality and influence - PageRank and its applications - Local clustering coefficient</p>
+<p><strong>Case Study:</strong> Identifying the right social media influencer</p>
+</section>
+<section id="topic-3-dyads-triads-and-network-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="topic-3-dyads-triads-and-network-dynamics">🔄 Topic 3: Dyads, Triads, and Network Dynamics</h3>
+<p><strong>Weeks 4-5</strong></p>
+<p><strong>Learning Outcomes:</strong> - Analyze dyadic patterns and relationships - Understand triadic closure and its implications - Test network hypotheses using CUG tests - Model homophily and its effects</p>
+<p><strong>Topics Covered:</strong> - Reciprocity and mutuality - Homophily and selection effects - Triadic census and transitivity - Conditional Uniform Graph (CUG) tests - Network evolution patterns</p>
+<p><strong>Case Study:</strong> Soundcloud user recommendation networks</p>
+</section>
+<section id="topic-4-network-cohesion-and-communities" class="level3">
+<h3 class="anchored" data-anchor-id="topic-4-network-cohesion-and-communities">🏘️ Topic 4: Network Cohesion and Communities</h3>
+<p><strong>Weeks 7-8</strong></p>
+<p><strong>Learning Outcomes:</strong> - Measure network cohesion at multiple levels - Apply community detection algorithms - Interpret community structure for business insights - Implement blockmodeling techniques</p>
+<p><strong>Topics Covered:</strong> - Network density and cohesion metrics - Core-periphery structures - Community detection algorithms (Louvain, modularity optimization) - Topicmodeling and role analysis - Hierarchical clustering of networks</p>
+<p><strong>Case Study:</strong> Customer segmentation in the beer market</p>
+</section>
+<section id="topic-5-network-position-and-performance" class="level3">
+<h3 class="anchored" data-anchor-id="topic-5-network-position-and-performance">💡 Topic 5: Network Position and Performance</h3>
+<p><strong>Weeks 9-10</strong></p>
+<p><strong>Learning Outcomes:</strong> - Analyze the strategic value of network positions - Understand closure vs.&nbsp;brokerage trade-offs - Apply network insights to career development - Design network interventions</p>
+<p><strong>Topics Covered:</strong> - Structural holes and brokerage opportunities - Network closure and social capital - The strength of weak ties - Network position and innovation - Career implications of network structure</p>
+<p><strong>Case Study:</strong> Employee creativity and innovation networks</p>
+</section>
+</section>
+<section id="assessment-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="assessment-strategy">Assessment Strategy</h2>
+<section id="assessment-components" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-components">📊 Assessment Components</h3>
 <div class="grid">
 <div class="g-col-4">
-<p><strong>In-Class Participation (20%)</strong> - Active contribution to case discussions - Engagement in group exercises - Quality of questions and insights - Peer collaboration effectiveness</p>
+<p><strong>Class Participation (20%)</strong> - Active engagement in discussions - Quality of questions and insights - Peer collaboration - In-class exercises</p>
+<p><em>Ongoing throughout term</em></p>
 </div>
 <div class="g-col-4">
-<p><strong>Mid-Term Project (40%)</strong> - Team-based network analysis project - Real-world dataset application - Technical implementation and visualization - Business insights and recommendations</p>
+<p><strong>Mid-Term Project (40%)</strong> - Team-based analysis (3-4 students) - Real-world dataset - Technical implementation - Business recommendations - 15-minute presentation</p>
+<p><em>Due: Week 6</em></p>
 </div>
 <div class="g-col-4">
-<p><strong>Final Course Project (40%)</strong> - Individual capstone project - Original network analysis research - Comprehensive report and presentation - Integration of course concepts</p>
+<p><strong>Final Project (40%)</strong> - Individual research project - Original network analysis - Comprehensive report (3,000 words) - Code documentation - 10-minute presentation</p>
+<p><em>Due: Week 11</em></p>
 </div>
 </div>
 </section>
-<section id="continuous-self-assessment" class="level4">
-<h4 class="anchored" data-anchor-id="continuous-self-assessment">Continuous Self-Assessment</h4>
-<p>While formal assessment provides external validation, self-assessment forms the cornerstone of learning in this module. Students are encouraged to:</p>
+<section id="assessment-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-criteria">📝 Assessment Criteria</h3>
+<p>All assessments will be evaluated on:</p>
+<ol type="1">
+<li><strong>Technical Proficiency</strong> (30%)
 <ul>
-<li>Monitor their understanding during lectures and practical sessions</li>
-<li>Complete problem sets independently to identify knowledge gaps</li>
-<li>Actively seek and incorporate feedback from instructors</li>
-<li>Track their progress against module learning objectives</li>
-</ul>
+<li>Correct implementation of methods</li>
+<li>Code quality and documentation</li>
+<li>Appropriate use of techniques</li>
+</ul></li>
+<li><strong>Analytical Rigor</strong> (30%)
+<ul>
+<li>Sound methodology</li>
+<li>Proper interpretation of results</li>
+<li>Statistical validity</li>
+</ul></li>
+<li><strong>Business Relevance</strong> (30%)
+<ul>
+<li>Clear problem definition</li>
+<li>Actionable insights</li>
+<li>Strategic recommendations</li>
+</ul></li>
+<li><strong>Communication</strong> (10%)
+<ul>
+<li>Clear presentation</li>
+<li>Effective visualizations</li>
+<li>Professional writing</li>
+</ul></li>
+</ol>
 </section>
 </section>
-</section>
-<section id="course-materials" class="level2">
-<h2 class="anchored" data-anchor-id="course-materials">Course Materials</h2>
-<section id="required-software" class="level3">
-<h3 class="anchored" data-anchor-id="required-software">💻 Required Software</h3>
+<section id="course-resources" class="level2">
+<h2 class="anchored" data-anchor-id="course-resources">Course Resources</h2>
+<section id="technical-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="technical-requirements">💻 Technical Requirements</h3>
 <div class="callout callout-style-simple callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Essential Tools
+Essential Software Setup
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Programming Languages:</strong> - <strong>R</strong> (version 4.0+) with RStudio - <strong>Python</strong> (version 3.8+) with Jupyter notebooks</p>
-<p><strong>Key R Packages:</strong> - <code>igraph</code> - Core network analysis functionality - <code>ggraph</code> - Network visualization with grammar of graphics - <code>tidygraph</code> - Tidy network analysis workflows - <code>statnet</code> - Statistical network modeling - <code>networkD3</code> - Interactive network visualizations</p>
-<p><strong>Key Python Libraries:</strong> - <code>NetworkX</code> - Comprehensive network analysis - <code>matplotlib</code> and <code>seaborn</code> - Static visualizations - <code>plotly</code> - Interactive network plots - <code>pandas</code> and <code>numpy</code> - Data manipulation - <code>scipy</code> - Scientific computing for networks</p>
+<p><strong>Programming Environments:</strong> - <strong>R</strong> (version 4.3+) with RStudio - <strong>Python</strong> (version 3.9+) with Jupyter Lab/Notebooks - Git for version control</p>
+<p><strong>R Package Ecosystem:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Core packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"igraph"</span>, <span class="st">"tidygraph"</span>, <span class="st">"ggraph"</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistical modeling</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"statnet"</span>, <span class="st">"ergm"</span>, <span class="st">"btergm"</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"networkD3"</span>, <span class="st">"visNetwork"</span>, <span class="st">"graphlayouts"</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Data manipulation</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"data.table"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Python Libraries:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Core libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pip install networkx pandas numpy matplotlib seaborn</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Advanced analysis</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>pip install python<span class="op">-</span>louvain community graph<span class="op">-</span>tool</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Interactive visualization</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>pip install plotly bokeh pyvis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
-<section id="recommended-textbooks" class="level3">
-<h3 class="anchored" data-anchor-id="recommended-textbooks">📖 Recommended Textbooks</h3>
-<p><strong>Primary References:</strong> - Wasserman, S., &amp; Faust, K. (1994). <em>Social Network Analysis: Methods and Applications</em>. Cambridge University Press. - Newman, M. (2010). <em>Networks: An Introduction</em>. Oxford University Press. - Scott, J. (2017). <em>Social Network Analysis</em> (4th ed.). SAGE Publications.</p>
-<p><strong>Supplementary Materials:</strong> - Borgatti, S. P., Everett, M. G., &amp; Johnson, J. C. (2018). <em>Analyzing Social Networks</em> (2nd ed.). SAGE Publications. - Barabási, A. L. (2016). <em>Network Science</em>. Cambridge University Press. - Luke, D. A. (2015). <em>A User’s Guide to Network Analysis in R</em>. Springer.</p>
+<section id="reading-list" class="level3">
+<h3 class="anchored" data-anchor-id="reading-list">📚 Reading List</h3>
+<p><strong>Core Textbooks:</strong></p>
+<ol type="1">
+<li><strong>Newman, M. (2018).</strong> <em>Networks</em> (2nd ed.). Oxford University Press.
+<ul>
+<li>Comprehensive mathematical treatment</li>
+<li>Excellent for understanding algorithms</li>
+</ul></li>
+<li><strong>Borgatti, S. P., Everett, M. G., &amp; Johnson, J. C. (2018).</strong> <em>Analyzing Social Networks</em> (2nd ed.). SAGE.
+<ul>
+<li>Practical, application-focused</li>
+<li>Good balance of theory and practice</li>
+</ul></li>
+<li><strong>Luke, D. A. (2015).</strong> <em>A User’s Guide to Network Analysis in R</em>. Springer.
+<ul>
+<li>R-specific implementation guide</li>
+<li>Step-by-step tutorials</li>
+</ul></li>
+</ol>
+<p><strong>Supplementary Readings:</strong></p>
+<ul>
+<li>Barabási, A. L. (2016). <em>Network Science</em>. Cambridge University Press. <a href="http://networksciencebook.com/">Free online</a></li>
+<li>Jackson, M. O. (2019). <em>The Human Network</em>. Pantheon Books.</li>
+<li>Watts, D. J. (2003). <em>Six Degrees: The Science of a Connected Age</em>. Norton.</li>
+</ul>
 </section>
 <section id="online-resources" class="level3">
-<h3 class="anchored" data-anchor-id="online-resources">🎈 Online Resources</h3>
-<p><strong>Course-Specific:</strong> - Course GitHub repository with code examples and datasets - Moodle discussion forums for Q&amp;A and collaboration - Weekly video tutorials and walkthroughs</p>
-<p><strong>External Learning:</strong> - <a href="http://networksciencebook.com/">Network Science Book</a> by Albert-László Barabási (free online) - <a href="https://cran.r-project.org/web/views/SocialNetworks.html">CRAN Task View: Social Network Analysis</a> - <a href="https://networkx.org/documentation/stable/">NetworkX Documentation</a> - <a href="https://r-graph-gallery.com/network.html">R Graph Gallery - Network Section</a> - <a href="https://gephi.org/">Gephi</a> - Open-source network visualization platform</p>
+<h3 class="anchored" data-anchor-id="online-resources">🌐 Online Resources</h3>
+<p><strong>Course Materials:</strong> - GitHub repository: <a href="https://github.com/simoneSantoni/net-analysis-smm638">github.com/simoneSantoni/net-analysis-smm638</a> - Moodle page with lectures and assignments - Slack workspace for discussions</p>
+<p><strong>External Resources:</strong> - <a href="https://networkx.org/">NetworkX Documentation</a> - <a href="https://igraph.org/r/">igraph R Tutorial</a> - <a href="https://github.com/briatte/awesome-network-analysis">Awesome Network Analysis</a> - <a href="https://www.insna.org/">INSNA - International Network for Social Network Analysis</a></p>
 </section>
 </section>
 <section id="course-policies" class="level2">
 <h2 class="anchored" data-anchor-id="course-policies">Course Policies</h2>
 <section id="attendance-and-participation" class="level3">
-<h3 class="anchored" data-anchor-id="attendance-and-participation">Attendance and Participation</h3>
+<h3 class="anchored" data-anchor-id="attendance-and-participation">📋 Attendance and Participation</h3>
 <ul>
-<li>Regular attendance is mandatory for SMM638</li>
-<li>Active participation in class discussions encouraged</li>
+<li><strong>Attendance</strong>: Mandatory for all sessions (80% minimum required)</li>
+<li><strong>Punctuality</strong>: Sessions start promptly; late arrivals disrupt learning</li>
+<li><strong>Preparation</strong>: Complete readings and exercises before class</li>
+<li><strong>Engagement</strong>: Active participation expected in all activities</li>
 </ul>
 </section>
-<section id="getting-help" class="level3">
-<h3 class="anchored" data-anchor-id="getting-help">Getting Help</h3>
-<div class="callout callout-style-simple callout-tip no-icon">
-<div class="callout-body d-flex">
+<section id="collaboration-policy" class="level3">
+<h3 class="anchored" data-anchor-id="collaboration-policy">🤝 Collaboration Policy</h3>
+<ul>
+<li><strong>Teamwork</strong>: Encouraged for designated group projects</li>
+<li><strong>Individual Work</strong>: Must be completed independently</li>
+<li><strong>Code Sharing</strong>: Allowed for learning, not for assignments</li>
+<li><strong>Citation</strong>: Always attribute sources and collaborators</li>
+</ul>
+</section>
+<section id="communication" class="level3">
+<h3 class="anchored" data-anchor-id="communication">📧 Communication</h3>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+Getting Help
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>Moodle Forum</strong>: Available on course website, expect a reply within 24-48 hours in weekdays</li>
-<li><strong>Email instructor</strong>: <a href="simone.santoni.1@city.ac.uk">simone.santoni.1@city.ac.uk</a></li>
-<li><strong>Office Hours</strong>: In-depth conceptual discussions (reach out to <a href="simone.santoni.1@city.ac.uk">simone.santoni.1@city.ac.uk</a> to book your appointment)</li>
-<li><strong>Peer Study Groups</strong>: Self-organized, facilitated by instructor</li>
+<li><strong>Moodle Forum</strong>: First point of contact for content questions
+<ul>
+<li>Response time: 24-48 hours on weekdays</li>
+</ul></li>
+<li><strong>Office Hours</strong>: Wednesdays 14:00-16:00 (by appointment)
+<ul>
+<li>Book via: <a href="mailto:simone.santoni.1@city.ac.uk">simone.santoni.1@city.ac.uk</a></li>
+</ul></li>
+<li><strong>Email</strong>: For personal/administrative matters only
+<ul>
+<li>Use clear subject lines: “SMM638 - [Topic]”</li>
+</ul></li>
+<li><strong>Peer Support</strong>: Join study groups on Slack</li>
 </ol>
 </div>
 </div>
+</section>
+<section id="accessibility-and-accommodations" class="level3">
+<h3 class="anchored" data-anchor-id="accessibility-and-accommodations">♿ Accessibility and Accommodations</h3>
+<p>Students requiring accommodations should: 1. Contact Student Services for documentation 2. Notify instructor within first two weeks 3. Discuss specific needs and arrangements</p>
+<p>All accommodations will be made in accordance with university policies.</p>
+</section>
+<section id="academic-integrity" class="level3">
+<h3 class="anchored" data-anchor-id="academic-integrity">📝 Academic Integrity</h3>
+<ul>
+<li><strong>Plagiarism</strong>: Zero tolerance; all work must be original</li>
+<li><strong>Collaboration</strong>: Clearly acknowledge all contributions</li>
+<li><strong>Data Sources</strong>: Properly cite all datasets used</li>
+<li><strong>Code Attribution</strong>: Credit all borrowed/adapted code</li>
+</ul>
+<p>Violations will be reported to the Academic Misconduct Committee.</p>
+</section>
+<section id="syllabus-modifications" class="level3">
+<h3 class="anchored" data-anchor-id="syllabus-modifications">🔄 Syllabus Modifications</h3>
+<p>This syllabus may be adjusted to: - Accommodate class progress - Incorporate current events/examples - Respond to student feedback</p>
+<p>All changes will be announced via Moodle with one week’s notice.</p>
+<hr>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-</section>
-<section id="accommodations" class="level3">
-<h3 class="anchored" data-anchor-id="accommodations">Accommodations</h3>
-<p>Students with documented disabilities who may need accommodations should liaise with the course officer as soon as possible. All discussions will remain confidential. Students should also contact the Office of Disability Services to verify their eligibility for reasonable accommodations.</p>
-</section>
-<section id="changes-to-syllabus" class="level3">
-<h3 class="anchored" data-anchor-id="changes-to-syllabus">Changes to Syllabus</h3>
-<p>The instructor reserves the right to modify this syllabus as needed. Any changes will be announced in class and posted on the course website with adequate notice.</p>
+<div class="callout-title-container flex-fill">
+Ready to Start?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Network Analytics is a powerful lens for understanding our interconnected world. This module will challenge you to think structurally about business problems and equip you with tools to uncover hidden patterns in complex systems.</p>
+<p><strong>Let’s build networks together!</strong> 🌐</p>
+</div>
+</div>
 
 
 </section>

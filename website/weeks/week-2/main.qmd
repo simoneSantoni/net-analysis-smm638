@@ -1,0 +1,10 @@
+---
+title: "Week 2"
+subtitle: "Network centrality"
+callout-appearance: "default"
+---
+
+::: {.callout-note}
+Content coming soon.
+
+:::

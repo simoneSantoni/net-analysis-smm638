@@ -1,0 +1,10 @@
+---
+title: "Week 8"
+subtitle: "Network cohesion and community - case discussion"
+callout-appearance: "default"
+---
+
+::: {.callout-note}
+Content coming soon.
+
+:::

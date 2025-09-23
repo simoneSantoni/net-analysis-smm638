@@ -1,0 +1,110 @@
+---
+title: "Frequently Asked Questions"
+---
+
+## General Questions
+
+### What is Network Analytics?
+Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.
+
+### Do I need programming experience?
+Basic programming knowledge is helpful but not required. We'll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.
+
+### Which software should I use - R or Python?
+Both are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We'll teach both and you can choose based on your preference.
+
+## Course Logistics
+
+### How much time should I dedicate to this course?
+Expect to spend 8-10 hours per week:
+- 3 hours: Lectures and tutorials
+- 3-4 hours: Readings and videos
+- 2-3 hours: Assignments and practice
+
+### Can I audit the course?
+Please contact the instructor to discuss auditing options. Priority is given to enrolled students.
+
+### Are lectures recorded?
+Yes, all lectures are recorded and available on Moodle within 24 hours. However, live attendance is strongly encouraged for interactive elements.
+
+## Technical Questions
+
+### What computer specifications do I need?
+- RAM: 8GB minimum (16GB recommended)
+- Storage: 10GB free space
+- OS: Windows 10+, macOS 10.14+, or Linux
+- Internet connection for package downloads
+
+### How do I install the required software?
+Detailed installation guides are provided in Week 1 materials. We also offer installation support sessions.
+
+### Can I use cloud-based tools instead?
+Yes! Options include:
+- Google Colab (Python)
+- RStudio Cloud
+- Binder for Jupyter notebooks
+
+## Assessment
+
+### Can I work with others on assignments?
+- Mid-term project: Yes (teams of 3-4)
+- Final project: No (individual work)
+- Weekly exercises: Discussion encouraged, but submit your own work
+
+### What if I submit late?
+Late submissions receive a 10% penalty per day. Extensions may be granted for documented emergencies.
+
+### How are projects graded?
+Projects are evaluated on:
+- Technical correctness (30%)
+- Analytical depth (30%)
+- Business relevance (30%)
+- Presentation quality (10%)
+
+## Career & Applications
+
+### How is network analytics used in industry?
+Common applications include:
+- Social media analysis
+- Supply chain optimization
+- Fraud detection
+- Recommendation systems
+- Organizational design
+- Market structure analysis
+
+### What career paths benefit from network analytics?
+- Data Scientists
+- Business Analysts
+- Marketing Analysts
+- Operations Research
+- Management Consultants
+- Social Media Strategists
+
+### Will this help with my dissertation/thesis?
+Absolutely! Network analysis is increasingly used in business research. We can discuss how to apply these methods to your research interests.
+
+## Getting Help
+
+### I'm struggling with the material. What should I do?
+1. Attend office hours
+2. Post questions on Moodle forums
+3. Form study groups with classmates
+4. Review recorded lectures
+5. Schedule one-on-one meeting with instructor
+
+### Where can I find additional practice problems?
+- End of chapter exercises in textbooks
+- GitHub repository practice sets
+- Online courses (Coursera, DataCamp)
+- Kaggle competitions
+
+### What if I have accessibility needs?
+Please contact Student Services and the instructor as soon as possible. We'll work together to ensure appropriate accommodations.
+
+---
+
+::: {.callout-tip}
+## Still have questions?
+
+Post on the Moodle forum or email the instructor at [simone.santoni.1@city.ac.uk](mailto:simone.santoni.1@city.ac.uk)
+:::
