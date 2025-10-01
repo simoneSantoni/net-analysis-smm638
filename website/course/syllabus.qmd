@@ -12,12 +12,6 @@ format:
     fontsize: 11pt
 ---
 
-::: {style="text-align: center; margin: 20px 0; padding: 20px; background-color: #f8f9fa; border-radius: 10px;"}
-[📥 Download PDF Syllabus](syllabus.pdf){.btn .btn-primary style="background-color: #0d6efd; border-color: #0d6efd; color: white; padding: 12px 30px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 6px; display: inline-block; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: all 0.2s;"}
-
-*Click the button above to download a PDF version of this syllabus*
-:::
-
 ## Course Overview
 
 ### 🎯 Module Description

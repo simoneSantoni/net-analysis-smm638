@@ -50,4 +50,4 @@ Introductory session, no laboratory session.
 ### The Relevance of Networks
 
 - RBC: Social Network Analysis (in Moodle, "Case Studies" section)
-
+- [Networks, labor markets, and job search](network_labor_mkts_and_job_search.md)

@@ -4,18 +4,18 @@ title: "Course Schedule"
 
 ### 📅 Weekly Breakdown
 
-| Week   | Topic                               | Prepare | Slides | Case | Lab  | Project |
-| :----: | ----------------------------------- | ------- | ------ | ---- | ---- | ----    |
-| **1**  | Introduction to network analytics   |         |        |      |      |         |
-| **2**  | Network Centrality                  | 📚      | 🙾      |    |      |         |
-| **3**  | (cont'ed)                           |         |        | 🙋   |      |         |
-| **4**  | Dyads, triads, and network dynamics | 📚      |  🙾          |      | 🥼   |         |
-| **5**  | (cont'ed)                           |         |        |  🙋   | 🥼   |         |
-| **6**  | *Mid-term project*                  |         |        |      |      |   💻  |
-| **7**  | Network cohesion and communities    | 📚      |   🙾         |  |   🥼     |         |
-| **8**  | (cont'ed)                           |         |        |  🙋   | 🥼   |         |
-| **9**  | Network position and performance    | 📚      |    🙾        |      |      |         |
-| **10** | (cont'ed)                           |         |        |  🙋      |       |   💻        |
+| Week   | Topic                               | Prepare | Slides | Case | Lab  | Ponder   | Project |
+| :----: | ----------------------------------- | ------- | ------ | ---- | ---- |--- | ----    |
+| **1**  | Introduction to network analytics   |         |        |      |      |  [🤔](../weeks/week-1/main.qmd#ponder)  |         |
+| **2**  | Network Centrality                  |   📚      | 🙾      |      |      |    |         |
+| **3**  | (cont'ed)                           |         |        | 🙋   |      |    |         |
+| **4**  | Dyads, triads, and network dynamics | 📚      | 🙾      |      | 🥼    |    |         |
+| **5**  | (cont'ed)                           |         |        | 🙋   | 🥼   |    |         |
+| **6**  | *Mid-term project*                  |         |        |      |      |    | 💻      |
+| **7**  | Network cohesion and communities    | 📚      | 🙾      |      | 🥼   |    |         |
+| **8**  | (cont'ed)                           |         |        | 🙋   | 🥼   |    |         |
+| **9**  | Network position and performance    | 📚      | 🙾      |      |      |    |         |
+| **10** | (cont'ed)                           |         |        | 🙋   |      |    | 💻      |
 
 ::: {.callout-note}
 ## Adjustments and Updates

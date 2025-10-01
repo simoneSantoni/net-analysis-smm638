@@ -455,7 +455,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#common-issues-and-solutions" id="toc-common-issues-and-solutions" class="nav-link" data-scroll-target="#common-issues-and-solutions">Common Issues and Solutions</a>
   <ul class="collapse">
   <li><a href="#installation-problems" id="toc-installation-problems" class="nav-link" data-scroll-target="#installation-problems">Installation Problems</a></li>
-  <li><a href="#coding-challenges" id="toc-coding-challenges" class="nav-link" data-scroll-target="#coding-challenges">Coding Challenges</a></li>
+  <li><a href="#network-analysis-challenges" id="toc-network-analysis-challenges" class="nav-link" data-scroll-target="#network-analysis-challenges">Network Analysis Challenges</a></li>
   </ul></li>
   <li><a href="#study-resources" id="toc-study-resources" class="nav-link" data-scroll-target="#study-resources">Study Resources</a>
   <ul class="collapse">
@@ -494,7 +494,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Learning to program can be challenging, but you don’t have to do it alone. This page provides information about all the support resources available to help you succeed in IND216.</p>
+<p>Network analysis can be challenging, but you don’t have to navigate it alone. This page provides information about all the support resources available to help you succeed in SMM638 - Network Analytics.</p>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -503,8 +503,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container">
 <p><strong>Where to get help</strong>:</p>
 <ul>
-<li><strong>Installation issues</strong> → Office hours or lab sessions</li>
-<li><strong>Coding questions</strong> → Course forum, then office hours</li>
+<li><strong>R/Python setup issues</strong> → Office hours or lab sessions</li>
+<li><strong>Network analysis questions</strong> → Course forum, then office hours</li>
 <li><strong>Conceptual questions</strong> → Lecture Q&amp;A or course forum</li>
 <li><strong>Project guidance</strong> → Schedule appointment with instructor</li>
 <li><strong>Technical emergencies</strong> → Email instructor directly</li>
@@ -516,7 +516,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="support-resources">Support Resources</h2>
 <section id="course-forum" class="level3">
 <h3 class="anchored" data-anchor-id="course-forum">Course Forum</h3>
-<p>Access the course forum through module IND216’s Moodle website for:</p>
+<p>Access the course forum through module SMM638’s Moodle website for:</p>
 <ul>
 <li>Asking questions (conceptual or technical)</li>
 <li>Sharing helpful resources</li>
@@ -534,7 +534,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="email-support" class="level3">
 <h3 class="anchored" data-anchor-id="email-support">Email Support</h3>
-<p><strong>Instructor email</strong>: <a href="sangseok.lee@bayes.ac.uk">Sangseok.Lee@bayes.ac.uk</a></p>
+<p><strong>Module Leader</strong>: <a href="mailto:Simone.Santoni.1@city.ac.uk">Simone.Santoni.1@city.ac.uk</a></p>
+<p><strong>Instructor</strong>: <a href="mailto:Erwanghao.Yu@bayes.ac.uk">Erwanghao.Yu@bayes.ac.uk</a></p>
 <p><strong>When to email</strong>:</p>
 <ul>
 <li>Personal matters (illness, accommodations)</li>
@@ -545,7 +546,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Response time</strong>: 24-48 hours on weekdays</p>
 <p><strong>Email tips</strong>:</p>
 <ul>
-<li>Use clear subject line: “IND216: [Topic]”</li>
+<li>Use clear subject line: “SMM638: [Topic]”</li>
 <li>Include your student ID</li>
 <li>Be specific about your issue</li>
 <li>Attach relevant files if needed</li>
@@ -563,47 +564,47 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container">
 <p><strong>Common Installation Issues</strong>:</p>
-<p><strong>Problem</strong>: Anaconda won’t install</p>
+<p><strong>Problem</strong>: R/RStudio won’t install</p>
 <ul>
 <li><strong>Quick fix attempt</strong>: Check system requirements, disable antivirus temporarily, run as administrator</li>
 </ul>
-<p><strong>Problem</strong>: Jupyter won’t start</p>
+<p><strong>Problem</strong>: Python packages won’t install</p>
 <ul>
-<li><strong>Quick fix attempt</strong>: Update Anaconda, check firewall settings, try different browser</li>
+<li><strong>Quick fix attempt</strong>: Update conda/pip, check firewall settings, try different repository</li>
 </ul>
-<p><strong>Quick fix attempt</strong>: Packages won’t import</p>
+<p><strong>Problem</strong>: Network analysis packages won’t import</p>
 <ul>
-<li><strong>Quick fix attempt</strong>: Verify installation with <code>conda list</code>, reinstall package, check environment</li>
+<li><strong>Quick fix attempt</strong>: Verify installation with <code>library()</code> in R or <code>import</code> in Python, reinstall package, check dependencies (igraph, networkx, etc.)</li>
 </ul>
 </div>
 </div>
 </div>
 </section>
-<section id="coding-challenges" class="level3">
-<h3 class="anchored" data-anchor-id="coding-challenges">Coding Challenges</h3>
-<p><strong>“I don’t know where to start”</strong>:</p>
+<section id="network-analysis-challenges" class="level3">
+<h3 class="anchored" data-anchor-id="network-analysis-challenges">Network Analysis Challenges</h3>
+<p><strong>“I don’t know where to start with network analysis”</strong>:</p>
 <ol type="1">
-<li>Break the problem into smaller steps</li>
-<li>Write pseudocode first</li>
-<li>Start with the simplest part</li>
-<li>Use print statements to debug</li>
-<li>Look at similar examples</li>
+<li>Start with simple network visualizations</li>
+<li>Understand your data structure (nodes and edges)</li>
+<li>Begin with basic centrality measures</li>
+<li>Use sample networks before your own data</li>
+<li>Look at similar network examples in the literature</li>
 </ol>
-<p><strong>“My code doesn’t work”</strong>:</p>
+<p><strong>“My network code doesn’t work”</strong>:</p>
 <ol type="1">
-<li>Read error messages carefully</li>
-<li>Check for typos and syntax errors</li>
-<li>Verify data types</li>
-<li>Test with simple inputs</li>
-<li>Use debugging tools</li>
+<li>Check your data format (edge list, adjacency matrix)</li>
+<li>Verify node and edge attributes</li>
+<li>Ensure proper package loading (igraph, networkx)</li>
+<li>Test with small sample networks first</li>
+<li>Check for isolated nodes or missing edges</li>
 </ol>
-<p><strong>“I don’t understand the concept”</strong>:</p>
+<p><strong>“I don’t understand network concepts”</strong>:</p>
 <ol type="1">
-<li>Review lecture notes</li>
-<li>Try additional examples</li>
-<li>Watch supplementary videos</li>
-<li>Ask on the forum</li>
-<li>Attend office hours</li>
+<li>Review the network terminology glossary</li>
+<li>Practice with interactive network examples</li>
+<li>Visualize concepts with simple networks</li>
+<li>Ask specific questions on the forum</li>
+<li>Attend office hours with concrete examples</li>
 </ol>
 </section>
 </section>
@@ -669,7 +670,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p><strong>Campus Resources</strong>: See <a href="https://www.citystgeorges.ac.uk/prospective-students/student-life/student-wellbeing/your-health-wellbeing">“Your halth and wellbeing”</a> page, hosted in the Uni’s website.</p>
+<p><strong>Campus Resources</strong>: See <a href="https://www.citystgeorges.ac.uk/prospective-students/student-life/student-wellbeing/your-health-wellbeing">“Your health and wellbeing”</a> page, hosted in the University’s website.</p>
 <section id="personal-emergencies" class="level3">
 <h3 class="anchored" data-anchor-id="personal-emergencies">Personal Emergencies</h3>
 <p><strong>Illness or emergency</strong>: - Email instructor ASAP - Provide documentation if extended - Discuss makeup options - Don’t fall behind</p>
@@ -678,10 +679,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="faq" class="level2">
 <h2 class="anchored" data-anchor-id="faq">FAQ</h2>
 <p><strong>Q: How much time should I spend on this course?</strong> A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).</p>
-<p><strong>Q: Can I use AI tools like ChatGPT?</strong> A: You may use them for learning and understanding concepts, but submitted code must be your own work. Always cite any assistance received.</p>
-<p><strong>Q: What if I’m falling behind?</strong> A: Seek help immediately. The course builds on itself, so early gaps become bigger problems later.</p>
-<p><strong>Q: Do I need a powerful computer?</strong> A: No, basic Python programming doesn’t require much computing power. Any computer from the last 5 years should work fine.</p>
-<p><strong>Q: Can I use a different IDE than recommended?</strong> A: Yes, but you’re responsible for any setup issues. We can only provide support for recommended tools.</p>
+<p><strong>Q: Do I need prior programming experience?</strong> A: Basic programming experience in R or Python is helpful but not required. We’ll cover the essentials for network analysis.</p>
+<p><strong>Q: Can I use AI tools like ChatGPT?</strong> A: You may use them for learning and understanding concepts, but submitted work must be your own. Always cite any AI assistance received.</p>
+<p><strong>Q: What if I’m falling behind?</strong> A: Seek help immediately. Network analysis concepts build on each other, so early gaps become bigger problems later.</p>
+<p><strong>Q: Do I need a powerful computer?</strong> A: No, basic network analysis doesn’t require much computing power. Any computer from the last 5 years should work fine.</p>
+<p><strong>Q: Should I use R or Python for network analysis?</strong> A: Both are excellent. We’ll primarily use R with igraph, but Python with NetworkX is also supported. Choose based on your comfort level.</p>
 </section>
 <section id="success-tips" class="level2">
 <h2 class="anchored" data-anchor-id="success-tips">Success Tips</h2>
@@ -691,16 +693,16 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Top tips from successful students</strong>:</p>
+<p><strong>Top tips from successful network analysis students</strong>:</p>
 <ol type="1">
-<li><strong>Start early</strong> - Don’t wait until the deadline</li>
-<li><strong>Practice daily</strong> - Even 20 minutes helps</li>
-<li><strong>Make mistakes</strong> - They’re learning opportunities</li>
-<li><strong>Ask questions</strong> - No question is too basic</li>
-<li><strong>Help others</strong> - Teaching reinforces learning</li>
-<li><strong>Take breaks</strong> - Fresh eyes spot errors</li>
-<li><strong>Document everything</strong> - Comment your code</li>
-<li><strong>Stay organized</strong> - Use folders and naming conventions</li>
+<li><strong>Start with simple networks</strong> - Build complexity gradually</li>
+<li><strong>Visualize first</strong> - Always plot your networks to understand structure</li>
+<li><strong>Think about the domain</strong> - Network interpretation depends on context</li>
+<li><strong>Practice with real data</strong> - Work with networks from your field of interest</li>
+<li><strong>Learn the terminology</strong> - Master key concepts like centrality, clustering, paths</li>
+<li><strong>Ask “why” questions</strong> - Don’t just calculate metrics, understand their meaning</li>
+<li><strong>Document your analysis</strong> - Network studies require clear interpretation</li>
+<li><strong>Compare measures</strong> - Different centrality metrics tell different stories</li>
 </ol>
 </div>
 </div>

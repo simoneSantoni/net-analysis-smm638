@@ -2,15 +2,15 @@
 title: "Course Support"
 ---
 
-Learning to program can be challenging, but you don't have to do it alone.
+Network analysis can be challenging, but you don't have to navigate it alone.
 This page provides information about all the support resources available to
-help you succeed in IND216.
+help you succeed in SMM638 - Network Analytics.
 
 ::: {.callout-tip}
 **Where to get help**:
 
-- **Installation issues** → Office hours or lab sessions
-- **Coding questions** → Course forum, then office hours
+- **R/Python setup issues** → Office hours or lab sessions
+- **Network analysis questions** → Course forum, then office hours
 - **Conceptual questions** → Lecture Q&A or course forum
 - **Project guidance** → Schedule appointment with instructor
 - **Technical emergencies** → Email instructor directly
@@ -20,7 +20,7 @@ help you succeed in IND216.
 
 ### Course Forum
 
-Access the course forum through module IND216's Moodle website for:
+Access the course forum through module SMM638's Moodle website for:
 
 - Asking questions (conceptual or technical)
 - Sharing helpful resources
@@ -37,7 +37,9 @@ Access the course forum through module IND216's Moodle website for:
 
 ### Email Support
 
-**Instructor email**: [Sangseok.Lee@bayes.ac.uk](sangseok.lee@bayes.ac.uk)
+**Module Leader**: [Simone.Santoni.1@city.ac.uk](mailto:Simone.Santoni.1@city.ac.uk)
+
+**Instructor**: [Erwanghao.Yu@bayes.ac.uk](mailto:Erwanghao.Yu@bayes.ac.uk)
 
 **When to email**:
 
@@ -50,7 +52,7 @@ Access the course forum through module IND216's Moodle website for:
 
 **Email tips**:
 
-- Use clear subject line: "IND216: [Topic]"
+- Use clear subject line: "SMM638: [Topic]"
 - Include your student ID
 - Be specific about your issue
 - Attach relevant files if needed
@@ -62,44 +64,44 @@ Access the course forum through module IND216's Moodle website for:
 ::: {.callout-warning}
 **Common Installation Issues**:
 
-**Problem**: Anaconda won't install
+**Problem**: R/RStudio won't install
 
 - **Quick fix attempt**: Check system requirements, disable antivirus temporarily, run as administrator
 
-**Problem**: Jupyter won't start
+**Problem**: Python packages won't install
 
-- **Quick fix attempt**: Update Anaconda, check firewall settings, try different browser
+- **Quick fix attempt**: Update conda/pip, check firewall settings, try different repository
 
-**Quick fix attempt**: Packages won't import
+**Problem**: Network analysis packages won't import
 
-- **Quick fix attempt**: Verify installation with `conda list`, reinstall package, check environment
+- **Quick fix attempt**: Verify installation with `library()` in R or `import` in Python, reinstall package, check dependencies (igraph, networkx, etc.)
 :::
 
-### Coding Challenges
+### Network Analysis Challenges
 
-**"I don't know where to start"**:
+**"I don't know where to start with network analysis"**:
 
-1. Break the problem into smaller steps
-2. Write pseudocode first
-3. Start with the simplest part
-4. Use print statements to debug
-5. Look at similar examples
+1. Start with simple network visualizations
+2. Understand your data structure (nodes and edges)
+3. Begin with basic centrality measures
+4. Use sample networks before your own data
+5. Look at similar network examples in the literature
 
-**"My code doesn't work"**:
+**"My network code doesn't work"**:
 
-1. Read error messages carefully
-2. Check for typos and syntax errors
-3. Verify data types
-4. Test with simple inputs
-5. Use debugging tools
+1. Check your data format (edge list, adjacency matrix)
+2. Verify node and edge attributes
+3. Ensure proper package loading (igraph, networkx)
+4. Test with small sample networks first
+5. Check for isolated nodes or missing edges
 
-**"I don't understand the concept"**:
+**"I don't understand network concepts"**:
 
-1. Review lecture notes
-2. Try additional examples
-3. Watch supplementary videos
-4. Ask on the forum
-5. Attend office hours
+1. Review the network terminology glossary
+2. Practice with interactive network examples
+3. Visualize concepts with simple networks
+4. Ask specific questions on the forum
+5. Attend office hours with concrete examples
 
 ## Study Resources
 
@@ -149,9 +151,9 @@ Programming can be frustrating at times. Remember:
 - Take breaks when frustrated
 :::
 
-**Campus Resources**: See ["Your halth and
+**Campus Resources**: See ["Your health and
 wellbeing"](https://www.citystgeorges.ac.uk/prospective-students/student-life/student-wellbeing/your-health-wellbeing)
-page, hosted in the Uni's website.
+page, hosted in the University's website.
 
 ### Personal Emergencies
 
@@ -166,32 +168,35 @@ page, hosted in the Uni's website.
 **Q: How much time should I spend on this course?**
 A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).
 
+**Q: Do I need prior programming experience?**
+A: Basic programming experience in R or Python is helpful but not required. We'll cover the essentials for network analysis.
+
 **Q: Can I use AI tools like ChatGPT?**
-A: You may use them for learning and understanding concepts, but submitted code must be your own work. Always cite any assistance received.
+A: You may use them for learning and understanding concepts, but submitted work must be your own. Always cite any AI assistance received.
 
 **Q: What if I'm falling behind?**
-A: Seek help immediately. The course builds on itself, so early gaps become bigger problems later.
+A: Seek help immediately. Network analysis concepts build on each other, so early gaps become bigger problems later.
 
 **Q: Do I need a powerful computer?**
-A: No, basic Python programming doesn't require much computing power. Any computer from the last 5 years should work fine.
+A: No, basic network analysis doesn't require much computing power. Any computer from the last 5 years should work fine.
 
-**Q: Can I use a different IDE than recommended?**
-A: Yes, but you're responsible for any setup issues. We can only provide support for recommended tools.
+**Q: Should I use R or Python for network analysis?**
+A: Both are excellent. We'll primarily use R with igraph, but Python with NetworkX is also supported. Choose based on your comfort level.
 
 ## Success Tips
 
 ::: {.callout-tip}
 
-**Top tips from successful students**:
+**Top tips from successful network analysis students**:
 
-1. **Start early** - Don't wait until the deadline
-2. **Practice daily** - Even 20 minutes helps
-3. **Make mistakes** - They're learning opportunities
-4. **Ask questions** - No question is too basic
-5. **Help others** - Teaching reinforces learning
-6. **Take breaks** - Fresh eyes spot errors
-7. **Document everything** - Comment your code
-8. **Stay organized** - Use folders and naming conventions
+1. **Start with simple networks** - Build complexity gradually
+2. **Visualize first** - Always plot your networks to understand structure
+3. **Think about the domain** - Network interpretation depends on context
+4. **Practice with real data** - Work with networks from your field of interest
+5. **Learn the terminology** - Master key concepts like centrality, clustering, paths
+6. **Ask "why" questions** - Don't just calculate metrics, understand their meaning
+7. **Document your analysis** - Network studies require clear interpretation
+8. **Compare measures** - Different centrality metrics tell different stories
 :::
 
 Remember: We want you to succeed! Don't hesitate to reach out when you need help.

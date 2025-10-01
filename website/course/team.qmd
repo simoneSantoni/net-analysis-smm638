@@ -14,7 +14,8 @@ title: "Teaching team"
 
 Ph.D. student in strategy at the Bayes Business School
 
-📬 [Erwanghao.Yu@bayes.ac.uk](Sangseok.Lee@bayes.ac.uk)
+📬 [Erwanghao.Yu@bayes.ac.uk](Erwanghao.Yu@bayes.ac.uk)
+
 :::
 
 ::: {.column width="50%"}
@@ -26,6 +27,7 @@ Ph.D. student in strategy at the Bayes Business School
 Associate professor in strategy at the Bayes Business School
 
 📬 [Simone.Santoni.1@city.ac.uk](Simone.Santoni.1@city.ac.uk)
+
 :::
 
 ::::
