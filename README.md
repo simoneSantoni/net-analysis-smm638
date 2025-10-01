@@ -5,6 +5,32 @@
 This is the GitHub repository for the course Network Analytics, SMM638. The 
 repo is alive and will be updated throughout the term.
 
+## Course Website
+
+The course website contains comprehensive materials including lectures, assignments, and interactive visualizations. Visit the [course website](https://simonesantoni.github.io/net-analysis-smm638/) for the complete learning experience.
+
+### Recent Updates
+
+- **Network Terminology Glossary**: Added comprehensive glossary with interactive visualizations covering:
+  - One-mode and two-mode networks
+  - Directed vs undirected networks  
+  - Signed and weighted networks
+  - Network substructures (dyads and triads)
+- **Enhanced Week 1 Materials**: Updated introductory materials with visual examples
+
+## Repository Structure
+
+```
+├── website/               # Quarto website source
+│   ├── weeks/            # Weekly course materials
+│   ├── course/           # Course information (syllabus, team, etc.)
+│   ├── project/          # Course projects
+│   └── _site/            # Generated website files
+├── tutorials/            # Python tutorials and examples
+├── finalCoursework/      # Final coursework materials
+└── README.md            # This file
+```
+
 ## Why a Network Analytics course?
 
 Networks are ubiquitous: job offerings reach us via inter-personal connections;
