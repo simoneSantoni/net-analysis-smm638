@@ -1,8 +1,6 @@
 # Network Analytics (SMM638) ― README
 
-<img src="images/cover.png" alt="drawing" width="400"/>
-
-This is the GitHub repository for the course Network Analytics, SMM638. The 
+This is the GitHub repository for the course Network Analytics, SMM638. The
 repo is alive and will be updated throughout the term.
 
 ## Course Website
@@ -13,7 +11,7 @@ The course website contains comprehensive materials including lectures, assignme
 
 - **Network Terminology Glossary**: Added comprehensive glossary with interactive visualizations covering:
   - One-mode and two-mode networks
-  - Directed vs undirected networks  
+  - Directed vs undirected networks
   - Signed and weighted networks
   - Network substructures (dyads and triads)
 - **Enhanced Week 1 Materials**: Updated introductory materials with visual examples
@@ -44,14 +42,14 @@ value to individuals, organizations, and communities.
 
 ## Learning Objectives
 
-In terms of learning objectives, by the end of the module, students will be 
+In terms of learning objectives, by the end of the module, students will be
 able to:
 
-+ Appreciate the properties of networks;
-+ Appreciate the properties of communities of nodes belonging to a network;
-+ Appreciate the properties of individual nodes belonging to a network;
-+ Visually represent the key features of networks;
-+ Leverage the most advanced Python modules for network analytics;
-+ Mobilize key network analytics notions and tools to produce 
-	elegant, effective, and efficient solutions to practical problems in 
-	the field of business analytics.
+- Appreciate the properties of networks;
+- Appreciate the properties of communities of nodes belonging to a network;
+- Appreciate the properties of individual nodes belonging to a network;
+- Visually represent the key features of networks;
+- Leverage the most advanced Python modules for network analytics;
+- Mobilize key network analytics notions and tools to produce
+  elegant, effective, and efficient solutions to practical problems in
+  the field of business analytics.
