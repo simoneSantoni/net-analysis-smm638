@@ -1,0 +1,628 @@
+[
+  {
+    "objectID": "weeks/week-9/main.html",
+    "href": "weeks/week-9/main.html",
+    "title": "Week 9",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 9"
+    ]
+  },
+  {
+    "objectID": "weeks/week-7/main.html",
+    "href": "weeks/week-7/main.html",
+    "title": "Week 7",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 7"
+    ]
+  },
+  {
+    "objectID": "weeks/week-5/main.html",
+    "href": "weeks/week-5/main.html",
+    "title": "Week 5",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "weeks/week-3/main.html",
+    "href": "weeks/week-3/main.html",
+    "title": "Week 3",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-10/main.html",
+    "href": "weeks/week-10/main.html",
+    "title": "Week 10",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 10"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html",
+    "href": "weeks/week-1/main.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "Note\n\n\n\nIntroductory session, no preparation needed.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#prepare",
+    "href": "weeks/week-1/main.html#prepare",
+    "title": "Week 1",
+    "section": "",
+    "text": "Note\n\n\n\nIntroductory session, no preparation needed.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#participate",
+    "href": "weeks/week-1/main.html#participate",
+    "title": "Week 1",
+    "section": "Participate",
+    "text": "Participate\n\n\n\n\n\n\nNote\n\n\n\nIntroductory session, participation will not be assessed.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#practice",
+    "href": "weeks/week-1/main.html#practice",
+    "title": "Week 1",
+    "section": "Practice",
+    "text": "Practice\n\n\n\n\n\n\nNote\n\n\n\nIntroductory session, no application exercise.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#perform",
+    "href": "weeks/week-1/main.html#perform",
+    "title": "Week 1",
+    "section": "Perform",
+    "text": "Perform\n\n\n\n\n\n\nNote\n\n\n\nIntroductory session, no laboratory session.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/main.html#ponder",
+    "href": "weeks/week-1/main.html#ponder",
+    "title": "Week 1",
+    "section": "Ponder",
+    "text": "Ponder\n\nKey Network Analysis Concepts - Essential terms and concepts in network analysis\nNetwork Analysis: What Is It? (in Moodle, “Case Studies” section)\nRBC: Social Network Analysis (in Moodle, “Case Studies” section)",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html",
+    "href": "project/midTermProject/main.html",
+    "title": "Mid-Term Project",
+    "section": "",
+    "text": "Content coming soon.",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "notes/overview.html",
+    "href": "notes/overview.html",
+    "title": "Supplemental Notes",
+    "section": "",
+    "text": "This section contains supplemental materials and advanced topics not covered in the main course.\n\n\n\nAdvanced network models (ERGM, TERGM)\nMachine learning on graphs\nTemporal network analysis\nMultilayer networks\nNetwork sampling techniques\n\nCheck back for updates throughout the course.",
+    "crumbs": [
+      "Supplemental notes",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "notes/overview.html#additional-resources",
+    "href": "notes/overview.html#additional-resources",
+    "title": "Supplemental Notes",
+    "section": "",
+    "text": "This section contains supplemental materials and advanced topics not covered in the main course.\n\n\n\nAdvanced network models (ERGM, TERGM)\nMachine learning on graphs\nTemporal network analysis\nMultilayer networks\nNetwork sampling techniques\n\nCheck back for updates throughout the course.",
+    "crumbs": [
+      "Supplemental notes",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "faq.html",
+    "href": "faq.html",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference.",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#general-questions",
+    "href": "faq.html#general-questions",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference.",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#course-logistics",
+    "href": "faq.html#course-logistics",
+    "title": "Frequently Asked Questions",
+    "section": "Course Logistics",
+    "text": "Course Logistics\n\nHow much time should I dedicate to this course?\nExpect to spend 8-10 hours per week: - 3 hours: Lectures and tutorials - 3-4 hours: Readings and videos - 2-3 hours: Assignments and practice\n\n\nCan I audit the course?\nPlease contact the instructor to discuss auditing options. Priority is given to enrolled students.\n\n\nAre lectures recorded?\nYes, all lectures are recorded and available on Moodle within 24 hours. However, live attendance is strongly encouraged for interactive elements.",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#technical-questions",
+    "href": "faq.html#technical-questions",
+    "title": "Frequently Asked Questions",
+    "section": "Technical Questions",
+    "text": "Technical Questions\n\nWhat computer specifications do I need?\n\nRAM: 8GB minimum (16GB recommended)\nStorage: 10GB free space\nOS: Windows 10+, macOS 10.14+, or Linux\nInternet connection for package downloads\n\n\n\nHow do I install the required software?\nDetailed installation guides are provided in Week 1 materials. We also offer installation support sessions.\n\n\nCan I use cloud-based tools instead?\nYes! Options include: - Google Colab (Python) - RStudio Cloud - Binder for Jupyter notebooks",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#assessment",
+    "href": "faq.html#assessment",
+    "title": "Frequently Asked Questions",
+    "section": "Assessment",
+    "text": "Assessment\n\nCan I work with others on assignments?\n\nMid-term project: Yes (teams of 3-4)\nFinal project: No (individual work)\nWeekly exercises: Discussion encouraged, but submit your own work\n\n\n\nWhat if I submit late?\nLate submissions receive a 10% penalty per day. Extensions may be granted for documented emergencies.\n\n\nHow are projects graded?\nProjects are evaluated on: - Technical correctness (30%) - Analytical depth (30%) - Business relevance (30%) - Presentation quality (10%)",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#career-applications",
+    "href": "faq.html#career-applications",
+    "title": "Frequently Asked Questions",
+    "section": "Career & Applications",
+    "text": "Career & Applications\n\nHow is network analytics used in industry?\nCommon applications include: - Social media analysis - Supply chain optimization - Fraud detection - Recommendation systems - Organizational design - Market structure analysis\n\n\nWhat career paths benefit from network analytics?\n\nData Scientists\nBusiness Analysts\nMarketing Analysts\nOperations Research\nManagement Consultants\nSocial Media Strategists\n\n\n\nWill this help with my dissertation/thesis?\nAbsolutely! Network analysis is increasingly used in business research. We can discuss how to apply these methods to your research interests.",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "faq.html#getting-help",
+    "href": "faq.html#getting-help",
+    "title": "Frequently Asked Questions",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nI’m struggling with the material. What should I do?\n\nAttend office hours\nPost questions on Moodle forums\nForm study groups with classmates\nReview recorded lectures\nSchedule one-on-one meeting with instructor\n\n\n\nWhere can I find additional practice problems?\n\nEnd of chapter exercises in textbooks\nGitHub repository practice sets\nOnline courses (Coursera, DataCamp)\nKaggle competitions\n\n\n\nWhat if I have accessibility needs?\nPlease contact Student Services and the instructor as soon as possible. We’ll work together to ensure appropriate accommodations.\n\n\n\n\n\n\n\nStill have questions?\n\n\n\nPost on the Moodle forum or email the instructor at simone.santoni.1@city.ac.uk",
+    "crumbs": [
+      "Course Information",
+      "FAQ"
+    ]
+  },
+  {
+    "objectID": "course/team.html",
+    "href": "course/team.html",
+    "title": "Teaching team",
+    "section": "",
+    "text": "Erwanghao (Derek) Yu\nInstructor\nPh.D. student in strategy at the Bayes Business School\n📬 Erwanghao.Yu@bayes.ac.uk\n\n\n\n\nSimone Santoni\nModule leader\nAssociate professor in strategy at the Bayes Business School\n📬 Simone.Santoni.1@city.ac.uk",
+    "crumbs": [
+      "Course Information",
+      "Teaching team"
+    ]
+  },
+  {
+    "objectID": "course/support.html",
+    "href": "course/support.html",
+    "title": "Course Support",
+    "section": "",
+    "text": "Learning to program can be challenging, but you don’t have to do it alone. This page provides information about all the support resources available to help you succeed in IND216.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#support-resources",
+    "href": "course/support.html#support-resources",
+    "title": "Course Support",
+    "section": "Support Resources",
+    "text": "Support Resources\n\nCourse Forum\nAccess the course forum through module IND216’s Moodle website for:\n\nAsking questions (conceptual or technical)\nSharing helpful resources\nDiscussing course material\nFinding study partners\n\nForum Guidelines:\n\nSearch before posting (your question may be answered)\nUse descriptive titles\nInclude error messages and code snippets\nBe respectful and helpful\nDon’t share complete assignment solutions\n\n\n\nEmail Support\nInstructor email: Sangseok.Lee@bayes.ac.uk\nWhen to email:\n\nPersonal matters (illness, accommodations)\nScheduling appointments\nUrgent technical issues\nAdministrative questions\n\nResponse time: 24-48 hours on weekdays\nEmail tips:\n\nUse clear subject line: “IND216: [Topic]”\nInclude your student ID\nBe specific about your issue\nAttach relevant files if needed",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#common-issues-and-solutions",
+    "href": "course/support.html#common-issues-and-solutions",
+    "title": "Course Support",
+    "section": "Common Issues and Solutions",
+    "text": "Common Issues and Solutions\n\nInstallation Problems\n\n\n\n\n\n\nCommon Installation Issues:\nProblem: Anaconda won’t install\n\nQuick fix attempt: Check system requirements, disable antivirus temporarily, run as administrator\n\nProblem: Jupyter won’t start\n\nQuick fix attempt: Update Anaconda, check firewall settings, try different browser\n\nQuick fix attempt: Packages won’t import\n\nQuick fix attempt: Verify installation with conda list, reinstall package, check environment\n\n\n\n\n\n\nCoding Challenges\n“I don’t know where to start”:\n\nBreak the problem into smaller steps\nWrite pseudocode first\nStart with the simplest part\nUse print statements to debug\nLook at similar examples\n\n“My code doesn’t work”:\n\nRead error messages carefully\nCheck for typos and syntax errors\nVerify data types\nTest with simple inputs\nUse debugging tools\n\n“I don’t understand the concept”:\n\nReview lecture notes\nTry additional examples\nWatch supplementary videos\nAsk on the forum\nAttend office hours",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#study-resources",
+    "href": "course/support.html#study-resources",
+    "title": "Course Support",
+    "section": "Study Resources",
+    "text": "Study Resources\n\nRecommended Learning Path\n\nBefore Class:\n\nReview previous material\nRead assigned sections\nNote questions\n\nDuring Class:\n\nTake active notes\nTry examples\nAsk questions\n\nAfter Class:\n\nReview notes same day\nComplete exercises\nPractice additional problems\n\n\n\n\nPeer Support\nStudy Groups:\n\nForm groups of 3-4 students\nMeet regularly to review material\nWork through problems together\nShare different approaches\n\nPeer Tutoring:\n\nAdvanced students available for tutoring\nSign up through course website\nFree service for enrolled students",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#mental-health-and-wellbeing",
+    "href": "course/support.html#mental-health-and-wellbeing",
+    "title": "Course Support",
+    "section": "Mental Health and Wellbeing",
+    "text": "Mental Health and Wellbeing\nProgramming can be frustrating at times. Remember:\n\n\n\n\n\n\nIt’s normal to:\n\nFeel stuck sometimes\nNeed multiple attempts\nMake lots of errors\nNeed to ask for help\nTake breaks when frustrated\n\n\n\n\nCampus Resources: See “Your halth and wellbeing” page, hosted in the Uni’s website.\n\nPersonal Emergencies\nIllness or emergency: - Email instructor ASAP - Provide documentation if extended - Discuss makeup options - Don’t fall behind",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#faq",
+    "href": "course/support.html#faq",
+    "title": "Course Support",
+    "section": "FAQ",
+    "text": "FAQ\nQ: How much time should I spend on this course? A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).\nQ: Can I use AI tools like ChatGPT? A: You may use them for learning and understanding concepts, but submitted code must be your own work. Always cite any assistance received.\nQ: What if I’m falling behind? A: Seek help immediately. The course builds on itself, so early gaps become bigger problems later.\nQ: Do I need a powerful computer? A: No, basic Python programming doesn’t require much computing power. Any computer from the last 5 years should work fine.\nQ: Can I use a different IDE than recommended? A: Yes, but you’re responsible for any setup issues. We can only provide support for recommended tools.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#success-tips",
+    "href": "course/support.html#success-tips",
+    "title": "Course Support",
+    "section": "Success Tips",
+    "text": "Success Tips\n\n\n\n\n\n\nTop tips from successful students:\n\nStart early - Don’t wait until the deadline\nPractice daily - Even 20 minutes helps\nMake mistakes - They’re learning opportunities\nAsk questions - No question is too basic\nHelp others - Teaching reinforces learning\nTake breaks - Fresh eyes spot errors\nDocument everything - Comment your code\nStay organized - Use folders and naming conventions\n\n\n\n\nRemember: We want you to succeed! Don’t hesitate to reach out when you need help.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/info.html",
+    "href": "course/info.html",
+    "title": "Course Information",
+    "section": "",
+    "text": "IND215 - Introduction to R for Analytics is designed specifically for MSc students in analytics who want to develop practical programming skills for data analysis. This course provides a foundation in R programming with a focus on statistical computing, data manipulation, and the tidyverse ecosystem."
+  },
+  {
+    "objectID": "course/info.html#course-overview",
+    "href": "course/info.html#course-overview",
+    "title": "Course Information",
+    "section": "",
+    "text": "IND215 - Introduction to R for Analytics is designed specifically for MSc students in analytics who want to develop practical programming skills for data analysis. This course provides a foundation in R programming with a focus on statistical computing, data manipulation, and the tidyverse ecosystem."
+  },
+  {
+    "objectID": "course/info.html#learning-philosophy",
+    "href": "course/info.html#learning-philosophy",
+    "title": "Course Information",
+    "section": "Learning Philosophy",
+    "text": "Learning Philosophy\nThis course takes a practical, hands-on approach to learning R. Rather than covering every aspect of the language, we focus on the fundamental concepts and packages that analytics professionals use daily:\n\nPractical Focus: Learn by doing with real-world examples and exercises\nAnalytics-Oriented: Emphasis on statistical thinking, data manipulation, and visualization\nProgressive Learning: Build skills incrementally from basic R concepts to tidyverse mastery\nModern Tools: Use current best practices and the tidyverse ecosystem"
+  },
+  {
+    "objectID": "course/info.html#course-structure",
+    "href": "course/info.html#course-structure",
+    "title": "Course Information",
+    "section": "Course Structure",
+    "text": "Course Structure\nThe course is organized into four substantive modules:\n\nModule 1: Getting Started with R\n\nR and RStudio installation and setup\nR as a calculator and basic operations\nUnderstanding the RStudio interface\nCreating and managing R scripts and projects\n\n\n\nModule 2: R Fundamentals\n\nObjects, assignment, and basic data types\nVectors, lists, and data frames\nFactors and their importance in statistical analysis\nControl structures (if statements, loops) and functions\nFile handling and data import/export\n\n\n\nModule 3: Introduction to Tidyverse\n\nUnderstanding the tidyverse philosophy\nData import with readr\nBasic data manipulation with dplyr\nData tidying principles with tidyr\n\n\n\nModule 4: Data Wrangling with dplyr\n\nFiltering, selecting, and arranging data\nCreating new variables with mutate\nGrouping and summarizing data\nJoining datasets and advanced data manipulation"
+  },
+  {
+    "objectID": "course/info.html#learning-objectives",
+    "href": "course/info.html#learning-objectives",
+    "title": "Course Information",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this course, students will be able to:\n\nSet up and manage R environments for data analysis projects using RStudio\nWrite clean, efficient R code following tidyverse principles and best practices\nManipulate and analyze data using base R and tidyverse functions\nProcess and transform datasets using dplyr for data wrangling\nImport and export data from various file formats using readr and base R\nCreate reproducible data analysis workflows with R scripts and R Markdown\nApply statistical thinking to data exploration and basic analysis tasks"
+  },
+  {
+    "objectID": "course/info.html#prerequisites",
+    "href": "course/info.html#prerequisites",
+    "title": "Course Information",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nNo prior programming experience required\nBasic computer literacy (file management, using applications)\nWillingness to learn through trial and error\nAccess to a computer for hands-on practice"
+  },
+  {
+    "objectID": "course/info.html#software-requirements",
+    "href": "course/info.html#software-requirements",
+    "title": "Course Information",
+    "section": "Software Requirements",
+    "text": "Software Requirements\n\nR 4.0+ (we recommend R 4.3 or newer)\nRStudio Desktop (latest version for the best experience)\nEssential R packages (tidyverse, readr, dplyr, ggplot2, and others)\nGit for version control (optional but recommended)"
+  },
+  {
+    "objectID": "course/info.html#assessment-and-practice",
+    "href": "course/info.html#assessment-and-practice",
+    "title": "Course Information",
+    "section": "Assessment and Practice",
+    "text": "Assessment and Practice\nThis course emphasizes practical skill development through:\n\nInteractive exercises embedded in each module\nHands-on coding assignments using real datasets\nProgressive projects that build on previous concepts\nSelf-assessment opportunities to check understanding"
+  },
+  {
+    "objectID": "course/info.html#getting-help",
+    "href": "course/info.html#getting-help",
+    "title": "Course Information",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nUse the course materials and examples as your first reference\nPractice with the provided exercises and datasets\nConsult Python documentation and community resources\nAsk questions during class sessions or office hours"
+  },
+  {
+    "objectID": "course/info.html#success-tips",
+    "href": "course/info.html#success-tips",
+    "title": "Course Information",
+    "section": "Success Tips",
+    "text": "Success Tips\n\nPractice regularly: Programming is a skill that improves with consistent practice\nStart small: Begin with simple examples and gradually tackle more complex problems\nRead error messages: They often contain helpful information about what went wrong\nUse online resources: The R community has excellent documentation and tutorials\nDon’t be afraid to experiment: Try different approaches and see what works\nThink in data frames: Most R operations work naturally with tabular data"
+  },
+  {
+    "objectID": "course/info.html#course-resources",
+    "href": "course/info.html#course-resources",
+    "title": "Course Information",
+    "section": "Course Resources",
+    "text": "Course Resources\n\nOfficial R Documentation: r-project.org\nRStudio Resources: rstudio.com\nTidyverse Documentation: tidyverse.org\nR for Data Science Book: r4ds.had.co.nz"
+  },
+  {
+    "objectID": "course/faq.html",
+    "href": "course/faq.html",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference."
+  },
+  {
+    "objectID": "course/faq.html#general-questions",
+    "href": "course/faq.html#general-questions",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference."
+  },
+  {
+    "objectID": "course/faq.html#course-logistics",
+    "href": "course/faq.html#course-logistics",
+    "title": "Frequently Asked Questions",
+    "section": "Course Logistics",
+    "text": "Course Logistics\n\nHow much time should I dedicate to this course?\nExpect to spend 8-10 hours per week: - 3 hours: Lectures and tutorials - 3-4 hours: Readings and videos - 2-3 hours: Assignments and practice\n\n\nCan I audit the course?\nPlease contact the instructor to discuss auditing options. Priority is given to enrolled students.\n\n\nAre lectures recorded?\nYes, all lectures are recorded and available on Moodle within 24 hours. However, live attendance is strongly encouraged for interactive elements."
+  },
+  {
+    "objectID": "course/faq.html#technical-questions",
+    "href": "course/faq.html#technical-questions",
+    "title": "Frequently Asked Questions",
+    "section": "Technical Questions",
+    "text": "Technical Questions\n\nWhat computer specifications do I need?\n\nRAM: 8GB minimum (16GB recommended)\nStorage: 10GB free space\nOS: Windows 10+, macOS 10.14+, or Linux\nInternet connection for package downloads\n\n\n\nHow do I install the required software?\nDetailed installation guides are provided in Week 1 materials. We also offer installation support sessions.\n\n\nCan I use cloud-based tools instead?\nYes! Options include: - Google Colab (Python) - RStudio Cloud - Binder for Jupyter notebooks"
+  },
+  {
+    "objectID": "course/faq.html#assessment",
+    "href": "course/faq.html#assessment",
+    "title": "Frequently Asked Questions",
+    "section": "Assessment",
+    "text": "Assessment\n\nCan I work with others on assignments?\n\nMid-term project: Yes (teams of 3-4)\nFinal project: No (individual work)\nWeekly exercises: Discussion encouraged, but submit your own work\n\n\n\nWhat if I submit late?\nLate submissions receive a 10% penalty per day. Extensions may be granted for documented emergencies.\n\n\nHow are projects graded?\nProjects are evaluated on: - Technical correctness (30%) - Analytical depth (30%) - Business relevance (30%) - Presentation quality (10%)"
+  },
+  {
+    "objectID": "course/faq.html#career-applications",
+    "href": "course/faq.html#career-applications",
+    "title": "Frequently Asked Questions",
+    "section": "Career & Applications",
+    "text": "Career & Applications\n\nHow is network analytics used in industry?\nCommon applications include: - Social media analysis - Supply chain optimization - Fraud detection - Recommendation systems - Organizational design - Market structure analysis\n\n\nWhat career paths benefit from network analytics?\n\nData Scientists\nBusiness Analysts\nMarketing Analysts\nOperations Research\nManagement Consultants\nSocial Media Strategists\n\n\n\nWill this help with my dissertation/thesis?\nAbsolutely! Network analysis is increasingly used in business research. We can discuss how to apply these methods to your research interests."
+  },
+  {
+    "objectID": "course/faq.html#getting-help",
+    "href": "course/faq.html#getting-help",
+    "title": "Frequently Asked Questions",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nI’m struggling with the material. What should I do?\n\nAttend office hours\nPost questions on Moodle forums\nForm study groups with classmates\nReview recorded lectures\nSchedule one-on-one meeting with instructor\n\n\n\nWhere can I find additional practice problems?\n\nEnd of chapter exercises in textbooks\nGitHub repository practice sets\nOnline courses (Coursera, DataCamp)\nKaggle competitions\n\n\n\nWhat if I have accessibility needs?\nPlease contact Student Services and the instructor as soon as possible. We’ll work together to ensure appropriate accommodations.\n\n\n\n\n\n\n\nStill have questions?\n\n\n\nPost on the Moodle forum or email the instructor at simone.santoni.1@city.ac.uk"
+  },
+  {
+    "objectID": "course/schedule.html",
+    "href": "course/schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "📅 Weekly Breakdown\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nPrepare\nSlides\nCase\nLab\nProject\n\n\n\n\n1\nIntroduction to network analytics\n\n\n\n\n\n\n\n2\nNetwork Centrality\n📚\n🙾\n\n\n\n\n\n3\n(cont’ed)\n\n\n🙋\n\n\n\n\n4\nDyads, triads, and network dynamics\n📚\n🙾\n\n🥼\n\n\n\n5\n(cont’ed)\n\n\n🙋\n🥼\n\n\n\n6\nMid-term project\n\n\n\n\n💻\n\n\n7\nNetwork cohesion and communities\n📚\n🙾\n\n🥼\n\n\n\n8\n(cont’ed)\n\n\n🙋\n🥼\n\n\n\n9\nNetwork position and performance\n📚\n🙾\n\n\n\n\n\n10\n(cont’ed)\n\n\n🙋\n\n💻\n\n\n\n\n\n\n\n\n\nAdjustments and Updates\n\n\n\nThis schedule is subject to change based on:\n\nClass progress and needs\nUniversity calendar changes\nUnexpected closures\n\nAll changes will be announced in class and posted on the course website.",
+    "crumbs": [
+      "Course Information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html",
+    "href": "course/syllabus.html",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nModel network formation and behavior\nAnalyze network evolution and dynamics over time\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes:\n\nUnderstand fundamental network concepts and terminology\nDifferentiate between network types (one-mode, two-mode, signed, weighted)\nSet up R/Python environment for network analysis\nPerform basic network data management and visualization\n\nTopics Covered:\n\nNetwork elements: nodes, edges, dyads, triads\nReal-world network examples (economic, organizational, social)\nTaxonomy of network measures (node, meso, macro levels)\nIntroduction to network analysis software\n\nCase Study: RCB: Social network analysis\n\n\n\nWeeks 2-3\nLearning Outcomes:\n\nCalculate and interpret various centrality measures\nUnderstand when to apply different centrality metrics\nAnalyze the relationship between centrality and outcomes\nImplement centrality algorithms in R/Python\n\nTopics Covered:\n\nDegree centrality and its variants\nCloseness centrality and information flow\nBetweenness centrality and brokerage\nEigenvector centrality and influence\nPageRank and its applications\nLocal clustering coefficient\n\nCase Study: Who is the right influencer? A social network analysis\n\n\n\nWeeks 4-5\nLearning Outcomes:\n\nAnalyze dyadic patterns and relationships\nModel homophily and its effects\nUnderstand triadic closure and its implications\nNetwork evolution patterns\nTest network hypotheses\n\nTopics Covered:\n\nReciprocity and mutuality\nHomophily and selection effects\nTriadic census and transitivity\nConditional Uniform Graph (CUG) tests\n\nCase Study: Feeding Souncloud’s recommendation system with social network data\n\n\n\nWeeks 7-8\nLearning Outcomes:\n\nMeasure network cohesion at multiple levels\nApply community detection algorithms\nInterpret community structure for business insights\nImplement blockmodeling techniques\n\nTopics Covered:\n\nNetwork density and cohesion metrics\nCore-periphery structures\nCommunity detection algorithms (Louvain, modularity optimization)\nBlockmoldeling\n\nCase Study: Profiling beer enthusiasts at BeerAdvocate\n\n\n\nWeeks 9-10\nLearning Outcomes:\n\nAnalyze the strategic value of network positions\nUnderstand closure vs. brokerage trade-offs\nApply network insights to career development\nDesign network interventions\n\nTopics Covered:\n\nStructural holes and brokerage opportunities\nNetwork closure and social capital\nThe strength of weak ties\nNetwork position and innovation\nCareer implications of network structure\n\nCase Study: Network position and employee performance in Silico’s R&D lab",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-overview",
+    "href": "course/syllabus.html#course-overview",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nModel network formation and behavior\nAnalyze network evolution and dynamics over time\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes:\n\nUnderstand fundamental network concepts and terminology\nDifferentiate between network types (one-mode, two-mode, signed, weighted)\nSet up R/Python environment for network analysis\nPerform basic network data management and visualization\n\nTopics Covered:\n\nNetwork elements: nodes, edges, dyads, triads\nReal-world network examples (economic, organizational, social)\nTaxonomy of network measures (node, meso, macro levels)\nIntroduction to network analysis software\n\nCase Study: RCB: Social network analysis\n\n\n\nWeeks 2-3\nLearning Outcomes:\n\nCalculate and interpret various centrality measures\nUnderstand when to apply different centrality metrics\nAnalyze the relationship between centrality and outcomes\nImplement centrality algorithms in R/Python\n\nTopics Covered:\n\nDegree centrality and its variants\nCloseness centrality and information flow\nBetweenness centrality and brokerage\nEigenvector centrality and influence\nPageRank and its applications\nLocal clustering coefficient\n\nCase Study: Who is the right influencer? A social network analysis\n\n\n\nWeeks 4-5\nLearning Outcomes:\n\nAnalyze dyadic patterns and relationships\nModel homophily and its effects\nUnderstand triadic closure and its implications\nNetwork evolution patterns\nTest network hypotheses\n\nTopics Covered:\n\nReciprocity and mutuality\nHomophily and selection effects\nTriadic census and transitivity\nConditional Uniform Graph (CUG) tests\n\nCase Study: Feeding Souncloud’s recommendation system with social network data\n\n\n\nWeeks 7-8\nLearning Outcomes:\n\nMeasure network cohesion at multiple levels\nApply community detection algorithms\nInterpret community structure for business insights\nImplement blockmodeling techniques\n\nTopics Covered:\n\nNetwork density and cohesion metrics\nCore-periphery structures\nCommunity detection algorithms (Louvain, modularity optimization)\nBlockmoldeling\n\nCase Study: Profiling beer enthusiasts at BeerAdvocate\n\n\n\nWeeks 9-10\nLearning Outcomes:\n\nAnalyze the strategic value of network positions\nUnderstand closure vs. brokerage trade-offs\nApply network insights to career development\nDesign network interventions\n\nTopics Covered:\n\nStructural holes and brokerage opportunities\nNetwork closure and social capital\nThe strength of weak ties\nNetwork position and innovation\nCareer implications of network structure\n\nCase Study: Network position and employee performance in Silico’s R&D lab",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#assessment-strategy",
+    "href": "course/syllabus.html#assessment-strategy",
+    "title": "Course Syllabus",
+    "section": "Assessment Strategy",
+    "text": "Assessment Strategy\n\n📊 Assessment Components\n\n\nClass Participation (10%)\n\nActive engagement in discussions\nQuality of questions and insights\nIn-class case discussion contribution\n\nOngoing throughout term\n\n\nMid-Term Project (50%)\n\nTeam-based analysis (3-4 students)\nReal-world dataset\nTechnical implementation\nBusiness recommendations\n15-minute presentation\n\nDue: November 10, 2025\n\n\nFinal Project (40%)\n\nIndividual research project\nBusiness case requesting network analysis\nExecutive summary of case discussion (1,000 words)\n10-minute case discussion, job interview style\n\nDue: November 28, 2025\n\n\n\n\n📝 Assessment Criteria\nAll assessments will be evaluated on:\n\nTechnical Proficiency (30%)\n\nCorrect implementation of methods\nCode quality and documentation\nAppropriate use of techniques\n\nAnalytical Rigor (30%)\n\nSound methodology\nProper interpretation of results\nStatistical validity\n\nBusiness Relevance (30%)\n\nClear problem definition\nActionable insights\nStrategic recommendations\n\nCommunication (10%)\n\nClear presentation\nEffective visualizations\nProfessional writing",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-resources",
+    "href": "course/syllabus.html#course-resources",
+    "title": "Course Syllabus",
+    "section": "Course Resources",
+    "text": "Course Resources\n\n💻 Technical Requirements\n\n\n\n\n\n\nEssential Software Setup\n\n\n\nProgramming Environments:\n\nR (version 4.3+) with RStudio\nPython (version 3.9+) with Spyder or Jupyter Lab/Notebooks\nGit for version control\n\nSample R Packages:\n# Core packages\ninstall.packages(c(\"igraph\", \"tidygraph\", \"ggraph\"))\n\n# Statistical modeling\ninstall.packages(c(\"statnet\", \"ergm\", \"btergm\"))\n\n# Visualization\ninstall.packages(c(\"networkD3\", \"visNetwork\", \"graphlayouts\"))\n\n# Data manipulation\ninstall.packages(c(\"tidyverse\"))\nSample Python Modules:\n# Data manipulation and computation\nconda install -c conda-forge numpy scipy matplotlib pandas \n\n# Network libraries\nconda install -c conda-forge networkx graph-tool\n\n# Interactive visualization\nconda install -c conda-forge plotly bokeh pyvis\n\n\nAlternatively, you can create the environment directly using the provided smm638.yaml file:\nconda env create -f smm638.yaml\nconda activate smm638\n\n\n📚 Reading List\nCore Textbooks:\n\nMenczer, F., Fortunato, S., & Davis, C. A. (2020). A first course in network science. Cambridge University Press.\n\nComprehensive yet accessible survey of network science notions and tools\nExcellent first course in network analysis book\n\nNewman, M. (2018). Networks (2nd ed.). Oxford University Press.\n\nComprehensive mathematical treatment of network problems\nExcellent for understanding algorithms\nFor the braves…\n\nEasley, D., & Kleinberg, J. (2010). Networks, crowds, and markets: Reasoning about a highly connected world. Cambridge: Cambridge University Press.\n\nFocus on economic applications of network concepts and methods\nPlenty of examples\nVariety of organizational and market issues, from auctions to social influence in digital platforms\n\nRawlings, C. M., Smith, J. A., Moody, J., & McFarland, D. A. (2023). Network analysis: integrating social network theory, method, and application with R. Cambridge University Press.\n\nFocus on social networks\nExcellent survey of network notions and methods\nOnline companion with R applications\n\nCarpenter, M. (2009). An executive’s primer on the strategy of social networks. Business Expert Press.\n\nAn executive’s perspective on networks\nA very actionable framework to maximize the value of your network\n\n\nSupplementary Readings:\n\nBarabási, A. L. (2014). Linked: How Everything Is Connected to Everything Else and What It Means for Business, Science, and Everyday Life. Basic Books.\nJackson, M. O. (2019). The Human Network. Pantheon Books.\nWatts, D. J. (2003). Six Degrees: The Science of a Connected Age. Norton.\n\n\n\n🌐 Online Resources\nCourse Materials: - GitHub repository: github.com/simoneSantoni/net-analysis-smm638 - Moodle page with lectures and assignments - Slack workspace for discussions\nExternal Resources: - Awesome Network Analysis",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-policies",
+    "href": "course/syllabus.html#course-policies",
+    "title": "Course Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\n📋 Attendance and Participation\n\nAttendance: Mandatory for all sessions\nPunctuality: Sessions start promptly; late arrivals disrupt learning\nPreparation: Complete readings and exercises before class\nEngagement: Active participation expected in all activities\n\n\n\n🤝 Collaboration Policy\n\nTeamwork: Encouraged for designated group projects\nIndividual Work: Must be completed independently\nCode Sharing: Allowed for learning, not for assignments\nCitation: Always attribute sources and collaborators\nAI: Disclose how you use LLMs to get your work done\n\n\n\n📧 Communication\n\n\n\n\n\n\nGetting Help\n\n\n\n\nMoodle Forum: First point of contact for content questions\n\nResponse time: 24-48 hours on weekdays\n\nOffice Hours: Wednesdays 14:00-16:00 (by appointment)\n\nBook via: simone.santoni.1@city.ac.uk\n\nEmail: For personal/administrative matters only\n\nUse clear subject lines: “SMM638 - [Topic]”\n\nPeer Support: Join study groups on Slack\n\n\n\n\n\n♿ Accessibility and Accommodations\nStudents requiring accommodations should:\n\nContact Student Services for documentation\nNotify instructor within first two weeks\nDiscuss specific needs and arrangements\n\nAll accommodations will be made in accordance with university policies.\n\n\n📝 Academic Integrity\n\nPlagiarism: Zero tolerance; all work must be original\nCollaboration: Clearly acknowledge all contributions\nData Sources: Properly cite all datasets used\nCode Attribution: Credit all borrowed/adapted code (included LLM generated code)\n\nViolations will be reported to the Academic Misconduct Committee.\n\n\n🔄 Syllabus Modifications\nThis syllabus may be adjusted to:\n\nAccommodate class progress\nIncorporate current events/examples\nRespond to student feedback\n\nAll changes will be announced via Moodle with one week’s notice.\n\n\n\n\n\n\n\nReady to Start?\n\n\n\nNetwork Analytics is a powerful lens for understanding our interconnected world. This module will challenge you to think structurally about business problems and equip you with tools to uncover hidden patterns in complex systems.\nLet’s build networks together! 🌐",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/useful_links.html",
+    "href": "course/useful_links.html",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks"
+  },
+  {
+    "objectID": "course/useful_links.html#course-resources",
+    "href": "course/useful_links.html#course-resources",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks"
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html",
+    "href": "project/finalCourseProject/main.html",
+    "title": "Final Course Project",
+    "section": "",
+    "text": "Content coming soon.",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "useful_links.html",
+    "href": "useful_links.html",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks",
+    "crumbs": [
+      "Course Information",
+      "Useful links"
+    ]
+  },
+  {
+    "objectID": "useful_links.html#course-resources",
+    "href": "useful_links.html#course-resources",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks",
+    "crumbs": [
+      "Course Information",
+      "Useful links"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/network_terms.html",
+    "href": "weeks/week-1/network_terms.html",
+    "title": "Network Analysis Glossary",
+    "section": "",
+    "text": "A graph is a mathematical structure consisting of a set of objects (vertices) and a set of connections (edges) between pairs of these objects. In network analysis, graphs provide the fundamental framework for representing relationships and interactions between entities. Graphs can be directed (edges have direction) or undirected (edges have no inherent direction).\n\\[\nG = {v, e}\n\\]\nwhere\n\\[v = [v_1, v_2, ..., v_i, ... v_n]\\]\nand\n\\[e = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j), ..., (v_j, v_n)]\\]\n\n\n\nVertices (also called nodes) are the fundamental units or entities in a network. They represent the objects being studied, such as:\n\nPeople in social networks\nComputers in technological networks\nProteins in biological networks\nCities in transportation networks\n\nEach vertex can have attributes (e.g., age, location, type) that provide additional information about the entity it represents.\n\n\n\nEdges (also called links or ties) represent the connections or relationships between vertices. They encode the interactions, associations, or dependencies between entities in the network. Edges can have various properties:\n\nDirection (directed vs. undirected)\nWeight (strength of connection)\nType (multiple relationship types)\nTemporal information (when the connection exists)\n\n\n\n\nA network relationship defines the nature of connections between entities in a network. These relationships determine:\n\nWhat constitutes a connection (e.g., friendship, communication, transaction)\nHow connections are measured or identified\nWhether relationships are symmetric or asymmetric\nThe meaning and interpretation of network patterns"
+  },
+  {
+    "objectID": "weeks/week-1/network_terms.html#core-network-components",
+    "href": "weeks/week-1/network_terms.html#core-network-components",
+    "title": "Network Analysis Glossary",
+    "section": "",
+    "text": "A graph is a mathematical structure consisting of a set of objects (vertices) and a set of connections (edges) between pairs of these objects. In network analysis, graphs provide the fundamental framework for representing relationships and interactions between entities. Graphs can be directed (edges have direction) or undirected (edges have no inherent direction).\n\\[\nG = {v, e}\n\\]\nwhere\n\\[v = [v_1, v_2, ..., v_i, ... v_n]\\]\nand\n\\[e = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j), ..., (v_j, v_n)]\\]\n\n\n\nVertices (also called nodes) are the fundamental units or entities in a network. They represent the objects being studied, such as:\n\nPeople in social networks\nComputers in technological networks\nProteins in biological networks\nCities in transportation networks\n\nEach vertex can have attributes (e.g., age, location, type) that provide additional information about the entity it represents.\n\n\n\nEdges (also called links or ties) represent the connections or relationships between vertices. They encode the interactions, associations, or dependencies between entities in the network. Edges can have various properties:\n\nDirection (directed vs. undirected)\nWeight (strength of connection)\nType (multiple relationship types)\nTemporal information (when the connection exists)\n\n\n\n\nA network relationship defines the nature of connections between entities in a network. These relationships determine:\n\nWhat constitutes a connection (e.g., friendship, communication, transaction)\nHow connections are measured or identified\nWhether relationships are symmetric or asymmetric\nThe meaning and interpretation of network patterns"
+  },
+  {
+    "objectID": "weeks/week-1/network_terms.html#network-types",
+    "href": "weeks/week-1/network_terms.html#network-types",
+    "title": "Network Analysis Glossary",
+    "section": "Network Types",
+    "text": "Network Types\n\nOne-mode vs Two-mode Networks\n\nOne-mode Networks\nOne-mode networks (also called unipartite networks) contain only one type of vertex. All connections occur between vertices of the same type. Examples include:\n\nFriendship networks (people connected to people)\nCitation networks (papers citing papers)\nTrade networks (countries trading with countries)\n\nHere’s an example of creating a one-mode network visualization concerning a collaboration network among five co-workers:\n\n\n\n\n\nExample of a one-mode collaboration network showing connections between individuals\n\n\n\n\n\n\nDirected Vs Undirected Networks\nDirected networks (also called digraphs) have edges with a specific direction, indicating asymmetric relationships where the connection flows from one vertex to another. Examples include:\n\nEmail networks (sender → receiver)\nCitation networks (citing paper → cited paper)\n\nFood webs (predator → prey)\nTwitter follower networks (follower → followed)\n\nHere’s an example of a directed network:\n\n\n\n\n\nDirected Email Communication Network\n\n\n\n\nUndirected networks have edges without direction, representing symmetric relationships where connections are mutual. Examples include:\n\nFriendship networks (mutual friendships)\nCo-authorship networks (collaborations)\nInfrastructure networks (roads, power grids)\nProtein interaction networks\n\nThe choice between directed and undirected representation depends on whether the relationship being modeled is inherently asymmetric or symmetric.\n\n\nTwo-mode Networks\nTwo-mode networks (also called bipartite networks) contain two distinct types of vertices, and edges only connect vertices of different types. Examples include:\n\nActor-movie networks (actors connected to movies they appear in)\nAuthor-paper networks (authors connected to papers they wrote)\nCustomer-product networks (customers connected to products they purchased)\n\nHere’s an example of a two-mode purchasing network:\n\n\n\n\n\nTwo-Mode Customer-Product Purchasing Network\n\n\n\n\n\n\n\nSigned Networks\nSigned networks are networks where edges carry positive or negative values, representing different types of relationships:\n\nPositive edges: friendship, alliance, cooperation\nNegative edges: animosity, conflict, competition\n\nSigned networks are particularly useful for studying:\n\nSocial balance theory\nCoalition formation\nConflict dynamics\nOpinion polarization\n\nHere’s an example of a signed social network like cooperative Vs. competitive ties among co-workers:\n\n\n\n\n\nSigned Social Network with Positive and Negative Relationships\n\n\n\n\n\n\nWeighted vs Unweighted Networks\n\nWeighted Networks\nWeighted networks have edges with numerical values (weights) representing the strength, frequency, or capacity of connections. Examples include:\n\nCommunication networks (number of messages exchanged)\nTransportation networks (traffic volume or distance)\nNeural networks (synaptic strength)\nFinancial networks (transaction amounts)\n\nHere’s an example of a weighted communication network:\n\n\n\n\n\nWeighted Communication Network (Edge Width = Message Volume)\n\n\n\n\n\n\nUnweighted Networks\nUnweighted networks (also called binary networks) have edges that simply indicate the presence or absence of a connection. All edges are treated equally, focusing on the topology rather than connection strength. These are simpler to analyze but may lose important information about relationship intensity."
+  },
+  {
+    "objectID": "weeks/week-1/network_terms.html#network-substructures",
+    "href": "weeks/week-1/network_terms.html#network-substructures",
+    "title": "Network Analysis Glossary",
+    "section": "Network Substructures",
+    "text": "Network Substructures\n\nDyads\nA dyad is the simplest possible network substructure, consisting of a pair of vertices and the possible edge(s) between them. In directed networks, dyads can be classified as:\n\nNull dyad: no connection in either direction\nAsymmetric dyad: connection in one direction only\nMutual/Reciprocal dyad: connections in both directions\n\nDyadic analysis examines pairwise relationships and forms the foundation for understanding reciprocity and basic network patterns.\nHere’s a visualization showing a dyad within a larger network:\n\n\n\n\n\nNetwork with Emphasized Dyad (Alice-Bob)\n\n\n\n\n\n\nTriads\nA triad consists of three vertices and the possible edges among them. Triads are fundamental for understanding:\n\nTransitivity (“friend of a friend” patterns)\nStructural balance\nClustering tendencies\nLocal network motifs\n\nHere’s a visualization showing a triad within a larger network:\n\n\n\n\n\nNetwork with Emphasized Triad (Alice-Bob-Charlie)\n\n\n\n\nWe will deal with these in weeks 4 and 5."
+  },
+  {
+    "objectID": "weeks/week-2/main.html",
+    "href": "weeks/week-2/main.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html",
+    "href": "weeks/week-4/main.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-6/main.html",
+    "href": "weeks/week-6/main.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon."
+  },
+  {
+    "objectID": "weeks/week-8/main.html",
+    "href": "weeks/week-8/main.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 8"
+    ]
+  }
+]
