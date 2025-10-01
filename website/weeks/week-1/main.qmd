@@ -42,6 +42,12 @@ Introductory session, no laboratory session.
 
 ## Ponder
 
+### Key Network Ideas
+
 - [Key Network Analysis Concepts](network_terms.qmd) - Essential terms and concepts in network analysis
 - Network Analysis: What Is It? (in Moodle, "Case Studies" section)
+
+### The Relevance of Networks
+
 - RBC: Social Network Analysis (in Moodle, "Case Studies" section)
+
