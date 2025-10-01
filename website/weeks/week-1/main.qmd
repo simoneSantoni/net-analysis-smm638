@@ -4,9 +4,44 @@ subtitle: "Introduction to network analysis"
 callout-appearance: default
 ---
 
+## Prepare
+
 ::: {.callout-note}
 ## Note
 
 Introductory session, no preparation needed.
 
 :::
+
+## Participate
+
+::: {.callout-note}
+## Note
+
+Introductory session, participation will not be assessed.
+
+:::
+
+## Practice
+
+::: {.callout-note}
+## Note
+
+Introductory session, no application exercise.
+
+:::
+
+## Perform
+
+::: {.callout-note}
+## Note
+
+Introductory session, no laboratory session.
+
+:::
+
+## Ponder
+
+- [Key Network Analysis Concepts](network_terms.qmd) - Essential terms and concepts in network analysis
+- Network Analysis: What Is It? (in Moodle, "Case Studies" section)
+- RBC: Social Network Analysis (in Moodle, "Case Studies" section)

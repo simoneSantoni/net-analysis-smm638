@@ -1,0 +1,520 @@
+---
+title: "Network Analysis Glossary"
+subtitle: "Essential Terms and Concepts"
+---
+
+## Core Network Components
+
+### Graph
+A **graph** is a mathematical structure consisting of a set of objects (vertices) and a set of connections (edges) between pairs of these objects. In network analysis, graphs provide the fundamental framework for representing relationships and interactions between entities. Graphs can be directed (edges have direction) or undirected (edges have no inherent direction).
+
+$$
+G = {v, e}
+$$
+
+where 
+
+$$v = [v_1, v_2, ..., v_i, ... v_n]$$
+
+and 
+
+$$e = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j), ..., (v_j, v_n)]$$
+
+
+### Vertices (Nodes)
+**Vertices** (also called nodes) are the fundamental units or entities in a network. They represent the objects being studied, such as:
+
+- People in social networks
+- Computers in technological networks
+- Proteins in biological networks
+- Cities in transportation networks
+
+Each vertex can have attributes (e.g., age, location, type) that provide additional information about the entity it represents.
+
+### Edges (Links/Ties)
+**Edges** (also called links or ties) represent the connections or relationships between vertices. They encode the interactions, associations, or dependencies between entities in the network. Edges can have various properties:
+
+- Direction (directed vs. undirected)
+- Weight (strength of connection)
+- Type (multiple relationship types)
+- Temporal information (when the connection exists)
+
+### Network Relationship
+A **network relationship** defines the nature of connections between entities in a network. These relationships determine:
+
+- What constitutes a connection (e.g., friendship, communication, transaction)
+- How connections are measured or identified
+- Whether relationships are symmetric or asymmetric
+- The meaning and interpretation of network patterns
+
+## Network Types
+
+### One-mode vs Two-mode Networks
+
+#### One-mode Networks
+**One-mode networks** (also called unipartite networks) contain only one type of vertex. All connections occur between vertices of the same type. Examples include:
+
+- Friendship networks (people connected to people)
+- Citation networks (papers citing papers)
+- Trade networks (countries trading with countries)
+
+Here's an example of creating a one-mode network visualization concerning a collaboration network among five co-workers:
+
+```{r}
+#| label: one-mode-network-viz
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-cap: "Example of a one-mode collaboration network showing connections between individuals"
+
+# Load required library
+library(igraph)
+
+# Create a sample one-mode network (e.g., collaboration network)
+# Edge list format: who collaborates with whom
+edges <- data.frame(
+  from = c("Alice", "Alice", "Bob", "Bob", "Charlie", "David", "Emma", "Emma"),
+  to = c("Bob", "Charlie", "Charlie", "David", "David", "Emma", "Alice", "Charlie")
+)
+
+# Create igraph object
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Set transparent background
+par(bg = "transparent")
+
+# Basic visualization
+plot(g, 
+     vertex.size = 40,
+     vertex.color = "lightblue",
+     vertex.label.color = "black",
+     vertex.label.cex = 0.8,
+     edge.width = 2,
+     edge.color = "gray40",
+     layout = layout_with_fr(g))
+```
+
+#### Directed Vs Undirected Networks
+
+**Directed networks** (also called digraphs) have edges with a specific direction, indicating asymmetric relationships where the connection flows from one vertex to another. Examples include:
+
+- Email networks (sender → receiver)
+- Citation networks (citing paper → cited paper)  
+- Food webs (predator → prey)
+- Twitter follower networks (follower → followed)
+
+Here's an example of a directed network:
+
+```{r}
+#| label: directed-network-viz
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-cap: "Directed Email Communication Network"
+
+# Load required library
+library(igraph)
+
+# Create a directed network (e.g., email communication)
+edges <- data.frame(
+  from = c("Manager", "Manager", "Manager", "TeamLead1", "TeamLead1", 
+           "TeamLead2", "TeamLead2", "Dev1", "Dev2", "Dev3"),
+  to = c("TeamLead1", "TeamLead2", "Assistant", "Dev1", "Dev2", 
+         "Dev3", "Dev4", "TeamLead1", "TeamLead1", "TeamLead2")
+)
+
+# Create directed graph
+g <- graph_from_data_frame(edges, directed = TRUE)
+
+# Set vertex properties based on role
+V(g)$color <- c("purple", "orange", "orange", "lightgreen", 
+                "lightblue", "lightblue", "lightblue", "lightblue")
+V(g)$size <- c(45, 40, 40, 25, 25, 25, 40, 25)
+
+# Set edge properties
+E(g)$color <- "gray40"
+E(g)$width <- 2
+E(g)$arrow.size <- 0.7
+E(g)$arrow.mode <- 2  # arrows at the end
+
+# Set transparent background
+par(bg = "transparent", mar = c(1, 1, 1, 1))
+
+# Plot with hierarchical layout
+coords <- layout_with_sugiyama(g)$layout
+plot(g, 
+     layout = coords,
+     vertex.label.color = "black",
+     vertex.label.cex = 0.8,
+     edge.curved = 0.2,
+     main = "")
+
+# Add legend
+legend("bottomright", 
+       legend = c("Manager", "Team Lead", "Assistant", "Developer"), 
+       fill = c("purple", "orange", "lightgreen", "lightblue"),
+       cex = 0.7,
+       bg = "white")
+```
+
+**Undirected networks** have edges without direction, representing symmetric relationships where connections are mutual. Examples include:
+
+- Friendship networks (mutual friendships)
+- Co-authorship networks (collaborations)
+- Infrastructure networks (roads, power grids)
+- Protein interaction networks
+
+The choice between directed and undirected representation depends on whether the relationship being modeled is inherently asymmetric or symmetric.
+
+
+
+#### Two-mode Networks
+**Two-mode networks** (also called bipartite networks) contain two distinct types of vertices, and edges only connect vertices of different types. Examples include:
+
+- Actor-movie networks (actors connected to movies they appear in)
+- Author-paper networks (authors connected to papers they wrote)
+- Customer-product networks (customers connected to products they purchased)
+
+Here's an example of a two-mode purchasing network:
+
+```{r}
+#| label: two-mode-network-viz
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-cap: "Two-Mode Customer-Product Purchasing Network"
+
+# Load required library
+library(igraph)
+
+# Create a two-mode network (customers and products)
+# Edges represent purchases
+edges <- data.frame(
+  customer = c("Customer1", "Customer1", "Customer2", "Customer2", "Customer3", 
+               "Customer3", "Customer4", "Customer4", "Customer5"),
+  product = c("Laptop", "Mouse", "Laptop", "Keyboard", "Mouse", 
+              "Keyboard", "Monitor", "Keyboard", "Laptop")
+)
+
+# Create bipartite graph
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Set vertex types (TRUE for customers, FALSE for products)
+V(g)$type <- V(g)$name %in% unique(edges$customer)
+
+# Set colors and shapes based on type
+V(g)$color <- ifelse(V(g)$type, "lightcoral", "lightgreen")
+V(g)$shape <- ifelse(V(g)$type, "circle", "square")
+V(g)$size <- ifelse(V(g)$type, 50, 45)
+
+# Set transparent background
+par(bg = "transparent")
+
+# Create bipartite layout with increased separation
+coords <- layout_as_bipartite(g)
+# Put customers on the left, products on the right
+coords[V(g)$type, 1] <- -1.5
+coords[!V(g)$type, 1] <- 1.5
+
+# Get indices for customers and products
+customer_indices <- which(V(g)$type)
+product_indices <- which(!V(g)$type)
+
+# Space out customers evenly with larger gaps
+n_customers <- length(customer_indices)
+coords[customer_indices, 2] <- seq(-3, 3, length.out = n_customers)
+
+# Space out products
+n_products <- length(product_indices)
+coords[product_indices, 2] <- seq(-2.5, 2.5, length.out = n_products)
+
+# Plot with custom layout
+plot(g, 
+     layout = coords,
+     vertex.label.color = "black",
+     vertex.label.cex = 0.7,
+     edge.width = 2,
+     edge.color = "gray50",
+     main = "")
+```
+
+
+
+### Signed Networks
+**Signed networks** are networks where edges carry positive or negative values, representing different types of relationships:
+
+- Positive edges: friendship, alliance, cooperation
+- Negative edges: animosity, conflict, competition
+
+Signed networks are particularly useful for studying:
+
+- Social balance theory
+- Coalition formation
+- Conflict dynamics
+- Opinion polarization
+
+Here's an example of a signed social network like cooperative Vs. competitive ties among co-workers:
+
+```{r}
+#| label: signed-network-viz
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-cap: "Signed Social Network with Positive and Negative Relationships"
+
+# Load required library
+library(igraph)
+
+# Create a signed network with positive and negative edges
+edges <- data.frame(
+  from = c("Alice", "Alice", "Bob", "Bob", "Charlie", "David", "Emma", "Emma", "Frank"),
+  to = c("Bob", "Charlie", "Charlie", "David", "David", "Emma", "Frank", "Alice", "Charlie"),
+  sign = c(1, 1, -1, 1, -1, 1, -1, 1, -1)  # 1 = positive, -1 = negative
+)
+
+# Create graph
+g <- graph_from_data_frame(edges, directed = FALSE)
+E(g)$sign <- edges$sign
+
+# Set edge colors based on sign
+E(g)$color <- ifelse(E(g)$sign > 0, "forestgreen", "firebrick")
+E(g)$lty <- ifelse(E(g)$sign > 0, 1, 2)  # solid for positive, dashed for negative
+E(g)$width <- 2.5
+
+# Set vertex properties
+V(g)$color <- "lightyellow"
+V(g)$size <- 40
+
+# Set transparent background
+par(bg = "transparent")
+
+# Plot with Fruchterman-Reingold layout
+plot(g, 
+     layout = layout_with_fr(g),
+     vertex.label.color = "black",
+     vertex.label.cex = 0.9,
+     edge.curved = 0.2,
+     main = "")
+
+# Add legend
+legend("topright", 
+       legend = c("Cooperation", "Competition"), 
+       col = c("forestgreen", "firebrick"), 
+       lty = c(1, 2), 
+       lwd = 2.5,
+       bg = "white",
+       cex = 0.8)
+```
+
+### Weighted vs Unweighted Networks
+
+#### Weighted Networks
+**Weighted networks** have edges with numerical values (weights) representing the strength, frequency, or capacity of connections. Examples include:
+
+- Communication networks (number of messages exchanged)
+- Transportation networks (traffic volume or distance)
+- Neural networks (synaptic strength)
+- Financial networks (transaction amounts)
+
+Here's an example of a weighted communication network:
+
+```{r}
+#| label: weighted-network-viz
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-cap: "Weighted Communication Network (Edge Width = Message Volume)"
+
+# Load required library
+library(igraph)
+
+# Create a weighted network (e.g., email communication)
+edges <- data.frame(
+  from = c("Alice", "Alice", "Bob", "Bob", "Charlie", "David", "Emma", "Frank"),
+  to = c("Bob", "Charlie", "Charlie", "David", "Emma", "Emma", "Frank", "Alice"),
+  weight = c(15, 5, 8, 20, 3, 12, 25, 7)  # Number of messages
+)
+
+# Create graph
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Set edge properties
+E(g)$weight <- edges$weight
+E(g)$width <- E(g)$weight / 3  # Scale for visualization
+E(g)$color <- "gray60"
+
+# Set vertex properties
+V(g)$color <- "lightblue"
+V(g)$size <- 45
+
+# Set transparent background and margins
+par(bg = "transparent", mar = c(1, 1, 1, 1))
+
+# Store layout for consistent positioning
+coords <- layout_with_fr(g)
+coords <- norm_coords(coords, -1, 1, -1, 1)
+
+# Plot network first
+plot(g, 
+     layout = coords,
+     vertex.label.color = "black",
+     vertex.label.cex = 0.9,
+     edge.curved = 0,  # Straight edges for easier label placement
+     rescale = FALSE,
+     xlim = c(-1.2, 1.2),
+     ylim = c(-1.2, 1.2),
+     main = "")
+
+# Calculate edge midpoints
+el <- get.edgelist(g, names = FALSE)
+edge_coords <- matrix(0, nrow = ecount(g), ncol = 2)
+for (i in 1:ecount(g)) {
+  v1 <- el[i, 1]
+  v2 <- el[i, 2]
+  # Midpoint
+  edge_coords[i, 1] <- (coords[v1, 1] + coords[v2, 1]) / 2
+  edge_coords[i, 2] <- (coords[v1, 2] + coords[v2, 2]) / 2
+  # Offset perpendicular to edge
+  dx <- coords[v2, 1] - coords[v1, 1]
+  dy <- coords[v2, 2] - coords[v1, 2]
+  len <- sqrt(dx^2 + dy^2)
+  # Perpendicular vector
+  edge_coords[i, 1] <- edge_coords[i, 1] - 0.1 * dy/len
+  edge_coords[i, 2] <- edge_coords[i, 2] + 0.1 * dx/len
+}
+
+# Add labels
+text(edge_coords[,1], edge_coords[,2], 
+     labels = E(g)$weight, 
+     cex = 0.8, 
+     col = "darkred",
+     font = 2)
+```
+
+
+
+#### Unweighted Networks
+**Unweighted networks** (also called binary networks) have edges that simply indicate the presence or absence of a connection. All edges are treated equally, focusing on the topology rather than connection strength. These are simpler to analyze but may lose important information about relationship intensity.
+
+## Network Substructures
+
+### Dyads
+A **dyad** is the simplest possible network substructure, consisting of a pair of vertices and the possible edge(s) between them. In directed networks, dyads can be classified as:
+
+- Null dyad: no connection in either direction
+- Asymmetric dyad: connection in one direction only
+- Mutual/Reciprocal dyad: connections in both directions
+
+Dyadic analysis examines pairwise relationships and forms the foundation for understanding reciprocity and basic network patterns.
+
+Here's a visualization showing a dyad within a larger network:
+
+```{r}
+#| label: dyad-network-viz
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-cap: "Network with Emphasized Dyad (Alice-Bob)"
+
+# Load required library
+library(igraph)
+
+# Create a network with a dyad to highlight
+edges <- data.frame(
+  from = c("Alice", "Alice", "Bob", "Charlie", "David", "Emma", "Frank"),
+  to = c("Bob", "Charlie", "David", "David", "Emma", "Frank", "Charlie")
+)
+
+# Create graph
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Identify the dyad to emphasize (Alice-Bob)
+dyad_vertices <- c("Alice", "Bob")
+is_dyad_vertex <- V(g)$name %in% dyad_vertices
+is_dyad_edge <- (get.edgelist(g)[,1] %in% dyad_vertices) & 
+                (get.edgelist(g)[,2] %in% dyad_vertices)
+
+# Set vertex properties
+V(g)$color <- ifelse(is_dyad_vertex, "coral", "lightgray")
+V(g)$size <- ifelse(is_dyad_vertex, 35, 25)
+V(g)$label.color <- ifelse(is_dyad_vertex, "black", "darkgray")
+V(g)$label.cex <- ifelse(is_dyad_vertex, 1, 0.8)
+
+# Set edge properties
+E(g)$color <- ifelse(is_dyad_edge, "red", "gray80")
+E(g)$width <- ifelse(is_dyad_edge, 4, 1)
+
+# Set transparent background
+par(bg = "transparent", mar = c(1, 1, 1, 1))
+
+# Plot with layout that separates the dyad
+coords <- layout_with_fr(g)
+plot(g, 
+     layout = coords,
+     edge.curved = 0.2,
+     main = "")
+
+```
+
+### Triads
+A **triad** consists of three vertices and the possible edges among them. Triads are fundamental for understanding:
+
+- Transitivity ("friend of a friend" patterns)
+- Structural balance
+- Clustering tendencies
+- Local network motifs
+
+Here's a visualization showing a triad within a larger network:
+
+```{r}
+#| label: triad-network-viz
+#| message: false
+#| warning: false
+#| echo: false
+#| fig-cap: "Network with Emphasized Triad (Alice-Bob-Charlie)"
+
+# Load required library
+library(igraph)
+
+# Create a network with a triad to highlight
+edges <- data.frame(
+  from = c("Alice", "Alice", "Bob", "Charlie", "David", "Emma", "Frank", "George", "Hannah"),
+  to = c("Bob", "Charlie", "Charlie", "David", "Emma", "Frank", "George", "Hannah", "David")
+)
+
+# Create graph
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Identify the triad to emphasize (Alice-Bob-Charlie)
+triad_vertices <- c("Alice", "Bob", "Charlie")
+is_triad_vertex <- V(g)$name %in% triad_vertices
+
+# Get triad edges
+edge_list <- get.edgelist(g)
+is_triad_edge <- (edge_list[,1] %in% triad_vertices) & 
+                 (edge_list[,2] %in% triad_vertices)
+
+# Set vertex properties
+V(g)$color <- ifelse(is_triad_vertex, "lightcoral", "lightgray")
+V(g)$size <- ifelse(is_triad_vertex, 35, 25)
+V(g)$label.color <- ifelse(is_triad_vertex, "black", "darkgray")
+V(g)$label.cex <- ifelse(is_triad_vertex, 1, 0.8)
+
+# Set edge properties
+E(g)$color <- ifelse(is_triad_edge, "darkred", "gray80")
+E(g)$width <- ifelse(is_triad_edge, 3.5, 1)
+
+# Set transparent background
+par(bg = "transparent", mar = c(1, 1, 1, 1))
+
+# Plot with layout - increase node separation
+coords <- layout_with_fr(g)
+coords <- coords * 1.5  # Scale up coordinates for more separation
+plot(g, 
+     layout = coords,
+     edge.curved = 0.15,
+     main = "")
+
+```
+
+We will deal with these in weeks 4 and 5.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 1 – SMM638 - Network Analytics</title>
+<title>Network Analysis Glossary – SMM638 - Network Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../weeks/week-2/main.html" rel="next">
-<link href="../../project/finalCourseProject/main.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -74,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -248,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Week 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Network Analysis Glossary</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -360,7 +387,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-1/main.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../weeks/week-1/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 1</span></a>
   </div>
 </li>
@@ -447,11 +474,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
-  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
-  <li><a href="#perform" id="toc-perform" class="nav-link" data-scroll-target="#perform">Perform</a></li>
-  <li><a href="#ponder" id="toc-ponder" class="nav-link" data-scroll-target="#ponder">Ponder</a></li>
+  <li><a href="#core-network-components" id="toc-core-network-components" class="nav-link active" data-scroll-target="#core-network-components">Core Network Components</a>
+  <ul class="collapse">
+  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">Graph</a></li>
+  <li><a href="#vertices-nodes" id="toc-vertices-nodes" class="nav-link" data-scroll-target="#vertices-nodes">Vertices (Nodes)</a></li>
+  <li><a href="#edges-linksties" id="toc-edges-linksties" class="nav-link" data-scroll-target="#edges-linksties">Edges (Links/Ties)</a></li>
+  <li><a href="#network-relationship" id="toc-network-relationship" class="nav-link" data-scroll-target="#network-relationship">Network Relationship</a></li>
+  </ul></li>
+  <li><a href="#network-types" id="toc-network-types" class="nav-link" data-scroll-target="#network-types">Network Types</a>
+  <ul class="collapse">
+  <li><a href="#one-mode-vs-two-mode-networks" id="toc-one-mode-vs-two-mode-networks" class="nav-link" data-scroll-target="#one-mode-vs-two-mode-networks">One-mode vs Two-mode Networks</a></li>
+  <li><a href="#signed-networks" id="toc-signed-networks" class="nav-link" data-scroll-target="#signed-networks">Signed Networks</a></li>
+  <li><a href="#weighted-vs-unweighted-networks" id="toc-weighted-vs-unweighted-networks" class="nav-link" data-scroll-target="#weighted-vs-unweighted-networks">Weighted vs Unweighted Networks</a></li>
+  </ul></li>
+  <li><a href="#network-substructures" id="toc-network-substructures" class="nav-link" data-scroll-target="#network-substructures">Network Substructures</a>
+  <ul class="collapse">
+  <li><a href="#dyads" id="toc-dyads" class="nav-link" data-scroll-target="#dyads">Dyads</a></li>
+  <li><a href="#triads" id="toc-triads" class="nav-link" data-scroll-target="#triads">Triads</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -459,10 +499,10 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Week 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 1</h1>
-<p class="subtitle lead">Introduction to network analysis</p>
+<h1 class="title">Network Analysis Glossary</h1>
+<p class="subtitle lead">Essential Terms and Concepts</p>
 </div>
 
 
@@ -479,79 +519,228 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="prepare" class="level2">
-<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Introductory session, no preparation needed.</p>
-</div>
-</div>
+<section id="core-network-components" class="level2">
+<h2 class="anchored" data-anchor-id="core-network-components">Core Network Components</h2>
+<section id="graph" class="level3">
+<h3 class="anchored" data-anchor-id="graph">Graph</h3>
+<p>A <strong>graph</strong> is a mathematical structure consisting of a set of objects (vertices) and a set of connections (edges) between pairs of these objects. In network analysis, graphs provide the fundamental framework for representing relationships and interactions between entities. Graphs can be directed (edges have direction) or undirected (edges have no inherent direction).</p>
+<p><span class="math display">\[
+G = {v, e}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[v = [v_1, v_2, ..., v_i, ... v_n]\]</span></p>
+<p>and</p>
+<p><span class="math display">\[e = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j), ..., (v_j, v_n)]\]</span></p>
 </section>
-<section id="participate" class="level2">
-<h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Introductory session, participation will not be assessed.</p>
-</div>
-</div>
-</section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Introductory session, no application exercise.</p>
-</div>
-</div>
-</section>
-<section id="perform" class="level2">
-<h2 class="anchored" data-anchor-id="perform">Perform</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Introductory session, no laboratory session.</p>
-</div>
-</div>
-</section>
-<section id="ponder" class="level2">
-<h2 class="anchored" data-anchor-id="ponder">Ponder</h2>
+<section id="vertices-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="vertices-nodes">Vertices (Nodes)</h3>
+<p><strong>Vertices</strong> (also called nodes) are the fundamental units or entities in a network. They represent the objects being studied, such as:</p>
 <ul>
-<li><a href="../../weeks/week-1/network_terms.html">Key Network Analysis Concepts</a> - Essential terms and concepts in network analysis</li>
-<li>Network Analysis: What Is It? (in Moodle, “Case Studies” section)</li>
-<li>RBC: Social Network Analysis (in Moodle, “Case Studies” section)</li>
+<li>People in social networks</li>
+<li>Computers in technological networks</li>
+<li>Proteins in biological networks</li>
+<li>Cities in transportation networks</li>
 </ul>
+<p>Each vertex can have attributes (e.g., age, location, type) that provide additional information about the entity it represents.</p>
+</section>
+<section id="edges-linksties" class="level3">
+<h3 class="anchored" data-anchor-id="edges-linksties">Edges (Links/Ties)</h3>
+<p><strong>Edges</strong> (also called links or ties) represent the connections or relationships between vertices. They encode the interactions, associations, or dependencies between entities in the network. Edges can have various properties:</p>
+<ul>
+<li>Direction (directed vs.&nbsp;undirected)</li>
+<li>Weight (strength of connection)</li>
+<li>Type (multiple relationship types)</li>
+<li>Temporal information (when the connection exists)</li>
+</ul>
+</section>
+<section id="network-relationship" class="level3">
+<h3 class="anchored" data-anchor-id="network-relationship">Network Relationship</h3>
+<p>A <strong>network relationship</strong> defines the nature of connections between entities in a network. These relationships determine:</p>
+<ul>
+<li>What constitutes a connection (e.g., friendship, communication, transaction)</li>
+<li>How connections are measured or identified</li>
+<li>Whether relationships are symmetric or asymmetric</li>
+<li>The meaning and interpretation of network patterns</li>
+</ul>
+</section>
+</section>
+<section id="network-types" class="level2">
+<h2 class="anchored" data-anchor-id="network-types">Network Types</h2>
+<section id="one-mode-vs-two-mode-networks" class="level3">
+<h3 class="anchored" data-anchor-id="one-mode-vs-two-mode-networks">One-mode vs Two-mode Networks</h3>
+<section id="one-mode-networks" class="level4">
+<h4 class="anchored" data-anchor-id="one-mode-networks">One-mode Networks</h4>
+<p><strong>One-mode networks</strong> (also called unipartite networks) contain only one type of vertex. All connections occur between vertices of the same type. Examples include:</p>
+<ul>
+<li>Friendship networks (people connected to people)</li>
+<li>Citation networks (papers citing papers)</li>
+<li>Trade networks (countries trading with countries)</li>
+</ul>
+<p>Here’s an example of creating a one-mode network visualization concerning a collaboration network among five co-workers:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="network_terms_files/figure-html/one-mode-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Example of a one-mode collaboration network showing connections between individuals</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="directed-vs-undirected-networks" class="level4">
+<h4 class="anchored" data-anchor-id="directed-vs-undirected-networks">Directed Vs Undirected Networks</h4>
+<p><strong>Directed networks</strong> (also called digraphs) have edges with a specific direction, indicating asymmetric relationships where the connection flows from one vertex to another. Examples include:</p>
+<ul>
+<li>Email networks (sender → receiver)</li>
+<li>Citation networks (citing paper → cited paper)<br>
+</li>
+<li>Food webs (predator → prey)</li>
+<li>Twitter follower networks (follower → followed)</li>
+</ul>
+<p>Here’s an example of a directed network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="network_terms_files/figure-html/directed-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Directed Email Communication Network</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Undirected networks</strong> have edges without direction, representing symmetric relationships where connections are mutual. Examples include:</p>
+<ul>
+<li>Friendship networks (mutual friendships)</li>
+<li>Co-authorship networks (collaborations)</li>
+<li>Infrastructure networks (roads, power grids)</li>
+<li>Protein interaction networks</li>
+</ul>
+<p>The choice between directed and undirected representation depends on whether the relationship being modeled is inherently asymmetric or symmetric.</p>
+</section>
+<section id="two-mode-networks" class="level4">
+<h4 class="anchored" data-anchor-id="two-mode-networks">Two-mode Networks</h4>
+<p><strong>Two-mode networks</strong> (also called bipartite networks) contain two distinct types of vertices, and edges only connect vertices of different types. Examples include:</p>
+<ul>
+<li>Actor-movie networks (actors connected to movies they appear in)</li>
+<li>Author-paper networks (authors connected to papers they wrote)</li>
+<li>Customer-product networks (customers connected to products they purchased)</li>
+</ul>
+<p>Here’s an example of a two-mode purchasing network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="network_terms_files/figure-html/two-mode-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Two-Mode Customer-Product Purchasing Network</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="signed-networks" class="level3">
+<h3 class="anchored" data-anchor-id="signed-networks">Signed Networks</h3>
+<p><strong>Signed networks</strong> are networks where edges carry positive or negative values, representing different types of relationships:</p>
+<ul>
+<li>Positive edges: friendship, alliance, cooperation</li>
+<li>Negative edges: animosity, conflict, competition</li>
+</ul>
+<p>Signed networks are particularly useful for studying:</p>
+<ul>
+<li>Social balance theory</li>
+<li>Coalition formation</li>
+<li>Conflict dynamics</li>
+<li>Opinion polarization</li>
+</ul>
+<p>Here’s an example of a signed social network like cooperative Vs. competitive ties among co-workers:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="network_terms_files/figure-html/signed-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Signed Social Network with Positive and Negative Relationships</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="weighted-vs-unweighted-networks" class="level3">
+<h3 class="anchored" data-anchor-id="weighted-vs-unweighted-networks">Weighted vs Unweighted Networks</h3>
+<section id="weighted-networks" class="level4">
+<h4 class="anchored" data-anchor-id="weighted-networks">Weighted Networks</h4>
+<p><strong>Weighted networks</strong> have edges with numerical values (weights) representing the strength, frequency, or capacity of connections. Examples include:</p>
+<ul>
+<li>Communication networks (number of messages exchanged)</li>
+<li>Transportation networks (traffic volume or distance)</li>
+<li>Neural networks (synaptic strength)</li>
+<li>Financial networks (transaction amounts)</li>
+</ul>
+<p>Here’s an example of a weighted communication network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="network_terms_files/figure-html/weighted-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Weighted Communication Network (Edge Width = Message Volume)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="unweighted-networks" class="level4">
+<h4 class="anchored" data-anchor-id="unweighted-networks">Unweighted Networks</h4>
+<p><strong>Unweighted networks</strong> (also called binary networks) have edges that simply indicate the presence or absence of a connection. All edges are treated equally, focusing on the topology rather than connection strength. These are simpler to analyze but may lose important information about relationship intensity.</p>
+</section>
+</section>
+</section>
+<section id="network-substructures" class="level2">
+<h2 class="anchored" data-anchor-id="network-substructures">Network Substructures</h2>
+<section id="dyads" class="level3">
+<h3 class="anchored" data-anchor-id="dyads">Dyads</h3>
+<p>A <strong>dyad</strong> is the simplest possible network substructure, consisting of a pair of vertices and the possible edge(s) between them. In directed networks, dyads can be classified as:</p>
+<ul>
+<li>Null dyad: no connection in either direction</li>
+<li>Asymmetric dyad: connection in one direction only</li>
+<li>Mutual/Reciprocal dyad: connections in both directions</li>
+</ul>
+<p>Dyadic analysis examines pairwise relationships and forms the foundation for understanding reciprocity and basic network patterns.</p>
+<p>Here’s a visualization showing a dyad within a larger network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="network_terms_files/figure-html/dyad-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Network with Emphasized Dyad (Alice-Bob)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="triads" class="level3">
+<h3 class="anchored" data-anchor-id="triads">Triads</h3>
+<p>A <strong>triad</strong> consists of three vertices and the possible edges among them. Triads are fundamental for understanding:</p>
+<ul>
+<li>Transitivity (“friend of a friend” patterns)</li>
+<li>Structural balance</li>
+<li>Clustering tendencies</li>
+<li>Local network motifs</li>
+</ul>
+<p>Here’s a visualization showing a triad within a larger network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="network_terms_files/figure-html/triad-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Network with Emphasized Triad (Alice-Bob-Charlie)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We will deal with these in weeks 4 and 5.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -967,18 +1156,6 @@ Note
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../project/finalCourseProject/main.html" class="pagination-link" aria-label="Final course project">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Final course project</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../weeks/week-2/main.html" class="pagination-link" aria-label="Week 2">
-        <span class="nav-page-text">Week 2</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

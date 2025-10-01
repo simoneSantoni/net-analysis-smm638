@@ -3,6 +3,47 @@ title: "Network Analytics－SMM638"
 subtitle: "Materials on network theory, methods, and tools for analytics students"
 ---
 
-## Welcome to SMM638
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 8 
+#| eval: true
+
+# Load the igraph library
+library(igraph)
+
+# Set seed for reproducibility
+set.seed(42)
+
+# Create a sample network using preferential attachment model
+g <- barabasi.game(n = 100, power = 1, m = 2, directed = FALSE)
+
+# Calculate node properties
+degree_centrality <- degree(g)
+betweenness_centrality <- betweenness(g)
+
+# Create a green to magenta color palette based on degree centrality
+green_to_magenta <- colorRampPalette(c("#B3B4B4", "#EC49FF"))(max(degree_centrality))
+node_colors <- green_to_magenta[degree_centrality]
+
+# Set node sizes based on betweenness centrality
+node_sizes <- 5 + (betweenness_centrality / max(betweenness_centrality)) * 25
+
+# Set transparent background
+par(bg = NA)
+
+# Create the visualization
+plot(g, 
+     vertex.color = node_colors,
+     vertex.size = node_sizes,
+     vertex.label = NA,
+     edge.width = 0.5,
+     edge.color = rgb(0.5, 0.5, 0.5, 0.3),
+     layout = layout_with_fr(g),
+     )
+```
 
 
