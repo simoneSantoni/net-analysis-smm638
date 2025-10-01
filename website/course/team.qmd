@@ -7,14 +7,14 @@ title: "Teaching team"
 :::: {.columns}
 
 ::: {.column width="50%"}
-![](../imgs/sl.jpeg){width="300px"}
+![](../imgs/ey.jpeg){width="300px"}
 
-### Sangseok (Joseph) Lee
+### Erwanghao (Derek) Yu
 **Instructor**
 
 Ph.D. student in strategy at the Bayes Business School
 
-📬 [Sangseok.Lee@bayes.ac.uk](Sangseok.Lee@bayes.ac.uk)
+📬 [Erwanghao.Yu@bayes.ac.uk](Sangseok.Lee@bayes.ac.uk)
 :::
 
 ::: {.column width="50%"}

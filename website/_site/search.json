@@ -15,7 +15,7 @@
     "href": "weeks/week-7/main.html",
     "title": "Week 7",
     "section": "",
-    "text": "Week 7 Content\nContent coming soon.",
+    "text": "Note\n\n\n\nContent coming soon.",
     "crumbs": [
       "Weekly materials",
       "Week 7"
@@ -26,7 +26,7 @@
     "href": "weeks/week-5/main.html",
     "title": "Week 5",
     "section": "",
-    "text": "Week 5 Content\nContent coming soon.",
+    "text": "Note\n\n\n\nContent coming soon.",
     "crumbs": [
       "Weekly materials",
       "Week 5"
@@ -77,124 +77,124 @@
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html",
-    "href": "project/midTermProject/main.html",
-    "title": "Mid-Term Project",
+    "objectID": "project/finalCourseProject/main.html",
+    "href": "project/finalCourseProject/main.html",
+    "title": "Final Course Project",
     "section": "",
-    "text": "The mid-term project is a team-based analysis of a real-world network dataset. This project allows you to apply network analytics concepts learned in the first half of the course to solve practical business problems.\n\n\n\nFormat: Team project (3-4 students)\nWeight: 40% of final grade\nDuration: 3 weeks\nDue Date: Week 6\nDeliverables: Report + Code + Presentation",
+    "text": "Content coming soon.",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#project-overview",
-    "href": "project/midTermProject/main.html#project-overview",
-    "title": "Mid-Term Project",
+    "objectID": "project/finalCourseProject/main.html#project-overview",
+    "href": "project/finalCourseProject/main.html#project-overview",
+    "title": "Final Course Project",
     "section": "",
-    "text": "The mid-term project is a team-based analysis of a real-world network dataset. This project allows you to apply network analytics concepts learned in the first half of the course to solve practical business problems.\n\n\n\nFormat: Team project (3-4 students)\nWeight: 40% of final grade\nDuration: 3 weeks\nDue Date: Week 6\nDeliverables: Report + Code + Presentation",
+    "text": "The final project is an individual, comprehensive network analysis that demonstrates mastery of concepts covered throughout the course. This capstone project allows you to pursue your own research interests while applying advanced network analytics techniques.\n\n\n\nFormat: Individual project\nWeight: 40% of final grade\nDuration: 4 weeks\nDue Date: Week 11 (one week after course ends)\nDeliverables: Research paper + Code + Presentation",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#project-objectives",
-    "href": "project/midTermProject/main.html#project-objectives",
-    "title": "Mid-Term Project",
+    "objectID": "project/finalCourseProject/main.html#project-objectives",
+    "href": "project/finalCourseProject/main.html#project-objectives",
+    "title": "Final Course Project",
     "section": "Project Objectives",
-    "text": "Project Objectives\nBy completing this project, you will:\n\nApply network analysis techniques to real data\nInterpret network metrics in business context\nCollaborate effectively in a team setting\nCommunicate technical findings to non-technical audiences\nDevelop reproducible analysis workflows",
+    "text": "Project Objectives\nThe final project should:\n\nDemonstrate comprehensive understanding of network analytics\nApply advanced techniques beyond basic centrality measures\nGenerate original insights from network data\nContribute meaningful analysis to your field of interest\nShowcase technical and analytical skills to potential employers",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#dataset-options",
-    "href": "project/midTermProject/main.html#dataset-options",
-    "title": "Mid-Term Project",
-    "section": "Dataset Options",
-    "text": "Dataset Options\nChoose one of the following datasets or propose your own:\n\n1. Corporate Board Networks\n\nData: Board member connections across S&P 500 companies\nQuestions: How do board interlocks affect corporate governance? Which companies are most central?\nSource: BoardEx or manually collected\n\n\n\n2. Product Co-purchase Networks\n\nData: Amazon product co-purchase data\nQuestions: How can we improve recommendation systems? What product communities exist?\nSource: Stanford Network Dataset\n\n\n\n3. Social Media Influence Networks\n\nData: Twitter follower networks or Reddit interactions\nQuestions: Who are the key influencers? How does information spread?\nSource: Twitter API or Reddit dataset\n\n\n\n4. Supply Chain Networks\n\nData: Supplier-manufacturer relationships\nQuestions: What are the vulnerabilities? How to optimize the network?\nSource: Industry databases or case studies\n\n\n\n5. Custom Dataset\n\nPropose your own dataset related to your interests\nMust be approved by instructor by Week 3",
+    "objectID": "project/finalCourseProject/main.html#project-scope",
+    "href": "project/finalCourseProject/main.html#project-scope",
+    "title": "Final Course Project",
+    "section": "Project Scope",
+    "text": "Project Scope\n\nOption A: Original Research\nConduct original network analysis research on a topic of your choice: - Formulate research questions - Collect or identify appropriate data - Apply advanced methods - Generate novel insights\n\n\nOption B: Replication & Extension\nReplicate and extend published network analysis: - Choose a published paper - Replicate key findings - Extend with new data or methods - Provide critical evaluation\n\n\nOption C: Business Case Study\nDevelop an in-depth business case using network analytics: - Identify real business problem - Collect relevant network data - Provide actionable recommendations - Include implementation plan",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#project-requirements",
-    "href": "project/midTermProject/main.html#project-requirements",
-    "title": "Mid-Term Project",
-    "section": "Project Requirements",
-    "text": "Project Requirements\n\nTechnical Requirements\nYour analysis must include:\n\nData Collection & Preprocessing\n\nDocument data sources\nClean and structure network data\nHandle missing values appropriately\n\nExploratory Network Analysis\n\nBasic network statistics\nDegree distributions\nNetwork visualization\n\nCentrality Analysis\n\nCalculate at least 3 centrality measures\nCompare and interpret results\nIdentify key nodes\n\nAdvanced Analysis (choose at least one)\n\nCommunity detection\nCore-periphery analysis\nNetwork motifs\nTemporal analysis (if applicable)\n\nStatistical Testing\n\nTest at least one hypothesis\nUse appropriate methods (CUG, permutation tests)\nReport significance levels\n\n\n\n\nDeliverables\n\n1. Written Report (2,500 words)\nStructure: - Executive Summary (250 words) - Introduction - Problem statement and objectives - Literature Review - Brief context from academic/industry sources - Methodology - Data collection and analytical approach - Results - Key findings with visualizations - Business Implications - Actionable recommendations - Limitations - Data and methodological constraints - References - Academic and industry sources\n\n\n2. Code Repository\n\nWell-documented R/Python code\nREADME file with instructions\nRequirements file for dependencies\nData files or download instructions\n\n\n\n3. Presentation (15 minutes)\n\n10 minutes presentation\n5 minutes Q&A\nFocus on business insights\nMaximum 10 slides",
+    "objectID": "project/finalCourseProject/main.html#requirements",
+    "href": "project/finalCourseProject/main.html#requirements",
+    "title": "Final Course Project",
+    "section": "Requirements",
+    "text": "Requirements\n\nTechnical Requirements\nYour project must demonstrate proficiency in:\n\nData Management\n\nData collection/acquisition\nCleaning and preprocessing\nHandling large-scale networks (if applicable)\n\nCore Analysis (all required)\n\nMultiple centrality measures\nNetwork structure analysis\nStatistical testing/validation\n\nAdvanced Techniques (choose at least 2)\n\nCommunity detection algorithms\nNetwork dynamics/evolution\nMultilayer/multiplex networks\nNetwork regression models (QAP, ERGM)\nMachine learning on networks\nLink prediction\nDiffusion/contagion models\n\nVisualization\n\nStatic network visualizations\nInteractive visualizations (bonus)\nClear, publication-quality figures\n\n\n\n\nDeliverables\n\n1. Research Paper (3,000-4,000 words)\nStructure:\n\nAbstract (200 words)\n\nProblem statement\nMethods used\nKey findings\nImplications\n\nIntroduction (500 words)\n\nBackground and motivation\nResearch questions/objectives\nContribution statement\n\nLiterature Review (700 words)\n\nTheoretical framework\nRelated work\nResearch gap\n\nMethodology (800 words)\n\nData description\nNetwork construction\nAnalytical approaches\nValidation methods\n\nResults (1,000 words)\n\nDescriptive statistics\nMain findings\nRobustness checks\n\nDiscussion (600 words)\n\nInterpretation of results\nTheoretical implications\nPractical applications\nLimitations\n\nConclusion (200 words)\n\nSummary of findings\nFuture research\n\nReferences (not included in word count)\n\nMinimum 20 academic sources\nProper citation format\n\n\n\n\n2. Technical Appendix\n\nComplete, documented code\nReproducibility instructions\nAdditional figures/tables\nSensitivity analyses\n\n\n\n3. GitHub Repository\nRequired elements:\nproject/\n├── README.md          # Project overview and instructions\n├── data/             \n│   ├── raw/          # Original data files\n│   └── processed/    # Cleaned data\n├── code/\n│   ├── 01_data_prep.R/py\n│   ├── 02_analysis.R/py\n│   └── 03_visualization.R/py\n├── results/\n│   ├── figures/\n│   └── tables/\n├── docs/\n│   └── paper.pdf\n└── requirements.txt   # Dependencies\n\n\n4. Presentation (10 minutes)\n\n8 minutes presentation\n2 minutes Q&A\nFocus on key insights\nDemonstrate technical competence",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#grading-rubric",
-    "href": "project/midTermProject/main.html#grading-rubric",
-    "title": "Mid-Term Project",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\n\n\n\n\n\n\n\n\nComponent\nWeight\nCriteria\n\n\n\n\nTechnical Analysis\n30%\nCorrect implementation, appropriate methods, code quality\n\n\nBusiness Insights\n30%\nRelevance, actionability, strategic thinking\n\n\nReport Quality\n20%\nStructure, clarity, visualizations\n\n\nPresentation\n10%\nClarity, engagement, Q&A handling\n\n\nTeamwork\n10%\nEqual contribution, peer evaluation",
+    "objectID": "project/finalCourseProject/main.html#grading-criteria",
+    "href": "project/finalCourseProject/main.html#grading-criteria",
+    "title": "Final Course Project",
+    "section": "Grading Criteria",
+    "text": "Grading Criteria\n\n\n\n\n\n\n\n\nComponent\nWeight\nDetailed Criteria\n\n\n\n\nResearch Quality\n30%\nOriginality, rigor, contribution\n\n\nTechnical Proficiency\n25%\nCode quality, method selection, implementation\n\n\nAnalysis & Insights\n25%\nDepth of analysis, validity of conclusions\n\n\nCommunication\n15%\nWriting clarity, visualization quality\n\n\nPresentation\n5%\nOral communication, slide design\n\n\n\n\nGrading Rubric Details\nA (85-100%): Exceptional work suitable for conference presentation - Novel insights or methodological contribution - Flawless technical execution - Publication-quality writing and visualizations\nB (70-84%): Strong work meeting all requirements - Solid application of advanced techniques - Clear business/research value - Minor technical or presentation issues\nC (60-69%): Adequate work with room for improvement - Basic requirements met - Limited use of advanced techniques - Some technical or analytical errors\nD (50-59%): Below expectations - Missing key requirements - Significant technical errors - Poor communication",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#timeline",
-    "href": "project/midTermProject/main.html#timeline",
-    "title": "Mid-Term Project",
+    "objectID": "project/finalCourseProject/main.html#project-ideas-by-industry",
+    "href": "project/finalCourseProject/main.html#project-ideas-by-industry",
+    "title": "Final Course Project",
+    "section": "Project Ideas by Industry",
+    "text": "Project Ideas by Industry\n\nFinance\n\nInterbank lending networks\nStock correlation networks\nCryptocurrency transaction networks\nCorporate ownership structures\n\n\n\nMarketing\n\nBrand association networks\nCustomer journey networks\nInfluencer marketing effectiveness\nWord-of-mouth propagation\n\n\n\nTechnology\n\nOpen source collaboration networks\nPatent citation networks\nAPI dependency networks\nDeveloper community analysis\n\n\n\nHealthcare\n\nDisease comorbidity networks\nHospital referral networks\nDrug interaction networks\nResearch collaboration networks\n\n\n\nConsulting/Strategy\n\nIndustry ecosystem mapping\nCompetitive dynamics networks\nKnowledge transfer networks\nM&A target identification",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#timeline",
+    "href": "project/finalCourseProject/main.html#timeline",
+    "title": "Final Course Project",
     "section": "Timeline",
-    "text": "Timeline\n\n\n\nWeek\nMilestone\n\n\n\n\nWeek 3\nForm teams, select dataset\n\n\nWeek 4\nData collection, initial analysis\n\n\nWeek 5\nComplete analysis, write report\n\n\nWeek 6\nSubmit report, presentations",
+    "text": "Timeline\n\n\n\nWeek\nMilestone\nDeliverable\n\n\n\n\nWeek 7\nTopic selection\n1-page proposal\n\n\nWeek 8\nData collection\nData summary\n\n\nWeek 9\nInitial analysis\nProgress report\n\n\nWeek 10\nComplete analysis\nDraft sections\n\n\nWeek 11\nFinal submission\nAll materials",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#tips-for-success",
-    "href": "project/midTermProject/main.html#tips-for-success",
-    "title": "Mid-Term Project",
-    "section": "Tips for Success",
-    "text": "Tips for Success\n\n\n\n\n\n\nBest Practices\n\n\n\n\nStart Early: Data collection often takes longer than expected\nDivide Work: Assign clear roles and responsibilities\nMeet Regularly: Schedule weekly team meetings\nVersion Control: Use Git for collaborative coding\nBackup Data: Keep multiple copies of your dataset\nPractice Presentation: Rehearse before the final day",
+    "objectID": "project/finalCourseProject/main.html#resources-support",
+    "href": "project/finalCourseProject/main.html#resources-support",
+    "title": "Final Course Project",
+    "section": "Resources & Support",
+    "text": "Resources & Support\n\nDatasets\n\nNetwork Repository\nStanford Large Network Dataset Collection\nKONECT\nIndustry-specific databases (access via library)\n\n\n\nTools & Libraries\n\nAdvanced R packages: RSiena, tergm, latentnet\nPython libraries: graph-tool, networkit, stellar-graph\nVisualization: Gephi, Cytoscape, D3.js\n\n\n\nWriting Resources\n\nAcademic Phrasebank\nLibrary writing center consultations\nPrevious high-scoring projects (on Moodle)\n\n\n\nOffice Hours\n\nExtended office hours during project period\nIndividual project consultations available\nBook via email with specific questions",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#common-pitfalls-to-avoid",
-    "href": "project/midTermProject/main.html#common-pitfalls-to-avoid",
-    "title": "Mid-Term Project",
-    "section": "Common Pitfalls to Avoid",
-    "text": "Common Pitfalls to Avoid\n\nOver-complicating: Focus on clear insights over complex methods\nPoor Visualizations: Ensure networks are readable and meaningful\nIgnoring Business Context: Always relate findings to practical applications\nUnequal Contribution: Use project management tools to track work",
+    "objectID": "project/finalCourseProject/main.html#frequently-asked-questions",
+    "href": "project/finalCourseProject/main.html#frequently-asked-questions",
+    "title": "Final Course Project",
+    "section": "Frequently Asked Questions",
+    "text": "Frequently Asked Questions\nQ: Can I use my workplace data? A: Yes, with proper anonymization and company permission.\nQ: How much code should I include? A: Core analysis in appendix, full code in GitHub.\nQ: Can I collaborate with others? A: Discussion yes, but all work must be individual.\nQ: What if my analysis doesn’t show significant results? A: Negative results are valid if properly analyzed and discussed.",
     "crumbs": [
       "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
-    "objectID": "project/midTermProject/main.html#resources",
-    "href": "project/midTermProject/main.html#resources",
-    "title": "Mid-Term Project",
-    "section": "Resources",
-    "text": "Resources\n\nTemplates\n\nReport Template\nPresentation Template\n\n\n\nExample Projects\n\nPrevious year’s best projects (available on Moodle)\nPublished network analysis case studies\n\n\n\nSupport\n\nOffice hours for project consultation\nMoodle forum for questions\nPeer review sessions in Week 5",
+    "objectID": "project/finalCourseProject/main.html#submission-checklist",
+    "href": "project/finalCourseProject/main.html#submission-checklist",
+    "title": "Final Course Project",
+    "section": "Submission Checklist",
+    "text": "Submission Checklist\n\nResearch paper (PDF)\nGitHub repository link\nPresentation slides\nData availability statement\nCode runs without errors\nREADME with clear instructions\nAll sources properly cited\nSubmitted before deadline\n\n\n\n\n\n\n\n\nImportant Notes\n\n\n\n\nStart early - Data issues always arise\nBackup everything - Use version control\nTest reproducibility - Have a peer try running your code\nProofread carefully - Consider professional editing\nPractice presentation - Time yourself\n\nLate submissions: 10% penalty per day\n\n\n\n\n\n\n\n\nSuccess Tips\n\n\n\nThe best projects often: - Address real problems - Use creative data sources - Apply methods appropriately - Tell compelling stories - Include excellent visualizations",
     "crumbs": [
       "Project",
-      "Mid-term project"
-    ]
-  },
-  {
-    "objectID": "project/midTermProject/main.html#submission-instructions",
-    "href": "project/midTermProject/main.html#submission-instructions",
-    "title": "Mid-Term Project",
-    "section": "Submission Instructions",
-    "text": "Submission Instructions\n\nReport: PDF format via Moodle\nCode: GitHub repository link\nPresentation: PowerPoint/PDF via Moodle\nPeer Evaluation: Complete online form\n\nAll materials due by 23:59 on Friday of Week 6.\n\n\n\n\n\n\n\nAcademic Integrity\n\n\n\nAll team members must contribute equally. Plagiarism or unequal contribution will result in individual penalties. Use of AI tools must be disclosed in methodology section.",
-    "crumbs": [
-      "Project",
-      "Mid-term project"
+      "Final course project"
     ]
   },
   {
@@ -216,7 +216,7 @@
     "href": "course/syllabus.html",
     "title": "Course Syllabus",
     "section": "",
-    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nAnalyze network evolution and dynamics over time\nModel network formation and behavior\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes: - Understand fundamental network concepts and terminology - Differentiate between network types (one-mode, two-mode, signed, weighted) - Set up R/Python environment for network analysis - Perform basic network data management and visualization\nTopics Covered: - Network elements: nodes, edges, dyads, triads - Real-world network examples (economic, organizational, social) - Taxonomy of network measures (node, meso, macro levels) - Introduction to network analysis software\nCase Study: Royal Caribbean Cruises (RCB) network strategy\n\n\n\nWeeks 2-3\nLearning Outcomes: - Calculate and interpret various centrality measures - Understand when to apply different centrality metrics - Analyze the relationship between centrality and outcomes - Implement centrality algorithms in R/Python\nTopics Covered: - Degree centrality and its variants - Closeness centrality and information flow - Betweenness centrality and brokerage - Eigenvector centrality and influence - PageRank and its applications - Local clustering coefficient\nCase Study: Identifying the right social media influencer\n\n\n\nWeeks 4-5\nLearning Outcomes: - Analyze dyadic patterns and relationships - Understand triadic closure and its implications - Test network hypotheses using CUG tests - Model homophily and its effects\nTopics Covered: - Reciprocity and mutuality - Homophily and selection effects - Triadic census and transitivity - Conditional Uniform Graph (CUG) tests - Network evolution patterns\nCase Study: Soundcloud user recommendation networks\n\n\n\nWeeks 7-8\nLearning Outcomes: - Measure network cohesion at multiple levels - Apply community detection algorithms - Interpret community structure for business insights - Implement blockmodeling techniques\nTopics Covered: - Network density and cohesion metrics - Core-periphery structures - Community detection algorithms (Louvain, modularity optimization) - Topicmodeling and role analysis - Hierarchical clustering of networks\nCase Study: Customer segmentation in the beer market\n\n\n\nWeeks 9-10\nLearning Outcomes: - Analyze the strategic value of network positions - Understand closure vs. brokerage trade-offs - Apply network insights to career development - Design network interventions\nTopics Covered: - Structural holes and brokerage opportunities - Network closure and social capital - The strength of weak ties - Network position and innovation - Career implications of network structure\nCase Study: Employee creativity and innovation networks",
+    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nModel network formation and behavior\nAnalyze network evolution and dynamics over time\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes:\n\nUnderstand fundamental network concepts and terminology\nDifferentiate between network types (one-mode, two-mode, signed, weighted)\nSet up R/Python environment for network analysis\nPerform basic network data management and visualization\n\nTopics Covered:\n\nNetwork elements: nodes, edges, dyads, triads\nReal-world network examples (economic, organizational, social)\nTaxonomy of network measures (node, meso, macro levels)\nIntroduction to network analysis software\n\nCase Study: RCB: Social network analysis\n\n\n\nWeeks 2-3\nLearning Outcomes:\n\nCalculate and interpret various centrality measures\nUnderstand when to apply different centrality metrics\nAnalyze the relationship between centrality and outcomes\nImplement centrality algorithms in R/Python\n\nTopics Covered:\n\nDegree centrality and its variants\nCloseness centrality and information flow\nBetweenness centrality and brokerage\nEigenvector centrality and influence\nPageRank and its applications\nLocal clustering coefficient\n\nCase Study: Who is the right influencer? A social network analysis\n\n\n\nWeeks 4-5\nLearning Outcomes:\n\nAnalyze dyadic patterns and relationships\nModel homophily and its effects\nUnderstand triadic closure and its implications\nNetwork evolution patterns\nTest network hypotheses\n\nTopics Covered:\n\nReciprocity and mutuality\nHomophily and selection effects\nTriadic census and transitivity\nConditional Uniform Graph (CUG) tests\n\nCase Study: Feeding Souncloud’s recommendation system with social network data\n\n\n\nWeeks 7-8\nLearning Outcomes:\n\nMeasure network cohesion at multiple levels\nApply community detection algorithms\nInterpret community structure for business insights\nImplement blockmodeling techniques\n\nTopics Covered:\n\nNetwork density and cohesion metrics\nCore-periphery structures\nCommunity detection algorithms (Louvain, modularity optimization)\nBlockmoldeling\n\nCase Study: Profiling beer enthusiasts at BeerAdvocate\n\n\n\nWeeks 9-10\nLearning Outcomes:\n\nAnalyze the strategic value of network positions\nUnderstand closure vs. brokerage trade-offs\nApply network insights to career development\nDesign network interventions\n\nTopics Covered:\n\nStructural holes and brokerage opportunities\nNetwork closure and social capital\nThe strength of weak ties\nNetwork position and innovation\nCareer implications of network structure\n\nCase Study: Network position and employee performance in Silico’s R&D lab",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -227,18 +227,7 @@
     "href": "course/syllabus.html#course-overview",
     "title": "Course Syllabus",
     "section": "",
-    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nAnalyze network evolution and dynamics over time\nModel network formation and behavior\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes: - Understand fundamental network concepts and terminology - Differentiate between network types (one-mode, two-mode, signed, weighted) - Set up R/Python environment for network analysis - Perform basic network data management and visualization\nTopics Covered: - Network elements: nodes, edges, dyads, triads - Real-world network examples (economic, organizational, social) - Taxonomy of network measures (node, meso, macro levels) - Introduction to network analysis software\nCase Study: Royal Caribbean Cruises (RCB) network strategy\n\n\n\nWeeks 2-3\nLearning Outcomes: - Calculate and interpret various centrality measures - Understand when to apply different centrality metrics - Analyze the relationship between centrality and outcomes - Implement centrality algorithms in R/Python\nTopics Covered: - Degree centrality and its variants - Closeness centrality and information flow - Betweenness centrality and brokerage - Eigenvector centrality and influence - PageRank and its applications - Local clustering coefficient\nCase Study: Identifying the right social media influencer\n\n\n\nWeeks 4-5\nLearning Outcomes: - Analyze dyadic patterns and relationships - Understand triadic closure and its implications - Test network hypotheses using CUG tests - Model homophily and its effects\nTopics Covered: - Reciprocity and mutuality - Homophily and selection effects - Triadic census and transitivity - Conditional Uniform Graph (CUG) tests - Network evolution patterns\nCase Study: Soundcloud user recommendation networks\n\n\n\nWeeks 7-8\nLearning Outcomes: - Measure network cohesion at multiple levels - Apply community detection algorithms - Interpret community structure for business insights - Implement blockmodeling techniques\nTopics Covered: - Network density and cohesion metrics - Core-periphery structures - Community detection algorithms (Louvain, modularity optimization) - Topicmodeling and role analysis - Hierarchical clustering of networks\nCase Study: Customer segmentation in the beer market\n\n\n\nWeeks 9-10\nLearning Outcomes: - Analyze the strategic value of network positions - Understand closure vs. brokerage trade-offs - Apply network insights to career development - Design network interventions\nTopics Covered: - Structural holes and brokerage opportunities - Network closure and social capital - The strength of weak ties - Network position and innovation - Career implications of network structure\nCase Study: Employee creativity and innovation networks",
-    "crumbs": [
-      "Course Information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course/syllabus.html#module-schedule",
-    "href": "course/syllabus.html#module-schedule",
-    "title": "Course Syllabus",
-    "section": "Module Schedule",
-    "text": "Module Schedule\n\n📅 Weekly Breakdown\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nKey Concepts\nCase Study\n\n\n\n\n1\nIntroduction to Network Analytics\nNetwork fundamentals, types, terminology\nRCB Network Analysis\n\n\n2\nNetwork Centrality I\nDegree, closeness centrality\nSocial Media Influencers\n\n\n3\nNetwork Centrality II\nBetweenness, eigenvector, PageRank\n-\n\n\n4\nDyadic Analysis\nReciprocity, homophily, assortativity\nSoundcloud Recommendations\n\n\n5\nTriadic Analysis & CUG\nTransitivity, triadic closure, testing\n-\n\n\n6\nReading Week\n-\n-\n\n\n7\nNetwork Cohesion\nDensity, components, k-cores\nBeer Market Segmentation\n\n\n8\nCommunity Detection\nModularity, clustering algorithms\n-\n\n\n9\nNetwork Position\nStructural holes, brokerage, closure\nEmployee Creativity\n\n\n10\nAdvanced Topics\nDynamic networks, multilayer networks\n-\n\n\n\n\n\n🔧 Block 1: Introduction to Network Analytics\nWeek 1\nLearning Outcomes: - Understand fundamental network concepts and terminology - Differentiate between network types (one-mode, two-mode, signed, weighted) - Set up R/Python environment for network analysis - Perform basic network data management and visualization\nTopics Covered: - Network elements: nodes, edges, dyads, triads - Real-world network examples (economic, organizational, social) - Taxonomy of network measures (node, meso, macro levels) - Introduction to network analysis software\nCase Study: Royal Caribbean Cruises (RCB) network strategy\n\n\n🎯 Block 2: Network Centrality\nWeeks 2-3\nLearning Outcomes: - Calculate and interpret various centrality measures - Understand when to apply different centrality metrics - Analyze the relationship between centrality and outcomes - Implement centrality algorithms in R/Python\nTopics Covered: - Degree centrality and its variants - Closeness centrality and information flow - Betweenness centrality and brokerage - Eigenvector centrality and influence - PageRank and its applications - Local clustering coefficient\nCase Study: Identifying the right social media influencer\n\n\n🔄 Block 3: Dyads, Triads, and Network Dynamics\nWeeks 4-5\nLearning Outcomes: - Analyze dyadic patterns and relationships - Understand triadic closure and its implications - Test network hypotheses using CUG tests - Model homophily and its effects\nTopics Covered: - Reciprocity and mutuality - Homophily and selection effects - Triadic census and transitivity - Conditional Uniform Graph (CUG) tests - Network evolution patterns\nCase Study: Soundcloud user recommendation networks\n\n\n🏘️ Block 4: Network Cohesion and Communities\nWeeks 7-8\nLearning Outcomes: - Measure network cohesion at multiple levels - Apply community detection algorithms - Interpret community structure for business insights - Implement blockmodeling techniques\nTopics Covered: - Network density and cohesion metrics - Core-periphery structures - Community detection algorithms (Louvain, modularity optimization) - Blockmodeling and role analysis - Hierarchical clustering of networks\nCase Study: Customer segmentation in the beer market\n\n\n💡 Block 5: Network Position and Performance\nWeeks 9-10\nLearning Outcomes: - Analyze the strategic value of network positions - Understand closure vs. brokerage trade-offs - Apply network insights to career development - Design network interventions\nTopics Covered: - Structural holes and brokerage opportunities - Network closure and social capital - The strength of weak ties - Network position and innovation - Career implications of network structure\nCase Study: Employee creativity and innovation networks",
+    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nModel network formation and behavior\nAnalyze network evolution and dynamics over time\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes:\n\nUnderstand fundamental network concepts and terminology\nDifferentiate between network types (one-mode, two-mode, signed, weighted)\nSet up R/Python environment for network analysis\nPerform basic network data management and visualization\n\nTopics Covered:\n\nNetwork elements: nodes, edges, dyads, triads\nReal-world network examples (economic, organizational, social)\nTaxonomy of network measures (node, meso, macro levels)\nIntroduction to network analysis software\n\nCase Study: RCB: Social network analysis\n\n\n\nWeeks 2-3\nLearning Outcomes:\n\nCalculate and interpret various centrality measures\nUnderstand when to apply different centrality metrics\nAnalyze the relationship between centrality and outcomes\nImplement centrality algorithms in R/Python\n\nTopics Covered:\n\nDegree centrality and its variants\nCloseness centrality and information flow\nBetweenness centrality and brokerage\nEigenvector centrality and influence\nPageRank and its applications\nLocal clustering coefficient\n\nCase Study: Who is the right influencer? A social network analysis\n\n\n\nWeeks 4-5\nLearning Outcomes:\n\nAnalyze dyadic patterns and relationships\nModel homophily and its effects\nUnderstand triadic closure and its implications\nNetwork evolution patterns\nTest network hypotheses\n\nTopics Covered:\n\nReciprocity and mutuality\nHomophily and selection effects\nTriadic census and transitivity\nConditional Uniform Graph (CUG) tests\n\nCase Study: Feeding Souncloud’s recommendation system with social network data\n\n\n\nWeeks 7-8\nLearning Outcomes:\n\nMeasure network cohesion at multiple levels\nApply community detection algorithms\nInterpret community structure for business insights\nImplement blockmodeling techniques\n\nTopics Covered:\n\nNetwork density and cohesion metrics\nCore-periphery structures\nCommunity detection algorithms (Louvain, modularity optimization)\nBlockmoldeling\n\nCase Study: Profiling beer enthusiasts at BeerAdvocate\n\n\n\nWeeks 9-10\nLearning Outcomes:\n\nAnalyze the strategic value of network positions\nUnderstand closure vs. brokerage trade-offs\nApply network insights to career development\nDesign network interventions\n\nTopics Covered:\n\nStructural holes and brokerage opportunities\nNetwork closure and social capital\nThe strength of weak ties\nNetwork position and innovation\nCareer implications of network structure\n\nCase Study: Network position and employee performance in Silico’s R&D lab",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -249,7 +238,7 @@
     "href": "course/syllabus.html#assessment-strategy",
     "title": "Course Syllabus",
     "section": "Assessment Strategy",
-    "text": "Assessment Strategy\n\n📊 Assessment Components\n\n\nClass Participation (20%) - Active engagement in discussions - Quality of questions and insights - Peer collaboration - In-class exercises\nOngoing throughout term\n\n\nMid-Term Project (40%) - Team-based analysis (3-4 students) - Real-world dataset - Technical implementation - Business recommendations - 15-minute presentation\nDue: Week 6\n\n\nFinal Project (40%) - Individual research project - Original network analysis - Comprehensive report (3,000 words) - Code documentation - 10-minute presentation\nDue: Week 11\n\n\n\n\n📝 Assessment Criteria\nAll assessments will be evaluated on:\n\nTechnical Proficiency (30%)\n\nCorrect implementation of methods\nCode quality and documentation\nAppropriate use of techniques\n\nAnalytical Rigor (30%)\n\nSound methodology\nProper interpretation of results\nStatistical validity\n\nBusiness Relevance (30%)\n\nClear problem definition\nActionable insights\nStrategic recommendations\n\nCommunication (10%)\n\nClear presentation\nEffective visualizations\nProfessional writing",
+    "text": "Assessment Strategy\n\n📊 Assessment Components\n\n\nClass Participation (10%)\n\nActive engagement in discussions\nQuality of questions and insights\nIn-class case discussion contribution\n\nOngoing throughout term\n\n\nMid-Term Project (50%)\n\nTeam-based analysis (3-4 students)\nReal-world dataset\nTechnical implementation\nBusiness recommendations\n15-minute presentation\n\nDue: November 10, 2025\n\n\nFinal Project (40%)\n\nIndividual research project\nBusiness case requesting network analysis\nExecutive summary of case discussion (1,000 words)\n10-minute case discussion, job interview style\n\nDue: November 28, 2025\n\n\n\n\n📝 Assessment Criteria\nAll assessments will be evaluated on:\n\nTechnical Proficiency (30%)\n\nCorrect implementation of methods\nCode quality and documentation\nAppropriate use of techniques\n\nAnalytical Rigor (30%)\n\nSound methodology\nProper interpretation of results\nStatistical validity\n\nBusiness Relevance (30%)\n\nClear problem definition\nActionable insights\nStrategic recommendations\n\nCommunication (10%)\n\nClear presentation\nEffective visualizations\nProfessional writing",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -260,7 +249,7 @@
     "href": "course/syllabus.html#course-resources",
     "title": "Course Syllabus",
     "section": "Course Resources",
-    "text": "Course Resources\n\n💻 Technical Requirements\n\n\n\n\n\n\nEssential Software Setup\n\n\n\nProgramming Environments: - R (version 4.3+) with RStudio - Python (version 3.9+) with Jupyter Lab/Notebooks - Git for version control\nR Package Ecosystem:\n# Core packages\ninstall.packages(c(\"igraph\", \"tidygraph\", \"ggraph\"))\n\n# Statistical modeling\ninstall.packages(c(\"statnet\", \"ergm\", \"btergm\"))\n\n# Visualization\ninstall.packages(c(\"networkD3\", \"visNetwork\", \"graphlayouts\"))\n\n# Data manipulation\ninstall.packages(c(\"tidyverse\", \"data.table\"))\nPython Libraries:\n# Core libraries\npip install networkx pandas numpy matplotlib seaborn\n\n# Advanced analysis\npip install python-louvain community graph-tool\n\n# Interactive visualization\npip install plotly bokeh pyvis\n\n\n\n\n📚 Reading List\nCore Textbooks:\n\nNewman, M. (2018). Networks (2nd ed.). Oxford University Press.\n\nComprehensive mathematical treatment\nExcellent for understanding algorithms\n\nBorgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). Analyzing Social Networks (2nd ed.). SAGE.\n\nPractical, application-focused\nGood balance of theory and practice\n\nLuke, D. A. (2015). A User’s Guide to Network Analysis in R. Springer.\n\nR-specific implementation guide\nStep-by-step tutorials\n\n\nSupplementary Readings:\n\nBarabási, A. L. (2016). Network Science. Cambridge University Press. Free online\nJackson, M. O. (2019). The Human Network. Pantheon Books.\nWatts, D. J. (2003). Six Degrees: The Science of a Connected Age. Norton.\n\n\n\n🌐 Online Resources\nCourse Materials: - GitHub repository: github.com/simoneSantoni/net-analysis-smm638 - Moodle page with lectures and assignments - Slack workspace for discussions\nExternal Resources: - NetworkX Documentation - igraph R Tutorial - Awesome Network Analysis - INSNA - International Network for Social Network Analysis",
+    "text": "Course Resources\n\n💻 Technical Requirements\n\n\n\n\n\n\nEssential Software Setup\n\n\n\nProgramming Environments:\n\nR (version 4.3+) with RStudio\nPython (version 3.9+) with Spyder or Jupyter Lab/Notebooks\nGit for version control\n\nSample R Packages:\n# Core packages\ninstall.packages(c(\"igraph\", \"tidygraph\", \"ggraph\"))\n\n# Statistical modeling\ninstall.packages(c(\"statnet\", \"ergm\", \"btergm\"))\n\n# Visualization\ninstall.packages(c(\"networkD3\", \"visNetwork\", \"graphlayouts\"))\n\n# Data manipulation\ninstall.packages(c(\"tidyverse\"))\nSample Python Modules:\n# Data manipulation and computation\nconda install -c conda-forge numpy scipy matplotlib pandas \n\n# Network libraries\nconda install -c conda-forge networkx graph-tool\n\n# Interactive visualization\nconda install -c conda-forge plotly bokeh pyvis\n\n\nAlternatively, you can create the environment directly using the provided smm638.yaml file:\nconda env create -f smm638.yaml\nconda activate smm638\n\n\n📚 Reading List\nCore Textbooks:\n\nMenczer, F., Fortunato, S., & Davis, C. A. (2020). A first course in network science. Cambridge University Press.\n\nComprehensive yet accessible survey of network science notions and tools\nExcellent first course in network analysis book\n\nNewman, M. (2018). Networks (2nd ed.). Oxford University Press.\n\nComprehensive mathematical treatment of network problems\nExcellent for understanding algorithms\nFor the braves…\n\nEasley, D., & Kleinberg, J. (2010). Networks, crowds, and markets: Reasoning about a highly connected world. Cambridge: Cambridge University Press.\n\nFocus on economic applications of network concepts and methods\nPlenty of examples\nVariety of organizational and market issues, from auctions to social influence in digital platforms\n\nRawlings, C. M., Smith, J. A., Moody, J., & McFarland, D. A. (2023). Network analysis: integrating social network theory, method, and application with R. Cambridge University Press.\n\nFocus on social networks\nExcellent survey of network notions and methods\nOnline companion with R applications\n\nCarpenter, M. (2009). An executive’s primer on the strategy of social networks. Business Expert Press.\n\nAn executive’s perspective on networks\nA very actionable framework to maximize the value of your network\n\n\nSupplementary Readings:\n\nBarabási, A. L. (2014). Linked: How Everything Is Connected to Everything Else and What It Means for Business, Science, and Everyday Life. Basic Books.\nJackson, M. O. (2019). The Human Network. Pantheon Books.\nWatts, D. J. (2003). Six Degrees: The Science of a Connected Age. Norton.\n\n\n\n🌐 Online Resources\nCourse Materials: - GitHub repository: github.com/simoneSantoni/net-analysis-smm638 - Moodle page with lectures and assignments - Slack workspace for discussions\nExternal Resources: - Awesome Network Analysis",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -271,7 +260,7 @@
     "href": "course/syllabus.html#course-policies",
     "title": "Course Syllabus",
     "section": "Course Policies",
-    "text": "Course Policies\n\n📋 Attendance and Participation\n\nAttendance: Mandatory for all sessions (80% minimum required)\nPunctuality: Sessions start promptly; late arrivals disrupt learning\nPreparation: Complete readings and exercises before class\nEngagement: Active participation expected in all activities\n\n\n\n🤝 Collaboration Policy\n\nTeamwork: Encouraged for designated group projects\nIndividual Work: Must be completed independently\nCode Sharing: Allowed for learning, not for assignments\nCitation: Always attribute sources and collaborators\n\n\n\n📧 Communication\n\n\n\n\n\n\nGetting Help\n\n\n\n\nMoodle Forum: First point of contact for content questions\n\nResponse time: 24-48 hours on weekdays\n\nOffice Hours: Wednesdays 14:00-16:00 (by appointment)\n\nBook via: simone.santoni.1@city.ac.uk\n\nEmail: For personal/administrative matters only\n\nUse clear subject lines: “SMM638 - [Topic]”\n\nPeer Support: Join study groups on Slack\n\n\n\n\n\n♿ Accessibility and Accommodations\nStudents requiring accommodations should: 1. Contact Student Services for documentation 2. Notify instructor within first two weeks 3. Discuss specific needs and arrangements\nAll accommodations will be made in accordance with university policies.\n\n\n📝 Academic Integrity\n\nPlagiarism: Zero tolerance; all work must be original\nCollaboration: Clearly acknowledge all contributions\nData Sources: Properly cite all datasets used\nCode Attribution: Credit all borrowed/adapted code\n\nViolations will be reported to the Academic Misconduct Committee.\n\n\n🔄 Syllabus Modifications\nThis syllabus may be adjusted to: - Accommodate class progress - Incorporate current events/examples - Respond to student feedback\nAll changes will be announced via Moodle with one week’s notice.\n\n\n\n\n\n\n\nReady to Start?\n\n\n\nNetwork Analytics is a powerful lens for understanding our interconnected world. This module will challenge you to think structurally about business problems and equip you with tools to uncover hidden patterns in complex systems.\nLet’s build networks together! 🌐",
+    "text": "Course Policies\n\n📋 Attendance and Participation\n\nAttendance: Mandatory for all sessions\nPunctuality: Sessions start promptly; late arrivals disrupt learning\nPreparation: Complete readings and exercises before class\nEngagement: Active participation expected in all activities\n\n\n\n🤝 Collaboration Policy\n\nTeamwork: Encouraged for designated group projects\nIndividual Work: Must be completed independently\nCode Sharing: Allowed for learning, not for assignments\nCitation: Always attribute sources and collaborators\nAI: Disclose how you use LLMs to get your work done\n\n\n\n📧 Communication\n\n\n\n\n\n\nGetting Help\n\n\n\n\nMoodle Forum: First point of contact for content questions\n\nResponse time: 24-48 hours on weekdays\n\nOffice Hours: Wednesdays 14:00-16:00 (by appointment)\n\nBook via: simone.santoni.1@city.ac.uk\n\nEmail: For personal/administrative matters only\n\nUse clear subject lines: “SMM638 - [Topic]”\n\nPeer Support: Join study groups on Slack\n\n\n\n\n\n♿ Accessibility and Accommodations\nStudents requiring accommodations should:\n\nContact Student Services for documentation\nNotify instructor within first two weeks\nDiscuss specific needs and arrangements\n\nAll accommodations will be made in accordance with university policies.\n\n\n📝 Academic Integrity\n\nPlagiarism: Zero tolerance; all work must be original\nCollaboration: Clearly acknowledge all contributions\nData Sources: Properly cite all datasets used\nCode Attribution: Credit all borrowed/adapted code (included LLM generated code)\n\nViolations will be reported to the Academic Misconduct Committee.\n\n\n🔄 Syllabus Modifications\nThis syllabus may be adjusted to:\n\nAccommodate class progress\nIncorporate current events/examples\nRespond to student feedback\n\nAll changes will be announced via Moodle with one week’s notice.\n\n\n\n\n\n\n\nReady to Start?\n\n\n\nNetwork Analytics is a powerful lens for understanding our interconnected world. This module will challenge you to think structurally about business problems and equip you with tools to uncover hidden patterns in complex systems.\nLet’s build networks together! 🌐",
     "crumbs": [
       "Course Information",
       "Syllabus"
@@ -282,7 +271,7 @@
     "href": "course/schedule.html",
     "title": "Course Schedule",
     "section": "",
-    "text": "📅 Weekly Breakdown\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nPrepare\nSlides\nCase\nLab\nProject\n\n\n\n\n1\nIntroduction to network analytics\n\n\n\n\n\n\n\n2\nNetwork Centrality\n\n\n\n\n\n\n\n3\n…\n\n\n\n\n\n\n\n4\nDyads, triads, and network dynamics\n\n\n\n\n\n\n\n5\n…\n\n\n\n\n\n\n\n6\nMid-term project\n\n\n\n\n\n\n\n7\nNetwork cohesion and communities\n\n\n\n\n\n\n\n8\n…\n\n\n\n\n\n\n\n9\nNetwork position and performance\n\n\n\n\n\n\n\n10\n…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdjustments and Updates\n\n\n\nThis schedule is subject to change based on:\n\nClass progress and needs\nUniversity calendar changes\nUnexpected closures\n\nAll changes will be announced in class and posted on the course website.",
+    "text": "📅 Weekly Breakdown\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nPrepare\nSlides\nCase\nLab\nProject\n\n\n\n\n1\nIntroduction to network analytics\n\n\n\n\n\n\n\n2\nNetwork Centrality\n📚\n🙾\n\n\n\n\n\n3\n(cont’ed)\n\n\n🙋\n\n\n\n\n4\nDyads, triads, and network dynamics\n📚\n🙾\n\n🥼\n\n\n\n5\n(cont’ed)\n\n\n🙋\n🥼\n\n\n\n6\nMid-term project\n\n\n\n\n💻\n\n\n7\nNetwork cohesion and communities\n📚\n🙾\n\n🥼\n\n\n\n8\n(cont’ed)\n\n\n🙋\n🥼\n\n\n\n9\nNetwork position and performance\n📚\n🙾\n\n\n\n\n\n10\n(cont’ed)\n\n\n🙋\n\n💻\n\n\n\n\n\n\n\n\n\nAdjustments and Updates\n\n\n\nThis schedule is subject to change based on:\n\nClass progress and needs\nUniversity calendar changes\nUnexpected closures\n\nAll changes will be announced in class and posted on the course website.",
     "crumbs": [
       "Course Information",
       "Schedule"
@@ -496,7 +485,7 @@
     "href": "course/team.html",
     "title": "Teaching team",
     "section": "",
-    "text": "Sangseok (Joseph) Lee\nInstructor\nPh.D. student in strategy at the Bayes Business School\n📬 Sangseok.Lee@bayes.ac.uk\n\n\n\n\nSimone Santoni\nModule leader\nAssociate professor in strategy at the Bayes Business School\n📬 Simone.Santoni.1@city.ac.uk",
+    "text": "Erwanghao (Derek) Yu\nInstructor\nPh.D. student in strategy at the Bayes Business School\n📬 Erwanghao.Yu@bayes.ac.uk\n\n\n\n\nSimone Santoni\nModule leader\nAssociate professor in strategy at the Bayes Business School\n📬 Simone.Santoni.1@city.ac.uk",
     "crumbs": [
       "Course Information",
       "Teaching team"
@@ -580,146 +569,146 @@
     ]
   },
   {
-    "objectID": "notes/xyz.html",
-    "href": "notes/xyz.html",
+    "objectID": "notes/overview.html",
+    "href": "notes/overview.html",
     "title": "Supplemental Notes",
     "section": "",
     "text": "This section contains supplemental materials and advanced topics not covered in the main course.\n\n\n\nAdvanced network models (ERGM, TERGM)\nMachine learning on graphs\nTemporal network analysis\nMultilayer networks\nNetwork sampling techniques\n\nCheck back for updates throughout the course.",
     "crumbs": [
       "Supplemental notes",
-      "XYZ"
+      "Overview"
     ]
   },
   {
-    "objectID": "notes/xyz.html#additional-resources",
-    "href": "notes/xyz.html#additional-resources",
+    "objectID": "notes/overview.html#additional-resources",
+    "href": "notes/overview.html#additional-resources",
     "title": "Supplemental Notes",
     "section": "",
     "text": "This section contains supplemental materials and advanced topics not covered in the main course.\n\n\n\nAdvanced network models (ERGM, TERGM)\nMachine learning on graphs\nTemporal network analysis\nMultilayer networks\nNetwork sampling techniques\n\nCheck back for updates throughout the course.",
     "crumbs": [
       "Supplemental notes",
-      "XYZ"
+      "Overview"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html",
-    "href": "project/finalCourseProject/main.html",
-    "title": "Final Course Project",
+    "objectID": "project/midTermProject/main.html",
+    "href": "project/midTermProject/main.html",
+    "title": "Mid-Term Project",
     "section": "",
-    "text": "The final project is an individual, comprehensive network analysis that demonstrates mastery of concepts covered throughout the course. This capstone project allows you to pursue your own research interests while applying advanced network analytics techniques.\n\n\n\nFormat: Individual project\nWeight: 40% of final grade\nDuration: 4 weeks\nDue Date: Week 11 (one week after course ends)\nDeliverables: Research paper + Code + Presentation",
+    "text": "Content coming soon.",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#project-overview",
-    "href": "project/finalCourseProject/main.html#project-overview",
-    "title": "Final Course Project",
+    "objectID": "project/midTermProject/main.html#project-overview",
+    "href": "project/midTermProject/main.html#project-overview",
+    "title": "Mid-Term Project",
     "section": "",
-    "text": "The final project is an individual, comprehensive network analysis that demonstrates mastery of concepts covered throughout the course. This capstone project allows you to pursue your own research interests while applying advanced network analytics techniques.\n\n\n\nFormat: Individual project\nWeight: 40% of final grade\nDuration: 4 weeks\nDue Date: Week 11 (one week after course ends)\nDeliverables: Research paper + Code + Presentation",
+    "text": "The mid-term project is a team-based analysis of a real-world network dataset. This project allows you to apply network analytics concepts learned in the first half of the course to solve practical business problems.\n\n\n\nFormat: Team project (3-4 students)\nWeight: 40% of final grade\nDuration: 3 weeks\nDue Date: Week 6\nDeliverables: Report + Code + Presentation",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#project-objectives",
-    "href": "project/finalCourseProject/main.html#project-objectives",
-    "title": "Final Course Project",
+    "objectID": "project/midTermProject/main.html#project-objectives",
+    "href": "project/midTermProject/main.html#project-objectives",
+    "title": "Mid-Term Project",
     "section": "Project Objectives",
-    "text": "Project Objectives\nThe final project should:\n\nDemonstrate comprehensive understanding of network analytics\nApply advanced techniques beyond basic centrality measures\nGenerate original insights from network data\nContribute meaningful analysis to your field of interest\nShowcase technical and analytical skills to potential employers",
+    "text": "Project Objectives\nBy completing this project, you will:\n\nApply network analysis techniques to real data\nInterpret network metrics in business context\nCollaborate effectively in a team setting\nCommunicate technical findings to non-technical audiences\nDevelop reproducible analysis workflows",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#project-scope",
-    "href": "project/finalCourseProject/main.html#project-scope",
-    "title": "Final Course Project",
-    "section": "Project Scope",
-    "text": "Project Scope\n\nOption A: Original Research\nConduct original network analysis research on a topic of your choice: - Formulate research questions - Collect or identify appropriate data - Apply advanced methods - Generate novel insights\n\n\nOption B: Replication & Extension\nReplicate and extend published network analysis: - Choose a published paper - Replicate key findings - Extend with new data or methods - Provide critical evaluation\n\n\nOption C: Business Case Study\nDevelop an in-depth business case using network analytics: - Identify real business problem - Collect relevant network data - Provide actionable recommendations - Include implementation plan",
+    "objectID": "project/midTermProject/main.html#dataset-options",
+    "href": "project/midTermProject/main.html#dataset-options",
+    "title": "Mid-Term Project",
+    "section": "Dataset Options",
+    "text": "Dataset Options\nChoose one of the following datasets or propose your own:\n\n1. Corporate Board Networks\n\nData: Board member connections across S&P 500 companies\nQuestions: How do board interlocks affect corporate governance? Which companies are most central?\nSource: BoardEx or manually collected\n\n\n\n2. Product Co-purchase Networks\n\nData: Amazon product co-purchase data\nQuestions: How can we improve recommendation systems? What product communities exist?\nSource: Stanford Network Dataset\n\n\n\n3. Social Media Influence Networks\n\nData: Twitter follower networks or Reddit interactions\nQuestions: Who are the key influencers? How does information spread?\nSource: Twitter API or Reddit dataset\n\n\n\n4. Supply Chain Networks\n\nData: Supplier-manufacturer relationships\nQuestions: What are the vulnerabilities? How to optimize the network?\nSource: Industry databases or case studies\n\n\n\n5. Custom Dataset\n\nPropose your own dataset related to your interests\nMust be approved by instructor by Week 3",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#requirements",
-    "href": "project/finalCourseProject/main.html#requirements",
-    "title": "Final Course Project",
-    "section": "Requirements",
-    "text": "Requirements\n\nTechnical Requirements\nYour project must demonstrate proficiency in:\n\nData Management\n\nData collection/acquisition\nCleaning and preprocessing\nHandling large-scale networks (if applicable)\n\nCore Analysis (all required)\n\nMultiple centrality measures\nNetwork structure analysis\nStatistical testing/validation\n\nAdvanced Techniques (choose at least 2)\n\nCommunity detection algorithms\nNetwork dynamics/evolution\nMultilayer/multiplex networks\nNetwork regression models (QAP, ERGM)\nMachine learning on networks\nLink prediction\nDiffusion/contagion models\n\nVisualization\n\nStatic network visualizations\nInteractive visualizations (bonus)\nClear, publication-quality figures\n\n\n\n\nDeliverables\n\n1. Research Paper (3,000-4,000 words)\nStructure:\n\nAbstract (200 words)\n\nProblem statement\nMethods used\nKey findings\nImplications\n\nIntroduction (500 words)\n\nBackground and motivation\nResearch questions/objectives\nContribution statement\n\nLiterature Review (700 words)\n\nTheoretical framework\nRelated work\nResearch gap\n\nMethodology (800 words)\n\nData description\nNetwork construction\nAnalytical approaches\nValidation methods\n\nResults (1,000 words)\n\nDescriptive statistics\nMain findings\nRobustness checks\n\nDiscussion (600 words)\n\nInterpretation of results\nTheoretical implications\nPractical applications\nLimitations\n\nConclusion (200 words)\n\nSummary of findings\nFuture research\n\nReferences (not included in word count)\n\nMinimum 20 academic sources\nProper citation format\n\n\n\n\n2. Technical Appendix\n\nComplete, documented code\nReproducibility instructions\nAdditional figures/tables\nSensitivity analyses\n\n\n\n3. GitHub Repository\nRequired elements:\nproject/\n├── README.md          # Project overview and instructions\n├── data/             \n│   ├── raw/          # Original data files\n│   └── processed/    # Cleaned data\n├── code/\n│   ├── 01_data_prep.R/py\n│   ├── 02_analysis.R/py\n│   └── 03_visualization.R/py\n├── results/\n│   ├── figures/\n│   └── tables/\n├── docs/\n│   └── paper.pdf\n└── requirements.txt   # Dependencies\n\n\n4. Presentation (10 minutes)\n\n8 minutes presentation\n2 minutes Q&A\nFocus on key insights\nDemonstrate technical competence",
+    "objectID": "project/midTermProject/main.html#project-requirements",
+    "href": "project/midTermProject/main.html#project-requirements",
+    "title": "Mid-Term Project",
+    "section": "Project Requirements",
+    "text": "Project Requirements\n\nTechnical Requirements\nYour analysis must include:\n\nData Collection & Preprocessing\n\nDocument data sources\nClean and structure network data\nHandle missing values appropriately\n\nExploratory Network Analysis\n\nBasic network statistics\nDegree distributions\nNetwork visualization\n\nCentrality Analysis\n\nCalculate at least 3 centrality measures\nCompare and interpret results\nIdentify key nodes\n\nAdvanced Analysis (choose at least one)\n\nCommunity detection\nCore-periphery analysis\nNetwork motifs\nTemporal analysis (if applicable)\n\nStatistical Testing\n\nTest at least one hypothesis\nUse appropriate methods (CUG, permutation tests)\nReport significance levels\n\n\n\n\nDeliverables\n\n1. Written Report (2,500 words)\nStructure: - Executive Summary (250 words) - Introduction - Problem statement and objectives - Literature Review - Brief context from academic/industry sources - Methodology - Data collection and analytical approach - Results - Key findings with visualizations - Business Implications - Actionable recommendations - Limitations - Data and methodological constraints - References - Academic and industry sources\n\n\n2. Code Repository\n\nWell-documented R/Python code\nREADME file with instructions\nRequirements file for dependencies\nData files or download instructions\n\n\n\n3. Presentation (15 minutes)\n\n10 minutes presentation\n5 minutes Q&A\nFocus on business insights\nMaximum 10 slides",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#grading-criteria",
-    "href": "project/finalCourseProject/main.html#grading-criteria",
-    "title": "Final Course Project",
-    "section": "Grading Criteria",
-    "text": "Grading Criteria\n\n\n\n\n\n\n\n\nComponent\nWeight\nDetailed Criteria\n\n\n\n\nResearch Quality\n30%\nOriginality, rigor, contribution\n\n\nTechnical Proficiency\n25%\nCode quality, method selection, implementation\n\n\nAnalysis & Insights\n25%\nDepth of analysis, validity of conclusions\n\n\nCommunication\n15%\nWriting clarity, visualization quality\n\n\nPresentation\n5%\nOral communication, slide design\n\n\n\n\nGrading Rubric Details\nA (85-100%): Exceptional work suitable for conference presentation - Novel insights or methodological contribution - Flawless technical execution - Publication-quality writing and visualizations\nB (70-84%): Strong work meeting all requirements - Solid application of advanced techniques - Clear business/research value - Minor technical or presentation issues\nC (60-69%): Adequate work with room for improvement - Basic requirements met - Limited use of advanced techniques - Some technical or analytical errors\nD (50-59%): Below expectations - Missing key requirements - Significant technical errors - Poor communication",
+    "objectID": "project/midTermProject/main.html#grading-rubric",
+    "href": "project/midTermProject/main.html#grading-rubric",
+    "title": "Mid-Term Project",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n\n\n\n\n\n\n\n\nComponent\nWeight\nCriteria\n\n\n\n\nTechnical Analysis\n30%\nCorrect implementation, appropriate methods, code quality\n\n\nBusiness Insights\n30%\nRelevance, actionability, strategic thinking\n\n\nReport Quality\n20%\nStructure, clarity, visualizations\n\n\nPresentation\n10%\nClarity, engagement, Q&A handling\n\n\nTeamwork\n10%\nEqual contribution, peer evaluation",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#project-ideas-by-industry",
-    "href": "project/finalCourseProject/main.html#project-ideas-by-industry",
-    "title": "Final Course Project",
-    "section": "Project Ideas by Industry",
-    "text": "Project Ideas by Industry\n\nFinance\n\nInterbank lending networks\nStock correlation networks\nCryptocurrency transaction networks\nCorporate ownership structures\n\n\n\nMarketing\n\nBrand association networks\nCustomer journey networks\nInfluencer marketing effectiveness\nWord-of-mouth propagation\n\n\n\nTechnology\n\nOpen source collaboration networks\nPatent citation networks\nAPI dependency networks\nDeveloper community analysis\n\n\n\nHealthcare\n\nDisease comorbidity networks\nHospital referral networks\nDrug interaction networks\nResearch collaboration networks\n\n\n\nConsulting/Strategy\n\nIndustry ecosystem mapping\nCompetitive dynamics networks\nKnowledge transfer networks\nM&A target identification",
-    "crumbs": [
-      "Project",
-      "Final course project"
-    ]
-  },
-  {
-    "objectID": "project/finalCourseProject/main.html#timeline",
-    "href": "project/finalCourseProject/main.html#timeline",
-    "title": "Final Course Project",
+    "objectID": "project/midTermProject/main.html#timeline",
+    "href": "project/midTermProject/main.html#timeline",
+    "title": "Mid-Term Project",
     "section": "Timeline",
-    "text": "Timeline\n\n\n\nWeek\nMilestone\nDeliverable\n\n\n\n\nWeek 7\nTopic selection\n1-page proposal\n\n\nWeek 8\nData collection\nData summary\n\n\nWeek 9\nInitial analysis\nProgress report\n\n\nWeek 10\nComplete analysis\nDraft sections\n\n\nWeek 11\nFinal submission\nAll materials",
+    "text": "Timeline\n\n\n\nWeek\nMilestone\n\n\n\n\nWeek 3\nForm teams, select dataset\n\n\nWeek 4\nData collection, initial analysis\n\n\nWeek 5\nComplete analysis, write report\n\n\nWeek 6\nSubmit report, presentations",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#resources-support",
-    "href": "project/finalCourseProject/main.html#resources-support",
-    "title": "Final Course Project",
-    "section": "Resources & Support",
-    "text": "Resources & Support\n\nDatasets\n\nNetwork Repository\nStanford Large Network Dataset Collection\nKONECT\nIndustry-specific databases (access via library)\n\n\n\nTools & Libraries\n\nAdvanced R packages: RSiena, tergm, latentnet\nPython libraries: graph-tool, networkit, stellar-graph\nVisualization: Gephi, Cytoscape, D3.js\n\n\n\nWriting Resources\n\nAcademic Phrasebank\nLibrary writing center consultations\nPrevious high-scoring projects (on Moodle)\n\n\n\nOffice Hours\n\nExtended office hours during project period\nIndividual project consultations available\nBook via email with specific questions",
+    "objectID": "project/midTermProject/main.html#tips-for-success",
+    "href": "project/midTermProject/main.html#tips-for-success",
+    "title": "Mid-Term Project",
+    "section": "Tips for Success",
+    "text": "Tips for Success\n\n\n\n\n\n\nBest Practices\n\n\n\n\nStart Early: Data collection often takes longer than expected\nDivide Work: Assign clear roles and responsibilities\nMeet Regularly: Schedule weekly team meetings\nVersion Control: Use Git for collaborative coding\nBackup Data: Keep multiple copies of your dataset\nPractice Presentation: Rehearse before the final day",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#frequently-asked-questions",
-    "href": "project/finalCourseProject/main.html#frequently-asked-questions",
-    "title": "Final Course Project",
-    "section": "Frequently Asked Questions",
-    "text": "Frequently Asked Questions\nQ: Can I use my workplace data? A: Yes, with proper anonymization and company permission.\nQ: How much code should I include? A: Core analysis in appendix, full code in GitHub.\nQ: Can I collaborate with others? A: Discussion yes, but all work must be individual.\nQ: What if my analysis doesn’t show significant results? A: Negative results are valid if properly analyzed and discussed.",
+    "objectID": "project/midTermProject/main.html#common-pitfalls-to-avoid",
+    "href": "project/midTermProject/main.html#common-pitfalls-to-avoid",
+    "title": "Mid-Term Project",
+    "section": "Common Pitfalls to Avoid",
+    "text": "Common Pitfalls to Avoid\n\nOver-complicating: Focus on clear insights over complex methods\nPoor Visualizations: Ensure networks are readable and meaningful\nIgnoring Business Context: Always relate findings to practical applications\nUnequal Contribution: Use project management tools to track work",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
     ]
   },
   {
-    "objectID": "project/finalCourseProject/main.html#submission-checklist",
-    "href": "project/finalCourseProject/main.html#submission-checklist",
-    "title": "Final Course Project",
-    "section": "Submission Checklist",
-    "text": "Submission Checklist\n\nResearch paper (PDF)\nGitHub repository link\nPresentation slides\nData availability statement\nCode runs without errors\nREADME with clear instructions\nAll sources properly cited\nSubmitted before deadline\n\n\n\n\n\n\n\n\nImportant Notes\n\n\n\n\nStart early - Data issues always arise\nBackup everything - Use version control\nTest reproducibility - Have a peer try running your code\nProofread carefully - Consider professional editing\nPractice presentation - Time yourself\n\nLate submissions: 10% penalty per day\n\n\n\n\n\n\n\n\nSuccess Tips\n\n\n\nThe best projects often: - Address real problems - Use creative data sources - Apply methods appropriately - Tell compelling stories - Include excellent visualizations",
+    "objectID": "project/midTermProject/main.html#resources",
+    "href": "project/midTermProject/main.html#resources",
+    "title": "Mid-Term Project",
+    "section": "Resources",
+    "text": "Resources\n\nTemplates\n\nReport Template\nPresentation Template\n\n\n\nExample Projects\n\nPrevious year’s best projects (available on Moodle)\nPublished network analysis case studies\n\n\n\nSupport\n\nOffice hours for project consultation\nMoodle forum for questions\nPeer review sessions in Week 5",
     "crumbs": [
       "Project",
-      "Final course project"
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#submission-instructions",
+    "href": "project/midTermProject/main.html#submission-instructions",
+    "title": "Mid-Term Project",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\n\nReport: PDF format via Moodle\nCode: GitHub repository link\nPresentation: PowerPoint/PDF via Moodle\nPeer Evaluation: Complete online form\n\nAll materials due by 23:59 on Friday of Week 6.\n\n\n\n\n\n\n\nAcademic Integrity\n\n\n\nAll team members must contribute equally. Plagiarism or unequal contribution will result in individual penalties. Use of AI tools must be disclosed in methodology section.",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
     ]
   },
   {
@@ -727,182 +716,21 @@
     "href": "weeks/week-1/main.html",
     "title": "Week 1",
     "section": "",
-    "text": "Important\n\n\n\n\n;\n\n;",
+    "text": "Note\n\n\n\nIntroductory session, no preparation needed.",
     "crumbs": [
       "Weekly materials",
       "Week 1"
     ]
   },
   {
-    "objectID": "weeks/week-1/main.html#introduction",
-    "href": "weeks/week-1/main.html#introduction",
-    "title": "Installing R and RStudio",
+    "objectID": "weeks/week-1/main.html#important",
+    "href": "weeks/week-1/main.html#important",
+    "title": "Week 1",
     "section": "",
-    "text": "R is a powerful programming language and free software environment for statistical computing and graphics. In this guide, we’ll walk you through installing R and RStudio, which together provide everything you need to start your journey in data analysis and statistical computing.",
+    "text": "Introductory session, no preparation needed.",
     "crumbs": [
       "Weekly materials",
       "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#why-r-and-rstudio",
-    "href": "weeks/week-1/main.html#why-r-and-rstudio",
-    "title": "Installing R and RStudio",
-    "section": "Why R and RStudio?",
-    "text": "Why R and RStudio?\nBefore diving into installation, let’s understand what we’re installing:\nR is the core programming language that provides:\n\nComprehensive statistical and graphical capabilities\nExtensive package ecosystem (CRAN)\nActive community and continuous development\nFree and open-source\n\nRStudio is an Integrated Development Environment (IDE) that makes working with R much easier by providing:\n\nSyntax highlighting and code completion\nIntegrated help and documentation\nProject management tools\nBuilt-in plotting and data viewing\nPackage management interface\n\nThink of R as the engine and RStudio as the comfortable cockpit that makes driving the engine a pleasant experience.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#installation-steps",
-    "href": "weeks/week-1/main.html#installation-steps",
-    "title": "Installing R and RStudio",
-    "section": "Installation Steps",
-    "text": "Installation Steps\n\nStep 1: Install R\nR must be installed first, as RStudio depends on it.\n\nFor Windows:\n\nGo to the CRAN website\nClick “Download R for Windows”\nClick “base” (for first-time users)\nDownload the latest version (currently R 4.4.x)\nRun the downloaded installer and follow the prompts\nUse default settings unless you have specific preferences\n\n\n\nFor macOS:\n\nGo to the CRAN website\nClick “Download R for macOS”\nDownload the appropriate installer:\n\nFor Apple Silicon Macs (M1/M2): R-4.4.x-arm64.pkg\nFor Intel Macs: R-4.4.x-x86_64.pkg\n\nOpen the downloaded .pkg file and follow the installation steps\n\n\n\nFor Linux:\nMost Linux distributions include R in their package repositories. For Ubuntu/Debian:\nsudo apt update\nsudo apt install r-base r-base-dev\nFor more detailed Linux instructions, visit the CRAN Linux page.\n\n\n\nStep 2: Install RStudio Desktop\nAfter installing R successfully:\n\nGo to the RStudio download page\nScroll down to “All Installers and Tarballs”\nChoose the appropriate installer for your operating system:\n\nWindows: .exe installer\nmacOS: .dmg installer\nLinux: .deb or .rpm package\n\nDownload and run the installer\nFollow the installation prompts",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#verifying-your-installation",
-    "href": "weeks/week-1/main.html#verifying-your-installation",
-    "title": "Installing R and RStudio",
-    "section": "Verifying Your Installation",
-    "text": "Verifying Your Installation\nLet’s make sure everything is working correctly:\n\nTest R Installation\n\nOpen RStudio (it should automatically find your R installation)\nIn the Console pane (usually bottom-left), you should see something like:\n\nR version 4.4.1 (2024-06-14) -- \"Race for Your Life\"\nCopyright (C) 2024 The R Foundation for Statistical Computing\nPlatform: x86_64-pc-linux-gnu (64-bit)\n...\nType 'q()' to quit R.\n\n&gt;\n\nTry a simple command:\n\n\n# Test basic arithmetic\n2 + 2\n\n# Check R version\nR.version.string\n\n# Get help\nhelp(mean)\n\nIf these work without errors, congratulations! Your R installation is successful.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#essential-configuration",
-    "href": "weeks/week-1/main.html#essential-configuration",
-    "title": "Installing R and RStudio",
-    "section": "Essential Configuration",
-    "text": "Essential Configuration\n\nSetting Your Working Directory\nIt’s helpful to organize your R work in a dedicated folder:\n\n# Check current working directory\ngetwd()\n\n# Set working directory (adjust path as needed)\nsetwd(\"~/Documents/R-Projects\")\n\n# Or better yet, use RStudio Projects (covered in next module)\n\n\n\nInstalling Essential Packages\nR’s power comes from its packages. Let’s install some essential ones:\n\n# Install the tidyverse (collection of data science packages)\ninstall.packages(\"tidyverse\")\n\n# Install other useful packages\ninstall.packages(c(\"here\", \"rmarkdown\", \"devtools\"))\n\n# Load a package to test\nlibrary(tidyverse)",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#package-management-fundamentals",
-    "href": "weeks/week-1/main.html#package-management-fundamentals",
-    "title": "Installing R and RStudio",
-    "section": "Package Management Fundamentals",
-    "text": "Package Management Fundamentals\nUnderstanding package management is crucial for R success:\n\nCRAN Packages\n\n# Install from CRAN (most common)\ninstall.packages(\"package_name\")\n\n# Install multiple packages\ninstall.packages(c(\"dplyr\", \"ggplot2\", \"readr\"))\n\n# Update packages\nupdate.packages()\n\n# Remove packages\nremove.packages(\"package_name\")\n\n\n\nLoading Packages\n\n# Load package for current session\nlibrary(dplyr)\n\n# Alternative loading method\nrequire(dplyr)\n\n# Check installed packages\ninstalled.packages()\n\n# Check loaded packages\nsearch()",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#rstudio-layout-overview",
-    "href": "weeks/week-1/main.html#rstudio-layout-overview",
-    "title": "Installing R and RStudio",
-    "section": "RStudio Layout Overview",
-    "text": "RStudio Layout Overview\nWhen you first open RStudio, you’ll see four panes:\n\nConsole (bottom-left): Where R commands are executed\nSource (top-left): Text editor for scripts and documents\nEnvironment/History (top-right): Variables and command history\nFiles/Plots/Packages/Help (bottom-right): File browser, plots, package manager, and help\n\nDon’t worry if this seems overwhelming – we’ll explore each pane in detail in the next lesson!",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#common-installation-issues",
-    "href": "weeks/week-1/main.html#common-installation-issues",
-    "title": "Installing R and RStudio",
-    "section": "Common Installation Issues",
-    "text": "Common Installation Issues\n\n“R not found” Error in RStudio\n\nSolution: Reinstall R first, then RStudio\nRStudio needs to detect your R installation\n\n\n\nPackage Installation Fails\n\nWindows: Install Rtools from CRAN\nmacOS: Install Xcode command line tools: xcode-select --install\nAll platforms: Try installing packages from a different mirror\n\n\n\nPermission Issues\n\nSolution: Run RStudio as administrator (Windows) or use sudo (Linux/macOS) for package installation",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#alternative-installation-methods",
-    "href": "weeks/week-1/main.html#alternative-installation-methods",
-    "title": "Installing R and RStudio",
-    "section": "Alternative Installation Methods",
-    "text": "Alternative Installation Methods\n\nUsing Package Managers\n\nWindows - Chocolatey:\nchoco install r.project rstudio\n\n\nmacOS - Homebrew:\nbrew install --cask r rstudio\n\n\nLinux - Conda:\nconda install -c r r-base rstudio",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#next-steps",
-    "href": "weeks/week-1/main.html#next-steps",
-    "title": "Installing R and RStudio",
-    "section": "Next Steps",
-    "text": "Next Steps\nNow that you have R and RStudio installed:\n\nExplore the RStudio Interface (coming soon)\nTry R as a Calculator (coming soon)\nLearn about R Scripts and Projects (coming soon)",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#resources-for-further-learning",
-    "href": "weeks/week-1/main.html#resources-for-further-learning",
-    "title": "Installing R and RStudio",
-    "section": "Resources for Further Learning",
-    "text": "Resources for Further Learning\n\nRStudio Education\nR for Data Science book (free online)\nCRAN Task Views\nRStudio Cheat Sheets\n\n\n\n\n\n\n\nPro Tip\n\n\n\nCreate a dedicated folder for your R projects and always use RStudio Projects to manage your work. This keeps your files organized and makes your analysis reproducible!",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-1/main.html#congratulations",
-    "href": "weeks/week-1/main.html#congratulations",
-    "title": "Installing R and RStudio",
-    "section": "Congratulations!",
-    "text": "Congratulations!\nYou’ve successfully set up your R environment! You’re now ready to start your data science journey with R.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-2/main.html",
-    "href": "weeks/week-2/main.html",
-    "title": "Week 2",
-    "section": "",
-    "text": "Note\n\n\n\nContent coming soon.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 2"
-    ]
-  },
-  {
-    "objectID": "weeks/week-4/main.html",
-    "href": "weeks/week-4/main.html",
-    "title": "Week 4",
-    "section": "",
-    "text": "Week 4 Content\nContent coming soon.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 4"
-    ]
-  },
-  {
-    "objectID": "weeks/week-6/main.html",
-    "href": "weeks/week-6/main.html",
-    "title": "Week 6",
-    "section": "",
-    "text": "Week 6 Content\nContent coming soon."
-  },
-  {
-    "objectID": "weeks/week-8/main.html",
-    "href": "weeks/week-8/main.html",
-    "title": "Week 8",
-    "section": "",
-    "text": "Week 8 Content\nContent coming soon.",
-    "crumbs": [
-      "Weekly materials",
-      "Week 8"
     ]
   },
   {
@@ -950,14 +778,43 @@
     ]
   },
   {
-    "objectID": "weeks/week-1/main.html#important",
-    "href": "weeks/week-1/main.html#important",
-    "title": "Week 1",
+    "objectID": "weeks/week-2/main.html",
+    "href": "weeks/week-2/main.html",
+    "title": "Week 2",
     "section": "",
-    "text": ";\n\n;",
+    "text": "Note\n\n\n\nContent coming soon.",
     "crumbs": [
       "Weekly materials",
-      "Week 1"
+      "Week 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html",
+    "href": "weeks/week-4/main.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-6/main.html",
+    "href": "weeks/week-6/main.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon."
+  },
+  {
+    "objectID": "weeks/week-8/main.html",
+    "href": "weeks/week-8/main.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 8"
     ]
   }
 ]

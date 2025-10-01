@@ -9,7 +9,11 @@ toc-depth: 3
 
 ### 🎯 Module Description
 
-Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.
+Network Analytics (SMM638) provides a comprehensive introduction to the theory
+and practice of analyzing networked systems in business and organizational
+contexts. This module equips students with cutting-edge tools and techniques
+to understand, visualize, and leverage network structures for strategic
+decision-making.
 
 ### 🌟 Learning Objectives
 
@@ -32,8 +36,8 @@ By the end of this module, you will be able to:
 3. **Analytical Capabilities**
    - Calculate and interpret centrality measures to identify key actors
    - Detect communities and clusters within networks
-   - Analyze network evolution and dynamics over time
    - Model network formation and behavior
+   - Analyze network evolution and dynamics over time
 
 4. **Business Applications**
    - Transform network insights into actionable business strategies
@@ -55,29 +59,33 @@ In today's interconnected world, understanding networks is crucial for:
 **Week 1**
 
 **Learning Outcomes:**
+
 - Understand fundamental network concepts and terminology
 - Differentiate between network types (one-mode, two-mode, signed, weighted)
 - Set up R/Python environment for network analysis
 - Perform basic network data management and visualization
 
 **Topics Covered:**
+
 - Network elements: nodes, edges, dyads, triads
 - Real-world network examples (economic, organizational, social)
 - Taxonomy of network measures (node, meso, macro levels)
 - Introduction to network analysis software
 
-**Case Study:** Royal Caribbean Cruises (RCB) network strategy
+**Case Study:** RCB: Social network analysis
 
 ### 🎯 Topic 2: Network Centrality
 **Weeks 2-3**
 
 **Learning Outcomes:**
+
 - Calculate and interpret various centrality measures
 - Understand when to apply different centrality metrics
 - Analyze the relationship between centrality and outcomes
 - Implement centrality algorithms in R/Python
 
 **Topics Covered:**
+
 - Degree centrality and its variants
 - Closeness centrality and information flow
 - Betweenness centrality and brokerage
@@ -85,61 +93,67 @@ In today's interconnected world, understanding networks is crucial for:
 - PageRank and its applications
 - Local clustering coefficient
 
-**Case Study:** Identifying the right social media influencer
+**Case Study:** Who is the right influencer? A social network analysis
 
 ### 🔄 Topic 3: Dyads, Triads, and Network Dynamics
 **Weeks 4-5**
 
 **Learning Outcomes:**
+
 - Analyze dyadic patterns and relationships
-- Understand triadic closure and its implications
-- Test network hypotheses using CUG tests
 - Model homophily and its effects
+- Understand triadic closure and its implications
+- Network evolution patterns
+- Test network hypotheses
 
 **Topics Covered:**
+
 - Reciprocity and mutuality
 - Homophily and selection effects
 - Triadic census and transitivity
 - Conditional Uniform Graph (CUG) tests
-- Network evolution patterns
 
-**Case Study:** Soundcloud user recommendation networks
+**Case Study:** Feeding Souncloud's recommendation system with social network
+data
 
 ### 🏘️ Topic 4: Network Cohesion and Communities
 **Weeks 7-8**
 
 **Learning Outcomes:**
+
 - Measure network cohesion at multiple levels
 - Apply community detection algorithms
 - Interpret community structure for business insights
 - Implement blockmodeling techniques
 
 **Topics Covered:**
+
 - Network density and cohesion metrics
 - Core-periphery structures
 - Community detection algorithms (Louvain, modularity optimization)
-- Topicmodeling and role analysis
-- Hierarchical clustering of networks
+- Blockmoldeling
 
-**Case Study:** Customer segmentation in the beer market
+**Case Study:** Profiling beer enthusiasts at BeerAdvocate
 
 ### 💡 Topic 5: Network Position and Performance
 **Weeks 9-10**
 
 **Learning Outcomes:**
+
 - Analyze the strategic value of network positions
 - Understand closure vs. brokerage trade-offs
 - Apply network insights to career development
 - Design network interventions
 
 **Topics Covered:**
+
 - Structural holes and brokerage opportunities
 - Network closure and social capital
 - The strength of weak ties
 - Network position and innovation
 - Career implications of network structure
 
-**Case Study:** Employee creativity and innovation networks
+**Case Study:** Network position and employee performance in Silico's R&D lab
 
 ## Assessment Strategy
 
@@ -147,35 +161,36 @@ In today's interconnected world, understanding networks is crucial for:
 
 ::: {.grid}
 ::: {.g-col-4}
-**Class Participation (20%)**
+**Class Participation (10%)**
+
 - Active engagement in discussions
 - Quality of questions and insights
-- Peer collaboration
-- In-class exercises
+- In-class case discussion contribution
 
 *Ongoing throughout term*
 :::
 
 ::: {.g-col-4}
-**Mid-Term Project (40%)**
+**Mid-Term Project (50%)**
+
 - Team-based analysis (3-4 students)
 - Real-world dataset
 - Technical implementation
 - Business recommendations
 - 15-minute presentation
 
-*Due: Week 6*
+*Due: November 10, 2025*
 :::
 
 ::: {.g-col-4}
 **Final Project (40%)**
-- Individual research project
-- Original network analysis
-- Comprehensive report (3,000 words)
-- Code documentation
-- 10-minute presentation
 
-*Due: Week 11*
+- Individual research project
+- Business case requesting network analysis
+- Executive summary of case discussion (1,000 words)
+- 10-minute case discussion, job interview style
+
+*Due: November 28, 2025*
 :::
 :::
 
@@ -211,11 +226,12 @@ All assessments will be evaluated on:
 ## Essential Software Setup
 
 **Programming Environments:**
+
 - **R** (version 4.3+) with RStudio
-- **Python** (version 3.9+) with Jupyter Lab/Notebooks
+- **Python** (version 3.9+) with Spyder or Jupyter Lab/Notebooks
 - Git for version control
 
-**R Package Ecosystem:**
+**Sample R Packages:**
 ```r
 # Core packages
 install.packages(c("igraph", "tidygraph", "ggraph"))
@@ -227,43 +243,63 @@ install.packages(c("statnet", "ergm", "btergm"))
 install.packages(c("networkD3", "visNetwork", "graphlayouts"))
 
 # Data manipulation
-install.packages(c("tidyverse", "data.table"))
+install.packages(c("tidyverse"))
 ```
 
-**Python Libraries:**
+**Sample Python Modules:**
 ```python
-# Core libraries
-pip install networkx pandas numpy matplotlib seaborn
+# Data manipulation and computation
+conda install -c conda-forge numpy scipy matplotlib pandas 
 
-# Advanced analysis
-pip install python-louvain community graph-tool
+# Network libraries
+conda install -c conda-forge networkx graph-tool
 
 # Interactive visualization
-pip install plotly bokeh pyvis
+conda install -c conda-forge plotly bokeh pyvis
 ```
 :::
+
+Alternatively, you can create the environment directly using the provided `smm638.yaml` file:
+
+```bash
+conda env create -f smm638.yaml
+conda activate smm638
+```
 
 ### 📚 Reading List
 
 **Core Textbooks:**
 
-1. **Newman, M. (2018).** *Networks* (2nd ed.). Oxford University Press.
-   - Comprehensive mathematical treatment
+
+1. **Menczer, F., Fortunato, S., & Davis, C. A. (2020).** *A first course in network science.* Cambridge University Press.
+   - Comprehensive yet accessible survey of network science notions and tools
+   - Excellent first course in network analysis book
+
+2. **Newman, M. (2018).** *Networks* (2nd ed.). Oxford University Press.
+   - Comprehensive mathematical treatment of network problems
    - Excellent for understanding algorithms
+   - For the braves...
 
-2. **Borgatti, S. P., Everett, M. G., & Johnson, J. C. (2018).** *Analyzing Social Networks* (2nd ed.). SAGE.
-   - Practical, application-focused
-   - Good balance of theory and practice
+3. **Easley, D., & Kleinberg, J. (2010).** *Networks, crowds, and markets: Reasoning about a highly connected world*. Cambridge: Cambridge University Press.
+   - Focus on economic applications of network concepts and methods
+   - Plenty of examples
+   - Variety of organizational and market issues, from auctions to social
+     influence in digital platforms
 
-3. **Luke, D. A. (2015).** *A User's Guide to Network Analysis in R*. Springer.
-   - R-specific implementation guide
-   - Step-by-step tutorials
+4. **Rawlings, C. M., Smith, J. A., Moody, J., & McFarland, D. A. (2023).** *Network analysis: integrating social network theory, method, and application with R.* Cambridge University Press.
+   - Focus on social networks
+   - Excellent survey of network notions and methods
+   - Online companion with R applications
+
+5. **Carpenter, M. (2009).** *An executive's primer on the strategy of social networks.* Business Expert Press.
+   - An executive's perspective on networks
+   - A very actionable framework to maximize the value of your network
 
 **Supplementary Readings:**
 
-- Barabási, A. L. (2016). *Network Science*. Cambridge University Press. [Free online](http://networksciencebook.com/)
-- Jackson, M. O. (2019). *The Human Network*. Pantheon Books.
-- Watts, D. J. (2003). *Six Degrees: The Science of a Connected Age*. Norton.
+- **Barabási, A. L. (2014).** Linked: How Everything Is Connected to Everything Else and What It Means for Business, Science, and Everyday Life. Basic Books.
+- **Jackson, M. O. (2019).** *The Human Network*. Pantheon Books.
+- **Watts, D. J. (2003).** *Six Degrees: The Science of a Connected Age*. Norton.
 
 ### 🌐 Online Resources
 
@@ -273,16 +309,13 @@ pip install plotly bokeh pyvis
 - Slack workspace for discussions
 
 **External Resources:**
-- [NetworkX Documentation](https://networkx.org/)
-- [igraph R Tutorial](https://igraph.org/r/)
 - [Awesome Network Analysis](https://github.com/briatte/awesome-network-analysis)
-- [INSNA - International Network for Social Network Analysis](https://www.insna.org/)
 
 ## Course Policies
 
 ### 📋 Attendance and Participation
 
-- **Attendance**: Mandatory for all sessions (80% minimum required)
+- **Attendance**: Mandatory for all sessions
 - **Punctuality**: Sessions start promptly; late arrivals disrupt learning
 - **Preparation**: Complete readings and exercises before class
 - **Engagement**: Active participation expected in all activities
@@ -293,6 +326,7 @@ pip install plotly bokeh pyvis
 - **Individual Work**: Must be completed independently
 - **Code Sharing**: Allowed for learning, not for assignments
 - **Citation**: Always attribute sources and collaborators
+- **AI**: Disclose how you use LLMs to get your work done
 
 ### 📧 Communication
 
@@ -314,6 +348,7 @@ pip install plotly bokeh pyvis
 ### ♿ Accessibility and Accommodations
 
 Students requiring accommodations should:
+
 1. Contact Student Services for documentation
 2. Notify instructor within first two weeks
 3. Discuss specific needs and arrangements
@@ -325,13 +360,15 @@ All accommodations will be made in accordance with university policies.
 - **Plagiarism**: Zero tolerance; all work must be original
 - **Collaboration**: Clearly acknowledge all contributions
 - **Data Sources**: Properly cite all datasets used
-- **Code Attribution**: Credit all borrowed/adapted code
+- **Code Attribution**: Credit all borrowed/adapted code (included LLM
+  generated code)
 
 Violations will be reported to the Academic Misconduct Committee.
 
 ### 🔄 Syllabus Modifications
 
 This syllabus may be adjusted to:
+
 - Accommodate class progress
 - Incorporate current events/examples
 - Respond to student feedback
@@ -343,7 +380,10 @@ All changes will be announced via Moodle with one week's notice.
 ::: {.callout-note appearance="minimal"}
 ## Ready to Start?
 
-Network Analytics is a powerful lens for understanding our interconnected world. This module will challenge you to think structurally about business problems and equip you with tools to uncover hidden patterns in complex systems.
+Network Analytics is a powerful lens for understanding our interconnected
+world. This module will challenge you to think structurally about business
+problems and equip you with tools to uncover hidden patterns in complex
+systems.
 
 **Let's build networks together!** 🌐
 :::

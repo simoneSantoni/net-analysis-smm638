@@ -84,8 +84,8 @@ website:
 
       - section: "Supplemental notes"
         contents:
-          - text: "XYZ"
-            href: notes/xyz.qmd
+          - text: "Overview"
+            href: notes/overview.qmd
 
 format:
   html:

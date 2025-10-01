@@ -5,21 +5,8 @@ callout-appearance: default
 ---
 
 ::: {.callout-note}
-## Important
-- ;
-  - ;
+## Note
+
+Introductory session, no preparation needed.
 
 :::
-
-## Prepare
-
-
-
-## Participate
-
-
-## Practice
-
-
-## Perform
-

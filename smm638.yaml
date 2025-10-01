@@ -21,6 +21,7 @@ dependencies:
   - matplotlib
   - pandas
   - networkx
+  - graph-tool
   - r-sna
   - r-latentnet
   - r-network
