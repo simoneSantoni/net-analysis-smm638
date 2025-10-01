@@ -17,6 +17,7 @@ Both are excellent choices. R has stronger statistical packages for network anal
 
 ### How much time should I dedicate to this course?
 Expect to spend 8-10 hours per week:
+
 - 3 hours: Lectures and tutorials
 - 3-4 hours: Readings and videos
 - 2-3 hours: Assignments and practice
@@ -40,6 +41,7 @@ Detailed installation guides are provided in Week 1 materials. We also offer ins
 
 ### Can I use cloud-based tools instead?
 Yes! Options include:
+
 - Google Colab (Python)
 - RStudio Cloud
 - Binder for Jupyter notebooks
@@ -56,6 +58,7 @@ Late submissions receive a 10% penalty per day. Extensions may be granted for do
 
 ### How are projects graded?
 Projects are evaluated on:
+
 - Technical correctness (30%)
 - Analytical depth (30%)
 - Business relevance (30%)
@@ -65,6 +68,7 @@ Projects are evaluated on:
 
 ### How is network analytics used in industry?
 Common applications include:
+
 - Social media analysis
 - Supply chain optimization
 - Fraud detection

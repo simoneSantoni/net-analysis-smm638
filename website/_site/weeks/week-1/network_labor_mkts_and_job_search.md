@@ -6,7 +6,7 @@ How could your personal and professional connections help facilitate your job se
 Which specific contacts would be most valuable in this process, and why?
 What makes certain connections more helpful than others? Consider factors such as:
 
-Their industry knowledge or position
-The strength of your relationship
-Their network and influence
-Their willingness to advocate for you
+- Their industry knowledge or position
+- The strength of your relationship
+- Their network and influence
+- Their willingness to advocate for you

@@ -47,8 +47,6 @@ website:
             href: course/support.qmd
           - text: "Teaching team"
             href: course/team.qmd
-          - text: "Useful links"
-            href: useful_links.qmd
           - text: "FAQ"
             href: faq.qmd
 

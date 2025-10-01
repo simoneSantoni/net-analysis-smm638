@@ -2,34 +2,34 @@ name: smm638
 channels:
   - conda-forge
 dependencies:
-  - pylsp-mypy
-  - pynvim
-  - pylint
-  - flake8
-  - anaconda
   - pip
   - jupyter
-  - jupyterlab
   - r-base
   - r-essentials
   - r-irkernel
   - r-tidyverse
-  - rpy2
-  - radian
+  - r-igraph
+  - r-tidygraph
+  - r-ggraph
+  - r-sna
+  - r-latentnet
+  - r-network
+  - r-ergm
+  - r-networkDynamic
+  - r-ergm
+  - r-tergm
+  - r-btergm
+  - r-tsna
+  - r-car
+  - r-networkD3
+  - r-visNetwork
+  - r-graphlayouts
   - numpy
   - scipy
   - matplotlib
   - pandas
   - networkx
   - graph-tool
-  - r-sna
-  - r-latentnet
-  - r-network
-  - r-ergm
-  - r-networkDynamic
-  - r-tergm
-  - r-tsna
-  - r-ergm
-  - r-car
-  - r-rstudioapi
-  - rstudio-desktop
+  - plotly
+  - bokeh
+  - pyvis

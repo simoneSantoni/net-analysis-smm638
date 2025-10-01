@@ -246,7 +246,7 @@
     "href": "course/support.html",
     "title": "Course Support",
     "section": "",
-    "text": "Learning to program can be challenging, but you don’t have to do it alone. This page provides information about all the support resources available to help you succeed in IND216.",
+    "text": "Network analysis can be challenging, but you don’t have to navigate it alone. This page provides information about all the support resources available to help you succeed in SMM638 - Network Analytics.",
     "crumbs": [
       "Course Information",
       "Support"
@@ -257,7 +257,7 @@
     "href": "course/support.html#support-resources",
     "title": "Course Support",
     "section": "Support Resources",
-    "text": "Support Resources\n\nCourse Forum\nAccess the course forum through module IND216’s Moodle website for:\n\nAsking questions (conceptual or technical)\nSharing helpful resources\nDiscussing course material\nFinding study partners\n\nForum Guidelines:\n\nSearch before posting (your question may be answered)\nUse descriptive titles\nInclude error messages and code snippets\nBe respectful and helpful\nDon’t share complete assignment solutions\n\n\n\nEmail Support\nInstructor email: Sangseok.Lee@bayes.ac.uk\nWhen to email:\n\nPersonal matters (illness, accommodations)\nScheduling appointments\nUrgent technical issues\nAdministrative questions\n\nResponse time: 24-48 hours on weekdays\nEmail tips:\n\nUse clear subject line: “IND216: [Topic]”\nInclude your student ID\nBe specific about your issue\nAttach relevant files if needed",
+    "text": "Support Resources\n\nCourse Forum\nAccess the course forum through module SMM638’s Moodle website for:\n\nAsking questions (conceptual or technical)\nSharing helpful resources\nDiscussing course material\nFinding study partners\n\nForum Guidelines:\n\nSearch before posting (your question may be answered)\nUse descriptive titles\nInclude error messages and code snippets\nBe respectful and helpful\nDon’t share complete assignment solutions\n\n\n\nEmail Support\nModule Leader: Simone.Santoni.1@city.ac.uk\nInstructor: Erwanghao.Yu@bayes.ac.uk\nWhen to email:\n\nPersonal matters (illness, accommodations)\nScheduling appointments\nUrgent technical issues\nAdministrative questions\n\nResponse time: 24-48 hours on weekdays\nEmail tips:\n\nUse clear subject line: “SMM638: [Topic]”\nInclude your student ID\nBe specific about your issue\nAttach relevant files if needed",
     "crumbs": [
       "Course Information",
       "Support"
@@ -268,7 +268,7 @@
     "href": "course/support.html#common-issues-and-solutions",
     "title": "Course Support",
     "section": "Common Issues and Solutions",
-    "text": "Common Issues and Solutions\n\nInstallation Problems\n\n\n\n\n\n\nCommon Installation Issues:\nProblem: Anaconda won’t install\n\nQuick fix attempt: Check system requirements, disable antivirus temporarily, run as administrator\n\nProblem: Jupyter won’t start\n\nQuick fix attempt: Update Anaconda, check firewall settings, try different browser\n\nQuick fix attempt: Packages won’t import\n\nQuick fix attempt: Verify installation with conda list, reinstall package, check environment\n\n\n\n\n\n\nCoding Challenges\n“I don’t know where to start”:\n\nBreak the problem into smaller steps\nWrite pseudocode first\nStart with the simplest part\nUse print statements to debug\nLook at similar examples\n\n“My code doesn’t work”:\n\nRead error messages carefully\nCheck for typos and syntax errors\nVerify data types\nTest with simple inputs\nUse debugging tools\n\n“I don’t understand the concept”:\n\nReview lecture notes\nTry additional examples\nWatch supplementary videos\nAsk on the forum\nAttend office hours",
+    "text": "Common Issues and Solutions\n\nInstallation Problems\n\n\n\n\n\n\nCommon Installation Issues:\nProblem: R/RStudio won’t install\n\nQuick fix attempt: Check system requirements, disable antivirus temporarily, run as administrator\n\nProblem: Python packages won’t install\n\nQuick fix attempt: Update conda/pip, check firewall settings, try different repository\n\nProblem: Network analysis packages won’t import\n\nQuick fix attempt: Verify installation with library() in R or import in Python, reinstall package, check dependencies (igraph, networkx, etc.)\n\n\n\n\n\n\nNetwork Analysis Challenges\n“I don’t know where to start with network analysis”:\n\nStart with simple network visualizations\nUnderstand your data structure (nodes and edges)\nBegin with basic centrality measures\nUse sample networks before your own data\nLook at similar network examples in the literature\n\n“My network code doesn’t work”:\n\nCheck your data format (edge list, adjacency matrix)\nVerify node and edge attributes\nEnsure proper package loading (igraph, networkx)\nTest with small sample networks first\nCheck for isolated nodes or missing edges\n\n“I don’t understand network concepts”:\n\nReview the network terminology glossary\nPractice with interactive network examples\nVisualize concepts with simple networks\nAsk specific questions on the forum\nAttend office hours with concrete examples",
     "crumbs": [
       "Course Information",
       "Support"
@@ -290,7 +290,7 @@
     "href": "course/support.html#mental-health-and-wellbeing",
     "title": "Course Support",
     "section": "Mental Health and Wellbeing",
-    "text": "Mental Health and Wellbeing\nProgramming can be frustrating at times. Remember:\n\n\n\n\n\n\nIt’s normal to:\n\nFeel stuck sometimes\nNeed multiple attempts\nMake lots of errors\nNeed to ask for help\nTake breaks when frustrated\n\n\n\n\nCampus Resources: See “Your halth and wellbeing” page, hosted in the Uni’s website.\n\nPersonal Emergencies\nIllness or emergency: - Email instructor ASAP - Provide documentation if extended - Discuss makeup options - Don’t fall behind",
+    "text": "Mental Health and Wellbeing\nProgramming can be frustrating at times. Remember:\n\n\n\n\n\n\nIt’s normal to:\n\nFeel stuck sometimes\nNeed multiple attempts\nMake lots of errors\nNeed to ask for help\nTake breaks when frustrated\n\n\n\n\nCampus Resources: See “Your health and wellbeing” page, hosted in the University’s website.\n\nPersonal Emergencies\nIllness or emergency: - Email instructor ASAP - Provide documentation if extended - Discuss makeup options - Don’t fall behind",
     "crumbs": [
       "Course Information",
       "Support"
@@ -301,7 +301,7 @@
     "href": "course/support.html#faq",
     "title": "Course Support",
     "section": "FAQ",
-    "text": "FAQ\nQ: How much time should I spend on this course? A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).\nQ: Can I use AI tools like ChatGPT? A: You may use them for learning and understanding concepts, but submitted code must be your own work. Always cite any assistance received.\nQ: What if I’m falling behind? A: Seek help immediately. The course builds on itself, so early gaps become bigger problems later.\nQ: Do I need a powerful computer? A: No, basic Python programming doesn’t require much computing power. Any computer from the last 5 years should work fine.\nQ: Can I use a different IDE than recommended? A: Yes, but you’re responsible for any setup issues. We can only provide support for recommended tools.",
+    "text": "FAQ\nQ: How much time should I spend on this course? A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).\nQ: Do I need prior programming experience? A: Basic programming experience in R or Python is helpful but not required. We’ll cover the essentials for network analysis.\nQ: Can I use AI tools like ChatGPT? A: You may use them for learning and understanding concepts, but submitted work must be your own. Always cite any AI assistance received.\nQ: What if I’m falling behind? A: Seek help immediately. Network analysis concepts build on each other, so early gaps become bigger problems later.\nQ: Do I need a powerful computer? A: No, basic network analysis doesn’t require much computing power. Any computer from the last 5 years should work fine.\nQ: Should I use R or Python for network analysis? A: Both are excellent. We’ll primarily use R with igraph, but Python with NetworkX is also supported. Choose based on your comfort level.",
     "crumbs": [
       "Course Information",
       "Support"
@@ -312,7 +312,7 @@
     "href": "course/support.html#success-tips",
     "title": "Course Support",
     "section": "Success Tips",
-    "text": "Success Tips\n\n\n\n\n\n\nTop tips from successful students:\n\nStart early - Don’t wait until the deadline\nPractice daily - Even 20 minutes helps\nMake mistakes - They’re learning opportunities\nAsk questions - No question is too basic\nHelp others - Teaching reinforces learning\nTake breaks - Fresh eyes spot errors\nDocument everything - Comment your code\nStay organized - Use folders and naming conventions\n\n\n\n\nRemember: We want you to succeed! Don’t hesitate to reach out when you need help.",
+    "text": "Success Tips\n\n\n\n\n\n\nTop tips from successful network analysis students:\n\nStart with simple networks - Build complexity gradually\nVisualize first - Always plot your networks to understand structure\nThink about the domain - Network interpretation depends on context\nPractice with real data - Work with networks from your field of interest\nLearn the terminology - Master key concepts like centrality, clustering, paths\nAsk “why” questions - Don’t just calculate metrics, understand their meaning\nDocument your analysis - Network studies require clear interpretation\nCompare measures - Different centrality metrics tell different stories\n\n\n\n\nRemember: We want you to succeed! Don’t hesitate to reach out when you need help.",
     "crumbs": [
       "Course Information",
       "Support"
@@ -414,28 +414,28 @@
     "href": "course/faq.html#course-logistics",
     "title": "Frequently Asked Questions",
     "section": "Course Logistics",
-    "text": "Course Logistics\n\nHow much time should I dedicate to this course?\nExpect to spend 8-10 hours per week: - 3 hours: Lectures and tutorials - 3-4 hours: Readings and videos - 2-3 hours: Assignments and practice\n\n\nCan I audit the course?\nPlease contact the instructor to discuss auditing options. Priority is given to enrolled students.\n\n\nAre lectures recorded?\nYes, all lectures are recorded and available on Moodle within 24 hours. However, live attendance is strongly encouraged for interactive elements."
+    "text": "Course Logistics\n\nHow much time should I dedicate to this course?\nExpect to spend 8-10 hours per week:\n\n3 hours: Lectures and tutorials\n3-4 hours: Readings and videos\n2-3 hours: Assignments and practice\n\n\n\nCan I audit the course?\nPlease contact the instructor to discuss auditing options. Priority is given to enrolled students.\n\n\nAre lectures recorded?\nYes, all lectures are recorded and available on Moodle within 24 hours. However, live attendance is strongly encouraged for interactive elements."
   },
   {
     "objectID": "course/faq.html#technical-questions",
     "href": "course/faq.html#technical-questions",
     "title": "Frequently Asked Questions",
     "section": "Technical Questions",
-    "text": "Technical Questions\n\nWhat computer specifications do I need?\n\nRAM: 8GB minimum (16GB recommended)\nStorage: 10GB free space\nOS: Windows 10+, macOS 10.14+, or Linux\nInternet connection for package downloads\n\n\n\nHow do I install the required software?\nDetailed installation guides are provided in Week 1 materials. We also offer installation support sessions.\n\n\nCan I use cloud-based tools instead?\nYes! Options include: - Google Colab (Python) - RStudio Cloud - Binder for Jupyter notebooks"
+    "text": "Technical Questions\n\nWhat computer specifications do I need?\n\nRAM: 8GB minimum (16GB recommended)\nStorage: 10GB free space\nOS: Windows 10+, macOS 10.14+, or Linux\nInternet connection for package downloads\n\n\n\nHow do I install the required software?\nDetailed installation guides are provided in Week 1 materials. We also offer installation support sessions.\n\n\nCan I use cloud-based tools instead?\nYes! Options include:\n\nGoogle Colab (Python)\nRStudio Cloud\nBinder for Jupyter notebooks"
   },
   {
     "objectID": "course/faq.html#assessment",
     "href": "course/faq.html#assessment",
     "title": "Frequently Asked Questions",
     "section": "Assessment",
-    "text": "Assessment\n\nCan I work with others on assignments?\n\nMid-term project: Yes (teams of 3-4)\nFinal project: No (individual work)\nWeekly exercises: Discussion encouraged, but submit your own work\n\n\n\nWhat if I submit late?\nLate submissions receive a 10% penalty per day. Extensions may be granted for documented emergencies.\n\n\nHow are projects graded?\nProjects are evaluated on: - Technical correctness (30%) - Analytical depth (30%) - Business relevance (30%) - Presentation quality (10%)"
+    "text": "Assessment\n\nCan I work with others on assignments?\n\nMid-term project: Yes (teams of 3-4)\nFinal project: No (individual work)\nWeekly exercises: Discussion encouraged, but submit your own work\n\n\n\nWhat if I submit late?\nLate submissions receive a 10% penalty per day. Extensions may be granted for documented emergencies.\n\n\nHow are projects graded?\nProjects are evaluated on:\n\nTechnical correctness (30%)\nAnalytical depth (30%)\nBusiness relevance (30%)\nPresentation quality (10%)"
   },
   {
     "objectID": "course/faq.html#career-applications",
     "href": "course/faq.html#career-applications",
     "title": "Frequently Asked Questions",
     "section": "Career & Applications",
-    "text": "Career & Applications\n\nHow is network analytics used in industry?\nCommon applications include: - Social media analysis - Supply chain optimization - Fraud detection - Recommendation systems - Organizational design - Market structure analysis\n\n\nWhat career paths benefit from network analytics?\n\nData Scientists\nBusiness Analysts\nMarketing Analysts\nOperations Research\nManagement Consultants\nSocial Media Strategists\n\n\n\nWill this help with my dissertation/thesis?\nAbsolutely! Network analysis is increasingly used in business research. We can discuss how to apply these methods to your research interests."
+    "text": "Career & Applications\n\nHow is network analytics used in industry?\nCommon applications include:\n\nSocial media analysis\nSupply chain optimization\nFraud detection\nRecommendation systems\nOrganizational design\nMarket structure analysis\n\n\n\nWhat career paths benefit from network analytics?\n\nData Scientists\nBusiness Analysts\nMarketing Analysts\nOperations Research\nManagement Consultants\nSocial Media Strategists\n\n\n\nWill this help with my dissertation/thesis?\nAbsolutely! Network analysis is increasingly used in business research. We can discuss how to apply these methods to your research interests."
   },
   {
     "objectID": "course/faq.html#getting-help",
