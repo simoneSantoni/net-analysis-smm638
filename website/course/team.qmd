@@ -7,7 +7,7 @@ title: "Teaching team"
 :::: {.columns}
 
 ::: {.column width="50%"}
-![](../imgs/ey.png){width="300px"}
+![](../imgs/ey.jpg){width="300px"}
 
 ### Erwanghao (Derek) Yu
 **Instructor**
