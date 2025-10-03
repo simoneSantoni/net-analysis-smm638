@@ -1,6 +1,7 @@
 ---
 title: "Network Analytics－SMM638"
 subtitle: "Materials on network theory, methods, and tools for analytics students"
+date: "2025-10-03"
 ---
 
 ```{r}
@@ -11,6 +12,7 @@ subtitle: "Materials on network theory, methods, and tools for analytics student
 #| fig-width: 8
 #| fig-height: 8 
 #| eval: true
+#| fig-cap: A Barabasi-Albert preferential attachment network with 100 nodes - node size proportional to node degree
 
 # Load the igraph library
 library(igraph)

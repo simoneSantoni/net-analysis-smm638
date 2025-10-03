@@ -1,8 +1,8 @@
 {
-  "hash": "7ec9e72022b214b9461efcf338de34aa",
+  "hash": "aee3defd6cdb5b1fca424fbe9058bc46",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Network Analytics－SMM638\"\nsubtitle: \"Materials on network theory, methods, and tools for analytics students\"\n---\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){fig-align='center' width=768}\n:::\n:::\n\n\n\n",
+    "markdown": "---\ntitle: \"Network Analytics－SMM638\"\nsubtitle: \"Materials on network theory, methods, and tools for analytics students\"\ndate: \"2025-10-01\"\n---\n\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){fig-align='center' width=768}\n:::\n:::\n\n\n\n",
     "supporting": [
       "index_files"
     ],

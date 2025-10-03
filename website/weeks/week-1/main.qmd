@@ -45,9 +45,13 @@ Introductory session, no laboratory session.
 ### Key Network Ideas
 
 - [Key Network Analysis Concepts](network_terms.qmd) - Essential terms and concepts in network analysis
-- Network Analysis: What Is It? (in Moodle, "Case Studies" section)
+- Network Analysis: What Is It? (in Moodle, "Case Studies" section[^1])
 
 ### The Relevance of Networks
 
-- RBC: Social Network Analysis (in Moodle, "Case Studies" section)
-- [Networks, labor markets, and job search](network_labor_mkts_and_job_search.md)
+- RBC: Social Network Analysis (in Moodle, "Case Studies" section[^2])
+- [Networks, labor markets, and job search](network_labor_mkts_and_job_search.qmd)
+
+[^1]: Case studies will not be posted here because of intellectual property rights.
+
+[^2]: *Ibidem*.
