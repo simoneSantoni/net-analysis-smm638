@@ -1,0 +1,1120 @@
+---
+title: "Network Centrality"
+subtitle: "Measuring Importance and Influence in Networks"
+author: "SMM638 Network Analytics"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    css: custom-slides.css
+    code-fold: true
+    code-summary: ""
+---
+
+## What is Centrality? {.smaller}
+
+**The Fundamental Question:**
+
+> Which node is most important in this network?
+
+**Two Core Perspectives:**
+
+1. **Advantageous Position**: Who has structural advantages?
+   - Access to resources
+   - Control over information
+   - Influence over others
+
+2. **Network Functioning**: Who is critical for network operations?
+   - Facilitating flows
+   - Connecting groups
+   - Maintaining coherence
+
+::: {.callout-important}
+
+**Key Insight:** "Importance" depends on context and mechanism
+
+:::
+
+---
+
+## The Centrality Family
+
+| Measure         | Focus              | Question                                |
+| ---------       | -------            | ----------                              |
+| **Degree**      | Direct connections | Who knows the most people?              |
+| **Closeness**   | Reachability       | Who can reach everyone quickly?         |
+| **Betweenness** | Brokerage          | Who controls information flow?          |
+| **Eigenvector** | Connection quality | Who is connected to important others?   |
+| **Clustering**  | Local cohesion     | How interconnected is the neighborhood? |
+| **PageRank**    | Prestige           | Who receives quality endorsements?      |
+
+::: {.callout-caution}
+
+**Each measure captures different aspects of structural importance**
+
+:::
+
+---
+
+## Degree Centrality
+
+**Definition:** Number of direct connections
+
+$$C_D(i) = k_i$$
+
+where $k_i$ is the number of edges incident to node $i$
+
+**In Directed Networks:**
+
+- **In-degree** ($k_i^{in}$): Incoming connections
+- **Out-degree** ($k_i^{out}$): Outgoing connections
+
+**Normalized Degree:**
+
+$$C_D^{norm}(i) = \frac{k_i}{n-1}$$
+
+where $n$ is network size
+
+---
+
+## Degree Centrality: Interpretation
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+**Undirected Networks:**
+
+- Many friends, contacts, or connections
+- High visibility and local influence
+- Direct access to information and resources
+- Potential for rapid mobilization
+
+:::
+
+::: {.column width="50%"}
+
+**Directed Networks:**
+
+- **High in-degree**: Popular, prestigious, sought after
+  - Example: Highly cited papers, celebrity Twitter accounts
+- **High out-degree**: Active, gregarious, outgoing
+  - Example: Frequent emailers, prolific citers
+
+:::
+
+:::
+
+::: {.callout-warning}
+
+**Limitations:** Ignores indirect connections and network structure beyond immediate neighbors
+
+:::
+
+---
+
+## Degree Centrality: Business Example {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+**R&D Lab Technical Advice Network**
+
+**High Degree Scientist (sought by 18 colleagues for advice)**
+
+- Recognized expert with broad technical knowledge
+- Central information hub in the laboratory
+- High visibility and influence on research directions
+- Risk: Bottleneck for problem-solving, time constraints
+
+**Low Degree Scientist (consults with 3 colleagues)**
+
+- Focused expertise in specialized area
+- May have deep knowledge in niche domain
+- Less demand on time for advice-giving
+- Opportunity: Develop broader skillset, increase collaboration
+
+**Real Pattern:** Power-law distribution—few scientists provide most technical advice
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8
+library(igraph)
+library(ggraph)
+
+# Create an R&D advice network
+set.seed(789)
+edges <- data.frame(
+  from = c("S1", "S1", "S1", "S1", "S1", "S1", "S1", "S2", "S2", "S3", "S3", "S4", "S5", "S6", "S7", "S8", "S9", "S10", "S11", "S12"),
+  to = c("S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9", "S10", "S11", "S12", "S9", "S9", "S9", "S1", "S1", "S10", "S11", "S12", "S11")
+)
+
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Calculate degree
+deg <- degree(g)
+
+# Identify central and peripheral nodes
+central_node <- names(which.max(deg))
+peripheral_nodes <- names(which(deg <= 2))
+
+# Assign node colors
+V(g)$node_type <- ifelse(V(g)$name == central_node, "central",
+                         ifelse(V(g)$name %in% peripheral_nodes, "peripheral", "other"))
+
+# Plot
+ggraph(g, layout = 'fr') +
+  geom_edge_link(color = "#A9A9A9", width = 1.5, alpha = 0.6) +
+  geom_node_point(aes(color = node_type, size = node_type)) +
+  scale_color_manual(values = c("central" = "#c41c85", "peripheral" = "#000000", "other" = "#4A4A4A")) +
+  scale_size_manual(values = c("central" = 35, "peripheral" = 25, "other" = 28)) +
+  geom_node_text(aes(label = gsub("S", "", name)), color = "white", size = 5) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+::: {.callout-note}
+**Magenta node**: High degree (central expert)
+
+**Black nodes**: '7' is a low degree node example (peripheral)
+:::
+
+:::
+
+:::
+
+---
+
+## Closeness Centrality
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+**Definition:** Inverse of average distance to all other nodes
+
+$$C_C(i) = \frac{n-1}{\sum_{j \neq i} d(i,j)}$$
+
+where $d(i,j)$ is the shortest path distance from $i$ to $j$
+
+**Alternative (Harmonic Mean):**
+
+$$C_C^{harm}(i) = \sum_{j \neq i} \frac{1}{d(i,j)}$$
+
+**Intuition:** How quickly can node $i$ reach everyone else?
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8
+library(igraph)
+library(ggraph)
+
+# Create a random network (Erdős-Rényi)
+set.seed(456)
+g <- erdos.renyi.game(12, p.or.m = 0.25, type = "gnp", directed = FALSE)
+
+# Ensure the graph is connected
+if (!is.connected(g)) {
+  # Add edges to make it connected
+  components <- clusters(g)
+  for (i in 2:components$no) {
+    v1 <- which(components$membership == 1)[1]
+    v2 <- which(components$membership == i)[1]
+    g <- add_edges(g, c(v1, v2))
+  }
+}
+
+# Assign numeric labels
+V(g)$name <- as.character(1:vcount(g))
+
+# Define two specific nodes for the path
+node_start <- "3"
+node_end <- "10"
+
+# Calculate shortest path between the two specific nodes
+path <- shortest_paths(g, from = node_start, to = node_end, output = "vpath")$vpath[[1]]
+path_names <- V(g)[path]$name
+
+# Create edge list for the path
+path_edges <- data.frame(
+  from = path_names[-length(path_names)],
+  to = path_names[-1]
+)
+
+# Mark nodes and edges on the path
+V(g)$on_path <- V(g)$name %in% path_names
+V(g)$is_endpoint <- V(g)$name %in% c(node_start, node_end)
+
+# Mark edges on the path
+edge_list <- as_edgelist(g)
+E(g)$on_path <- sapply(1:ecount(g), function(i) {
+  any(edge_list[i,1] == path_edges$from & edge_list[i,2] == path_edges$to) ||
+  any(edge_list[i,2] == path_edges$from & edge_list[i,1] == path_edges$to)
+})
+
+# Plot
+ggraph(g, layout = 'fr') +
+  geom_edge_link(aes(color = on_path, width = on_path), alpha = 0.8) +
+  scale_edge_color_manual(values = c("FALSE" = "#D3D3D3", "TRUE" = "#c41c85")) +
+  scale_edge_width_manual(values = c("FALSE" = 1, "TRUE" = 2.5)) +
+  geom_node_point(aes(color = is_endpoint, size = is_endpoint)) +
+  scale_color_manual(values = c("FALSE" = "#4A4A4A", "TRUE" = "#c41c85")) +
+  scale_size_manual(values = c("FALSE" = 25, "TRUE" = 35)) +
+  geom_node_text(aes(label = name), color = "white", size = 6) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+::: {.callout-note}
+**Magenta path**: Shortest path between nodes 3 and 10 is through 4 and 9
+
+Closeness considers the shortest path between node $i$ and all other nodes in
+the network
+:::
+
+:::
+
+:::
+
+---
+
+## Closeness Centrality: Interpretation {.smaller}
+
+**What High Closeness Means:**
+
+- Can quickly access information from anywhere in network
+- Efficient communication with all other nodes
+- Potential for rapid dissemination
+- Strategic position for time-sensitive activities
+
+**Applications:**
+
+- **Supply chains**: Central warehouses minimize delivery times
+- **Organizations**: Managers with high closeness coordinate efficiently
+- **Epidemic control**: High closeness nodes are early infection points
+- **Innovation**: Quick access to diverse information sources
+
+::: {.callout-caution}
+
+**Limitations:** Requires connected network; sensitive to network size; ignores edge weights initially
+
+:::
+
+---
+
+## Closeness Example: Knowledge Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+**Engineering Consulting Firm**
+
+**High Closeness Engineer (avg distance = 2.1)**
+
+- Can quickly reach any expertise in the firm
+- Efficient problem-solving through quick consultation
+- Ideal for project coordination roles
+- Fast knowledge integration
+
+**Low Closeness Engineer (avg distance = 4.8)**
+
+- Isolated in organizational periphery
+- Slower access to firm-wide expertise
+- May develop specialized deep knowledge
+- Potential: Mentorship to improve integration
+
+**Strategic Implication:** Closeness predicts coordination effectiveness
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8
+library(igraph)
+library(ggraph)
+
+# Create a preferential attachment network (Barabási-Albert model)
+set.seed(654)
+g <- barabasi.game(n = 10, m = 2, directed = FALSE)
+
+# Assign numeric labels
+V(g)$name <- as.character(1:vcount(g))
+
+# Calculate closeness
+closeness_scores <- closeness(g, normalized = TRUE)
+
+# Find nodes with highest and lowest closeness
+high_closeness_node <- names(which.max(closeness_scores))
+low_closeness_node <- names(which.min(closeness_scores))
+
+# Classify nodes
+V(g)$closeness_type <- ifelse(V(g)$name == high_closeness_node, "high",
+                               ifelse(V(g)$name == low_closeness_node, "low", "other"))
+
+# Plot
+ggraph(g, layout = 'fr') +
+  geom_edge_link(color = "#D3D3D3", width = 1.5, alpha = 0.6) +
+  geom_node_point(aes(color = closeness_type, size = closeness_type)) +
+  scale_color_manual(values = c("high" = "#c41c85", "low" = "#000000", "other" = "#50C878")) +
+  scale_size_manual(values = c("high" = 35, "low" = 30, "other" = 25)) +
+  geom_node_text(aes(label = name), color = "white", size = 6) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+::: {.callout-note}
+**Magenta node**: High closeness (central position)
+
+**Black node**: Low closeness (peripheral position)
+:::
+
+:::
+
+:::
+
+---
+
+## Betweenness Centrality
+
+**Definition:** Proportion of shortest paths passing through a node
+
+$$C_B(i) = \sum_{j<k} \frac{g_{jk}(i)}{g_{jk}}$$
+
+where:
+
+- $g_{jk}$ = number of shortest paths between $j$ and $k$
+- $g_{jk}(i)$ = number of those paths passing through $i$
+
+**Normalized:**
+
+$$C_B^{norm}(i) = \frac{2 \cdot C_B(i)}{(n-1)(n-2)}$$
+
+---
+
+## Betweenness: The Broker Position {.smaller}
+
+**What High Betweenness Means:**
+
+- Controls information flow between others
+- Broker between different groups or communities
+- Can delay, distort, or facilitate communication
+- Structural hole position (Burt's theory)
+
+**Strategic Value:**
+
+- **Information arbitrage**: Access to diverse information
+- **Gatekeeping power**: Control what information passes
+- **Innovation potential**: Recombination of ideas from different groups
+- **Political capital**: Both sides need the broker
+
+::: {.callout-important}
+
+**Risk:** Bottleneck position—removal disrupts network flow
+
+:::
+
+---
+
+## Betweenness Example: Innovation Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+**Pharmaceutical R&D Network**
+
+**High Betweenness Scientist (bridges Chemistry & Biology labs)**
+
+- Unique position connecting two specialized domains
+- Controls knowledge transfer between groups
+- First to see combination opportunities
+- Career advantage: Valuable to both groups
+- Organizational value: Enables cross-disciplinary projects
+
+**Low Betweenness Scientist (within dense cluster)**
+
+- Embedded in single community
+- Many redundant paths don't pass through them
+- Deep specialization possible
+- Innovation: Incremental improvements
+
+**Finding:** High betweenness predicts cross-disciplinary breakthroughs
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8
+library(igraph)
+library(ggraph)
+
+# Create a network with clear broker structure (two communities connected by a bridge)
+set.seed(888)
+edges <- data.frame(
+  from = c("1", "1", "2", "2", "3", "3", "4", "5", "6", "6", "7", "7", "8", "8", "9"),
+  to = c("2", "3", "3", "4", "4", "5", "5", "6", "7", "8", "8", "9", "9", "10", "10")
+)
+
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Calculate betweenness
+betweenness_scores <- betweenness(g, normalized = TRUE)
+
+# Find nodes with highest and lowest betweenness
+high_betweenness_node <- names(which.max(betweenness_scores))
+low_betweenness_node <- names(which.min(betweenness_scores))
+
+# Classify nodes
+V(g)$betweenness_type <- ifelse(V(g)$name == high_betweenness_node, "high",
+                                 ifelse(V(g)$name == low_betweenness_node, "low", "other"))
+
+# Plot
+ggraph(g, layout = 'fr') +
+  geom_edge_link(color = "#D3D3D3", width = 1.5, alpha = 0.6) +
+  geom_node_point(aes(color = betweenness_type, size = betweenness_type)) +
+  scale_color_manual(values = c("high" = "#c41c85", "low" = "#000000", "other" = "#50C878")) +
+  scale_size_manual(values = c("high" = 35, "low" = 30, "other" = 25)) +
+  geom_node_text(aes(label = name), color = "white", size = 6) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+::: {.callout-note}
+**Magenta node**: High betweenness (broker position)
+
+**Black node**: Low betweenness (embedded in group)
+:::
+
+:::
+
+:::
+
+---
+
+## Eigenvector Centrality
+
+**Definition:** Centrality proportional to sum of neighbors' centralities
+
+$$x_i = \kappa^{-1} \sum_{j} A_{ij} x_j$$
+
+In matrix form: $\mathbf{Ax} = \kappa \mathbf{x}$
+
+where $\mathbf{x}$ is the leading eigenvector of adjacency matrix $\mathbf{A}$
+
+**Key Insight:** You're important if you're connected to important people
+
+**Recursive Logic:** Node centrality depends on neighbors' centrality, which depends on their neighbors' centrality, etc.
+
+---
+
+## Eigenvector Centrality: Quality vs. Quantity {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Degree vs. Eigenvector:**
+
+- **Degree**: Counts all connections equally (1 point per neighbor)
+- **Eigenvector**: Weights neighbors by their importance
+
+**Example Scenarios:**
+
+**Scenario A: High Degree, Low Eigenvector**
+
+- 50 connections to peripheral nodes
+- "Popular among the unpopular"
+- Volume without prestige
+
+**Scenario B: Low Degree, High Eigenvector**
+
+- 3 connections to highly central nodes
+- "Connected to the elite"
+- Quality over quantity
+
+::: {.callout-note}
+
+**Classic Example:** Craig Robinson (former Oregon State basketball coach) has high eigenvector centrality because he's President Obama's brother-in-law
+
+:::
+
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 10
+library(igraph)
+library(ggraph)
+library(gridExtra)
+
+# Scenario A: High Degree, Low Eigenvector
+# Central node connected to many peripheral nodes
+set.seed(789)
+edges_high_deg <- data.frame(
+  from = c("A", "A", "A", "A", "A", "A"),
+  to = c("B", "C", "D", "E", "F", "G")
+)
+g_high_deg <- graph_from_data_frame(edges_high_deg, directed = FALSE)
+
+# Calculate degree and eigenvector centrality
+deg_high <- degree(g_high_deg)
+eigen_high <- eigen_centrality(g_high_deg)$vector
+
+# Assign node types
+V(g_high_deg)$node_type <- ifelse(V(g_high_deg)$name == "A", "central_node", "peripheral")
+
+# Plot high degree, low eigenvector
+p1 <- ggraph(g_high_deg, layout = 'star') +
+  geom_edge_link(color = "#D3D3D3", width = 1.5, alpha = 0.6) +
+  geom_node_point(aes(color = node_type, size = node_type)) +
+  scale_color_manual(values = c("central_node" = "#c41c85", "peripheral" = "#000000")) +
+  scale_size_manual(values = c("central_node" = 35, "peripheral" = 25)) +
+  geom_node_text(aes(label = name), color = "white", size = 6) +
+  scale_x_continuous(expand = expansion(mult = 0.25)) +
+  scale_y_continuous(expand = expansion(mult = 0.25)) +
+  theme_void() +
+  theme(
+    legend.position = "none",
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+
+# Scenario B: Low Degree, High Eigenvector
+# Peripheral node connected to highly central nodes
+edges_low_deg <- data.frame(
+  from = c("1", "1", "1", "1", "2", "2", "2", "3", "3", "4", "5"),
+  to = c("2", "3", "4", "5", "3", "4", "5", "4", "5", "5", "A")
+)
+g_low_deg <- graph_from_data_frame(edges_low_deg, directed = FALSE)
+
+# Calculate degree and eigenvector centrality
+deg_low <- degree(g_low_deg)
+eigen_low <- eigen_centrality(g_low_deg)$vector
+
+# Assign node types based on eigenvector centrality
+# Node A has low degree but high eigenvector (connected to central cluster)
+V(g_low_deg)$node_type <- ifelse(V(g_low_deg)$name == "A", "high_eigen", "cluster")
+
+# Plot low degree, high eigenvector
+p2 <- ggraph(g_low_deg, layout = 'fr') +
+  geom_edge_link(color = "#D3D3D3", width = 1.5, alpha = 0.6) +
+  geom_node_point(aes(color = node_type, size = node_type)) +
+  scale_color_manual(values = c("high_eigen" = "#c41c85", "cluster" = "#50C878")) +
+  scale_size_manual(values = c("high_eigen" = 35, "cluster" = 30)) +
+  geom_node_text(aes(label = name), color = "white", size = 6) +
+  scale_x_continuous(expand = expansion(mult = 0.25)) +
+  scale_y_continuous(expand = expansion(mult = 0.25)) +
+  theme_void() +
+  theme(
+    legend.position = "none",
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+
+# Combine plots with vertical spacing
+gridExtra::grid.arrange(p1, p2, ncol = 1, heights = c(1, 1), padding = unit(2, "line"))
+```
+
+::: {.callout-note}
+
+**Top network (Scenario A):** Node A (magenta) has high degree (6 connections) but low eigenvector centrality (connected to peripheral nodes shown in black)
+
+**Bottom network (Scenario B):** Node A (magenta) has low degree (1 connection) but high eigenvector centrality (connected to highly central cluster shown in emerald)
+
+:::
+:::
+
+:::
+
+---
+
+## Eigenvector Example: Venture Capital {.smaller}
+
+**Startup Funding Network**
+
+**High Eigenvector VC Firm**
+
+- Invests alongside other prestigious VCs
+- Connected to successful entrepreneurs
+- Signals quality to market
+- Attracts top deal flow
+- Co-investment opportunities with elite partners
+
+**Low Eigenvector VC Firm**
+
+- Invests with less established partners
+- May take more risks on unproven teams
+- Less signaling value
+- Opportunity: First-mover on emerging trends
+
+**Empirical Finding:** High eigenvector centrality VCs achieve higher returns (network effects in syndication)
+
+---
+
+## Clustering Coefficient {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Definition:** Proportion of neighbors that are also connected
+
+$$C_{clust}(i) = \frac{2e_i}{k_i(k_i-1)}$$
+
+where:
+
+- $k_i$ = degree of node $i$
+- $e_i$ = number of edges between neighbors of $i$
+
+**Interpretation:** How interconnected is node $i$'s neighborhood?
+
+**Range:** 0 (no neighbors connected) to 1 (all neighbors connected)
+
+**Key Insight:**
+
+- **Closed triad**: Node's neighbors are connected → High clustering
+- **Open triad**: Node's neighbors are not connected → Low clustering
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8
+library(igraph)
+library(ggraph)
+library(gridExtra)
+
+# Closed triad: High clustering coefficient
+# Node A's neighbors (B and C) are connected
+edges_closed <- data.frame(
+  from = c("A", "A", "B"),
+  to = c("B", "C", "C")
+)
+g_closed <- graph_from_data_frame(edges_closed, directed = FALSE)
+
+# Assign node types
+V(g_closed)$node_type <- ifelse(V(g_closed)$name == "A", "focal", "neighbor")
+
+# Plot closed triad
+p1 <- ggraph(g_closed, layout = 'fr') +
+  geom_edge_link(color = "#c41c85", width = 2, alpha = 0.8) +
+  geom_node_point(aes(color = node_type, size = node_type)) +
+  scale_color_manual(values = c("focal" = "#c41c85", "neighbor" = "#50C878")) +
+  scale_size_manual(values = c("focal" = 35, "neighbor" = 30)) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.3)) +
+  scale_y_continuous(expand = expansion(mult = 0.3)) +
+  theme_void() +
+  theme(
+    legend.position = "none",
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+
+# Open triad: Low clustering coefficient
+# Node A's neighbors (B and C) are NOT connected
+edges_open <- data.frame(
+  from = c("A", "A"),
+  to = c("B", "C")
+)
+g_open <- graph_from_data_frame(edges_open, directed = FALSE)
+
+# Assign node types
+V(g_open)$node_type <- ifelse(V(g_open)$name == "A", "focal", "neighbor")
+
+# Plot open triad
+p2 <- ggraph(g_open, layout = 'fr') +
+  geom_edge_link(color = "#000000", width = 2, alpha = 0.8) +
+  geom_node_point(aes(color = node_type, size = node_type)) +
+  scale_color_manual(values = c("focal" = "#000000", "neighbor" = "#50C878")) +
+  scale_size_manual(values = c("focal" = 35, "neighbor" = 30)) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.3)) +
+  scale_y_continuous(expand = expansion(mult = 0.3)) +
+  theme_void() +
+  theme(
+    legend.position = "none",
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+
+# Combine plots with vertical spacing
+gridExtra::grid.arrange(p1, p2, ncol = 1, heights = c(1, 1), padding = unit(2, "line"))
+```
+
+::: {.callout-note}
+
+**Top network (Closed triad):** Node A (magenta) has clustering coefficient = 1.0. Both neighbors B and C (emerald) are connected to each other.
+
+**Bottom network (Open triad):** Node A (black) has clustering coefficient = 0.0. Neighbors B and C (emerald) are not connected.
+
+:::
+:::
+
+:::
+
+---
+
+## Clustering Coefficient: Embeddedness {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**What High Clustering Means:**
+
+- Node is part of a dense, cohesive group
+- High social capital and trust
+- Information redundancy (everyone knows everyone)
+- Strong group norms and social control
+- Closure benefits (Coleman's theory)
+
+**What Low Clustering Means:**
+
+- Node bridges disconnected groups
+- Access to diverse, non-redundant information
+- Weak tie advantages (Granovetter's theory)
+- Brokerage opportunities
+- Less embedded, more autonomous
+
+**Trade-off:** Closure (trust, coordination) vs. Brokerage (novelty, diversity)
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 8
+library(igraph)
+library(ggraph)
+library(gridExtra)
+
+# High clustering: Focal node A with interconnected neighbors
+set.seed(890)
+edges_high_clust <- data.frame(
+  from = c("A", "A", "A", "A", "B", "B", "B", "C", "C", "D"),
+  to = c("B", "C", "D", "E", "C", "D", "E", "D", "E", "E")
+)
+g_high_clust <- graph_from_data_frame(edges_high_clust, directed = FALSE)
+
+# Assign node types
+V(g_high_clust)$node_type <- ifelse(V(g_high_clust)$name == "A", "focal", "neighbor")
+
+# Plot high clustering
+p1 <- ggraph(g_high_clust, layout = 'fr') +
+  geom_edge_link(color = "#c41c85", width = 2, alpha = 0.6) +
+  geom_node_point(aes(color = node_type, size = node_type)) +
+  scale_color_manual(values = c("focal" = "#c41c85", "neighbor" = "#50C878")) +
+  scale_size_manual(values = c("focal" = 35, "neighbor" = 30)) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.25)) +
+  scale_y_continuous(expand = expansion(mult = 0.25)) +
+  theme_void() +
+  theme(
+    legend.position = "none",
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+
+# Low clustering: Focal node A with disconnected neighbors
+edges_low_clust <- data.frame(
+  from = c("A", "A", "A", "A"),
+  to = c("B", "C", "D", "E")
+)
+g_low_clust <- graph_from_data_frame(edges_low_clust, directed = FALSE)
+
+# Assign node types
+V(g_low_clust)$node_type <- ifelse(V(g_low_clust)$name == "A", "focal", "neighbor")
+
+# Plot low clustering
+p2 <- ggraph(g_low_clust, layout = 'star') +
+  geom_edge_link(color = "#000000", width = 2, alpha = 0.6) +
+  geom_node_point(aes(color = node_type, size = node_type)) +
+  scale_color_manual(values = c("focal" = "#000000", "neighbor" = "#50C878")) +
+  scale_size_manual(values = c("focal" = 35, "neighbor" = 30)) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.25)) +
+  scale_y_continuous(expand = expansion(mult = 0.25)) +
+  theme_void() +
+  theme(
+    legend.position = "none",
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+
+# Combine plots with vertical spacing
+gridExtra::grid.arrange(p1, p2, ncol = 1, heights = c(1, 1), padding = unit(2, "line"))
+```
+
+::: {.callout-note}
+
+**Top network (High Clustering):** Node A (magenta) is embedded in a dense,
+cohesive group where neighbors B, C, D, E (emerald) are highly interconnected.
+Closure benefits.
+
+**Bottom network (Low Clustering):** Node A (black) bridges disconnected
+groups. Neighbors B, C, D, E (emerald) are not connected to each other.
+Brokerage opportunities.
+
+:::
+:::
+
+:::
+
+---
+
+## Clustering Example: Scientific Collaboration {.smaller}
+
+**Academic Research Networks**
+
+**High Clustering Professor (clustering = 0.85)**
+
+- Collaborators know and work with each other
+- Cohesive research group or lab
+- Efficient coordination and shared understanding
+- Strong collective identity
+- Publication pattern: Multiple coauthors from same institution
+- Risk: Echo chamber, less novelty
+
+**Low Clustering Professor (clustering = 0.15)**
+
+- Collaborators don't overlap
+- Bridges multiple research communities
+- Access to diverse methods and ideas
+- Publication pattern: Different coauthors for different papers
+- Potential: Interdisciplinary breakthroughs
+
+---
+
+## PageRank
+
+**Definition:** Prestige based on quality of incoming links
+
+$$PR(i) = \frac{1-d}{n} + d \sum_{j \in M(i)} \frac{PR(j)}{L(j)}$$
+
+where:
+
+- $d$ = damping factor (typically 0.85)
+- $M(i)$ = nodes linking to $i$
+- $L(j)$ = number of outgoing links from $j$
+
+**Key Innovation:** Endorsement from important nodes counts more
+
+**Origin:** Google's original ranking algorithm for web pages
+
+---
+
+## PageRank: Beyond Google
+
+**The "Random Surfer" Model:**
+
+- Imagine surfer clicking links randomly
+- Sometimes (15%) jumps to random page
+- PageRank = probability of finding surfer at each page
+- High PageRank = frequently visited in random walks
+
+**Advantages over Eigenvector:**
+
+- Handles directed networks better
+- Deals with dangling nodes (no outlinks)
+- Dampening factor prevents pathological cases
+- More robust in practice
+
+---
+
+## PageRank Example: Twitter Influence
+
+**Social Media Network Analysis**
+
+**High PageRank Account**
+
+- Followed by other influential accounts
+- Endorsements carry weight
+- Information cascades originate here
+- Real influence beyond follower count
+
+**Comparison:**
+
+- **Account A**: 100K followers, mostly inactive accounts (low PageRank)
+- **Account B**: 10K followers, including journalists and celebrities (high PageRank)
+
+**Marketing Insight:** PageRank identifies true influencers, not just popular accounts
+
+**Application:** Influencer identification, opinion leader detection, cascade prediction
+
+---
+
+## Comparing Centrality Measures
+
+**Correlations and Divergences:**
+
+**Often Correlated:**
+
+- Degree and Eigenvector (well-connected tends to connect to well-connected)
+- Closeness and Degree in many networks
+- Betweenness and low clustering (brokers bridge groups)
+
+**Can Diverge:**
+
+- High degree but low betweenness (dense cluster member)
+- High betweenness but low degree (critical bridge with few ties)
+- High eigenvector but low degree (connected to few important others)
+
+**Recommendation:** Calculate multiple measures; triangulate interpretations
+
+---
+
+## When to Use Which Measure {.smaller}
+
+**Selection Guide:**
+
+| Use Case                     | Recommended Measure       | Why                       |
+| ----------                   | -------------------       | -----                     |
+| Identify popular individuals | Degree (in)               | Direct connections matter |
+| Find information hubs        | Closeness                 | Quick access to all       |
+| Locate brokers               | Betweenness               | Control over flows        |
+| Detect prestigious actors    | Eigenvector or PageRank   | Quality of connections    |
+| Assess group cohesion        | Clustering                | Local density             |
+| Rank web pages               | PageRank                  | Link endorsement          |
+| Predict influence spread     | Eigenvector + Betweenness | Reach and position        |
+
+
+---
+
+## Centralization vs. Centrality {.smaller}
+
+**Important Distinction:**
+
+**Centrality (Node-level):**
+
+- Individual scores for each node
+- Distribution across network
+- Who is most central?
+
+**Centralization (Network-level):**
+
+- Overall concentration of centrality
+- Single score for entire network
+- How centralized is the structure?
+
+**Formula (Freeman):**
+
+$$C = \frac{\sum_i [C_{max} - C_i]}{max\sum [C_{max} - C_i]}$$
+
+**Range:** 0 (all equal) to 1 (perfect star)
+
+---
+
+## Applications Across Domains {.smaller}
+
+**Marketing:**
+
+- Identify influencers (high eigenvector/PageRank)
+- Target opinion leaders (high betweenness)
+- Viral marketing strategies (high closeness)
+
+**Operations:**
+
+- Supply chain resilience (betweenness analysis)
+- Knowledge management (closeness optimization)
+- Communication efficiency (clustering + closeness)
+
+**HR & Organizational Design:**
+
+- Talent identification (eigenvector centrality)
+- Team composition (balance clustering/brokerage)
+- Succession planning (dependency on high betweenness)
+
+---
+
+## Limitations and Caveats {.smaller}
+
+**Methodological Challenges:**
+
+1. **Boundary specification**: Who/what to include?
+2. **Missing data**: Incomplete networks bias results
+3. **Temporal dynamics**: Networks change over time
+4. **Multiple relations**: Which ties matter?
+5. **Context dependence**: Same position, different meanings
+6. **Correlation ≠ causation**: Structure reflects and shapes behavior
+
+**Best Practices:**
+
+- Use multiple measures
+- Consider substantive interpretation
+- Validate with qualitative data
+- Test robustness to specifications
+
+---
+
+## Key Takeaways
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.callout-important}
+
+**Core Concepts:**
+
+1. Centrality measures **importance**, but importance is multidimensional
+2. Different measures capture different **mechanisms** and **advantages**
+3. **Context matters**: Same structure, different meanings
+4. Centrality **distributions** reveal inequality and vulnerability
+5. **Compare multiple measures** for comprehensive understanding
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.callout-note}
+
+**Practical Wisdom:**
+
+- No single "best" centrality measure
+- Match measure to substantive question
+- Consider computational constraints
+- Interpret in context of research question
+
+:::
+
+:::
+
+:::
+

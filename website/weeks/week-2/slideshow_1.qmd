@@ -1,0 +1,203 @@
+---
+title: "Networks, Network Analysis & Business Relevance"
+subtitle: "Setting Expectations for SMM638"
+author: "SMM638 Network Analytics"
+date: "2025-10-06"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    css: custom-slides.css
+    code-fold: true
+    code-summary: ""
+---
+
+## What Are Networks?
+
+**Networks are structures of interconnected entities**
+
+- Entities are interconnected via specific **relationships**
+- **Examples of relationships** are:
+  - Resource flow (e.g., economic exchange)
+  - Information exchange (e.g., electronic communication)
+  - Physical connection (e.g., London tube)
+  - Membership (e.g., student-program affiliation)
+
+::: {.callout-note}
+*Networks and graphs are interrelated yet distinct concepts*: graphs are
+mathematical constructs, while networks regard concrete relationships between
+entities that can be represented using graphs
+:::
+
+---
+
+## What to Expect: Network Analysis
+
+| **Network Analysis Tools**                               | **Real-world Examples**                         |
+| :---------------------------                             | :------------------------                       |
+| **Visualize** complex relationship patterns              | Associations between subreddits on Reddit       |
+| **Identify** influential nodes and key positions         | Opinion leaders in organizations and platforms  |
+| **Detect** network sub-components and communities        | Communication silos in teams                    |
+| **Understand** information flows and diffusion           | Impact of Tube station closures on connectivity |
+| **Explain** properties of complex systems quantitatively | Distribution of popularity in cultural markets  |
+
+---
+
+## Network Analysis Skills
+
+**Key skills you'll develop:**
+
+- Network data collection, wrangling, and structuring
+- Computing various network indicators
+- Statistical analysis of network data
+- Creating meaningful network visualizations
+- Translating insights into business strategy
+
+---
+
+## Networks in Markets
+
+**Information Flow**
+
+- Product reviews and recommendations spread through networks[^1]
+- Market intelligence travels via professional connections
+- Innovation diffuses along network pathways
+
+![](imgs/trading_floor.jpg){width=60%}
+
+[^1]: Oestreicher-Singer, Gal, and Arun Sundararajan. *Recommendation networks and the long tail of electronic commerce.* MIS Quarterly (2012): 65-83.
+
+---
+
+## Networks in Markets
+
+**Trust and Transaction Costs**
+
+- Trust networks reduce monitoring costs and increase task focus[^2]
+- Established relationships lower search costs for new business partners
+- Repeat interactions enable efficient exchange and coordination among parties
+
+![](imgs/trust_in_negotiations.jpg){width=55%}
+
+[^2]: Uzzi, B., & Dunlap, S. (2005). *How to build your network*. Harvard
+  Business Review, 83(12), 53.
+
+---
+
+## Networks in Markets
+
+**Platform Economy's Network Structure**
+
+- Platform economics is predicated around the value of connections[^3]
+- Network effects drive scaling (how to leverage networks to get attention?)
+- An ecosystem's advantage relies on networks (e.g., Android is more than an operating
+  system, it's a complex network of firms, developers, and customers)
+
+![](imgs/android_vs_appstore.png)
+
+[^3]: Belleflamme, P., & Peitz, M. (2021). *The economics of platforms*.
+  Cambridge University Press.
+
+---
+
+## Networks in Organizations
+
+**Knowledge Resides in Networks**
+
+*Organizational Network Analysis* allows analysts to understand:
+
+- Knowledge locus and knowledge sharing
+- Innovation through diverse connections
+- Problem-solving via boundary-spanning ties
+
+![](imgs/organizational_silos.png)
+
+---
+
+## Networks in Organizations
+
+**Teams Function through Networks**
+
+- Collaboration patterns affect performance[^4]
+- Informal advice networks complement formal structure[^5]
+- Communication efficiency depends on network position
+
+![](imgs/team_exchange.jpg){width=45%}
+
+[^4]: Gratton, L., & Erickson, T. J. (2007). *Eight ways to build collaborative teams*. Harvard Business Review, 85(11), 100.
+
+[^5]: Cross, R., Ehrlich, K., Dawson, R., & Helferich, J. (2008). *Managing collaboration: Improving team effectiveness through a network perspective*. California Management Review, 50(4), 74-98.
+
+---
+
+## Networks in Organizations
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Networks Enable Strategy**
+
+- Sparsely connected networks offer value creation opportunities[^6]
+- Those who connect otherwise disconnected groups have information advantages[^7]
+- Central nodes have influence and power[^8]
+:::
+
+::: {.column width="40%"}
+![](imgs/the_prince.jpg)
+:::
+
+:::
+
+[^6]: Burt, R. S. (2005). *Brokerage and closure: An introduction to social
+  capital*. Oxford University Press, USA.
+
+[^7]: Burt, R. S. (2004). *Structural holes and good ideas*. American Journal
+  of Sociology, 110(2), 349-399.
+
+[^8]: Battilana, J., & Casciaro, T. (2013). The network secrets of great
+  change agents. *Harvard Business Review*, 91(7), 62-68.
+
+---
+
+## Your Learning Journey
+
+::: {.panel-tabset}
+
+### Timeline
+
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%
+gantt
+    title Gantt chart of the module
+    dateFormat YYYY-MM-DD
+    axisFormat %b %d
+
+    section Topics
+    Foundations:done, topic1, 2025-09-29, 7d
+    Centrality :active, topic2, 2025-10-06, 14d
+    Dynamics   :topic3, 2025-10-20, 14d
+    Communities:topic4, 2025-11-17, 14d
+    Performance:topic5, 2025-12-01, 14d
+
+    section Teaching Cases
+    RCB: crit, milestone, case0, 2025-10-08, 0d
+    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d
+    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d
+    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d
+    Profiling beer enthusiasts:crit, milestone, case4, 2025-12-10, 0d
+``` 
+
+### Practical Focus
+
+::: {.incremental}
+
+- Real business cases (e.g., RBC fraud detection, marketing through Twitch)
+- Hands-on coding in R and Python
+- Actionable insights for business decision-making
+
+:::
+
+:::

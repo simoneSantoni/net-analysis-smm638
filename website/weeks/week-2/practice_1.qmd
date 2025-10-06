@@ -1,0 +1,569 @@
+---
+title: "Practice: Ingesting Network Data and Computing Degree"
+subtitle: "Week 2 - Network Analytics"
+---
+
+## Learning Objectives
+
+In this tutorial, you will learn how to:
+
+1. Download and load real-world network data
+2. Create a network (graph) object in R using `igraph`
+3. Compute basic network statistics (node count, edge count)
+4. Calculate node degree centrality
+5. Visualize degree distributions
+
+## Dataset: Email Communication Network
+
+We will use the **email-Eu-core** dataset from the Stanford Network Analysis Project (SNAP).
+
+**Description**: This network represents email communications within a large European research institution.
+
+**Network Properties**:
+
+- **Nodes**: 1,005 individuals (members of the institution)
+- **Edges**: 25,571 directed edges
+- **Edge meaning**: If person u sent person v at least one email, there is a directed edge from u to v
+- **Network type**: Directed
+
+**Source**: [SNAP - Email-Eu-core Network](https://snap.stanford.edu/data/email-Eu-core.html)
+
+---
+
+## Step 1: Setup and Load Required Libraries
+
+First, we need to load the R packages we will use for network analysis and visualization.
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+# Load required libraries
+library(igraph)      # Network analysis
+library(ggplot2)     # Data visualization
+library(dplyr)       # Data manipulation
+library(knitr)       # Table formatting
+
+# Check if packages are loaded
+cat("All packages loaded successfully!\n")
+```
+
+::: {.callout-tip}
+## Installing Packages
+
+If you do not have these packages installed, run:
+```r
+install.packages(c("igraph", "ggplot2", "dplyr", "knitr"))
+```
+:::
+
+---
+
+## Step 2: Download the Dataset
+
+Let us download the email network data from SNAP.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Create a directory for data if it does not exist
+if (!dir.exists("data")) {
+  dir.create("data")
+}
+
+# Download the dataset
+url <- "https://snap.stanford.edu/data/email-Eu-core.txt.gz"
+destfile <- "data/email-Eu-core.txt.gz"
+
+# Download if file does not already exist
+if (!file.exists(destfile)) {
+  download.file(url, destfile)
+  cat("Dataset downloaded successfully!\n")
+} else {
+  cat("Dataset already exists. Skipping download.\n")
+}
+```
+
+::: {.callout-note}
+## File Format
+
+The dataset is in `.txt.gz` format (compressed text file). R can read this directly without manual decompression!
+:::
+
+---
+
+## Step 3: Load the Network Data
+
+Now we will read the edge list and examine its structure.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Read the edge list
+# The file contains two columns: FromNodeId ToNodeId
+edge_data <- read.table("data/email-Eu-core.txt.gz",
+                        header = FALSE,
+                        col.names = c("from", "to"))
+
+# View the first few rows
+cat("First 10 edges in the network:\n")
+head(edge_data, 10)
+
+# Check the structure
+cat("\nDataset dimensions:\n")
+cat("Number of edges:", nrow(edge_data), "\n")
+cat("Number of columns:", ncol(edge_data), "\n")
+```
+
+**Expected Output:**
+```
+First 10 edges in the network:
+   from  to
+1     0   1
+2     0   2
+3     0   3
+4     0   4
+5     0   5
+...
+
+Dataset dimensions:
+Number of edges: 25571
+Number of columns: 2
+```
+
+::: {.callout-tip}
+## Understanding Edge Lists
+
+An **edge list** is the simplest way to represent a network:
+- Each row represents one edge (connection)
+- First column: source node (sender)
+- Second column: target node (receiver)
+:::
+
+---
+
+## Step 4: Create a Network Object
+
+We will use `igraph` to create a graph object from the edge list.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Create a directed graph from the edge list
+g <- graph_from_data_frame(edge_data, directed = TRUE)
+
+# Display basic information
+cat("Network created successfully!\n\n")
+cat("Network Summary:\n")
+cat("  Number of nodes:", vcount(g), "\n")
+cat("  Number of edges:", ecount(g), "\n")
+cat("  Is directed:", is_directed(g), "\n")
+cat("  Is weighted:", is_weighted(g), "\n")
+```
+
+**Expected Output:**
+```
+Network created successfully!
+
+Network Summary:
+  Number of nodes: 1005
+  Number of edges: 25571
+  Is directed: TRUE
+  Is weighted: FALSE
+```
+
+::: {.callout-important}
+## Directed vs Undirected
+
+This network is **directed** because emails have a sender and receiver. The direction matters!
+
+- Edge A -> B: Person A sent email to Person B
+- This is different from B -> A
+:::
+
+---
+
+## Step 5: Compute Node Degree
+
+Now let us calculate degree centrality for all nodes in the network.
+
+### In-Degree and Out-Degree
+
+In a directed network, each node has two types of degree:
+
+- **In-degree**: Number of incoming edges (emails received)
+- **Out-degree**: Number of outgoing edges (emails sent)
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Compute in-degree (emails received)
+in_degree <- degree(g, mode = "in")
+
+# Compute out-degree (emails sent)
+out_degree <- degree(g, mode = "out")
+
+# Compute total degree (in + out)
+total_degree <- degree(g, mode = "all")
+
+# View summary statistics
+cat("In-Degree Statistics:\n")
+cat("  Min:", min(in_degree), "\n")
+cat("  Max:", max(in_degree), "\n")
+cat("  Mean:", round(mean(in_degree), 2), "\n")
+cat("  Median:", median(in_degree), "\n\n")
+
+cat("Out-Degree Statistics:\n")
+cat("  Min:", min(out_degree), "\n")
+cat("  Max:", max(out_degree), "\n")
+cat("  Mean:", round(mean(out_degree), 2), "\n")
+cat("  Median:", median(out_degree), "\n")
+```
+
+**Expected Output:**
+```
+In-Degree Statistics:
+  Min: 0
+  Max: 345
+  Mean: 25.45
+  Median: 12
+
+Out-Degree Statistics:
+  Min: 0
+  Max: 345
+  Mean: 25.45
+  Median: 12
+```
+
+---
+
+## Step 6: Identify High-Degree Nodes
+
+Let us find the most active email senders and receivers.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Create a data frame with degree measures
+degree_df <- data.frame(
+  node_id = V(g)$name,
+  in_degree = in_degree,
+  out_degree = out_degree,
+  total_degree = total_degree
+)
+
+# Find top 10 nodes by in-degree (most emails received)
+top_in <- degree_df %>%
+  arrange(desc(in_degree)) %>%
+  head(10)
+
+cat("Top 10 Email Recipients (Highest In-Degree):\n")
+print(top_in)
+
+# Find top 10 nodes by out-degree (most emails sent)
+top_out <- degree_df %>%
+  arrange(desc(out_degree)) %>%
+  head(10)
+
+cat("\nTop 10 Email Senders (Highest Out-Degree):\n")
+print(top_out)
+```
+
+::: {.callout-tip}
+## Interpreting Degree Centrality
+
+- **High in-degree**: Popular or important person; receives many emails
+- **High out-degree**: Very active communicator; sends many emails
+- **High total degree**: Highly connected; both sends and receives many emails
+:::
+
+---
+
+## Step 7: Create a Summary Table
+
+Let us create a formatted table showing degree statistics.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Summary statistics table
+degree_summary <- data.frame(
+  Metric = c("In-Degree", "Out-Degree", "Total Degree"),
+  Minimum = c(min(in_degree), min(out_degree), min(total_degree)),
+  Maximum = c(max(in_degree), max(out_degree), max(total_degree)),
+  Mean = round(c(mean(in_degree), mean(out_degree), mean(total_degree)), 2),
+  Median = c(median(in_degree), median(out_degree), median(total_degree))
+)
+
+# Display as formatted table
+kable(degree_summary,
+      caption = "Degree Centrality Summary Statistics",
+      align = "c")
+```
+
+---
+
+## Step 8: Visualize Degree Distribution
+
+Let us create a histogram to visualize the distribution of degrees.
+
+```{r}
+#| echo: true
+#| eval: false
+#| fig-width: 10
+#| fig-height: 6
+#| fig-align: center
+
+# Create histogram of in-degree
+ggplot(degree_df, aes(x = in_degree)) +
+  geom_histogram(bins = 50, fill = "#c41c85", alpha = 0.7, color = "white") +
+  labs(
+    title = "Distribution of In-Degree (Emails Received)",
+    x = "In-Degree (Number of emails received)",
+    y = "Frequency (Number of nodes)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    axis.title = element_text(size = 12)
+  )
+```
+
+```{r}
+#| echo: true
+#| eval: false
+#| fig-width: 10
+#| fig-height: 6
+#| fig-align: center
+
+# Create histogram of out-degree
+ggplot(degree_df, aes(x = out_degree)) +
+  geom_histogram(bins = 50, fill = "#50C878", alpha = 0.7, color = "white") +
+  labs(
+    title = "Distribution of Out-Degree (Emails Sent)",
+    x = "Out-Degree (Number of emails sent)",
+    y = "Frequency (Number of nodes)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    axis.title = element_text(size = 12)
+  )
+```
+
+---
+
+## Step 9: Compare In-Degree and Out-Degree
+
+Are people who receive many emails also sending many emails? Let us create a scatter plot to find out.
+
+```{r}
+#| echo: true
+#| eval: false
+#| fig-width: 8
+#| fig-height: 8
+#| fig-align: center
+
+# Scatter plot of in-degree vs out-degree
+ggplot(degree_df, aes(x = out_degree, y = in_degree)) +
+  geom_point(alpha = 0.5, color = "#c41c85", size = 2) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "gray50") +
+  labs(
+    title = "In-Degree vs Out-Degree",
+    subtitle = "Diagonal line shows where in-degree = out-degree",
+    x = "Out-Degree (Emails Sent)",
+    y = "In-Degree (Emails Received)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    axis.title = element_text(size = 12)
+  )
+
+# Calculate correlation
+correlation <- cor(degree_df$in_degree, degree_df$out_degree)
+cat("\nCorrelation between in-degree and out-degree:", round(correlation, 3), "\n")
+```
+
+::: {.callout-note}
+## Interpreting the Scatter Plot
+
+- **Points on the diagonal line**: People who send and receive equal numbers of emails
+- **Points above the line**: Receive more emails than they send
+- **Points below the line**: Send more emails than they receive
+- **Correlation coefficient**: Measures how strongly in-degree and out-degree are related (ranges from -1 to 1)
+:::
+
+---
+
+## Step 10: Identify Degree Categories
+
+Let us categorize nodes by their communication patterns.
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Calculate percentiles
+in_75th <- quantile(in_degree, 0.75)
+out_75th <- quantile(out_degree, 0.75)
+
+# Categorize nodes
+degree_df <- degree_df %>%
+  mutate(
+    category = case_when(
+      in_degree > in_75th & out_degree > out_75th ~ "Active Communicators",
+      in_degree > in_75th & out_degree <= out_75th ~ "Email Receivers",
+      in_degree <= in_75th & out_degree > out_75th ~ "Email Senders",
+      TRUE ~ "Low Activity"
+    )
+  )
+
+# Count nodes in each category
+category_counts <- degree_df %>%
+  group_by(category) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  arrange(desc(count))
+
+cat("Node Categories:\n")
+print(category_counts)
+
+# Calculate percentages
+category_counts <- category_counts %>%
+  mutate(percentage = round(count / sum(count) * 100, 1))
+
+kable(category_counts,
+      caption = "Distribution of Communication Patterns",
+      col.names = c("Category", "Count", "Percentage (%)"),
+      align = "c")
+```
+
+---
+
+## Complete Code Example
+
+Here is the complete code you can run all at once:
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: true
+#| code-summary: "Click to see complete code"
+
+# Load libraries
+library(igraph)
+library(ggplot2)
+library(dplyr)
+library(knitr)
+
+# Download data
+if (!dir.exists("data")) dir.create("data")
+url <- "https://snap.stanford.edu/data/email-Eu-core.txt.gz"
+destfile <- "data/email-Eu-core.txt.gz"
+if (!file.exists(destfile)) download.file(url, destfile)
+
+# Load network
+edge_data <- read.table(destfile, header = FALSE, col.names = c("from", "to"))
+g <- graph_from_data_frame(edge_data, directed = TRUE)
+
+# Compute degree
+in_degree <- degree(g, mode = "in")
+out_degree <- degree(g, mode = "out")
+total_degree <- degree(g, mode = "all")
+
+# Create summary data frame
+degree_df <- data.frame(
+  node_id = V(g)$name,
+  in_degree = in_degree,
+  out_degree = out_degree,
+  total_degree = total_degree
+)
+
+# Print summary
+cat("Network Summary:\n")
+cat("  Nodes:", vcount(g), "\n")
+cat("  Edges:", ecount(g), "\n")
+cat("  Average in-degree:", round(mean(in_degree), 2), "\n")
+cat("  Average out-degree:", round(mean(out_degree), 2), "\n")
+
+# Top nodes
+cat("\nTop 5 by In-Degree:\n")
+print(head(degree_df %>% arrange(desc(in_degree)), 5))
+
+cat("\nTop 5 by Out-Degree:\n")
+print(head(degree_df %>% arrange(desc(out_degree)), 5))
+
+# Visualize
+ggplot(degree_df, aes(x = in_degree, y = out_degree)) +
+  geom_point(alpha = 0.5, color = "#c41c85") +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  labs(title = "In-Degree vs Out-Degree",
+       x = "In-Degree", y = "Out-Degree") +
+  theme_minimal()
+```
+
+---
+
+## Practice Questions
+
+::: {.callout-warning}
+## Try It Yourself
+
+1. **Degree Distribution**: What percentage of nodes have in-degree greater than 50?
+
+2. **Network Density**: Calculate the network density. Is this a sparse or dense network?
+
+3. **Isolates**: How many nodes have total degree of 0? What might this represent?
+
+4. **Asymmetry**: Identify nodes where the difference between in-degree and out-degree is greater than 100. What does this tell you about their communication pattern?
+
+5. **Quartiles**: What is the in-degree at the 25th, 50th, and 75th percentiles?
+
+**Bonus Challenge**: Create a function that takes a node ID and returns its degree rank (1st, 2nd, 3rd, etc.) for both in-degree and out-degree.
+
+:::
+
+---
+
+## Key Takeaways
+
+::: {.callout-important}
+## Summary
+
+1. **Loading network data**: Edge lists are simple and common format for network data
+2. **Graph creation**: `graph_from_data_frame()` converts edge lists to network objects
+3. **Degree centrality**: Measures how connected each node is
+   - In-degree: incoming connections
+   - Out-degree: outgoing connections
+4. **Degree distribution**: Often follows a power-law (many nodes with low degree, few with high degree)
+5. **Correlation analysis**: Helps understand relationship between different centrality measures
+
+:::
+
+---
+
+## Next Steps
+
+Now that you can ingest network data and compute basic centrality measures, you are ready to:
+
+1. Explore other centrality measures (betweenness, closeness, eigenvector)
+2. Analyze community structure in networks
+3. Compare multiple networks
+4. Work with larger and more complex datasets
+
+Check out [Problem Set 1](perform_1.qmd) to apply these skills to the Wikipedia Vote Network!
+
+---
+
+## Additional Resources
+
+- [igraph R package documentation](https://igraph.org/r/)
+- [SNAP datasets](https://snap.stanford.edu/data/)
+- [Network Science book by Barabasi](http://networksciencebook.com/)

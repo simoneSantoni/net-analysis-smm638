@@ -101,6 +101,81 @@ This installs:
 3. If adding PDFs or datasets, place in `website/weeks/week-N/`
 4. Render and commit
 
+### Creating Slideshows
+
+Weekly materials often include Quarto Revealjs slideshows (e.g., `slideshow_1.qmd`, `slideshow_2.qmd`). These follow consistent styling:
+
+**Standard slideshow YAML frontmatter**:
+```yaml
+---
+title: "Slideshow Title"
+subtitle: "Descriptive Subtitle"
+author: "SMM638 Network Analytics"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    css: custom-slides.css
+    code-fold: true
+    code-summary: ""
+---
+```
+
+**Visual styling conventions**:
+- Primary accent color: magenta `#c41c85`
+- Secondary/intermediate color: emerald `#50C878`
+- Low centrality/peripheral: black `#000000`
+- Edges: light gray `#D3D3D3`
+- All node labels: white text for visibility on all backgrounds
+
+**Common two-column pattern**:
+```markdown
+::: {.columns}
+::: {.column width="60%"}
+Text content and explanations
+:::
+::: {.column width="40%"}
+R code chunk with visualization
+:::
+:::
+```
+
+**Network visualization best practices**:
+- Use `igraph` and `ggraph` for network plots
+- Node size: 12-35 depending on network size (smaller for larger networks)
+- Label size: 4-8 depending on network size
+- Edge width: 1.5-2 with alpha 0.6 for semi-transparency
+- Use `theme_void()` with white background
+- Use `gridExtra::grid.arrange()` for multiple plots in one slide
+
+### Creating Practice Exercises
+
+Practice exercises (e.g., `practice_1.qmd`) are standalone HTML pages with interactive code:
+
+**Standard practice exercise structure**:
+```yaml
+---
+title: "Practice Exercise: Topic Name"
+subtitle: "Week N - Network Analytics"
+---
+```
+
+**Key sections**:
+1. **Exercise Overview**: Task description and learning objectives
+2. **Questions**: Numbered list of specific questions to answer
+3. **Network Visualization**: Interactive R code showing the network
+4. **Edge List**: Table of network connections
+5. **Your Turn**: Code for students to run and modify
+6. **Solutions**: Collapsible callout with detailed answers
+
+**Callout boxes for exercises**:
+- `{.callout-tip}` for interpretation hints
+- `{.callout-note collapse="true"}` for solutions (click to reveal)
+- `{.callout-warning}` for challenge questions
+
 ### Updating Course Information
 
 Course pages are in `website/course/`:

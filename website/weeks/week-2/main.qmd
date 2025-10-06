@@ -4,7 +4,51 @@ subtitle: "Network centrality"
 callout-appearance: "default"
 ---
 
-::: {.callout-note}
-Content coming soon.
+## Prepare
 
-:::
+📖 Read the [syllabus](../../course/syllabus.qmd)
+
+📖 Revise [network terms](../week-1/network_terms.qmd) (from week 1)
+
+
+## Participate
+
+📉 Slideshows:
+
+1. [Networks, Network Analysis & Business Relevance](slideshow_1.qmd)
+
+2. [Why Network Analysis Matters](slideshow_2.qmd)
+
+3. [Fundamental Network Concepts](slideshow_3.qmd)
+
+4. [Taxonomy of Network Analysis Indicators](slideshow_4.qmd)
+
+5. [Network centrality](slideshow_5.qmd)
+
+## Practice
+
+🧮 [Ingest network data and compute node degree](practice_1.qmd)
+
+## Perform
+
+✏️ [Compute network centrality indicators on a toy network dataset](perform_0.qmd)
+
+✏️ [Wikipedia Vote Network](perform_1.qmd)
+
+## Ponder
+
+**Network centrality concept**
+
+Chapter 26 ("Centrality") from McLevey, J., Carrington, P. J., & Scott, J.
+(2023). [*The Sage handbook of social network analysis*](https://go.exlibris.link/rW0j0hZX). Sage.
+
+**Practical importance of intra-organizational networks**
+
+Cross, R., Liedtka, J., & Weiss, L. (2005). *[A practical guide to social
+networks*](https://go.exlibris.link/9lZS2t2V). Harvard Business Review, 83(3), 124-132.
+
+**Centrality and social influence in networks**
+
+Griskevicius, V., Cialdini, R. B., & Goldstein, N. J. (2008). [*Applying (and
+resisting) peer influence*](https://go.exlibris.link/FnvYsnT0). MIT Sloan Management Review, 49(2), 84.
+

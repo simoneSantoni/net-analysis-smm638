@@ -1,0 +1,435 @@
+---
+title: "Taxonomy of Network Analysis Indicators"
+subtitle: "Macro, Meso, and Node-Level Measures"
+author: "SMM638 Network Analytics"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    css: custom-slides.css
+    code-fold: true
+    code-summary: ""
+---
+
+## Three Levels of Analysis
+
+**Network indicators operate at different scales:**
+
+| Level          | Focus                | Questions                                 |
+| -------        | -------              | -----------                               |
+| **Macro**      | Entire network       | How big? How centralized? How connected?  |
+| **Meso**       | Groups/Communities   | Are there clusters of nodes? How modular? |
+| **Micro/Node** | Individual positions | Who is central? Who bridges groups?       |
+
+::: {.callout-caution}
+
+**Key Principle:** Different levels reveal different insights
+
+- Macro: Overall structure and properties
+- Meso: Subgroup organization  
+- Micro: Individual advantages and constraints
+
+:::
+
+---
+
+## Macro-Level Indicators
+
+**Whole Network Properties**
+
+Characterize the overall structure and global patterns
+
+**Key Measures:**
+
+1. **Network Size**: Number of nodes and edges
+2. **Density**: Proportion of possible connections realized
+3. **Centralization**: Concentration of connections  
+4. **Diameter**: Maximum distance between any two nodes
+5. **Average Path Length**: Mean distance across all pairs
+6. **Fragmentation**: Presence of disconnected components
+
+**Purpose:** Understand network-wide characteristics and compare across networks
+
+---
+
+## Example: Network Size and Density {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Definition:** Basic structural properties
+
+- **Node count**: Total number of vertices ($n$)
+- **Edge count**: Total number of connections ($m$)
+- **Possible edges**: $\frac{n(n-1)}{2}$ for undirected networks
+
+**Business Example: LinkedIn Network**
+
+- **Small startup network** (50 employees)
+  - Possible connections: 1,225
+  - Observed connections: 245
+  - Density: 20%
+
+- **Large corporation network** (5,000 employees)
+  - Possible connections: 12,497,500
+  - Observed connections: 187,500
+  - Density: 1.5%
+
+**Insight:** Larger networks typically have lower density
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 5
+library(igraph)
+library(ggraph)
+
+# Create a 5-node example network
+set.seed(123)
+edges <- data.frame(
+  from = c("A", "B", "C", "D", "A", "C"),
+  to = c("B", "C", "D", "E", "C", "E")
+)
+
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Calculate network metrics
+n_nodes <- vcount(g)
+n_edges <- ecount(g)
+possible_edges <- (n_nodes * (n_nodes - 1)) / 2
+density <- n_edges / possible_edges
+
+# Plot
+ggraph(g, layout = 'fr') +
+  geom_edge_link(color = "#c41c85", width = 2) +
+  geom_node_point(color = "#c41c85", size = 30) +
+  geom_node_text(aes(label = name), color = "white", size = 8) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Network Metrics:**
+
+```{r}
+#| echo: false
+#| results: asis
+library(knitr)
+
+metrics <- data.frame(
+  Metric = c("Nodes (n)", "Edges (m)", "Possible Edges", "Density"),
+  Value = c(
+    n_nodes,
+    n_edges,
+    possible_edges,
+    sprintf("%.1f%%", density * 100)
+  )
+)
+
+html <- '<table style="border-collapse: collapse; margin: auto; font-size: 14px;">'
+for (i in 1:nrow(metrics)) {
+  html <- paste0(html, '<tr>')
+  html <- paste0(html, sprintf('<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">%s</td>', metrics$Metric[i]))
+  html <- paste0(html, sprintf('<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">%s</td>', metrics$Value[i]))
+  html <- paste0(html, '</tr>')
+}
+html <- paste0(html, '</table>')
+
+cat(html)
+```
+:::
+
+:::
+
+---
+
+## Example: Centralization {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Definition:** Extent to which connections concentrate around few nodes
+
+- **High centralization**: Star-like, hierarchical structure
+- **Low centralization**: Distributed, egalitarian structure
+
+**Business Example: Communication Patterns**
+
+**Startup (Low Centralization = 0.25)**
+
+- Flat structure with distributed communication
+- Multiple people coordinate projects
+- Information flows through many channels
+
+**Traditional Corporation (High Centralization = 0.78)**
+
+- Hub-and-spoke: most communication through managers
+- Clear hierarchy and formal reporting
+- Information bottlenecks at central nodes
+
+**Implication:** Centralization affects agility, innovation, and resilience
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 10
+library(igraph)
+library(ggraph)
+library(gridExtra)
+
+# Create a high centralization network (star)
+edges_high <- data.frame(
+  from = c("C", "C", "C", "C"),
+  to = c("A", "B", "D", "E")
+)
+g_high <- graph_from_data_frame(edges_high, directed = FALSE)
+
+# Create a low centralization network (distributed)
+edges_low <- data.frame(
+  from = c("A", "B", "C", "D", "A", "C", "B", "D"),
+  to = c("B", "C", "D", "E", "E", "E", "D", "A")
+)
+g_low <- graph_from_data_frame(edges_low, directed = FALSE)
+
+# Plot high centralization
+p1 <- ggraph(g_high, layout = 'star') +
+  geom_edge_link(color = "#c41c85", width = 2) +
+  geom_node_point(color = "#c41c85", size = 30) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.25)) +
+  scale_y_continuous(expand = expansion(mult = 0.25)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+
+# Plot low centralization
+p2 <- ggraph(g_low, layout = 'fr') +
+  geom_edge_link(color = "#4A4A4A", width = 2) +
+  geom_node_point(color = "#4A4A4A", size = 30) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.25)) +
+  scale_y_continuous(expand = expansion(mult = 0.25)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+
+# Combine plots with increased vertical spacing
+gridExtra::grid.arrange(p1, p2, ncol = 1, heights = c(1, 1), padding = unit(2, "line"))
+```
+
+**Network Metrics:**
+
+```{r}
+#| echo: false
+#| results: asis
+library(knitr)
+
+# Calculate metrics for both networks
+n_high <- vcount(g_high)
+m_high <- ecount(g_high)
+possible_high <- (n_high * (n_high - 1)) / 2
+density_high <- m_high / possible_high
+
+n_low <- vcount(g_low)
+m_low <- ecount(g_low)
+possible_low <- (n_low * (n_low - 1)) / 2
+density_low <- m_low / possible_low
+
+metrics <- data.frame(
+  Network = c("Higher centralization (top)", "Lower centralization (bottom)"),
+  Size = c(sprintf("%d nodes, %d edges", n_high, m_high), sprintf("%d nodes, %d edges", n_low, m_low)),
+  Density = c(sprintf("%.1f%%", density_high * 100), sprintf("%.1f%%", density_low * 100))
+)
+
+html <- '<table style="border-collapse: collapse; margin: auto; font-size: 13px;">'
+# Header row
+html <- paste0(html, '<tr>')
+html <- paste0(html, '<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">Network</th>')
+html <- paste0(html, '<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">Size</th>')
+html <- paste0(html, '<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">Density</th>')
+html <- paste0(html, '</tr>')
+
+# Data rows
+for (i in 1:nrow(metrics)) {
+  html <- paste0(html, '<tr>')
+  html <- paste0(html, sprintf('<td style="padding: 6px; border: 1px solid #ddd;">%s</td>', metrics$Network[i]))
+  html <- paste0(html, sprintf('<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">%s</td>', metrics$Size[i]))
+  html <- paste0(html, sprintf('<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">%s</td>', metrics$Density[i]))
+  html <- paste0(html, '</tr>')
+}
+html <- paste0(html, '</table>')
+
+cat(html)
+```
+:::
+
+:::
+
+---
+
+## Meso-Level Indicators
+
+**Community and Subgroup Structure**
+
+Identify cohesive groups and organizational patterns
+
+**Key Measures:**
+
+1. **Modularity**: Quality of network partitioning into groups
+2. **Community Detection**: Algorithmic identification of clusters
+3. **Core-Periphery**: Distinction between dense core and sparse periphery
+4. **Structural Holes**: Gaps between groups creating brokerage opportunities
+5. **k-cores**: Subgraphs where all nodes have minimum degree k
+
+**Purpose:** Reveal hidden organizational structure and group boundaries
+
+---
+
+## Example: Network Modularity {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Definition:** Strength of division into communities
+
+- Measures how well network separates into distinct groups
+- Higher values indicate stronger community structure
+
+**Business Example: Corporate R&D Network**
+
+**Higher Modularity**
+
+- Clear separation: Chemistry, Biology, Engineering teams
+- Limited cross-disciplinary collaboration
+- Potential for siloed innovation
+
+**Lower Modularity**
+
+- Extensive cross-team connections
+- Interdisciplinary collaboration
+- Potential for breakthrough innovation but coordination challenges
+
+**Strategic Implication:** Community structure reflects organizational integration vs. specialization trade-offs
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 9
+library(igraph)
+library(ggraph)
+library(gridExtra)
+
+# Create a high modularity network (two separate communities)
+set.seed(456)
+edges_high_mod <- data.frame(
+  from = c("A", "B", "A", "B", "D", "E", "D", "B"),
+  to = c("B", "C", "C", "C", "E", "F", "F", "F")
+)
+g_high_mod <- graph_from_data_frame(edges_high_mod, directed = FALSE)
+
+# Create a low modularity network (interconnected communities)
+edges_low_mod <- data.frame(
+  from = c("A", "B", "A", "D", "E", "D", "B", "C", "A", "E"),
+  to = c("B", "C", "C", "E", "F", "F", "D", "E", "D", "C")
+)
+g_low_mod <- graph_from_data_frame(edges_low_mod, directed = FALSE)
+
+# Plot high modularity
+p1 <- ggraph(g_high_mod, layout = 'fr') +
+  geom_edge_link(color = "#c41c85", width = 2) +
+  geom_node_point(color = "#c41c85", size = 30) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.25)) +
+  scale_y_continuous(expand = expansion(mult = 0.25)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+
+# Plot low modularity
+p2 <- ggraph(g_low_mod, layout = 'fr') +
+  geom_edge_link(color = "#4A4A4A", width = 2) +
+  geom_node_point(color = "#4A4A4A", size = 30) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.25)) +
+  scale_y_continuous(expand = expansion(mult = 0.25)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+
+# Combine plots with increased vertical spacing
+gridExtra::grid.arrange(p1, p2, ncol = 1, heights = c(1, 1), padding = unit(2, "line"))
+```
+
+::: {.callout-note}
+
+**The top network seems to have two communities ({A, B, C} and {D, E, F} triads)**
+
+**The bottom network does not show any obvious community structure**
+
+We will explore modularity indicators and community detection algorithms in detail in **Weeks 7 and 8**.
+:::
+
+:::
+
+:::
+
+---
+
+## Node-Level Indicators {.smaller}
+
+**Individual Position and Influence**
+
+Characterize actor positions within the network
+
+**Major Categories:**
+
+1. **Centrality Measures**: Various ways to measure importance
+   - Degree, Closeness, Betweenness, Eigenvector
+   
+2. **Structural Position**: Role in network architecture
+   - Bridges, Brokers, Isolates, Cliques
+
+3. **Local Clustering**: Cohesion of immediate neighborhood
+
+4. **Embeddedness**: Integration into network structure
+
+**Purpose:** Identify influential actors, structural advantages, and vulnerabilities
+
+::: {.callout-note}
+
+**Much more to follow on node-level indicators today**
+
+:::
+
+---
+## Summary: Levels in Practice {.smaller}
+
+**Integrated Analysis Framework:**
+
+**Macro Level** → Strategic organizational design
+
+- Should we have a centralized or distributed structure?
+- How connected is our organization overall?
+
+**Meso Level** → Team and department dynamics  
+
+- Are we too siloed or too integrated?
+- Where are the boundaries between groups?
+
+**Micro Level** → Individual talent management
+
+- Who are our key connectors and influencers?
+- Who has structural advantages or disadvantages?
+
+::: {.callout-important}
+**Best Practice:** Analyze networks at multiple levels simultaneously for comprehensive insights
+:::

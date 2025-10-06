@@ -1,0 +1,882 @@
+---
+title: "Fundamental Network Concepts"
+subtitle: "Building Blocks of Network Analysis"
+author: "SMM638 Network Analytics"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    css: custom-slides.css
+    code-fold: true
+    code-summary: ""
+---
+
+## What is a Graph?
+
+**Mathematical Foundation:**
+
+A graph $G$ is defined as: $G = \{V, E\}$
+
+Where:
+
+- $V = [v_1, v_2, ..., v_i, ..., v_n]$ (vertices/nodes)
+- $E = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j)]$ (edges/links)
+
+**In Plain Language:**
+
+- **Vertices (Nodes)**: The entities or objects
+- **Edges (Links/Ties)**: The connections or relationships
+- **Graph**: The complete structure of nodes and edges
+
+---
+
+## Vertices (Nodes)
+
+**Vertices represent the fundamental units in a network**
+
+**Examples across domains:**
+
+- **Social networks**: People, organizations, groups
+- **Biological networks**: Proteins, genes, organisms  
+- **Technological networks**: Computers, routers, devices
+- **Economic networks**: Companies, banks, countries
+
+**Node Attributes:**
+
+- Demographic characteristics (age, location)
+- Type or category (customer, supplier, partner)
+- Performance metrics (revenue, citations, activity)
+- Temporal information (founding date, tenure)
+
+---
+
+## Edges (Links/Ties)
+
+**Edges encode relationships between nodes**
+
+**Key Properties:**
+
+1. **Direction**
+   - Directed: One-way relationships (A → B)
+   - Undirected: Mutual relationships (A — B)
+
+2. **Weight**  
+   - Weighted: Strength or frequency of connection
+   - Unweighted: Binary presence/absence
+
+3. **Sign**
+   - Positive: Friendship, cooperation, support
+   - Negative: Conflict, competition, animosity
+
+4. **Type**
+   - Multiple relationship types (multiplex networks)
+
+---
+
+## Network Relationships
+
+**What Constitutes a Connection?**
+
+The definition of a relationship determines:
+
+- What edges mean and how to interpret them
+- Whether relationships are symmetric or asymmetric
+- How to measure or identify connections
+- The substantive interpretation of patterns
+
+**Examples:**
+
+- **Social**: Friendship, advice-seeking, collaboration
+- **Economic**: Trade, investment, supply relationships
+- **Information**: Email exchange, citations, hyperlinks
+- **Biological**: Protein interactions, predator-prey
+
+---
+
+## One-Mode Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Unipartite Networks: One Type of Node**
+
+All nodes are of the same type; connections occur between similar entities
+
+**Common Examples:**
+
+- **Friendship networks**: People ↔ People
+- **Citation networks**: Papers → Papers
+- **Trade networks**: Countries ↔ Countries
+- **Collaboration networks**: Scientists ↔ Scientists
+
+**Characteristics:**
+
+- Adjacency matrix is square (n × n)
+- Can calculate standard network metrics
+- Direct interpretation of connection patterns
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(igraph)
+library(ggraph)
+
+# Create a simple 5-node network
+set.seed(123)
+edges <- data.frame(
+  from = c("A", "A", "B", "B", "C", "D"),
+  to = c("B", "C", "C", "D", "E", "E")
+)
+
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Plot using ggraph
+ggraph(g, layout = 'fr') +
+  geom_edge_link(color = "#A9A9A9", width = 1.5) +
+  geom_node_point(color = "#c41c85", size = 25) +
+  geom_node_text(aes(label = name), color = "white", size = 8) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Adjacency Matrix:**
+
+```{r}
+#| echo: false
+library(knitr)
+adj_matrix <- as_adjacency_matrix(g, sparse = FALSE)
+adj_df <- as.data.frame(adj_matrix)
+adj_df <- cbind(Node = paste0("**", rownames(adj_df), "**"), adj_df)
+rownames(adj_df) <- NULL
+kable(adj_df, format = "markdown")
+```
+:::
+
+:::
+
+---
+
+## Two-Mode Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Bipartite Networks: Two Types of Nodes**
+
+Edges only connect nodes of different types
+
+**Common Examples:**
+
+- **Actor-Movie**: Actors ↔ Movies
+- **Author-Paper**: Authors ↔ Publications
+- **Customer-Product**: Buyers ↔ Items purchased
+- **Student-Course**: Students ↔ Classes enrolled
+
+**Analytical Approaches:**
+
+1. Analyze the bipartite structure directly
+2. Project onto one-mode networks (actors ↔ actors who shared movies)
+3. Examine affiliation patterns
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(igraph)
+library(ggraph)
+
+# Create a bipartite network (Actors and Movies)
+edges_bi <- data.frame(
+  from = c("A1", "A1", "A2", "A2", "A3", "A3", "A3"),
+  to = c("M1", "M2", "M1", "M3", "M2", "M3", "M4")
+)
+
+# Create graph and set bipartite attribute
+g_bi <- graph_from_data_frame(edges_bi, directed = FALSE)
+V(g_bi)$type <- V(g_bi)$name %in% c("M1", "M2", "M3", "M4")
+
+# Plot using ggraph with bipartite layout
+ggraph(g_bi, layout = 'bipartite') +
+  geom_edge_link(color = "#A9A9A9", width = 1.5) +
+  geom_node_point(aes(color = type), size = 25) +
+  scale_color_manual(values = c("FALSE" = "#c41c85", "TRUE" = "#3AAF65")) +
+  geom_node_text(aes(label = name), color = "white", size = 8) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Incidence Matrix:**
+
+```{r}
+#| echo: false
+library(knitr)
+# Get incidence matrix (A* nodes as rows, M* nodes as columns)
+inc_matrix <- as_incidence_matrix(g_bi, sparse = FALSE)
+# Ensure A* nodes are rows, M* nodes are columns
+if (rownames(inc_matrix)[1] %in% c("M1", "M2", "M3", "M4")) {
+  inc_matrix <- t(inc_matrix)
+}
+inc_df <- as.data.frame(inc_matrix)
+inc_df <- cbind(Actor = paste0("**", rownames(inc_df), "**"), inc_df)
+rownames(inc_df) <- NULL
+kable(inc_df, format = "markdown")
+```
+:::
+
+:::
+
+---
+
+## Directed Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Asymmetric Relationships with Direction**
+
+Edges have a source and target: $A \rightarrow B$
+
+**Key Examples:**
+
+- **Email networks**: Sender → Receiver
+- **Citation networks**: Citing paper → Cited paper
+- **Food webs**: Predator → Prey
+- **Twitter**: Follower → Followed account
+
+**Important Distinctions:**
+
+- **In-degree**: Incoming connections (popularity, citations received)
+- **Out-degree**: Outgoing connections (activity, citations made)
+- Reciprocity: Do ties go both ways?
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(igraph)
+library(ggraph)
+
+# Create a directed network
+set.seed(456)
+edges_dir <- data.frame(
+  from = c("A", "A", "B", "C", "D", "E"),
+  to = c("B", "C", "D", "A", "E", "C")
+)
+
+g_dir <- graph_from_data_frame(edges_dir, directed = TRUE)
+
+# Plot using ggraph
+ggraph(g_dir, layout = 'fr') +
+  geom_edge_link(aes(end_cap = circle(12, 'mm')),
+                 arrow = arrow(length = unit(4, 'mm'), type = "closed"),
+                 color = "#A9A9A9", width = 1.5) +
+  geom_node_point(color = "#c41c85", size = 25) +
+  geom_node_text(aes(label = name), color = "white", size = 8) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Adjacency Matrix:**
+
+```{r}
+#| echo: false
+library(knitr)
+adj_matrix_dir <- as_adjacency_matrix(g_dir, sparse = FALSE)
+adj_df_dir <- as.data.frame(adj_matrix_dir)
+adj_df_dir <- cbind(Node = paste0("**", rownames(adj_df_dir), "**"), adj_df_dir)
+rownames(adj_df_dir) <- NULL
+kable(adj_df_dir, format = "markdown")
+```
+:::
+
+:::
+
+---
+
+## Undirected Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Symmetric Relationships Without Direction**
+
+Edges represent mutual connections: $A — B$
+
+**Key Examples:**
+
+- **Friendship networks**: Mutual friendships
+- **Co-authorship**: Joint publications
+- **Infrastructure**: Roads, power grids, railways
+- **Protein interactions**: Molecular binding
+
+**Characteristics:**
+
+- Connection implies reciprocal relationship
+- Single degree measure (not in/out)
+- Simpler mathematical properties
+- Adjacency matrix is symmetric
+
+:::
+
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(igraph)
+library(ggraph)
+
+# Create a simple 5-node network
+set.seed(123)
+edges <- data.frame(
+  from = c("A", "A", "B", "B", "C", "D"),
+  to = c("B", "C", "C", "D", "E", "E")
+)
+
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Plot using ggraph
+ggraph(g, layout = 'fr') +
+  geom_edge_link(color = "#A9A9A9", width = 1.5) +
+  geom_node_point(color = "#c41c85", size = 25) +
+  geom_node_text(aes(label = name), color = "white", size = 8) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Adjacency Matrix:**
+
+```{r}
+#| echo: false
+library(knitr)
+adj_matrix <- as_adjacency_matrix(g, sparse = FALSE)
+adj_df <- as.data.frame(adj_matrix)
+adj_df <- cbind(Node = paste0("**", rownames(adj_df), "**"), adj_df)
+rownames(adj_df) <- NULL
+kable(adj_df, format = "markdown")
+```
+
+:::
+
+:::
+
+---
+
+## Signed Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Edges Carry Positive or Negative Valence**
+
+Relationships can be friendly or hostile
+
+**Positive Edges (+):**
+
+- Friendship, alliance, cooperation
+- Support, endorsement, trust
+
+**Negative Edges (−):**
+
+- Animosity, conflict, competition
+- Opposition, distrust, rivalry
+
+**Applications:**
+
+- Social balance theory (enemy of my enemy is my friend)
+- Coalition formation in politics
+- Opinion polarization dynamics
+- Organizational conflict analysis
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(igraph)
+library(ggraph)
+
+# Create a signed network
+set.seed(789)
+edges_signed <- data.frame(
+  from = c("A", "A", "B", "C", "D"),
+  to = c("B", "C", "D", "D", "E"),
+  sign = c(1, -1, 1, -1, 1)
+)
+
+g_signed <- graph_from_data_frame(edges_signed, directed = FALSE)
+E(g_signed)$sign <- edges_signed$sign
+
+# Plot using ggraph
+ggraph(g_signed, layout = 'fr') +
+  geom_edge_link(aes(color = factor(sign)), width = 2) +
+  scale_edge_color_manual(values = c("-1" = "#E74C3C", "1" = "#3AAF65")) +
+  geom_node_point(color = "#c41c85", size = 25) +
+  geom_node_text(aes(label = name), color = "white", size = 8) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Signed Adjacency Matrix:**
+
+```{r}
+#| echo: false
+library(knitr)
+# Create signed adjacency matrix
+adj_matrix_signed <- as_adjacency_matrix(g_signed, sparse = FALSE, attr = "sign")
+adj_df_signed <- as.data.frame(adj_matrix_signed)
+adj_df_signed <- cbind(Node = paste0("**", rownames(adj_df_signed), "**"), adj_df_signed)
+rownames(adj_df_signed) <- NULL
+kable(adj_df_signed, format = "markdown")
+```
+:::
+
+:::
+
+---
+
+## Weighted Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Edge Strength Varies Continuously**
+
+Weights represent connection intensity, frequency, or capacity
+
+**Examples:**
+
+- **Communication**: Number of messages exchanged
+- **Transportation**: Traffic volume, distance, capacity
+- **Financial**: Transaction amounts, investment size
+- **Neural**: Synaptic strength between neurons
+
+**Analytical Implications:**
+
+- Can identify strong vs. weak ties
+- Weighted centrality measures
+- Flow and capacity analysis
+- More nuanced than binary networks
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(igraph)
+library(ggraph)
+
+# Create a weighted network
+set.seed(321)
+edges_weighted <- data.frame(
+  from = c("A", "A", "B", "C", "D"),
+  to = c("B", "C", "D", "D", "E"),
+  weight = c(5, 2, 8, 3, 6)
+)
+
+g_weighted <- graph_from_data_frame(edges_weighted, directed = FALSE)
+E(g_weighted)$weight <- edges_weighted$weight
+
+# Plot using ggraph with edge width representing weight
+ggraph(g_weighted, layout = 'fr') +
+  geom_edge_link(aes(width = weight), color = "#A9A9A9") +
+  scale_edge_width(range = c(1, 4)) +
+  geom_node_point(color = "#c41c85", size = 25) +
+  geom_node_text(aes(label = name), color = "white", size = 8) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Weighted Adjacency Matrix:**
+
+```{r}
+#| echo: false
+library(knitr)
+# Create weighted adjacency matrix
+adj_matrix_weighted <- as_adjacency_matrix(g_weighted, sparse = FALSE, attr = "weight")
+adj_df_weighted <- as.data.frame(adj_matrix_weighted)
+adj_df_weighted <- cbind(Node = paste0("**", rownames(adj_df_weighted), "**"), adj_df_weighted)
+rownames(adj_df_weighted) <- NULL
+kable(adj_df_weighted, format = "markdown")
+```
+:::
+
+:::
+
+---
+
+## Unweighted Networks {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+
+**Binary: Connection Present or Absent**
+
+All edges treated equally (0 or 1)
+
+**Characteristics:**
+
+- Simpler to collect and analyze
+- Focus on topology, not intensity
+- May lose important information
+- Standard network metrics apply directly
+
+**When Appropriate:**
+
+- Relationship strength unclear or unmeasurable
+- Presence/absence is the key question
+- Simplification aids interpretation
+- Preliminary exploratory analysis
+
+:::
+
+::: {.column width="40%"}
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(igraph)
+library(ggraph)
+
+# Create a simple 5-node network
+set.seed(123)
+edges <- data.frame(
+  from = c("A", "A", "B", "B", "C", "D"),
+  to = c("B", "C", "C", "D", "E", "E")
+)
+
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Plot using ggraph
+ggraph(g, layout = 'fr') +
+  geom_edge_link(color = "#A9A9A9", width = 1.5) +
+  geom_node_point(color = "#c41c85", size = 25) +
+  geom_node_text(aes(label = name), color = "white", size = 8) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Adjacency Matrix:**
+
+```{r}
+#| echo: false
+library(knitr)
+adj_matrix <- as_adjacency_matrix(g, sparse = FALSE)
+adj_df <- as.data.frame(adj_matrix)
+adj_df <- cbind(Node = paste0("**", rownames(adj_df), "**"), adj_df)
+rownames(adj_df) <- NULL
+kable(adj_df, format = "markdown")
+```
+:::
+
+:::
+
+---
+
+## Dyads {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**The Simplest Network Substructure**
+
+A dyad consists of two nodes and potential edge(s) between them
+
+**Types in Directed Networks:**
+
+1. **Null dyad**: No connection (0 edges)
+2. **Asymmetric dyad**: One-way connection (1 edge)
+3. **Mutual/Reciprocal dyad**: Two-way connection (2 edges)
+
+**Analytical Value:**
+
+- Foundation for reciprocity analysis
+- Building block of larger structures
+- Pairwise relationship dynamics
+- Simplest unit of social interaction
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 6
+library(igraph)
+library(ggraph)
+library(dplyr)
+
+# Create a 5-node network with various connections
+set.seed(456)
+edges <- data.frame(
+  from = c("A", "B", "C", "D", "E", "C", "D"),
+  to = c("B", "C", "D", "C", "D", "E", "E")
+)
+
+# Create graph
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Identify nodes in the highlighted dyad (A-B mutual dyad)
+V(g)$is_dyad <- V(g)$name %in% c("A", "B")
+
+# Identify edges in the highlighted dyad
+edge_list <- as_edgelist(g)
+E(g)$is_dyad <- ((edge_list[,1] == "A" & edge_list[,2] == "B") |
+                 (edge_list[,1] == "B" & edge_list[,2] == "A"))
+
+# Plot with highlighted dyad
+ggraph(g, layout = 'fr') +
+  geom_edge_link(aes(color = is_dyad, width = is_dyad)) +
+  scale_edge_color_manual(values = c("FALSE" = "#000000", "TRUE" = "#c41c85")) +
+  scale_edge_width_manual(values = c("FALSE" = 0.8, "TRUE" = 2)) +
+  geom_node_point(aes(color = is_dyad, size = is_dyad)) +
+  scale_color_manual(values = c("FALSE" = "#000000", "TRUE" = "#c41c85")) +
+  scale_size_manual(values = c("FALSE" = 20, "TRUE" = 30)) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5, size = 12, face = "bold"),
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Adjacency Matrix (Binary, Dyad Highlighted):**
+
+```{r}
+#| echo: false
+#| results: asis
+library(knitr)
+adj_matrix <- as_adjacency_matrix(g, sparse = FALSE)
+# Ensure binary values (0 or 1)
+adj_matrix <- matrix(as.numeric(adj_matrix > 0), nrow = nrow(adj_matrix), ncol = ncol(adj_matrix))
+rownames(adj_matrix) <- V(g)$name
+colnames(adj_matrix) <- V(g)$name
+
+# Build HTML table with color highlighting
+nodes <- rownames(adj_matrix)
+html <- '<table style="border-collapse: collapse; margin: auto; font-size: 14px;">'
+# Header row
+html <- paste0(html, '<tr><th style="padding: 8px; border: 1px solid #ddd;">Node</th>')
+for (node in nodes) {
+  bg_color <- ifelse(node %in% c("A", "B"), "#c41c85", "#f8f9fa")
+  text_color <- ifelse(node %in% c("A", "B"), "white", "black")
+  html <- paste0(html, sprintf('<th style="padding: 8px; border: 1px solid #ddd; background-color: %s; color: %s; font-weight: bold;">%s</th>', bg_color, text_color, node))
+}
+html <- paste0(html, '</tr>')
+
+# Data rows
+for (i in 1:nrow(adj_matrix)) {
+  row_node <- nodes[i]
+  row_bg <- ifelse(row_node %in% c("A", "B"), "#c41c85", "#f8f9fa")
+  row_color <- ifelse(row_node %in% c("A", "B"), "white", "black")
+  html <- paste0(html, sprintf('<tr><td style="padding: 8px; border: 1px solid #ddd; background-color: %s; color: %s; font-weight: bold;">%s</td>', row_bg, row_color, row_node))
+
+  for (j in 1:ncol(adj_matrix)) {
+    col_node <- nodes[j]
+    # Cell is highlighted if both row and col are in dyad
+    cell_bg <- ifelse((row_node %in% c("A", "B")) && (col_node %in% c("A", "B")), "#c41c85", "white")
+    cell_color <- ifelse((row_node %in% c("A", "B")) && (col_node %in% c("A", "B")), "white", "black")
+    html <- paste0(html, sprintf('<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: %s; color: %s;">%s</td>', cell_bg, cell_color, adj_matrix[i, j]))
+  }
+  html <- paste0(html, '</tr>')
+}
+html <- paste0(html, '</table>')
+
+cat(html)
+```
+:::
+
+:::
+
+---
+
+## Triads {.smaller}
+
+::: {.columns}
+
+::: {.column width="60%"}
+**Three Nodes and Their Connections**
+
+Triads are fundamental for understanding:
+
+**Key Concepts:**
+
+- **Transitivity**: "Friend of friend is friend" (A→B, B→C, A→C)
+- **Structural balance**: Stability of positive/negative relationships
+- **Clustering**: Local cohesion patterns
+- **Network motifs**: Recurring small-scale patterns
+
+**Example Patterns:**
+
+- Open triad: A→B, B→C (no A→C)
+- Closed triad: A→B, B→C, C→A (triangle)
+- Balanced triad: Signs follow balance theory rules
+
+**We'll explore these deeply in Weeks 4-5**
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 6
+library(igraph)
+library(ggraph)
+library(dplyr)
+
+# Create a 5-node network with a closed triad (A-B-C)
+set.seed(789)
+edges <- data.frame(
+  from = c("A", "B", "C", "A", "C", "D", "E"),
+  to = c("B", "C", "A", "C", "D", "E", "D")
+)
+
+# Create graph
+g_triad <- graph_from_data_frame(edges, directed = FALSE)
+
+# Identify nodes in the highlighted triad (A-B-C)
+V(g_triad)$is_triad <- V(g_triad)$name %in% c("A", "B", "C")
+
+# Identify edges in the highlighted triad
+edge_list <- as_edgelist(g_triad)
+E(g_triad)$is_triad <- ((edge_list[,1] %in% c("A", "B", "C")) &
+                        (edge_list[,2] %in% c("A", "B", "C")))
+
+# Plot with highlighted triad
+ggraph(g_triad, layout = 'fr') +
+  geom_edge_link(aes(color = is_triad, width = is_triad)) +
+  scale_edge_color_manual(values = c("FALSE" = "#000000", "TRUE" = "#c41c85")) +
+  scale_edge_width_manual(values = c("FALSE" = 0.8, "TRUE" = 2)) +
+  geom_node_point(aes(color = is_triad, size = is_triad)) +
+  scale_color_manual(values = c("FALSE" = "#000000", "TRUE" = "#c41c85")) +
+  scale_size_manual(values = c("FALSE" = 20, "TRUE" = 30)) +
+  geom_node_text(aes(label = name), color = "white", size = 7) +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5, size = 12, face = "bold"),
+        plot.background = element_rect(fill = "white", color = NA))
+```
+
+**Adjacency Matrix (Binary, Triad Highlighted):**
+
+```{r}
+#| echo: false
+#| results: asis
+library(knitr)
+adj_matrix <- as_adjacency_matrix(g_triad, sparse = FALSE)
+# Ensure binary values (0 or 1)
+adj_matrix <- matrix(as.numeric(adj_matrix > 0), nrow = nrow(adj_matrix), ncol = ncol(adj_matrix))
+rownames(adj_matrix) <- V(g_triad)$name
+colnames(adj_matrix) <- V(g_triad)$name
+
+# Build HTML table with color highlighting
+nodes <- rownames(adj_matrix)
+html <- '<table style="border-collapse: collapse; margin: auto; font-size: 14px;">'
+# Header row
+html <- paste0(html, '<tr><th style="padding: 8px; border: 1px solid #ddd;">Node</th>')
+for (node in nodes) {
+  bg_color <- ifelse(node %in% c("A", "B", "C"), "#c41c85", "#f8f9fa")
+  text_color <- ifelse(node %in% c("A", "B", "C"), "white", "black")
+  html <- paste0(html, sprintf('<th style="padding: 8px; border: 1px solid #ddd; background-color: %s; color: %s; font-weight: bold;">%s</th>', bg_color, text_color, node))
+}
+html <- paste0(html, '</tr>')
+
+# Data rows
+for (i in 1:nrow(adj_matrix)) {
+  row_node <- nodes[i]
+  row_bg <- ifelse(row_node %in% c("A", "B", "C"), "#c41c85", "#f8f9fa")
+  row_color <- ifelse(row_node %in% c("A", "B", "C"), "white", "black")
+  html <- paste0(html, sprintf('<tr><td style="padding: 8px; border: 1px solid #ddd; background-color: %s; color: %s; font-weight: bold;">%s</td>', row_bg, row_color, row_node))
+
+  for (j in 1:ncol(adj_matrix)) {
+    col_node <- nodes[j]
+    # Cell is highlighted if both row and col are in triad
+    cell_bg <- ifelse((row_node %in% c("A", "B", "C")) && (col_node %in% c("A", "B", "C")), "#c41c85", "white")
+    cell_color <- ifelse((row_node %in% c("A", "B", "C")) && (col_node %in% c("A", "B", "C")), "white", "black")
+    html <- paste0(html, sprintf('<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: %s; color: %s;">%s</td>', cell_bg, cell_color, adj_matrix[i, j]))
+  }
+  html <- paste0(html, '</tr>')
+}
+html <- paste0(html, '</table>')
+
+cat(html)
+```
+:::
+
+:::
+
+---
+
+## Key Takeaways
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.callout-caution}
+
+**Core Building Blocks:**
+
+1. Networks = Nodes + Edges + Relationships
+2. Direction matters: Symmetric vs. Asymmetric
+3. Weights capture relationship intensity
+4. Signs represent positive/negative ties
+5. Mode determines what connects to what
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.callout-tip}
+
+**Analytical Foundation:**
+
+- Choice of representation affects analysis
+- Different network types require different methods
+- Substructures (dyads, triads) reveal patterns
+- Complex networks require sophisticated approaches
+
+**Next:** We'll use these concepts to measure and analyze real networks
+
+:::
+
+:::

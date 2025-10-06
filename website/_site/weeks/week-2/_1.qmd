@@ -1,0 +1,119 @@
+---
+title: "Networks, Network Analysis & Business Relevance"
+subtitle: "Setting Expectations for SMM638"
+author: "SMM638 Network Analytics"
+date: "2025-10-06"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    css: custom-slides.css
+---
+
+## What Are Networks?
+
+**Networks are structures of interconnected entities**
+
+- Entities are interconnected via specific **relationships**
+- **Examples of relationship** are:
+  - Resource flow (e.g., economic exchange)
+  - Information exchange (e.g., electronic communication)
+  - Physical connection (e.g., London tube)
+  - Membership (e.g., student-program affiliation)
+
+::: {.callout-note}
+Networks and graphs are interrelated yet distinct concepts: graphs are mathematical constructs, while networks regard concrete relationships between entities that can be represented using graphs 
+:::
+
+---
+
+## What to Expect: Network Analysis
+
+**Network Analysis provides tools to:**
+
+- Visualize complex relationship patterns
+- Identify influential actors and key positions
+- Detect communities and clusters
+- Understand information flow and diffusion patterns
+- Measure structural properties quantitatively
+
+**Key Skills You'll Develop:**
+
+- Data collection and structuring
+- Statistical analysis of network data
+- Creating meaningful visualizations
+- Translating insights into business strategy
+
+---
+
+## Networks in Markets
+
+**How Networks Shape Market Functioning:**
+
+**Information Flow**
+
+- Product reviews and recommendations spread through networks
+- Market intelligence travels via professional connections
+- Innovation diffuses along network pathways
+
+**Transaction Costs**
+
+- Trust networks reduce monitoring costs
+- Established relationships lower search costs
+- Repeat interactions enable efficient exchange
+
+**Market Structure**
+
+- Platform economics and two-sided markets
+- Network effects drive increasing returns to scale
+- Ecosystem dynamics shape competitive advantage
+
+---
+
+## Networks in Organizations
+
+**Organizational Applications:**
+
+**Knowledge Management**
+
+- Expertise location and knowledge sharing
+- Innovation through diverse connections
+- Problem-solving via boundary-spanning ties
+
+**Team Dynamics**
+
+- Collaboration patterns affect performance
+- Informal advice networks complement formal structure
+- Communication efficiency depends on network position
+
+**Strategic Positioning**
+
+- Brokerage opportunities create value
+- Structural holes provide information advantages
+- Centrality correlates with influence and power
+
+---
+
+## Your Learning Journey
+
+**Week-by-Week Progression:**
+
+1. **Foundations**: Network concepts and terminology
+2. **Centrality**: Identifying key actors and positions
+3. **Dynamics**: Understanding triads and temporal evolution
+4. **Communities**: Detecting cohesive groups
+5. **Performance**: Linking position to outcomes
+
+**Practical Focus:**
+
+- Real business cases (RBC fraud detection, social platforms)
+- Hands-on coding in R and Python
+- Actionable insights for decision-making
+- Portfolio-ready analytical projects
+
+::: {.callout-tip}
+Network thinking transforms how you see organizational and market phenomena
+:::

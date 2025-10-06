@@ -120,7 +120,7 @@ In today's interconnected world, understanding networks is crucial for:
 - Triadic census and transitivity
 - Conditional Uniform Graph (CUG) tests
 
-**Case Study:** Feeding Souncloud's recommendation system with social network
+**Case Study:** Feeding SoundCloud's recommendation system with social network
 data
 
 ### 🏘️ Topic 4: Network Cohesion and Communities
@@ -138,7 +138,7 @@ data
 - Network density and cohesion metrics
 - Core-periphery structures
 - Community detection algorithms (Louvain, modularity optimization)
-- Blockmoldeling
+- Blockmodeling
 
 **Case Study:** Profiling beer enthusiasts at BeerAdvocate
 

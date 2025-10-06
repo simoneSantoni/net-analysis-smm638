@@ -1,0 +1,445 @@
+---
+title: "Problem Set 1: Degree Centrality and Degree Distribution"
+subtitle: "Week 2 - Network Analytics"
+---
+
+## Overview
+
+In this problem set, you will work with real-world network data from Wikipedia to compute degree centrality measures and analyze degree distributions. This exercise will help you understand:
+
+- How to load and process directed network data
+- The difference between in-degree and out-degree centrality
+- How to compute and visualize degree distributions
+- What degree distributions reveal about network structure
+
+## Dataset: Wikipedia Vote Network
+
+**Description**: This network represents voting relationships among Wikipedia users during administrator elections from the site's inception through January 2008.
+
+**Network Properties**:
+
+- **Nodes**: 7,115 Wikipedia users
+- **Edges**: 103,689 directed edges
+- **Edge meaning**: A directed edge from user i to user j means that user i voted on user j
+- **Network type**: Directed, unweighted
+
+**Source**: [Stanford SNAP - Wikipedia Vote Network](https://snap.stanford.edu/data/wiki-Vote.html)
+
+## Task 1: Download and Load the Data
+
+First, download the dataset and load it into R.
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+library(igraph)
+library(ggplot2)
+library(dplyr)
+
+# Download the dataset
+url <- "https://snap.stanford.edu/data/wiki-Vote.txt.gz"
+download.file(url, destfile = "wiki-Vote.txt.gz")
+
+# Read the edge list (skip comment lines that start with #)
+edge_data <- read.table("wiki-Vote.txt.gz",
+                        comment.char = "#",
+                        col.names = c("from", "to"))
+
+# Create a directed graph
+g <- graph_from_data_frame(edge_data, directed = TRUE)
+
+# Basic network statistics
+cat("Number of nodes:", vcount(g), "\n")
+cat("Number of edges:", ecount(g), "\n")
+cat("Is directed:", is_directed(g), "\n")
+```
+
+::: {.callout-tip}
+## Understanding the Data Format
+
+The wiki-Vote.txt file contains lines starting with `#` (comments) followed by an edge list where each line represents a directed edge: `FromNodeId ToNodeId`
+:::
+
+---
+
+## Task 2: Compute In-Degree and Out-Degree
+
+Calculate the in-degree and out-degree for all nodes in the network.
+
+**Questions**:
+
+1. What is the maximum in-degree? What does this represent in the context of Wikipedia voting?
+2. What is the maximum out-degree? What does this represent?
+3. How many nodes have in-degree of 0? What does this mean?
+4. How many nodes have out-degree of 0? What does this mean?
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+# Compute in-degree and out-degree
+in_deg <- degree(g, mode = "in")
+out_deg <- degree(g, mode = "out")
+
+# Summary statistics
+cat("In-Degree Statistics:\n")
+cat("  Max:", max(in_deg), "\n")
+cat("  Mean:", round(mean(in_deg), 2), "\n")
+cat("  Median:", median(in_deg), "\n")
+cat("  Nodes with in-degree = 0:", sum(in_deg == 0), "\n\n")
+
+cat("Out-Degree Statistics:\n")
+cat("  Max:", max(out_deg), "\n")
+cat("  Mean:", round(mean(out_deg), 2), "\n")
+cat("  Median:", median(out_deg), "\n")
+cat("  Nodes with out-degree = 0:", sum(out_deg == 0), "\n")
+
+# Find the most "voted-on" user
+most_voted_user <- which.max(in_deg)
+cat("\nMost voted-on user: Node", most_voted_user,
+    "with in-degree =", in_deg[most_voted_user], "\n")
+
+# Find the most active voter
+most_active_voter <- which.max(out_deg)
+cat("Most active voter: Node", most_active_voter,
+    "with out-degree =", out_deg[most_active_voter], "\n")
+```
+
+::: {.callout-tip}
+## Interpreting Degree Centrality in Directed Networks
+
+- **In-degree**: Number of votes received (popularity, endorsement)
+- **Out-degree**: Number of votes cast (activity, participation)
+:::
+
+---
+
+## Task 3: Analyze the Top 10 Users
+
+Identify and compare the top 10 users by in-degree and out-degree.
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+# Create a data frame with degree measures
+degree_df <- data.frame(
+  node = V(g)$name,
+  in_degree = in_deg,
+  out_degree = out_deg,
+  total_degree = in_deg + out_deg
+)
+
+# Top 10 by in-degree (most voted-on)
+top_in <- degree_df %>%
+  arrange(desc(in_degree)) %>%
+  head(10)
+
+cat("Top 10 Users by In-Degree (Most Votes Received):\n")
+print(top_in)
+
+# Top 10 by out-degree (most active voters)
+top_out <- degree_df %>%
+  arrange(desc(out_degree)) %>%
+  head(10)
+
+cat("\nTop 10 Users by Out-Degree (Most Votes Cast):\n")
+print(top_out)
+
+# Are the top users in both categories the same?
+cat("\nOverlap between top in-degree and top out-degree users:",
+    length(intersect(top_in$node, top_out$node)), "out of 10\n")
+```
+
+**Question**: Do highly endorsed users (high in-degree) also tend to be active voters (high out-degree)? What does this tell you about participation patterns?
+
+---
+
+## Task 4: Compute Degree Distribution
+
+Calculate the degree distribution for both in-degree and out-degree.
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+# Compute degree distributions
+in_degree_dist <- table(in_deg)
+out_degree_dist <- table(out_deg)
+
+# Convert to data frames for plotting
+in_deg_df <- data.frame(
+  degree = as.numeric(names(in_degree_dist)),
+  frequency = as.numeric(in_degree_dist),
+  type = "In-Degree"
+)
+
+out_deg_df <- data.frame(
+  degree = as.numeric(names(out_degree_dist)),
+  frequency = as.numeric(out_degree_dist),
+  type = "Out-Degree"
+)
+
+# Combine for comparison
+combined_deg_df <- rbind(in_deg_df, out_deg_df)
+
+# View the first few rows
+head(in_deg_df, 10)
+head(out_deg_df, 10)
+```
+
+---
+
+## Task 5: Plot Degree Distribution
+
+Create visualizations of the degree distributions using both linear and log-log scales.
+
+### Linear Scale Plot
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+#| fig-width: 10
+#| fig-height: 6
+
+library(ggplot2)
+
+# Plot on linear scale
+ggplot(combined_deg_df, aes(x = degree, y = frequency, color = type)) +
+  geom_point(alpha = 0.6, size = 2) +
+  geom_line(alpha = 0.4) +
+  scale_color_manual(values = c("In-Degree" = "#c41c85", "Out-Degree" = "#50C878")) +
+  labs(
+    title = "Degree Distribution - Wikipedia Vote Network",
+    subtitle = "Linear scale",
+    x = "Degree (k)",
+    y = "Frequency (Number of Nodes)",
+    color = "Degree Type"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    legend.position = "bottom"
+  )
+```
+
+### Log-Log Scale Plot
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+#| fig-width: 10
+#| fig-height: 6
+
+# Plot on log-log scale
+ggplot(combined_deg_df, aes(x = degree, y = frequency, color = type)) +
+  geom_point(alpha = 0.6, size = 2) +
+  geom_line(alpha = 0.4) +
+  scale_x_log10() +
+  scale_y_log10() +
+  scale_color_manual(values = c("In-Degree" = "#c41c85", "Out-Degree" = "#50C878")) +
+  labs(
+    title = "Degree Distribution - Wikipedia Vote Network",
+    subtitle = "Log-log scale",
+    x = "Degree (k) [log scale]",
+    y = "Frequency [log scale]",
+    color = "Degree Type"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    legend.position = "bottom"
+  )
+```
+
+**Questions**:
+
+1. What shape does the degree distribution follow on the log-log scale?
+2. Does the distribution appear to follow a power law? If so, what does this indicate?
+3. How do the in-degree and out-degree distributions compare?
+4. What does the degree distribution tell you about the structure of Wikipedia's voting network?
+
+::: {.callout-tip}
+## Interpreting Degree Distributions
+
+- **Linear appearance on log-log plot**: Suggests a power-law (scale-free) distribution
+- **Power-law networks**: Few nodes with very high degree (hubs), many nodes with low degree
+- **Implications**: Highly skewed participation; a small number of elite users receive most votes
+:::
+
+---
+
+## Task 6: Compute Complementary Cumulative Distribution Function (CCDF)
+
+The CCDF is often more robust than the degree distribution for identifying power laws.
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-fold: false
+#| fig-width: 10
+#| fig-height: 6
+
+# Function to compute CCDF
+compute_ccdf <- function(degrees) {
+  deg_table <- table(degrees)
+  deg_values <- as.numeric(names(deg_table))
+  deg_counts <- as.numeric(deg_table)
+
+  # Compute CCDF: P(X >= k)
+  ccdf <- sapply(deg_values, function(k) {
+    sum(deg_counts[deg_values >= k]) / sum(deg_counts)
+  })
+
+  data.frame(degree = deg_values, ccdf = ccdf)
+}
+
+# Compute CCDF for in-degree and out-degree
+in_ccdf <- compute_ccdf(in_deg)
+in_ccdf$type <- "In-Degree"
+
+out_ccdf <- compute_ccdf(out_deg)
+out_ccdf$type <- "Out-Degree"
+
+ccdf_combined <- rbind(in_ccdf, out_ccdf)
+
+# Plot CCDF on log-log scale
+ggplot(ccdf_combined, aes(x = degree, y = ccdf, color = type)) +
+  geom_point(alpha = 0.6, size = 2) +
+  geom_line(alpha = 0.4) +
+  scale_x_log10() +
+  scale_y_log10() +
+  scale_color_manual(values = c("In-Degree" = "#c41c85", "Out-Degree" = "#50C878")) +
+  labs(
+    title = "Complementary Cumulative Distribution Function (CCDF)",
+    subtitle = "Wikipedia Vote Network - Log-log scale",
+    x = "Degree (k) [log scale]",
+    y = "P(X e k) [log scale]",
+    color = "Degree Type"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    legend.position = "bottom"
+  )
+```
+
+---
+
+## Reflection Questions
+
+After completing all tasks, answer the following:
+
+1. **Inequality in participation**: What fraction of users received more than 100 votes? What fraction cast more than 100 votes?
+
+2. **Network interpretation**: Based on the degree distributions, how would you characterize the Wikipedia voting system? Is it egalitarian or hierarchical?
+
+3. **Power-law hypothesis**: Do the log-log plots suggest a power-law distribution? What would be the next steps to formally test this hypothesis?
+
+4. **Directed vs undirected**: How would your analysis differ if this were an undirected network?
+
+5. **Practical implications**: What does the degree distribution suggest about which users have influence in the Wikipedia administrator election process?
+
+---
+
+## Solutions and Hints
+
+::: {.callout-note collapse="true"}
+## Click to reveal hints and expected results
+
+### Expected Statistics:
+
+Based on the SNAP documentation:
+
+- **Nodes**: 7,115
+- **Edges**: 103,689
+- **Average in-degree** H 14.57 (total edges / nodes)
+- **Average out-degree** H 14.57 (same for directed networks)
+
+### Degree Distribution Characteristics:
+
+Both in-degree and out-degree distributions should show:
+
+- **Heavy-tailed distribution**: Most nodes have low degree, few have very high degree
+- **Approximate power-law**: Linear relationship on log-log plot
+- **High inequality**: Small fraction of users account for large fraction of votes
+
+### Interpretation:
+
+**High in-degree nodes**: Highly endorsed candidates, likely successful administrators or trusted community members
+
+**High out-degree nodes**: Very active voters, engaged community participants
+
+**Low degree nodes**: Casual users, single-election participants, or new users
+
+### Code Snippet for Computing Inequality:
+
+```r
+# What fraction of users received > 100 votes?
+high_in <- sum(in_deg > 100) / length(in_deg)
+cat("Fraction with in-degree > 100:", round(high_in, 4), "\n")
+
+# What fraction cast > 100 votes?
+high_out <- sum(out_deg > 100) / length(out_deg)
+cat("Fraction with out-degree > 100:", round(high_out, 4), "\n")
+```
+
+### Power-Law Testing:
+
+To formally test for power-law distribution, you could use the `poweRlaw` package:
+
+```r
+library(poweRlaw)
+
+# Fit power-law to in-degree
+in_pl <- displ$new(in_deg)
+est <- estimate_xmin(in_pl)
+in_pl$setXmin(est)
+
+# View results
+cat("Power-law exponent (alpha):", in_pl$pars, "\n")
+cat("xmin:", in_pl$xmin, "\n")
+```
+
+:::
+
+---
+
+## Additional Challenges
+
+::: {.callout-warning}
+## Advanced Questions
+
+1. **Correlation analysis**: Calculate the correlation between in-degree and out-degree. Are they correlated? What does this mean?
+
+2. **Degree centrality vs other measures**: Compute betweenness centrality for the top 20 nodes by in-degree. Are high-degree nodes also high in betweenness?
+
+3. **Subgraph analysis**: Extract the subgraph containing only nodes with in-degree > 50. What is the density of this subgraph?
+
+4. **Temporal analysis**: The dataset includes a timestamp. How has the degree distribution evolved over time?
+
+5. **Network resilience**: What would happen to the network's connectivity if you removed the top 1% of nodes by in-degree? (Hint: compute the size of the largest connected component before and after removal)
+
+:::
+
+---
+
+## Submission Guidelines
+
+Your submission should include:
+
+1. **R script or Quarto document** with all code and outputs
+2. **Visualizations** of degree distributions (linear and log-log scales)
+3. **Written answers** to all reflection questions (200-400 words total)
+4. **Interpretation** of what the degree distribution reveals about Wikipedia's voting network
+
+**File naming**: `week2_perform1_[YourName].qmd` or `.R`
+
+**Due date**: Check the course schedule
