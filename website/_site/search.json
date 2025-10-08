@@ -1459,5 +1459,124 @@
     "title": "Practice: Ingesting Network Data and Computing Degree",
     "section": "Additional Resources",
     "text": "Additional Resources\n\nigraph R package documentation\nSNAP datasets\nNetwork Science book by Barabasi"
+  },
+  {
+    "objectID": "weeks/week-2/perform_0.html",
+    "href": "weeks/week-2/perform_0.html",
+    "title": "Practice Exercise: Computing Centrality Measures",
+    "section": "",
+    "text": "Task: Calculate centrality measures for a collaboration network and interpret the results.\nNetwork Description:\n\n15-node collaboration network\nUndirected edges (mutual relationships)\nNodes represent team members\nEdges represent working relationships"
+  },
+  {
+    "objectID": "weeks/week-2/perform_0.html#exercise-overview",
+    "href": "weeks/week-2/perform_0.html#exercise-overview",
+    "title": "Practice Exercise: Computing Centrality Measures",
+    "section": "",
+    "text": "Task: Calculate centrality measures for a collaboration network and interpret the results.\nNetwork Description:\n\n15-node collaboration network\nUndirected edges (mutual relationships)\nNodes represent team members\nEdges represent working relationships"
+  },
+  {
+    "objectID": "weeks/week-2/perform_0.html#questions",
+    "href": "weeks/week-2/perform_0.html#questions",
+    "title": "Practice Exercise: Computing Centrality Measures",
+    "section": "Questions",
+    "text": "Questions\n\nWhich node has the highest degree centrality?\nWhich node has the highest betweenness centrality?\nWhich node has the highest closeness centrality?\nWhich nodes have the highest clustering coefficient?\nHow do these metrics correlate with each other?"
+  },
+  {
+    "objectID": "weeks/week-2/perform_0.html#network-initialization-and-visualization",
+    "href": "weeks/week-2/perform_0.html#network-initialization-and-visualization",
+    "title": "Practice Exercise: Computing Centrality Measures",
+    "section": "Network Initialization and Visualization",
+    "text": "Network Initialization and Visualization\n\nlibrary(igraph)\nlibrary(ggraph)\n\n# Create a larger exercise network (15 nodes)\nset.seed(999)\nedges_exercise &lt;- data.frame(\n  from = c(1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 13, 13, 14),\n  to = c(2, 3, 4, 3, 5, 4, 5, 5, 6, 6, 7, 8, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 15, 15)\n)\n\ng_exercise &lt;- graph_from_data_frame(edges_exercise, directed = FALSE)\n\n# Plot the network\nggraph(g_exercise, layout = 'fr') +\n  geom_edge_link(color = \"#D3D3D3\", width = 1.5, alpha = 0.6) +\n  geom_node_point(color = \"#c41c85\", size = 12) +\n  geom_node_text(aes(label = name), color = \"white\", size = 4) +\n  scale_x_continuous(expand = expansion(mult = 0.2)) +\n  scale_y_continuous(expand = expansion(mult = 0.2)) +\n  theme_void() +\n  theme(\n    plot.background = element_rect(fill = \"white\", color = NA)\n  )"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html",
+    "href": "weeks/week-2/perform_1.html",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "",
+    "text": "In this problem set, you will work with real-world network data from Wikipedia to compute degree centrality measures and analyze degree distributions. This exercise will help you understand:\n\nHow to load and process directed network data\nThe difference between in-degree and out-degree centrality\nHow to compute and visualize degree distributions\nWhat degree distributions reveal about network structure"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#overview",
+    "href": "weeks/week-2/perform_1.html#overview",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "",
+    "text": "In this problem set, you will work with real-world network data from Wikipedia to compute degree centrality measures and analyze degree distributions. This exercise will help you understand:\n\nHow to load and process directed network data\nThe difference between in-degree and out-degree centrality\nHow to compute and visualize degree distributions\nWhat degree distributions reveal about network structure"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#dataset-wikipedia-vote-network",
+    "href": "weeks/week-2/perform_1.html#dataset-wikipedia-vote-network",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Dataset: Wikipedia Vote Network",
+    "text": "Dataset: Wikipedia Vote Network\nDescription: This network represents voting relationships among Wikipedia users during administrator elections from the site’s inception through January 2008.\nNetwork Properties:\n\nNodes: 7,115 Wikipedia users\nEdges: 103,689 directed edges\nEdge meaning: A directed edge from user i to user j means that user i voted on user j\nNetwork type: Directed, unweighted\n\nSource: Stanford SNAP - Wikipedia Vote Network"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#task-1-download-and-load-the-data",
+    "href": "weeks/week-2/perform_1.html#task-1-download-and-load-the-data",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Task 1: Download and Load the Data",
+    "text": "Task 1: Download and Load the Data\nFirst, download the dataset and load it into R.\n\nlibrary(igraph)\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Download the dataset\nurl &lt;- \"https://snap.stanford.edu/data/wiki-Vote.txt.gz\"\ndownload.file(url, destfile = \"wiki-Vote.txt.gz\")\n\n# Read the edge list (skip comment lines that start with #)\nedge_data &lt;- read.table(\"wiki-Vote.txt.gz\",\n                        comment.char = \"#\",\n                        col.names = c(\"from\", \"to\"))\n\n# Create a directed graph\ng &lt;- graph_from_data_frame(edge_data, directed = TRUE)\n\n# Basic network statistics\ncat(\"Number of nodes:\", vcount(g), \"\\n\")\ncat(\"Number of edges:\", ecount(g), \"\\n\")\ncat(\"Is directed:\", is_directed(g), \"\\n\")\n\n\n\n\n\n\n\nUnderstanding the Data Format\n\n\n\nThe wiki-Vote.txt file contains lines starting with # (comments) followed by an edge list where each line represents a directed edge: FromNodeId ToNodeId"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#task-2-compute-in-degree-and-out-degree",
+    "href": "weeks/week-2/perform_1.html#task-2-compute-in-degree-and-out-degree",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Task 2: Compute In-Degree and Out-Degree",
+    "text": "Task 2: Compute In-Degree and Out-Degree\nCalculate the in-degree and out-degree for all nodes in the network.\nQuestions:\n\nWhat is the maximum in-degree? What does this represent in the context of Wikipedia voting?\nWhat is the maximum out-degree? What does this represent?\nHow many nodes have in-degree of 0? What does this mean?\nHow many nodes have out-degree of 0? What does this mean?\n\n\n# Compute in-degree and out-degree\nin_deg &lt;- degree(g, mode = \"in\")\nout_deg &lt;- degree(g, mode = \"out\")\n\n# Summary statistics\ncat(\"In-Degree Statistics:\\n\")\ncat(\"  Max:\", max(in_deg), \"\\n\")\ncat(\"  Mean:\", round(mean(in_deg), 2), \"\\n\")\ncat(\"  Median:\", median(in_deg), \"\\n\")\ncat(\"  Nodes with in-degree = 0:\", sum(in_deg == 0), \"\\n\\n\")\n\ncat(\"Out-Degree Statistics:\\n\")\ncat(\"  Max:\", max(out_deg), \"\\n\")\ncat(\"  Mean:\", round(mean(out_deg), 2), \"\\n\")\ncat(\"  Median:\", median(out_deg), \"\\n\")\ncat(\"  Nodes with out-degree = 0:\", sum(out_deg == 0), \"\\n\")\n\n# Find the most \"voted-on\" user\nmost_voted_user &lt;- which.max(in_deg)\ncat(\"\\nMost voted-on user: Node\", most_voted_user,\n    \"with in-degree =\", in_deg[most_voted_user], \"\\n\")\n\n# Find the most active voter\nmost_active_voter &lt;- which.max(out_deg)\ncat(\"Most active voter: Node\", most_active_voter,\n    \"with out-degree =\", out_deg[most_active_voter], \"\\n\")\n\n\n\n\n\n\n\nInterpreting Degree Centrality in Directed Networks\n\n\n\n\nIn-degree: Number of votes received (popularity, endorsement)\nOut-degree: Number of votes cast (activity, participation)"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#task-3-analyze-the-top-10-users",
+    "href": "weeks/week-2/perform_1.html#task-3-analyze-the-top-10-users",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Task 3: Analyze the Top 10 Users",
+    "text": "Task 3: Analyze the Top 10 Users\nIdentify and compare the top 10 users by in-degree and out-degree.\n\n# Create a data frame with degree measures\ndegree_df &lt;- data.frame(\n  node = V(g)$name,\n  in_degree = in_deg,\n  out_degree = out_deg,\n  total_degree = in_deg + out_deg\n)\n\n# Top 10 by in-degree (most voted-on)\ntop_in &lt;- degree_df %&gt;%\n  arrange(desc(in_degree)) %&gt;%\n  head(10)\n\ncat(\"Top 10 Users by In-Degree (Most Votes Received):\\n\")\nprint(top_in)\n\n# Top 10 by out-degree (most active voters)\ntop_out &lt;- degree_df %&gt;%\n  arrange(desc(out_degree)) %&gt;%\n  head(10)\n\ncat(\"\\nTop 10 Users by Out-Degree (Most Votes Cast):\\n\")\nprint(top_out)\n\n# Are the top users in both categories the same?\ncat(\"\\nOverlap between top in-degree and top out-degree users:\",\n    length(intersect(top_in$node, top_out$node)), \"out of 10\\n\")\n\nQuestion: Do highly endorsed users (high in-degree) also tend to be active voters (high out-degree)? What does this tell you about participation patterns?"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#task-4-compute-degree-distribution",
+    "href": "weeks/week-2/perform_1.html#task-4-compute-degree-distribution",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Task 4: Compute Degree Distribution",
+    "text": "Task 4: Compute Degree Distribution\nCalculate the degree distribution for both in-degree and out-degree.\n\n# Compute degree distributions\nin_degree_dist &lt;- table(in_deg)\nout_degree_dist &lt;- table(out_deg)\n\n# Convert to data frames for plotting\nin_deg_df &lt;- data.frame(\n  degree = as.numeric(names(in_degree_dist)),\n  frequency = as.numeric(in_degree_dist),\n  type = \"In-Degree\"\n)\n\nout_deg_df &lt;- data.frame(\n  degree = as.numeric(names(out_degree_dist)),\n  frequency = as.numeric(out_degree_dist),\n  type = \"Out-Degree\"\n)\n\n# Combine for comparison\ncombined_deg_df &lt;- rbind(in_deg_df, out_deg_df)\n\n# View the first few rows\nhead(in_deg_df, 10)\nhead(out_deg_df, 10)"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#task-5-plot-degree-distribution",
+    "href": "weeks/week-2/perform_1.html#task-5-plot-degree-distribution",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Task 5: Plot Degree Distribution",
+    "text": "Task 5: Plot Degree Distribution\nCreate visualizations of the degree distributions using both linear and log-log scales.\n\nLinear Scale Plot\n\nlibrary(ggplot2)\n\n# Plot on linear scale\nggplot(combined_deg_df, aes(x = degree, y = frequency, color = type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_line(alpha = 0.4) +\n  scale_color_manual(values = c(\"In-Degree\" = \"#c41c85\", \"Out-Degree\" = \"#50C878\")) +\n  labs(\n    title = \"Degree Distribution - Wikipedia Vote Network\",\n    subtitle = \"Linear scale\",\n    x = \"Degree (k)\",\n    y = \"Frequency (Number of Nodes)\",\n    color = \"Degree Type\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(face = \"bold\", size = 14),\n    legend.position = \"bottom\"\n  )\n\n\n\nLog-Log Scale Plot\n\n# Plot on log-log scale\nggplot(combined_deg_df, aes(x = degree, y = frequency, color = type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_line(alpha = 0.4) +\n  scale_x_log10() +\n  scale_y_log10() +\n  scale_color_manual(values = c(\"In-Degree\" = \"#c41c85\", \"Out-Degree\" = \"#50C878\")) +\n  labs(\n    title = \"Degree Distribution - Wikipedia Vote Network\",\n    subtitle = \"Log-log scale\",\n    x = \"Degree (k) [log scale]\",\n    y = \"Frequency [log scale]\",\n    color = \"Degree Type\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(face = \"bold\", size = 14),\n    legend.position = \"bottom\"\n  )\n\nQuestions:\n\nWhat shape does the degree distribution follow on the log-log scale?\nDoes the distribution appear to follow a power law? If so, what does this indicate?\nHow do the in-degree and out-degree distributions compare?\nWhat does the degree distribution tell you about the structure of Wikipedia’s voting network?\n\n\n\n\n\n\n\nInterpreting Degree Distributions\n\n\n\n\nLinear appearance on log-log plot: Suggests a power-law (scale-free) distribution\nPower-law networks: Few nodes with very high degree (hubs), many nodes with low degree\nImplications: Highly skewed participation; a small number of elite users receive most votes"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#task-6-compute-complementary-cumulative-distribution-function-ccdf",
+    "href": "weeks/week-2/perform_1.html#task-6-compute-complementary-cumulative-distribution-function-ccdf",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Task 6: Compute Complementary Cumulative Distribution Function (CCDF)",
+    "text": "Task 6: Compute Complementary Cumulative Distribution Function (CCDF)\nThe CCDF is often more robust than the degree distribution for identifying power laws.\n\n# Function to compute CCDF\ncompute_ccdf &lt;- function(degrees) {\n  deg_table &lt;- table(degrees)\n  deg_values &lt;- as.numeric(names(deg_table))\n  deg_counts &lt;- as.numeric(deg_table)\n\n  # Compute CCDF: P(X &gt;= k)\n  ccdf &lt;- sapply(deg_values, function(k) {\n    sum(deg_counts[deg_values &gt;= k]) / sum(deg_counts)\n  })\n\n  data.frame(degree = deg_values, ccdf = ccdf)\n}\n\n# Compute CCDF for in-degree and out-degree\nin_ccdf &lt;- compute_ccdf(in_deg)\nin_ccdf$type &lt;- \"In-Degree\"\n\nout_ccdf &lt;- compute_ccdf(out_deg)\nout_ccdf$type &lt;- \"Out-Degree\"\n\nccdf_combined &lt;- rbind(in_ccdf, out_ccdf)\n\n# Plot CCDF on log-log scale\nggplot(ccdf_combined, aes(x = degree, y = ccdf, color = type)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_line(alpha = 0.4) +\n  scale_x_log10() +\n  scale_y_log10() +\n  scale_color_manual(values = c(\"In-Degree\" = \"#c41c85\", \"Out-Degree\" = \"#50C878\")) +\n  labs(\n    title = \"Complementary Cumulative Distribution Function (CCDF)\",\n    subtitle = \"Wikipedia Vote Network - Log-log scale\",\n    x = \"Degree (k) [log scale]\",\n    y = \"P(X e k) [log scale]\",\n    color = \"Degree Type\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(face = \"bold\", size = 14),\n    legend.position = \"bottom\"\n  )"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#reflection-questions",
+    "href": "weeks/week-2/perform_1.html#reflection-questions",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Reflection Questions",
+    "text": "Reflection Questions\nAfter completing all tasks, answer the following:\n\nInequality in participation: What fraction of users received more than 100 votes? What fraction cast more than 100 votes?\nNetwork interpretation: Based on the degree distributions, how would you characterize the Wikipedia voting system? Is it egalitarian or hierarchical?\nPower-law hypothesis: Do the log-log plots suggest a power-law distribution? What would be the next steps to formally test this hypothesis?\nDirected vs undirected: How would your analysis differ if this were an undirected network?\nPractical implications: What does the degree distribution suggest about which users have influence in the Wikipedia administrator election process?"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#solutions-and-hints",
+    "href": "weeks/week-2/perform_1.html#solutions-and-hints",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Solutions and Hints",
+    "text": "Solutions and Hints\n\n\n\n\n\n\nClick to reveal hints and expected results\n\n\n\n\n\n\nExpected Statistics:\nBased on the SNAP documentation:\n\nNodes: 7,115\nEdges: 103,689\nAverage in-degree H 14.57 (total edges / nodes)\nAverage out-degree H 14.57 (same for directed networks)\n\n\n\nDegree Distribution Characteristics:\nBoth in-degree and out-degree distributions should show:\n\nHeavy-tailed distribution: Most nodes have low degree, few have very high degree\nApproximate power-law: Linear relationship on log-log plot\nHigh inequality: Small fraction of users account for large fraction of votes\n\n\n\nInterpretation:\nHigh in-degree nodes: Highly endorsed candidates, likely successful administrators or trusted community members\nHigh out-degree nodes: Very active voters, engaged community participants\nLow degree nodes: Casual users, single-election participants, or new users\n\n\nCode Snippet for Computing Inequality:\n# What fraction of users received &gt; 100 votes?\nhigh_in &lt;- sum(in_deg &gt; 100) / length(in_deg)\ncat(\"Fraction with in-degree &gt; 100:\", round(high_in, 4), \"\\n\")\n\n# What fraction cast &gt; 100 votes?\nhigh_out &lt;- sum(out_deg &gt; 100) / length(out_deg)\ncat(\"Fraction with out-degree &gt; 100:\", round(high_out, 4), \"\\n\")\n\n\nPower-Law Testing:\nTo formally test for power-law distribution, you could use the poweRlaw package:\nlibrary(poweRlaw)\n\n# Fit power-law to in-degree\nin_pl &lt;- displ$new(in_deg)\nest &lt;- estimate_xmin(in_pl)\nin_pl$setXmin(est)\n\n# View results\ncat(\"Power-law exponent (alpha):\", in_pl$pars, \"\\n\")\ncat(\"xmin:\", in_pl$xmin, \"\\n\")"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#additional-challenges",
+    "href": "weeks/week-2/perform_1.html#additional-challenges",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Additional Challenges",
+    "text": "Additional Challenges\n\n\n\n\n\n\nAdvanced Questions\n\n\n\n\nCorrelation analysis: Calculate the correlation between in-degree and out-degree. Are they correlated? What does this mean?\nDegree centrality vs other measures: Compute betweenness centrality for the top 20 nodes by in-degree. Are high-degree nodes also high in betweenness?\nSubgraph analysis: Extract the subgraph containing only nodes with in-degree &gt; 50. What is the density of this subgraph?\nTemporal analysis: The dataset includes a timestamp. How has the degree distribution evolved over time?\nNetwork resilience: What would happen to the network’s connectivity if you removed the top 1% of nodes by in-degree? (Hint: compute the size of the largest connected component before and after removal)"
+  },
+  {
+    "objectID": "weeks/week-2/perform_1.html#submission-guidelines",
+    "href": "weeks/week-2/perform_1.html#submission-guidelines",
+    "title": "Problem Set 1: Degree Centrality and Degree Distribution",
+    "section": "Submission Guidelines",
+    "text": "Submission Guidelines\nYour submission should include:\n\nR script or Quarto document with all code and outputs\nVisualizations of degree distributions (linear and log-log scales)\nWritten answers to all reflection questions (200-400 words total)\nInterpretation of what the degree distribution reveals about Wikipedia’s voting network\n\nFile naming: week2_perform1_[YourName].qmd or .R\nDue date: Check the course schedule"
   }
 ]
