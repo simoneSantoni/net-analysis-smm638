@@ -102,6 +102,14 @@ format:
     callout-icon: false
     citations-hover: true
     footnotes-hover: true
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    code-fold: true
+    code-summary: ""
 
 execute:
   freeze: auto
