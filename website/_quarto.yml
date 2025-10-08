@@ -1,8 +1,6 @@
 project:
   type: website
   output-dir: _site
-  render:
-    - "**/*.qmd"
 
 website:
   title: "SMM638 - Network Analytics"
