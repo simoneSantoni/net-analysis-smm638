@@ -4,7 +4,60 @@ subtitle: "Network centrality - case discussion"
 callout-appearance: "default"
 ---
 
+## Prepare
+
 ::: {.callout-note}
-Content coming soon.
+## 📚 Prepare
+
+📖 Review [Week 2 slideshows](../week-2/main.qmd#participate) on network centrality
+
+📖 Revise centrality measures: degree, closeness, betweenness, and eigenvector centrality
 
 :::
+
+## Participate
+
+::: {.callout-note}
+## 👥 Participate
+
+🙋 **Case Discussion**: Network Centrality in Practice
+
+This week we focus on applying centrality concepts through case study discussion. No new slideshows this week.
+
+:::
+
+## Practice
+
+::: {.callout-note}
+## 💻 Practice
+
+🧮 Apply centrality measures to real-world network datasets
+
+🧮 Interpret centrality indicators in business contexts
+
+:::
+
+## Perform
+
+::: {.callout-note}
+## 📝 Perform
+
+✏️ Case analysis assignment (details to be announced)
+
+✏️ Prepare case discussion questions
+
+:::
+
+## Ponder
+
+**Network centrality applications**
+
+Borgatti, S. P. (2005). [*Centrality and network flow*](https://doi.org/10.1016/j.socnet.2004.11.008). Social Networks, 27(1), 55-71.
+
+**Identifying key players in networks**
+
+Borgatti, S. P. (2006). [*Identifying sets of key players in a social network*](https://doi.org/10.1007/s10588-006-7084-x). Computational & Mathematical Organization Theory, 12(1), 21-34.
+
+**Centrality in organizational networks**
+
+Sparrowe, R. T., Liden, R. C., Wayne, S. J., & Kraimer, M. L. (2001). [*Social networks and the performance of individuals and groups*](https://doi.org/10.5465/amj.2001.4378755). Academy of Management Journal, 44(2), 316-325.
