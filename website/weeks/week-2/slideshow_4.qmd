@@ -13,6 +13,10 @@ format:
     css: custom-slides.css
     code-fold: true
     code-summary: ""
+  pdf:
+    toc: false
+    number-sections: false
+    colorlinks: true
 ---
 
 ## Three Levels of Analysis
