@@ -31,10 +31,7 @@ This week we focus on applying centrality concepts through case study discussion
 ::: {.callout-note}
 ## 💻 Practice
 
-🧮 Apply centrality measures to real-world network datasets
-
-🧮 Interpret centrality indicators in business contexts
-
+No practice materials in this week.
 :::
 
 ## Perform
@@ -42,9 +39,8 @@ This week we focus on applying centrality concepts through case study discussion
 ::: {.callout-note}
 ## 📝 Perform
 
-✏️ Case analysis assignment (details to be announced)
-
-✏️ Prepare case discussion questions
+✏️ Analyze the 'Twitch' case study according to a network centrality approach
+(refer to the case studies section of SMM638's Moodle page).
 
 :::
 
