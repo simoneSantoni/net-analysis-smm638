@@ -6,12 +6,19 @@ callout-appearance: "default"
 
 ## Prepare
 
+::: {.callout-note}
+## Note
+
 📖 Read the [syllabus](../../course/syllabus.qmd)
 
 📖 Revise [network terms](../week-1/network_terms.qmd) (from week 1)
 
+:::
 
 ## Participate
+
+::: {.callout-note}
+## Note
 
 📉 Slideshows:
 
@@ -25,15 +32,27 @@ callout-appearance: "default"
 
 5. [Network centrality](slideshow_5-slides.html) ([PDF](slideshow_5.pdf))
 
+:::
+
 ## Practice
+
+::: {.callout-note}
+## Note
 
 🧮 [Ingest network data and compute node degree](practice_1.qmd)
 
+:::
+
 ## Perform
+
+::: {.callout-note}
+## Note
 
 ✏️ [Compute network centrality indicators on a toy network dataset](perform_0.qmd)
 
 ✏️ [Wikipedia Vote Network](perform_1.qmd)
+
+:::
 
 ## Ponder
 
