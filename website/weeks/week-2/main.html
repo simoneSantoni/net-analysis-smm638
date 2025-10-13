@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../weeks/week-3/main.html" rel="next">
+<link href="../../weeks/week-1/main.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-68f80e4ee205afea497a1c798ec9ab8b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-0bba103b01ea630170aef1933bbc3944.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-68f80e4ee205afea497a1c798ec9ab8b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -9,8 +31,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="author" content="SMM638 Network Analytics">
-  <title>SMM638 - Network Analytics – Taxonomy of Network Analysis Indicators</title>
+  <title>SMM638 - Network Analytics – Week 2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,7 +51,6 @@
     }
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
-  <link rel="stylesheet" href="custom-slides.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -125,364 +145,99 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-light nav-sidebar">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Taxonomy of Network Analysis Indicators</h1>
-  <p class="subtitle">Macro, Meso, and Node-Level Measures</p>
+<section id="title-slide" class="quarto-title-block center"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-2/main.html">Week 2</a></li></ol></nav>
+  <h1 class="title">Week 2</h1>
+  <p class="subtitle">Network centrality</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-SMM638 Network Analytics 
-</div>
-</div>
 </div>
 
 </section>
-<section id="three-levels-of-analysis" class="slide level2">
-<h2>Three Levels of Analysis</h2>
-<p><strong>Network indicators operate at different scales:</strong></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 28%">
-<col style="width: 44%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Level</th>
-<th>Focus</th>
-<th>Questions</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Macro</strong></td>
-<td>Entire network</td>
-<td>How big? How centralized? How connected?</td>
-</tr>
-<tr class="even">
-<td><strong>Meso</strong></td>
-<td>Groups/Communities</td>
-<td>Are there clusters of nodes? How modular?</td>
-</tr>
-<tr class="odd">
-<td><strong>Micro/Node</strong></td>
-<td>Individual positions</td>
-<td>Who is central? Who bridges groups?</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Caution</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Key Principle:</strong> Different levels reveal different insights</p>
-<ul>
-<li>Macro: Overall structure and properties</li>
-<li>Meso: Subgroup organization<br>
-</li>
-<li>Micro: Individual advantages and constraints</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="macro-level-indicators" class="slide level2">
-<h2>Macro-Level Indicators</h2>
-<p><strong>Whole Network Properties</strong></p>
-<p>Characterize the overall structure and global patterns</p>
-<p><strong>Key Measures:</strong></p>
-<ol type="1">
-<li><strong>Network Size</strong>: Number of nodes and edges</li>
-<li><strong>Density</strong>: Proportion of possible connections realized</li>
-<li><strong>Centralization</strong>: Concentration of connections<br>
-</li>
-<li><strong>Diameter</strong>: Maximum distance between any two nodes</li>
-<li><strong>Average Path Length</strong>: Mean distance across all pairs</li>
-<li><strong>Fragmentation</strong>: Presence of disconnected components</li>
-</ol>
-<p><strong>Purpose:</strong> Understand network-wide characteristics and compare across networks</p>
-</section>
-<section id="example-network-size-and-density" class="slide level2 smaller">
-<h2>Example: Network Size and Density</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Definition:</strong> Basic structural properties</p>
-<ul>
-<li><strong>Node count</strong>: Total number of vertices (<span class="math inline">\(n\)</span>)</li>
-<li><strong>Edge count</strong>: Total number of connections (<span class="math inline">\(m\)</span>)</li>
-<li><strong>Possible edges</strong>: <span class="math inline">\(\frac{n(n-1)}{2}\)</span> for undirected networks</li>
-</ul>
-<p><strong>Business Example: LinkedIn Network</strong></p>
-<ul>
-<li><strong>Small startup network</strong> (50 employees)
-<ul>
-<li>Possible connections: 1,225</li>
-<li>Observed connections: 245</li>
-<li>Density: 20%</li>
-</ul></li>
-<li><strong>Large corporation network</strong> (5,000 employees)
-<ul>
-<li>Possible connections: 12,497,500</li>
-<li>Observed connections: 187,500</li>
-<li>Density: 1.5%</li>
-</ul></li>
-</ul>
-<p><strong>Insight:</strong> Larger networks typically have lower density</p>
-</div><div class="column" style="width:40%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="slideshow_4_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Network Metrics:</strong></p>
-<table style="border-collapse: collapse; margin: auto; font-size: 14px;">
-<tbody><tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">
-Nodes (n)
-</td>
-<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
-5
-</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">
-Edges (m)
-</td>
-<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
-6
-</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">
-Possible Edges
-</td>
-<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
-10
-</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">
-Density
-</td>
-<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
-60.0%
-</td>
-</tr>
-</tbody></table>
-</div></div>
-</section>
-<section id="example-centralization" class="slide level2 smaller">
-<h2>Example: Centralization</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Definition:</strong> Extent to which connections concentrate around few nodes</p>
-<ul>
-<li><strong>High centralization</strong>: Star-like, hierarchical structure</li>
-<li><strong>Low centralization</strong>: Distributed, egalitarian structure</li>
-</ul>
-<p><strong>Business Example: Communication Patterns</strong></p>
-<p><strong>Startup (Low Centralization = 0.25)</strong></p>
-<ul>
-<li>Flat structure with distributed communication</li>
-<li>Multiple people coordinate projects</li>
-<li>Information flows through many channels</li>
-</ul>
-<p><strong>Traditional Corporation (High Centralization = 0.78)</strong></p>
-<ul>
-<li>Hub-and-spoke: most communication through managers</li>
-<li>Clear hierarchy and formal reporting</li>
-<li>Information bottlenecks at central nodes</li>
-</ul>
-<p><strong>Implication:</strong> Centralization affects agility, innovation, and resilience</p>
-</div><div class="column" style="width:40%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="slideshow_4_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Network Metrics:</strong></p>
-<table style="border-collapse: collapse; margin: auto; font-size: 13px;">
-<tbody><tr>
-<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">
-Network
-</th>
-<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">
-Size
-</th>
-<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">
-Density
-</th>
-</tr>
-<tr>
-<td style="padding: 6px; border: 1px solid #ddd;">
-Higher centralization (top)
-</td>
-<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">
-5 nodes, 4 edges
-</td>
-<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">
-40.0%
-</td>
-</tr>
-<tr>
-<td style="padding: 6px; border: 1px solid #ddd;">
-Lower centralization (bottom)
-</td>
-<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">
-5 nodes, 8 edges
-</td>
-<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">
-80.0%
-</td>
-</tr>
-</tbody></table>
-</div></div>
-</section>
-<section id="meso-level-indicators" class="slide level2">
-<h2>Meso-Level Indicators</h2>
-<p><strong>Community and Subgroup Structure</strong></p>
-<p>Identify cohesive groups and organizational patterns</p>
-<p><strong>Key Measures:</strong></p>
-<ol type="1">
-<li><strong>Modularity</strong>: Quality of network partitioning into groups</li>
-<li><strong>Community Detection</strong>: Algorithmic identification of clusters</li>
-<li><strong>Core-Periphery</strong>: Distinction between dense core and sparse periphery</li>
-<li><strong>Structural Holes</strong>: Gaps between groups creating brokerage opportunities</li>
-<li><strong>k-cores</strong>: Subgraphs where all nodes have minimum degree k</li>
-</ol>
-<p><strong>Purpose:</strong> Reveal hidden organizational structure and group boundaries</p>
-</section>
-<section id="example-network-modularity" class="slide level2 smaller">
-<h2>Example: Network Modularity</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Definition:</strong> Strength of division into communities</p>
-<ul>
-<li>Measures how well network separates into distinct groups</li>
-<li>Higher values indicate stronger community structure</li>
-</ul>
-<p><strong>Business Example: Corporate R&amp;D Network</strong></p>
-<p><strong>Higher Modularity</strong></p>
-<ul>
-<li>Clear separation: Chemistry, Biology, Engineering teams</li>
-<li>Limited cross-disciplinary collaboration</li>
-<li>Potential for siloed innovation</li>
-</ul>
-<p><strong>Lower Modularity</strong></p>
-<ul>
-<li>Extensive cross-team connections</li>
-<li>Interdisciplinary collaboration</li>
-<li>Potential for breakthrough innovation but coordination challenges</li>
-</ul>
-<p><strong>Strategic Implication:</strong> Community structure reflects organizational integration vs.&nbsp;specialization trade-offs</p>
-</div><div class="column" style="width:40%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="slideshow_4_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="prepare" class="slide level2">
+<h2>Prepare</h2>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<p><strong>📚 Prepare</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>The top network seems to have two communities ({A, B, C} and {D, E, F} triads)</strong></p>
-<p><strong>The bottom network does not show any obvious community structure</strong></p>
-<p>We will explore modularity indicators and community detection algorithms in detail in <strong>Weeks 7 and 8</strong>.</p>
+<p>📖 Read the <a href="../../course/syllabus.html">syllabus</a></p>
+<p>📖 Revise <a href="../../weeks/week-1/network_terms.html">network terms</a> (from week 1)</p>
 </div>
 </div>
 </div>
-</div></div>
 </section>
-<section id="node-level-indicators" class="slide level2 smaller">
-<h2>Node-Level Indicators</h2>
-<p><strong>Individual Position and Influence</strong></p>
-<p>Characterize actor positions within the network</p>
-<p><strong>Major Categories:</strong></p>
-<ol type="1">
-<li><p><strong>Centrality Measures</strong>: Various ways to measure importance</p>
-<ul>
-<li>Degree, Closeness, Betweenness, Eigenvector</li>
-</ul></li>
-<li><p><strong>Structural Position</strong>: Role in network architecture</p>
-<ul>
-<li>Bridges, Brokers, Isolates, Cliques</li>
-</ul></li>
-<li><p><strong>Local Clustering</strong>: Cohesion of immediate neighborhood</p></li>
-<li><p><strong>Embeddedness</strong>: Integration into network structure</p></li>
-</ol>
-<p><strong>Purpose:</strong> Identify influential actors, structural advantages, and vulnerabilities</p>
+<section id="participate" class="slide level2">
+<h2>Participate</h2>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<p><strong>👥 Participate</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Much more to follow on node-level indicators today</strong></p>
+<p>📉 Slideshows:</p>
+<ol type="1">
+<li><p><a href="slideshow_1-slides.html">Networks, Network Analysis &amp; Business Relevance</a></p></li>
+<li><p><a href="slideshow_2-slides.html">Why Network Analysis Matters</a></p></li>
+<li><p><a href="slideshow_3-slides.html">Fundamental Network Concepts</a></p></li>
+<li><p><a href="slideshow_4-slides.html">Taxonomy of Network Analysis Indicators</a></p></li>
+<li><p><a href="slideshow_5-slides.html">Network centrality</a></p></li>
+</ol>
 </div>
 </div>
 </div>
 </section>
-<section id="summary-levels-in-practice" class="slide level2 smaller">
-<h2>Summary: Levels in Practice</h2>
-<p><strong>Integrated Analysis Framework:</strong></p>
-<p><strong>Macro Level</strong> → Strategic organizational design</p>
-<ul>
-<li>Should we have a centralized or distributed structure?</li>
-<li>How connected is our organization overall?</li>
-</ul>
-<p><strong>Meso Level</strong> → Team and department dynamics</p>
-<ul>
-<li>Are we too siloed or too integrated?</li>
-<li>Where are the boundaries between groups?</li>
-</ul>
-<p><strong>Micro Level</strong> → Individual talent management</p>
-<ul>
-<li>Who are our key connectors and influencers?</li>
-<li>Who has structural advantages or disadvantages?</li>
-</ul>
-<div class="callout callout-important callout-titled callout-style-default">
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>💻 Practice</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Best Practice:</strong> Analyze networks at multiple levels simultaneously for comprehensive insights</p>
+<p>🧮 <a href="../../weeks/week-2/practice_1.html">Ingest network data and compute node degree</a></p>
 </div>
 </div>
 </div>
+</section>
+<section id="perform" class="slide level2">
+<h2>Perform</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>📝 Perform</strong></p>
+</div>
+<div class="callout-content">
+<p>✏️ <a href="../../weeks/week-2/perform_0.html">Compute network centrality indicators on a toy network dataset</a></p>
+<p>✏️ <a href="../../weeks/week-2/perform_1.html">Wikipedia Vote Network</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="ponder" class="slide level2">
+<h2>Ponder</h2>
+<p><strong>Network centrality concept</strong></p>
+<p>Chapter 26 (“Centrality”) from McLevey, J., Carrington, P. J., &amp; Scott, J. (2023). <a href="https://go.exlibris.link/rW0j0hZX"><em>The Sage handbook of social network analysis</em></a>. Sage.</p>
+<p><strong>Practical importance of intra-organizational networks</strong></p>
+<p>Cross, R., Liedtka, J., &amp; Weiss, L. (2005). *<a href="https://go.exlibris.link/9lZS2t2V">A practical guide to social networks*</a>. Harvard Business Review, 83(3), 124-132.</p>
+<p><strong>Centrality and social influence in networks</strong></p>
+<p>Griskevicius, V., Cialdini, R. B., &amp; Goldstein, N. J. (2008). <a href="https://go.exlibris.link/FnvYsnT0"><em>Applying (and resisting) peer influence</em></a>. MIT Sloan Management Review, 49(2), 84.</p>
 
 
 </section>
@@ -703,44 +458,6 @@ Lower centralization (bottom)
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
