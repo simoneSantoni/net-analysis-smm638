@@ -6,12 +6,11 @@ date: "2025-10-06"
 format:
   revealjs:
     output-file: slideshow_2-slides.html
-    theme: default
+    theme: slides.scss
     slide-number: true
     transition: slide
     chalkboard: true
     multiplex: false
-    css: custom-slides.css
     code-fold: true
     code-summary: ""
   beamer:

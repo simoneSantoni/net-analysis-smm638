@@ -5,12 +5,11 @@ author: "SMM638 Network Analytics"
 format:
   revealjs:
     output-file: slideshow_5-slides.html
-    theme: default
+    theme: slides.scss
     slide-number: true
     transition: slide
     chalkboard: true
     multiplex: false
-    css: custom-slides.css
     code-fold: true
     code-summary: ""
   beamer:
