@@ -11,6 +11,7 @@
   --warning-color: #f39c12;
   --dark-color: #2c3e50;
   --light-gray: #ecf0f1;
+  --forest-green: #228B22;
 }
 
 /* Base reveal settings */
@@ -23,7 +24,7 @@
 /* Title slide */
 .reveal .slide-title,
 .reveal h1.title {
-  color: var(--primary-color);
+  color: var(--forest-green);
   font-weight: 700;
 }
 
@@ -37,14 +38,14 @@
 .reveal h2,
 .reveal h3,
 .reveal h4 {
-  color: var(--primary-color);
+  color: var(--forest-green);
   font-family: "Atkinson Hyperlegible", sans-serif;
   font-weight: 700;
 }
 
 .reveal h2 {
   margin-bottom: 1em;
-  border-bottom: 3px solid var(--primary-color);
+  border-bottom: 3px solid var(--forest-green);
   padding-bottom: 0.3em;
 }
 
