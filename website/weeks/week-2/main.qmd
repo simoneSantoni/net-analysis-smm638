@@ -7,7 +7,7 @@ callout-appearance: "default"
 ## Prepare
 
 ::: {.callout-note}
-## Note
+## 📚 Prepare
 
 📖 Read the [syllabus](../../course/syllabus.qmd)
 
@@ -18,7 +18,7 @@ callout-appearance: "default"
 ## Participate
 
 ::: {.callout-note}
-## Note
+## 👥 Participate
 
 📉 Slideshows:
 
@@ -37,7 +37,7 @@ callout-appearance: "default"
 ## Practice
 
 ::: {.callout-note}
-## Note
+## 💻 Practice
 
 🧮 [Ingest network data and compute node degree](practice_1.qmd)
 
@@ -46,7 +46,7 @@ callout-appearance: "default"
 ## Perform
 
 ::: {.callout-note}
-## Note
+## 📝 Perform
 
 ✏️ [Compute network centrality indicators on a toy network dataset](perform_0.qmd)
 
