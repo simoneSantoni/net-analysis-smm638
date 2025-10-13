@@ -7,8 +7,6 @@
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../weeks/week-3/main.html" rel="next">
-<link href="../../weeks/week-1/main.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -31,7 +29,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>SMM638 - Network Analytics – Week 2</title>
+  <title>SMM638 - Network Analytics – Network Analysis Glossary</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -149,95 +147,206 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-2/main.html">Week 2</a></li></ol></nav>
-  <h1 class="title">Week 2</h1>
-  <p class="subtitle">Network centrality</p>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Network Analysis Glossary</h1>
+  <p class="subtitle">Essential Terms and Concepts</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="prepare" class="slide level2">
-<h2>Prepare</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>📚 Prepare</strong></p>
-</div>
-<div class="callout-content">
-<p>📖 Read the <a href="../../course/syllabus.html">syllabus</a></p>
-<p>📖 Revise <a href="../../weeks/week-1/network_terms.html">network terms</a> (from week 1)</p>
-</div>
-</div>
-</div>
+<section id="core-network-components" class="slide level2">
+<h2>Core Network Components</h2>
+<h3 id="graph">Graph</h3>
+<p>A <strong>graph</strong> is a mathematical structure consisting of a set of objects (vertices) and a set of connections (edges) between pairs of these objects. In network analysis, graphs provide the fundamental framework for representing relationships and interactions between entities. Graphs can be directed (edges have direction) or undirected (edges have no inherent direction).</p>
+<p><span class="math display">\[
+G = {v, e}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[v = [v_1, v_2, ..., v_i, ... v_n]\]</span></p>
+<p>and</p>
+<p><span class="math display">\[e = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j), ..., (v_j, v_n)]\]</span></p>
+<h3 id="vertices-nodes">Vertices (Nodes)</h3>
+<p><strong>Vertices</strong> (also called nodes) are the fundamental units or entities in a network. They represent the objects being studied, such as:</p>
+<ul>
+<li>People in social networks</li>
+<li>Computers in technological networks</li>
+<li>Proteins in biological networks</li>
+<li>Cities in transportation networks</li>
+</ul>
+<p>Each vertex can have attributes (e.g., age, location, type) that provide additional information about the entity it represents.</p>
+<h3 id="edges-linksties">Edges (Links/Ties)</h3>
+<p><strong>Edges</strong> (also called links or ties) represent the connections or relationships between vertices. They encode the interactions, associations, or dependencies between entities in the network. Edges can have various properties:</p>
+<ul>
+<li>Direction (directed vs.&nbsp;undirected)</li>
+<li>Weight (strength of connection)</li>
+<li>Type (multiple relationship types)</li>
+<li>Temporal information (when the connection exists)</li>
+</ul>
+<h3 id="network-relationship">Network Relationship</h3>
+<p>A <strong>network relationship</strong> defines the nature of connections between entities in a network. These relationships determine:</p>
+<ul>
+<li>What constitutes a connection (e.g., friendship, communication, transaction)</li>
+<li>How connections are measured or identified</li>
+<li>Whether relationships are symmetric or asymmetric</li>
+<li>The meaning and interpretation of network patterns</li>
+</ul>
 </section>
-<section id="participate" class="slide level2">
-<h2>Participate</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>👥 Participate</strong></p>
-</div>
-<div class="callout-content">
-<p>📉 Slideshows:</p>
-<ol type="1">
-<li><p><a href="slideshow_1.pdf">Networks, Network Analysis &amp; Business Relevance</a> (<a href="slideshow_1-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_2.pdf">Why Network Analysis Matters</a> (<a href="slideshow_2-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_3.pdf">Fundamental Network Concepts</a> (<a href="slideshow_3-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_4.pdf">Taxonomy of Network Analysis Indicators</a> (<a href="slideshow_4-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_5.pdf">Network centrality</a> (<a href="slideshow_5-slides.html">HTML</a>)</p></li>
-</ol>
-</div>
+<section id="network-types" class="slide level2">
+<h2>Network Types</h2>
+<h3 id="one-mode-vs-two-mode-networks">One-mode vs Two-mode Networks</h3>
+<h4 id="one-mode-networks">One-mode Networks</h4>
+<p><strong>One-mode networks</strong> (also called unipartite networks) contain only one type of vertex. All connections occur between vertices of the same type. Examples include:</p>
+<ul>
+<li>Friendship networks (people connected to people)</li>
+<li>Citation networks (papers citing papers)</li>
+<li>Trade networks (countries trading with countries)</li>
+</ul>
+<p>Here’s an example of creating a one-mode network visualization concerning a collaboration network among five co-workers:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img data-src="network_terms_files/figure-html/one-mode-network-viz-1.png" width="672" class="figure-img"></p>
+<figcaption>Example of a one-mode collaboration network showing connections between individuals</figcaption>
+</figure>
 </div>
 </div>
+</div>
+<h4 id="directed-vs-undirected-networks">Directed Vs Undirected Networks</h4>
+<p><strong>Directed networks</strong> (also called digraphs) have edges with a specific direction, indicating asymmetric relationships where the connection flows from one vertex to another. Examples include:</p>
+<ul>
+<li>Email networks (sender → receiver)</li>
+<li>Citation networks (citing paper → cited paper)<br>
+</li>
+<li>Food webs (predator → prey)</li>
+<li>Twitter follower networks (follower → followed)</li>
+</ul>
+<p>Here’s an example of a directed network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img data-src="network_terms_files/figure-html/directed-network-viz-1.png" width="672" class="figure-img"></p>
+<figcaption>Directed Email Communication Network</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Undirected networks</strong> have edges without direction, representing symmetric relationships where connections are mutual. Examples include:</p>
+<ul>
+<li>Friendship networks (mutual friendships)</li>
+<li>Co-authorship networks (collaborations)</li>
+<li>Infrastructure networks (roads, power grids)</li>
+<li>Protein interaction networks</li>
+</ul>
+<p>The choice between directed and undirected representation depends on whether the relationship being modeled is inherently asymmetric or symmetric.</p>
+<h4 id="two-mode-networks">Two-mode Networks</h4>
+<p><strong>Two-mode networks</strong> (also called bipartite networks) contain two distinct types of vertices, and edges only connect vertices of different types. Examples include:</p>
+<ul>
+<li>Actor-movie networks (actors connected to movies they appear in)</li>
+<li>Author-paper networks (authors connected to papers they wrote)</li>
+<li>Customer-product networks (customers connected to products they purchased)</li>
+</ul>
+<p>Here’s an example of a two-mode purchasing network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img data-src="network_terms_files/figure-html/two-mode-network-viz-1.png" width="672" class="figure-img"></p>
+<figcaption>Two-Mode Customer-Product Purchasing Network</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="signed-networks">Signed Networks</h3>
+<p><strong>Signed networks</strong> are networks where edges carry positive or negative values, representing different types of relationships:</p>
+<ul>
+<li>Positive edges: friendship, alliance, cooperation</li>
+<li>Negative edges: animosity, conflict, competition</li>
+</ul>
+<p>Signed networks are particularly useful for studying:</p>
+<ul>
+<li>Social balance theory</li>
+<li>Coalition formation</li>
+<li>Conflict dynamics</li>
+<li>Opinion polarization</li>
+</ul>
+<p>Here’s an example of a signed social network like cooperative Vs. competitive ties among co-workers:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img data-src="network_terms_files/figure-html/signed-network-viz-1.png" width="672" class="figure-img"></p>
+<figcaption>Signed Social Network with Positive and Negative Relationships</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="weighted-vs-unweighted-networks">Weighted vs Unweighted Networks</h3>
+<h4 id="weighted-networks">Weighted Networks</h4>
+<p><strong>Weighted networks</strong> have edges with numerical values (weights) representing the strength, frequency, or capacity of connections. Examples include:</p>
+<ul>
+<li>Communication networks (number of messages exchanged)</li>
+<li>Transportation networks (traffic volume or distance)</li>
+<li>Neural networks (synaptic strength)</li>
+<li>Financial networks (transaction amounts)</li>
+</ul>
+<p>Here’s an example of a weighted communication network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img data-src="network_terms_files/figure-html/weighted-network-viz-1.png" width="672" class="figure-img"></p>
+<figcaption>Weighted Communication Network (Edge Width = Message Volume)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h4 id="unweighted-networks">Unweighted Networks</h4>
+<p><strong>Unweighted networks</strong> (also called binary networks) have edges that simply indicate the presence or absence of a connection. All edges are treated equally, focusing on the topology rather than connection strength. These are simpler to analyze but may lose important information about relationship intensity.</p>
 </section>
-<section id="practice" class="slide level2">
-<h2>Practice</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>💻 Practice</strong></p>
-</div>
-<div class="callout-content">
-<p>🧮 <a href="../../weeks/week-2/practice_1.html">Ingest network data and compute node degree</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="perform" class="slide level2">
-<h2>Perform</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>📝 Perform</strong></p>
-</div>
-<div class="callout-content">
-<p>✏️ <a href="../../weeks/week-2/perform_0.html">Compute network centrality indicators on a toy network dataset</a></p>
-<p>✏️ <a href="../../weeks/week-2/perform_1.html">Wikipedia Vote Network</a></p>
+<section id="network-substructures" class="slide level2">
+<h2>Network Substructures</h2>
+<h3 id="dyads">Dyads</h3>
+<p>A <strong>dyad</strong> is the simplest possible network substructure, consisting of a pair of vertices and the possible edge(s) between them. In directed networks, dyads can be classified as:</p>
+<ul>
+<li>Null dyad: no connection in either direction</li>
+<li>Asymmetric dyad: connection in one direction only</li>
+<li>Mutual/Reciprocal dyad: connections in both directions</li>
+</ul>
+<p>Dyadic analysis examines pairwise relationships and forms the foundation for understanding reciprocity and basic network patterns.</p>
+<p>Here’s a visualization showing a dyad within a larger network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img data-src="network_terms_files/figure-html/dyad-network-viz-1.png" width="672" class="figure-img"></p>
+<figcaption>Network with Emphasized Dyad (Alice-Bob)</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</section>
-<section id="ponder" class="slide level2">
-<h2>Ponder</h2>
-<p><strong>Network centrality concept</strong></p>
-<p>Chapter 26 (“Centrality”) from McLevey, J., Carrington, P. J., &amp; Scott, J. (2023). <a href="https://go.exlibris.link/rW0j0hZX"><em>The Sage handbook of social network analysis</em></a>. Sage.</p>
-<p><strong>Practical importance of intra-organizational networks</strong></p>
-<p>Cross, R., Liedtka, J., &amp; Weiss, L. (2005). *<a href="https://go.exlibris.link/9lZS2t2V">A practical guide to social networks*</a>. Harvard Business Review, 83(3), 124-132.</p>
-<p><strong>Centrality and social influence in networks</strong></p>
-<p>Griskevicius, V., Cialdini, R. B., &amp; Goldstein, N. J. (2008). <a href="https://go.exlibris.link/FnvYsnT0"><em>Applying (and resisting) peer influence</em></a>. MIT Sloan Management Review, 49(2), 84.</p>
+<h3 id="triads">Triads</h3>
+<p>A <strong>triad</strong> consists of three vertices and the possible edges among them. Triads are fundamental for understanding:</p>
+<ul>
+<li>Transitivity (“friend of a friend” patterns)</li>
+<li>Structural balance</li>
+<li>Clustering tendencies</li>
+<li>Local network motifs</li>
+</ul>
+<p>Here’s a visualization showing a triad within a larger network:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img data-src="network_terms_files/figure-html/triad-network-viz-1.png" width="672" class="figure-img"></p>
+<figcaption>Network with Emphasized Triad (Alice-Bob-Charlie)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>We will deal with these in weeks 4 and 5.</p>
 
 
 </section>

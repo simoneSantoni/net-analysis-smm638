@@ -22,15 +22,15 @@ callout-appearance: "default"
 
 📉 Slideshows:
 
-1. [Networks, Network Analysis & Business Relevance](slideshow_1.pdf) ([HTML](slideshow_1-slides.html))
+1. [Networks, Network Analysis & Business Relevance](slideshow_1-slides.html) ([PDF](slideshow_1.pdf))
 
-2. [Why Network Analysis Matters](slideshow_2.pdf) ([HTML](slideshow_2-slides.html))
+2. [Why Network Analysis Matters](slideshow_2-slides.html) ([PDF](slideshow_2.pdf))
 
-3. [Fundamental Network Concepts](slideshow_3.pdf) ([HTML](slideshow_3-slides.html))
+3. [Fundamental Network Concepts](slideshow_3-slides.html) ([PDF](slideshow_3.pdf))
 
-4. [Taxonomy of Network Analysis Indicators](slideshow_4.pdf) ([HTML](slideshow_4-slides.html))
+4. [Taxonomy of Network Analysis Indicators](slideshow_4-slides.html) ([PDF](slideshow_4.pdf))
 
-5. [Network centrality](slideshow_5.pdf) ([HTML](slideshow_5-slides.html))
+5. [Network centrality](slideshow_5-slides.html) ([PDF](slideshow_5.pdf))
 
 :::
 

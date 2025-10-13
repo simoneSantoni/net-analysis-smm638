@@ -7,8 +7,8 @@
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../weeks/week-3/main.html" rel="next">
-<link href="../../weeks/week-1/main.html" rel="prev">
+<link href="../../weeks/week-7/main.html" rel="next">
+<link href="../../weeks/week-4/main.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -31,7 +31,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>SMM638 - Network Analytics – Week 2</title>
+  <title>SMM638 - Network Analytics – Week 5</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -149,95 +149,29 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-2/main.html">Week 2</a></li></ol></nav>
-  <h1 class="title">Week 2</h1>
-  <p class="subtitle">Network centrality</p>
+<section id="title-slide" class="quarto-title-block center"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-5/main.html">Week 5</a></li></ol></nav>
+  <h1 class="title">Week 5</h1>
+  <p class="subtitle">Dyads, triads, and network dynamics - case discussion</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="prepare" class="slide level2">
-<h2>Prepare</h2>
+<section class="slide level2">
+
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>📚 Prepare</strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>📖 Read the <a href="../../course/syllabus.html">syllabus</a></p>
-<p>📖 Revise <a href="../../weeks/week-1/network_terms.html">network terms</a> (from week 1)</p>
+<p>Content coming soon.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="participate" class="slide level2">
-<h2>Participate</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>👥 Participate</strong></p>
-</div>
-<div class="callout-content">
-<p>📉 Slideshows:</p>
-<ol type="1">
-<li><p><a href="slideshow_1.pdf">Networks, Network Analysis &amp; Business Relevance</a> (<a href="slideshow_1-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_2.pdf">Why Network Analysis Matters</a> (<a href="slideshow_2-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_3.pdf">Fundamental Network Concepts</a> (<a href="slideshow_3-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_4.pdf">Taxonomy of Network Analysis Indicators</a> (<a href="slideshow_4-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_5.pdf">Network centrality</a> (<a href="slideshow_5-slides.html">HTML</a>)</p></li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="practice" class="slide level2">
-<h2>Practice</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>💻 Practice</strong></p>
-</div>
-<div class="callout-content">
-<p>🧮 <a href="../../weeks/week-2/practice_1.html">Ingest network data and compute node degree</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="perform" class="slide level2">
-<h2>Perform</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>📝 Perform</strong></p>
-</div>
-<div class="callout-content">
-<p>✏️ <a href="../../weeks/week-2/perform_0.html">Compute network centrality indicators on a toy network dataset</a></p>
-<p>✏️ <a href="../../weeks/week-2/perform_1.html">Wikipedia Vote Network</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="ponder" class="slide level2">
-<h2>Ponder</h2>
-<p><strong>Network centrality concept</strong></p>
-<p>Chapter 26 (“Centrality”) from McLevey, J., Carrington, P. J., &amp; Scott, J. (2023). <a href="https://go.exlibris.link/rW0j0hZX"><em>The Sage handbook of social network analysis</em></a>. Sage.</p>
-<p><strong>Practical importance of intra-organizational networks</strong></p>
-<p>Cross, R., Liedtka, J., &amp; Weiss, L. (2005). *<a href="https://go.exlibris.link/9lZS2t2V">A practical guide to social networks*</a>. Harvard Business Review, 83(3), 124-132.</p>
-<p><strong>Centrality and social influence in networks</strong></p>
-<p>Griskevicius, V., Cialdini, R. B., &amp; Goldstein, N. J. (2008). <a href="https://go.exlibris.link/FnvYsnT0"><em>Applying (and resisting) peer influence</em></a>. MIT Sloan Management Review, 49(2), 84.</p>
 
 
 </section>

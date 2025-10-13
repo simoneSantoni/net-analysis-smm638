@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../weeks/week-3/main.html" rel="next">
-<link href="../../weeks/week-1/main.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-68f80e4ee205afea497a1c798ec9ab8b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-0bba103b01ea630170aef1933bbc3944.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-68f80e4ee205afea497a1c798ec9ab8b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -31,7 +9,9 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>SMM638 - Network Analytics – Week 2</title>
+  <meta name="author" content="SMM638 Network Analytics">
+  <meta name="dcterms.date" content="2025-10-06">
+  <title>SMM638 - Network Analytics – Why Network Analysis Matters</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -51,6 +31,7 @@
     }
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="custom-slides.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -145,99 +126,260 @@
     }
   </style>
 </head>
-<body class="quarto-light nav-sidebar">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-2/main.html">Week 2</a></li></ol></nav>
-  <h1 class="title">Week 2</h1>
-  <p class="subtitle">Network centrality</p>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Why Network Analysis Matters</h1>
+  <p class="subtitle">Insights from the Royal Bank of Canada Case</p>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+SMM638 Network Analytics 
+</div>
+</div>
 </div>
 
+  <p class="date">2025-10-06</p>
 </section>
-<section id="prepare" class="slide level2">
-<h2>Prepare</h2>
+<section id="the-rbc-challenge" class="slide level2">
+<h2>The RBC Challenge</h2>
+<p><strong>Context: First-Party Fraud Detection</strong></p>
+<ul>
+<li>RBC: Canada’s largest bank with 15+ million clients, 6.5M cards</li>
+<li><strong>Problem</strong>: Detecting fraudulent credit applications by own customers</li>
+<li><strong>Traditional approach</strong>: Rule-based systems with <strong>85:1 false positive ratio</strong></li>
+<li><strong>Cost</strong>: $10M upfront + $1M annual maintenance + 30TB weekly data processing</li>
+</ul>
+<p><strong>McKenzie’s Mission: Reduce false positives from 85:1 to 10:1</strong></p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>The Connected Explosion</strong>: “Ten fraudsters sharing 10 common data elements can create 100 false identities; if they defraud 4 financial instruments per identity with $5,000 credit limit, potential loss = <strong>$2 million</strong>”</p>
+</div>
+</div>
+</div>
+</section>
+<section id="why-networks-detect-fraud-better" class="slide level2">
+<h2>Why Networks Detect Fraud Better</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Traditional Fraud Detection Limitations:</strong></p>
+<p>Individual attribute checking misses organized fraud patterns:</p>
+<ul>
+<li>Credit scores, income verification, address validation</li>
+<li>Each application evaluated in isolation</li>
+<li>Fraudsters exploit this independence</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Network Analysis Advantage:</strong></p>
+<p>Reveals the <strong>connected explosion</strong> - fraudsters’ coordination creates detectable signatures:</p>
+<ul>
+<li>Shared phone numbers across multiple applications</li>
+<li>Common email domains and IP addresses</li>
+<li>Linked banking activities and transactions</li>
+<li>Connected social security numbers and addresses</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="fraudsters-face-a-paradox" class="slide level2">
+<h2>Fraudsters Face a Paradox</h2>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>📚 Prepare</strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>📖 Read the <a href="../../course/syllabus.html">syllabus</a></p>
-<p>📖 Revise <a href="../../weeks/week-1/network_terms.html">network terms</a> (from week 1)</p>
+<p>Fraudsters’ greatest strength (coordination) becomes their <strong>Achilles’ heel</strong> (detectability through network patterns)</p>
 </div>
 </div>
 </div>
 </section>
-<section id="participate" class="slide level2">
-<h2>Participate</h2>
+<section id="the-analytical-challenge" class="slide level2">
+<h2>The Analytical Challenge</h2>
+<p><strong>16 Fraud Detection Rules Applied to 13,731 Customers</strong></p>
+<p><strong>Key Performance Metrics:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule</th>
+<th>Positive Hits</th>
+<th>True Positives</th>
+<th>Detection Rate</th>
+<th>False Positive Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R1</td>
+<td>3,221</td>
+<td>189 (45.5%)</td>
+<td>45.5%</td>
+<td>17:1</td>
+</tr>
+<tr class="even">
+<td>R27</td>
+<td>2,057</td>
+<td>169 (40.7%)</td>
+<td>40.7%</td>
+<td>12:1</td>
+</tr>
+<tr class="odd">
+<td>R18</td>
+<td>9,107</td>
+<td>84 (20.2%)</td>
+<td>20.2%</td>
+<td><strong>108:1</strong> ⚠️</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>The Core Trade-off:</strong></p>
+<ul>
+<li>Higher detection rate → More false positives → Higher investigation costs</li>
+<li>Lower false positive rate → Fewer fraudsters caught → Higher fraud losses</li>
+</ul>
+<p><strong>Neither single rule achieves the 10:1 target</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="business-value-three-critical-insights" class="slide level2 smaller">
+<h2>Business Value: Three Critical Insights</h2>
+<p><strong>1. Precision Enhancement Through Combined Rules</strong></p>
+<ul>
+<li><strong>Logit model</strong> combining 16 rules outperforms any single rule</li>
+<li>Achieves <strong>2.7:1 false positive ratio</strong> at optimal threshold (0.275)</li>
+<li>Trade-off: Only 13% detection rate at lowest FP ratio</li>
+<li><strong>Sweet spot</strong>: 80% detection (330/415 fraudsters) at 10:1 ratio (threshold = 0.05)</li>
+</ul>
+<p><strong>2. Cost-Benefit Analysis</strong></p>
+<p>Must balance: - Average cost of undetected fraudster ($2M potential loss per ring) - Average cost per investigation ($500-2000 per positive hit) - Data processing costs (ETL: 30TB weekly, 5 days processing time)</p>
+<p><strong>3. System Performance Optimization</strong></p>
+<ul>
+<li><strong>Real-time vs.&nbsp;batch processing</strong>: 5-day lag creates vulnerability window</li>
+<li><strong>Super clusters</strong>: Everyone-connected-to-everyone formations require threshold tuning</li>
+<li><strong>Scalability</strong>: Managing millions of accounts with complex network algorithms</li>
+</ul>
+</section>
+<section id="what-business-analysts-must-understand" class="slide level2 smaller">
+<h2>What Business Analysts Must Understand</h2>
+<p><strong>The Multi-Dimensional Optimization Problem:</strong></p>
+<p><strong>Technical Dimensions:</strong></p>
+<ul>
+<li>Feature engineering from network patterns</li>
+<li>Model performance (precision, recall, F1-score)</li>
+<li>Computational efficiency and scalability</li>
+</ul>
+<p><strong>Business Dimensions:</strong></p>
+<ul>
+<li>Customer experience (minimizing false accusations)</li>
+<li>Operational efficiency (investigation team capacity)</li>
+<li>Financial impact (fraud losses vs.&nbsp;prevention costs)</li>
+</ul>
+<p><strong>Strategic Dimensions:</strong></p>
+<ul>
+<li>System evolution as fraudsters adapt</li>
+<li>Integration with legacy banking systems</li>
+<li>Regulatory compliance and data privacy</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Real Outcome</strong>: By end of 2015, RBC reduced false positive ratio to 24:1 (progress but still above 10:1 target). In March 2016, discontinued SNA to revamp ETL infrastructure.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="key-lessons-for-analysts" class="slide level2 smaller">
+<h2>Key Lessons for Analysts</h2>
+<p><strong>1. Context Matters More Than Algorithms</strong></p>
+<ul>
+<li>Best model must align with business constraints</li>
+<li>Pure accuracy is not the goal—balanced performance is</li>
+</ul>
+<p><strong>2. Trade-offs Are Inherent</strong></p>
+<ul>
+<li>Detection rate vs.&nbsp;false positive rate</li>
+<li>Thoroughness vs.&nbsp;operational efficiency<br>
+</li>
+<li>Real-time responsiveness vs.&nbsp;computational cost</li>
+</ul>
+<p><strong>3. Network Analysis Reveals Hidden Patterns</strong></p>
+<ul>
+<li>Individual-level analysis misses organized fraud</li>
+<li>Connectivity is both the crime’s structure and its detection mechanism</li>
+<li>Network thinking transforms how we identify risk</li>
+</ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>👥 Participate</strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>📉 Slideshows:</p>
-<ol type="1">
-<li><p><a href="slideshow_1.pdf">Networks, Network Analysis &amp; Business Relevance</a> (<a href="slideshow_1-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_2.pdf">Why Network Analysis Matters</a> (<a href="slideshow_2-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_3.pdf">Fundamental Network Concepts</a> (<a href="slideshow_3-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_4.pdf">Taxonomy of Network Analysis Indicators</a> (<a href="slideshow_4-slides.html">HTML</a>)</p></li>
-<li><p><a href="slideshow_5.pdf">Network centrality</a> (<a href="slideshow_5-slides.html">HTML</a>)</p></li>
-</ol>
+<p>This case demonstrates why business analysts need both technical skills (modeling, optimization) and business judgment (trade-off management, stakeholder communication)</p>
 </div>
 </div>
 </div>
-</section>
-<section id="practice" class="slide level2">
-<h2>Practice</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>💻 Practice</strong></p>
-</div>
-<div class="callout-content">
-<p>🧮 <a href="../../weeks/week-2/practice_1.html">Ingest network data and compute node degree</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="perform" class="slide level2">
-<h2>Perform</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>📝 Perform</strong></p>
-</div>
-<div class="callout-content">
-<p>✏️ <a href="../../weeks/week-2/perform_0.html">Compute network centrality indicators on a toy network dataset</a></p>
-<p>✏️ <a href="../../weeks/week-2/perform_1.html">Wikipedia Vote Network</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="ponder" class="slide level2">
-<h2>Ponder</h2>
-<p><strong>Network centrality concept</strong></p>
-<p>Chapter 26 (“Centrality”) from McLevey, J., Carrington, P. J., &amp; Scott, J. (2023). <a href="https://go.exlibris.link/rW0j0hZX"><em>The Sage handbook of social network analysis</em></a>. Sage.</p>
-<p><strong>Practical importance of intra-organizational networks</strong></p>
-<p>Cross, R., Liedtka, J., &amp; Weiss, L. (2005). *<a href="https://go.exlibris.link/9lZS2t2V">A practical guide to social networks*</a>. Harvard Business Review, 83(3), 124-132.</p>
-<p><strong>Centrality and social influence in networks</strong></p>
-<p>Griskevicius, V., Cialdini, R. B., &amp; Goldstein, N. J. (2008). <a href="https://go.exlibris.link/FnvYsnT0"><em>Applying (and resisting) peer influence</em></a>. MIT Sloan Management Review, 49(2), 84.</p>
 
 
 </section>
