@@ -51,10 +51,11 @@ data_summary <- data.frame(
   Type = sapply(twitch_nodes, class),
   Missing = sapply(twitch_nodes, function(x) sum(is.na(x))),
   Unique = sapply(twitch_nodes, function(x) length(unique(x))),
-  stringsAsFactors = FALSE
+  stringsAsFactors = FALSE,
+  row.names = NULL
 )
 
-kable(data_summary, caption = "Data Structure Summary")
+kable(data_summary, caption = "Data Structure Summary", row.names = FALSE)
 ```
 
 ## Distribution Analysis
