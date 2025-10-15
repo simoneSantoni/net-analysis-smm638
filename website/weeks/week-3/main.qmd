@@ -31,7 +31,235 @@ This week we focus on applying centrality concepts through case study discussion
 ::: {.callout-note}
 ## 💻 Practice
 
-No practice materials in this week.
+### Twitch Network Exploratory Data Analysis
+
+Explore the Twitch streamer network dataset to understand node attributes before applying centrality measures.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r load-libraries}
+# Load required libraries
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(knitr)
+
+# Set theme for plots
+theme_set(theme_minimal())
+```
+
+```{r load-data}
+# Read the Twitch nodes data
+twitch_nodes <- read_csv("../../../data/twitch/Twitch_nodes.csv")
+
+# Display data structure
+cat("Dataset dimensions:", nrow(twitch_nodes), "rows,", ncol(twitch_nodes), "columns\n")
+```
+
+### Data Overview
+
+The Twitch dataset contains information about streamers including:
+- **ID**: Streamer identifier
+- **Days_active**: Number of days the streamer has been active
+- **Mature_content**: Whether the channel contains mature content (TRUE/FALSE)
+- **Views**: Total number of views
+- **Affiliate**: Whether the streamer has affiliate status (TRUE/FALSE)
+- **Channel_ID**: Unique channel identifier
+
+```{r data-summary}
+# Create a summary table of data types
+data_summary <- data.frame(
+  Variable = names(twitch_nodes),
+  Type = sapply(twitch_nodes, class),
+  Missing = sapply(twitch_nodes, function(x) sum(is.na(x))),
+  Unique = sapply(twitch_nodes, function(x) length(unique(x))),
+  stringsAsFactors = FALSE
+)
+
+kable(data_summary, caption = "Data Structure Summary")
+```
+
+### Distribution Analysis
+
+#### Views Distribution
+
+```{r views-analysis}
+# Calculate summary statistics
+views_summary <- twitch_nodes %>%
+  summarise(
+    Min = min(Views),
+    Q1 = quantile(Views, 0.25),
+    Median = median(Views),
+    Mean = mean(Views),
+    Q3 = quantile(Views, 0.75),
+    Max = max(Views)
+  )
+
+kable(views_summary, caption = "Views Summary Statistics", format.args = list(big.mark = ","))
+
+# Create histogram with log scale
+p1 <- ggplot(twitch_nodes, aes(x = Views)) +
+  geom_histogram(bins = 50, fill = "#9146FF", alpha = 0.8, color = "white") +
+  scale_x_log10(labels = comma) +
+  geom_vline(aes(xintercept = median(Views)), 
+             color = "red", linetype = "dashed", size = 1) +
+  labs(title = "Distribution of Channel Views (Log Scale)",
+       subtitle = paste("Median:", format(median(twitch_nodes$Views), big.mark = ",")),
+       x = "Views (log scale)",
+       y = "Number of Streamers") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5))
+
+p1
+```
+
+#### Categorical Variables
+
+```{r categorical-analysis}
+# Create summary tables
+categorical_summary <- bind_rows(
+  twitch_nodes %>%
+    count(Mature_content) %>%
+    mutate(Variable = "Mature Content",
+           Category = as.character(Mature_content),
+           Percentage = round(n / sum(n) * 100, 1)),
+  
+  twitch_nodes %>%
+    count(Affiliate) %>%
+    mutate(Variable = "Affiliate Status",
+           Category = as.character(Affiliate),
+           Percentage = round(n / sum(n) * 100, 1))
+) %>%
+  select(Variable, Category, n, Percentage)
+
+kable(categorical_summary, caption = "Categorical Variables Distribution")
+```
+
+### Relationship Analysis
+
+#### Affiliate Status vs Views
+
+```{r affiliate-views}
+p2 <- twitch_nodes %>%
+  mutate(Affiliate = factor(Affiliate, 
+                           levels = c(FALSE, TRUE),
+                           labels = c("Non-Affiliate", "Affiliate"))) %>%
+  ggplot(aes(x = Affiliate, y = Views, fill = Affiliate)) +
+  geom_violin(alpha = 0.6) +
+  geom_boxplot(width = 0.2, alpha = 0.8) +
+  scale_y_log10(labels = comma) +
+  scale_fill_manual(values = c("#9146FF", "#1DB954")) +
+  labs(title = "Views Distribution by Affiliate Status",
+       x = "Affiliate Status",
+       y = "Views (log scale)") +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5, face = "bold"))
+
+p2
+```
+
+#### Days Active vs Views
+
+```{r scatter-analysis}
+p3 <- ggplot(twitch_nodes, aes(x = Days_active, y = Views)) +
+  geom_point(aes(color = Affiliate, shape = Mature_content), 
+             alpha = 0.6, size = 2) +
+  scale_y_log10(labels = comma) +
+  scale_color_manual(values = c("#9146FF", "#1DB954"),
+                     labels = c("Non-Affiliate", "Affiliate")) +
+  scale_shape_manual(values = c(16, 17),
+                     labels = c("Non-Mature", "Mature")) +
+  geom_smooth(method = "lm", se = TRUE, alpha = 0.2) +
+  labs(title = "Relationship between Days Active and Views",
+       x = "Days Active",
+       y = "Views (log scale)",
+       color = "Affiliate Status",
+       shape = "Content Type") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+
+p3
+```
+
+### Cross-tabulation Analysis
+
+```{r cross-analysis}
+# Create detailed cross-tabulation
+cross_analysis <- twitch_nodes %>%
+  group_by(Mature_content, Affiliate) %>%
+  summarise(
+    Count = n(),
+    Avg_Views = mean(Views),
+    Median_Views = median(Views),
+    Avg_Days_Active = mean(Days_active),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    Avg_Views = round(Avg_Views),
+    Avg_Days_Active = round(Avg_Days_Active),
+    Mature_content = ifelse(Mature_content, "Mature", "Non-Mature"),
+    Affiliate = ifelse(Affiliate, "Affiliate", "Non-Affiliate")
+  )
+
+kable(cross_analysis, 
+      caption = "Average Metrics by Content Type and Affiliate Status",
+      format.args = list(big.mark = ","))
+```
+
+### Statistical Tests
+
+```{r t-tests}
+# Affiliate status comparison
+affiliate_test <- t.test(log10(Views + 1) ~ Affiliate, data = twitch_nodes)
+cat("T-test: Affiliate vs Non-Affiliate (log-transformed views)\n")
+cat("t =", round(affiliate_test$statistic, 4), "\n")
+cat("p-value =", format.pval(affiliate_test$p.value), "\n")
+cat("Mean difference =", round(diff(affiliate_test$estimate), 4), "log units\n")
+```
+
+### Top Performers
+
+```{r top-channels}
+# Identify top 10 channels by views
+top_channels <- twitch_nodes %>%
+  arrange(desc(Views)) %>%
+  slice_head(n = 10) %>%
+  mutate(
+    Rank = row_number(),
+    Views = format(Views, big.mark = ","),
+    Content_Type = ifelse(Mature_content, "Mature", "Non-Mature"),
+    Status = ifelse(Affiliate, "Affiliate", "Non-Affiliate")
+  ) %>%
+  select(Rank, Channel_ID, Views, Days_active, Content_Type, Status)
+
+kable(top_channels, caption = "Top 10 Twitch Channels by Views")
+```
+
+### Key Insights
+
+```{r insights}
+# Calculate key metrics
+insights <- list(
+  total_streamers = nrow(twitch_nodes),
+  avg_views = mean(twitch_nodes$Views),
+  median_views = median(twitch_nodes$Views),
+  affiliate_rate = mean(twitch_nodes$Affiliate) * 100,
+  mature_content_rate = mean(twitch_nodes$Mature_content) * 100,
+  views_ratio = mean(twitch_nodes$Views) / median(twitch_nodes$Views)
+)
+```
+
+**Summary of Key Findings:**
+
+- **Total streamers analyzed**: `r format(insights$total_streamers, big.mark = ",")`
+- **Highly skewed viewership**: Average views (`r format(round(insights$avg_views), big.mark = ",")`) are `r round(insights$views_ratio, 1)`x higher than median views (`r format(insights$median_views, big.mark = ",")`), indicating extreme concentration
+- **Affiliate rate**: Only `r round(insights$affiliate_rate, 1)`% of streamers have affiliate status
+- **Mature content**: `r round(insights$mature_content_rate, 1)`% of channels are marked as mature
+- **Affiliate advantage**: Affiliate streamers have significantly higher viewership (p < 0.001)
+
+This analysis provides context for understanding how node attributes might relate to network centrality measures in the Twitch streamer ecosystem.
+
 :::
 
 ## Perform
