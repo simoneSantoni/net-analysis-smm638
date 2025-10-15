@@ -1,0 +1,6 @@
+---
+title: "Qualitative Discussion of the Case"
+subtitle: "Week 3 - Network Analytics"
+---
+
+This file will contain the qualitative discussion after the class.
