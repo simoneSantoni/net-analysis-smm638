@@ -1,6 +1,478 @@
 ---
-title: "Qualitative Discussion of the Case"
-subtitle: "Week 3 - Network Analytics"
+title: "Who is the Right Influencer?"
+subtitle: "Business Insights from Social Network Analysis"
+author: "Case Teaching Note Summary"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    logo: ""
+    css: styles.css
+    footer: "SMU-23-0010 | Twitch Influencer Case"
+    incremental: false
 ---
 
-This file will contain the qualitative discussion after the class.
+## Slide 1: The Strategic Context {.smaller}
+
+::: {.columns}
+::: {.column width="55%"}
+### Space Games Inc.'s Challenge
+
+**Company Background**
+- Small gaming company in Singapore
+- Launching "Thrive in Space 5" (5th version)
+- Target: Gamers aged 16-25
+- Campaign: "Thrive to Survive" on Twitch
+- Timeline: 1 month to launch
+
+**CMO Tina Lohn's Dilemma**
+
+Three critical questions facing senior management:
+
+1. **Selection**: Which influencers should we choose?
+2. **Justification**: How do we prove ROI to leadership?
+3. **Methodology**: What metrics actually matter?
+:::
+
+::: {.column width="45%"}
+::: {.callout-important icon=false}
+## The Core Problem
+**Follower count alone is misleading**
+
+Traditional metrics don't reveal:
+- Who influences other influencers?
+- Who bridges multiple communities?
+- Who has authentic audience engagement?
+- Who aligns with brand values?
+:::
+
+::: {.callout-note}
+## Why This Matters
+Failed influencer campaigns often result from poor selection, regardless of budget size
+:::
+:::
+:::
+
+---
+
+## Slide 2: Understanding Twitch's Unique Value {.smaller}
+
+### Why Twitch for Gaming Products?
+
+::: {.columns}
+::: {.column width="50%"}
+#### Platform Characteristics
+
+**Live Streaming Advantage**
+- Real-time product demonstrations
+- Authentic, unscripted reactions
+- High interactivity (chat features)
+- Community trust and credibility
+
+**Audience Demographics** 
+- 73% aged 16-34 (perfect fit!)
+- 65% male, 35% female
+- Gaming-focused community
+- High engagement rates
+
+**Monetization Ready**
+- Affiliate program structure
+- Subscription revenue models
+- Donation capabilities
+- Professional content creators
+:::
+
+::: {.column width="50%"}
+#### Network Structure Insights
+
+**Key Finding**: Network is **dense with distinct super-users**
+
+- Average followers: 6.22 per user
+- Maximum followers: 465 (User 4949)
+- Distribution highly skewed
+- Sub-communities within larger network
+
+**Strategic Implications**:
+
+1. Few users have outsized influence
+2. Communities cluster around topics
+3. Information spreads through hubs
+4. Super-users bridge multiple groups
+
+::: {.callout-tip}
+## Business Opportunity
+Select influencers who are **well-connected** within the network, not just those with high follower counts
+:::
+:::
+:::
+
+---
+
+## Slide 3: Strategic Selection Framework {.smaller}
+
+### Moving Beyond Simple Metrics
+
+::: {.callout-warning icon=false}
+## Critical Business Insight
+**Network position matters more than network size**
+
+An influencer connected to other influential users has multiplier effects that raw follower count misses
+:::
+
+### Three-Stage Selection Process
+
+::: {.panel-tabset}
+
+#### Stage 1: Apply Business Filters
+
+**Remove Misaligned Candidates**
+
+✗ **Mature Content Channels**
+  - Not age-appropriate for 16+ game
+  - Brand safety concerns
+  - Reduced candidate pool by 55%
+
+✓ **Require Affiliate Status** 
+  - Professional monetization capability
+  - Experience with sponsored content
+  - FTC disclosure compliance
+  - Only 5% of streamers qualify
+
+**Result**: Initial filtering based on business requirements, not just network metrics
+
+#### Stage 2: Network Analysis
+
+**Identify True Influencers**
+
+Focus on two key dimensions:
+
+**Eigenvector Centrality** (High)
+- Connected to other influential streamers
+- Message spreads through important nodes
+- Access to influential audiences
+- **Business Value**: Credibility by association
+
+**Betweenness Centrality** (High)
+- Bridges multiple gaming communities
+- Facilitates cross-community reach
+- Information gatekeeper role
+- **Business Value**: Broader market penetration
+
+**Ideal Quadrant**: High Eigenvector + High Betweenness
+
+**Result**: 14 candidates from network analysis
+
+#### Stage 3: Qualitative Validation
+
+**Profile Checks for Final Selection**
+
+**Genre Alignment**
+- Plays games similar to Thrive in Space?
+- Space/strategy game background?
+- Audience interested in multiplayer games?
+
+**Content Style**
+- Multi-game streamers (more credible)
+- Professional streaming quality
+- Positive community management
+- Consistent schedule
+
+**Authenticity Markers**
+- Genuine enthusiasm for games
+- No controversial associations
+- Values align with Space Games Inc.
+- History of successful partnerships
+
+**Final Selection**: Choose 3 influencers from **different communities**
+
+:::
+
+---
+
+## Slide 4: ROI Framework & Business Case {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+### Building the Financial Case
+
+#### Revenue Calculation
+
+::: {.callout-note icon=false}
+## Revenue Formula (Simplified)
+**Revenue = Price × (Direct Reach + Indirect Reach) × Conversion Uplift**
+
+Where:
+- **Price**: $29.99 per game
+- **Direct Reach**: Influencer's followers
+- **Indirect Reach**: Network effect (2-3x)
+- **Conversion Uplift**: 0.04% above baseline
+:::
+
+**Example Scenario**
+
+Influencer with 10,000 followers:
+- Direct conversions: 14 sales
+- Indirect conversions: 14 sales  
+- Total revenue: ~$840
+- Cost: $500 flat fee
+- **ROI: 68%**
+
+#### Cost Components
+
+**Direct Costs**
+- Influencer fees ($500-5,000 per stream)
+- Free game copies
+- Discount codes (margin reduction)
+
+**Indirect Costs**  
+- Campaign management time
+- Legal contracts
+- Performance monitoring
+:::
+
+::: {.column width="50%"}
+### Beyond Immediate Sales
+
+#### Long-term Business Value
+
+**Brand Awareness**
+- Exposure to gaming community
+- Association with trusted voices
+- Category positioning
+
+**Social Proof**  
+- Third-party validation
+- Viewer testimonials
+- User-generated content
+
+**Community Building**
+- Ongoing engagement
+- Future game launches
+- Player loyalty
+
+#### Risk Mitigation Strategies
+
+::: {.callout-warning}
+## Key Risk Factors
+
+**Brand Misalignment**
+- Influencer controversy
+- Audience backlash
+- Values conflict
+
+**Mitigation**: Thorough vetting + performance-based contracts
+:::
+
+**Portfolio Approach**
+- Diversify across 3 influencers
+- Different community segments
+- Reduce dependency risk
+:::
+:::
+
+---
+
+## Slide 5: Strategic Lessons & Implementation {.smaller}
+
+### Key Business Takeaways
+
+::: {.columns}
+::: {.column width="50%"}
+::: {.callout-note icon=false}
+## 1. Systematic Beats Intuitive
+
+**Traditional Approach** (Avoid)
+- Select by follower count
+- Choose recognizable names
+- Rely on personal connections
+
+**Network-Informed Approach** (Adopt)
+- Analyze network position
+- Consider multiple centrality measures
+- Balance reach with influence
+- Validate with qualitative checks
+
+**Business Impact**: 
+- Higher conversion rates
+- Lower risk of mismatch
+- Better ROI per dollar spent
+:::
+
+::: {.callout-note icon=false}
+## 2. Authenticity Cannot Be Faked
+
+**Case Evidence from Teaching Note**
+
+❌ **Pepsi/Kendall Jenner** - Tone-deaf messaging  
+❌ **Bud Light Controversy** - Poor influencer fit  
+❌ **Genre Misalignment** - Audience skepticism
+
+✓ **Successful Patterns**
+- Influencer genuinely plays similar games
+- Natural fit with brand values
+- Audience already interested in genre
+- History of authentic endorsements
+
+**Business Impact**: Protects brand reputation
+:::
+:::
+
+::: {.column width="50%"}
+::: {.callout-note icon=false}
+## 3. Community Diversity Multiplies Reach
+
+**Strategic Rationale**
+
+Select from **different network communities**:
+
+- **Community A**: Space strategy gamers
+- **Community B**: Multiplayer enthusiasts  
+- **Community C**: Building/simulation fans
+
+**Benefits**:
+- Minimize audience overlap
+- Cross-pollinate messages
+- Reach broader market segments
+- A/B test different approaches
+
+**Business Impact**: Maximum reach per dollar
+:::
+
+::: {.callout-note icon=false}
+## 4. Performance-Based Alignment
+
+**Contract Structure Recommendation**
+
+**Avoid**: Pure flat fee arrangements  
+**Prefer**: Hybrid performance model
+
+- Base fee: $300-500
+- Performance bonus: 10-15% of attributed sales
+- Unique discount codes for tracking
+- Milestone bonuses for engagement
+
+**Why This Works**:
+- Aligns influencer incentives
+- Reduces downside risk
+- Easier ROI justification
+- Motivates authentic promotion
+
+**Business Impact**: Better campaign outcomes
+:::
+:::
+:::
+
+---
+
+## Key Success Factors {.smaller}
+
+### Implementation Roadmap
+
+::: {.columns}
+::: {.column width="33%"}
+#### **Phase 1: Preparation**
+
+**Week 1 Actions**
+
+- Finalize selection (3 influencers)
+- Draft contracts with performance clauses
+- Brief influencers on game features
+- Create promotional assets
+- Set up tracking systems
+- Establish KPIs and benchmarks
+
+**Critical Success Factor**: Clear expectations and professional briefing materials
+:::
+
+::: {.column width="33%"}
+#### **Phase 2: Execution**
+
+**Weeks 2-4 Actions**
+
+- Staggered stream schedule
+- Real-time engagement monitoring
+- Community management
+- Performance tracking
+- Rapid issue resolution
+- Content amplification
+
+**Critical Success Factor**: Active campaign management and responsiveness
+:::
+
+::: {.column width="33%"}
+#### **Phase 3: Evaluation**
+
+**Week 5+ Actions**  
+
+- Calculate actual ROI
+- Compare to projections
+- Identify top performers
+- Document lessons learned
+- Consider extended partnerships
+- Plan future campaigns
+
+**Critical Success Factor**: Honest assessment and continuous improvement
+:::
+:::
+
+### The Success Formula
+
+::: {.callout-important}
+## Bottom Line for Space Games Inc.
+
+**Influencer Marketing Success Requires**:
+
+1. **Data-Driven Selection** - Network analysis identifies hidden influence
+2. **Strategic Thinking** - Brand fit and community diversity matter
+3. **Disciplined Execution** - Performance contracts and active management
+4. **Continuous Learning** - Measure, adapt, and optimize
+
+**The combination of network science and business judgment creates sustainable competitive advantage in the gaming market.**
+:::
+
+---
+
+## Discussion Questions {.smaller}
+
+### Strategic Considerations for Class Discussion
+
+::: {.incremental}
+1. **Budget Allocation**: Should Space Games Inc. invest in 3 micro-influencers or 1 mega-influencer? What are the trade-offs?
+
+2. **Risk vs. Reward**: How should the company balance the risk of influencer controversy against potential reach? What contract protections are needed?
+
+3. **Long-term Strategy**: After a successful campaign, should Space Games Inc. build ongoing relationships with these influencers or run discrete campaigns for each game launch?
+
+4. **Measurement Challenge**: How can the company accurately attribute sales to specific influencers when viewers may see multiple streams before purchasing?
+
+5. **Competitive Response**: If this campaign succeeds, how might competitors react? What first-mover advantages can Space Games Inc. capture?
+
+6. **Alternative Strategies**: When might influencer marketing **not** be the right approach? What alternatives should the CMO consider?
+:::
+
+---
+
+## References & Key Sources
+
+### Case Materials
+- **SMU-23-0010**: "Who is the Right Influencer? A Social Network Analysis"  
+- **SMU-23-0010TN**: Teaching Note with Discussion Answers
+
+### Success Examples Referenced
+- **Glossier**: Micro-influencer strategy for beauty products
+- **Daniel Wellington**: $200M business built on influencer marketing
+- **Gymshark**: Community-driven fitness brand growth
+- **Coca-Cola**: "Share a Coke" influencer campaign
+
+### Cautionary Tales
+- **Pepsi/Kendall Jenner** (2017): Tone-deaf advertisement
+- **Bud Light/Dylan Mulvaney** (2023): Audience backlash
+- **Generic brand misalignment**: Poor genre fit leading to skepticism
+
+### Academic Foundation
+- Wasserman & Faust: *Social Network Analysis: Methods and Applications*
+- Cross & Parker: *The Hidden Power of Social Networks*
+- Rozemberczki et al. (2021): Multi-Scale Attributed Node Embedding
