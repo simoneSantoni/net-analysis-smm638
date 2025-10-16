@@ -22,10 +22,10 @@ demonstrate your understanding of network concepts and analytical techniques.
 ## Deliverables
 
 1. Written Report (3,000 words maximum)
-  - Executive Summary (300 words)
-  - Methodology (600 words)
-  - Results & Analysis (800 words)
-  - Your answer to the case discussion
+  - Executive summary
+  - Methodology
+  - Results & analysis
+  - Your recommendations to address the case problem 
 2. Reproducible Code
   - Well-documented computer code[^1] 
   - Clear data preprocessing steps
@@ -35,7 +35,7 @@ demonstrate your understanding of network concepts and analytical techniques.
 ## Case Materials
 
 - **Electronic copy of the case**: Available on Moodle (Case Studies section)
-- **Companion data**: [GitHub repository - data/xoxoday](https://github.com/simoneSantoni/net-analysis-smm638/tree/master/data/xoxoday)
+- **Companion data**[^2]: [GitHub repository - data/xoxoday](https://github.com/simoneSantoni/net-analysis-smm638/tree/master/data/xoxoday)
 
 ## Submission (November 10, 15:59 PM)
 
@@ -95,3 +95,5 @@ valued in today's data-driven business environment.
 
 ---
 [1]: Admitted programming languages are C, C++, Julia, Python, R, Rust. 
+[2]: Data are in Excel format. You can red that using R's [readxl](https://readxl.tidyverse.org/) 
+or Pandas's [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html)
