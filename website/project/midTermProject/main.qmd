@@ -1,6 +1,6 @@
 ---
 title: "Mid-Term Project"
-subtitle: "Network Analysis of Real-World Systems"
+subtitle: "Xoxoday.com: Customer Engagement Through Social Media"
 format: html
 ---
 
