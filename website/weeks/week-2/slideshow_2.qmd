@@ -13,10 +13,6 @@ format:
     multiplex: false
     code-fold: true
     code-summary: ""
-  beamer:
-    toc: false
-    number-sections: false
-    colorlinks: true
 ---
 
 ## The RBC Challenge

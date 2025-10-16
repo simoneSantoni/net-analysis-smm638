@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Case Teaching Note Summary">
+<meta name="author" content="SMM638 Network Analytics">
 
-<title>Who is the Right Influencer? – SMM638 - Network Analytics</title>
+<title>Network Centrality – SMM638 - Network Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -247,7 +276,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Who is the Right Influencer?</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Network Centrality</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -440,25 +469,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-strategic-context" id="toc-the-strategic-context" class="nav-link active" data-scroll-target="#the-strategic-context">The Strategic Context</a></li>
-  <li><a href="#understanding-twitchs-unique-value" id="toc-understanding-twitchs-unique-value" class="nav-link" data-scroll-target="#understanding-twitchs-unique-value">Understanding Twitch’s Unique Value</a>
-  <ul class="collapse">
-  <li><a href="#why-twitch-for-gaming-products" id="toc-why-twitch-for-gaming-products" class="nav-link" data-scroll-target="#why-twitch-for-gaming-products">Why Twitch for Gaming Products?</a></li>
-  </ul></li>
-  <li><a href="#strategic-selection-framework" id="toc-strategic-selection-framework" class="nav-link" data-scroll-target="#strategic-selection-framework">Strategic Selection Framework</a>
-  <ul class="collapse">
-  <li><a href="#moving-beyond-simple-metrics" id="toc-moving-beyond-simple-metrics" class="nav-link" data-scroll-target="#moving-beyond-simple-metrics">Moving Beyond Simple Metrics</a></li>
-  <li><a href="#three-stage-selection-process" id="toc-three-stage-selection-process" class="nav-link" data-scroll-target="#three-stage-selection-process">Three-Stage Selection Process</a></li>
-  </ul></li>
-  <li><a href="#roi-framework" id="toc-roi-framework" class="nav-link" data-scroll-target="#roi-framework">ROI Framework</a></li>
-  <li><a href="#beyond-roi-strategic-value" id="toc-beyond-roi-strategic-value" class="nav-link" data-scroll-target="#beyond-roi-strategic-value">Beyond ROI: Strategic Value</a></li>
-  <li><a href="#strategic-lessons-implementation" id="toc-strategic-lessons-implementation" class="nav-link" data-scroll-target="#strategic-lessons-implementation">Strategic Lessons &amp; Implementation</a>
-  <ul class="collapse">
-  <li><a href="#key-business-takeaways" id="toc-key-business-takeaways" class="nav-link" data-scroll-target="#key-business-takeaways">Key Business Takeaways</a></li>
-  </ul></li>
-  <li><a href="#the-success-formula" id="toc-the-success-formula" class="nav-link" data-scroll-target="#the-success-formula">The Success Formula</a></li>
+  <li><a href="#what-is-centrality" id="toc-what-is-centrality" class="nav-link active" data-scroll-target="#what-is-centrality">What is Centrality?</a></li>
+  <li><a href="#the-centrality-family" id="toc-the-centrality-family" class="nav-link" data-scroll-target="#the-centrality-family">The Centrality Family</a></li>
+  <li><a href="#degree-centrality" id="toc-degree-centrality" class="nav-link" data-scroll-target="#degree-centrality">Degree Centrality</a></li>
+  <li><a href="#degree-centrality-interpretation" id="toc-degree-centrality-interpretation" class="nav-link" data-scroll-target="#degree-centrality-interpretation">Degree Centrality: Interpretation</a></li>
+  <li><a href="#degree-centrality-business-example" id="toc-degree-centrality-business-example" class="nav-link" data-scroll-target="#degree-centrality-business-example">Degree Centrality: Business Example</a></li>
+  <li><a href="#closeness-centrality" id="toc-closeness-centrality" class="nav-link" data-scroll-target="#closeness-centrality">Closeness Centrality</a></li>
+  <li><a href="#closeness-centrality-interpretation" id="toc-closeness-centrality-interpretation" class="nav-link" data-scroll-target="#closeness-centrality-interpretation">Closeness Centrality: Interpretation</a></li>
+  <li><a href="#closeness-example-knowledge-networks" id="toc-closeness-example-knowledge-networks" class="nav-link" data-scroll-target="#closeness-example-knowledge-networks">Closeness Example: Knowledge Networks</a></li>
+  <li><a href="#betweenness-centrality" id="toc-betweenness-centrality" class="nav-link" data-scroll-target="#betweenness-centrality">Betweenness Centrality</a></li>
+  <li><a href="#betweenness-the-broker-position" id="toc-betweenness-the-broker-position" class="nav-link" data-scroll-target="#betweenness-the-broker-position">Betweenness: The Broker Position</a></li>
+  <li><a href="#betweenness-example-innovation-networks" id="toc-betweenness-example-innovation-networks" class="nav-link" data-scroll-target="#betweenness-example-innovation-networks">Betweenness Example: Innovation Networks</a></li>
+  <li><a href="#eigenvector-centrality" id="toc-eigenvector-centrality" class="nav-link" data-scroll-target="#eigenvector-centrality">Eigenvector Centrality</a></li>
+  <li><a href="#eigenvector-centrality-quality-vs.-quantity" id="toc-eigenvector-centrality-quality-vs.-quantity" class="nav-link" data-scroll-target="#eigenvector-centrality-quality-vs.-quantity">Eigenvector Centrality: Quality vs.&nbsp;Quantity</a></li>
+  <li><a href="#eigenvector-example-venture-capital" id="toc-eigenvector-example-venture-capital" class="nav-link" data-scroll-target="#eigenvector-example-venture-capital">Eigenvector Example: Venture Capital</a></li>
+  <li><a href="#clustering-coefficient" id="toc-clustering-coefficient" class="nav-link" data-scroll-target="#clustering-coefficient">Clustering Coefficient</a></li>
+  <li><a href="#clustering-coefficient-embeddedness" id="toc-clustering-coefficient-embeddedness" class="nav-link" data-scroll-target="#clustering-coefficient-embeddedness">Clustering Coefficient: Embeddedness</a></li>
+  <li><a href="#clustering-example-scientific-collaboration" id="toc-clustering-example-scientific-collaboration" class="nav-link" data-scroll-target="#clustering-example-scientific-collaboration">Clustering Example: Scientific Collaboration</a></li>
+  <li><a href="#pagerank" id="toc-pagerank" class="nav-link" data-scroll-target="#pagerank">PageRank</a></li>
+  <li><a href="#pagerank-beyond-google" id="toc-pagerank-beyond-google" class="nav-link" data-scroll-target="#pagerank-beyond-google">PageRank: Beyond Google</a></li>
+  <li><a href="#pagerank-example-twitter-influence" id="toc-pagerank-example-twitter-influence" class="nav-link" data-scroll-target="#pagerank-example-twitter-influence">PageRank Example: Twitter Influence</a></li>
+  <li><a href="#comparing-centrality-measures" id="toc-comparing-centrality-measures" class="nav-link" data-scroll-target="#comparing-centrality-measures">Comparing Centrality Measures</a></li>
+  <li><a href="#when-to-use-which-measure" id="toc-when-to-use-which-measure" class="nav-link" data-scroll-target="#when-to-use-which-measure">When to Use Which Measure</a></li>
+  <li><a href="#centralization-vs.-centrality" id="toc-centralization-vs.-centrality" class="nav-link" data-scroll-target="#centralization-vs.-centrality">Centralization vs.&nbsp;Centrality</a></li>
+  <li><a href="#applications-across-domains" id="toc-applications-across-domains" class="nav-link" data-scroll-target="#applications-across-domains">Applications Across Domains</a></li>
+  <li><a href="#limitations-and-caveats" id="toc-limitations-and-caveats" class="nav-link" data-scroll-target="#limitations-and-caveats">Limitations and Caveats</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="qualitative_discussion.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slideshow_5-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -466,8 +504,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Who is the Right Influencer?</h1>
-<p class="subtitle lead">Business Insights from Social Network Analysis</p>
+<h1 class="title">Network Centrality</h1>
+<p class="subtitle lead">Measuring Importance and Influence in Networks</p>
 </div>
 
 
@@ -477,7 +515,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Case Teaching Note Summary </p>
+             <p>SMM638 Network Analytics </p>
           </div>
   </div>
     
@@ -490,524 +528,815 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="the-strategic-context" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="the-strategic-context">The Strategic Context</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<section id="space-games-inc.s-challenge" class="level3">
-<h3 class="anchored" data-anchor-id="space-games-inc.s-challenge">Space Games Inc.’s Challenge</h3>
-<p><strong>Company Background</strong></p>
-<ul>
-<li>Small gaming company in Singapore</li>
-<li>Launching “Thrive in Space 5” (5th version)</li>
-<li>Target: Gamers aged 16-25</li>
-<li>Campaign: “Thrive to Survive” on Twitch</li>
-<li>Timeline: 1 month to launch</li>
-</ul>
-<p><strong>CMO Tina Lohn’s Dilemma</strong></p>
-<p>Three critical questions facing senior management:</p>
+<section id="what-is-centrality" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="what-is-centrality">What is Centrality?</h2>
+<p><strong>The Fundamental Question:</strong></p>
+<blockquote class="blockquote">
+<p>Which node is most important in this network?</p>
+</blockquote>
+<p><strong>Two Core Perspectives:</strong></p>
 <ol type="1">
-<li><strong>Selection</strong>: Which influencers should we choose?</li>
-<li><strong>Justification</strong>: How do we prove ROI to leadership?</li>
-<li><strong>Methodology</strong>: What metrics actually matter?</li>
+<li><strong>Advantageous Position</strong>: Who has structural advantages?
+<ul>
+<li>Access to resources</li>
+<li>Control over information</li>
+<li>Influence over others</li>
+</ul></li>
+<li><strong>Network Functioning</strong>: Who is critical for network operations?
+<ul>
+<li>Facilitating flows</li>
+<li>Connecting groups</li>
+<li>Maintaining coherence</li>
+</ul></li>
 </ol>
-</section>
-</div><div class="column" style="width:45%;">
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-The Core Problem
+<div class="callout-body-container">
+<p><strong>Key Insight:</strong> “Importance” depends on context and mechanism</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p><strong>Follower count alone is misleading</strong></p>
-<p>Traditional metrics don’t reveal:</p>
+</div>
+<hr>
+</section>
+<section id="the-centrality-family" class="level2">
+<h2 class="anchored" data-anchor-id="the-centrality-family">The Centrality Family</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 26%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Focus</th>
+<th>Question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Degree</strong></td>
+<td>Direct connections</td>
+<td>Who knows the most people?</td>
+</tr>
+<tr class="even">
+<td><strong>Closeness</strong></td>
+<td>Reachability</td>
+<td>Who can reach everyone quickly?</td>
+</tr>
+<tr class="odd">
+<td><strong>Betweenness</strong></td>
+<td>Brokerage</td>
+<td>Who controls information flow?</td>
+</tr>
+<tr class="even">
+<td><strong>Eigenvector</strong></td>
+<td>Connection quality</td>
+<td>Who is connected to important others?</td>
+</tr>
+<tr class="odd">
+<td><strong>Clustering</strong></td>
+<td>Local cohesion</td>
+<td>How interconnected is the neighborhood?</td>
+</tr>
+<tr class="even">
+<td><strong>PageRank</strong></td>
+<td>Prestige</td>
+<td>Who receives quality endorsements?</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Each measure captures different aspects of structural importance</strong></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="degree-centrality" class="level2">
+<h2 class="anchored" data-anchor-id="degree-centrality">Degree Centrality</h2>
+<p><strong>Definition:</strong> Number of direct connections</p>
+<p><span class="math display">\[C_D(i) = k_i\]</span></p>
+<p>where <span class="math inline">\(k_i\)</span> is the number of edges incident to node <span class="math inline">\(i\)</span></p>
+<p><strong>In Directed Networks:</strong></p>
 <ul>
-<li>Who influences other influencers?</li>
-<li>Who bridges multiple communities?</li>
-<li>Who has authentic audience engagement?</li>
-<li>Who aligns with brand values?</li>
+<li><strong>In-degree</strong> (<span class="math inline">\(k_i^{in}\)</span>): Incoming connections</li>
+<li><strong>Out-degree</strong> (<span class="math inline">\(k_i^{out}\)</span>): Outgoing connections</li>
+</ul>
+<p><strong>Normalized Degree:</strong></p>
+<p><span class="math display">\[C_D^{norm}(i) = \frac{k_i}{n-1}\]</span></p>
+<p>where <span class="math inline">\(n\)</span> is network size</p>
+<hr>
+</section>
+<section id="degree-centrality-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="degree-centrality-interpretation">Degree Centrality: Interpretation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Undirected Networks:</strong></p>
+<ul>
+<li>Many friends, contacts, or connections</li>
+<li>High visibility and local influence</li>
+<li>Direct access to information and resources</li>
+<li>Potential for rapid mobilization</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Directed Networks:</strong></p>
+<ul>
+<li><strong>High in-degree</strong>: Popular, prestigious, sought after
+<ul>
+<li>Example: Highly cited papers, celebrity Twitter accounts</li>
+</ul></li>
+<li><strong>High out-degree</strong>: Active, gregarious, outgoing
+<ul>
+<li>Example: Frequent emailers, prolific citers</li>
+</ul></li>
 </ul>
 </div>
 </div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Why This Matters
+<div class="callout-body-container">
+<p><strong>Limitations:</strong> Ignores indirect connections and network structure beyond immediate neighbors</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Failed influencer campaigns often result from poor selection, regardless of budget size</p>
+</div>
+<hr>
+</section>
+<section id="degree-centrality-business-example" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="degree-centrality-business-example">Degree Centrality: Business Example</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>R&amp;D Lab Technical Advice Network</strong></p>
+<p><strong>High Degree Scientist (sought by 18 colleagues for advice)</strong></p>
+<ul>
+<li>Recognized expert with broad technical knowledge</li>
+<li>Central information hub in the laboratory</li>
+<li>High visibility and influence on research directions</li>
+<li>Risk: Bottleneck for problem-solving, time constraints</li>
+</ul>
+<p><strong>Low Degree Scientist (consults with 3 colleagues)</strong></p>
+<ul>
+<li>Focused expertise in specialized area</li>
+<li>May have deep knowledge in niche domain</li>
+<li>Less demand on time for advice-giving</li>
+<li>Opportunity: Develop broader skillset, increase collaboration</li>
+</ul>
+<p><strong>Real Pattern:</strong> Power-law distribution—few scientists provide most technical advice</p>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_5_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Magenta node</strong>: High degree (central expert)</p>
+<p><strong>Black nodes</strong>: ‘7’ is a low degree node example (peripheral)</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <hr>
 </section>
-<section id="understanding-twitchs-unique-value" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="understanding-twitchs-unique-value">Understanding Twitch’s Unique Value</h2>
-<section id="why-twitch-for-gaming-products" class="level3">
-<h3 class="anchored" data-anchor-id="why-twitch-for-gaming-products">Why Twitch for Gaming Products?</h3>
+<section id="closeness-centrality" class="level2">
+<h2 class="anchored" data-anchor-id="closeness-centrality">Closeness Centrality</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<section id="platform-characteristics" class="level4">
-<h4 class="anchored" data-anchor-id="platform-characteristics">Platform Characteristics</h4>
-<p><strong>Live Streaming Advantage</strong></p>
-<ul>
-<li>Real-time product demonstrations</li>
-<li>Authentic, unscripted reactions</li>
-<li>High interactivity (chat features)</li>
-<li>Community trust and credibility</li>
-</ul>
-<p><strong>Audience Demographics</strong></p>
-<ul>
-<li>73% aged 16-34 (perfect fit!)</li>
-<li>65% male, 35% female</li>
-<li>Gaming-focused community</li>
-<li>High engagement rates</li>
-</ul>
-<p><strong>Monetization Ready</strong></p>
-<ul>
-<li>Affiliate program structure</li>
-<li>Subscription revenue models</li>
-<li>Donation capabilities</li>
-<li>Professional content creators</li>
-</ul>
+<div class="column" style="width:60%;">
+<p><strong>Definition:</strong> Inverse of average distance to all other nodes</p>
+<p><span class="math display">\[C_C(i) = \frac{n-1}{\sum_{j \neq i} d(i,j)}\]</span></p>
+<p>where <span class="math inline">\(d(i,j)\)</span> is the shortest path distance from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span></p>
+<p><strong>Alternative (Harmonic Mean):</strong></p>
+<p><span class="math display">\[C_C^{harm}(i) = \sum_{j \neq i} \frac{1}{d(i,j)}\]</span></p>
+<p><strong>Intuition:</strong> How quickly can node <span class="math inline">\(i\)</span> reach everyone else?</p>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_5_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Magenta path</strong>: Shortest path between nodes 3 and 10 is through 4 and 9</p>
+<p>Closeness considers the shortest path between node <span class="math inline">\(i\)</span> and all other nodes in the network</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
 </section>
-</div><div class="column" style="width:50%;">
-<section id="network-structure-insights" class="level4">
-<h4 class="anchored" data-anchor-id="network-structure-insights">Network Structure Insights</h4>
-<p><strong>Key Finding</strong>: Network is <strong>dense with distinct super-users</strong></p>
+<section id="closeness-centrality-interpretation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="closeness-centrality-interpretation">Closeness Centrality: Interpretation</h2>
+<p><strong>What High Closeness Means:</strong></p>
 <ul>
-<li>Average followers: 6.22 per user</li>
-<li>Maximum followers: 465 (User 4949)</li>
-<li>Distribution highly skewed</li>
-<li>Sub-communities within larger network</li>
+<li>Can quickly access information from anywhere in network</li>
+<li>Efficient communication with all other nodes</li>
+<li>Potential for rapid dissemination</li>
+<li>Strategic position for time-sensitive activities</li>
 </ul>
-<p><strong>Strategic Implications</strong>:</p>
+<p><strong>Applications:</strong></p>
+<ul>
+<li><strong>Supply chains</strong>: Central warehouses minimize delivery times</li>
+<li><strong>Organizations</strong>: Managers with high closeness coordinate efficiently</li>
+<li><strong>Epidemic control</strong>: High closeness nodes are early infection points</li>
+<li><strong>Innovation</strong>: Quick access to diverse information sources</li>
+</ul>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Limitations:</strong> Requires connected network; sensitive to network size; ignores edge weights initially</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="closeness-example-knowledge-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="closeness-example-knowledge-networks">Closeness Example: Knowledge Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Engineering Consulting Firm</strong></p>
+<p><strong>High Closeness Engineer (avg distance = 2.1)</strong></p>
+<ul>
+<li>Can quickly reach any expertise in the firm</li>
+<li>Efficient problem-solving through quick consultation</li>
+<li>Ideal for project coordination roles</li>
+<li>Fast knowledge integration</li>
+</ul>
+<p><strong>Low Closeness Engineer (avg distance = 4.8)</strong></p>
+<ul>
+<li>Isolated in organizational periphery</li>
+<li>Slower access to firm-wide expertise</li>
+<li>May develop specialized deep knowledge</li>
+<li>Potential: Mentorship to improve integration</li>
+</ul>
+<p><strong>Strategic Implication:</strong> Closeness predicts coordination effectiveness</p>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_5_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Magenta node</strong>: High closeness (central position)</p>
+<p><strong>Black node</strong>: Low closeness (peripheral position)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="betweenness-centrality" class="level2">
+<h2 class="anchored" data-anchor-id="betweenness-centrality">Betweenness Centrality</h2>
+<p><strong>Definition:</strong> Proportion of shortest paths passing through a node</p>
+<p><span class="math display">\[C_B(i) = \sum_{j&lt;k} \frac{g_{jk}(i)}{g_{jk}}\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(g_{jk}\)</span> = number of shortest paths between <span class="math inline">\(j\)</span> and <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\(g_{jk}(i)\)</span> = number of those paths passing through <span class="math inline">\(i\)</span></li>
+</ul>
+<p><strong>Normalized:</strong></p>
+<p><span class="math display">\[C_B^{norm}(i) = \frac{2 \cdot C_B(i)}{(n-1)(n-2)}\]</span></p>
+<hr>
+</section>
+<section id="betweenness-the-broker-position" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="betweenness-the-broker-position">Betweenness: The Broker Position</h2>
+<p><strong>What High Betweenness Means:</strong></p>
+<ul>
+<li>Controls information flow between others</li>
+<li>Broker between different groups or communities</li>
+<li>Can delay, distort, or facilitate communication</li>
+<li>Structural hole position (Burt’s theory)</li>
+</ul>
+<p><strong>Strategic Value:</strong></p>
+<ul>
+<li><strong>Information arbitrage</strong>: Access to diverse information</li>
+<li><strong>Gatekeeping power</strong>: Control what information passes</li>
+<li><strong>Innovation potential</strong>: Recombination of ideas from different groups</li>
+<li><strong>Political capital</strong>: Both sides need the broker</li>
+</ul>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Risk:</strong> Bottleneck position—removal disrupts network flow</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="betweenness-example-innovation-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="betweenness-example-innovation-networks">Betweenness Example: Innovation Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Pharmaceutical R&amp;D Network</strong></p>
+<p><strong>High Betweenness Scientist (bridges Chemistry &amp; Biology labs)</strong></p>
+<ul>
+<li>Unique position connecting two specialized domains</li>
+<li>Controls knowledge transfer between groups</li>
+<li>First to see combination opportunities</li>
+<li>Career advantage: Valuable to both groups</li>
+<li>Organizational value: Enables cross-disciplinary projects</li>
+</ul>
+<p><strong>Low Betweenness Scientist (within dense cluster)</strong></p>
+<ul>
+<li>Embedded in single community</li>
+<li>Many redundant paths don’t pass through them</li>
+<li>Deep specialization possible</li>
+<li>Innovation: Incremental improvements</li>
+</ul>
+<p><strong>Finding:</strong> High betweenness predicts cross-disciplinary breakthroughs</p>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_5_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Magenta node</strong>: High betweenness (broker position)</p>
+<p><strong>Black node</strong>: Low betweenness (embedded in group)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="eigenvector-centrality" class="level2">
+<h2 class="anchored" data-anchor-id="eigenvector-centrality">Eigenvector Centrality</h2>
+<p><strong>Definition:</strong> Centrality proportional to sum of neighbors’ centralities</p>
+<p><span class="math display">\[x_i = \kappa^{-1} \sum_{j} A_{ij} x_j\]</span></p>
+<p>In matrix form: <span class="math inline">\(\mathbf{Ax} = \kappa \mathbf{x}\)</span></p>
+<p>where <span class="math inline">\(\mathbf{x}\)</span> is the leading eigenvector of adjacency matrix <span class="math inline">\(\mathbf{A}\)</span></p>
+<p><strong>Key Insight:</strong> You’re important if you’re connected to important people</p>
+<p><strong>Recursive Logic:</strong> Node centrality depends on neighbors’ centrality, which depends on their neighbors’ centrality, etc.</p>
+<hr>
+</section>
+<section id="eigenvector-centrality-quality-vs.-quantity" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="eigenvector-centrality-quality-vs.-quantity">Eigenvector Centrality: Quality vs.&nbsp;Quantity</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Degree vs.&nbsp;Eigenvector:</strong></p>
+<ul>
+<li><strong>Degree</strong>: Counts all connections equally (1 point per neighbor)</li>
+<li><strong>Eigenvector</strong>: Weights neighbors by their importance</li>
+</ul>
+<p><strong>Example Scenarios:</strong></p>
+<p><strong>Scenario A: High Degree, Low Eigenvector</strong></p>
+<ul>
+<li>50 connections to peripheral nodes</li>
+<li>“Popular among the unpopular”</li>
+<li>Volume without prestige</li>
+</ul>
+<p><strong>Scenario B: Low Degree, High Eigenvector</strong></p>
+<ul>
+<li>3 connections to highly central nodes</li>
+<li>“Connected to the elite”</li>
+<li>Quality over quantity</li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Classic Example:</strong> Craig Robinson (former Oregon State basketball coach) has high eigenvector centrality because he’s President Obama’s brother-in-law</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_5_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Top network (Scenario A):</strong> Node A (magenta) has high degree (6 connections) but low eigenvector centrality (connected to peripheral nodes shown in black)</p>
+<p><strong>Bottom network (Scenario B):</strong> Node A (magenta) has low degree (1 connection) but high eigenvector centrality (connected to highly central cluster shown in emerald)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="eigenvector-example-venture-capital" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="eigenvector-example-venture-capital">Eigenvector Example: Venture Capital</h2>
+<p><strong>Startup Funding Network</strong></p>
+<p><strong>High Eigenvector VC Firm</strong></p>
+<ul>
+<li>Invests alongside other prestigious VCs</li>
+<li>Connected to successful entrepreneurs</li>
+<li>Signals quality to market</li>
+<li>Attracts top deal flow</li>
+<li>Co-investment opportunities with elite partners</li>
+</ul>
+<p><strong>Low Eigenvector VC Firm</strong></p>
+<ul>
+<li>Invests with less established partners</li>
+<li>May take more risks on unproven teams</li>
+<li>Less signaling value</li>
+<li>Opportunity: First-mover on emerging trends</li>
+</ul>
+<p><strong>Empirical Finding:</strong> High eigenvector centrality VCs achieve higher returns (network effects in syndication)</p>
+<hr>
+</section>
+<section id="clustering-coefficient" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="clustering-coefficient">Clustering Coefficient</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Definition:</strong> Proportion of neighbors that are also connected</p>
+<p><span class="math display">\[C_{clust}(i) = \frac{2e_i}{k_i(k_i-1)}\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(k_i\)</span> = degree of node <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(e_i\)</span> = number of edges between neighbors of <span class="math inline">\(i\)</span></li>
+</ul>
+<p><strong>Interpretation:</strong> How interconnected is node <span class="math inline">\(i\)</span>’s neighborhood?</p>
+<p><strong>Range:</strong> 0 (no neighbors connected) to 1 (all neighbors connected)</p>
+<p><strong>Key Insight:</strong></p>
+<ul>
+<li><strong>Closed triad</strong>: Node’s neighbors are connected → High clustering</li>
+<li><strong>Open triad</strong>: Node’s neighbors are not connected → Low clustering</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_5_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Top network (Closed triad):</strong> Node A (magenta) has clustering coefficient = 1.0. Both neighbors B and C (emerald) are connected to each other.</p>
+<p><strong>Bottom network (Open triad):</strong> Node A (black) has clustering coefficient = 0.0. Neighbors B and C (emerald) are not connected.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="clustering-coefficient-embeddedness" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="clustering-coefficient-embeddedness">Clustering Coefficient: Embeddedness</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>What High Clustering Means:</strong></p>
+<ul>
+<li>Node is part of a dense, cohesive group</li>
+<li>High social capital and trust</li>
+<li>Information redundancy (everyone knows everyone)</li>
+<li>Strong group norms and social control</li>
+<li>Closure benefits (Coleman’s theory)</li>
+</ul>
+<p><strong>What Low Clustering Means:</strong></p>
+<ul>
+<li>Node bridges disconnected groups</li>
+<li>Access to diverse, non-redundant information</li>
+<li>Weak tie advantages (Granovetter’s theory)</li>
+<li>Brokerage opportunities</li>
+<li>Less embedded, more autonomous</li>
+</ul>
+<p><strong>Trade-off:</strong> Closure (trust, coordination) vs.&nbsp;Brokerage (novelty, diversity)</p>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_5_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Top network (High Clustering):</strong> Node A (magenta) is embedded in a dense, cohesive group where neighbors B, C, D, E (emerald) are highly interconnected. Closure benefits.</p>
+<p><strong>Bottom network (Low Clustering):</strong> Node A (black) bridges disconnected groups. Neighbors B, C, D, E (emerald) are not connected to each other. Brokerage opportunities.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="clustering-example-scientific-collaboration" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="clustering-example-scientific-collaboration">Clustering Example: Scientific Collaboration</h2>
+<p><strong>Academic Research Networks</strong></p>
+<p><strong>High Clustering Professor (clustering = 0.85)</strong></p>
+<ul>
+<li>Collaborators know and work with each other</li>
+<li>Cohesive research group or lab</li>
+<li>Efficient coordination and shared understanding</li>
+<li>Strong collective identity</li>
+<li>Publication pattern: Multiple coauthors from same institution</li>
+<li>Risk: Echo chamber, less novelty</li>
+</ul>
+<p><strong>Low Clustering Professor (clustering = 0.15)</strong></p>
+<ul>
+<li>Collaborators don’t overlap</li>
+<li>Bridges multiple research communities</li>
+<li>Access to diverse methods and ideas</li>
+<li>Publication pattern: Different coauthors for different papers</li>
+<li>Potential: Interdisciplinary breakthroughs</li>
+</ul>
+<hr>
+</section>
+<section id="pagerank" class="level2">
+<h2 class="anchored" data-anchor-id="pagerank">PageRank</h2>
+<p><strong>Definition:</strong> Prestige based on quality of incoming links</p>
+<p><span class="math display">\[PR(i) = \frac{1-d}{n} + d \sum_{j \in M(i)} \frac{PR(j)}{L(j)}\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(d\)</span> = damping factor (typically 0.85)</li>
+<li><span class="math inline">\(M(i)\)</span> = nodes linking to <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(L(j)\)</span> = number of outgoing links from <span class="math inline">\(j\)</span></li>
+</ul>
+<p><strong>Key Innovation:</strong> Endorsement from important nodes counts more</p>
+<p><strong>Origin:</strong> Google’s original ranking algorithm for web pages</p>
+<hr>
+</section>
+<section id="pagerank-beyond-google" class="level2">
+<h2 class="anchored" data-anchor-id="pagerank-beyond-google">PageRank: Beyond Google</h2>
+<p><strong>The “Random Surfer” Model:</strong></p>
+<ul>
+<li>Imagine surfer clicking links randomly</li>
+<li>Sometimes (15%) jumps to random page</li>
+<li>PageRank = probability of finding surfer at each page</li>
+<li>High PageRank = frequently visited in random walks</li>
+</ul>
+<p><strong>Advantages over Eigenvector:</strong></p>
+<ul>
+<li>Handles directed networks better</li>
+<li>Deals with dangling nodes (no outlinks)</li>
+<li>Dampening factor prevents pathological cases</li>
+<li>More robust in practice</li>
+</ul>
+<hr>
+</section>
+<section id="pagerank-example-twitter-influence" class="level2">
+<h2 class="anchored" data-anchor-id="pagerank-example-twitter-influence">PageRank Example: Twitter Influence</h2>
+<p><strong>Social Media Network Analysis</strong></p>
+<p><strong>High PageRank Account</strong></p>
+<ul>
+<li>Followed by other influential accounts</li>
+<li>Endorsements carry weight</li>
+<li>Information cascades originate here</li>
+<li>Real influence beyond follower count</li>
+</ul>
+<p><strong>Comparison:</strong></p>
+<ul>
+<li><strong>Account A</strong>: 100K followers, mostly inactive accounts (low PageRank)</li>
+<li><strong>Account B</strong>: 10K followers, including journalists and celebrities (high PageRank)</li>
+</ul>
+<p><strong>Marketing Insight:</strong> PageRank identifies true influencers, not just popular accounts</p>
+<p><strong>Application:</strong> Influencer identification, opinion leader detection, cascade prediction</p>
+<hr>
+</section>
+<section id="comparing-centrality-measures" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-centrality-measures">Comparing Centrality Measures</h2>
+<p><strong>Correlations and Divergences:</strong></p>
+<p><strong>Often Correlated:</strong></p>
+<ul>
+<li>Degree and Eigenvector (well-connected tends to connect to well-connected)</li>
+<li>Closeness and Degree in many networks</li>
+<li>Betweenness and low clustering (brokers bridge groups)</li>
+</ul>
+<p><strong>Can Diverge:</strong></p>
+<ul>
+<li>High degree but low betweenness (dense cluster member)</li>
+<li>High betweenness but low degree (critical bridge with few ties)</li>
+<li>High eigenvector but low degree (connected to few important others)</li>
+</ul>
+<p><strong>Recommendation:</strong> Calculate multiple measures; triangulate interpretations</p>
+<hr>
+</section>
+<section id="when-to-use-which-measure" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="when-to-use-which-measure">When to Use Which Measure</h2>
+<p><strong>Selection Guide:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 55%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Recommended Measure</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identify popular individuals</td>
+<td>Degree (in)</td>
+<td>Direct connections matter</td>
+</tr>
+<tr class="even">
+<td>Find information hubs</td>
+<td>Closeness</td>
+<td>Quick access to all</td>
+</tr>
+<tr class="odd">
+<td>Locate brokers</td>
+<td>Betweenness</td>
+<td>Control over flows</td>
+</tr>
+<tr class="even">
+<td>Detect prestigious actors</td>
+<td>Eigenvector or PageRank</td>
+<td>Quality of connections</td>
+</tr>
+<tr class="odd">
+<td>Assess group cohesion</td>
+<td>Clustering</td>
+<td>Local density</td>
+</tr>
+<tr class="even">
+<td>Rank web pages</td>
+<td>PageRank</td>
+<td>Link endorsement</td>
+</tr>
+<tr class="odd">
+<td>Predict influence spread</td>
+<td>Eigenvector + Betweenness</td>
+<td>Reach and position</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="centralization-vs.-centrality" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="centralization-vs.-centrality">Centralization vs.&nbsp;Centrality</h2>
+<p><strong>Important Distinction:</strong></p>
+<p><strong>Centrality (Node-level):</strong></p>
+<ul>
+<li>Individual scores for each node</li>
+<li>Distribution across network</li>
+<li>Who is most central?</li>
+</ul>
+<p><strong>Centralization (Network-level):</strong></p>
+<ul>
+<li>Overall concentration of centrality</li>
+<li>Single score for entire network</li>
+<li>How centralized is the structure?</li>
+</ul>
+<p><strong>Formula (Freeman):</strong></p>
+<p><span class="math display">\[C = \frac{\sum_i [C_{max} - C_i]}{max\sum [C_{max} - C_i]}\]</span></p>
+<p><strong>Range:</strong> 0 (all equal) to 1 (perfect star)</p>
+<hr>
+</section>
+<section id="applications-across-domains" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="applications-across-domains">Applications Across Domains</h2>
+<p><strong>Marketing:</strong></p>
+<ul>
+<li>Identify influencers (high eigenvector/PageRank)</li>
+<li>Target opinion leaders (high betweenness)</li>
+<li>Viral marketing strategies (high closeness)</li>
+</ul>
+<p><strong>Operations:</strong></p>
+<ul>
+<li>Supply chain resilience (betweenness analysis)</li>
+<li>Knowledge management (closeness optimization)</li>
+<li>Communication efficiency (clustering + closeness)</li>
+</ul>
+<p><strong>HR &amp; Organizational Design:</strong></p>
+<ul>
+<li>Talent identification (eigenvector centrality)</li>
+<li>Team composition (balance clustering/brokerage)</li>
+<li>Succession planning (dependency on high betweenness)</li>
+</ul>
+<hr>
+</section>
+<section id="limitations-and-caveats" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="limitations-and-caveats">Limitations and Caveats</h2>
+<p><strong>Methodological Challenges:</strong></p>
 <ol type="1">
-<li>Few users have outsized influence</li>
-<li>Communities cluster around topics</li>
-<li>Information spreads through hubs</li>
-<li>Super-users bridge multiple groups</li>
+<li><strong>Boundary specification</strong>: Who/what to include?</li>
+<li><strong>Missing data</strong>: Incomplete networks bias results</li>
+<li><strong>Temporal dynamics</strong>: Networks change over time</li>
+<li><strong>Multiple relations</strong>: Which ties matter?</li>
+<li><strong>Context dependence</strong>: Same position, different meanings</li>
+<li><strong>Correlation ≠ causation</strong>: Structure reflects and shapes behavior</li>
 </ol>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Business Opportunity
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Select influencers who are <strong>well-connected</strong> within the network, not just those with high follower counts</p>
-</div>
-</div>
-</section>
-</div>
-</div>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Use multiple measures</li>
+<li>Consider substantive interpretation</li>
+<li>Validate with qualitative data</li>
+<li>Test robustness to specifications</li>
+</ul>
 <hr>
 </section>
-</section>
-<section id="strategic-selection-framework" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="strategic-selection-framework">Strategic Selection Framework</h2>
-<section id="moving-beyond-simple-metrics" class="level3">
-<h3 class="anchored" data-anchor-id="moving-beyond-simple-metrics">Moving Beyond Simple Metrics</h3>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Critical Business Insight
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Network position matters more than network size</strong></p>
-<p>An influencer connected to other influential users has multiplier effects that raw follower count misses</p>
-</div>
-</div>
-</section>
-<section id="three-stage-selection-process" class="level3">
-<h3 class="anchored" data-anchor-id="three-stage-selection-process">Three-Stage Selection Process</h3>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Stage 1: Apply Business Filters</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Stage 2: Network Analysis</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Stage 3: Qualitative Validation</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><strong>Remove Misaligned Candidates</strong></p>
-<p>✗ <strong>Mature Content Channels</strong></p>
-<ul>
-<li>Not age-appropriate for 16+ game</li>
-<li>Brand safety concerns</li>
-<li>Reduced candidate pool by 55%</li>
-</ul>
-<p>✓ <strong>Require Affiliate Status</strong></p>
-<ul>
-<li>Professional monetization capability</li>
-<li>Experience with sponsored content</li>
-<li>FTC disclosure compliance</li>
-<li>Only 5% of streamers qualify</li>
-</ul>
-<p><strong>Result</strong>: Initial filtering based on business requirements, not just network metrics</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><strong>Identify True Influencers</strong></p>
-<p>Focus on two key dimensions:</p>
-<p><strong>Eigenvector Centrality</strong> (High)</p>
-<ul>
-<li>Connected to other influential streamers</li>
-<li>Message spreads through important nodes</li>
-<li>Access to influential audiences</li>
-<li><strong>Business Value</strong>: Credibility by association</li>
-</ul>
-<p><strong>Betweenness Centrality</strong> (High)</p>
-<ul>
-<li>Bridges multiple gaming communities</li>
-<li>Facilitates cross-community reach</li>
-<li>Information gatekeeper role</li>
-<li><strong>Business Value</strong>: Broader market penetration</li>
-</ul>
-<p><strong>Ideal Quadrant</strong>: High Eigenvector + High Betweenness</p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><strong>Profile Checks for Final Selection</strong></p>
-<p><strong>Genre Alignment</strong></p>
-<ul>
-<li>Plays games similar to Thrive in Space?</li>
-<li>Space/strategy game background?</li>
-<li>Audience interested in multiplayer games?</li>
-</ul>
-<p><strong>Content Style</strong></p>
-<ul>
-<li>Multi-game streamers (more credible)</li>
-<li>Professional streaming quality</li>
-<li>Positive community management</li>
-<li>Consistent schedule</li>
-</ul>
-<p><strong>Authenticity Markers</strong></p>
-<ul>
-<li>Genuine enthusiasm for games</li>
-<li>No controversial associations</li>
-<li>Values align with Space Games Inc.</li>
-<li>History of successful partnerships</li>
-</ul>
-<p><strong>Final Selection</strong>: Choose 3 influencers from <strong>different communities</strong></p>
-</div>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="roi-framework" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="roi-framework">ROI Framework</h2>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<section id="building-the-financial-case" class="level3">
-<h3 class="anchored" data-anchor-id="building-the-financial-case">Building the Financial Case</h3>
-<section id="revenue-calculation" class="level4">
-<h4 class="anchored" data-anchor-id="revenue-calculation">Revenue Calculation</h4>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Revenue Formula (Simplified)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Revenue = Price × (Direct Reach + Indirect Reach) × Conversion Uplift</strong></p>
-<p>E.g.:</p>
-<ul>
-<li><strong>Price</strong>: $29.99 per game</li>
-<li><strong>Direct Reach</strong>: Influencer’s followers</li>
-<li><strong>Indirect Reach</strong>: Network effect (2-3x)</li>
-<li><strong>Conversion Uplift</strong>: 0.04% above baseline</li>
-</ul>
-</div>
-</div>
-</section>
-</section>
-</div><div class="column" style="width:50%;">
-<section id="cost-components" class="level3">
-<h3 class="anchored" data-anchor-id="cost-components">Cost Components</h3>
-<section id="direct-costs" class="level4">
-<h4 class="anchored" data-anchor-id="direct-costs">Direct Costs</h4>
-<p><strong>Influencer Fees</strong></p>
-<ul>
-<li>$500-5,000 per stream</li>
-<li>Based on follower count &amp; engagement</li>
-<li>Performance bonuses possible</li>
-</ul>
-<p><strong>Product Costs</strong></p>
-<ul>
-<li>Free game copies for influencers</li>
-<li>Discount codes (reduced margins)</li>
-<li>Shipping/digital delivery costs</li>
-</ul>
-</section>
-<section id="indirect-costs" class="level4">
-<h4 class="anchored" data-anchor-id="indirect-costs">Indirect Costs</h4>
-<p><strong>Campaign Management</strong></p>
-<ul>
-<li>Staff time for coordination</li>
-<li>Content creation support</li>
-<li>Performance monitoring</li>
-</ul>
-<p><strong>Legal &amp; Compliance</strong></p>
-<ul>
-<li>Contract preparation</li>
-<li>FTC disclosure requirements</li>
-<li>Rights management</li>
-</ul>
-</section>
-</section>
-</div>
-</div>
-<hr>
-</section>
-<section id="beyond-roi-strategic-value" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="beyond-roi-strategic-value">Beyond ROI: Strategic Value</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<section id="long-term-business-value" class="level3">
-<h3 class="anchored" data-anchor-id="long-term-business-value">Long-term Business Value</h3>
-<section id="brand-building-impact" class="level4">
-<h4 class="anchored" data-anchor-id="brand-building-impact">Brand Building Impact</h4>
-<p><strong>Market Positioning</strong></p>
-<ul>
-<li>Exposure to core gaming demographic</li>
-<li>Association with trusted community voices</li>
-<li>Category leadership opportunities</li>
-</ul>
-<p><strong>Social Proof Generation</strong></p>
-<ul>
-<li>Third-party validation of game quality</li>
-<li>Authentic viewer testimonials</li>
-<li>User-generated content creation</li>
-</ul>
-<p><strong>Community Development</strong></p>
-<ul>
-<li>Ongoing player engagement</li>
-<li>Foundation for future launches</li>
-<li>Loyalty program opportunities</li>
-</ul>
-<div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Strategic Insight
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Initial campaigns create lasting relationships that benefit future product launches</p>
-</div>
-</div>
-</section>
-</section>
-</div><div class="column" style="width:50%;">
-<section id="risk-mitigation-framework" class="level3">
-<h3 class="anchored" data-anchor-id="risk-mitigation-framework">Risk Mitigation Framework</h3>
-<section id="key-risk-factors" class="level4">
-<h4 class="anchored" data-anchor-id="key-risk-factors">Key Risk Factors</h4>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Brand Alignment Risks
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Potential Issues</strong></p>
-<ul>
-<li>Influencer controversy</li>
-<li>Audience backlash</li>
-<li>Values misalignment</li>
-</ul>
-<p><strong>Mitigation Strategy</strong></p>
-<ul>
-<li>Thorough background checks</li>
-<li>Performance-based contracts</li>
-<li>Crisis response planning</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="portfolio-approach-benefits" class="level4">
-<h4 class="anchored" data-anchor-id="portfolio-approach-benefits">Portfolio Approach Benefits</h4>
-<p><strong>Risk Diversification</strong></p>
-<ul>
-<li>Select 3 influencers from different communities</li>
-<li>Minimize single-point-of-failure</li>
-<li>Test different messaging approaches</li>
-</ul>
-<p><strong>Learning Opportunities</strong></p>
-<ul>
-<li>A/B test content strategies</li>
-<li>Identify best-performing segments</li>
-<li>Optimize future campaigns</li>
-</ul>
-</section>
-</section>
-</div>
-</div>
-<hr>
-</section>
-<section id="strategic-lessons-implementation" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="strategic-lessons-implementation">Strategic Lessons &amp; Implementation</h2>
-<section id="key-business-takeaways" class="level3">
-<h3 class="anchored" data-anchor-id="key-business-takeaways">Key Business Takeaways</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-1. Systematic Beats Intuitive
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Traditional Approach</strong> (Avoid)</p>
-<ul>
-<li>Select by follower count</li>
-<li>Choose recognizable names</li>
-<li>Rely on personal connections</li>
-</ul>
-<p><strong>Network-Informed Approach</strong> (Adopt)</p>
-<ul>
-<li>Analyze network position</li>
-<li>Consider multiple centrality measures</li>
-<li>Balance reach with influence</li>
-<li>Validate with qualitative checks</li>
-</ul>
-<p><strong>Business Impact</strong>:</p>
-<ul>
-<li>Higher conversion rates</li>
-<li>Lower risk of mismatch</li>
-<li>Better ROI per dollar spent</li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-2. Authenticity Cannot Be Faked
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Case Evidence from Teaching Note</strong></p>
-<p>❌ <strong>Pepsi/Kendall Jenner</strong> - Tone-deaf messaging<br>
-❌ <strong>Bud Light Controversy</strong> - Poor influencer fit<br>
-❌ <strong>Genre Misalignment</strong> - Audience skepticism</p>
-<p>✓ <strong>Successful Patterns</strong></p>
-<ul>
-<li>Influencer genuinely plays similar games</li>
-<li>Natural fit with brand values</li>
-<li>Audience already interested in genre</li>
-<li>History of authentic endorsements</li>
-</ul>
-<p><strong>Business Impact</strong>: Protects brand reputation</p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-3. Community Diversity Multiplies Reach
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Strategic Rationale</strong></p>
-<p>Select from <strong>different network communities</strong>:</p>
-<ul>
-<li><strong>Community A</strong>: Space strategy gamers</li>
-<li><strong>Community B</strong>: Multiplayer enthusiasts<br>
-</li>
-<li><strong>Community C</strong>: Building/simulation fans</li>
-</ul>
-<p><strong>Benefits</strong>:</p>
-<ul>
-<li>Minimize audience overlap</li>
-<li>Cross-pollinate messages</li>
-<li>Reach broader market segments</li>
-<li>A/B test different approaches</li>
-</ul>
-<p><strong>Business Impact</strong>: Maximum reach per dollar</p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-4. Performance-Based Alignment
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Contract Structure Recommendation</strong></p>
-<p><strong>Avoid</strong>: Pure flat fee arrangements<br>
-<strong>Prefer</strong>: Hybrid performance model</p>
-<ul>
-<li>Base fee: $300-500</li>
-<li>Performance bonus: 10-15% of attributed sales</li>
-<li>Unique discount codes for tracking</li>
-<li>Milestone bonuses for engagement</li>
-</ul>
-<p><strong>Why This Works</strong>:</p>
-<ul>
-<li>Aligns influencer incentives</li>
-<li>Reduces downside risk</li>
-<li>Easier ROI justification</li>
-<li>Motivates authentic promotion</li>
-</ul>
-<p><strong>Business Impact</strong>: Better campaign outcomes</p>
-</div>
-</div>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="the-success-formula" class="level2">
-<h2 class="anchored" data-anchor-id="the-success-formula">The Success Formula</h2>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Bottom Line for Space Games Inc.
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Influencer Marketing Success Requires</strong>:</p>
+<div class="callout-body-container">
+<p><strong>Core Concepts:</strong></p>
 <ol type="1">
-<li><strong>Data-Driven Selection</strong> - Network analysis identifies hidden influence</li>
-<li><strong>Strategic Thinking</strong> - Brand fit and community diversity matter</li>
-<li><strong>Disciplined Execution</strong> - Performance contracts and active management</li>
-<li><strong>Continuous Learning</strong> - Measure, adapt, and optimize</li>
+<li>Centrality measures <strong>importance</strong>, but importance is multidimensional</li>
+<li>Different measures capture different <strong>mechanisms</strong> and <strong>advantages</strong></li>
+<li><strong>Context matters</strong>: Same structure, different meanings</li>
+<li>Centrality <strong>distributions</strong> reveal inequality and vulnerability</li>
+<li><strong>Compare multiple measures</strong> for comprehensive understanding</li>
 </ol>
-<p><strong>The combination of network science and business judgment creates sustainable competitive advantage in the gaming market.</strong></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Practical Wisdom:</strong></p>
+<ul>
+<li>No single “best” centrality measure</li>
+<li>Match measure to substantive question</li>
+<li>Consider computational constraints</li>
+<li>Interpret in context of research question</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 
