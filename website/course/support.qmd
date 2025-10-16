@@ -1,5 +1,6 @@
 ---
 title: "Course Support"
+format: html
 ---
 
 Network analysis can be challenging, but you don't have to navigate it alone.

@@ -1,5 +1,6 @@
 ---
 title: "Week 6"
+format: html
 subtitle: "Mid-term project presentation"
 callout-appearance: "default"
 ---

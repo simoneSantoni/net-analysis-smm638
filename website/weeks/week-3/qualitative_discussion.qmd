@@ -4,24 +4,24 @@ subtitle: "Business Insights from Social Network Analysis"
 author: "Case Teaching Note Summary"
 format:
   revealjs:
-    theme: [default, custom.scss]
+    theme: slides.scss
     transition: slide
     slide-number: true
     chalkboard: true
     preview-links: auto
-    logo: ""
-    css: styles.css
-    footer: "SMU-23-0010 | Twitch Influencer Case"
     incremental: false
+    code-fold: true
+    code-summary: ""
 ---
 
-## Slide 1: The Strategic Context {.smaller}
+## The Strategic Context {.smaller}
 
 ::: {.columns}
 ::: {.column width="55%"}
 ### Space Games Inc.'s Challenge
 
 **Company Background**
+
 - Small gaming company in Singapore
 - Launching "Thrive in Space 5" (5th version)
 - Target: Gamers aged 16-25
@@ -43,6 +43,7 @@ Three critical questions facing senior management:
 **Follower count alone is misleading**
 
 Traditional metrics don't reveal:
+
 - Who influences other influencers?
 - Who bridges multiple communities?
 - Who has authentic audience engagement?
@@ -58,7 +59,7 @@ Failed influencer campaigns often result from poor selection, regardless of budg
 
 ---
 
-## Slide 2: Understanding Twitch's Unique Value {.smaller}
+## Understanding Twitch's Unique Value {.smaller}
 
 ### Why Twitch for Gaming Products?
 
@@ -67,18 +68,21 @@ Failed influencer campaigns often result from poor selection, regardless of budg
 #### Platform Characteristics
 
 **Live Streaming Advantage**
+
 - Real-time product demonstrations
 - Authentic, unscripted reactions
 - High interactivity (chat features)
 - Community trust and credibility
 
 **Audience Demographics** 
+
 - 73% aged 16-34 (perfect fit!)
 - 65% male, 35% female
 - Gaming-focused community
 - High engagement rates
 
 **Monetization Ready**
+
 - Affiliate program structure
 - Subscription revenue models
 - Donation capabilities
@@ -111,7 +115,7 @@ Select influencers who are **well-connected** within the network, not just those
 
 ---
 
-## Slide 3: Strategic Selection Framework {.smaller}
+## Strategic Selection Framework {.smaller}
 
 ### Moving Beyond Simple Metrics
 
@@ -131,11 +135,13 @@ An influencer connected to other influential users has multiplier effects that r
 **Remove Misaligned Candidates**
 
 ✗ **Mature Content Channels**
+
   - Not age-appropriate for 16+ game
   - Brand safety concerns
   - Reduced candidate pool by 55%
 
 ✓ **Require Affiliate Status** 
+
   - Professional monetization capability
   - Experience with sponsored content
   - FTC disclosure compliance
@@ -150,12 +156,14 @@ An influencer connected to other influential users has multiplier effects that r
 Focus on two key dimensions:
 
 **Eigenvector Centrality** (High)
+
 - Connected to other influential streamers
 - Message spreads through important nodes
 - Access to influential audiences
 - **Business Value**: Credibility by association
 
 **Betweenness Centrality** (High)
+
 - Bridges multiple gaming communities
 - Facilitates cross-community reach
 - Information gatekeeper role
@@ -163,24 +171,26 @@ Focus on two key dimensions:
 
 **Ideal Quadrant**: High Eigenvector + High Betweenness
 
-**Result**: 14 candidates from network analysis
 
 #### Stage 3: Qualitative Validation
 
 **Profile Checks for Final Selection**
 
 **Genre Alignment**
+
 - Plays games similar to Thrive in Space?
 - Space/strategy game background?
 - Audience interested in multiplayer games?
 
 **Content Style**
+
 - Multi-game streamers (more credible)
 - Professional streaming quality
 - Positive community management
 - Consistent schedule
 
 **Authenticity Markers**
+
 - Genuine enthusiasm for games
 - No controversial associations
 - Values align with Space Games Inc.
@@ -192,7 +202,7 @@ Focus on two key dimensions:
 
 ---
 
-## Slide 4: ROI Framework & Business Case {.smaller}
+## ROI Framework {.smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -204,78 +214,123 @@ Focus on two key dimensions:
 ## Revenue Formula (Simplified)
 **Revenue = Price × (Direct Reach + Indirect Reach) × Conversion Uplift**
 
-Where:
+E.g.:
+
 - **Price**: $29.99 per game
 - **Direct Reach**: Influencer's followers
 - **Indirect Reach**: Network effect (2-3x)
 - **Conversion Uplift**: 0.04% above baseline
 :::
 
-**Example Scenario**
-
-Influencer with 10,000 followers:
-- Direct conversions: 14 sales
-- Indirect conversions: 14 sales  
-- Total revenue: ~$840
-- Cost: $500 flat fee
-- **ROI: 68%**
-
-#### Cost Components
-
-**Direct Costs**
-- Influencer fees ($500-5,000 per stream)
-- Free game copies
-- Discount codes (margin reduction)
-
-**Indirect Costs**  
-- Campaign management time
-- Legal contracts
-- Performance monitoring
 :::
 
 ::: {.column width="50%"}
-### Beyond Immediate Sales
+### Cost Components
 
-#### Long-term Business Value
+#### Direct Costs
 
-**Brand Awareness**
-- Exposure to gaming community
-- Association with trusted voices
-- Category positioning
+**Influencer Fees**
 
-**Social Proof**  
-- Third-party validation
-- Viewer testimonials
-- User-generated content
+- $500-5,000 per stream
+- Based on follower count & engagement
+- Performance bonuses possible
 
-**Community Building**
-- Ongoing engagement
-- Future game launches
-- Player loyalty
+**Product Costs**
 
-#### Risk Mitigation Strategies
+- Free game copies for influencers
+- Discount codes (reduced margins)
+- Shipping/digital delivery costs
 
-::: {.callout-warning}
-## Key Risk Factors
+#### Indirect Costs  
 
-**Brand Misalignment**
-- Influencer controversy
-- Audience backlash
-- Values conflict
+**Campaign Management**
 
-**Mitigation**: Thorough vetting + performance-based contracts
-:::
+- Staff time for coordination
+- Content creation support
+- Performance monitoring
 
-**Portfolio Approach**
-- Diversify across 3 influencers
-- Different community segments
-- Reduce dependency risk
+**Legal & Compliance**
+
+- Contract preparation
+- FTC disclosure requirements
+- Rights management
 :::
 :::
 
 ---
 
-## Slide 5: Strategic Lessons & Implementation {.smaller}
+## Beyond ROI: Strategic Value {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+### Long-term Business Value
+
+#### Brand Building Impact
+
+**Market Positioning**
+
+- Exposure to core gaming demographic
+- Association with trusted community voices
+- Category leadership opportunities
+
+**Social Proof Generation**
+
+- Third-party validation of game quality
+- Authentic viewer testimonials
+- User-generated content creation
+
+**Community Development**
+
+- Ongoing player engagement
+- Foundation for future launches
+- Loyalty program opportunities
+
+::: {.callout-tip}
+## Strategic Insight
+Initial campaigns create lasting relationships that benefit future product launches
+:::
+:::
+
+::: {.column width="50%"}
+### Risk Mitigation Framework
+
+#### Key Risk Factors
+
+::: {.callout-warning}
+## Brand Alignment Risks
+
+**Potential Issues**
+
+- Influencer controversy
+- Audience backlash
+- Values misalignment
+
+**Mitigation Strategy**
+
+- Thorough background checks
+- Performance-based contracts
+- Crisis response planning
+:::
+
+#### Portfolio Approach Benefits
+
+**Risk Diversification**
+
+- Select 3 influencers from different communities
+- Minimize single-point-of-failure
+- Test different messaging approaches
+
+**Learning Opportunities**
+
+- A/B test content strategies
+- Identify best-performing segments
+- Optimize future campaigns
+:::
+:::
+
+---
+
+## Strategic Lessons & Implementation {.smaller}
 
 ### Key Business Takeaways
 
@@ -285,17 +340,20 @@ Influencer with 10,000 followers:
 ## 1. Systematic Beats Intuitive
 
 **Traditional Approach** (Avoid)
+
 - Select by follower count
 - Choose recognizable names
 - Rely on personal connections
 
 **Network-Informed Approach** (Adopt)
+
 - Analyze network position
 - Consider multiple centrality measures
 - Balance reach with influence
 - Validate with qualitative checks
 
 **Business Impact**: 
+
 - Higher conversion rates
 - Lower risk of mismatch
 - Better ROI per dollar spent
@@ -311,6 +369,7 @@ Influencer with 10,000 followers:
 ❌ **Genre Misalignment** - Audience skepticism
 
 ✓ **Successful Patterns**
+
 - Influencer genuinely plays similar games
 - Natural fit with brand values
 - Audience already interested in genre
@@ -333,6 +392,7 @@ Select from **different network communities**:
 - **Community C**: Building/simulation fans
 
 **Benefits**:
+
 - Minimize audience overlap
 - Cross-pollinate messages
 - Reach broader market segments
@@ -355,6 +415,7 @@ Select from **different network communities**:
 - Milestone bonuses for engagement
 
 **Why This Works**:
+
 - Aligns influencer incentives
 - Reduces downside risk
 - Easier ROI justification
@@ -367,58 +428,7 @@ Select from **different network communities**:
 
 ---
 
-## Key Success Factors {.smaller}
-
-### Implementation Roadmap
-
-::: {.columns}
-::: {.column width="33%"}
-#### **Phase 1: Preparation**
-
-**Week 1 Actions**
-
-- Finalize selection (3 influencers)
-- Draft contracts with performance clauses
-- Brief influencers on game features
-- Create promotional assets
-- Set up tracking systems
-- Establish KPIs and benchmarks
-
-**Critical Success Factor**: Clear expectations and professional briefing materials
-:::
-
-::: {.column width="33%"}
-#### **Phase 2: Execution**
-
-**Weeks 2-4 Actions**
-
-- Staggered stream schedule
-- Real-time engagement monitoring
-- Community management
-- Performance tracking
-- Rapid issue resolution
-- Content amplification
-
-**Critical Success Factor**: Active campaign management and responsiveness
-:::
-
-::: {.column width="33%"}
-#### **Phase 3: Evaluation**
-
-**Week 5+ Actions**  
-
-- Calculate actual ROI
-- Compare to projections
-- Identify top performers
-- Document lessons learned
-- Consider extended partnerships
-- Plan future campaigns
-
-**Critical Success Factor**: Honest assessment and continuous improvement
-:::
-:::
-
-### The Success Formula
+## The Success Formula
 
 ::: {.callout-important}
 ## Bottom Line for Space Games Inc.
@@ -433,46 +443,3 @@ Select from **different network communities**:
 **The combination of network science and business judgment creates sustainable competitive advantage in the gaming market.**
 :::
 
----
-
-## Discussion Questions {.smaller}
-
-### Strategic Considerations for Class Discussion
-
-::: {.incremental}
-1. **Budget Allocation**: Should Space Games Inc. invest in 3 micro-influencers or 1 mega-influencer? What are the trade-offs?
-
-2. **Risk vs. Reward**: How should the company balance the risk of influencer controversy against potential reach? What contract protections are needed?
-
-3. **Long-term Strategy**: After a successful campaign, should Space Games Inc. build ongoing relationships with these influencers or run discrete campaigns for each game launch?
-
-4. **Measurement Challenge**: How can the company accurately attribute sales to specific influencers when viewers may see multiple streams before purchasing?
-
-5. **Competitive Response**: If this campaign succeeds, how might competitors react? What first-mover advantages can Space Games Inc. capture?
-
-6. **Alternative Strategies**: When might influencer marketing **not** be the right approach? What alternatives should the CMO consider?
-:::
-
----
-
-## References & Key Sources
-
-### Case Materials
-- **SMU-23-0010**: "Who is the Right Influencer? A Social Network Analysis"  
-- **SMU-23-0010TN**: Teaching Note with Discussion Answers
-
-### Success Examples Referenced
-- **Glossier**: Micro-influencer strategy for beauty products
-- **Daniel Wellington**: $200M business built on influencer marketing
-- **Gymshark**: Community-driven fitness brand growth
-- **Coca-Cola**: "Share a Coke" influencer campaign
-
-### Cautionary Tales
-- **Pepsi/Kendall Jenner** (2017): Tone-deaf advertisement
-- **Bud Light/Dylan Mulvaney** (2023): Audience backlash
-- **Generic brand misalignment**: Poor genre fit leading to skepticism
-
-### Academic Foundation
-- Wasserman & Faust: *Social Network Analysis: Methods and Applications*
-- Cross & Parker: *The Hidden Power of Social Networks*
-- Rozemberczki et al. (2021): Multi-Scale Attributed Node Embedding

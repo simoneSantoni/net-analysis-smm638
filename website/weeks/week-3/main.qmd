@@ -1,5 +1,6 @@
 ---
 title: "Week 3"
+format: html
 subtitle: "Network centrality - case discussion"
 callout-appearance: "default"
 ---
@@ -35,6 +36,8 @@ This week we focus on applying centrality concepts through case study discussion
 ::: {.callout-note}
 ##  💻
 
+**Hands-on Analysis**: Explore the Twitch dataset to understand node attributes before applying centrality measures
+
 - [Exploratory data analysis of Twitch gamers](gamers_eda.qmd)
 
 :::
@@ -44,10 +47,28 @@ This week we focus on applying centrality concepts through case study discussion
 ::: {.callout-note}
 ##  📝
 
+**Assignment**: [Influencer Selection for Space Games Inc.](perform.qmd)
+
+Apply the strategic framework from the Twitch case discussion to identify optimal influencers using R network analysis.
+
+- **Due**: October 20, 2025
+- **Submit to**: Simone.Santoni.1@city.ac.uk
+
 :::
 
 ## Ponder
 
 ::: {.callout-note}
+## 🤔
+
+**Centrality Measures: Commonalities and Differences**
+
+Reflect on the four centrality measures discussed (degree, closeness, betweenness, eigenvector):
+
+- **Commonalities**: What do all centrality measures attempt to capture? How do they help identify important nodes?
+- **Differences**: When would you choose one measure over another? What unique insights does each provide?
+- **Trade-offs**: Can a node rank high on one measure but low on another? What does this tell us?
+
+Consider real-world examples: social media influencers (degree vs. eigenvector), transportation hubs (betweenness), or emergency response networks (closeness).
 
 :::

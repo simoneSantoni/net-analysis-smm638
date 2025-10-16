@@ -1,5 +1,6 @@
 ---
 title: "Supplemental Notes"
+format: html
 ---
 
 ## Additional Resources

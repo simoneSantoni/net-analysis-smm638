@@ -1,6 +1,7 @@
 ---
 title: "Problem Set 1: Degree Centrality and Degree Distribution"
 subtitle: "Week 2 - Network Analytics"
+format: html
 ---
 
 ## Overview

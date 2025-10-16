@@ -1,6 +1,7 @@
 ---
 Title: "Who Is the Right Influence? A Social Network Analysis"
 callout-appearance: "default"
+format: html
 ---
 
 ### Twitch Network Exploratory Data Analysis
@@ -231,8 +232,6 @@ insights <- list(
 - **Affiliate advantage**: Affiliate streamers have significantly higher viewership (p < 0.001)
 
 This analysis provides context for understanding how node attributes might relate to network centrality measures in the Twitch streamer ecosystem.
-
-:::
 
 ## Perform
 

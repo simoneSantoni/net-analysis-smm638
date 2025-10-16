@@ -1,5 +1,6 @@
 ---
 title: "Week 1"
+format: html
 subtitle: "Introduction to network analysis"
 callout-appearance: default
 ---
@@ -7,7 +8,7 @@ callout-appearance: default
 ## Prepare
 
 ::: {.callout-note}
-## Note
+##  📚
 
 Introductory session, no preparation needed.
 
@@ -16,7 +17,7 @@ Introductory session, no preparation needed.
 ## Participate
 
 ::: {.callout-note}
-## Note
+##  👥
 
 Introductory session, participation will not be assessed.
 
@@ -25,7 +26,7 @@ Introductory session, participation will not be assessed.
 ## Practice
 
 ::: {.callout-note}
-## Note
+##  💻
 
 Introductory session, no application exercise.
 
@@ -34,13 +35,16 @@ Introductory session, no application exercise.
 ## Perform
 
 ::: {.callout-note}
-## Note
+##  📝
 
 Introductory session, no laboratory session.
 
 :::
 
 ## Ponder
+
+::: {.callout-note}
+## 🤔
 
 ### Key Network Ideas
 
@@ -51,6 +55,7 @@ Introductory session, no laboratory session.
 
 - RBC: Social Network Analysis (in Moodle, "Case Studies" section[^2])
 - [Networks, labor markets, and job search](network_labor_mkts_and_job_search.qmd)
+:::
 
 [^1]: Case studies will not be posted here because of intellectual property rights.
 

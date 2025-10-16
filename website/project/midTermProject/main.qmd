@@ -1,5 +1,6 @@
 ---
 title: "Mid-Term Project"
+format: html
 subtitle: "Network Analysis of Real-World Systems"
 ---
 

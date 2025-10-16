@@ -2,6 +2,7 @@
 title: "Network Analytics－SMM638"
 subtitle: "Materials on network theory, methods, and tools for analytics students"
 date: "2025-10-06"
+format: html
 ---
 
 ```{r}

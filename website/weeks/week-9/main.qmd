@@ -1,5 +1,6 @@
 ---
 title: "Week 9"
+format: html
 subtitle: "Network position and performance"
 callout-appearance: "default"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Week 4"
+format: html
 subtitle: "Dyads, triads, and network dynamics"
 callout-appearance: "default"
 ---

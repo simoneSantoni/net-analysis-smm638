@@ -1,5 +1,6 @@
 ---
 title: "Week 2"
+format: html
 subtitle: "Network centrality"
 callout-appearance: "default"
 ---
@@ -7,7 +8,7 @@ callout-appearance: "default"
 ## Prepare
 
 ::: {.callout-note}
-## 📚 Prepare
+## 📚
 
 📖 Read the [syllabus](../../course/syllabus.qmd)
 
@@ -18,7 +19,7 @@ callout-appearance: "default"
 ## Participate
 
 ::: {.callout-note}
-## 👥 Participate
+## 👥
 
 📉 Slideshows:
 
@@ -37,7 +38,7 @@ callout-appearance: "default"
 ## Practice
 
 ::: {.callout-note}
-## 💻 Practice
+## 💻
 
 🧮 [Ingest network data and compute node degree](practice_1.qmd)
 
@@ -46,7 +47,7 @@ callout-appearance: "default"
 ## Perform
 
 ::: {.callout-note}
-## 📝 Perform
+## 📝
 
 ✏️ [Compute network centrality indicators on a toy network dataset](perform_0.qmd)
 
@@ -55,6 +56,9 @@ callout-appearance: "default"
 :::
 
 ## Ponder
+
+::: {.callout-note}
+## 🤔
 
 **Network centrality concept**
 
@@ -70,4 +74,5 @@ networks*](https://go.exlibris.link/9lZS2t2V). Harvard Business Review, 83(3), 1
 
 Griskevicius, V., Cialdini, R. B., & Goldstein, N. J. (2008). [*Applying (and
 resisting) peer influence*](https://go.exlibris.link/FnvYsnT0). MIT Sloan Management Review, 49(2), 84.
+:::
 

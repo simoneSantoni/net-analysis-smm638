@@ -1,5 +1,6 @@
 ---
 title: "Course Schedule"
+format: html
 ---
 
 ### 📅 Weekly Breakdown

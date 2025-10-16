@@ -1,5 +1,6 @@
 ---
 title: "Week 8"
+format: html
 subtitle: "Network cohesion and community - case discussion"
 callout-appearance: "default"
 ---

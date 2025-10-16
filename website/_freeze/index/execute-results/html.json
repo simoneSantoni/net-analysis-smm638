@@ -1,10 +1,10 @@
 {
-  "hash": "9018df9ea454688c1ca17b6d607f2de8",
+  "hash": "66db14e0b8f4ef6dc3ff7105f9c1affc",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Network Analytics－SMM638\"\nsubtitle: \"Materials on network theory, methods, and tools for analytics students\"\ndate: \"2025-10-06\"\n---\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![A Barabasi-Albert preferential attachment network with 100 nodes - node size proportional to node degree](index_files/figure-html/unnamed-chunk-1-1.png){fig-align='center' width=768}\n:::\n:::\n\n\n\n",
+    "markdown": "---\ntitle: \"Network Analytics－SMM638\"\nsubtitle: \"Materials on network theory, methods, and tools for analytics students\"\ndate: \"2025-10-06\"\nformat: html\n---\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![A Barabasi-Albert preferential attachment network with 100 nodes - node size proportional to node degree](index_files/figure-html/unnamed-chunk-1-1.png){fig-align='center' width=768}\n:::\n:::\n\n\n\n",
     "supporting": [
-      "index_files"
+      "index_files/figure-html"
     ],
     "filters": [
       "rmarkdown/pagebreak.lua"

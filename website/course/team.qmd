@@ -1,5 +1,6 @@
 ---
 title: "Teaching team"
+format: html
 ---
 
 
