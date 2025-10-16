@@ -16,7 +16,7 @@ demonstrate your understanding of network concepts and analytical techniques.
 - **Group Size**: 3-4 students per group
 - **Due Date**: November 10, 2025
 - **Presentation**: November 12, 2025
-- **Weight**: 40% of final grade
+- **Weight**: 50% of final grade
 :::
 
 ## Deliverables
