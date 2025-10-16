@@ -94,6 +94,6 @@ apply network analysis to real-world challenges and develop skills highly
 valued in today's data-driven business environment.
 
 ---
-[1]: Admitted programming languages are C, C++, Julia, Python, R, Rust. 
-[2]: Data are in Excel format. You can red that using R's [readxl](https://readxl.tidyverse.org/) 
+[^1]: Admitted programming languages are C, C++, Julia, Python, R, Rust. 
+[^2]: Data in Excel format. You can red that using R's [readxl](https://readxl.tidyverse.org/) 
 or Pandas's [read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html)

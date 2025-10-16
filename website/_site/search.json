@@ -1672,7 +1672,7 @@
     "href": "project/midTermProject/main.html#deliverables",
     "title": "Mid-Term Project",
     "section": "Deliverables",
-    "text": "Deliverables\n\nWritten Report (3,000 words maximum)\n\n\nExecutive summary\nMethodology\nResults & analysis\nYour recommendations to address the case problem\n\n\nReproducible Code\n\n\nWell-documented computer code[^1]\nClear data preprocessing steps\nCommented analysis procedures\nCode that generates all figures and tables in the report",
+    "text": "Deliverables\n\nWritten Report (3,000 words maximum)\n\n\nExecutive summary\nMethodology\nResults & analysis\nYour recommendations to address the case problem\n\n\nReproducible Code\n\n\nWell-documented computer code1\nClear data preprocessing steps\nCommented analysis procedures\nCode that generates all figures and tables in the report",
     "crumbs": [
       "Project",
       "Mid-term project"
@@ -1738,7 +1738,7 @@
     "href": "project/midTermProject/main.html#success-tips",
     "title": "Mid-Term Project",
     "section": "Success Tips",
-    "text": "Success Tips\n\n\n\n\n\n\nRecommendations for Success\n\n\n\n\nStart early: Network analysis can be computationally intensive\nPlan your approach: Discuss methodology before diving into coding\nIterate frequently: Regular team check-ins and progress reviews\nFocus on business value: Always connect technical findings to business implications\nDocument everything: Keep detailed notes of your analytical choices and assumptions\nPractice your presentation: Rehearse timing and smooth transitions between speakers\n\n\n\nGood luck with your mid-term project! This is an excellent opportunity to apply network analysis to real-world challenges and develop skills highly valued in today’s data-driven business environment.\n\n[2]: Data are in Excel format. You can red that using R’s readxl or Pandas’s read_excel",
+    "text": "Success Tips\n\n\n\n\n\n\nRecommendations for Success\n\n\n\n\nStart early: Network analysis can be computationally intensive\nPlan your approach: Discuss methodology before diving into coding\nIterate frequently: Regular team check-ins and progress reviews\nFocus on business value: Always connect technical findings to business implications\nDocument everything: Keep detailed notes of your analytical choices and assumptions\nPractice your presentation: Rehearse timing and smooth transitions between speakers\n\n\n\nGood luck with your mid-term project! This is an excellent opportunity to apply network analysis to real-world challenges and develop skills highly valued in today’s data-driven business environment.",
     "crumbs": [
       "Project",
       "Mid-term project"
@@ -1749,7 +1749,7 @@
     "href": "project/midTermProject/main.html#case-materials",
     "title": "Mid-Term Project",
     "section": "Case Materials",
-    "text": "Case Materials\n\nElectronic copy of the case: Available on Moodle (Case Studies section)\nCompanion data[^2]: GitHub repository - data/xoxoday",
+    "text": "Case Materials\n\nElectronic copy of the case: Available on Moodle (Case Studies section)\nCompanion data2: GitHub repository - data/xoxoday",
     "crumbs": [
       "Project",
       "Mid-term project"
@@ -2161,5 +2161,16 @@
     "title": "Network Centrality",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\n\n\n\n\n\n\n\nImportant\n\n\nCore Concepts:\n\nCentrality measures importance, but importance is multidimensional\nDifferent measures capture different mechanisms and advantages\nContext matters: Same structure, different meanings\nCentrality distributions reveal inequality and vulnerability\nCompare multiple measures for comprehensive understanding\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nPractical Wisdom:\n\nNo single “best” centrality measure\nMatch measure to substantive question\nConsider computational constraints\nInterpret in context of research question"
+  },
+  {
+    "objectID": "project/midTermProject/main.html#footnotes",
+    "href": "project/midTermProject/main.html#footnotes",
+    "title": "Mid-Term Project",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAdmitted programming languages are C, C++, Julia, Python, R, Rust.↩︎\nData in Excel format. You can red that using R’s readxl or Pandas’s read_excel↩︎",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
   }
 ]
