@@ -4,8 +4,21 @@ format: html
 subtitle: "Network Analysis of Real-World Systems"
 ---
 
-::: {.callout-note}
-Content coming soon.
+The project, which will be completed in groups, requires you to address the
+case: "Xoxoday.com: Customer Engagement Through Social Media." This assignment
+is your opportunity to apply the network analysis tools we've discussed to a
+real-world business context.
 
-:::
+**Deliverables**
 
+- 3,000 word (max) report articulating your method, results, and answer to the
+  case problem
+- computer code to reprdoduce the report results. Reports reporting
+non-reproducible results will fail.
+- upload a compressed folder including the above
+
+
+**Materials**
+
+- Electronic copy of the case is available on Moodle (case study section).
+- Data available in the GitHub's mpdule repo, [data/xoxoday]() dir
