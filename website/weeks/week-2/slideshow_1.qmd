@@ -187,7 +187,7 @@ gantt
     Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d
     Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d
     Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d
-    Profiling beer enthusiasts:crit, milestone, case4, 2025-12-10, 0d
+    Employee performance:crit, milestone, case4, 2025-12-10, 0d
 ``` 
 
 ### Practical Focus
