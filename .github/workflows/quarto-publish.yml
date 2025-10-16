@@ -51,7 +51,6 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
         with:
           path: website
-          to: html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
