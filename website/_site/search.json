@@ -1443,7 +1443,7 @@
     "href": "project/midTermProject/main.html",
     "title": "Mid-Term Project",
     "section": "",
-    "text": "The project, which will be completed in groups, requires you to address the case: “Xoxoday.com: Customer Engagement Through Social Media.” This assignment is your opportunity to apply the network analysis tools we’ve discussed to a real-world business context.\nDeliverables\n\n3,000 word (max) report articulating your method, results, and answer to the case problem\ncomputer code to reprdoduce the report results. Reports reporting non-reproducible results will fail.\nupload a compressed folder including the above\n\nMaterials\n\nElectronic copy of the case is available on Moodle (case study section).\nData available in the GitHub’s mpdule repo, data/xoxoday dir",
+    "text": "The mid-term project is a group assignment that requires you to apply network analysis methodologies to solve a real business problem. You will work with the case study “Xoxoday.com: Customer Engagement Through Social Media” to demonstrate your understanding of network concepts and analytical techniques.\n\n\n\n\n\n\nKey Information\n\n\n\n\nGroup Size: 3-4 students per group\nDue Date: November 10, 2025\nPresentation: November 12, 2025\nWeight: 40% of final grade",
     "crumbs": [
       "Project",
       "Mid-term project"
@@ -1633,5 +1633,148 @@
     "title": "Networks, Network Analysis & Business Relevance",
     "section": "Your Learning Journey",
     "text": "Your Learning Journey\n\nTimelinePractical Focus\n\n\n\n\nCode\n%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%\ngantt\n    title Gantt chart of the module\n    dateFormat YYYY-MM-DD\n    axisFormat %b %d\n\n    section Topics\n    Foundations:done, topic1, 2025-09-29, 7d\n    Centrality :active, topic2, 2025-10-06, 14d\n    Dynamics   :topic3, 2025-10-20, 14d\n    Communities:topic4, 2025-11-17, 14d\n    Performance:topic5, 2025-12-01, 14d\n\n    section Teaching Cases\n    RCB: crit, milestone, case0, 2025-10-08, 0d\n    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d\n    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d\n    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d\n    Employee performance:crit, milestone, case4, 2025-12-10, 0d\n\n\n\n\n\n%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%\ngantt\n    title Gantt chart of the module\n    dateFormat YYYY-MM-DD\n    axisFormat %b %d\n\n    section Topics\n    Foundations:done, topic1, 2025-09-29, 7d\n    Centrality :active, topic2, 2025-10-06, 14d\n    Dynamics   :topic3, 2025-10-20, 14d\n    Communities:topic4, 2025-11-17, 14d\n    Performance:topic5, 2025-12-01, 14d\n\n    section Teaching Cases\n    RCB: crit, milestone, case0, 2025-10-08, 0d\n    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d\n    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d\n    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d\n    Employee performance:crit, milestone, case4, 2025-12-10, 0d\n\n\n\n\n\n\n\n\n\nReal business cases (e.g., RBC fraud detection, marketing through Twitch)\nHands-on coding in R and Python\nActionable insights for business decision-making"
+  },
+  {
+    "objectID": "project/midTermProject/main.html#project-overview",
+    "href": "project/midTermProject/main.html#project-overview",
+    "title": "Mid-Term Project",
+    "section": "",
+    "text": "The mid-term project is a group assignment that requires you to apply network analysis methodologies to solve a real business problem. You will work with the case study “Xoxoday.com: Customer Engagement Through Social Media” to demonstrate your understanding of network concepts and analytical techniques.\n\n\n\n\n\n\nKey Information\n\n\n\n\nGroup Size: 3-4 students per group\nDue Date: November 10, 2025\nPresentation: November 12, 2025\nWeight: 40% of final grade",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#learning-objectives",
+    "href": "project/midTermProject/main.html#learning-objectives",
+    "title": "Mid-Term Project",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy completing this project, you will:\n\nApply network analysis techniques to solve real business challenges\nDemonstrate proficiency in network data collection, processing, and analysis\nTranslate network insights into actionable business recommendations\nDevelop skills in collaborative research and presentation",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#case-study-xoxoday.com",
+    "href": "project/midTermProject/main.html#case-study-xoxoday.com",
+    "title": "Mid-Term Project",
+    "section": "Case Study: Xoxoday.com",
+    "text": "Case Study: Xoxoday.com\nXoxoday.com: Customer Engagement Through Social Media\nXoxoday is a SaaS platform that helps companies engage employees and customers through rewards and incentives. The case explores how the company can leverage social media networks to enhance customer engagement and drive business growth.\n\nKey Questions to Address\nYour analysis should address the following strategic questions:\n\nNetwork Structure: How is Xoxoday’s customer network structured on social media platforms?\nInfluence Patterns: Who are the key influencers and opinion leaders in the network?\nEngagement Strategy: How can network insights inform customer engagement strategies?\nGrowth Opportunities: What network-based recommendations can drive business growth?",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#deliverables",
+    "href": "project/midTermProject/main.html#deliverables",
+    "title": "Mid-Term Project",
+    "section": "Deliverables",
+    "text": "Deliverables\n\nWritten Report (3,000 words maximum)\n\n\nExecutive Summary (300 words)\nMethodology (600 words)\nResults & Analysis (800 words)\nYour answer to the case discussion\n\n\nReproducible Code\n\n\nWell-documented computer code[^1]\nClear data preprocessing steps\nCommented analysis procedures\nCode that generates all figures and tables in the report",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#data-resources",
+    "href": "project/midTermProject/main.html#data-resources",
+    "title": "Mid-Term Project",
+    "section": "Data Resources",
+    "text": "Data Resources\n\nPrimary Dataset\n\nLocation: GitHub repository - data/xoxoday\nFormat: CSV files containing social media interaction data\nContent: User connections, engagement metrics, demographic information\n\n\n\nCase Materials\n\nElectronic copy: Available on Moodle (Case Studies section)\nSupporting materials: Additional context and background information",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#evaluation-criteria",
+    "href": "project/midTermProject/main.html#evaluation-criteria",
+    "title": "Mid-Term Project",
+    "section": "Evaluation Criteria",
+    "text": "Evaluation Criteria\n\n\n\n\n\n\n\n\nComponent\nWeight\nCriteria\n\n\n\n\nTechnical Quality\n40%\nAppropriate methodology, accurate analysis, code quality\n\n\nBusiness Insight\n30%\nRelevance of findings, quality of recommendations\n\n\nCommunication\n20%\nClarity of writing, effective visualizations, presentation skills\n\n\nCollaboration\n10%\nEvidence of effective teamwork, equal contribution\n\n\n\n\nTechnical Quality (40%)\n\nMethodology: Appropriate selection and application of network analysis techniques\nAccuracy: Correct implementation of algorithms and interpretation of results\nReproducibility: Clean, well-documented code that generates reported results\nInnovation: Creative approaches or advanced techniques beyond basic requirements\n\n\n\nBusiness Insight (30%)\n\nRelevance: Findings directly address the business problem\nDepth: Thorough analysis that goes beyond surface-level observations\nActionability: Practical recommendations that can be implemented\nStrategic thinking: Understanding of broader business implications\n\n\n\nCommunication (20%)\n\nWriting quality: Clear, professional prose with proper structure\nVisualizations: Effective charts and network diagrams that support the narrative\nPresentation: Engaging delivery with appropriate use of time\nAudience awareness: Content tailored to business decision-makers\n\n\n\nCollaboration (10%)\n\nTeam dynamics: Evidence of effective collaboration and coordination\nIndividual contribution: All members contribute meaningfully to the project\nPeer evaluation: Anonymous peer assessment of team member contributions",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#timeline-milestones",
+    "href": "project/midTermProject/main.html#timeline-milestones",
+    "title": "Mid-Term Project",
+    "section": "Timeline & Milestones",
+    "text": "Timeline & Milestones\n\n\n\n\n\n\n\n\nDate\nMilestone\nDescription\n\n\n\n\nOctober 20\nTeam Formation\nSubmit team composition and member contact information\n\n\nOctober 27\nProposal Due\nBrief 1-page proposal outlining approach and division of work\n\n\nNovember 3\nProgress Check\nOptional office hours for feedback and guidance\n\n\nNovember 10\nFinal Submission\nUpload complete project folder to Moodle\n\n\nNovember 12\nPresentations\nIn-class presentations and peer evaluation",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#submission-instructions",
+    "href": "project/midTermProject/main.html#submission-instructions",
+    "title": "Mid-Term Project",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\n\nFinal Submission (November 10, 11:59 PM)\nUpload a single compressed folder (.zip or .tar.gz) containing:\n\nReport (PDF format, max 3,000 words)\nCode folder with all analysis scripts\nData folder with processed datasets\nREADME.md with instructions to reproduce results\nIndividual contribution statement (1 page per team member)\n\n\n\nPresentation Preparation (November 12)\n\nBring presentation on USB drive or have it accessible online\nPrepare for 10-minute presentation + 5-minute Q&A\nAll team members must participate in the presentation\nBe ready to answer technical and business questions",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#getting-help",
+    "href": "project/midTermProject/main.html#getting-help",
+    "title": "Mid-Term Project",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nOffice Hours\n\nWhen: Wednesdays 15:00 - 17:00, or by appointment\nWhere: Faculty office or online (schedule via email)\nPurpose: Methodology guidance, technical support, feedback on progress\n\n\n\nResources\n\nCourse materials: Slides, readings, and case discussions\nPeer collaboration: Discuss concepts (but not share solutions) with other teams\n\n\n\nAcademic Integrity\n\n\n\n\n\n\nImportant Reminders\n\n\n\n\nCollaboration within teams is expected and encouraged\nCollaboration between teams should be limited to conceptual discussions\nAll sources must be properly cited using academic citation standards\nCode originality: While you may reference online resources, the analysis must be your own work\nData integrity: Do not modify the provided dataset beyond standard preprocessing",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#success-tips",
+    "href": "project/midTermProject/main.html#success-tips",
+    "title": "Mid-Term Project",
+    "section": "Success Tips",
+    "text": "Success Tips\n\n\n\n\n\n\nRecommendations for Success\n\n\n\n\nStart early: Network analysis can be computationally intensive\nPlan your approach: Discuss methodology before diving into coding\nIterate frequently: Regular team check-ins and progress reviews\nFocus on business value: Always connect technical findings to business implications\nDocument everything: Keep detailed notes of your analytical choices and assumptions\nPractice your presentation: Rehearse timing and smooth transitions between speakers\n\n\n\nGood luck with your mid-term project! This is an excellent opportunity to apply network analysis to real-world challenges and develop skills highly valued in today’s data-driven business environment.",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#case-materials",
+    "href": "project/midTermProject/main.html#case-materials",
+    "title": "Mid-Term Project",
+    "section": "Case Materials",
+    "text": "Case Materials\n\nElectronic copy of the case: Available on Moodle (Case Studies section)\nCompanion data: GitHub repository - data/xoxoday",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#submission-november-10-1559-pm",
+    "href": "project/midTermProject/main.html#submission-november-10-1559-pm",
+    "title": "Mid-Term Project",
+    "section": "Submission (November 10, 15:59 PM)",
+    "text": "Submission (November 10, 15:59 PM)\nUpload a single compressed folder (.zip or .tar.gz) containing:\n\nReport (PDF format, max 3,000 words)\nComputer code with processed datasets\nREADME.md with instructions to reproduce results",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
+  },
+  {
+    "objectID": "project/midTermProject/main.html#presentation-preparation-november-12",
+    "href": "project/midTermProject/main.html#presentation-preparation-november-12",
+    "title": "Mid-Term Project",
+    "section": "Presentation Preparation (November 12)",
+    "text": "Presentation Preparation (November 12)\n\nBring presentation on USB drive or have it accessible online\nPrepare for 10-minute presentation + 5-minute Q&A\nAll team members must participate in the presentation\nBe ready to answer technical and business questions\nPresentation schedule available in due course",
+    "crumbs": [
+      "Project",
+      "Mid-term project"
+    ]
   }
 ]

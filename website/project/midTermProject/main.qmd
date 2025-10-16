@@ -1,24 +1,97 @@
 ---
 title: "Mid-Term Project"
-format: html
 subtitle: "Network Analysis of Real-World Systems"
+format: html
 ---
 
-The project, which will be completed in groups, requires you to address the
-case: "Xoxoday.com: Customer Engagement Through Social Media." This assignment
-is your opportunity to apply the network analysis tools we've discussed to a
-real-world business context.
+## Project Overview
 
-**Deliverables**
+The mid-term project is a **group assignment** that requires you to apply
+network analysis methodologies to solve a real business problem. You will work
+with the case study "Xoxoday.com: Customer Engagement Through Social Media" to
+demonstrate your understanding of network concepts and analytical techniques.
 
-- 3,000 word (max) report articulating your method, results, and answer to the
-  case problem
-- computer code to reprdoduce the report results. Reports reporting
-non-reproducible results will fail.
-- upload a compressed folder including the above
+::: {.callout-important}
+## Key Information
+- **Group Size**: 3-4 students per group
+- **Due Date**: November 10, 2025
+- **Presentation**: November 12, 2025
+- **Weight**: 40% of final grade
+:::
 
+## Deliverables
 
-**Materials**
+1. Written Report (3,000 words maximum)
+  - Executive Summary (300 words)
+  - Methodology (600 words)
+  - Results & Analysis (800 words)
+  - Your answer to the case discussion
+2. Reproducible Code
+  - Well-documented computer code[^1] 
+  - Clear data preprocessing steps
+  - Commented analysis procedures
+  - Code that generates all figures and tables in the report
 
-- Electronic copy of the case is available on Moodle (case study section).
-- Data available in the GitHub's mpdule repo, [data/xoxoday]() dir
+## Case Materials
+
+- **Electronic copy of the case**: Available on Moodle (Case Studies section)
+- **Companion data**: [GitHub repository - data/xoxoday](https://github.com/simoneSantoni/net-analysis-smm638/tree/master/data/xoxoday)
+
+## Submission (November 10, 15:59 PM)
+
+Upload a **single compressed folder** (.zip or .tar.gz) containing:
+
+1. **Report** (PDF format, max 3,000 words)
+2. **Computer code** with processed datasets
+3. **README.md** with instructions to reproduce results
+
+## Presentation Preparation (November 12)
+
+- Bring presentation on USB drive or have it accessible online
+- Prepare for 10-minute presentation + 5-minute Q&A
+- All team members must participate in the presentation
+- Be ready to answer technical and business questions
+- Presentation schedule available in due course
+
+## Getting Help
+
+### Office Hours
+- **When**: Wednesdays 15:00 - 17:00, or by appointment
+- **Where**: Faculty office or online (schedule via email)
+- **Purpose**: Methodology guidance, technical support, feedback on progress
+
+### Resources
+- **Course materials**: Slides, readings, and case discussions
+- **Peer collaboration**: Discuss concepts (but not share solutions) with other teams
+
+### Academic Integrity
+
+::: {.callout-warning}
+## Important Reminders
+
+- **Collaboration within teams** is expected and encouraged
+- **Collaboration between teams** should be limited to conceptual discussions
+- **All sources** must be properly cited using academic citation standards
+- **Code originality**: While you may reference online resources, the analysis must be your own work
+- **Data integrity**: Do not modify the provided dataset beyond standard preprocessing
+:::
+
+## Success Tips
+
+::: {.callout-tip}
+## Recommendations for Success
+
+1. **Start early**: Network analysis can be computationally intensive
+2. **Plan your approach**: Discuss methodology before diving into coding
+3. **Iterate frequently**: Regular team check-ins and progress reviews
+4. **Focus on business value**: Always connect technical findings to business implications
+5. **Document everything**: Keep detailed notes of your analytical choices and assumptions
+6. **Practice your presentation**: Rehearse timing and smooth transitions between speakers
+:::
+
+Good luck with your mid-term project! This is an excellent opportunity to
+apply network analysis to real-world challenges and develop skills highly
+valued in today's data-driven business environment.
+
+---
+[1]: Admitted programming languages are C, C++, Julia, Python, R, Rust. 

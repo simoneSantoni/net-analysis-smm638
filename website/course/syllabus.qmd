@@ -343,7 +343,7 @@ conda activate smm638
 1. **Moodle Forum**: First point of contact for content questions
    - Response time: 24-48 hours on weekdays
    
-2. **Office Hours**: Wednesdays 14:00-16:00 (by appointment)
+2. **Office Hours**: Wednesdays 15:00-17:00 (by appointment)
    - Book via: [simone.santoni.1@city.ac.uk](mailto:simone.santoni.1@city.ac.uk)
    
 3. **Email**: For personal/administrative matters only
