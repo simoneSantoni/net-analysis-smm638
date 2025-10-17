@@ -1,0 +1,461 @@
+---
+title: "Problem Set 2: Degree Centrality and Degree Distribution (Python)"
+subtitle: "Week 2 - Network Analytics"
+date: "today"
+format: html
+jupyter: python3
+---
+
+## Overview
+
+In this problem set, you will work with real-world network data from Wikipedia to compute degree centrality measures and analyze degree distributions using Python. This exercise will help you understand:
+
+- How to load and process directed network data with NetworkX
+- The difference between in-degree and out-degree centrality
+- How to compute and visualize degree distributions
+- What degree distributions reveal about network structure
+
+## Dataset: Wikipedia Vote Network
+
+**Description**: This network represents voting relationships among Wikipedia users during administrator elections from the site's inception through January 2008.
+
+**Network Properties**:
+
+- **Nodes**: 7,115 Wikipedia users
+- **Edges**: 103,689 directed edges
+- **Edge meaning**: A directed edge from user i to user j means that user i voted on user j
+- **Network type**: Directed, unweighted
+
+**Source**: [Stanford SNAP - Wikipedia Vote Network](https://snap.stanford.edu/data/wiki-Vote.html)
+
+## Task 1: Download and Load the Data
+
+First, download the dataset and load it into Python using NetworkX.
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+import networkx as nx
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from urllib.request import urlretrieve
+import gzip
+import io
+
+# Download the dataset
+url = "https://snap.stanford.edu/data/wiki-Vote.txt.gz"
+urlretrieve(url, "wiki-Vote.txt.gz")
+
+# Read the edge list (skip comment lines that start with #)
+edges = []
+with gzip.open("wiki-Vote.txt.gz", "rt") as f:
+    for line in f:
+        if not line.startswith("#"):
+            from_node, to_node = map(int, line.strip().split())
+            edges.append((from_node, to_node))
+
+# Create a directed graph
+G = nx.DiGraph()
+G.add_edges_from(edges)
+
+# Basic network statistics
+print(f"Number of nodes: {G.number_of_nodes()}")
+print(f"Number of edges: {G.number_of_edges()}")
+print(f"Is directed: {nx.is_directed(G)}")
+```
+
+::: {.callout-tip}
+## Understanding the Data Format
+
+The wiki-Vote.txt file contains lines starting with `#` (comments) followed by an edge list where each line represents a directed edge: `FromNodeId ToNodeId`
+:::
+
+---
+
+## Task 2: Compute In-Degree and Out-Degree
+
+Calculate the in-degree and out-degree for all nodes in the network.
+
+**Questions**:
+
+1. What is the maximum in-degree? What does this represent in the context of Wikipedia voting?
+2. What is the maximum out-degree? What does this represent?
+3. How many nodes have in-degree of 0? What does this mean?
+4. How many nodes have out-degree of 0? What does this mean?
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+# Compute in-degree and out-degree
+in_degrees = dict(G.in_degree())
+out_degrees = dict(G.out_degree())
+
+# Convert to arrays for easier analysis
+in_deg_values = np.array(list(in_degrees.values()))
+out_deg_values = np.array(list(out_degrees.values()))
+
+# Summary statistics
+print("In-Degree Statistics:")
+print(f"  Max: {np.max(in_deg_values)}")
+print(f"  Mean: {np.mean(in_deg_values):.2f}")
+print(f"  Median: {np.median(in_deg_values)}")
+print(f"  Nodes with in-degree = 0: {np.sum(in_deg_values == 0)}\n")
+
+print("Out-Degree Statistics:")
+print(f"  Max: {np.max(out_deg_values)}")
+print(f"  Mean: {np.mean(out_deg_values):.2f}")
+print(f"  Median: {np.median(out_deg_values)}")
+print(f"  Nodes with out-degree = 0: {np.sum(out_deg_values == 0)}")
+
+# Find the most "voted-on" user
+most_voted_user = max(in_degrees, key=in_degrees.get)
+print(f"\nMost voted-on user: Node {most_voted_user} with in-degree = {in_degrees[most_voted_user]}")
+
+# Find the most active voter
+most_active_voter = max(out_degrees, key=out_degrees.get)
+print(f"Most active voter: Node {most_active_voter} with out-degree = {out_degrees[most_active_voter]}")
+```
+
+::: {.callout-tip}
+## Interpreting Degree Centrality in Directed Networks
+
+- **In-degree**: Number of votes received (popularity, endorsement)
+- **Out-degree**: Number of votes cast (activity, participation)
+:::
+
+---
+
+## Task 3: Analyze the Top 10 Users
+
+Identify and compare the top 10 users by in-degree and out-degree.
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+# Create a DataFrame with degree measures
+degree_df = pd.DataFrame({
+    'node': list(G.nodes()),
+    'in_degree': [in_degrees[node] for node in G.nodes()],
+    'out_degree': [out_degrees[node] for node in G.nodes()]
+})
+degree_df['total_degree'] = degree_df['in_degree'] + degree_df['out_degree']
+
+# Top 10 by in-degree (most voted-on)
+top_in = degree_df.nlargest(10, 'in_degree')
+print("Top 10 Users by In-Degree (Most Votes Received):")
+print(top_in)
+
+# Top 10 by out-degree (most active voters)
+top_out = degree_df.nlargest(10, 'out_degree')
+print("\nTop 10 Users by Out-Degree (Most Votes Cast):")
+print(top_out)
+
+# Are the top users in both categories the same?
+overlap = len(set(top_in['node']) & set(top_out['node']))
+print(f"\nOverlap between top in-degree and top out-degree users: {overlap} out of 10")
+```
+
+**Question**: Do highly endorsed users (high in-degree) also tend to be active voters (high out-degree)? What does this tell you about participation patterns?
+
+---
+
+## Task 4: Compute Degree Distribution
+
+Calculate the degree distribution for both in-degree and out-degree.
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+# Compute degree distributions
+in_degree_counts = pd.Series(in_deg_values).value_counts().sort_index()
+out_degree_counts = pd.Series(out_deg_values).value_counts().sort_index()
+
+# Convert to DataFrames for plotting
+in_deg_df = pd.DataFrame({
+    'degree': in_degree_counts.index,
+    'frequency': in_degree_counts.values,
+    'type': 'In-Degree'
+})
+
+out_deg_df = pd.DataFrame({
+    'degree': out_degree_counts.index,
+    'frequency': out_degree_counts.values,
+    'type': 'Out-Degree'
+})
+
+# Combine for comparison
+combined_deg_df = pd.concat([in_deg_df, out_deg_df], ignore_index=True)
+
+# View the first few rows
+print("In-Degree Distribution (first 10 rows):")
+print(in_deg_df.head(10))
+print("\nOut-Degree Distribution (first 10 rows):")
+print(out_deg_df.head(10))
+```
+
+---
+
+## Task 5: Plot Degree Distribution
+
+Create visualizations of the degree distributions using both linear and log-log scales.
+
+### Linear Scale Plot
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: false
+#| fig-width: 10
+#| fig-height: 6
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set style
+plt.style.use('default')
+sns.set_palette(["#c41c85", "#50C878"])
+
+# Plot on linear scale
+fig, ax = plt.subplots(figsize=(10, 6))
+
+for deg_type in ['In-Degree', 'Out-Degree']:
+    data = combined_deg_df[combined_deg_df['type'] == deg_type]
+    color = "#c41c85" if deg_type == "In-Degree" else "#50C878"
+    ax.plot(data['degree'], data['frequency'], 'o-', alpha=0.6, 
+            label=deg_type, color=color, markersize=4, linewidth=1)
+
+ax.set_xlabel('Degree (k)')
+ax.set_ylabel('Frequency (Number of Nodes)')
+ax.set_title('Degree Distribution - Wikipedia Vote Network\nLinear scale', 
+             fontsize=14, fontweight='bold')
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+### Log-Log Scale Plot
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: false
+#| fig-width: 10
+#| fig-height: 6
+
+# Plot on log-log scale
+fig, ax = plt.subplots(figsize=(10, 6))
+
+for deg_type in ['In-Degree', 'Out-Degree']:
+    data = combined_deg_df[combined_deg_df['type'] == deg_type]
+    # Filter out zero values for log scale
+    data_filtered = data[data['degree'] > 0]
+    color = "#c41c85" if deg_type == "In-Degree" else "#50C878"
+    ax.loglog(data_filtered['degree'], data_filtered['frequency'], 'o-', 
+              alpha=0.6, label=deg_type, color=color, markersize=4, linewidth=1)
+
+ax.set_xlabel('Degree (k) [log scale]')
+ax.set_ylabel('Frequency [log scale]')
+ax.set_title('Degree Distribution - Wikipedia Vote Network\nLog-log scale', 
+             fontsize=14, fontweight='bold')
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+**Questions**:
+
+1. What shape does the degree distribution follow on the log-log scale?
+2. Does the distribution appear to follow a power law? If so, what does this indicate?
+3. How do the in-degree and out-degree distributions compare?
+4. What does the degree distribution tell you about the structure of Wikipedia's voting network?
+
+::: {.callout-tip}
+## Interpreting Degree Distributions
+
+- **Linear appearance on log-log plot**: Suggests a power-law (scale-free) distribution
+- **Power-law networks**: Few nodes with very high degree (hubs), many nodes with low degree
+- **Implications**: Highly skewed participation; a small number of elite users receive most votes
+:::
+
+---
+
+## Task 6: Compute Complementary Cumulative Distribution Function (CCDF)
+
+The CCDF is often more robust than the degree distribution for identifying power laws.
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: false
+#| fig-width: 10
+#| fig-height: 6
+
+def compute_ccdf(degrees):
+    """Compute complementary cumulative distribution function"""
+    degree_counts = pd.Series(degrees).value_counts().sort_index()
+    total_nodes = len(degrees)
+    
+    ccdf_data = []
+    for degree in degree_counts.index:
+        # P(X >= k) = number of nodes with degree >= k / total nodes
+        prob = np.sum([degree_counts[d] for d in degree_counts.index if d >= degree]) / total_nodes
+        ccdf_data.append({'degree': degree, 'ccdf': prob})
+    
+    return pd.DataFrame(ccdf_data)
+
+# Compute CCDF for in-degree and out-degree
+in_ccdf = compute_ccdf(in_deg_values)
+in_ccdf['type'] = 'In-Degree'
+
+out_ccdf = compute_ccdf(out_deg_values)
+out_ccdf['type'] = 'Out-Degree'
+
+ccdf_combined = pd.concat([in_ccdf, out_ccdf], ignore_index=True)
+
+# Plot CCDF on log-log scale
+fig, ax = plt.subplots(figsize=(10, 6))
+
+for deg_type in ['In-Degree', 'Out-Degree']:
+    data = ccdf_combined[ccdf_combined['type'] == deg_type]
+    # Filter out zero values for log scale
+    data_filtered = data[(data['degree'] > 0) & (data['ccdf'] > 0)]
+    color = "#c41c85" if deg_type == "In-Degree" else "#50C878"
+    ax.loglog(data_filtered['degree'], data_filtered['ccdf'], 'o-', 
+              alpha=0.6, label=deg_type, color=color, markersize=4, linewidth=1)
+
+ax.set_xlabel('Degree (k) [log scale]')
+ax.set_ylabel('P(X e k) [log scale]')
+ax.set_title('Complementary Cumulative Distribution Function (CCDF)\nWikipedia Vote Network - Log-log scale', 
+             fontsize=14, fontweight='bold')
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## Reflection Questions
+
+After completing all tasks, answer the following:
+
+1. **Inequality in participation**: What fraction of users received more than 100 votes? What fraction cast more than 100 votes?
+
+2. **Network interpretation**: Based on the degree distributions, how would you characterize the Wikipedia voting system? Is it egalitarian or hierarchical?
+
+3. **Power-law hypothesis**: Do the log-log plots suggest a power-law distribution? What would be the next steps to formally test this hypothesis?
+
+4. **Directed vs undirected**: How would your analysis differ if this were an undirected network?
+
+5. **Practical implications**: What does the degree distribution suggest about which users have influence in the Wikipedia administrator election process?
+
+---
+
+## Solutions and Hints
+
+::: {.callout-note collapse="true"}
+## Click to reveal hints and expected results
+
+### Expected Statistics:
+
+Based on the SNAP documentation:
+
+- **Nodes**: 7,115
+- **Edges**: 103,689
+- **Average in-degree** H 14.57 (total edges / nodes)
+- **Average out-degree** H 14.57 (same for directed networks)
+
+### Degree Distribution Characteristics:
+
+Both in-degree and out-degree distributions should show:
+
+- **Heavy-tailed distribution**: Most nodes have low degree, few have very high degree
+- **Approximate power-law**: Linear relationship on log-log plot
+- **High inequality**: Small fraction of users account for large fraction of votes
+
+### Interpretation:
+
+**High in-degree nodes**: Highly endorsed candidates, likely successful administrators or trusted community members
+
+**High out-degree nodes**: Very active voters, engaged community participants
+
+**Low degree nodes**: Casual users, single-election participants, or new users
+
+### Code Snippet for Computing Inequality:
+
+```python
+# What fraction of users received > 100 votes?
+high_in = np.sum(in_deg_values > 100) / len(in_deg_values)
+print(f"Fraction with in-degree > 100: {high_in:.4f}")
+
+# What fraction cast > 100 votes?
+high_out = np.sum(out_deg_values > 100) / len(out_deg_values)
+print(f"Fraction with out-degree > 100: {high_out:.4f}")
+```
+
+### Power-Law Testing:
+
+To formally test for power-law distribution, you could use the `powerlaw` package:
+
+```python
+import powerlaw
+
+# Fit power-law to in-degree (exclude zeros)
+in_deg_nonzero = in_deg_values[in_deg_values > 0]
+fit = powerlaw.Fit(in_deg_nonzero)
+
+print(f"Power-law exponent (alpha): {fit.power_law.alpha:.3f}")
+print(f"xmin: {fit.power_law.xmin}")
+
+# Test power-law vs alternatives
+R, p = fit.distribution_compare('power_law', 'exponential')
+print(f"Power-law vs exponential R: {R:.3f}, p-value: {p:.3f}")
+```
+
+:::
+
+---
+
+## Additional Challenges
+
+::: {.callout-warning}
+## Advanced Questions
+
+1. **Correlation analysis**: Calculate the correlation between in-degree and out-degree. Are they correlated? What does this mean?
+
+2. **Degree centrality vs other measures**: Compute betweenness centrality for the top 20 nodes by in-degree. Are high-degree nodes also high in betweenness?
+
+3. **Subgraph analysis**: Extract the subgraph containing only nodes with in-degree > 50. What is the density of this subgraph?
+
+4. **Temporal analysis**: The dataset includes a timestamp. How has the degree distribution evolved over time?
+
+5. **Network resilience**: What would happen to the network's connectivity if you removed the top 1% of nodes by in-degree? (Hint: compute the size of the largest connected component before and after removal)
+
+:::
+
+---
+
+## Submission Guidelines
+
+Your submission should include:
+
+1. **Python script or Jupyter notebook** with all code and outputs
+2. **Visualizations** of degree distributions (linear and log-log scales)
+3. **Written answers** to all reflection questions (200-400 words total)
+4. **Interpretation** of what the degree distribution reveals about Wikipedia's voting network
+
+**File naming**: `week2_perform2_[YourName].ipynb` or `.py`
+
+**Due date**: Check the course schedule

@@ -1,6 +1,7 @@
 ---
 title: "Twitch Network: Exploratory Data Analysis"
 subtitle: "Week 3 - Network Analytics"
+date: "today"
 format:
   html:
     toc: true

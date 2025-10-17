@@ -1,0 +1,1546 @@
+---
+title: "Dyads, Triads, and Network Dynamics"
+date: "today"
+format:
+  revealjs:
+    output-file: slideshow-slides.html
+    theme: slides.scss
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    code-fold: true
+    code-summary: ""
+jupyter: python3
+---
+
+## Week 4 Overview {.smaller}
+
+**Key Questions:**
+
+- Why do networks look the way they look?
+- What processes generate network structures?
+- How can we test for and model these processes?
+
+**Topics:**
+
+- Taxonomy of network formation mechanisms
+- Dyadic and triadic processes
+- Statistical tests for network effects
+- Exponential Random Graph Models (ERGMs)
+- Network dynamics
+
+---
+
+## Why Do Networks Look the Way They Look?
+
+:::: {.columns}
+::: {.column width="50%"}
+Networks are **not random** - they exhibit consistent structural patterns:
+
+- **Clustering**: Friends of friends tend to be friends
+- **Degree heterogeneity**: Some nodes have many connections, others few
+- **Homophily**: Similar nodes connect more often
+- **Small world**: Short path lengths despite local clustering
+
+**Central Question**: What social, biological, or physical processes create these patterns?
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 6
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(123)
+
+# Create hub structure - start with star graph
+g = nx.star_graph(11)  # 12 nodes total (0-11)
+# Add additional edges to create more complex structure
+g.add_edges_from([(1,5), (2,5), (3,6), (4,6), (5,7), (6,7)])
+
+# Calculate node degrees
+degrees = dict(g.degree())
+
+# Set node colors based on degree
+node_colors = []
+for node in g.nodes():
+    if degrees[node] >= 4:  # Hub
+        node_colors.append('#c41c85')
+    elif degrees[node] >= 2:  # Mid
+        node_colors.append('#50C878')
+    else:  # End
+        node_colors.append('#000000')
+
+# Create layout
+pos = nx.spring_layout(g, seed=123)
+
+# Plot
+plt.figure(figsize=(5, 6))
+plt.gca().set_facecolor('white')
+
+# Draw edges
+nx.draw_networkx_edges(g, pos, edge_color='#D3D3D3', width=1, alpha=0.6)
+
+# Draw nodes with size based on degree
+node_sizes = [degrees[node] * 100 + 200 for node in g.nodes()]
+nx.draw_networkx_nodes(g, pos, node_color=node_colors, node_size=node_sizes)
+
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+```
+
+**Typical network: hubs, clusters, paths**
+:::
+::::
+
+---
+
+## The Formation Question
+
+Two complementary perspectives:
+
+1. **Structural mechanisms**: Network topology drives new connections
+   - Example: Triadic closure creates clusters
+
+2. **Attribute-based mechanisms**: Node characteristics drive connections
+   - Example: Homophily - similarity breeds connection
+
+**Challenge**: Disentangling these effects requires sophisticated statistical models
+
+---
+
+## Taxonomy of Network Effects {.smaller}
+
+**Major categories of network formation processes:**
+
+| Category         | Description            | Example                 |
+| ----------       | -------------          | ---------               |
+| **Dyadic**       | Two-node processes     | Homophily, reciprocity  |
+| **Triadic**      | Three-node processes   | Transitivity, balance   |
+| **Higher-order** | Four+ node processes   | K-cores, cliques        |
+| **Node-level**   | Individual preferences | Preferential attachment |
+| **Exogenous**    | External factors       | Geography, institutions |
+
+---
+
+## Dyadic Processes: Definition
+
+:::: {.columns}
+::: {.column width="50%"}
+**Dyadic processes** operate on pairs of nodes (dyads)
+
+A dyad can be in three states:
+
+- **Null**: No connection (i → j and j → i both absent)
+- **Asymmetric**: One-way connection (i → j OR j → i)
+- **Mutual**: Two-way connection (i → j AND j → i)
+
+Dyadic processes explain why specific pairs of nodes connect
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 6
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib.patches import FancyArrowPatch
+import numpy as np
+
+def create_dyad_plot(title, node_color, show_arrows="none"):
+    fig, ax = plt.subplots(figsize=(4, 2))
+    
+    # Draw nodes
+    ax.scatter([0, 3], [0, 0], s=800, c=node_color, zorder=3)
+    
+    # Add node labels
+    ax.text(0, 0, 'i', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+    ax.text(3, 0, 'j', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+    
+    # Add arrows based on type
+    if show_arrows == "single":
+        arrow = FancyArrowPatch((0.2, 0), (2.8, 0), 
+                               arrowstyle='->', mutation_scale=20,
+                               color='#4A4A4A', linewidth=2)
+        ax.add_patch(arrow)
+    
+    elif show_arrows == "curved":
+        # Upper curved arrow i -> j
+        arrow1 = FancyArrowPatch((0.2, 0), (2.8, 0),
+                                connectionstyle="arc3,rad=0.3",
+                                arrowstyle='->', mutation_scale=20,
+                                color='#4A4A4A', linewidth=2)
+        # Lower curved arrow j -> i
+        arrow2 = FancyArrowPatch((2.8, 0), (0.2, 0),
+                                connectionstyle="arc3,rad=0.3",
+                                arrowstyle='->', mutation_scale=20,
+                                color='#4A4A4A', linewidth=2)
+        ax.add_patch(arrow1)
+        ax.add_patch(arrow2)
+    
+    ax.set_xlim(-0.5, 3.5)
+    if show_arrows == "curved":
+        ax.set_ylim(-0.6, 0.6)
+    else:
+        ax.set_ylim(-0.4, 0.4)
+    
+    ax.set_aspect('equal')
+    ax.axis('off')
+    ax.set_title(title, fontsize=11, fontweight='bold', pad=10)
+    
+    return fig, ax
+
+# Create the three dyad plots
+fig, axes = plt.subplots(3, 1, figsize=(5, 6))
+
+# Null dyad
+axes[0].scatter([0, 3], [0, 0], s=800, c='#000000', zorder=3)
+axes[0].text(0, 0, 'i', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[0].text(3, 0, 'j', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[0].set_xlim(-0.5, 3.5)
+axes[0].set_ylim(-0.4, 0.4)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('Null Dyad', fontsize=11, fontweight='bold')
+
+# Asymmetric dyad
+axes[1].scatter([0, 3], [0, 0], s=800, c='#50C878', zorder=3)
+axes[1].text(0, 0, 'i', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[1].text(3, 0, 'j', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+arrow = FancyArrowPatch((0.2, 0), (2.8, 0), 
+                       arrowstyle='->', mutation_scale=20,
+                       color='#4A4A4A', linewidth=2)
+axes[1].add_patch(arrow)
+axes[1].set_xlim(-0.5, 3.5)
+axes[1].set_ylim(-0.4, 0.4)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('Asymmetric Dyad', fontsize=11, fontweight='bold')
+
+# Mutual dyad
+axes[2].scatter([0, 3], [0, 0], s=800, c='#c41c85', zorder=3)
+axes[2].text(0, 0, 'i', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[2].text(3, 0, 'j', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+arrow1 = FancyArrowPatch((0.2, 0), (2.8, 0),
+                        connectionstyle="arc3,rad=0.3",
+                        arrowstyle='->', mutation_scale=20,
+                        color='#4A4A4A', linewidth=2)
+arrow2 = FancyArrowPatch((2.8, 0), (0.2, 0),
+                        connectionstyle="arc3,rad=0.3",
+                        arrowstyle='->', mutation_scale=20,
+                        color='#4A4A4A', linewidth=2)
+axes[2].add_patch(arrow1)
+axes[2].add_patch(arrow2)
+axes[2].set_xlim(-0.5, 3.5)
+axes[2].set_ylim(-0.6, 0.6)
+axes[2].set_aspect('equal')
+axes[2].axis('off')
+axes[2].set_title('Mutual Dyad', fontsize=11, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Dyadic Process: Reciprocity {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Definition**: The tendency for directed edges to be reciprocated
+
+**Mechanism**: If i → j exists, j → i becomes more likely
+
+**Examples:**
+
+- Social media: You follow back those who follow you
+- Collaboration: Co-authorship often becomes bidirectional
+- Trade: Countries with import relationships develop export relationships
+
+**Statistical signature**: Higher proportion of mutual dyads than expected by chance
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 6
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch
+import numpy as np
+
+fig, axes = plt.subplots(2, 1, figsize=(5, 6))
+
+# Asymmetric -> Mutual
+axes[0].scatter([0, 3], [0, 0], s=800, c='#50C878', zorder=3)
+axes[0].text(0, 0, 'A', ha='center', va='center', color='white', 
+            fontsize=14, fontweight='bold', zorder=4)
+axes[0].text(3, 0, 'B', ha='center', va='center', color='white', 
+            fontsize=14, fontweight='bold', zorder=4)
+
+# Existing edge A -> B
+arrow1 = FancyArrowPatch((0.2, 0), (2.8, 0), 
+                       arrowstyle='->', mutation_scale=25,
+                       color='#D3D3D3', linewidth=2)
+axes[0].add_patch(arrow1)
+
+# Potential reciprocal edge B -> A (dashed)
+arrow2 = FancyArrowPatch((2.8, -0.1), (0.2, -0.1),
+                       arrowstyle='->', mutation_scale=25,
+                       color='#50C878', linewidth=2, linestyle='dashed')
+axes[0].add_patch(arrow2)
+
+# Add text annotation
+axes[0].text(1.5, 0.3, 'likely to\nfollow back', ha='center', va='center',
+            fontsize=10, color='#50C878', style='italic')
+
+axes[0].set_xlim(-0.5, 3.5)
+axes[0].set_ylim(-0.5, 0.8)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('Asymmetric → Mutual', fontsize=12, fontweight='bold')
+
+# Reciprocated Connection
+axes[1].scatter([0, 3], [0, 0], s=800, c='#c41c85', zorder=3)
+axes[1].text(0, 0, 'A', ha='center', va='center', color='white', 
+            fontsize=14, fontweight='bold', zorder=4)
+axes[1].text(3, 0, 'B', ha='center', va='center', color='white', 
+            fontsize=14, fontweight='bold', zorder=4)
+
+# Bidirectional arrows
+arrow3 = FancyArrowPatch((0.2, 0.05), (2.8, 0.05),
+                        arrowstyle='->', mutation_scale=25,
+                        color='#D3D3D3', linewidth=2)
+arrow4 = FancyArrowPatch((2.8, -0.05), (0.2, -0.05),
+                        arrowstyle='->', mutation_scale=25,
+                        color='#D3D3D3', linewidth=2)
+axes[1].add_patch(arrow3)
+axes[1].add_patch(arrow4)
+
+axes[1].set_xlim(-0.5, 3.5)
+axes[1].set_ylim(-0.5, 0.5)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('Reciprocated Connection', fontsize=12, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Dyadic Process: Homophily {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Definition**: "Similarity breeds connection" - nodes with similar attributes connect more
+
+**Types:**
+
+- **Demographic**: Age, gender, ethnicity
+- **Behavioral**: Interests, activities
+- **Status**: Education, occupation
+
+**Formula**: P(edge|similar) > P(edge|dissimilar)
+
+**Empirical Evidence:**
+
+- **Wikipedia editors** (Crandall et al., 2008): Editors with similar editing patterns more likely to communicate
+- **University email network** (Kossinets & Watts, 2006): Students taking same classes form connections at higher rates
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(100)
+
+# Create two groups
+g = nx.Graph()
+g.add_edges_from([('A','B'), ('A','C'), ('B','C'), ('D','E'), ('D','F'), ('E','F')])
+
+# Define node positions
+pos = {'A': (0, 0), 'B': (1, 0), 'C': (0.5, 0.87), 
+       'D': (3, 0), 'E': (4, 0), 'F': (3.5, 0.87)}
+
+# Define node colors by group
+node_colors = {'A': '#c41c85', 'B': '#c41c85', 'C': '#c41c85',
+               'D': '#50C878', 'E': '#50C878', 'F': '#50C878'}
+
+colors = [node_colors[node] for node in g.nodes()]
+
+plt.figure(figsize=(5, 5))
+plt.gca().set_facecolor('white')
+
+# Draw edges
+nx.draw_networkx_edges(g, pos, edge_color='#D3D3D3', width=2, alpha=0.7)
+
+# Draw nodes
+nx.draw_networkx_nodes(g, pos, node_color=colors, node_size=600)
+
+# Draw labels
+nx.draw_networkx_labels(g, pos, font_color='white', font_size=12, font_weight='bold')
+
+plt.title('Similar nodes cluster together', fontsize=12, fontweight='bold', pad=20)
+plt.xlim(-0.5, 4.5)
+plt.ylim(-0.5, 1.4)
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Dyadic Process: Homophily vs Selection
+
+**Critical distinction:**
+
+- **Selection (homophily)**: Similar people connect
+- **Influence**: Connected people become similar
+
+**Problem**: Observational data shows correlation, not causation!
+
+**Empirical example - Wikipedia editors** (Crandall et al., 2008):
+
+- Tracked similarity over time relative to first communication
+- **Before contact**: Rapid increase in similarity (selection)
+- **After contact**: Continued slower increase (influence)
+- Both processes operate simultaneously!
+
+**Solutions:**
+
+- Longitudinal data tracking changes over time
+- Statistical models that separate effects (e.g., SAOMs)
+- Natural experiments
+
+---
+
+## Other Dyadic Processes {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Heterophily**: Attraction to difference (opposite of homophily)
+
+- Example: Dating networks, mentor-mentee relationships
+
+**Distance/Geography**: Physical proximity increases connection probability
+
+- Example: Friendship networks, communication patterns
+
+**Status homophily**: Nodes connect within same status level
+
+- Example: Corporate networks, academic citations
+
+**Resource exchange**: Complementary needs drive connections
+
+- Example: Economic networks, mutualistic relationships
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 7
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch
+import numpy as np
+
+fig, axes = plt.subplots(3, 1, figsize=(5, 7))
+
+# Heterophily
+axes[0].scatter([0, 2], [0, 0], s=600, c=['#000000', '#c41c85'], zorder=3)
+axes[0].plot([0, 2], [0, 0], color='#D3D3D3', linewidth=2, zorder=2)
+axes[0].text(0, 0, 'Sr', ha='center', va='center', color='white', 
+            fontsize=10, fontweight='bold', zorder=4)
+axes[0].text(2, 0, 'Jr', ha='center', va='center', color='white', 
+            fontsize=10, fontweight='bold', zorder=4)
+axes[0].set_xlim(-0.5, 2.5)
+axes[0].set_ylim(-0.5, 0.5)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('Heterophily', fontsize=10, fontweight='bold')
+
+# Geography
+axes[1].scatter([0, 1, 3, 4], [0, 0, 0, 0], s=600, c='#000000', zorder=3)
+axes[1].plot([0, 1], [0, 0], color='#D3D3D3', linewidth=2, zorder=2)
+axes[1].plot([3, 4], [0, 0], color='#D3D3D3', linewidth=2, zorder=2)
+axes[1].text(0, 0, 'NY', ha='center', va='center', color='white', 
+            fontsize=8, fontweight='bold', zorder=4)
+axes[1].text(1, 0, 'NY', ha='center', va='center', color='white', 
+            fontsize=8, fontweight='bold', zorder=4)
+axes[1].text(3, 0, 'LA', ha='center', va='center', color='white', 
+            fontsize=8, fontweight='bold', zorder=4)
+axes[1].text(4, 0, 'LA', ha='center', va='center', color='white', 
+            fontsize=8, fontweight='bold', zorder=4)
+axes[1].set_xlim(-0.5, 4.5)
+axes[1].set_ylim(-0.5, 0.5)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('Geography', fontsize=10, fontweight='bold')
+
+# Resource Exchange
+axes[2].scatter([0, 2], [0, 0], s=600, c=['#50C878', '#c41c85'], zorder=3)
+arrow = FancyArrowPatch((0.15, 0), (1.85, 0), 
+                       arrowstyle='->', mutation_scale=20,
+                       color='#D3D3D3', linewidth=2)
+axes[2].add_patch(arrow)
+axes[2].text(0, 0, 'S', ha='center', va='center', color='white', 
+            fontsize=10, fontweight='bold', zorder=4)
+axes[2].text(2, 0, 'B', ha='center', va='center', color='white', 
+            fontsize=10, fontweight='bold', zorder=4)
+axes[2].set_xlim(-0.5, 2.5)
+axes[2].set_ylim(-0.5, 0.5)
+axes[2].set_aspect('equal')
+axes[2].axis('off')
+axes[2].set_title('Resource Exchange', fontsize=10, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Triadic Processes: Definition
+
+:::: {.columns}
+::: {.column width="50%"}
+**Triadic processes** involve three nodes forming triangles
+
+**Key configurations:**
+
+- **Open triad**: A-B, B-C exist but A-C absent
+- **Closed triad (triangle)**: A-B, B-C, and A-C all exist
+
+**Core insight**: The presence of two edges affects the probability of the third
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 6
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axes = plt.subplots(2, 1, figsize=(5, 6))
+
+# Open triad
+g1 = nx.Graph()
+g1.add_edges_from([('A','B'), ('B','C')])
+pos1 = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
+
+axes[0].set_facecolor('white')
+nx.draw_networkx_edges(g1, pos1, ax=axes[0], edge_color='#D3D3D3', width=2)
+nx.draw_networkx_nodes(g1, pos1, ax=axes[0], node_color='#000000', node_size=600)
+nx.draw_networkx_labels(g1, pos1, ax=axes[0], font_color='white', font_size=12, font_weight='bold')
+axes[0].set_xlim(-0.5, 2.5)
+axes[0].set_ylim(-0.5, 1.4)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('Open Triad', fontsize=12, fontweight='bold')
+
+# Closed triad
+g2 = nx.Graph()
+g2.add_edges_from([('A','B'), ('B','C'), ('A','C')])
+pos2 = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
+
+axes[1].set_facecolor('white')
+nx.draw_networkx_edges(g2, pos2, ax=axes[1], edge_color='#D3D3D3', width=2)
+nx.draw_networkx_nodes(g2, pos2, ax=axes[1], node_color='#c41c85', node_size=600)
+nx.draw_networkx_labels(g2, pos2, ax=axes[1], font_color='white', font_size=12, font_weight='bold')
+axes[1].set_xlim(-0.5, 2.5)
+axes[1].set_ylim(-0.5, 1.4)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('Closed Triad (Triangle)', fontsize=12, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Triadic Process: Transitivity {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Definition**: "Friends of friends become friends"
+
+**Mechanism**: If A→B and B→C, then A→C becomes more likely
+
+**Also called**: Triadic closure, clustering
+
+**Examples:**
+
+- Social networks: Introduced through mutual friends
+- Academic collaboration: Co-authors of co-authors collaborate
+- Protein networks: Proteins interacting with same partner interact
+
+**Measurement**: Clustering coefficient, transitivity ratio
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 7
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axes = plt.subplots(3, 1, figsize=(5, 7))
+
+# 1. Open Triad
+g1 = nx.Graph()
+g1.add_edges_from([('A','B'), ('B','C')])
+pos1 = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
+
+axes[0].set_facecolor('white')
+nx.draw_networkx_edges(g1, pos1, ax=axes[0], edge_color='#D3D3D3', width=2.5)
+nx.draw_networkx_nodes(g1, pos1, ax=axes[0], node_color='#000000', node_size=700)
+nx.draw_networkx_labels(g1, pos1, ax=axes[0], font_color='white', font_size=14, font_weight='bold')
+axes[0].set_xlim(-0.5, 2.5)
+axes[0].set_ylim(-0.5, 1.4)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('1. Open Triad', fontsize=11, fontweight='bold')
+
+# 2. Closure Pressure
+g2 = nx.Graph()
+g2.add_edges_from([('A','B'), ('B','C')])
+pos2 = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
+
+axes[1].set_facecolor('white')
+nx.draw_networkx_edges(g2, pos2, ax=axes[1], edge_color='#D3D3D3', width=2.5)
+# Add dashed potential edge
+axes[1].plot([0, 2], [0, 0], color='#50C878', linewidth=2, linestyle='dashed')
+nx.draw_networkx_nodes(g2, pos2, ax=axes[1], node_color='#50C878', node_size=700)
+nx.draw_networkx_labels(g2, pos2, ax=axes[1], font_color='white', font_size=14, font_weight='bold')
+axes[1].text(1, -0.3, 'closure pressure', ha='center', va='center',
+            fontsize=10, color='#50C878', style='italic')
+axes[1].set_xlim(-0.5, 2.5)
+axes[1].set_ylim(-0.6, 1.4)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('2. Closure Pressure', fontsize=11, fontweight='bold')
+
+# 3. Closed Triangle
+g3 = nx.Graph()
+g3.add_edges_from([('A','B'), ('B','C'), ('A','C')])
+pos3 = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
+
+axes[2].set_facecolor('white')
+nx.draw_networkx_edges(g3, pos3, ax=axes[2], edge_color='#D3D3D3', width=2.5)
+nx.draw_networkx_nodes(g3, pos3, ax=axes[2], node_color='#c41c85', node_size=700)
+nx.draw_networkx_labels(g3, pos3, ax=axes[2], font_color='white', font_size=14, font_weight='bold')
+axes[2].set_xlim(-0.5, 2.5)
+axes[2].set_ylim(-0.5, 1.4)
+axes[2].set_aspect('equal')
+axes[2].axis('off')
+axes[2].set_title('3. Closed Triangle', fontsize=11, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Empirical Evidence: Triadic & Focal Closure {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Kossinets & Watts (2006)**^3^: Email network at large US university
+
+**Data**: ~22,000 students over one year
+
+**Key findings:**
+
+**Triadic closure** (shared friends):
+
+- Probability increases roughly linearly with common friends
+- Strong effect: 2 common friends > 2× effect of 1 friend
+
+**Focal closure** (shared activities/classes):
+
+- First shared class has similar effect to one friend
+- Diminishing returns for additional classes
+- Curve levels off (different from triadic closure)
+
+**Implication**: Both structural and contextual effects matter!
+
+^3^ Kossinets, G., & Watts, D. J. (2006). Empirical analysis of an evolving social network. science, 311(5757), 88-90.
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 7
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axes = plt.subplots(2, 1, figsize=(5, 7))
+
+# Triadic Closure
+g1 = nx.Graph()
+g1.add_edges_from([('A','B'), ('B','MF'), ('A','MF')])
+pos1 = {'A': (0, 0), 'B': (2, 0), 'MF': (1, 1.5)}
+
+node_colors1 = ['#c41c85', '#c41c85', '#50C878']
+axes[0].set_facecolor('white')
+nx.draw_networkx_edges(g1, pos1, ax=axes[0], edge_color='#D3D3D3', width=2)
+nx.draw_networkx_nodes(g1, pos1, ax=axes[0], node_color=node_colors1, node_size=500)
+nx.draw_networkx_labels(g1, pos1, ax=axes[0], font_color='white', font_size=10, font_weight='bold')
+axes[0].set_xlim(-0.5, 2.5)
+axes[0].set_ylim(-0.5, 1.8)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('Triadic Closure', fontsize=11, fontweight='bold')
+
+# Focal Closure
+g2 = nx.Graph()
+g2.add_edges_from([('A','Math'), ('B','Math')])
+pos2 = {'A': (0, 0), 'B': (2, 0), 'Math': (1, 1.5)}
+
+# Draw existing edges (affiliations)
+axes[1].set_facecolor('white')
+nx.draw_networkx_edges(g2, pos2, ax=axes[1], edge_color='#D3D3D3', width=1.5)
+
+# Draw nodes with different shapes
+for node, (x, y) in pos2.items():
+    if node == 'Math':
+        axes[1].scatter(x, y, s=500, c='#000000', marker='s', zorder=3)
+        axes[1].text(x, y, node, ha='center', va='center', color='white', 
+                    fontsize=8, fontweight='bold', zorder=4)
+    else:
+        axes[1].scatter(x, y, s=500, c='#c41c85', marker='o', zorder=3)
+        axes[1].text(x, y, node, ha='center', va='center', color='white', 
+                    fontsize=10, fontweight='bold', zorder=4)
+
+axes[1].set_xlim(-0.5, 2.5)
+axes[1].set_ylim(-0.5, 1.8)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('Focal Closure', fontsize=11, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Focal vs Membership Closure: Key Distinction {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Focal Closure** (Easley & Kleinberg, 2010)^2^:
+
+- People meet through shared **activities/contexts** (foci)
+- Examples: Classes, workplaces, clubs, events
+- **Mechanism**: Physical proximity + repeated interaction
+- **Pattern**: Bipartite structure (people ↔ activities)
+
+**Membership Closure**:
+
+- People connect through shared **group memberships**
+- Examples: Organizations, committees, teams
+- **Mechanism**: Formal affiliation creates opportunities
+- **Pattern**: Overlapping group boundaries
+
+**Key insight**: Context matters as much as network structure!
+
+^2^ Easley, D., & Kleinberg, J. (2010). Networks, crowds, and markets: Reasoning about a highly connected world (Vol. 1). Cambridge: Cambridge university press.
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 6
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axes = plt.subplots(2, 1, figsize=(5, 6))
+
+# Focal Closure - bipartite structure
+B = nx.Graph()
+# Add people and activities (foci)
+people = ['Alice', 'Bob', 'Carol']
+foci = ['Fishing', 'Hunting']
+B.add_nodes_from(people, bipartite=0)
+B.add_nodes_from(foci, bipartite=1)
+B.add_edges_from([('Alice', 'Fishing'), ('Bob', 'Fishing'), 
+                  ('Bob', 'Hunting'), ('Carol', 'Hunting')])
+
+pos1 = {'Alice': (0, 0), 'Bob': (2, 0), 'Carol': (4, 0),
+        'Fishing': (1, 1.5), 'Hunting': (3, 1.5)}
+
+axes[0].set_facecolor('white')
+# Draw people as circles
+for person in people:
+    x, y = pos1[person]
+    axes[0].scatter(x, y, s=400, c='#c41c85', marker='o', zorder=3)
+    axes[0].text(x, y, person[0], ha='center', va='center', 
+                color='white', fontsize=8, fontweight='bold', zorder=4)
+
+# Draw foci as squares
+for focus in foci:
+    x, y = pos1[focus]
+    axes[0].scatter(x, y, s=400, c='#000000', marker='s', zorder=3)
+    axes[0].text(x, y, focus.split()[0][0], ha='center', va='center', 
+                color='white', fontsize=8, fontweight='bold', zorder=4)
+
+# Draw edges
+nx.draw_networkx_edges(B, pos1, ax=axes[0], edge_color='#D3D3D3', width=1.5)
+
+# Add dashed line between Alice and Bob (potential focal closure)
+axes[0].plot([0, 2], [0, 0], color='#50C878', linewidth=2, linestyle='dashed', alpha=0.8)
+
+axes[0].set_xlim(-0.5, 4.5)
+axes[0].set_ylim(-0.5, 2)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('Focal Closure', fontsize=11, fontweight='bold')
+
+# Membership Closure - bipartite structure showing influence
+M = nx.Graph()
+# Add people and groups
+people_m = ['Alice', 'Bob', 'Carol']
+groups = ['Fishing', 'Hunting']
+M.add_nodes_from(people_m, bipartite=0)
+M.add_nodes_from(groups, bipartite=1)
+# Alice is in Fishing, Bob joins both activities, Carol is in Hunting
+M.add_edges_from([('Alice', 'Fishing'), ('Bob', 'Fishing'), ('Bob', 'Hunting'), ('Carol', 'Hunting')])
+
+pos2 = {'Alice': (0, 0), 'Bob': (2, 0), 'Carol': (4, 0),
+        'Fishing': (1, 1.5), 'Hunting': (3, 1.5)}
+
+axes[1].set_facecolor('white')
+
+# Draw people as circles
+for person in people_m:
+    x, y = pos2[person]
+    axes[1].scatter(x, y, s=400, c='#c41c85', marker='o', zorder=3)
+    axes[1].text(x, y, person[0], ha='center', va='center', 
+                color='white', fontsize=8, fontweight='bold', zorder=4)
+
+# Draw groups as squares
+for group in groups:
+    x, y = pos2[group]
+    axes[1].scatter(x, y, s=400, c='#000000', marker='s', zorder=3)
+    axes[1].text(x, y, group[0], ha='center', va='center', 
+                color='white', fontsize=8, fontweight='bold', zorder=4)
+
+# Draw solid membership edges (existing memberships)
+existing_edges = [('Alice', 'Fishing'), ('Carol', 'Hunting')]
+for edge in existing_edges:
+    if edge in M.edges():
+        x1, y1 = pos2[edge[0]]
+        x2, y2 = pos2[edge[1]]
+        axes[1].plot([x1, x2], [y1, y2], color='#D3D3D3', linewidth=1.5)
+
+# Add continuous line between Alice and Bob (existing social connection)
+axes[1].plot([0, 2], [0, 0], color='#D3D3D3', linewidth=2)
+
+# Add dashed line between Bob and Fishing (potential membership due to influence)
+axes[1].plot([2, 1], [0, 1.5], color='#50C878', linewidth=2, linestyle='dashed', alpha=0.8)
+
+# Add connection between Bob and Hunting
+axes[1].plot([2, 3], [0, 1.5], color='#D3D3D3', linewidth=1.5)
+
+axes[1].set_xlim(-0.5, 4.5)
+axes[1].set_ylim(-1.2, 2)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('Membership Closure', fontsize=11, fontweight='bold')
+
+# Add note about dashed lines
+axes[1].text(2.25, -1, 'Dashed lines: ties at risk to emerge', 
+            ha='center', va='center', fontsize=9, 
+            color='black', style='italic',
+            bbox=dict(boxstyle='round,pad=0.3', facecolor='#50C878', 
+                     edgecolor='none', alpha=0.8))
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Triadic Process: Balance Theory {.smaller}
+
+**Structural balance** (Heider, 1946): Cognitive consistency in signed networks
+
+**Balanced triangles** (all relationships consistent):
+- **+++**: Three mutual friends (stable)
+- **+--**: Two enemies share a common enemy (stable)
+
+**Unbalanced triangles** (tension):
+- **++-**: Friend of friend is enemy (unstable)  
+- **---**: Three mutual enemies (unstable)
+
+**Prediction**: Networks evolve toward balanced states
+```{python}
+#| echo: false
+#| fig-width: 12
+#| fig-height: 4
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+def draw_triangle_with_signs(ax, edge_signs, node_color, title):
+    g = nx.Graph()
+    g.add_edges_from([('A','B'), ('B','C'), ('A','C')])
+    pos = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
+    
+    ax.set_facecolor('white')
+    
+    # Draw edges with signs
+    edges = [('A','B'), ('B','C'), ('A','C')]
+    for i, (u, v) in enumerate(edges):
+        x1, y1 = pos[u]
+        x2, y2 = pos[v]
+        ax.plot([x1, x2], [y1, y2], color='#D3D3D3', linewidth=2, zorder=1)
+        # Add sign label at midpoint
+        mid_x, mid_y = (x1 + x2) / 2, (y1 + y2) / 2
+        ax.text(mid_x, mid_y, edge_signs[i], ha='center', va='center',
+                fontsize=12, fontweight='bold', 
+                bbox=dict(boxstyle='circle,pad=0.2', facecolor='white', edgecolor='none'))
+    
+    # Draw nodes
+    nx.draw_networkx_nodes(g, pos, ax=ax, node_color=node_color, node_size=500)
+    nx.draw_networkx_labels(g, pos, ax=ax, font_color='white', font_size=10, font_weight='bold')
+    
+    ax.set_xlim(-0.5, 2.5)
+    ax.set_ylim(-0.5, 1.4)
+    ax.set_aspect('equal')
+    ax.axis('off')
+    ax.set_title(title, fontsize=10, fontweight='bold')
+
+fig, axes = plt.subplots(1, 3, figsize=(12, 4))
+
+# Balanced: +++
+draw_triangle_with_signs(axes[0], ['+', '+', '+'], '#c41c85', 'Balanced: +++')
+
+# Balanced: +--
+draw_triangle_with_signs(axes[1], ['+', '−', '−'], '#c41c85', 'Balanced: +−−')
+
+# Unbalanced: ++-
+draw_triangle_with_signs(axes[2], ['+', '+', '−'], '#000000', 'Unbalanced: ++−')
+
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## Triadic Configurations in Directed Networks {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**16 possible triadic configurations** (triads census)^1^:
+
+Key patterns:
+
+- **003**: Empty (no edges)
+- **012**: One edge only
+- **102**: Two edges, no transitivity
+- **030T**: Transitive triple
+- **300**: Complete triangle
+
+**Different processes favor different configurations**
+
+Each tells us something about network formation mechanisms!
+
+^1^ Vladimir Batagelj and Andrej Mrvar, A subquadratic triad census algorithm for large sparse networks with small maximum degree, University of Ljubljana, http://vlado.fmf.uni-lj.si/pub/networks/doc/triads/triads.pdf
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 8
+import networkx as nx
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch
+import numpy as np
+
+fig, axes = plt.subplots(2, 2, figsize=(5, 8))
+pos = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
+
+# 003: Empty
+axes[0,0].scatter([0, 1, 2], [0, 1, 0], s=400, c='#000000', zorder=3)
+axes[0,0].text(0, 0, 'A', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[0,0].text(1, 1, 'B', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[0,0].text(2, 0, 'C', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[0,0].set_xlim(-0.5, 2.5)
+axes[0,0].set_ylim(-0.5, 1.4)
+axes[0,0].set_aspect('equal')
+axes[0,0].axis('off')
+axes[0,0].set_title('003: Empty', fontsize=9, fontweight='bold')
+
+# 012: Single Edge
+axes[0,1].scatter([0, 1, 2], [0, 1, 0], s=400, c='#000000', zorder=3)
+arrow = FancyArrowPatch((0.1, 0.1), (0.9, 0.9), 
+                       arrowstyle='->', mutation_scale=15,
+                       color='#D3D3D3', linewidth=1.5)
+axes[0,1].add_patch(arrow)
+axes[0,1].text(0, 0, 'A', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[0,1].text(1, 1, 'B', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[0,1].text(2, 0, 'C', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[0,1].set_xlim(-0.5, 2.5)
+axes[0,1].set_ylim(-0.5, 1.4)
+axes[0,1].set_aspect('equal')
+axes[0,1].axis('off')
+axes[0,1].set_title('012: Single Edge', fontsize=9, fontweight='bold')
+
+# 030T: Transitive
+axes[1,0].scatter([0, 1, 2], [0, 1, 0], s=400, c='#50C878', zorder=3)
+arrow1 = FancyArrowPatch((0.1, 0.1), (0.9, 0.9), 
+                        arrowstyle='->', mutation_scale=15,
+                        color='#D3D3D3', linewidth=1.5)
+arrow2 = FancyArrowPatch((1.1, 0.9), (1.9, 0.1), 
+                        arrowstyle='->', mutation_scale=15,
+                        color='#D3D3D3', linewidth=1.5)
+arrow3 = FancyArrowPatch((0.2, 0), (1.8, 0), 
+                        arrowstyle='->', mutation_scale=15,
+                        color='#D3D3D3', linewidth=1.5)
+axes[1,0].add_patch(arrow1)
+axes[1,0].add_patch(arrow2)
+axes[1,0].add_patch(arrow3)
+axes[1,0].text(0, 0, 'A', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[1,0].text(1, 1, 'B', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[1,0].text(2, 0, 'C', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[1,0].set_xlim(-0.5, 2.5)
+axes[1,0].set_ylim(-0.5, 1.4)
+axes[1,0].set_aspect('equal')
+axes[1,0].axis('off')
+axes[1,0].set_title('030T: Transitive', fontsize=9, fontweight='bold')
+
+# 300: Complete
+axes[1,1].scatter([0, 1, 2], [0, 1, 0], s=400, c='#c41c85', zorder=3)
+# All possible arrows
+arrow_configs = [
+    ((0.1, 0.1), (0.9, 0.9)),   # A -> B
+    ((0.9, 0.9), (0.1, 0.1)),   # B -> A
+    ((1.1, 0.9), (1.9, 0.1)),   # B -> C
+    ((1.9, 0.1), (1.1, 0.9)),   # C -> B
+    ((0.2, 0), (1.8, 0)),       # A -> C
+    ((1.8, 0), (0.2, 0)),       # C -> A
+]
+for start, end in arrow_configs:
+    arrow = FancyArrowPatch(start, end, 
+                           arrowstyle='->', mutation_scale=15,
+                           color='#D3D3D3', linewidth=1.5)
+    axes[1,1].add_patch(arrow)
+axes[1,1].text(0, 0, 'A', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[1,1].text(1, 1, 'B', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[1,1].text(2, 0, 'C', ha='center', va='center', color='white', 
+              fontsize=8, fontweight='bold', zorder=4)
+axes[1,1].set_xlim(-0.5, 2.5)
+axes[1,1].set_ylim(-0.5, 1.4)
+axes[1,1].set_aspect('equal')
+axes[1,1].axis('off')
+axes[1,1].set_title('300: Complete', fontsize=9, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Triadic Process: Cyclicity vs Transitivity
+
+:::: {.columns}
+::: {.column width="50%"}
+**Transitivity**: A→B→C implies A→C (hierarchical)
+
+- Creates hierarchies, rankings
+- Example: Citation networks, food webs
+
+**Cyclicity**: A→B→C implies C→A (circular)
+
+- Creates exchange cycles
+- Example: Rock-paper-scissors, circular status
+
+**Distinction matters** for understanding network function!
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 6
+import networkx as nx
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch
+import numpy as np
+
+fig, axes = plt.subplots(2, 1, figsize=(5, 6))
+pos = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
+
+# Transitive (Hierarchical)
+axes[0].scatter([0, 1, 2], [0, 1, 0], s=600, c='#c41c85', zorder=3)
+arrow1 = FancyArrowPatch((0.1, 0.1), (0.9, 0.9), 
+                        arrowstyle='->', mutation_scale=20,
+                        color='#D3D3D3', linewidth=2)
+arrow2 = FancyArrowPatch((1.1, 0.9), (1.9, 0.1), 
+                        arrowstyle='->', mutation_scale=20,
+                        color='#D3D3D3', linewidth=2)
+arrow3 = FancyArrowPatch((0.2, 0), (1.8, 0), 
+                        arrowstyle='->', mutation_scale=20,
+                        color='#D3D3D3', linewidth=2)
+axes[0].add_patch(arrow1)
+axes[0].add_patch(arrow2)
+axes[0].add_patch(arrow3)
+axes[0].text(0, 0, 'A', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[0].text(1, 1, 'B', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[0].text(2, 0, 'C', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[0].text(1, -0.4, 'A dominates all', ha='center', va='center',
+            fontsize=10, color='#c41c85', style='italic')
+axes[0].set_xlim(-0.5, 2.5)
+axes[0].set_ylim(-0.6, 1.4)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('Transitive (Hierarchical)', fontsize=11, fontweight='bold')
+
+# Cyclic (Circular)
+axes[1].scatter([0, 1, 2], [0, 1, 0], s=600, c='#50C878', zorder=3)
+arrow4 = FancyArrowPatch((0.1, 0.1), (0.9, 0.9), 
+                        arrowstyle='->', mutation_scale=20,
+                        color='#D3D3D3', linewidth=2)
+arrow5 = FancyArrowPatch((1.1, 0.9), (1.9, 0.1), 
+                        arrowstyle='->', mutation_scale=20,
+                        color='#D3D3D3', linewidth=2)
+arrow6 = FancyArrowPatch((1.8, 0), (0.2, 0), 
+                        arrowstyle='->', mutation_scale=20,
+                        color='#D3D3D3', linewidth=2)
+axes[1].add_patch(arrow4)
+axes[1].add_patch(arrow5)
+axes[1].add_patch(arrow6)
+axes[1].text(0, 0, 'A', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[1].text(1, 1, 'B', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[1].text(2, 0, 'C', ha='center', va='center', color='white', 
+            fontsize=12, fontweight='bold', zorder=4)
+axes[1].text(1, -0.4, 'No global ranking', ha='center', va='center',
+            fontsize=10, color='#50C878', style='italic')
+axes[1].set_xlim(-0.5, 2.5)
+axes[1].set_ylim(-0.6, 1.4)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('Cyclic (Circular)', fontsize=11, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## Statistical Tests for Network Effects
+
+**Challenge**: Network data violates independence assumptions
+
+**Classical approach fails**: Standard statistical tests assume independent observations
+
+**Solutions:**
+
+1. **Permutation tests**: Randomize while preserving structure
+2. **Conditional Uniform Graph (CUG) tests**: Compare to random graphs
+3. **Quadratic Assignment Procedure (QAP)**: Correlation with permutation
+
+---
+
+## Permutation Tests for Networks
+
+:::: {.columns}
+::: {.column width="50%"}
+**Logic**: 
+
+1. Calculate observed statistic (e.g., clustering)
+2. Generate random networks preserving certain properties
+3. Calculate statistic on random networks
+4. Compare: Is observed value extreme?
+
+**Key decision**: What to preserve when randomizing?
+
+- Node degrees?
+- Number of edges?
+- Dyad distributions?
+
+**P-value**: Proportion of random networks with more extreme values
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 8
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(123)
+
+fig, axes = plt.subplots(3, 1, figsize=(5, 8))
+pos = {'A': (0, 0), 'B': (1, 0), 'C': (0.5, 0.87), 'D': (-0.5, 0.5)}
+
+# Observed Network
+g_obs = nx.Graph()
+g_obs.add_edges_from([('A','B'), ('B','C'), ('A','C'), ('A','D')])
+
+axes[0].set_facecolor('white')
+nx.draw_networkx_edges(g_obs, pos, ax=axes[0], edge_color='#D3D3D3', width=2)
+nx.draw_networkx_nodes(g_obs, pos, ax=axes[0], node_color='#c41c85', node_size=500)
+nx.draw_networkx_labels(g_obs, pos, ax=axes[0], font_color='white', font_size=10, font_weight='bold')
+axes[0].set_xlim(-1, 1.5)
+axes[0].set_ylim(-0.5, 1.4)
+axes[0].set_aspect('equal')
+axes[0].axis('off')
+axes[0].set_title('Observed Network', fontsize=10, fontweight='bold')
+
+# Random Network 1
+g_r1 = nx.Graph()
+g_r1.add_edges_from([('A','B'), ('C','D'), ('A','D')])
+
+axes[1].set_facecolor('white')
+nx.draw_networkx_edges(g_r1, pos, ax=axes[1], edge_color='#D3D3D3', width=2)
+nx.draw_networkx_nodes(g_r1, pos, ax=axes[1], node_color='#000000', node_size=500)
+nx.draw_networkx_labels(g_r1, pos, ax=axes[1], font_color='white', font_size=10, font_weight='bold')
+axes[1].set_xlim(-1, 1.5)
+axes[1].set_ylim(-0.5, 1.4)
+axes[1].set_aspect('equal')
+axes[1].axis('off')
+axes[1].set_title('Random Network 1', fontsize=10, fontweight='bold')
+
+# Random Network 2
+g_r2 = nx.Graph()
+g_r2.add_edges_from([('A','B'), ('A','C')])
+g_r2.add_node('D')  # isolated node
+
+axes[2].set_facecolor('white')
+nx.draw_networkx_edges(g_r2, pos, ax=axes[2], edge_color='#D3D3D3', width=2)
+nx.draw_networkx_nodes(g_r2, pos, ax=axes[2], node_color='#000000', node_size=500)
+nx.draw_networkx_labels(g_r2, pos, ax=axes[2], font_color='white', font_size=10, font_weight='bold')
+axes[2].set_xlim(-1, 1.5)
+axes[2].set_ylim(-0.5, 1.4)
+axes[2].set_aspect('equal')
+axes[2].axis('off')
+axes[2].set_title('Random Network 2', fontsize=10, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+```
+:::
+::::
+
+---
+
+## QAP Regression {.smaller}
+
+**Quadratic Assignment Procedure**: Test relationship between network matrices
+
+**Use case**: Does network Y depend on network X?
+
+**Example**: Does friendship (Y) depend on geographic proximity (X)?
+
+**Procedure**:
+
+1. Regress Y on X, get coefficient β
+2. Permute rows/columns of Y simultaneously
+3. Repeat regression, get β*
+4. Repeat 1000+ times
+5. P-value: proportion where |β*| > |β|
+
+**Advantage**: Accounts for network dependencies
+
+---
+
+## Exponential Random Graph Models (ERGMs)
+
+**Core idea**: Model probability of observing a network as function of its features
+
+**Form**: 
+$$P(Y = y) = \frac{1}{\kappa} \exp\left(\sum_k \theta_k s_k(y)\right)$$
+
+Where:
+
+- $Y$: Random network
+- $s_k(y)$: Network statistics (edges, triangles, etc.)
+- $\theta_k$: Parameters (effects to estimate)
+- $\kappa$: Normalizing constant
+
+---
+
+## ERGM: Intuition {.smaller}
+
+Think of it as **logistic regression for networks**
+
+**Instead of**: P(person votes yes) = f(age, income, ...)
+
+**We have**: P(network has this structure) = f(edges, triangles, homophily, ...)
+
+**Key insight**: Model entire network as outcome, not individual ties
+
+**Advantages**:
+
+- Tests multiple mechanisms simultaneously
+- Controls for confounding effects
+- Provides effect sizes, not just significance
+
+---
+
+## Common ERGM Terms {.smaller}
+
+| Term | Effect | Interpretation |
+|------|--------|----------------|
+| `edges` | Density | Overall connection probability |
+| `mutual` | Reciprocity | Tendency for reciprocation |
+| `triangle` | Transitivity | Tendency for closure |
+| `nodematch("attr")` | Homophily | Same-attribute connection |
+| `nodecov("attr")` | Attribute effect | Node attribute influence |
+| `gwesp` | Shared partners | Weighted transitivity |
+
+**Model specification**: Choose terms based on theory!
+
+---
+
+## ERGM: Interpretation {.smaller}
+
+**Positive coefficient** (θ > 0): Configuration is more likely than chance
+
+**Negative coefficient** (θ < 0): Configuration is less likely than chance
+
+**Example interpretation**:
+
+```
+edges: -2.5    (low baseline density)
+mutual: 1.8    (strong reciprocity)
+triangle: 0.4  (moderate transitivity)
+nodematch("gender"): 0.6  (gender homophily)
+```
+
+**Reading**: Controlling for density, reciprocity, and triangles, same-gender ties are more likely
+
+---
+
+## ERGM: Challenges
+
+**Degeneracy problem**: Some specifications lead to extreme networks
+
+- All edges or no edges
+- Complete clustering or no clustering
+
+**Computational challenge**: Calculating κ is often intractable
+
+**Solutions**:
+
+- Use geometrically-weighted terms (GWESP, GWDSP)
+- Markov Chain Monte Carlo (MCMC) estimation
+- Careful model specification and testing
+
+---
+
+## Network Dynamics Models
+
+**So far**: Models of static networks (single time point)
+
+**Reality**: Networks evolve over time
+
+**Dynamic approaches**:
+
+1. **Temporal ERGMs**: ERGMs on network changes
+2. **Stochastic Actor-Oriented Models (SAOMs)**: Actor-driven change
+3. **Relational Event Models (REMs)**: Continuous-time interactions
+
+---
+
+## Stochastic Actor-Oriented Models {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+**Key assumption**: Actors make rational decisions about ties
+
+**Process**:
+
+1. Actors get random opportunities to change ties
+2. They evaluate potential changes via utility function
+3. They choose change that maximizes utility
+
+**Utility function includes**:
+
+- Structural preferences (transitivity, reciprocity)
+- Attribute preferences (homophily)
+- Costs and benefits
+
+**Software**: RSiena package in R
+
+**Advantage**: Separates selection from influence effects!
+:::
+
+::: {.column width="45%"}
+```{python}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 6
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+import numpy as np
+
+fig, ax = plt.subplots(figsize=(5, 6))
+ax.set_xlim(0, 4)
+ax.set_ylim(0, 7)
+
+# Define box positions and properties
+boxes = [
+    {'pos': (2, 6), 'text': 'Time t', 'color': '#000000', 'shape': 'box'},
+    {'pos': (2, 5), 'text': 'Actor i gets\nopportunity', 'color': '#50C878', 'shape': 'diamond'},
+    {'pos': (2, 4), 'text': 'Evaluate\npotential ties', 'color': '#000000', 'shape': 'box'},
+    {'pos': (2, 3), 'text': 'Calculate\nutility of each', 'color': '#000000', 'shape': 'box'},
+    {'pos': (2, 2), 'text': 'Choose tie\nto add/drop', 'color': '#c41c85', 'shape': 'box'},
+    {'pos': (2, 1), 'text': 'Time t+1', 'color': '#000000', 'shape': 'box'},
+    {'pos': (2, 0.0), 'text': 'Next actor\ngets opportunity', 'color': '#50C878', 'shape': 'diamond'}
+]
+
+# Draw boxes and text
+for box in boxes:
+    x, y = box['pos']
+    
+    # Draw rectangle for all boxes (same width)
+    rect = FancyBboxPatch((x-1.0, y-0.3), 2.0, 0.6, 
+                         boxstyle="round,pad=0.05",
+                         facecolor=box['color'], 
+                         edgecolor='black', linewidth=1)
+    ax.add_patch(rect)
+    
+    # Add text
+    ax.text(x, y, box['text'], ha='center', va='center', 
+           color='white', fontsize=7, fontweight='bold')
+
+# Draw arrows
+arrow_pairs = [(6, 5), (5, 4), (4, 3), (3, 2), (2, 1), (1, 0)]
+for start_y, end_y in arrow_pairs:
+    arrow = FancyArrowPatch((2, start_y-0.2), (2, end_y+0.2),
+                           arrowstyle='->', mutation_scale=15,
+                           color='#808080', linewidth=1.5)
+    ax.add_patch(arrow)
+
+ax.set_aspect('equal')
+ax.axis('off')
+plt.tight_layout()
+plt.show()
+```
+```
+:::
+::::
+
+---
+
+## Comparing Modeling Approaches {.smaller}
+
+| Approach | Time | Question | Strength |
+|----------|------|----------|----------|
+| **ERGM** | Static | What structure? | Multiple mechanisms |
+| **SAOM** | Panel | How does it change? | Selection vs influence |
+| **REM** | Continuous | When do events occur? | Precise timing |
+| **TERGM** | Discrete steps | What changes? | Network evolution |
+
+**Choice depends on**:
+
+- Data structure (cross-sectional vs longitudinal)
+- Research question (structure vs process)
+- Computational resources
+
+---
+
+## Summary: Key Takeaways {.smaller}
+
+1. **Network structure emerges from systematic processes**, not randomness
+
+2. **Dyadic processes** (reciprocity, homophily) explain pairwise connections
+
+3. **Triadic processes** (transitivity, balance) explain local clustering
+
+4. **Statistical tests must account for network dependencies** (permutation, QAP)
+
+5. **ERGMs model network probability** as function of multiple mechanisms
+
+6. **Dynamic models** capture how networks evolve over time
+
+**Next steps**: Applying these models to real data!
+
+---
+
+## Further Reading & Resources {.smaller}
+
+**Core texts**:
+
+- Lusher, Koskinen & Robins (2013). *Exponential Random Graph Models for Social Networks*
+- Snijders, van de Bunt & Steglich (2010). "Introduction to SAOMs"
+- Wasserman & Faust (1994). *Social Network Analysis*
+
+**Software**:
+
+- `statnet` package (R): ERGMs
+- `RSiena` package (R): SAOMs
+- `igraph` package (R/Python): Basic network analysis
+
+**Online resources**: INSNA workshops, Summer institutes

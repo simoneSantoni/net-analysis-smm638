@@ -1,6 +1,7 @@
 ---
 title: "Mid-Term Project"
 subtitle: "Xoxoday.com: Customer Engagement Through Social Media"
+date: "today"
 format: html
 ---
 

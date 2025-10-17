@@ -2,6 +2,7 @@
 title: "Week 10"
 format: html
 subtitle: "Network position and performance - case discussion"
+date: "today"
 callout-appearance: default
 ---
 

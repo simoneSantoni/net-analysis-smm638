@@ -2,10 +2,79 @@
 title: "Week 4"
 format: html
 subtitle: "Dyads, triads, and network dynamics"
+date: "today"
 callout-appearance: "default"
 ---
 
+## Prepare
+
 ::: {.callout-note}
-Content coming soon.
+## 📚
+
+📖 Revise the [syllabus](../../course/syllabus.qmd)
+
+📖 Revise key network concepts [notes](../week-1/network_terms.qmd) (from
+week 1) and [slideshow](../week-2/slideshow_3.html) (from week 2)
+
+📖 Read [Empirical Analysis of an Evolving Social Network](https://go.exlibris.link/ls4pB53Y)
+
+:::
+
+## Participate
+
+::: {.callout-note}
+## 👥
+
+📉 Slideshow:
+
+[Dyads, triads, and network effects](slideshow.qmd)
+
+:::
+
+## Practice
+
+::: {.callout-note}
+## 💻
+
+🧮 [Measuring dyadic processes](practice_1.qmd)
+
+🧮 [Measuring triadic processes](practice_2.qmd)
+
+:::
+
+## Perform
+
+::: {.callout-note}
+## 📝
+
+This week, we will **not** work on real world business problems and datasets.
+
+:::
+
+## Ponder
+
+::: {.callout-note}
+## 🤔
+
+**Dyadic and Triadic Structure**
+
+Chapter 13 ("Dyads") and 14 ("Triads") from Wasserman, S., & Faust K.
+(1994). [**Social Network Analysis**](https://go.exlibris.link/rW0j0hZX). Cambridge University Press.
+
+Chapter 7 ("Dyads and Triads") from Rawlings C. et al. (2023). [**Online
+Appendix to Network Analysis: Integrating Social Network Theory, Method, and
+Application with R**](https://inarwhal.github.io/NetworkAnalysisR-book/)
+Cambridge University Press.
+
+**Exponential Random Graph Models**
+
+Chapter 33 ("Random Graph Models") from Levey et al. (2024). [**The Sage
+Handbook of Social Network Analysis**](https://go.exlibris.link/xdR3Hpkn).
+Sage.
+
+**Network Dynamics**
+
+Chapter 34 ("Network Dynamics") from McLevey et al. (2024). [**The Sage
+Handbook od Social Network Analysis**](https://go.exlibris.link/xdR3Hpkn).
 
 :::

@@ -1,5 +1,6 @@
 ---
 title: "Course Support"
+date: "today"
 format: html
 ---
 

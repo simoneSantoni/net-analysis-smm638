@@ -71,9 +71,10 @@ quarto preview
 **Deploy to GitHub Pages**:
 Push to the `master` branch triggers automatic deployment via GitHub Actions (`.github/workflows/quarto-publish.yml`). The workflow:
 1. Checks out the repository
-2. Sets up Quarto
-3. Renders the website from `website/` directory
-4. Deploys to GitHub Pages
+2. Sets up R 4.3.0 and system dependencies
+3. Installs TinyTeX for PDF rendering
+4. Renders the website from `website/` directory
+5. Deploys to GitHub Pages
 
 Alternatively, manually trigger the workflow:
 ```bash
@@ -202,6 +203,11 @@ Modify these files to change colors, fonts, layout, etc. Changes apply across th
 **Trigger**: Push to `master` branch or manual workflow dispatch
 
 **Key configuration**:
+- Uses R version 4.3.0
+- Installs system dependencies for R graphics (libcurl, libfontconfig, etc.)
+- Sets up TinyTeX for PDF rendering (needed for syllabus)
+- Caches R packages for faster builds
+- 20-minute timeout for rendering
 - Renders from `website/` directory (not root)
 - Uploads `website/_site` as artifact
 - Deploys using `actions/deploy-pages@v4`
@@ -209,8 +215,9 @@ Modify these files to change colors, fonts, layout, etc. Changes apply across th
 
 ## Important Notes
 
-- **Week 6 bug**: In `_quarto.yml` line 73, "Week 6" incorrectly links to `weeks/week-5/main.qmd` (should be `week-6`)
+- **Week 6 bug**: In `_quarto.yml` line 71, "Week 6" incorrectly links to `weeks/week-5/main.qmd` (should be `week-6`)
 - **Content location**: All new content goes in `website/` subdirectories, not root-level directories
 - **Static assets**: Images go in `website/imgs/`, site-wide libraries in `website/site_libs/`
 - **PDF downloads**: Must be placed in corresponding `website/` directory to be accessible on the published site
 - **Quarto rendering**: Always run from `website/` directory, not repository root
+- **Data directory**: Network datasets are stored in root `/data/` directory with subdirectories for different sources

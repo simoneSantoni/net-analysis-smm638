@@ -2,6 +2,7 @@
 title: "Final Course Project"
 format: html
 subtitle: "Individual Network Analysis Research"
+date: "today"
 ---
 
 

@@ -2,6 +2,7 @@
 title: "Week 3"
 format: html
 subtitle: "Network centrality - case discussion"
+date: "today"
 callout-appearance: "default"
 ---
 

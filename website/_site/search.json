@@ -165,7 +165,7 @@
     "href": "weeks/week-2/main.html#perform",
     "title": "Week 2",
     "section": "Perform",
-    "text": "Perform\n\n\n\n\n\n\n📝\n\n\n\n✏️ Compute network centrality indicators on a toy network dataset\n✏️ Wikipedia Vote Network",
+    "text": "Perform\n\n\n\n\n\n\n📝\n\n\n\n✏️ Compute network centrality indicators on a toy network dataset\n✏️ Wikipedia Vote Network - Available in both R and Python versions",
     "crumbs": [
       "Weekly materials",
       "Week 2"
@@ -512,50 +512,50 @@
     "objectID": "weeks/week-3/qualitative_discussion.html#the-strategic-context",
     "href": "weeks/week-3/qualitative_discussion.html#the-strategic-context",
     "title": "Who is the Right Influencer?",
-    "section": "",
-    "text": "Company Background\n\nSmall gaming company in Singapore\nLaunching “Thrive in Space 5” (5th version)\nTarget: Gamers aged 16-25\nCampaign: “Thrive to Survive” on Twitch\nTimeline: 1 month to launch\n\nCMO Tina Lohn’s Dilemma\nThree critical questions facing senior management:\n\nSelection: Which influencers should we choose?\nJustification: How do we prove ROI to leadership?\nMethodology: What metrics actually matter?\n\n\n\n\n\n\n\n\n\nThe Core Problem\n\n\n\nFollower count alone is misleading\nTraditional metrics don’t reveal:\n\nWho influences other influencers?\nWho bridges multiple communities?\nWho has authentic audience engagement?\nWho aligns with brand values?\n\n\n\n\n\n\n\n\n\nWhy This Matters\n\n\n\nFailed influencer campaigns often result from poor selection, regardless of budget size"
+    "section": "The Strategic Context",
+    "text": "The Strategic Context\n\n\nSpace Games Inc.’s Challenge\nCompany Background\n\nSmall gaming company in Singapore\nLaunching “Thrive in Space 5” (5th version)\nTarget: Gamers aged 16-25\nCampaign: “Thrive to Survive” on Twitch\nTimeline: 1 month to launch\n\nCMO Tina Lohn’s Dilemma\nThree critical questions facing senior management:\n\nSelection: Which influencers should we choose?\nJustification: How do we prove ROI to leadership?\nMethodology: What metrics actually matter?\n\n\n\n\n\nThe Core Problem\n\n\nFollower count alone is misleading\nTraditional metrics don’t reveal:\n\nWho influences other influencers?\nWho bridges multiple communities?\nWho has authentic audience engagement?\nWho aligns with brand values?\n\n\n\n\n\n\n\n\n\n\nWhy This Matters\n\n\nFailed influencer campaigns often result from poor selection, regardless of budget size"
   },
   {
     "objectID": "weeks/week-3/qualitative_discussion.html#understanding-twitchs-unique-value",
     "href": "weeks/week-3/qualitative_discussion.html#understanding-twitchs-unique-value",
     "title": "Who is the Right Influencer?",
     "section": "Understanding Twitch’s Unique Value",
-    "text": "Understanding Twitch’s Unique Value\n\nWhy Twitch for Gaming Products?\n\n\n\nPlatform Characteristics\nLive Streaming Advantage\n\nReal-time product demonstrations\nAuthentic, unscripted reactions\nHigh interactivity (chat features)\nCommunity trust and credibility\n\nAudience Demographics\n\n73% aged 16-34 (perfect fit!)\n65% male, 35% female\nGaming-focused community\nHigh engagement rates\n\nMonetization Ready\n\nAffiliate program structure\nSubscription revenue models\nDonation capabilities\nProfessional content creators\n\n\n\n\nNetwork Structure Insights\nKey Finding: Network is dense with distinct super-users\n\nAverage followers: 6.22 per user\nMaximum followers: 465 (User 4949)\nDistribution highly skewed\nSub-communities within larger network\n\nStrategic Implications:\n\nFew users have outsized influence\nCommunities cluster around topics\nInformation spreads through hubs\nSuper-users bridge multiple groups\n\n\n\n\n\n\n\nBusiness Opportunity\n\n\n\nSelect influencers who are well-connected within the network, not just those with high follower counts"
+    "text": "Understanding Twitch’s Unique Value\nWhy Twitch for Gaming Products?\n\n\nPlatform Characteristics\nLive Streaming Advantage\n\nReal-time product demonstrations\nAuthentic, unscripted reactions\nHigh interactivity (chat features)\nCommunity trust and credibility\n\nAudience Demographics\n\n73% aged 16-34 (perfect fit!)\n65% male, 35% female\nGaming-focused community\nHigh engagement rates\n\nMonetization Ready\n\nAffiliate program structure\nSubscription revenue models\nDonation capabilities\nProfessional content creators\n\n\nNetwork Structure Insights\nKey Finding: Network is dense with distinct super-users\n\nAverage followers: 6.22 per user\nMaximum followers: 465 (User 4949)\nDistribution highly skewed\nSub-communities within larger network\n\nStrategic Implications:\n\nFew users have outsized influence\nCommunities cluster around topics\nInformation spreads through hubs\nSuper-users bridge multiple groups\n\n\n\n\n\n\n\nBusiness Opportunity\n\n\nSelect influencers who are well-connected within the network, not just those with high follower counts"
   },
   {
     "objectID": "weeks/week-3/qualitative_discussion.html#strategic-selection-framework",
     "href": "weeks/week-3/qualitative_discussion.html#strategic-selection-framework",
     "title": "Who is the Right Influencer?",
     "section": "Strategic Selection Framework",
-    "text": "Strategic Selection Framework\n\nMoving Beyond Simple Metrics\n\n\n\n\n\n\nCritical Business Insight\n\n\n\nNetwork position matters more than network size\nAn influencer connected to other influential users has multiplier effects that raw follower count misses\n\n\n\n\nThree-Stage Selection Process\n\nStage 1: Apply Business FiltersStage 2: Network AnalysisStage 3: Qualitative Validation\n\n\nRemove Misaligned Candidates\n✗ Mature Content Channels\n\nNot age-appropriate for 16+ game\nBrand safety concerns\nReduced candidate pool by 55%\n\n✓ Require Affiliate Status\n\nProfessional monetization capability\nExperience with sponsored content\nFTC disclosure compliance\nOnly 5% of streamers qualify\n\nResult: Initial filtering based on business requirements, not just network metrics\n\n\nIdentify True Influencers\nFocus on two key dimensions:\nEigenvector Centrality (High)\n\nConnected to other influential streamers\nMessage spreads through important nodes\nAccess to influential audiences\nBusiness Value: Credibility by association\n\nBetweenness Centrality (High)\n\nBridges multiple gaming communities\nFacilitates cross-community reach\nInformation gatekeeper role\nBusiness Value: Broader market penetration\n\nIdeal Quadrant: High Eigenvector + High Betweenness\n\n\nProfile Checks for Final Selection\nGenre Alignment\n\nPlays games similar to Thrive in Space?\nSpace/strategy game background?\nAudience interested in multiplayer games?\n\nContent Style\n\nMulti-game streamers (more credible)\nProfessional streaming quality\nPositive community management\nConsistent schedule\n\nAuthenticity Markers\n\nGenuine enthusiasm for games\nNo controversial associations\nValues align with Space Games Inc.\nHistory of successful partnerships\n\nFinal Selection: Choose 3 influencers from different communities"
+    "text": "Strategic Selection Framework\nMoving Beyond Simple Metrics\n\n\n\nCritical Business Insight\n\n\nNetwork position matters more than network size\nAn influencer connected to other influential users has multiplier effects that raw follower count misses\n\n\n\nThree-Stage Selection Process\n\nStage 1: Apply Business FiltersStage 2: Network AnalysisStage 3: Qualitative Validation\n\n\nRemove Misaligned Candidates\n✗ Mature Content Channels\n\nNot age-appropriate for 16+ game\nBrand safety concerns\nReduced candidate pool by 55%\n\n✓ Require Affiliate Status\n\nProfessional monetization capability\nExperience with sponsored content\nFTC disclosure compliance\nOnly 5% of streamers qualify\n\nResult: Initial filtering based on business requirements, not just network metrics\n\n\nIdentify True Influencers\nFocus on two key dimensions:\nEigenvector Centrality (High)\n\nConnected to other influential streamers\nMessage spreads through important nodes\nAccess to influential audiences\nBusiness Value: Credibility by association\n\nBetweenness Centrality (High)\n\nBridges multiple gaming communities\nFacilitates cross-community reach\nInformation gatekeeper role\nBusiness Value: Broader market penetration\n\nIdeal Quadrant: High Eigenvector + High Betweenness\n\n\nProfile Checks for Final Selection\nGenre Alignment\n\nPlays games similar to Thrive in Space?\nSpace/strategy game background?\nAudience interested in multiplayer games?\n\nContent Style\n\nMulti-game streamers (more credible)\nProfessional streaming quality\nPositive community management\nConsistent schedule\n\nAuthenticity Markers\n\nGenuine enthusiasm for games\nNo controversial associations\nValues align with Space Games Inc.\nHistory of successful partnerships\n\nFinal Selection: Choose 3 influencers from different communities"
   },
   {
     "objectID": "weeks/week-3/qualitative_discussion.html#roi-framework",
     "href": "weeks/week-3/qualitative_discussion.html#roi-framework",
     "title": "Who is the Right Influencer?",
     "section": "ROI Framework",
-    "text": "ROI Framework\n\n\n\nBuilding the Financial Case\n\nRevenue Calculation\n\n\n\n\n\n\nRevenue Formula (Simplified)\n\n\n\nRevenue = Price × (Direct Reach + Indirect Reach) × Conversion Uplift\nE.g.:\n\nPrice: $29.99 per game\nDirect Reach: Influencer’s followers\nIndirect Reach: Network effect (2-3x)\nConversion Uplift: 0.04% above baseline\n\n\n\n\n\n\n\nCost Components\n\nDirect Costs\nInfluencer Fees\n\n$500-5,000 per stream\nBased on follower count & engagement\nPerformance bonuses possible\n\nProduct Costs\n\nFree game copies for influencers\nDiscount codes (reduced margins)\nShipping/digital delivery costs\n\n\n\nIndirect Costs\nCampaign Management\n\nStaff time for coordination\nContent creation support\nPerformance monitoring\n\nLegal & Compliance\n\nContract preparation\nFTC disclosure requirements\nRights management"
+    "text": "ROI Framework\n\n\nBuilding the Financial Case\nRevenue Calculation\n\n\n\nRevenue Formula (Simplified)\n\n\nRevenue = Price × (Direct Reach + Indirect Reach) × Conversion Uplift\nE.g.:\n\nPrice: $29.99 per game\nDirect Reach: Influencer’s followers\nIndirect Reach: Network effect (2-3x)\nConversion Uplift: 0.04% above baseline\n\n\n\n\n\nCost Components\nDirect Costs\nInfluencer Fees\n\n$500-5,000 per stream\nBased on follower count & engagement\nPerformance bonuses possible\n\nProduct Costs\n\nFree game copies for influencers\nDiscount codes (reduced margins)\nShipping/digital delivery costs\n\nIndirect Costs\nCampaign Management\n\nStaff time for coordination\nContent creation support\nPerformance monitoring\n\nLegal & Compliance\n\nContract preparation\nFTC disclosure requirements\nRights management"
   },
   {
     "objectID": "weeks/week-3/qualitative_discussion.html#beyond-roi-strategic-value",
     "href": "weeks/week-3/qualitative_discussion.html#beyond-roi-strategic-value",
     "title": "Who is the Right Influencer?",
     "section": "Beyond ROI: Strategic Value",
-    "text": "Beyond ROI: Strategic Value\n\n\n\nLong-term Business Value\n\nBrand Building Impact\nMarket Positioning\n\nExposure to core gaming demographic\nAssociation with trusted community voices\nCategory leadership opportunities\n\nSocial Proof Generation\n\nThird-party validation of game quality\nAuthentic viewer testimonials\nUser-generated content creation\n\nCommunity Development\n\nOngoing player engagement\nFoundation for future launches\nLoyalty program opportunities\n\n\n\n\n\n\n\nStrategic Insight\n\n\n\nInitial campaigns create lasting relationships that benefit future product launches\n\n\n\n\n\n\nRisk Mitigation Framework\n\nKey Risk Factors\n\n\n\n\n\n\nBrand Alignment Risks\n\n\n\nPotential Issues\n\nInfluencer controversy\nAudience backlash\nValues misalignment\n\nMitigation Strategy\n\nThorough background checks\nPerformance-based contracts\nCrisis response planning\n\n\n\n\n\nPortfolio Approach Benefits\nRisk Diversification\n\nSelect 3 influencers from different communities\nMinimize single-point-of-failure\nTest different messaging approaches\n\nLearning Opportunities\n\nA/B test content strategies\nIdentify best-performing segments\nOptimize future campaigns"
+    "text": "Beyond ROI: Strategic Value\n\n\nLong-term Business Value\nBrand Building Impact\nMarket Positioning\n\nExposure to core gaming demographic\nAssociation with trusted community voices\nCategory leadership opportunities\n\nSocial Proof Generation\n\nThird-party validation of game quality\nAuthentic viewer testimonials\nUser-generated content creation\n\nCommunity Development\n\nOngoing player engagement\nFoundation for future launches\nLoyalty program opportunities\n\n\n\n\n\n\n\nStrategic Insight\n\n\nInitial campaigns create lasting relationships that benefit future product launches\n\n\n\n\nRisk Mitigation Framework\nKey Risk Factors\n\n\n\n\n\n\nBrand Alignment Risks\n\n\nPotential Issues\n\nInfluencer controversy\nAudience backlash\nValues misalignment\n\nMitigation Strategy\n\nThorough background checks\nPerformance-based contracts\nCrisis response planning\n\n\n\n\nPortfolio Approach Benefits\nRisk Diversification\n\nSelect 3 influencers from different communities\nMinimize single-point-of-failure\nTest different messaging approaches\n\nLearning Opportunities\n\nA/B test content strategies\nIdentify best-performing segments\nOptimize future campaigns"
   },
   {
     "objectID": "weeks/week-3/qualitative_discussion.html#strategic-lessons-implementation",
     "href": "weeks/week-3/qualitative_discussion.html#strategic-lessons-implementation",
     "title": "Who is the Right Influencer?",
     "section": "Strategic Lessons & Implementation",
-    "text": "Strategic Lessons & Implementation\n\nKey Business Takeaways\n\n\n\n\n\n\n\n\n1. Systematic Beats Intuitive\n\n\n\nTraditional Approach (Avoid)\n\nSelect by follower count\nChoose recognizable names\nRely on personal connections\n\nNetwork-Informed Approach (Adopt)\n\nAnalyze network position\nConsider multiple centrality measures\nBalance reach with influence\nValidate with qualitative checks\n\nBusiness Impact:\n\nHigher conversion rates\nLower risk of mismatch\nBetter ROI per dollar spent\n\n\n\n\n\n\n\n\n\n2. Authenticity Cannot Be Faked\n\n\n\nCase Evidence from Teaching Note\n❌ Pepsi/Kendall Jenner - Tone-deaf messaging\n❌ Bud Light Controversy - Poor influencer fit\n❌ Genre Misalignment - Audience skepticism\n✓ Successful Patterns\n\nInfluencer genuinely plays similar games\nNatural fit with brand values\nAudience already interested in genre\nHistory of authentic endorsements\n\nBusiness Impact: Protects brand reputation\n\n\n\n\n\n\n\n\n\n3. Community Diversity Multiplies Reach\n\n\n\nStrategic Rationale\nSelect from different network communities:\n\nCommunity A: Space strategy gamers\nCommunity B: Multiplayer enthusiasts\n\nCommunity C: Building/simulation fans\n\nBenefits:\n\nMinimize audience overlap\nCross-pollinate messages\nReach broader market segments\nA/B test different approaches\n\nBusiness Impact: Maximum reach per dollar\n\n\n\n\n\n\n\n\n4. Performance-Based Alignment\n\n\n\nContract Structure Recommendation\nAvoid: Pure flat fee arrangements\nPrefer: Hybrid performance model\n\nBase fee: $300-500\nPerformance bonus: 10-15% of attributed sales\nUnique discount codes for tracking\nMilestone bonuses for engagement\n\nWhy This Works:\n\nAligns influencer incentives\nReduces downside risk\nEasier ROI justification\nMotivates authentic promotion\n\nBusiness Impact: Better campaign outcomes"
+    "text": "Strategic Lessons & Implementation\nKey Business Takeaways\n\n\n\n\n\n1. Systematic Beats Intuitive\n\n\nTraditional Approach (Avoid)\n\nSelect by follower count\nChoose recognizable names\nRely on personal connections\n\nNetwork-Informed Approach (Adopt)\n\nAnalyze network position\nConsider multiple centrality measures\nBalance reach with influence\nValidate with qualitative checks\n\nBusiness Impact:\n\nHigher conversion rates\nLower risk of mismatch\nBetter ROI per dollar spent\n\n\n\n\n\n\n\n2. Authenticity Cannot Be Faked\n\n\nCase Evidence from Teaching Note\n❌ Pepsi/Kendall Jenner - Tone-deaf messaging\n❌ Bud Light Controversy - Poor influencer fit\n❌ Genre Misalignment - Audience skepticism\n✓ Successful Patterns\n\nInfluencer genuinely plays similar games\nNatural fit with brand values\nAudience already interested in genre\nHistory of authentic endorsements\n\nBusiness Impact: Protects brand reputation\n\n\n\n\n\n\n\n3. Community Diversity Multiplies Reach\n\n\nStrategic Rationale\nSelect from different network communities:\n\nCommunity A: Space strategy gamers\nCommunity B: Multiplayer enthusiasts\n\nCommunity C: Building/simulation fans\n\nBenefits:\n\nMinimize audience overlap\nCross-pollinate messages\nReach broader market segments\nA/B test different approaches\n\nBusiness Impact: Maximum reach per dollar\n\n\n\n\n\n\n4. Performance-Based Alignment\n\n\nContract Structure Recommendation\nAvoid: Pure flat fee arrangements\nPrefer: Hybrid performance model\n\nBase fee: $300-500\nPerformance bonus: 10-15% of attributed sales\nUnique discount codes for tracking\nMilestone bonuses for engagement\n\nWhy This Works:\n\nAligns influencer incentives\nReduces downside risk\nEasier ROI justification\nMotivates authentic promotion\n\nBusiness Impact: Better campaign outcomes"
   },
   {
     "objectID": "weeks/week-3/qualitative_discussion.html#the-success-formula",
     "href": "weeks/week-3/qualitative_discussion.html#the-success-formula",
     "title": "Who is the Right Influencer?",
     "section": "The Success Formula",
-    "text": "The Success Formula\n\n\n\n\n\n\nBottom Line for Space Games Inc.\n\n\n\nInfluencer Marketing Success Requires:\n\nData-Driven Selection - Network analysis identifies hidden influence\nStrategic Thinking - Brand fit and community diversity matter\nDisciplined Execution - Performance contracts and active management\nContinuous Learning - Measure, adapt, and optimize\n\nThe combination of network science and business judgment creates sustainable competitive advantage in the gaming market."
+    "text": "The Success Formula\n\n\n\n\n\n\nBottom Line for Space Games Inc.\n\n\nInfluencer Marketing Success Requires:\n\nData-Driven Selection - Network analysis identifies hidden influence\nStrategic Thinking - Brand fit and community diversity matter\nDisciplined Execution - Performance contracts and active management\nContinuous Learning - Measure, adapt, and optimize\n\nThe combination of network science and business judgment creates sustainable competitive advantage in the gaming market."
   },
   {
     "objectID": "weeks/week-3/perform.html",
@@ -969,7 +969,7 @@
     "href": "weeks/week-4/main.html",
     "title": "Week 4",
     "section": "",
-    "text": "Note\n\n\n\nContent coming soon.",
+    "text": "📚\n\n\n\n📖 Revise the syllabus\n📖 Revise key network concepts notes (from week 1) and slideshow (from week 2)\n📖 Read Empirical Analysis of an Evolving Social Network",
     "crumbs": [
       "Weekly materials",
       "Week 4"
@@ -1443,7 +1443,7 @@
     "href": "project/midTermProject/main.html",
     "title": "Mid-Term Project",
     "section": "",
-    "text": "The mid-term project is a group assignment that requires you to apply network analysis methodologies to solve a real business problem. You will work with the case study “Xoxoday.com: Customer Engagement Through Social Media” to demonstrate your understanding of network concepts and analytical techniques.\n\n\n\n\n\n\nKey Information\n\n\n\n\nGroup Size: 3-4 students per group\nDue Date: November 10, 2025\nPresentation: November 12, 2025\nWeight: 40% of final grade",
+    "text": "The mid-term project is a group assignment that requires you to apply network analysis methodologies to solve a real business problem. You will work with the case study “Xoxoday.com: Customer Engagement Through Social Media” to demonstrate your understanding of network concepts and analytical techniques.\n\n\n\n\n\n\nKey Information\n\n\n\n\nGroup Size: 3-4 students per group\nDue Date: November 10, 2025\nPresentation: November 12, 2025\nWeight: 50% of final grade",
     "crumbs": [
       "Project",
       "Mid-term project"
@@ -1639,7 +1639,7 @@
     "href": "project/midTermProject/main.html#project-overview",
     "title": "Mid-Term Project",
     "section": "",
-    "text": "The mid-term project is a group assignment that requires you to apply network analysis methodologies to solve a real business problem. You will work with the case study “Xoxoday.com: Customer Engagement Through Social Media” to demonstrate your understanding of network concepts and analytical techniques.\n\n\n\n\n\n\nKey Information\n\n\n\n\nGroup Size: 3-4 students per group\nDue Date: November 10, 2025\nPresentation: November 12, 2025\nWeight: 40% of final grade",
+    "text": "The mid-term project is a group assignment that requires you to apply network analysis methodologies to solve a real business problem. You will work with the case study “Xoxoday.com: Customer Engagement Through Social Media” to demonstrate your understanding of network concepts and analytical techniques.\n\n\n\n\n\n\nKey Information\n\n\n\n\nGroup Size: 3-4 students per group\nDue Date: November 10, 2025\nPresentation: November 12, 2025\nWeight: 50% of final grade",
     "crumbs": [
       "Project",
       "Mid-term project"
@@ -2172,5 +2172,564 @@
       "Project",
       "Mid-term project"
     ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#prepare",
+    "href": "weeks/week-4/main.html#prepare",
+    "title": "Week 4",
+    "section": "",
+    "text": "📚\n\n\n\n📖 Revise the syllabus\n📖 Revise key network concepts notes (from week 1) and slideshow (from week 2)\n📖 Read Empirical Analysis of an Evolving Social Network",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#participate",
+    "href": "weeks/week-4/main.html#participate",
+    "title": "Week 4",
+    "section": "Participate",
+    "text": "Participate\n\n\n\n\n\n\n👥\n\n\n\n📉 Slideshow:\nDyads, triads, and network effects",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#practice",
+    "href": "weeks/week-4/main.html#practice",
+    "title": "Week 4",
+    "section": "Practice",
+    "text": "Practice\n\n\n\n\n\n\n💻\n\n\n\n🧮 Measuring dyadic processes\n🧮 Measuring triadic processes",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#perform",
+    "href": "weeks/week-4/main.html#perform",
+    "title": "Week 4",
+    "section": "Perform",
+    "text": "Perform\n\n\n\n\n\n\n📝\n\n\n\nThis week, we will not work on real world business problems and datasets.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#ponder",
+    "href": "weeks/week-4/main.html#ponder",
+    "title": "Week 4",
+    "section": "Ponder",
+    "text": "Ponder\n\n\n\n\n\n\n🤔\n\n\n\nDyadic and Triadic Structure\nChapter 13 (“Dyads”) and 14 (“Triads”) from Wasserman, S., & Faust K. (1994). Social Network Analysis. Cambridge University Press.\nChapter 7 (“Dyads and Triads”) from Rawlings C. et al. (2023). Online Appendix to Network Analysis: Integrating Social Network Theory, Method, and Application with R Cambridge University Press.\nExponential Random Graph Models\nChapter 33 (“Random Graph Models”) from Levey et al. (2024). The Sage Handbook of Social Network Analysis. Sage.\nNetwork Dynamics\nChapter 34 (“Network Dynamics”) from McLevey et al. (2024). The Sage Handbook od Social Network Analysis.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#week-4-overview",
+    "href": "weeks/week-4/slideshow.html#week-4-overview",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Week 4 Overview",
+    "text": "Week 4 Overview\nKey Questions:\n\nWhy do networks look the way they look?\nWhat processes generate network structures?\nHow can we test for and model these processes?\n\nTopics:\n\nTaxonomy of network formation mechanisms\nDyadic and triadic processes\nStatistical tests for network effects\nExponential Random Graph Models (ERGMs)\nNetwork dynamics"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#why-do-networks-look-the-way-they-look",
+    "href": "weeks/week-4/slideshow.html#why-do-networks-look-the-way-they-look",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Why Do Networks Look the Way They Look?",
+    "text": "Why Do Networks Look the Way They Look?\n\n\nNetworks are not random - they exhibit consistent structural patterns:\n\nClustering: Friends of friends tend to be friends\nDegree heterogeneity: Some nodes have many connections, others few\nAssortativity: Similar nodes connect more often\nSmall world: Short path lengths despite local clustering\n\nCentral Question: What social, biological, or physical processes create these patterns?\n\n\n\n\n\n\n\n\n\n\nTypical network: hubs, clusters, paths"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#the-formation-question",
+    "href": "weeks/week-4/slideshow.html#the-formation-question",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "The Formation Question",
+    "text": "The Formation Question\nTwo complementary perspectives:\n\nStructural mechanisms: Network topology drives new connections\n\nExample: Triadic closure creates clusters\n\nAttribute-based mechanisms: Node characteristics drive connections\n\nExample: Homophily - similarity breeds connection\n\n\nChallenge: Disentangling these effects requires sophisticated statistical models"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#taxonomy-of-network-effects",
+    "href": "weeks/week-4/slideshow.html#taxonomy-of-network-effects",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Taxonomy of Network Effects",
+    "text": "Taxonomy of Network Effects\nMajor categories of network formation processes:\n\n\n\nCategory\nDescription\nExample\n\n\n\n\nDyadic\nTwo-node processes\nHomophily, reciprocity\n\n\nTriadic\nThree-node processes\nTransitivity, balance\n\n\nHigher-order\nFour+ node processes\nK-cores, cliques\n\n\nNode-level\nIndividual preferences\nPreferential attachment\n\n\nExogenous\nExternal factors\nGeography, institutions"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#endogenous-vs-exogenous-effects",
+    "href": "weeks/week-4/slideshow.html#endogenous-vs-exogenous-effects",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Endogenous vs Exogenous Effects",
+    "text": "Endogenous vs Exogenous Effects\n\n\nEndogenous effects: Network structure influences new ties\n\nSelf-reinforcing processes\nExamples: Transitivity, preferential attachment\n\nExogenous effects: External attributes influence ties\n\nIndependent of current network structure\nExamples: Demographic homophily, spatial proximity\n\nKey insight: Real networks result from interplay of both!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#dyadic-processes-definition",
+    "href": "weeks/week-4/slideshow.html#dyadic-processes-definition",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Dyadic Processes: Definition",
+    "text": "Dyadic Processes: Definition\n\n\nDyadic processes operate on pairs of nodes (dyads)\nA dyad can be in three states:\n\nNull: No connection (i → j and j → i both absent)\nAsymmetric: One-way connection (i → j OR j → i)\nMutual: Two-way connection (i → j AND j → i)\n\nDyadic processes explain why specific pairs of nodes connect"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#dyadic-process-reciprocity",
+    "href": "weeks/week-4/slideshow.html#dyadic-process-reciprocity",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Dyadic Process: Reciprocity",
+    "text": "Dyadic Process: Reciprocity\n\n\nDefinition: The tendency for directed edges to be reciprocated\nMechanism: If i → j exists, j → i becomes more likely\nExamples:\n\nSocial media: You follow back those who follow you\nCollaboration: Co-authorship often becomes bidirectional\nTrade: Countries with import relationships develop export relationships\n\nStatistical signature: Higher proportion of mutual dyads than expected by chance"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#dyadic-process-homophily",
+    "href": "weeks/week-4/slideshow.html#dyadic-process-homophily",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Dyadic Process: Homophily",
+    "text": "Dyadic Process: Homophily\n\n\nDefinition: “Similarity breeds connection” - nodes with similar attributes connect more\nTypes:\n\nDemographic: Age, gender, ethnicity\nBehavioral: Interests, activities\nStatus: Education, occupation\n\nFormula: P(edge|similar) &gt; P(edge|dissimilar)\nEmpirical Evidence:\n\nWikipedia editors (Crandall et al., 2008): Editors with similar editing patterns more likely to communicate\nUniversity email network (Kossinets & Watts, 2006): Students taking same classes form connections at higher rates"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#dyadic-process-homophily-vs-selection",
+    "href": "weeks/week-4/slideshow.html#dyadic-process-homophily-vs-selection",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Dyadic Process: Homophily vs Selection",
+    "text": "Dyadic Process: Homophily vs Selection\nCritical distinction:\n\nSelection (homophily): Similar people connect\nInfluence: Connected people become similar\n\nProblem: Observational data shows correlation, not causation!\nEmpirical example - Wikipedia editors (Crandall et al., 2008):\n\nTracked similarity over time relative to first communication\nBefore contact: Rapid increase in similarity (selection)\nAfter contact: Continued slower increase (influence)\nBoth processes operate simultaneously!\n\nSolutions:\n\nLongitudinal data tracking changes over time\nStatistical models that separate effects (e.g., SAOMs)\nNatural experiments"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#other-dyadic-processes",
+    "href": "weeks/week-4/slideshow.html#other-dyadic-processes",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Other Dyadic Processes",
+    "text": "Other Dyadic Processes\n\n\nHeterophily: Attraction to difference (opposite of homophily)\n\nExample: Dating networks, mentor-mentee relationships\n\nDistance/Geography: Physical proximity increases connection probability\n\nExample: Friendship networks, communication patterns\n\nStatus homophily: Nodes connect within same status level\n\nExample: Corporate networks, academic citations\n\nResource exchange: Complementary needs drive connections\n\nExample: Economic networks, mutualistic relationships"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-processes-definition",
+    "href": "weeks/week-4/slideshow.html#triadic-processes-definition",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Triadic Processes: Definition",
+    "text": "Triadic Processes: Definition\n\n\nTriadic processes involve three nodes forming triangles\nKey configurations:\n\nOpen triad: A-B, B-C exist but A-C absent\nClosed triad (triangle): A-B, B-C, and A-C all exist\n\nCore insight: The presence of two edges affects the probability of the third"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-process-transitivity",
+    "href": "weeks/week-4/slideshow.html#triadic-process-transitivity",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Triadic Process: Transitivity",
+    "text": "Triadic Process: Transitivity\n\n\nDefinition: “Friends of friends become friends”\nMechanism: If A→B and B→C, then A→C becomes more likely\nAlso called: Triadic closure, clustering\nExamples:\n\nSocial networks: Introduced through mutual friends\nAcademic collaboration: Co-authors of co-authors collaborate\nProtein networks: Proteins interacting with same partner interact\n\nMeasurement: Clustering coefficient, transitivity ratio"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-process-balance-theory",
+    "href": "weeks/week-4/slideshow.html#triadic-process-balance-theory",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Triadic Process: Balance Theory",
+    "text": "Triadic Process: Balance Theory\n\n\nStructural balance (Heider, 1946): Cognitive consistency in signed networks\nBalanced triangles (all relationships consistent):\n\n+++: Three mutual friends (stable)\n+–: Two enemies share a common enemy (stable)\n\nUnbalanced triangles (tension):\n\n++-: Friend of friend is enemy (unstable)\n—: Three mutual enemies (unstable)\n\nPrediction: Networks evolve toward balanced states"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-configurations-in-directed-networks",
+    "href": "weeks/week-4/slideshow.html#triadic-configurations-in-directed-networks",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Triadic Configurations in Directed Networks",
+    "text": "Triadic Configurations in Directed Networks\n\n\n16 possible triadic configurations (triads census):\nKey patterns:\n\n003: Empty (no edges)\n012: One edge only\n102: Two edges, no transitivity\n030T: Transitive triple\n300: Complete triangle\n\nDifferent processes favor different configurations\nEach tells us something about network formation mechanisms!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-process-cyclicity-vs-transitivity",
+    "href": "weeks/week-4/slideshow.html#triadic-process-cyclicity-vs-transitivity",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Triadic Process: Cyclicity vs Transitivity",
+    "text": "Triadic Process: Cyclicity vs Transitivity\n\n\nTransitivity: A→B→C implies A→C (hierarchical)\n\nCreates hierarchies, rankings\nExample: Citation networks, food webs\n\nCyclicity: A→B→C implies C→A (circular)\n\nCreates exchange cycles\nExample: Rock-paper-scissors, circular status\n\nDistinction matters for understanding network function!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#statistical-tests-for-network-effects",
+    "href": "weeks/week-4/slideshow.html#statistical-tests-for-network-effects",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Statistical Tests for Network Effects",
+    "text": "Statistical Tests for Network Effects\nChallenge: Network data violates independence assumptions\nClassical approach fails: Standard statistical tests assume independent observations\nSolutions:\n\nPermutation tests: Randomize while preserving structure\nConditional Uniform Graph (CUG) tests: Compare to random graphs\nQuadratic Assignment Procedure (QAP): Correlation with permutation"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#permutation-tests-for-networks",
+    "href": "weeks/week-4/slideshow.html#permutation-tests-for-networks",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Permutation Tests for Networks",
+    "text": "Permutation Tests for Networks\n\n\nLogic:\n\nCalculate observed statistic (e.g., clustering)\nGenerate random networks preserving certain properties\nCalculate statistic on random networks\nCompare: Is observed value extreme?\n\nKey decision: What to preserve when randomizing?\n\nNode degrees?\nNumber of edges?\nDyad distributions?\n\nP-value: Proportion of random networks with more extreme values"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#qap-regression",
+    "href": "weeks/week-4/slideshow.html#qap-regression",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "QAP Regression",
+    "text": "QAP Regression\nQuadratic Assignment Procedure: Test relationship between network matrices\nUse case: Does network Y depend on network X?\nExample: Does friendship (Y) depend on geographic proximity (X)?\nProcedure:\n\nRegress Y on X, get coefficient β\nPermute rows/columns of Y simultaneously\nRepeat regression, get β*\nRepeat 1000+ times\nP-value: proportion where |β*| &gt; |β|\n\nAdvantage: Accounts for network dependencies"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#exponential-random-graph-models-ergms",
+    "href": "weeks/week-4/slideshow.html#exponential-random-graph-models-ergms",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Exponential Random Graph Models (ERGMs)",
+    "text": "Exponential Random Graph Models (ERGMs)\nCore idea: Model probability of observing a network as function of its features\nForm: \\[P(Y = y) = \\frac{1}{\\kappa} \\exp\\left(\\sum_k \\theta_k s_k(y)\\right)\\]\nWhere:\n\n\\(Y\\): Random network\n\\(s_k(y)\\): Network statistics (edges, triangles, etc.)\n\\(\\theta_k\\): Parameters (effects to estimate)\n\\(\\kappa\\): Normalizing constant"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#ergm-intuition",
+    "href": "weeks/week-4/slideshow.html#ergm-intuition",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "ERGM: Intuition",
+    "text": "ERGM: Intuition\nThink of it as logistic regression for networks\nInstead of: P(person votes yes) = f(age, income, …)\nWe have: P(network has this structure) = f(edges, triangles, homophily, …)\nKey insight: Model entire network as outcome, not individual ties\nAdvantages:\n\nTests multiple mechanisms simultaneously\nControls for confounding effects\nProvides effect sizes, not just significance"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#common-ergm-terms",
+    "href": "weeks/week-4/slideshow.html#common-ergm-terms",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Common ERGM Terms",
+    "text": "Common ERGM Terms\n\n\n\nTerm\nEffect\nInterpretation\n\n\n\n\nedges\nDensity\nOverall connection probability\n\n\nmutual\nReciprocity\nTendency for reciprocation\n\n\ntriangle\nTransitivity\nTendency for closure\n\n\nnodematch(\"attr\")\nHomophily\nSame-attribute connection\n\n\nnodecov(\"attr\")\nAttribute effect\nNode attribute influence\n\n\ngwesp\nShared partners\nWeighted transitivity\n\n\n\nModel specification: Choose terms based on theory!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#ergm-interpretation",
+    "href": "weeks/week-4/slideshow.html#ergm-interpretation",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "ERGM: Interpretation",
+    "text": "ERGM: Interpretation\nPositive coefficient (θ &gt; 0): Configuration is more likely than chance\nNegative coefficient (θ &lt; 0): Configuration is less likely than chance\nExample interpretation:\nedges: -2.5    (low baseline density)\nmutual: 1.8    (strong reciprocity)\ntriangle: 0.4  (moderate transitivity)\nnodematch(\"gender\"): 0.6  (gender homophily)\nReading: Controlling for density, reciprocity, and triangles, same-gender ties are more likely"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#ergm-challenges",
+    "href": "weeks/week-4/slideshow.html#ergm-challenges",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "ERGM: Challenges",
+    "text": "ERGM: Challenges\nDegeneracy problem: Some specifications lead to extreme networks\n\nAll edges or no edges\nComplete clustering or no clustering\n\nComputational challenge: Calculating κ is often intractable\nSolutions:\n\nUse geometrically-weighted terms (GWESP, GWDSP)\nMarkov Chain Monte Carlo (MCMC) estimation\nCareful model specification and testing"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#network-dynamics-models",
+    "href": "weeks/week-4/slideshow.html#network-dynamics-models",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Network Dynamics Models",
+    "text": "Network Dynamics Models\nSo far: Models of static networks (single time point)\nReality: Networks evolve over time\nDynamic approaches:\n\nTemporal ERGMs: ERGMs on network changes\nStochastic Actor-Oriented Models (SAOMs): Actor-driven change\nRelational Event Models (REMs): Continuous-time interactions"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#stochastic-actor-oriented-models",
+    "href": "weeks/week-4/slideshow.html#stochastic-actor-oriented-models",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Stochastic Actor-Oriented Models",
+    "text": "Stochastic Actor-Oriented Models\n\n\nKey assumption: Actors make rational decisions about ties\nProcess:\n\nActors get random opportunities to change ties\nThey evaluate potential changes via utility function\nThey choose change that maximizes utility\n\nUtility function includes:\n\nStructural preferences (transitivity, reciprocity)\nAttribute preferences (homophily)\nCosts and benefits\n\nSoftware: RSiena package in R\nAdvantage: Separates selection from influence effects!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#comparing-modeling-approaches",
+    "href": "weeks/week-4/slideshow.html#comparing-modeling-approaches",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Comparing Modeling Approaches",
+    "text": "Comparing Modeling Approaches\n\n\n\nApproach\nTime\nQuestion\nStrength\n\n\n\n\nERGM\nStatic\nWhat structure?\nMultiple mechanisms\n\n\nSAOM\nPanel\nHow does it change?\nSelection vs influence\n\n\nREM\nContinuous\nWhen do events occur?\nPrecise timing\n\n\nTERGM\nDiscrete steps\nWhat changes?\nNetwork evolution\n\n\n\nChoice depends on:\n\nData structure (cross-sectional vs longitudinal)\nResearch question (structure vs process)\nComputational resources"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#summary-key-takeaways",
+    "href": "weeks/week-4/slideshow.html#summary-key-takeaways",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Summary: Key Takeaways",
+    "text": "Summary: Key Takeaways\n\nNetwork structure emerges from systematic processes, not randomness\nDyadic processes (reciprocity, homophily) explain pairwise connections\nTriadic processes (transitivity, balance) explain local clustering\nStatistical tests must account for network dependencies (permutation, QAP)\nERGMs model network probability as function of multiple mechanisms\nDynamic models capture how networks evolve over time\n\nNext steps: Applying these models to real data!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#further-reading-resources",
+    "href": "weeks/week-4/slideshow.html#further-reading-resources",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Further Reading & Resources",
+    "text": "Further Reading & Resources\nCore texts:\n\nLusher, Koskinen & Robins (2013). Exponential Random Graph Models for Social Networks\nSnijders, van de Bunt & Steglich (2010). “Introduction to SAOMs”\nWasserman & Faust (1994). Social Network Analysis\n\nSoftware:\n\nstatnet package (R): ERGMs\nRSiena package (R): SAOMs\nigraph package (R/Python): Basic network analysis\n\nOnline resources: INSNA workshops, Summer institutes"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#empirical-evidence-triadic-focal-closure",
+    "href": "weeks/week-4/slideshow.html#empirical-evidence-triadic-focal-closure",
+    "title": "Network Formation Mechanisms and Models",
+    "section": "Empirical Evidence: Triadic & Focal Closure",
+    "text": "Empirical Evidence: Triadic & Focal Closure\n\n\nKossinets & Watts (2006): Email network at large US university\nData: ~22,000 students over one year\nKey findings:\nTriadic closure (shared friends): - Probability increases roughly linearly with common friends - Strong effect: 2 common friends &gt; 2× effect of 1 friend\nFocal closure (shared activities/classes): - First shared class has similar effect to one friend - Diminishing returns for additional classes - Curve levels off (different from triadic closure)\nImplication: Both structural and contextual effects matter!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#week-4-overview",
+    "href": "weeks/week-4/slideshow-slides.html#week-4-overview",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Week 4 Overview",
+    "text": "Week 4 Overview\nKey Questions:\n\nWhy do networks look the way they look?\nWhat processes generate network structures?\nHow can we test for and model these processes?\n\nTopics:\n\nTaxonomy of network formation mechanisms\nDyadic and triadic processes\nStatistical tests for network effects\nExponential Random Graph Models (ERGMs)\nNetwork dynamics"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#why-do-networks-look-the-way-they-look",
+    "href": "weeks/week-4/slideshow-slides.html#why-do-networks-look-the-way-they-look",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Why Do Networks Look the Way They Look?",
+    "text": "Why Do Networks Look the Way They Look?\n\n\nNetworks are not random - they exhibit consistent structural patterns:\n\nClustering: Friends of friends tend to be friends\nDegree heterogeneity: Some nodes have many connections, others few\nHomophily: Similar nodes connect more often\nSmall world: Short path lengths despite local clustering\n\nCentral Question: What social, biological, or physical processes create these patterns?\n\n\n\n\n\n\n\n\n\n\nTypical network: hubs, clusters, paths"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#the-formation-question",
+    "href": "weeks/week-4/slideshow-slides.html#the-formation-question",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "The Formation Question",
+    "text": "The Formation Question\nTwo complementary perspectives:\n\nStructural mechanisms: Network topology drives new connections\n\nExample: Triadic closure creates clusters\n\nAttribute-based mechanisms: Node characteristics drive connections\n\nExample: Homophily - similarity breeds connection\n\n\nChallenge: Disentangling these effects requires sophisticated statistical models"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#taxonomy-of-network-effects",
+    "href": "weeks/week-4/slideshow-slides.html#taxonomy-of-network-effects",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Taxonomy of Network Effects",
+    "text": "Taxonomy of Network Effects\nMajor categories of network formation processes:\n\n\n\nCategory\nDescription\nExample\n\n\n\n\nDyadic\nTwo-node processes\nHomophily, reciprocity\n\n\nTriadic\nThree-node processes\nTransitivity, balance\n\n\nHigher-order\nFour+ node processes\nK-cores, cliques\n\n\nNode-level\nIndividual preferences\nPreferential attachment\n\n\nExogenous\nExternal factors\nGeography, institutions"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#endogenous-vs-exogenous-effects",
+    "href": "weeks/week-4/slideshow-slides.html#endogenous-vs-exogenous-effects",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Endogenous vs Exogenous Effects",
+    "text": "Endogenous vs Exogenous Effects\n\n\nEndogenous effects: Network structure influences new ties\n\nSelf-reinforcing processes\nExamples: Transitivity, preferential attachment\n\nExogenous effects: External attributes influence ties\n\nIndependent of current network structure\nExamples: Demographic homophily, spatial proximity\n\nKey insight: Real networks result from interplay of both!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#dyadic-processes-definition",
+    "href": "weeks/week-4/slideshow-slides.html#dyadic-processes-definition",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Dyadic Processes: Definition",
+    "text": "Dyadic Processes: Definition\n\n\nDyadic processes operate on pairs of nodes (dyads)\nA dyad can be in three states:\n\nNull: No connection (i → j and j → i both absent)\nAsymmetric: One-way connection (i → j OR j → i)\nMutual: Two-way connection (i → j AND j → i)\n\nDyadic processes explain why specific pairs of nodes connect"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#dyadic-process-reciprocity",
+    "href": "weeks/week-4/slideshow-slides.html#dyadic-process-reciprocity",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Dyadic Process: Reciprocity",
+    "text": "Dyadic Process: Reciprocity\n\n\nDefinition: The tendency for directed edges to be reciprocated\nMechanism: If i → j exists, j → i becomes more likely\nExamples:\n\nSocial media: You follow back those who follow you\nCollaboration: Co-authorship often becomes bidirectional\nTrade: Countries with import relationships develop export relationships\n\nStatistical signature: Higher proportion of mutual dyads than expected by chance"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#dyadic-process-homophily",
+    "href": "weeks/week-4/slideshow-slides.html#dyadic-process-homophily",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Dyadic Process: Homophily",
+    "text": "Dyadic Process: Homophily\n\n\nDefinition: “Similarity breeds connection” - nodes with similar attributes connect more\nTypes:\n\nDemographic: Age, gender, ethnicity\nBehavioral: Interests, activities\nStatus: Education, occupation\n\nFormula: P(edge|similar) &gt; P(edge|dissimilar)\nEmpirical Evidence:\n\nWikipedia editors (Crandall et al., 2008): Editors with similar editing patterns more likely to communicate\nUniversity email network (Kossinets & Watts, 2006): Students taking same classes form connections at higher rates"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#dyadic-process-homophily-vs-selection",
+    "href": "weeks/week-4/slideshow-slides.html#dyadic-process-homophily-vs-selection",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Dyadic Process: Homophily vs Selection",
+    "text": "Dyadic Process: Homophily vs Selection\nCritical distinction:\n\nSelection (homophily): Similar people connect\nInfluence: Connected people become similar\n\nProblem: Observational data shows correlation, not causation!\nEmpirical example - Wikipedia editors (Crandall et al., 2008):\n\nTracked similarity over time relative to first communication\nBefore contact: Rapid increase in similarity (selection)\nAfter contact: Continued slower increase (influence)\nBoth processes operate simultaneously!\n\nSolutions:\n\nLongitudinal data tracking changes over time\nStatistical models that separate effects (e.g., SAOMs)\nNatural experiments"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#other-dyadic-processes",
+    "href": "weeks/week-4/slideshow-slides.html#other-dyadic-processes",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Other Dyadic Processes",
+    "text": "Other Dyadic Processes\n\n\nHeterophily: Attraction to difference (opposite of homophily)\n\nExample: Dating networks, mentor-mentee relationships\n\nDistance/Geography: Physical proximity increases connection probability\n\nExample: Friendship networks, communication patterns\n\nStatus homophily: Nodes connect within same status level\n\nExample: Corporate networks, academic citations\n\nResource exchange: Complementary needs drive connections\n\nExample: Economic networks, mutualistic relationships"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#triadic-processes-definition",
+    "href": "weeks/week-4/slideshow-slides.html#triadic-processes-definition",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Processes: Definition",
+    "text": "Triadic Processes: Definition\n\n\nTriadic processes involve three nodes forming triangles\nKey configurations:\n\nOpen triad: A-B, B-C exist but A-C absent\nClosed triad (triangle): A-B, B-C, and A-C all exist\n\nCore insight: The presence of two edges affects the probability of the third"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#triadic-process-transitivity",
+    "href": "weeks/week-4/slideshow-slides.html#triadic-process-transitivity",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Process: Transitivity",
+    "text": "Triadic Process: Transitivity\n\n\nDefinition: “Friends of friends become friends”\nMechanism: If A→B and B→C, then A→C becomes more likely\nAlso called: Triadic closure, clustering\nExamples:\n\nSocial networks: Introduced through mutual friends\nAcademic collaboration: Co-authors of co-authors collaborate\nProtein networks: Proteins interacting with same partner interact\n\nMeasurement: Clustering coefficient, transitivity ratio"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#empirical-evidence-triadic-focal-closure",
+    "href": "weeks/week-4/slideshow-slides.html#empirical-evidence-triadic-focal-closure",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Empirical Evidence: Triadic & Focal Closure",
+    "text": "Empirical Evidence: Triadic & Focal Closure\n\n\nKossinets & Watts (2006)3: Email network at large US university\nData: ~22,000 students over one year\nKey findings:\nTriadic closure (shared friends):\n\nProbability increases roughly linearly with common friends\nStrong effect: 2 common friends &gt; 2× effect of 1 friend\n\nFocal closure (shared activities/classes):\n\nFirst shared class has similar effect to one friend\nDiminishing returns for additional classes\nCurve levels off (different from triadic closure)\n\nImplication: Both structural and contextual effects matter!\n3 Kossinets, G., & Watts, D. J. (2006). Empirical analysis of an evolving social network. science, 311(5757), 88-90."
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#triadic-process-balance-theory",
+    "href": "weeks/week-4/slideshow-slides.html#triadic-process-balance-theory",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Process: Balance Theory",
+    "text": "Triadic Process: Balance Theory\nStructural balance (Heider, 1946): Cognitive consistency in signed networks\nBalanced triangles (all relationships consistent): - +++: Three mutual friends (stable) - +–: Two enemies share a common enemy (stable)\nUnbalanced triangles (tension): - ++-: Friend of friend is enemy (unstable)\n- —: Three mutual enemies (unstable)\nPrediction: Networks evolve toward balanced states"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#triadic-configurations-in-directed-networks",
+    "href": "weeks/week-4/slideshow-slides.html#triadic-configurations-in-directed-networks",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Configurations in Directed Networks",
+    "text": "Triadic Configurations in Directed Networks\n\n\n16 possible triadic configurations (triads census)1:\nKey patterns:\n\n003: Empty (no edges)\n012: One edge only\n102: Two edges, no transitivity\n030T: Transitive triple\n300: Complete triangle\n\nDifferent processes favor different configurations\nEach tells us something about network formation mechanisms!\n1 Vladimir Batagelj and Andrej Mrvar, A subquadratic triad census algorithm for large sparse networks with small maximum degree, University of Ljubljana, http://vlado.fmf.uni-lj.si/pub/networks/doc/triads/triads.pdf"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#triadic-process-cyclicity-vs-transitivity",
+    "href": "weeks/week-4/slideshow-slides.html#triadic-process-cyclicity-vs-transitivity",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Process: Cyclicity vs Transitivity",
+    "text": "Triadic Process: Cyclicity vs Transitivity\n\n\nTransitivity: A→B→C implies A→C (hierarchical)\n\nCreates hierarchies, rankings\nExample: Citation networks, food webs\n\nCyclicity: A→B→C implies C→A (circular)\n\nCreates exchange cycles\nExample: Rock-paper-scissors, circular status\n\nDistinction matters for understanding network function!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#statistical-tests-for-network-effects",
+    "href": "weeks/week-4/slideshow-slides.html#statistical-tests-for-network-effects",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Statistical Tests for Network Effects",
+    "text": "Statistical Tests for Network Effects\nChallenge: Network data violates independence assumptions\nClassical approach fails: Standard statistical tests assume independent observations\nSolutions:\n\nPermutation tests: Randomize while preserving structure\nConditional Uniform Graph (CUG) tests: Compare to random graphs\nQuadratic Assignment Procedure (QAP): Correlation with permutation"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#permutation-tests-for-networks",
+    "href": "weeks/week-4/slideshow-slides.html#permutation-tests-for-networks",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Permutation Tests for Networks",
+    "text": "Permutation Tests for Networks\n\n\nLogic:\n\nCalculate observed statistic (e.g., clustering)\nGenerate random networks preserving certain properties\nCalculate statistic on random networks\nCompare: Is observed value extreme?\n\nKey decision: What to preserve when randomizing?\n\nNode degrees?\nNumber of edges?\nDyad distributions?\n\nP-value: Proportion of random networks with more extreme values"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#qap-regression",
+    "href": "weeks/week-4/slideshow-slides.html#qap-regression",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "QAP Regression",
+    "text": "QAP Regression\nQuadratic Assignment Procedure: Test relationship between network matrices\nUse case: Does network Y depend on network X?\nExample: Does friendship (Y) depend on geographic proximity (X)?\nProcedure:\n\nRegress Y on X, get coefficient β\nPermute rows/columns of Y simultaneously\nRepeat regression, get β*\nRepeat 1000+ times\nP-value: proportion where |β*| &gt; |β|\n\nAdvantage: Accounts for network dependencies"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#exponential-random-graph-models-ergms",
+    "href": "weeks/week-4/slideshow-slides.html#exponential-random-graph-models-ergms",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Exponential Random Graph Models (ERGMs)",
+    "text": "Exponential Random Graph Models (ERGMs)\nCore idea: Model probability of observing a network as function of its features\nForm: \\[P(Y = y) = \\frac{1}{\\kappa} \\exp\\left(\\sum_k \\theta_k s_k(y)\\right)\\]\nWhere:\n\n\\(Y\\): Random network\n\\(s_k(y)\\): Network statistics (edges, triangles, etc.)\n\\(\\theta_k\\): Parameters (effects to estimate)\n\\(\\kappa\\): Normalizing constant"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#ergm-intuition",
+    "href": "weeks/week-4/slideshow-slides.html#ergm-intuition",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "ERGM: Intuition",
+    "text": "ERGM: Intuition\nThink of it as logistic regression for networks\nInstead of: P(person votes yes) = f(age, income, …)\nWe have: P(network has this structure) = f(edges, triangles, homophily, …)\nKey insight: Model entire network as outcome, not individual ties\nAdvantages:\n\nTests multiple mechanisms simultaneously\nControls for confounding effects\nProvides effect sizes, not just significance"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#common-ergm-terms",
+    "href": "weeks/week-4/slideshow-slides.html#common-ergm-terms",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Common ERGM Terms",
+    "text": "Common ERGM Terms\n\n\n\nTerm\nEffect\nInterpretation\n\n\n\n\nedges\nDensity\nOverall connection probability\n\n\nmutual\nReciprocity\nTendency for reciprocation\n\n\ntriangle\nTransitivity\nTendency for closure\n\n\nnodematch(\"attr\")\nHomophily\nSame-attribute connection\n\n\nnodecov(\"attr\")\nAttribute effect\nNode attribute influence\n\n\ngwesp\nShared partners\nWeighted transitivity\n\n\n\nModel specification: Choose terms based on theory!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#ergm-interpretation",
+    "href": "weeks/week-4/slideshow-slides.html#ergm-interpretation",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "ERGM: Interpretation",
+    "text": "ERGM: Interpretation\nPositive coefficient (θ &gt; 0): Configuration is more likely than chance\nNegative coefficient (θ &lt; 0): Configuration is less likely than chance\nExample interpretation:\nedges: -2.5    (low baseline density)\nmutual: 1.8    (strong reciprocity)\ntriangle: 0.4  (moderate transitivity)\nnodematch(\"gender\"): 0.6  (gender homophily)\nReading: Controlling for density, reciprocity, and triangles, same-gender ties are more likely"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#ergm-challenges",
+    "href": "weeks/week-4/slideshow-slides.html#ergm-challenges",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "ERGM: Challenges",
+    "text": "ERGM: Challenges\nDegeneracy problem: Some specifications lead to extreme networks\n\nAll edges or no edges\nComplete clustering or no clustering\n\nComputational challenge: Calculating κ is often intractable\nSolutions:\n\nUse geometrically-weighted terms (GWESP, GWDSP)\nMarkov Chain Monte Carlo (MCMC) estimation\nCareful model specification and testing"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#network-dynamics-models",
+    "href": "weeks/week-4/slideshow-slides.html#network-dynamics-models",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Network Dynamics Models",
+    "text": "Network Dynamics Models\nSo far: Models of static networks (single time point)\nReality: Networks evolve over time\nDynamic approaches:\n\nTemporal ERGMs: ERGMs on network changes\nStochastic Actor-Oriented Models (SAOMs): Actor-driven change\nRelational Event Models (REMs): Continuous-time interactions"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#stochastic-actor-oriented-models",
+    "href": "weeks/week-4/slideshow-slides.html#stochastic-actor-oriented-models",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Stochastic Actor-Oriented Models",
+    "text": "Stochastic Actor-Oriented Models\n\n\nKey assumption: Actors make rational decisions about ties\nProcess:\n\nActors get random opportunities to change ties\nThey evaluate potential changes via utility function\nThey choose change that maximizes utility\n\nUtility function includes:\n\nStructural preferences (transitivity, reciprocity)\nAttribute preferences (homophily)\nCosts and benefits\n\nSoftware: RSiena package in R\nAdvantage: Separates selection from influence effects!\n\n\n\n\n\n\n\n\n\n\n```"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#comparing-modeling-approaches",
+    "href": "weeks/week-4/slideshow-slides.html#comparing-modeling-approaches",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Comparing Modeling Approaches",
+    "text": "Comparing Modeling Approaches\n\n\n\nApproach\nTime\nQuestion\nStrength\n\n\n\n\nERGM\nStatic\nWhat structure?\nMultiple mechanisms\n\n\nSAOM\nPanel\nHow does it change?\nSelection vs influence\n\n\nREM\nContinuous\nWhen do events occur?\nPrecise timing\n\n\nTERGM\nDiscrete steps\nWhat changes?\nNetwork evolution\n\n\n\nChoice depends on:\n\nData structure (cross-sectional vs longitudinal)\nResearch question (structure vs process)\nComputational resources"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#summary-key-takeaways",
+    "href": "weeks/week-4/slideshow-slides.html#summary-key-takeaways",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Summary: Key Takeaways",
+    "text": "Summary: Key Takeaways\n\nNetwork structure emerges from systematic processes, not randomness\nDyadic processes (reciprocity, homophily) explain pairwise connections\nTriadic processes (transitivity, balance) explain local clustering\nStatistical tests must account for network dependencies (permutation, QAP)\nERGMs model network probability as function of multiple mechanisms\nDynamic models capture how networks evolve over time\n\nNext steps: Applying these models to real data!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#further-reading-resources",
+    "href": "weeks/week-4/slideshow-slides.html#further-reading-resources",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Further Reading & Resources",
+    "text": "Further Reading & Resources\nCore texts:\n\nLusher, Koskinen & Robins (2013). Exponential Random Graph Models for Social Networks\nSnijders, van de Bunt & Steglich (2010). “Introduction to SAOMs”\nWasserman & Faust (1994). Social Network Analysis\n\nSoftware:\n\nstatnet package (R): ERGMs\nRSiena package (R): SAOMs\nigraph package (R/Python): Basic network analysis\n\nOnline resources: INSNA workshops, Summer institutes"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow-slides.html#focal-vs-membership-closure-key-distinction",
+    "href": "weeks/week-4/slideshow-slides.html#focal-vs-membership-closure-key-distinction",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Focal vs Membership Closure: Key Distinction",
+    "text": "Focal vs Membership Closure: Key Distinction\n\n\nFocal Closure (Easley & Kleinberg, 2010)2:\n\nPeople meet through shared activities/contexts (foci)\nExamples: Classes, workplaces, clubs, events\nMechanism: Physical proximity + repeated interaction\nPattern: Bipartite structure (people ↔︎ activities)\n\nMembership Closure:\n\nPeople connect through shared group memberships\nExamples: Organizations, committees, teams\nMechanism: Formal affiliation creates opportunities\nPattern: Overlapping group boundaries\n\nKey insight: Context matters as much as network structure!\n2 Easley, D., & Kleinberg, J. (2010). Networks, crowds, and markets: Reasoning about a highly connected world (Vol. 1). Cambridge: Cambridge university press."
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html",
+    "href": "weeks/week-2/perform_2.html",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "",
+    "text": "In this problem set, you will work with real-world network data from Wikipedia to compute degree centrality measures and analyze degree distributions using Python. This exercise will help you understand:\n\nHow to load and process directed network data with NetworkX\nThe difference between in-degree and out-degree centrality\nHow to compute and visualize degree distributions\nWhat degree distributions reveal about network structure"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#overview",
+    "href": "weeks/week-2/perform_2.html#overview",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "",
+    "text": "In this problem set, you will work with real-world network data from Wikipedia to compute degree centrality measures and analyze degree distributions using Python. This exercise will help you understand:\n\nHow to load and process directed network data with NetworkX\nThe difference between in-degree and out-degree centrality\nHow to compute and visualize degree distributions\nWhat degree distributions reveal about network structure"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#dataset-wikipedia-vote-network",
+    "href": "weeks/week-2/perform_2.html#dataset-wikipedia-vote-network",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Dataset: Wikipedia Vote Network",
+    "text": "Dataset: Wikipedia Vote Network\nDescription: This network represents voting relationships among Wikipedia users during administrator elections from the site’s inception through January 2008.\nNetwork Properties:\n\nNodes: 7,115 Wikipedia users\nEdges: 103,689 directed edges\nEdge meaning: A directed edge from user i to user j means that user i voted on user j\nNetwork type: Directed, unweighted\n\nSource: Stanford SNAP - Wikipedia Vote Network"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#task-1-download-and-load-the-data",
+    "href": "weeks/week-2/perform_2.html#task-1-download-and-load-the-data",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Task 1: Download and Load the Data",
+    "text": "Task 1: Download and Load the Data\nFirst, download the dataset and load it into Python using NetworkX.\n\nimport networkx as nx\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom urllib.request import urlretrieve\nimport gzip\nimport io\n\n# Download the dataset\nurl = \"https://snap.stanford.edu/data/wiki-Vote.txt.gz\"\nurlretrieve(url, \"wiki-Vote.txt.gz\")\n\n# Read the edge list (skip comment lines that start with #)\nedges = []\nwith gzip.open(\"wiki-Vote.txt.gz\", \"rt\") as f:\n    for line in f:\n        if not line.startswith(\"#\"):\n            from_node, to_node = map(int, line.strip().split())\n            edges.append((from_node, to_node))\n\n# Create a directed graph\nG = nx.DiGraph()\nG.add_edges_from(edges)\n\n# Basic network statistics\nprint(f\"Number of nodes: {G.number_of_nodes()}\")\nprint(f\"Number of edges: {G.number_of_edges()}\")\nprint(f\"Is directed: {nx.is_directed(G)}\")\n\n\n\n\n\n\n\nUnderstanding the Data Format\n\n\n\nThe wiki-Vote.txt file contains lines starting with # (comments) followed by an edge list where each line represents a directed edge: FromNodeId ToNodeId"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#task-2-compute-in-degree-and-out-degree",
+    "href": "weeks/week-2/perform_2.html#task-2-compute-in-degree-and-out-degree",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Task 2: Compute In-Degree and Out-Degree",
+    "text": "Task 2: Compute In-Degree and Out-Degree\nCalculate the in-degree and out-degree for all nodes in the network.\nQuestions:\n\nWhat is the maximum in-degree? What does this represent in the context of Wikipedia voting?\nWhat is the maximum out-degree? What does this represent?\nHow many nodes have in-degree of 0? What does this mean?\nHow many nodes have out-degree of 0? What does this mean?\n\n\n# Compute in-degree and out-degree\nin_degrees = dict(G.in_degree())\nout_degrees = dict(G.out_degree())\n\n# Convert to arrays for easier analysis\nin_deg_values = np.array(list(in_degrees.values()))\nout_deg_values = np.array(list(out_degrees.values()))\n\n# Summary statistics\nprint(\"In-Degree Statistics:\")\nprint(f\"  Max: {np.max(in_deg_values)}\")\nprint(f\"  Mean: {np.mean(in_deg_values):.2f}\")\nprint(f\"  Median: {np.median(in_deg_values)}\")\nprint(f\"  Nodes with in-degree = 0: {np.sum(in_deg_values == 0)}\\n\")\n\nprint(\"Out-Degree Statistics:\")\nprint(f\"  Max: {np.max(out_deg_values)}\")\nprint(f\"  Mean: {np.mean(out_deg_values):.2f}\")\nprint(f\"  Median: {np.median(out_deg_values)}\")\nprint(f\"  Nodes with out-degree = 0: {np.sum(out_deg_values == 0)}\")\n\n# Find the most \"voted-on\" user\nmost_voted_user = max(in_degrees, key=in_degrees.get)\nprint(f\"\\nMost voted-on user: Node {most_voted_user} with in-degree = {in_degrees[most_voted_user]}\")\n\n# Find the most active voter\nmost_active_voter = max(out_degrees, key=out_degrees.get)\nprint(f\"Most active voter: Node {most_active_voter} with out-degree = {out_degrees[most_active_voter]}\")\n\n\n\n\n\n\n\nInterpreting Degree Centrality in Directed Networks\n\n\n\n\nIn-degree: Number of votes received (popularity, endorsement)\nOut-degree: Number of votes cast (activity, participation)"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#task-3-analyze-the-top-10-users",
+    "href": "weeks/week-2/perform_2.html#task-3-analyze-the-top-10-users",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Task 3: Analyze the Top 10 Users",
+    "text": "Task 3: Analyze the Top 10 Users\nIdentify and compare the top 10 users by in-degree and out-degree.\n\n# Create a DataFrame with degree measures\ndegree_df = pd.DataFrame({\n    'node': list(G.nodes()),\n    'in_degree': [in_degrees[node] for node in G.nodes()],\n    'out_degree': [out_degrees[node] for node in G.nodes()]\n})\ndegree_df['total_degree'] = degree_df['in_degree'] + degree_df['out_degree']\n\n# Top 10 by in-degree (most voted-on)\ntop_in = degree_df.nlargest(10, 'in_degree')\nprint(\"Top 10 Users by In-Degree (Most Votes Received):\")\nprint(top_in)\n\n# Top 10 by out-degree (most active voters)\ntop_out = degree_df.nlargest(10, 'out_degree')\nprint(\"\\nTop 10 Users by Out-Degree (Most Votes Cast):\")\nprint(top_out)\n\n# Are the top users in both categories the same?\noverlap = len(set(top_in['node']) & set(top_out['node']))\nprint(f\"\\nOverlap between top in-degree and top out-degree users: {overlap} out of 10\")\n\nQuestion: Do highly endorsed users (high in-degree) also tend to be active voters (high out-degree)? What does this tell you about participation patterns?"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#task-4-compute-degree-distribution",
+    "href": "weeks/week-2/perform_2.html#task-4-compute-degree-distribution",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Task 4: Compute Degree Distribution",
+    "text": "Task 4: Compute Degree Distribution\nCalculate the degree distribution for both in-degree and out-degree.\n\n# Compute degree distributions\nin_degree_counts = pd.Series(in_deg_values).value_counts().sort_index()\nout_degree_counts = pd.Series(out_deg_values).value_counts().sort_index()\n\n# Convert to DataFrames for plotting\nin_deg_df = pd.DataFrame({\n    'degree': in_degree_counts.index,\n    'frequency': in_degree_counts.values,\n    'type': 'In-Degree'\n})\n\nout_deg_df = pd.DataFrame({\n    'degree': out_degree_counts.index,\n    'frequency': out_degree_counts.values,\n    'type': 'Out-Degree'\n})\n\n# Combine for comparison\ncombined_deg_df = pd.concat([in_deg_df, out_deg_df], ignore_index=True)\n\n# View the first few rows\nprint(\"In-Degree Distribution (first 10 rows):\")\nprint(in_deg_df.head(10))\nprint(\"\\nOut-Degree Distribution (first 10 rows):\")\nprint(out_deg_df.head(10))"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#task-5-plot-degree-distribution",
+    "href": "weeks/week-2/perform_2.html#task-5-plot-degree-distribution",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Task 5: Plot Degree Distribution",
+    "text": "Task 5: Plot Degree Distribution\nCreate visualizations of the degree distributions using both linear and log-log scales.\n\nLinear Scale Plot\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Set style\nplt.style.use('default')\nsns.set_palette([\"#c41c85\", \"#50C878\"])\n\n# Plot on linear scale\nfig, ax = plt.subplots(figsize=(10, 6))\n\nfor deg_type in ['In-Degree', 'Out-Degree']:\n    data = combined_deg_df[combined_deg_df['type'] == deg_type]\n    color = \"#c41c85\" if deg_type == \"In-Degree\" else \"#50C878\"\n    ax.plot(data['degree'], data['frequency'], 'o-', alpha=0.6, \n            label=deg_type, color=color, markersize=4, linewidth=1)\n\nax.set_xlabel('Degree (k)')\nax.set_ylabel('Frequency (Number of Nodes)')\nax.set_title('Degree Distribution - Wikipedia Vote Network\\nLinear scale', \n             fontsize=14, fontweight='bold')\nax.legend()\nax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\n\n\nLog-Log Scale Plot\n\n# Plot on log-log scale\nfig, ax = plt.subplots(figsize=(10, 6))\n\nfor deg_type in ['In-Degree', 'Out-Degree']:\n    data = combined_deg_df[combined_deg_df['type'] == deg_type]\n    # Filter out zero values for log scale\n    data_filtered = data[data['degree'] &gt; 0]\n    color = \"#c41c85\" if deg_type == \"In-Degree\" else \"#50C878\"\n    ax.loglog(data_filtered['degree'], data_filtered['frequency'], 'o-', \n              alpha=0.6, label=deg_type, color=color, markersize=4, linewidth=1)\n\nax.set_xlabel('Degree (k) [log scale]')\nax.set_ylabel('Frequency [log scale]')\nax.set_title('Degree Distribution - Wikipedia Vote Network\\nLog-log scale', \n             fontsize=14, fontweight='bold')\nax.legend()\nax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\nQuestions:\n\nWhat shape does the degree distribution follow on the log-log scale?\nDoes the distribution appear to follow a power law? If so, what does this indicate?\nHow do the in-degree and out-degree distributions compare?\nWhat does the degree distribution tell you about the structure of Wikipedia’s voting network?\n\n\n\n\n\n\n\nInterpreting Degree Distributions\n\n\n\n\nLinear appearance on log-log plot: Suggests a power-law (scale-free) distribution\nPower-law networks: Few nodes with very high degree (hubs), many nodes with low degree\nImplications: Highly skewed participation; a small number of elite users receive most votes"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#task-6-compute-complementary-cumulative-distribution-function-ccdf",
+    "href": "weeks/week-2/perform_2.html#task-6-compute-complementary-cumulative-distribution-function-ccdf",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Task 6: Compute Complementary Cumulative Distribution Function (CCDF)",
+    "text": "Task 6: Compute Complementary Cumulative Distribution Function (CCDF)\nThe CCDF is often more robust than the degree distribution for identifying power laws.\n\ndef compute_ccdf(degrees):\n    \"\"\"Compute complementary cumulative distribution function\"\"\"\n    degree_counts = pd.Series(degrees).value_counts().sort_index()\n    total_nodes = len(degrees)\n    \n    ccdf_data = []\n    for degree in degree_counts.index:\n        # P(X &gt;= k) = number of nodes with degree &gt;= k / total nodes\n        prob = np.sum([degree_counts[d] for d in degree_counts.index if d &gt;= degree]) / total_nodes\n        ccdf_data.append({'degree': degree, 'ccdf': prob})\n    \n    return pd.DataFrame(ccdf_data)\n\n# Compute CCDF for in-degree and out-degree\nin_ccdf = compute_ccdf(in_deg_values)\nin_ccdf['type'] = 'In-Degree'\n\nout_ccdf = compute_ccdf(out_deg_values)\nout_ccdf['type'] = 'Out-Degree'\n\nccdf_combined = pd.concat([in_ccdf, out_ccdf], ignore_index=True)\n\n# Plot CCDF on log-log scale\nfig, ax = plt.subplots(figsize=(10, 6))\n\nfor deg_type in ['In-Degree', 'Out-Degree']:\n    data = ccdf_combined[ccdf_combined['type'] == deg_type]\n    # Filter out zero values for log scale\n    data_filtered = data[(data['degree'] &gt; 0) & (data['ccdf'] &gt; 0)]\n    color = \"#c41c85\" if deg_type == \"In-Degree\" else \"#50C878\"\n    ax.loglog(data_filtered['degree'], data_filtered['ccdf'], 'o-', \n              alpha=0.6, label=deg_type, color=color, markersize=4, linewidth=1)\n\nax.set_xlabel('Degree (k) [log scale]')\nax.set_ylabel('P(X e k) [log scale]')\nax.set_title('Complementary Cumulative Distribution Function (CCDF)\\nWikipedia Vote Network - Log-log scale', \n             fontsize=14, fontweight='bold')\nax.legend()\nax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#reflection-questions",
+    "href": "weeks/week-2/perform_2.html#reflection-questions",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Reflection Questions",
+    "text": "Reflection Questions\nAfter completing all tasks, answer the following:\n\nInequality in participation: What fraction of users received more than 100 votes? What fraction cast more than 100 votes?\nNetwork interpretation: Based on the degree distributions, how would you characterize the Wikipedia voting system? Is it egalitarian or hierarchical?\nPower-law hypothesis: Do the log-log plots suggest a power-law distribution? What would be the next steps to formally test this hypothesis?\nDirected vs undirected: How would your analysis differ if this were an undirected network?\nPractical implications: What does the degree distribution suggest about which users have influence in the Wikipedia administrator election process?"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#solutions-and-hints",
+    "href": "weeks/week-2/perform_2.html#solutions-and-hints",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Solutions and Hints",
+    "text": "Solutions and Hints\n\n\n\n\n\n\nClick to reveal hints and expected results\n\n\n\n\n\n\nExpected Statistics:\nBased on the SNAP documentation:\n\nNodes: 7,115\nEdges: 103,689\nAverage in-degree H 14.57 (total edges / nodes)\nAverage out-degree H 14.57 (same for directed networks)\n\n\n\nDegree Distribution Characteristics:\nBoth in-degree and out-degree distributions should show:\n\nHeavy-tailed distribution: Most nodes have low degree, few have very high degree\nApproximate power-law: Linear relationship on log-log plot\nHigh inequality: Small fraction of users account for large fraction of votes\n\n\n\nInterpretation:\nHigh in-degree nodes: Highly endorsed candidates, likely successful administrators or trusted community members\nHigh out-degree nodes: Very active voters, engaged community participants\nLow degree nodes: Casual users, single-election participants, or new users\n\n\nCode Snippet for Computing Inequality:\n# What fraction of users received &gt; 100 votes?\nhigh_in = np.sum(in_deg_values &gt; 100) / len(in_deg_values)\nprint(f\"Fraction with in-degree &gt; 100: {high_in:.4f}\")\n\n# What fraction cast &gt; 100 votes?\nhigh_out = np.sum(out_deg_values &gt; 100) / len(out_deg_values)\nprint(f\"Fraction with out-degree &gt; 100: {high_out:.4f}\")\n\n\nPower-Law Testing:\nTo formally test for power-law distribution, you could use the powerlaw package:\nimport powerlaw\n\n# Fit power-law to in-degree (exclude zeros)\nin_deg_nonzero = in_deg_values[in_deg_values &gt; 0]\nfit = powerlaw.Fit(in_deg_nonzero)\n\nprint(f\"Power-law exponent (alpha): {fit.power_law.alpha:.3f}\")\nprint(f\"xmin: {fit.power_law.xmin}\")\n\n# Test power-law vs alternatives\nR, p = fit.distribution_compare('power_law', 'exponential')\nprint(f\"Power-law vs exponential R: {R:.3f}, p-value: {p:.3f}\")"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#additional-challenges",
+    "href": "weeks/week-2/perform_2.html#additional-challenges",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Additional Challenges",
+    "text": "Additional Challenges\n\n\n\n\n\n\nAdvanced Questions\n\n\n\n\nCorrelation analysis: Calculate the correlation between in-degree and out-degree. Are they correlated? What does this mean?\nDegree centrality vs other measures: Compute betweenness centrality for the top 20 nodes by in-degree. Are high-degree nodes also high in betweenness?\nSubgraph analysis: Extract the subgraph containing only nodes with in-degree &gt; 50. What is the density of this subgraph?\nTemporal analysis: The dataset includes a timestamp. How has the degree distribution evolved over time?\nNetwork resilience: What would happen to the network’s connectivity if you removed the top 1% of nodes by in-degree? (Hint: compute the size of the largest connected component before and after removal)"
+  },
+  {
+    "objectID": "weeks/week-2/perform_2.html#submission-guidelines",
+    "href": "weeks/week-2/perform_2.html#submission-guidelines",
+    "title": "Problem Set 2: Degree Centrality and Degree Distribution (Python)",
+    "section": "Submission Guidelines",
+    "text": "Submission Guidelines\nYour submission should include:\n\nPython script or Jupyter notebook with all code and outputs\nVisualizations of degree distributions (linear and log-log scales)\nWritten answers to all reflection questions (200-400 words total)\nInterpretation of what the degree distribution reveals about Wikipedia’s voting network\n\nFile naming: week2_perform2_[YourName].ipynb or .py\nDue date: Check the course schedule"
   }
 ]

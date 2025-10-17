@@ -2,6 +2,7 @@
 title: "Week 8"
 format: html
 subtitle: "Network cohesion and community - case discussion"
+date: "today"
 callout-appearance: "default"
 ---
 

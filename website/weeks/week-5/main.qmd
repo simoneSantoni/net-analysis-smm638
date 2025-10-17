@@ -2,6 +2,7 @@
 title: "Week 5"
 format: html
 subtitle: "Dyads, triads, and network dynamics - case discussion"
+date: "today"
 callout-appearance: "default"
 ---
 

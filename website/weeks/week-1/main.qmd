@@ -2,6 +2,7 @@
 title: "Week 1"
 format: html
 subtitle: "Introduction to network analysis"
+date: "today"
 callout-appearance: default
 ---
 

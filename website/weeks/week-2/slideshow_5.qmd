@@ -1,7 +1,7 @@
 ---
 title: "Network Centrality"
 subtitle: "Measuring Importance and Influence in Networks"
-author: "SMM638 Network Analytics"
+date: "today"
 format:
   revealjs:
     output-file: slideshow_5-slides.html

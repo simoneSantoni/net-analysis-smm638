@@ -1,6 +1,7 @@
 ---
 title: "Practice: Ingesting Network Data and Computing Degree"
 subtitle: "Week 2 - Network Analytics"
+date: "today"
 format: html
 ---
 

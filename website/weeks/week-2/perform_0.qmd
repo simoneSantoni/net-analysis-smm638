@@ -1,6 +1,7 @@
 ---
 title: "Practice Exercise: Computing Centrality Measures"
 subtitle: "Week 2 - Network Analytics"
+date: "today"
 format: html
 ---
 

@@ -2,6 +2,7 @@
 title: "Week 7"
 format: html
 subtitle: "Network cohesion and community"
+date: "today"
 callout-appearance: "default"
 ---
 

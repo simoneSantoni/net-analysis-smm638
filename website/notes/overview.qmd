@@ -1,5 +1,6 @@
 ---
 title: "Supplemental Notes"
+date: "today"
 format: html
 ---
 

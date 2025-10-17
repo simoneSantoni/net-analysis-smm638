@@ -1,8 +1,7 @@
 ---
 title: "Why Network Analysis Matters"
 subtitle: "Insights from the Royal Bank of Canada Case"
-author: "SMM638 Network Analytics"
-date: "2025-10-06"
+date: "today"
 format:
   revealjs:
     output-file: slideshow_2-slides.html

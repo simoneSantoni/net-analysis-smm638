@@ -1,6 +1,7 @@
 ---
 title: "Assignment: Influencer Selection for Space Games Inc."
 subtitle: "Applying Network Analysis to the Twitch Case Study"
+date: "today"
 format: html
 ---
 

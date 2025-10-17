@@ -2,6 +2,7 @@
 title: "Week 9"
 format: html
 subtitle: "Network position and performance"
+date: "today"
 callout-appearance: "default"
 ---
 

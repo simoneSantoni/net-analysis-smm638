@@ -2,6 +2,7 @@
 Title: "Who Is the Right Influence? A Social Network Analysis"
 callout-appearance: "default"
 format: html
+date: "today"
 ---
 
 ### Twitch Network Exploratory Data Analysis

@@ -1,6 +1,7 @@
 ---
 title: "Network Analysis Glossary"
 subtitle: "Essential Terms and Concepts"
+date: "today"
 format: html
 ---
 

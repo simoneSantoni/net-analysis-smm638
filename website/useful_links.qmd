@@ -1,5 +1,6 @@
 ---
 title: "Useful Links"
+date: "today"
 format: html
 ---
 

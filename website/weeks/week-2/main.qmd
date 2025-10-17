@@ -2,6 +2,7 @@
 title: "Week 2"
 format: html
 subtitle: "Network centrality"
+date: "today"
 callout-appearance: "default"
 ---
 
@@ -51,7 +52,7 @@ callout-appearance: "default"
 
 ✏️ [Compute network centrality indicators on a toy network dataset](perform_0.qmd)
 
-✏️ [Wikipedia Vote Network](perform_1.qmd)
+✏️ Wikipedia Vote Network - Available in both [R](perform_1.qmd) and [Python](perform_2.qmd) versions
 
 :::
 

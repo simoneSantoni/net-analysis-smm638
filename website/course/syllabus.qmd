@@ -1,6 +1,7 @@
 ---
 title: "Course Syllabus"
 subtitle: "SMM638 - Network Analytics | Term I 2025/26"
+date: "today"
 format:
   html:
     toc: true
