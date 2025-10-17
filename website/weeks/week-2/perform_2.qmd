@@ -3,7 +3,7 @@ title: "Problem Set 2: Degree Centrality and Degree Distribution (Python)"
 subtitle: "Week 2 - Network Analytics"
 date: "today"
 format: html
-# jupyter: python3
+jupyter: python3
 ---
 
 ## Overview
