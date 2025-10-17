@@ -11,7 +11,7 @@ format:
     multiplex: false
     code-fold: true
     code-summary: ""
-jupyter: python3
+# jupyter: python3
 ---
 
 ## Week 4 Overview {.smaller}

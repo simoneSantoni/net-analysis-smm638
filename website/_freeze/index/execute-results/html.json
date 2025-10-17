@@ -2,7 +2,7 @@
   "hash": "8754c6f005270b1f81b0ed6a145eb862",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Network Analytics－SMM638\"\nsubtitle: \"Materials on network theory, methods, and tools for analytics students\"\ndate: \"2025-10-06\"\nformat: html\n---\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![A Barabasi-Albert preferential attachment network with 100 nodes - node size proportional to node degree](index_files/figure-html/unnamed-chunk-1-1.png){fig-align='center' width=768}\n:::\n:::\n\n\n\n",
+    "markdown": "---\ntitle: \"Network Analytics－SMM638\"\nsubtitle: \"Materials on network theory, methods, and tools for analytics students\"\ndate: \"today\"\nformat: html\n---\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![A Barabasi-Albert preferential attachment network with 100 nodes - node size proportional to node degree](index_files/figure-html/unnamed-chunk-1-1.png){fig-align='center' width=768}\n:::\n:::\n\n\n\n",
     "supporting": [
       "index_files/figure-html"
     ],
