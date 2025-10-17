@@ -56,13 +56,20 @@ jobs:
 
       - name: Install Python kernel for Jupyter
         run: |
-          python -m ipykernel install --user --name python3
+          python -m ipykernel install --user --name python3 --display-name "Python 3"
+          jupyter kernelspec list
 
       - name: Verify Python setup for Quarto
         run: |
           python --version
           python -c "import networkx; print(f'NetworkX version: {networkx.__version__}')"
+          python -c "import matplotlib; print(f'Matplotlib version: {matplotlib.__version__}')"
+          jupyter --version
           quarto check jupyter
+          echo "Testing Python kernel with Quarto..."
+          echo -e '---\ntitle: Test\njupyter: python3\n---\n\n```{python}\n#| eval: false\nprint("Hello")\n```' > test.qmd
+          quarto render test.qmd --to html
+          rm test.qmd test.html
 
       - name: Install TinyTeX for PDF rendering (syllabus only)
         run: quarto install tinytex --update-path
