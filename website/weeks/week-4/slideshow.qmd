@@ -49,6 +49,7 @@ Networks are **not random** - they exhibit consistent structural patterns:
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 6
 import networkx as nx
@@ -146,6 +147,7 @@ Dyadic processes explain why specific pairs of nodes connect
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 6
 import matplotlib.pyplot as plt
@@ -279,6 +281,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 6
 import matplotlib.pyplot as plt
@@ -370,6 +373,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 5
 import networkx as nx
@@ -464,6 +468,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 7
 import matplotlib.pyplot as plt
@@ -544,6 +549,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 6
 import networkx as nx
@@ -612,6 +618,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 7
 import networkx as nx
@@ -706,6 +713,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 7
 import networkx as nx
@@ -790,6 +798,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 6
 import networkx as nx
@@ -920,6 +929,7 @@ plt.show()
 **Prediction**: Networks evolve toward balanced states
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 12
 #| fig-height: 4
 import networkx as nx
@@ -996,6 +1006,7 @@ Each tells us something about network formation mechanisms!
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 8
 import networkx as nx
@@ -1120,6 +1131,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 6
 import networkx as nx
@@ -1231,6 +1243,7 @@ plt.show()
 ::: {.column width="50%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 8
 import networkx as nx
@@ -1438,6 +1451,7 @@ nodematch("gender"): 0.6  (gender homophily)
 ::: {.column width="45%"}
 ```{python}
 #| echo: false
+#| eval: false
 #| fig-width: 5
 #| fig-height: 6
 import matplotlib.pyplot as plt
