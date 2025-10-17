@@ -44,6 +44,16 @@ jobs:
           install.packages(c('knitr', 'rmarkdown', 'dplyr', 'tidyr', 'ggplot2', 'igraph', 'tidygraph', 'ggraph', 'gridExtra', 'readr', 'scales', 'tibble'), repos='https://cloud.r-project.org/')
         shell: Rscript {0}
 
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy matplotlib pandas networkx plotly seaborn jupyter ipykernel
+
       - name: Install TinyTeX for PDF rendering (syllabus only)
         run: quarto install tinytex --update-path
 
