@@ -115,8 +115,8 @@ execute:
   warning: false
   message: false
 
-# jupyter:
-#   kernelspec:
-#     name: "ir"
-#     language: "R"
-#     display_name: "R (ind215)"
+jupyter:
+  kernelspec:
+    name: "ir"
+    language: "R"
+    display_name: "R"

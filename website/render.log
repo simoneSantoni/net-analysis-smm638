@@ -1,0 +1,72 @@
+[1m[34m[ 1/39] faq.qmd[39m[22m
+[1m[34m[ 2/39] notes/overview.qmd[39m[22m
+[1m[34m[ 3/39] useful_links.qmd[39m[22m
+[1m[34m[ 4/39] weeks/week-9/main.qmd[39m[22m
+[1m[34m[ 5/39] weeks/week-1/network_terms.qmd[39m[22m
+[1m[34m[ 6/39] weeks/week-1/main.qmd[39m[22m
+[1m[34m[ 7/39] weeks/week-1/network_labor_mkts_and_job_search.qmd[39m[22m
+[1m[34m[ 8/39] weeks/week-3/eda.qmd[39m[22m
+[1m[34m[ 9/39] weeks/week-3/perform.qmd[39m[22m
+[1m[34m[10/39] weeks/week-3/gamers_eda.qmd[39m[22m
+[1m[34m[11/39] weeks/week-3/qualitative_discussion.qmd[39m[22m
+[1m[34m[12/39] weeks/week-3/main.qmd[39m[22m
+[1m[34m[13/39] weeks/week-10/main.qmd[39m[22m
+[1m[34m[14/39] weeks/week-4/slideshow.qmd[39m[22m
+[1m[34m[15/39] weeks/week-4/practice_2.qmd[39m[22m
+[1m[34m[16/39] weeks/week-4/practice_1.qmd[39m[22m
+[1m[34m[17/39] weeks/week-4/main.qmd[39m[22m
+[1m[34m[18/39] weeks/week-6/main.qmd[39m[22m
+[1m[34m[19/39] weeks/week-5/main.qmd[39m[22m
+[1m[34m[20/39] weeks/week-2/slideshow_1.qmd[39m[22m
+[1m[34m[21/39] weeks/week-2/perform_2.qmd[39m[22m
+[1m[34m[22/39] weeks/week-2/perform_1.qmd[39m[22m
+[1m[34m[23/39] weeks/week-2/slideshow_4.qmd[39m[22m
+[1m[34m[24/39] weeks/week-2/slideshow_2.qmd[39m[22m
+[1m[34m[25/39] weeks/week-2/perform_0.qmd[39m[22m
+[1m[34m[26/39] weeks/week-2/slideshow_3.qmd[39m[22m
+[WARNING] Div at line 582 column 1 unclosed at line 641 column 1, closing implicitly.
+[1m[34m[27/39] weeks/week-2/practice_1.qmd[39m[22m
+[1m[34m[28/39] weeks/week-2/slideshow_5.qmd[39m[22m
+[1m[34m[29/39] weeks/week-2/main.qmd[39m[22m
+[1m[34m[30/39] weeks/week-7/main.qmd[39m[22m
+[1m[34m[31/39] weeks/week-8/main.qmd[39m[22m
+[1m[34m[32/39] project/midTermProject/main.qmd[39m[22m
+[1m[34m[33/39] project/finalCourseProject/main.qmd[39m[22m
+[1m[34m[34/39] course/team.qmd[39m[22m
+[1m[34m[35/39] course/support.qmd[39m[22m
+[1m[34m[36/39] course/faq.qmd[39m[22m
+[1m[34m[37/39] course/schedule.qmd[39m[22m
+[1m[34m[38/39] course/syllabus.qmd[39m[22m
+[1m[34m
+Rendering PDF[39m[22m
+[1m[34mrunning xelatex - 1[39m[22m
+  This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+[1m[34mrunning xelatex - 2[39m[22m
+  This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+[1m[34mrunning xelatex - 3[39m[22m
+  This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+[1m[34m[39/39] index.qmd[39m[22m
+
+[91mERROR: NotFound: No such file or directory (os error 2): rename '/home/simone/githubRepos/net-analysis-smm638/website/weeks/week-4/practice_2.html' -> '/home/simone/githubRepos/net-analysis-smm638/website/_site/weeks/week-4/practice_2.html'
+
+Stack trace:
+    at Object.renameSync (ext:deno_fs/30_fs.js:267:3)
+    at safeMoveSync (file:///opt/quarto/bin/quarto.js:2354:14)
+    at renderProject (file:///opt/quarto/bin/quarto.js:87372:17)
+    at eventLoopTick (ext:core/01_core.js:175:7)
+    at async Command.actionHandler (file:///opt/quarto/bin/quarto.js:91975:32)
+    at async Command.execute (file:///opt/quarto/bin/quarto.js:8253:13)
+    at async Command.parseCommand (file:///opt/quarto/bin/quarto.js:8143:20)
+    at async quarto (file:///opt/quarto/bin/quarto.js:133948:9)
+    at async file:///opt/quarto/bin/quarto.js:133978:9
+    at async file:///opt/quarto/bin/quarto.js:133830:20[39m
