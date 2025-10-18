@@ -1,0 +1,6 @@
+{
+  "r.rterm.linux": "/home/simone/miniconda3/envs/smm638/bin/R",
+  "r.rpath.linux": "/home/simone/miniconda3/envs/smm638/bin/R",
+  "r.lsp.debug": true,
+  "r.lsp.logFile": "/tmp/r-lsp.log"
+}

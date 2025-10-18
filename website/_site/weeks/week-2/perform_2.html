@@ -418,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-5/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-6/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 6</span></a>
   </div>
 </li>
@@ -549,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-1-download-and-load-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="task-1-download-and-load-the-data">Task 1: Download and Load the Data</h2>
 <p>First, download the dataset and load it into Python using NetworkX.</p>
-<div id="5a3b61d7" class="cell" data-execution_count="1">
+<div id="2e1531ae" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -605,7 +605,7 @@ Understanding the Data Format
 <li>How many nodes have in-degree of 0? What does this mean?</li>
 <li>How many nodes have out-degree of 0? What does this mean?</li>
 </ol>
-<div id="0171990b" class="cell" data-execution_count="2">
+<div id="2d23e989" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute in-degree and out-degree</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>in_degrees <span class="op">=</span> <span class="bu">dict</span>(G.in_degree())</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>out_degrees <span class="op">=</span> <span class="bu">dict</span>(G.out_degree())</span>
@@ -656,7 +656,7 @@ Interpreting Degree Centrality in Directed Networks
 <section id="task-3-analyze-the-top-10-users" class="level2">
 <h2 class="anchored" data-anchor-id="task-3-analyze-the-top-10-users">Task 3: Analyze the Top 10 Users</h2>
 <p>Identify and compare the top 10 users by in-degree and out-degree.</p>
-<div id="e77338f0" class="cell" data-execution_count="3">
+<div id="7166dbc7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame with degree measures</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>degree_df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'node'</span>: <span class="bu">list</span>(G.nodes()),</span>
@@ -685,7 +685,7 @@ Interpreting Degree Centrality in Directed Networks
 <section id="task-4-compute-degree-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="task-4-compute-degree-distribution">Task 4: Compute Degree Distribution</h2>
 <p>Calculate the degree distribution for both in-degree and out-degree.</p>
-<div id="5d8dcdcb" class="cell" data-execution_count="4">
+<div id="b18f063f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute degree distributions</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>in_degree_counts <span class="op">=</span> pd.Series(in_deg_values).value_counts().sort_index()</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>out_degree_counts <span class="op">=</span> pd.Series(out_deg_values).value_counts().sort_index()</span>
@@ -719,7 +719,7 @@ Interpreting Degree Centrality in Directed Networks
 <p>Create visualizations of the degree distributions using both linear and log-log scales.</p>
 <section id="linear-scale-plot" class="level3">
 <h3 class="anchored" data-anchor-id="linear-scale-plot">Linear Scale Plot</h3>
-<div id="d048655a" class="cell" data-fig-height="6" data-fig-width="10" data-execution_count="5">
+<div id="99f17c26" class="cell" data-fig-height="6" data-fig-width="10" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -748,7 +748,7 @@ Interpreting Degree Centrality in Directed Networks
 </section>
 <section id="log-log-scale-plot" class="level3">
 <h3 class="anchored" data-anchor-id="log-log-scale-plot">Log-Log Scale Plot</h3>
-<div id="2b2fb1a9" class="cell" data-fig-height="6" data-fig-width="10" data-execution_count="6">
+<div id="6d930f78" class="cell" data-fig-height="6" data-fig-width="10" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot on log-log scale</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -799,7 +799,7 @@ Interpreting Degree Distributions
 <section id="task-6-compute-complementary-cumulative-distribution-function-ccdf" class="level2">
 <h2 class="anchored" data-anchor-id="task-6-compute-complementary-cumulative-distribution-function-ccdf">Task 6: Compute Complementary Cumulative Distribution Function (CCDF)</h2>
 <p>The CCDF is often more robust than the degree distribution for identifying power laws.</p>
-<div id="eabf3bbd" class="cell" data-fig-height="6" data-fig-width="10" data-execution_count="7">
+<div id="bee8f17a" class="cell" data-fig-height="6" data-fig-width="10" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_ccdf(degrees):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Compute complementary cumulative distribution function"""</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    degree_counts <span class="op">=</span> pd.Series(degrees).value_counts().sort_index()</span>

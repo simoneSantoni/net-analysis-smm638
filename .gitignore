@@ -3,4 +3,5 @@
 # private stuff
 .mySlides/
 # vscode settings
-.vscode/
+.vscode/_freeze/
+.quarto/_freeze/

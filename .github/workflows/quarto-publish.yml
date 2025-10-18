@@ -41,7 +41,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          install.packages(c('knitr', 'rmarkdown', 'dplyr', 'tidyr', 'ggplot2', 'igraph', 'tidygraph', 'ggraph', 'gridExtra', 'readr', 'scales', 'tibble'), repos='https://cloud.r-project.org/')
+          install.packages(c('knitr', 'rmarkdown', 'dplyr', 'tidyr', 'ggplot2', 'igraph', 'tidygraph', 'ggraph', 'gridExtra', 'readr', 'scales', 'tibble', 'viridis', 'RColorBrewer'), repos='https://cloud.r-project.org/')
         shell: Rscript {0}
 
       - name: Setup Python
@@ -75,10 +75,10 @@ jobs:
         run: quarto install tinytex --update-path
 
       - name: Render Quarto Project
-        uses: quarto-dev/quarto-actions/render@v2
-        with:
-          path: website
-        timeout-minutes: 20
+        run: |
+          cd website
+          quarto render --to html
+        timeout-minutes: 15
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -110,7 +110,7 @@ format:
     code-summary: ""
 
 execute:
-  freeze: auto
+  freeze: false
   echo: true
   warning: false
   message: false
