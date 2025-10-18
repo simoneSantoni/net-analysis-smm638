@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-17">
+<meta name="author" content="SMM638 Network Analytics">
+<meta name="dcterms.date" content="2025-10-18">
 
-<title>Network Analysis Glossary – SMM638 - Network Analytics</title>
+<title>Fundamental Network Concepts – SMM638 - Network Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -276,7 +277,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Network Analysis Glossary</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Fundamental Network Concepts</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -469,26 +470,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#core-network-components" id="toc-core-network-components" class="nav-link active" data-scroll-target="#core-network-components">Core Network Components</a>
-  <ul class="collapse">
-  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">Graph</a></li>
+  <li><a href="#what-is-a-graph" id="toc-what-is-a-graph" class="nav-link active" data-scroll-target="#what-is-a-graph">What is a Graph?</a></li>
   <li><a href="#vertices-nodes" id="toc-vertices-nodes" class="nav-link" data-scroll-target="#vertices-nodes">Vertices (Nodes)</a></li>
   <li><a href="#edges-linksties" id="toc-edges-linksties" class="nav-link" data-scroll-target="#edges-linksties">Edges (Links/Ties)</a></li>
-  <li><a href="#network-relationship" id="toc-network-relationship" class="nav-link" data-scroll-target="#network-relationship">Network Relationship</a></li>
-  </ul></li>
-  <li><a href="#network-types" id="toc-network-types" class="nav-link" data-scroll-target="#network-types">Network Types</a>
-  <ul class="collapse">
-  <li><a href="#one-mode-vs-two-mode-networks" id="toc-one-mode-vs-two-mode-networks" class="nav-link" data-scroll-target="#one-mode-vs-two-mode-networks">One-mode vs Two-mode Networks</a></li>
+  <li><a href="#network-relationships" id="toc-network-relationships" class="nav-link" data-scroll-target="#network-relationships">Network Relationships</a></li>
+  <li><a href="#one-mode-networks" id="toc-one-mode-networks" class="nav-link" data-scroll-target="#one-mode-networks">One-Mode Networks</a></li>
+  <li><a href="#two-mode-networks" id="toc-two-mode-networks" class="nav-link" data-scroll-target="#two-mode-networks">Two-Mode Networks</a></li>
+  <li><a href="#directed-networks" id="toc-directed-networks" class="nav-link" data-scroll-target="#directed-networks">Directed Networks</a></li>
+  <li><a href="#undirected-networks" id="toc-undirected-networks" class="nav-link" data-scroll-target="#undirected-networks">Undirected Networks</a></li>
   <li><a href="#signed-networks" id="toc-signed-networks" class="nav-link" data-scroll-target="#signed-networks">Signed Networks</a></li>
-  <li><a href="#weighted-vs-unweighted-networks" id="toc-weighted-vs-unweighted-networks" class="nav-link" data-scroll-target="#weighted-vs-unweighted-networks">Weighted vs Unweighted Networks</a></li>
-  </ul></li>
-  <li><a href="#network-substructures" id="toc-network-substructures" class="nav-link" data-scroll-target="#network-substructures">Network Substructures</a>
-  <ul class="collapse">
+  <li><a href="#weighted-networks" id="toc-weighted-networks" class="nav-link" data-scroll-target="#weighted-networks">Weighted Networks</a></li>
+  <li><a href="#unweighted-networks" id="toc-unweighted-networks" class="nav-link" data-scroll-target="#unweighted-networks">Unweighted Networks</a></li>
   <li><a href="#dyads" id="toc-dyads" class="nav-link" data-scroll-target="#dyads">Dyads</a></li>
   <li><a href="#triads" id="toc-triads" class="nav-link" data-scroll-target="#triads">Triads</a></li>
-  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slideshow_3-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -496,19 +493,25 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Network Analysis Glossary</h1>
-<p class="subtitle lead">Essential Terms and Concepts</p>
+<h1 class="title">Fundamental Network Concepts</h1>
+<p class="subtitle lead">Building Blocks of Network Analysis</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>SMM638 Network Analytics </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 17, 2025</p>
+      <p class="date">October 18, 2025</p>
     </div>
   </div>
   
@@ -520,231 +523,1115 @@ window.Quarto = {
 </header>
 
 
-<section id="core-network-components" class="level2">
-<h2 class="anchored" data-anchor-id="core-network-components">Core Network Components</h2>
-<section id="graph" class="level3">
-<h3 class="anchored" data-anchor-id="graph">Graph</h3>
-<p>A <strong>graph</strong> is a mathematical structure consisting of a set of objects (vertices) and a set of connections (edges) between pairs of these objects. In network analysis, graphs provide the fundamental framework for representing relationships and interactions between entities. Graphs can be directed (edges have direction) or undirected (edges have no inherent direction).</p>
-<p><span class="math display">\[
-G = {v, e}
-\]</span></p>
-<p>where</p>
-<p><span class="math display">\[v = [v_1, v_2, ..., v_i, ... v_n]\]</span></p>
-<p>and</p>
-<p><span class="math display">\[e = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j), ..., (v_j, v_n)]\]</span></p>
-</section>
-<section id="vertices-nodes" class="level3">
-<h3 class="anchored" data-anchor-id="vertices-nodes">Vertices (Nodes)</h3>
-<p><strong>Vertices</strong> (also called nodes) are the fundamental units or entities in a network. They represent the objects being studied, such as:</p>
+<section id="what-is-a-graph" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-graph">What is a Graph?</h2>
+<p><strong>Mathematical Foundation:</strong></p>
+<p>A graph <span class="math inline">\(G\)</span> is defined as: <span class="math inline">\(G = \{V, E\}\)</span></p>
+<p>Where:</p>
 <ul>
-<li>People in social networks</li>
-<li>Computers in technological networks</li>
-<li>Proteins in biological networks</li>
-<li>Cities in transportation networks</li>
+<li><span class="math inline">\(V = [v_1, v_2, ..., v_i, ..., v_n]\)</span> (vertices/nodes)</li>
+<li><span class="math inline">\(E = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j)]\)</span> (edges/links)</li>
 </ul>
-<p>Each vertex can have attributes (e.g., age, location, type) that provide additional information about the entity it represents.</p>
-</section>
-<section id="edges-linksties" class="level3">
-<h3 class="anchored" data-anchor-id="edges-linksties">Edges (Links/Ties)</h3>
-<p><strong>Edges</strong> (also called links or ties) represent the connections or relationships between vertices. They encode the interactions, associations, or dependencies between entities in the network. Edges can have various properties:</p>
+<p><strong>In Plain Language:</strong></p>
 <ul>
-<li>Direction (directed vs.&nbsp;undirected)</li>
-<li>Weight (strength of connection)</li>
-<li>Type (multiple relationship types)</li>
-<li>Temporal information (when the connection exists)</li>
+<li><strong>Vertices (Nodes)</strong>: The entities or objects</li>
+<li><strong>Edges (Links/Ties)</strong>: The connections or relationships</li>
+<li><strong>Graph</strong>: The complete structure of nodes and edges</li>
 </ul>
+<hr>
 </section>
-<section id="network-relationship" class="level3">
-<h3 class="anchored" data-anchor-id="network-relationship">Network Relationship</h3>
-<p>A <strong>network relationship</strong> defines the nature of connections between entities in a network. These relationships determine:</p>
+<section id="vertices-nodes" class="level2">
+<h2 class="anchored" data-anchor-id="vertices-nodes">Vertices (Nodes)</h2>
+<p><strong>Vertices represent the fundamental units in a network</strong></p>
+<p><strong>Examples across domains:</strong></p>
 <ul>
-<li>What constitutes a connection (e.g., friendship, communication, transaction)</li>
-<li>How connections are measured or identified</li>
-<li>Whether relationships are symmetric or asymmetric</li>
-<li>The meaning and interpretation of network patterns</li>
-</ul>
-</section>
-</section>
-<section id="network-types" class="level2">
-<h2 class="anchored" data-anchor-id="network-types">Network Types</h2>
-<section id="one-mode-vs-two-mode-networks" class="level3">
-<h3 class="anchored" data-anchor-id="one-mode-vs-two-mode-networks">One-mode vs Two-mode Networks</h3>
-<section id="one-mode-networks" class="level4">
-<h4 class="anchored" data-anchor-id="one-mode-networks">One-mode Networks</h4>
-<p><strong>One-mode networks</strong> (also called unipartite networks) contain only one type of vertex. All connections occur between vertices of the same type. Examples include:</p>
-<ul>
-<li>Friendship networks (people connected to people)</li>
-<li>Citation networks (papers citing papers)</li>
-<li>Trade networks (countries trading with countries)</li>
-</ul>
-<p>Here’s an example of creating a one-mode network visualization concerning a collaboration network among five co-workers:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="network_terms_files/figure-html/one-mode-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Example of a one-mode collaboration network showing connections between individuals</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="directed-vs-undirected-networks" class="level4">
-<h4 class="anchored" data-anchor-id="directed-vs-undirected-networks">Directed Vs Undirected Networks</h4>
-<p><strong>Directed networks</strong> (also called digraphs) have edges with a specific direction, indicating asymmetric relationships where the connection flows from one vertex to another. Examples include:</p>
-<ul>
-<li>Email networks (sender → receiver)</li>
-<li>Citation networks (citing paper → cited paper)<br>
+<li><strong>Social networks</strong>: People, organizations, groups</li>
+<li><strong>Biological networks</strong>: Proteins, genes, organisms<br>
 </li>
-<li>Food webs (predator → prey)</li>
-<li>Twitter follower networks (follower → followed)</li>
+<li><strong>Technological networks</strong>: Computers, routers, devices</li>
+<li><strong>Economic networks</strong>: Companies, banks, countries</li>
 </ul>
-<p>Here’s an example of a directed network:</p>
+<p><strong>Node Attributes:</strong></p>
+<ul>
+<li>Demographic characteristics (age, location)</li>
+<li>Type or category (customer, supplier, partner)</li>
+<li>Performance metrics (revenue, citations, activity)</li>
+<li>Temporal information (founding date, tenure)</li>
+</ul>
+<hr>
+</section>
+<section id="edges-linksties" class="level2">
+<h2 class="anchored" data-anchor-id="edges-linksties">Edges (Links/Ties)</h2>
+<p><strong>Edges encode relationships between nodes</strong></p>
+<p><strong>Key Properties:</strong></p>
+<ol type="1">
+<li><strong>Direction</strong>
+<ul>
+<li>Directed: One-way relationships (A → B)</li>
+<li>Undirected: Mutual relationships (A — B)</li>
+</ul></li>
+<li><strong>Weight</strong>
+<ul>
+<li>Weighted: Strength or frequency of connection</li>
+<li>Unweighted: Binary presence/absence</li>
+</ul></li>
+<li><strong>Sign</strong>
+<ul>
+<li>Positive: Friendship, cooperation, support</li>
+<li>Negative: Conflict, competition, animosity</li>
+</ul></li>
+<li><strong>Type</strong>
+<ul>
+<li>Multiple relationship types (multiplex networks)</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="network-relationships" class="level2">
+<h2 class="anchored" data-anchor-id="network-relationships">Network Relationships</h2>
+<p><strong>What Constitutes a Connection?</strong></p>
+<p>The definition of a relationship determines:</p>
+<ul>
+<li>What edges mean and how to interpret them</li>
+<li>Whether relationships are symmetric or asymmetric</li>
+<li>How to measure or identify connections</li>
+<li>The substantive interpretation of patterns</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Social</strong>: Friendship, advice-seeking, collaboration</li>
+<li><strong>Economic</strong>: Trade, investment, supply relationships</li>
+<li><strong>Information</strong>: Email exchange, citations, hyperlinks</li>
+<li><strong>Biological</strong>: Protein interactions, predator-prey</li>
+</ul>
+<hr>
+</section>
+<section id="one-mode-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="one-mode-networks">One-Mode Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Unipartite Networks: One Type of Node</strong></p>
+<p>All nodes are of the same type; connections occur between similar entities</p>
+<p><strong>Common Examples:</strong></p>
+<ul>
+<li><strong>Friendship networks</strong>: People ↔︎ People</li>
+<li><strong>Citation networks</strong>: Papers → Papers</li>
+<li><strong>Trade networks</strong>: Countries ↔︎ Countries</li>
+<li><strong>Collaboration networks</strong>: Scientists ↔︎ Scientists</li>
+</ul>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Adjacency matrix is square (n × n)</li>
+<li>Can calculate standard network metrics</li>
+<li>Direct interpretation of connection patterns</li>
+</ul>
+</div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="network_terms_files/figure-html/directed-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Directed Email Communication Network</figcaption>
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>Undirected networks</strong> have edges without direction, representing symmetric relationships where connections are mutual. Examples include:</p>
-<ul>
-<li>Friendship networks (mutual friendships)</li>
-<li>Co-authorship networks (collaborations)</li>
-<li>Infrastructure networks (roads, power grids)</li>
-<li>Protein interaction networks</li>
-</ul>
-<p>The choice between directed and undirected representation depends on whether the relationship being modeled is inherently asymmetric or symmetric.</p>
-</section>
-<section id="two-mode-networks" class="level4">
-<h4 class="anchored" data-anchor-id="two-mode-networks">Two-mode Networks</h4>
-<p><strong>Two-mode networks</strong> (also called bipartite networks) contain two distinct types of vertices, and edges only connect vertices of different types. Examples include:</p>
-<ul>
-<li>Actor-movie networks (actors connected to movies they appear in)</li>
-<li>Author-paper networks (authors connected to papers they wrote)</li>
-<li>Customer-product networks (customers connected to products they purchased)</li>
-</ul>
-<p>Here’s an example of a two-mode purchasing network:</p>
+<p><strong>Adjacency Matrix:</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">D</th>
+<th style="text-align: right;">E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>D</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>E</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="two-mode-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="two-mode-networks">Two-Mode Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Bipartite Networks: Two Types of Nodes</strong></p>
+<p>Edges only connect nodes of different types</p>
+<p><strong>Common Examples:</strong></p>
+<ul>
+<li><strong>Actor-Movie</strong>: Actors ↔︎ Movies</li>
+<li><strong>Author-Paper</strong>: Authors ↔︎ Publications</li>
+<li><strong>Customer-Product</strong>: Buyers ↔︎ Items purchased</li>
+<li><strong>Student-Course</strong>: Students ↔︎ Classes enrolled</li>
+</ul>
+<p><strong>Analytical Approaches:</strong></p>
+<ol type="1">
+<li>Analyze the bipartite structure directly</li>
+<li>Project onto one-mode networks (actors ↔︎ actors who shared movies)</li>
+<li>Examine affiliation patterns</li>
+</ol>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="network_terms_files/figure-html/two-mode-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Two-Mode Customer-Product Purchasing Network</figcaption>
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="signed-networks" class="level3">
-<h3 class="anchored" data-anchor-id="signed-networks">Signed Networks</h3>
-<p><strong>Signed networks</strong> are networks where edges carry positive or negative values, representing different types of relationships:</p>
-<ul>
-<li>Positive edges: friendship, alliance, cooperation</li>
-<li>Negative edges: animosity, conflict, competition</li>
-</ul>
-<p>Signed networks are particularly useful for studying:</p>
-<ul>
-<li>Social balance theory</li>
-<li>Coalition formation</li>
-<li>Conflict dynamics</li>
-<li>Opinion polarization</li>
-</ul>
-<p>Here’s an example of a signed social network like cooperative Vs. competitive ties among co-workers:</p>
+<p><strong>Incidence Matrix:</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Actor</th>
+<th style="text-align: right;">M1</th>
+<th style="text-align: right;">M2</th>
+<th style="text-align: right;">M3</th>
+<th style="text-align: right;">M4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A1</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>A2</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>A3</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="directed-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="directed-networks">Directed Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Asymmetric Relationships with Direction</strong></p>
+<p>Edges have a source and target: <span class="math inline">\(A \rightarrow B\)</span></p>
+<p><strong>Key Examples:</strong></p>
+<ul>
+<li><strong>Email networks</strong>: Sender → Receiver</li>
+<li><strong>Citation networks</strong>: Citing paper → Cited paper</li>
+<li><strong>Food webs</strong>: Predator → Prey</li>
+<li><strong>Twitter</strong>: Follower → Followed account</li>
+</ul>
+<p><strong>Important Distinctions:</strong></p>
+<ul>
+<li><strong>In-degree</strong>: Incoming connections (popularity, citations received)</li>
+<li><strong>Out-degree</strong>: Outgoing connections (activity, citations made)</li>
+<li>Reciprocity: Do ties go both ways?</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="network_terms_files/figure-html/signed-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Signed Social Network with Positive and Negative Relationships</figcaption>
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="weighted-vs-unweighted-networks" class="level3">
-<h3 class="anchored" data-anchor-id="weighted-vs-unweighted-networks">Weighted vs Unweighted Networks</h3>
-<section id="weighted-networks" class="level4">
-<h4 class="anchored" data-anchor-id="weighted-networks">Weighted Networks</h4>
-<p><strong>Weighted networks</strong> have edges with numerical values (weights) representing the strength, frequency, or capacity of connections. Examples include:</p>
-<ul>
-<li>Communication networks (number of messages exchanged)</li>
-<li>Transportation networks (traffic volume or distance)</li>
-<li>Neural networks (synaptic strength)</li>
-<li>Financial networks (transaction amounts)</li>
-</ul>
-<p>Here’s an example of a weighted communication network:</p>
+<p><strong>Adjacency Matrix:</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">D</th>
+<th style="text-align: right;">E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>D</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>E</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="undirected-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="undirected-networks">Undirected Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Symmetric Relationships Without Direction</strong></p>
+<p>Edges represent mutual connections: <span class="math inline">\(A — B\)</span></p>
+<p><strong>Key Examples:</strong></p>
+<ul>
+<li><strong>Friendship networks</strong>: Mutual friendships</li>
+<li><strong>Co-authorship</strong>: Joint publications</li>
+<li><strong>Infrastructure</strong>: Roads, power grids, railways</li>
+<li><strong>Protein interactions</strong>: Molecular binding</li>
+</ul>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Connection implies reciprocal relationship</li>
+<li>Single degree measure (not in/out)</li>
+<li>Simpler mathematical properties</li>
+<li>Adjacency matrix is symmetric</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="network_terms_files/figure-html/weighted-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Weighted Communication Network (Edge Width = Message Volume)</figcaption>
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="unweighted-networks" class="level4">
-<h4 class="anchored" data-anchor-id="unweighted-networks">Unweighted Networks</h4>
-<p><strong>Unweighted networks</strong> (also called binary networks) have edges that simply indicate the presence or absence of a connection. All edges are treated equally, focusing on the topology rather than connection strength. These are simpler to analyze but may lose important information about relationship intensity.</p>
-</section>
-</section>
-</section>
-<section id="network-substructures" class="level2">
-<h2 class="anchored" data-anchor-id="network-substructures">Network Substructures</h2>
-<section id="dyads" class="level3">
-<h3 class="anchored" data-anchor-id="dyads">Dyads</h3>
-<p>A <strong>dyad</strong> is the simplest possible network substructure, consisting of a pair of vertices and the possible edge(s) between them. In directed networks, dyads can be classified as:</p>
-<ul>
-<li>Null dyad: no connection in either direction</li>
-<li>Asymmetric dyad: connection in one direction only</li>
-<li>Mutual/Reciprocal dyad: connections in both directions</li>
-</ul>
-<p>Dyadic analysis examines pairwise relationships and forms the foundation for understanding reciprocity and basic network patterns.</p>
-<p>Here’s a visualization showing a dyad within a larger network:</p>
+<p><strong>Adjacency Matrix:</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">D</th>
+<th style="text-align: right;">E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>D</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>E</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="signed-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="signed-networks">Signed Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Edges Carry Positive or Negative Valence</strong></p>
+<p>Relationships can be friendly or hostile</p>
+<p><strong>Positive Edges (+):</strong></p>
+<ul>
+<li>Friendship, alliance, cooperation</li>
+<li>Support, endorsement, trust</li>
+</ul>
+<p><strong>Negative Edges (−):</strong></p>
+<ul>
+<li>Animosity, conflict, competition</li>
+<li>Opposition, distrust, rivalry</li>
+</ul>
+<p><strong>Applications:</strong></p>
+<ul>
+<li>Social balance theory (enemy of my enemy is my friend)</li>
+<li>Coalition formation in politics</li>
+<li>Opinion polarization dynamics</li>
+<li>Organizational conflict analysis</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="network_terms_files/figure-html/dyad-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Network with Emphasized Dyad (Alice-Bob)</figcaption>
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="triads" class="level3">
-<h3 class="anchored" data-anchor-id="triads">Triads</h3>
-<p>A <strong>triad</strong> consists of three vertices and the possible edges among them. Triads are fundamental for understanding:</p>
-<ul>
-<li>Transitivity (“friend of a friend” patterns)</li>
-<li>Structural balance</li>
-<li>Clustering tendencies</li>
-<li>Local network motifs</li>
-</ul>
-<p>Here’s a visualization showing a triad within a larger network:</p>
+<p><strong>Signed Adjacency Matrix:</strong></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">D</th>
+<th style="text-align: right;">E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C</strong></td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>D</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>E</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="weighted-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="weighted-networks">Weighted Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Edge Strength Varies Continuously</strong></p>
+<p>Weights represent connection intensity, frequency, or capacity</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Communication</strong>: Number of messages exchanged</li>
+<li><strong>Transportation</strong>: Traffic volume, distance, capacity</li>
+<li><strong>Financial</strong>: Transaction amounts, investment size</li>
+<li><strong>Neural</strong>: Synaptic strength between neurons</li>
+</ul>
+<p><strong>Analytical Implications:</strong></p>
+<ul>
+<li>Can identify strong vs.&nbsp;weak ties</li>
+<li>Weighted centrality measures</li>
+<li>Flow and capacity analysis</li>
+<li>More nuanced than binary networks</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="network_terms_files/figure-html/triad-network-viz-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Network with Emphasized Triad (Alice-Bob-Charlie)</figcaption>
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>We will deal with these in weeks 4 and 5.</p>
-
-
+<p><strong>Weighted Adjacency Matrix:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">D</th>
+<th style="text-align: right;">E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B</strong></td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C</strong></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>D</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>E</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr>
 </section>
+<section id="unweighted-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="unweighted-networks">Unweighted Networks</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Binary: Connection Present or Absent</strong></p>
+<p>All edges treated equally (0 or 1)</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Simpler to collect and analyze</li>
+<li>Focus on topology, not intensity</li>
+<li>May lose important information</li>
+<li>Standard network metrics apply directly</li>
+</ul>
+<p><strong>When Appropriate:</strong></p>
+<ul>
+<li>Relationship strength unclear or unmeasurable</li>
+<li>Presence/absence is the key question</li>
+<li>Simplification aids interpretation</li>
+<li>Preliminary exploratory analysis</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Adjacency Matrix:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Node</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">D</th>
+<th style="text-align: right;">E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>D</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>E</strong></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="dyads" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="dyads">Dyads</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>The Simplest Network Substructure</strong></p>
+<p>A dyad consists of two nodes and potential edge(s) between them</p>
+<p><strong>Types in Directed Networks:</strong></p>
+<ol type="1">
+<li><strong>Null dyad</strong>: No connection (0 edges)</li>
+<li><strong>Asymmetric dyad</strong>: One-way connection (1 edge)</li>
+<li><strong>Mutual/Reciprocal dyad</strong>: Two-way connection (2 edges)</li>
+</ol>
+<p><strong>Analytical Value:</strong></p>
+<ul>
+<li>Foundation for reciprocity analysis</li>
+<li>Building block of larger structures</li>
+<li>Pairwise relationship dynamics</li>
+<li>Simplest unit of social interaction</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Adjacency Matrix (Binary, Dyad Highlighted):</strong></p>
+<table style="border-collapse: collapse; margin: auto; font-size: 14px;">
+<tbody><tr>
+<th style="padding: 8px; border: 1px solid #ddd;">
+Node
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+A
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+B
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+C
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+D
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+E
+</th>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+A
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+B
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+C
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+D
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+E
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<hr>
+</section>
+<section id="triads" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="triads">Triads</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Three Nodes and Their Connections</strong></p>
+<p>Triads are fundamental for understanding:</p>
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><strong>Transitivity</strong>: “Friend of friend is friend” (A→B, B→C, A→C)</li>
+<li><strong>Structural balance</strong>: Stability of positive/negative relationships</li>
+<li><strong>Clustering</strong>: Local cohesion patterns</li>
+<li><strong>Network motifs</strong>: Recurring small-scale patterns</li>
+</ul>
+<p><strong>Example Patterns:</strong></p>
+<ul>
+<li>Open triad: A→B, B→C (no A→C)</li>
+<li>Closed triad: A→B, B→C, C→A (triangle)</li>
+<li>Balanced triad: Signs follow balance theory rules</li>
+</ul>
+<p><strong>We’ll explore these deeply in Weeks 4-5</strong></p>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="slideshow_3_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Adjacency Matrix (Binary, Triad Highlighted):</strong></p>
+<table style="border-collapse: collapse; margin: auto; font-size: 14px;">
+<tbody><tr>
+<th style="padding: 8px; border: 1px solid #ddd;">
+Node
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+A
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+B
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+C
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+D
+</th>
+<th style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+E
+</th>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+A
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+B
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #c41c85; color: white; font-weight: bold;">
+C
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: #c41c85; color: white;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+D
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd; background-color: #f8f9fa; color: black; font-weight: bold;">
+E
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+1
+</td>
+<td style="padding: 8px; border: 1px solid #ddd; text-align: center; background-color: white; color: black;">
+0
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Core Building Blocks:</strong></p>
+<ol type="1">
+<li>Networks = Nodes + Edges + Relationships</li>
+<li>Direction matters: Symmetric vs.&nbsp;Asymmetric</li>
+<li>Weights capture relationship intensity</li>
+<li>Signs represent positive/negative ties</li>
+<li>Mode determines what connects to what</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Analytical Foundation:</strong></p>
+<ul>
+<li>Choice of representation affects analysis</li>
+<li>Different network types require different methods</li>
+<li>Substructures (dyads, triads) reveal patterns</li>
+<li>Complex networks require sophisticated approaches</li>
+</ul>
+<p><strong>Next:</strong> We’ll use these concepts to measure and analyze real networks</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
+
+<script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

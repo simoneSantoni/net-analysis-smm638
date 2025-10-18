@@ -68,7 +68,7 @@ website:
           - text: "Week 5"
             href: weeks/week-5/main.qmd
           - text: "Week 6"
-            href: weeks/week-5/main.qmd
+            href: weeks/week-6/main.qmd
           - text: "Week 7"
             href: weeks/week-7/main.qmd
           - text: "Week 8"
@@ -117,6 +117,6 @@ execute:
 
 jupyter:
   kernelspec:
-    name: "ir"
-    language: "R"
-    display_name: "R"
+    name: "python3"
+    language: "python"
+    display_name: "Python 3"

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-17">
+<meta name="dcterms.date" content="2025-10-18">
 
-<title>Week 6 – SMM638 - Network Analytics</title>
+<title>Dyads, Triads, and Network Dynamics – SMM638 - Network Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -247,7 +276,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Week 6</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Dyads, Triads, and Network Dynamics</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -435,8 +464,42 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#week-4-overview" id="toc-week-4-overview" class="nav-link active" data-scroll-target="#week-4-overview">Week 4 Overview</a></li>
+  <li><a href="#why-do-networks-look-the-way-they-look" id="toc-why-do-networks-look-the-way-they-look" class="nav-link" data-scroll-target="#why-do-networks-look-the-way-they-look">Why Do Networks Look the Way They Look?</a></li>
+  <li><a href="#the-formation-question" id="toc-the-formation-question" class="nav-link" data-scroll-target="#the-formation-question">The Formation Question</a></li>
+  <li><a href="#taxonomy-of-network-effects" id="toc-taxonomy-of-network-effects" class="nav-link" data-scroll-target="#taxonomy-of-network-effects">Taxonomy of Network Effects</a></li>
+  <li><a href="#dyadic-processes-definition" id="toc-dyadic-processes-definition" class="nav-link" data-scroll-target="#dyadic-processes-definition">Dyadic Processes: Definition</a></li>
+  <li><a href="#dyadic-process-reciprocity" id="toc-dyadic-process-reciprocity" class="nav-link" data-scroll-target="#dyadic-process-reciprocity">Dyadic Process: Reciprocity</a></li>
+  <li><a href="#dyadic-process-homophily" id="toc-dyadic-process-homophily" class="nav-link" data-scroll-target="#dyadic-process-homophily">Dyadic Process: Homophily</a></li>
+  <li><a href="#dyadic-process-homophily-vs-selection" id="toc-dyadic-process-homophily-vs-selection" class="nav-link" data-scroll-target="#dyadic-process-homophily-vs-selection">Dyadic Process: Homophily vs Selection</a></li>
+  <li><a href="#other-dyadic-processes" id="toc-other-dyadic-processes" class="nav-link" data-scroll-target="#other-dyadic-processes">Other Dyadic Processes</a></li>
+  <li><a href="#triadic-processes-definition" id="toc-triadic-processes-definition" class="nav-link" data-scroll-target="#triadic-processes-definition">Triadic Processes: Definition</a></li>
+  <li><a href="#triadic-process-transitivity" id="toc-triadic-process-transitivity" class="nav-link" data-scroll-target="#triadic-process-transitivity">Triadic Process: Transitivity</a></li>
+  <li><a href="#empirical-evidence-triadic-focal-closure" id="toc-empirical-evidence-triadic-focal-closure" class="nav-link" data-scroll-target="#empirical-evidence-triadic-focal-closure">Empirical Evidence: Triadic &amp; Focal Closure</a></li>
+  <li><a href="#focal-vs-membership-closure-key-distinction" id="toc-focal-vs-membership-closure-key-distinction" class="nav-link" data-scroll-target="#focal-vs-membership-closure-key-distinction">Focal vs Membership Closure: Key Distinction</a></li>
+  <li><a href="#triadic-process-balance-theory" id="toc-triadic-process-balance-theory" class="nav-link" data-scroll-target="#triadic-process-balance-theory">Triadic Process: Balance Theory</a></li>
+  <li><a href="#triadic-configurations-in-directed-networks" id="toc-triadic-configurations-in-directed-networks" class="nav-link" data-scroll-target="#triadic-configurations-in-directed-networks">Triadic Configurations in Directed Networks</a></li>
+  <li><a href="#triadic-process-cyclicity-vs-transitivity" id="toc-triadic-process-cyclicity-vs-transitivity" class="nav-link" data-scroll-target="#triadic-process-cyclicity-vs-transitivity">Triadic Process: Cyclicity vs Transitivity</a></li>
+  <li><a href="#statistical-tests-for-network-effects" id="toc-statistical-tests-for-network-effects" class="nav-link" data-scroll-target="#statistical-tests-for-network-effects">Statistical Tests for Network Effects</a></li>
+  <li><a href="#permutation-tests-for-networks" id="toc-permutation-tests-for-networks" class="nav-link" data-scroll-target="#permutation-tests-for-networks">Permutation Tests for Networks</a></li>
+  <li><a href="#qap-regression" id="toc-qap-regression" class="nav-link" data-scroll-target="#qap-regression">QAP Regression</a></li>
+  <li><a href="#exponential-random-graph-models-ergms" id="toc-exponential-random-graph-models-ergms" class="nav-link" data-scroll-target="#exponential-random-graph-models-ergms">Exponential Random Graph Models (ERGMs)</a></li>
+  <li><a href="#ergm-intuition" id="toc-ergm-intuition" class="nav-link" data-scroll-target="#ergm-intuition">ERGM: Intuition</a></li>
+  <li><a href="#common-ergm-terms" id="toc-common-ergm-terms" class="nav-link" data-scroll-target="#common-ergm-terms">Common ERGM Terms</a></li>
+  <li><a href="#ergm-interpretation" id="toc-ergm-interpretation" class="nav-link" data-scroll-target="#ergm-interpretation">ERGM: Interpretation</a></li>
+  <li><a href="#ergm-challenges" id="toc-ergm-challenges" class="nav-link" data-scroll-target="#ergm-challenges">ERGM: Challenges</a></li>
+  <li><a href="#network-dynamics-models" id="toc-network-dynamics-models" class="nav-link" data-scroll-target="#network-dynamics-models">Network Dynamics Models</a></li>
+  <li><a href="#stochastic-actor-oriented-models" id="toc-stochastic-actor-oriented-models" class="nav-link" data-scroll-target="#stochastic-actor-oriented-models">Stochastic Actor-Oriented Models</a></li>
+  <li><a href="#comparing-modeling-approaches" id="toc-comparing-modeling-approaches" class="nav-link" data-scroll-target="#comparing-modeling-approaches">Comparing Modeling Approaches</a></li>
+  <li><a href="#summary-key-takeaways" id="toc-summary-key-takeaways" class="nav-link" data-scroll-target="#summary-key-takeaways">Summary: Key Takeaways</a></li>
+  <li><a href="#further-reading-resources" id="toc-further-reading-resources" class="nav-link" data-scroll-target="#further-reading-resources">Further Reading &amp; Resources</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="slideshow-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -444,8 +507,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 6</h1>
-<p class="subtitle lead">Mid-term project presentation</p>
+<h1 class="title">Dyads, Triads, and Network Dynamics</h1>
 </div>
 
 
@@ -456,7 +518,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 17, 2025</p>
+      <p class="date">October 18, 2025</p>
     </div>
   </div>
   
@@ -468,21 +530,616 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<section id="week-4-overview" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="week-4-overview">Week 4 Overview</h2>
+<p><strong>Key Questions:</strong></p>
+<ul>
+<li>Why do networks look the way they look?</li>
+<li>What processes generate network structures?</li>
+<li>How can we test for and model these processes?</li>
+</ul>
+<p><strong>Topics:</strong></p>
+<ul>
+<li>Taxonomy of network formation mechanisms</li>
+<li>Dyadic and triadic processes</li>
+<li>Statistical tests for network effects</li>
+<li>Exponential Random Graph Models (ERGMs)</li>
+<li>Network dynamics</li>
+</ul>
+<hr>
+</section>
+<section id="why-do-networks-look-the-way-they-look" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-networks-look-the-way-they-look">Why Do Networks Look the Way They Look?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Networks are <strong>not random</strong> - they exhibit consistent structural patterns:</p>
+<ul>
+<li><strong>Clustering</strong>: Friends of friends tend to be friends</li>
+<li><strong>Degree heterogeneity</strong>: Some nodes have many connections, others few</li>
+<li><strong>Homophily</strong>: Similar nodes connect more often</li>
+<li><strong>Small world</strong>: Short path lengths despite local clustering</li>
+</ul>
+<p><strong>Central Question</strong>: What social, biological, or physical processes create these patterns?</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Typical network: hubs, clusters, paths</strong></p>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+</div>
+<hr>
+</section>
+<section id="the-formation-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-formation-question">The Formation Question</h2>
+<p>Two complementary perspectives:</p>
+<ol type="1">
+<li><strong>Structural mechanisms</strong>: Network topology drives new connections
+<ul>
+<li>Example: Triadic closure creates clusters</li>
+</ul></li>
+<li><strong>Attribute-based mechanisms</strong>: Node characteristics drive connections
+<ul>
+<li>Example: Homophily - similarity breeds connection</li>
+</ul></li>
+</ol>
+<p><strong>Challenge</strong>: Disentangling these effects requires sophisticated statistical models</p>
+<hr>
+</section>
+<section id="taxonomy-of-network-effects" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="taxonomy-of-network-effects">Taxonomy of Network Effects</h2>
+<p><strong>Major categories of network formation processes:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Dyadic</strong></td>
+<td>Two-node processes</td>
+<td>Homophily, reciprocity</td>
+</tr>
+<tr class="even">
+<td><strong>Triadic</strong></td>
+<td>Three-node processes</td>
+<td>Transitivity, balance</td>
+</tr>
+<tr class="odd">
+<td><strong>Higher-order</strong></td>
+<td>Four+ node processes</td>
+<td>K-cores, cliques</td>
+</tr>
+<tr class="even">
+<td><strong>Node-level</strong></td>
+<td>Individual preferences</td>
+<td>Preferential attachment</td>
+</tr>
+<tr class="odd">
+<td><strong>Exogenous</strong></td>
+<td>External factors</td>
+<td>Geography, institutions</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="dyadic-processes-definition" class="level2">
+<h2 class="anchored" data-anchor-id="dyadic-processes-definition">Dyadic Processes: Definition</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Dyadic processes</strong> operate on pairs of nodes (dyads)</p>
+<p>A dyad can be in three states:</p>
+<ul>
+<li><strong>Null</strong>: No connection (i → j and j → i both absent)</li>
+<li><strong>Asymmetric</strong>: One-way connection (i → j OR j → i)</li>
+<li><strong>Mutual</strong>: Two-way connection (i → j AND j → i)</li>
+</ul>
+<p>Dyadic processes explain why specific pairs of nodes connect</p>
+</div><div class="column" style="width:50%;">
+
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Content coming soon.</p>
+<hr>
+</section>
+<section id="dyadic-process-reciprocity" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="dyadic-process-reciprocity">Dyadic Process: Reciprocity</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Definition</strong>: The tendency for directed edges to be reciprocated</p>
+<p><strong>Mechanism</strong>: If i → j exists, j → i becomes more likely</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Social media: You follow back those who follow you</li>
+<li>Collaboration: Co-authorship often becomes bidirectional</li>
+<li>Trade: Countries with import relationships develop export relationships</li>
+</ul>
+<p><strong>Statistical signature</strong>: Higher proportion of mutual dyads than expected by chance</p>
+</div><div class="column" style="width:50%;">
+
 </div>
 </div>
+<hr>
+</section>
+<section id="dyadic-process-homophily" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="dyadic-process-homophily">Dyadic Process: Homophily</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Definition</strong>: “Similarity breeds connection” - nodes with similar attributes connect more</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Demographic</strong>: Age, gender, ethnicity</li>
+<li><strong>Behavioral</strong>: Interests, activities</li>
+<li><strong>Status</strong>: Education, occupation</li>
+</ul>
+<p><strong>Formula</strong>: P(edge|similar) &gt; P(edge|dissimilar)</p>
+<p><strong>Empirical Evidence:</strong></p>
+<ul>
+<li><strong>Wikipedia editors</strong> (Crandall et al., 2008): Editors with similar editing patterns more likely to communicate</li>
+<li><strong>University email network</strong> (Kossinets &amp; Watts, 2006): Students taking same classes form connections at higher rates</li>
+</ul>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="dyadic-process-homophily-vs-selection" class="level2">
+<h2 class="anchored" data-anchor-id="dyadic-process-homophily-vs-selection">Dyadic Process: Homophily vs Selection</h2>
+<p><strong>Critical distinction:</strong></p>
+<ul>
+<li><strong>Selection (homophily)</strong>: Similar people connect</li>
+<li><strong>Influence</strong>: Connected people become similar</li>
+</ul>
+<p><strong>Problem</strong>: Observational data shows correlation, not causation!</p>
+<p><strong>Empirical example - Wikipedia editors</strong> (Crandall et al., 2008):</p>
+<ul>
+<li>Tracked similarity over time relative to first communication</li>
+<li><strong>Before contact</strong>: Rapid increase in similarity (selection)</li>
+<li><strong>After contact</strong>: Continued slower increase (influence)</li>
+<li>Both processes operate simultaneously!</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Longitudinal data tracking changes over time</li>
+<li>Statistical models that separate effects (e.g., SAOMs)</li>
+<li>Natural experiments</li>
+</ul>
+<hr>
+</section>
+<section id="other-dyadic-processes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="other-dyadic-processes">Other Dyadic Processes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Heterophily</strong>: Attraction to difference (opposite of homophily)</p>
+<ul>
+<li>Example: Dating networks, mentor-mentee relationships</li>
+</ul>
+<p><strong>Distance/Geography</strong>: Physical proximity increases connection probability</p>
+<ul>
+<li>Example: Friendship networks, communication patterns</li>
+</ul>
+<p><strong>Status homophily</strong>: Nodes connect within same status level</p>
+<ul>
+<li>Example: Corporate networks, academic citations</li>
+</ul>
+<p><strong>Resource exchange</strong>: Complementary needs drive connections</p>
+<ul>
+<li>Example: Economic networks, mutualistic relationships</li>
+</ul>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="triadic-processes-definition" class="level2">
+<h2 class="anchored" data-anchor-id="triadic-processes-definition">Triadic Processes: Definition</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Triadic processes</strong> involve three nodes forming triangles</p>
+<p><strong>Key configurations:</strong></p>
+<ul>
+<li><strong>Open triad</strong>: A-B, B-C exist but A-C absent</li>
+<li><strong>Closed triad (triangle)</strong>: A-B, B-C, and A-C all exist</li>
+</ul>
+<p><strong>Core insight</strong>: The presence of two edges affects the probability of the third</p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="triadic-process-transitivity" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="triadic-process-transitivity">Triadic Process: Transitivity</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Definition</strong>: “Friends of friends become friends”</p>
+<p><strong>Mechanism</strong>: If A→B and B→C, then A→C becomes more likely</p>
+<p><strong>Also called</strong>: Triadic closure, clustering</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Social networks: Introduced through mutual friends</li>
+<li>Academic collaboration: Co-authors of co-authors collaborate</li>
+<li>Protein networks: Proteins interacting with same partner interact</li>
+</ul>
+<p><strong>Measurement</strong>: Clustering coefficient, transitivity ratio</p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="empirical-evidence-triadic-focal-closure" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="empirical-evidence-triadic-focal-closure">Empirical Evidence: Triadic &amp; Focal Closure</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Kossinets &amp; Watts (2006)</strong><sup>3</sup>: Email network at large US university</p>
+<p><strong>Data</strong>: ~22,000 students over one year</p>
+<p><strong>Key findings:</strong></p>
+<p><strong>Triadic closure</strong> (shared friends):</p>
+<ul>
+<li>Probability increases roughly linearly with common friends</li>
+<li>Strong effect: 2 common friends &gt; 2× effect of 1 friend</li>
+</ul>
+<p><strong>Focal closure</strong> (shared activities/classes):</p>
+<ul>
+<li>First shared class has similar effect to one friend</li>
+<li>Diminishing returns for additional classes</li>
+<li>Curve levels off (different from triadic closure)</li>
+</ul>
+<p><strong>Implication</strong>: Both structural and contextual effects matter!</p>
+<p><sup>3</sup> Kossinets, G., &amp; Watts, D. J. (2006). Empirical analysis of an evolving social network. science, 311(5757), 88-90.</p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="focal-vs-membership-closure-key-distinction" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="focal-vs-membership-closure-key-distinction">Focal vs Membership Closure: Key Distinction</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Focal Closure</strong> (Easley &amp; Kleinberg, 2010)<sup>2</sup>:</p>
+<ul>
+<li>People meet through shared <strong>activities/contexts</strong> (foci)</li>
+<li>Examples: Classes, workplaces, clubs, events</li>
+<li><strong>Mechanism</strong>: Physical proximity + repeated interaction</li>
+<li><strong>Pattern</strong>: Bipartite structure (people ↔︎ activities)</li>
+</ul>
+<p><strong>Membership Closure</strong>:</p>
+<ul>
+<li>People connect through shared <strong>group memberships</strong></li>
+<li>Examples: Organizations, committees, teams</li>
+<li><strong>Mechanism</strong>: Formal affiliation creates opportunities</li>
+<li><strong>Pattern</strong>: Overlapping group boundaries</li>
+</ul>
+<p><strong>Key insight</strong>: Context matters as much as network structure!</p>
+<p><sup>2</sup> Easley, D., &amp; Kleinberg, J. (2010). Networks, crowds, and markets: Reasoning about a highly connected world (Vol. 1). Cambridge: Cambridge university press.</p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="triadic-process-balance-theory" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="triadic-process-balance-theory">Triadic Process: Balance Theory</h2>
+<p><strong>Structural balance</strong> (Heider, 1946): Cognitive consistency in signed networks</p>
+<p><strong>Balanced triangles</strong> (all relationships consistent): - <strong>+++</strong>: Three mutual friends (stable) - <strong>+–</strong>: Two enemies share a common enemy (stable)</p>
+<p><strong>Unbalanced triangles</strong> (tension): - <strong>++-</strong>: Friend of friend is enemy (unstable)<br>
+- <strong>—</strong>: Three mutual enemies (unstable)</p>
+<p><strong>Prediction</strong>: Networks evolve toward balanced states</p>
+<hr>
+</section>
+<section id="triadic-configurations-in-directed-networks" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="triadic-configurations-in-directed-networks">Triadic Configurations in Directed Networks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>16 possible triadic configurations</strong> (triads census)<sup>1</sup>:</p>
+<p>Key patterns:</p>
+<ul>
+<li><strong>003</strong>: Empty (no edges)</li>
+<li><strong>012</strong>: One edge only</li>
+<li><strong>102</strong>: Two edges, no transitivity</li>
+<li><strong>030T</strong>: Transitive triple</li>
+<li><strong>300</strong>: Complete triangle</li>
+</ul>
+<p><strong>Different processes favor different configurations</strong></p>
+<p>Each tells us something about network formation mechanisms!</p>
+<p><sup>1</sup> Vladimir Batagelj and Andrej Mrvar, A subquadratic triad census algorithm for large sparse networks with small maximum degree, University of Ljubljana, http://vlado.fmf.uni-lj.si/pub/networks/doc/triads/triads.pdf</p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="triadic-process-cyclicity-vs-transitivity" class="level2">
+<h2 class="anchored" data-anchor-id="triadic-process-cyclicity-vs-transitivity">Triadic Process: Cyclicity vs Transitivity</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Transitivity</strong>: A→B→C implies A→C (hierarchical)</p>
+<ul>
+<li>Creates hierarchies, rankings</li>
+<li>Example: Citation networks, food webs</li>
+</ul>
+<p><strong>Cyclicity</strong>: A→B→C implies C→A (circular)</p>
+<ul>
+<li>Creates exchange cycles</li>
+<li>Example: Rock-paper-scissors, circular status</li>
+</ul>
+<p><strong>Distinction matters</strong> for understanding network function!</p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="statistical-tests-for-network-effects" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-tests-for-network-effects">Statistical Tests for Network Effects</h2>
+<p><strong>Challenge</strong>: Network data violates independence assumptions</p>
+<p><strong>Classical approach fails</strong>: Standard statistical tests assume independent observations</p>
+<p><strong>Solutions:</strong></p>
+<ol type="1">
+<li><strong>Permutation tests</strong>: Randomize while preserving structure</li>
+<li><strong>Conditional Uniform Graph (CUG) tests</strong>: Compare to random graphs</li>
+<li><strong>Quadratic Assignment Procedure (QAP)</strong>: Correlation with permutation</li>
+</ol>
+<hr>
+</section>
+<section id="permutation-tests-for-networks" class="level2">
+<h2 class="anchored" data-anchor-id="permutation-tests-for-networks">Permutation Tests for Networks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Logic</strong>:</p>
+<ol type="1">
+<li>Calculate observed statistic (e.g., clustering)</li>
+<li>Generate random networks preserving certain properties</li>
+<li>Calculate statistic on random networks</li>
+<li>Compare: Is observed value extreme?</li>
+</ol>
+<p><strong>Key decision</strong>: What to preserve when randomizing?</p>
+<ul>
+<li>Node degrees?</li>
+<li>Number of edges?</li>
+<li>Dyad distributions?</li>
+</ul>
+<p><strong>P-value</strong>: Proportion of random networks with more extreme values</p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<hr>
+</section>
+<section id="qap-regression" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="qap-regression">QAP Regression</h2>
+<p><strong>Quadratic Assignment Procedure</strong>: Test relationship between network matrices</p>
+<p><strong>Use case</strong>: Does network Y depend on network X?</p>
+<p><strong>Example</strong>: Does friendship (Y) depend on geographic proximity (X)?</p>
+<p><strong>Procedure</strong>:</p>
+<ol type="1">
+<li>Regress Y on X, get coefficient β</li>
+<li>Permute rows/columns of Y simultaneously</li>
+<li>Repeat regression, get β*</li>
+<li>Repeat 1000+ times</li>
+<li>P-value: proportion where |β*| &gt; |β|</li>
+</ol>
+<p><strong>Advantage</strong>: Accounts for network dependencies</p>
+<hr>
+</section>
+<section id="exponential-random-graph-models-ergms" class="level2">
+<h2 class="anchored" data-anchor-id="exponential-random-graph-models-ergms">Exponential Random Graph Models (ERGMs)</h2>
+<p><strong>Core idea</strong>: Model probability of observing a network as function of its features</p>
+<p><strong>Form</strong>: <span class="math display">\[P(Y = y) = \frac{1}{\kappa} \exp\left(\sum_k \theta_k s_k(y)\right)\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(Y\)</span>: Random network</li>
+<li><span class="math inline">\(s_k(y)\)</span>: Network statistics (edges, triangles, etc.)</li>
+<li><span class="math inline">\(\theta_k\)</span>: Parameters (effects to estimate)</li>
+<li><span class="math inline">\(\kappa\)</span>: Normalizing constant</li>
+</ul>
+<hr>
+</section>
+<section id="ergm-intuition" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="ergm-intuition">ERGM: Intuition</h2>
+<p>Think of it as <strong>logistic regression for networks</strong></p>
+<p><strong>Instead of</strong>: P(person votes yes) = f(age, income, …)</p>
+<p><strong>We have</strong>: P(network has this structure) = f(edges, triangles, homophily, …)</p>
+<p><strong>Key insight</strong>: Model entire network as outcome, not individual ties</p>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li>Tests multiple mechanisms simultaneously</li>
+<li>Controls for confounding effects</li>
+<li>Provides effect sizes, not just significance</li>
+</ul>
+<hr>
+</section>
+<section id="common-ergm-terms" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="common-ergm-terms">Common ERGM Terms</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Effect</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>edges</code></td>
+<td>Density</td>
+<td>Overall connection probability</td>
+</tr>
+<tr class="even">
+<td><code>mutual</code></td>
+<td>Reciprocity</td>
+<td>Tendency for reciprocation</td>
+</tr>
+<tr class="odd">
+<td><code>triangle</code></td>
+<td>Transitivity</td>
+<td>Tendency for closure</td>
+</tr>
+<tr class="even">
+<td><code>nodematch("attr")</code></td>
+<td>Homophily</td>
+<td>Same-attribute connection</td>
+</tr>
+<tr class="odd">
+<td><code>nodecov("attr")</code></td>
+<td>Attribute effect</td>
+<td>Node attribute influence</td>
+</tr>
+<tr class="even">
+<td><code>gwesp</code></td>
+<td>Shared partners</td>
+<td>Weighted transitivity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Model specification</strong>: Choose terms based on theory!</p>
+<hr>
+</section>
+<section id="ergm-interpretation" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="ergm-interpretation">ERGM: Interpretation</h2>
+<p><strong>Positive coefficient</strong> (θ &gt; 0): Configuration is more likely than chance</p>
+<p><strong>Negative coefficient</strong> (θ &lt; 0): Configuration is less likely than chance</p>
+<p><strong>Example interpretation</strong>:</p>
+<pre><code>edges: -2.5    (low baseline density)
+mutual: 1.8    (strong reciprocity)
+triangle: 0.4  (moderate transitivity)
+nodematch("gender"): 0.6  (gender homophily)</code></pre>
+<p><strong>Reading</strong>: Controlling for density, reciprocity, and triangles, same-gender ties are more likely</p>
+<hr>
+</section>
+<section id="ergm-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="ergm-challenges">ERGM: Challenges</h2>
+<p><strong>Degeneracy problem</strong>: Some specifications lead to extreme networks</p>
+<ul>
+<li>All edges or no edges</li>
+<li>Complete clustering or no clustering</li>
+</ul>
+<p><strong>Computational challenge</strong>: Calculating κ is often intractable</p>
+<p><strong>Solutions</strong>:</p>
+<ul>
+<li>Use geometrically-weighted terms (GWESP, GWDSP)</li>
+<li>Markov Chain Monte Carlo (MCMC) estimation</li>
+<li>Careful model specification and testing</li>
+</ul>
+<hr>
+</section>
+<section id="network-dynamics-models" class="level2">
+<h2 class="anchored" data-anchor-id="network-dynamics-models">Network Dynamics Models</h2>
+<p><strong>So far</strong>: Models of static networks (single time point)</p>
+<p><strong>Reality</strong>: Networks evolve over time</p>
+<p><strong>Dynamic approaches</strong>:</p>
+<ol type="1">
+<li><strong>Temporal ERGMs</strong>: ERGMs on network changes</li>
+<li><strong>Stochastic Actor-Oriented Models (SAOMs)</strong>: Actor-driven change</li>
+<li><strong>Relational Event Models (REMs)</strong>: Continuous-time interactions</li>
+</ol>
+<hr>
+</section>
+<section id="stochastic-actor-oriented-models" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="stochastic-actor-oriented-models">Stochastic Actor-Oriented Models</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Key assumption</strong>: Actors make rational decisions about ties</p>
+<p><strong>Process</strong>:</p>
+<ol type="1">
+<li>Actors get random opportunities to change ties</li>
+<li>They evaluate potential changes via utility function</li>
+<li>They choose change that maximizes utility</li>
+</ol>
+<p><strong>Utility function includes</strong>:</p>
+<ul>
+<li>Structural preferences (transitivity, reciprocity)</li>
+<li>Attribute preferences (homophily)</li>
+<li>Costs and benefits</li>
+</ul>
+<p><strong>Software</strong>: RSiena package in R</p>
+<p><strong>Advantage</strong>: Separates selection from influence effects!</p>
+</div><div class="column" style="width:45%;">
+<p>```</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="comparing-modeling-approaches" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="comparing-modeling-approaches">Comparing Modeling Approaches</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>Time</th>
+<th>Question</th>
+<th>Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ERGM</strong></td>
+<td>Static</td>
+<td>What structure?</td>
+<td>Multiple mechanisms</td>
+</tr>
+<tr class="even">
+<td><strong>SAOM</strong></td>
+<td>Panel</td>
+<td>How does it change?</td>
+<td>Selection vs influence</td>
+</tr>
+<tr class="odd">
+<td><strong>REM</strong></td>
+<td>Continuous</td>
+<td>When do events occur?</td>
+<td>Precise timing</td>
+</tr>
+<tr class="even">
+<td><strong>TERGM</strong></td>
+<td>Discrete steps</td>
+<td>What changes?</td>
+<td>Network evolution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choice depends on</strong>:</p>
+<ul>
+<li>Data structure (cross-sectional vs longitudinal)</li>
+<li>Research question (structure vs process)</li>
+<li>Computational resources</li>
+</ul>
+<hr>
+</section>
+<section id="summary-key-takeaways" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="summary-key-takeaways">Summary: Key Takeaways</h2>
+<ol type="1">
+<li><p><strong>Network structure emerges from systematic processes</strong>, not randomness</p></li>
+<li><p><strong>Dyadic processes</strong> (reciprocity, homophily) explain pairwise connections</p></li>
+<li><p><strong>Triadic processes</strong> (transitivity, balance) explain local clustering</p></li>
+<li><p><strong>Statistical tests must account for network dependencies</strong> (permutation, QAP)</p></li>
+<li><p><strong>ERGMs model network probability</strong> as function of multiple mechanisms</p></li>
+<li><p><strong>Dynamic models</strong> capture how networks evolve over time</p></li>
+</ol>
+<p><strong>Next steps</strong>: Applying these models to real data!</p>
+<hr>
+</section>
+<section id="further-reading-resources" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="further-reading-resources">Further Reading &amp; Resources</h2>
+<p><strong>Core texts</strong>:</p>
+<ul>
+<li>Lusher, Koskinen &amp; Robins (2013). <em>Exponential Random Graph Models for Social Networks</em></li>
+<li>Snijders, van de Bunt &amp; Steglich (2010). “Introduction to SAOMs”</li>
+<li>Wasserman &amp; Faust (1994). <em>Social Network Analysis</em></li>
+</ul>
+<p><strong>Software</strong>:</p>
+<ul>
+<li><code>statnet</code> package (R): ERGMs</li>
+<li><code>RSiena</code> package (R): SAOMs</li>
+<li><code>igraph</code> package (R/Python): Basic network analysis</li>
+</ul>
+<p><strong>Online resources</strong>: INSNA workshops, Summer institutes</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

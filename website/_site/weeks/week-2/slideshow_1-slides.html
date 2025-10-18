@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ffbf04281a9cfad039c1e61125a1472c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-0d8a476309120394edd74ac61f9e1819.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-ffbf04281a9cfad039c1e61125a1472c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -29,7 +9,8 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>SMM638 - Network Analytics – practice_2</title>
+  <meta name="dcterms.date" content="2025-10-17">
+  <title>SMM638 - Network Analytics – Networks, Network Analysis &amp; Business Relevance</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -47,8 +28,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-fab765895f71d2789d5da185ec78f6f4.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -142,17 +189,235 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
-<body class="quarto-light nav-sidebar">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Networks, Network Analysis &amp; Business Relevance</h1>
+  <p class="subtitle">Setting Expectations for SMM638</p>
 
-<section class="slide level2">
+<div class="quarto-title-authors">
+</div>
 
+  <p class="date">2025-10-17</p>
+</section>
+<section id="what-are-networks" class="slide level2">
+<h2>What Are Networks?</h2>
+<p><strong>Networks are structures of interconnected entities</strong></p>
+<ul>
+<li>Entities are interconnected via specific <strong>relationships</strong></li>
+<li><strong>Examples of relationships</strong> are:
+<ul>
+<li>Resource flow (e.g., economic exchange)</li>
+<li>Information exchange (e.g., electronic communication)</li>
+<li>Physical connection (e.g., London tube)</li>
+<li>Membership (e.g., student-program affiliation)</li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><em>Networks and graphs are interrelated yet distinct concepts</em>: graphs are mathematical constructs, while networks regard concrete relationships between entities that can be represented using graphs</p>
+</div>
+</div>
+</div>
+</section>
+<section id="what-to-expect-network-analysis" class="slide level2">
+<h2>What to Expect: Network Analysis</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Network Analysis Tools</strong></th>
+<th style="text-align: left;"><strong>Real-world Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Visualize</strong> complex relationship patterns</td>
+<td style="text-align: left;">Associations between subreddits on Reddit</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Identify</strong> influential nodes and key positions</td>
+<td style="text-align: left;">Opinion leaders in organizations and platforms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Detect</strong> network sub-components and communities</td>
+<td style="text-align: left;">Communication silos in teams</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Understand</strong> information flows and diffusion</td>
+<td style="text-align: left;">Impact of Tube station closures on connectivity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Explain</strong> properties of complex systems quantitatively</td>
+<td style="text-align: left;">Distribution of popularity in cultural markets</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="network-analysis-skills" class="slide level2">
+<h2>Network Analysis Skills</h2>
+<p><strong>Key skills you’ll develop:</strong></p>
+<ul>
+<li>Network data collection, wrangling, and structuring</li>
+<li>Computing various network indicators</li>
+<li>Statistical analysis of network data</li>
+<li>Creating meaningful network visualizations</li>
+<li>Translating insights into business strategy</li>
+</ul>
+</section>
+<section id="networks-in-markets" class="slide level2">
+<h2>Networks in Markets</h2>
+<p><strong>Information Flow</strong></p>
+<ul>
+<li>Product reviews and recommendations spread through networks<sup>1</sup></li>
+<li>Market intelligence travels via professional connections</li>
+<li>Innovation diffuses along network pathways</li>
+</ul>
+<p><img data-src="imgs/trading_floor.jpg" style="width:60.0%"></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Oestreicher-Singer, Gal, and Arun Sundararajan. <em>Recommendation networks and the long tail of electronic commerce.</em> MIS Quarterly (2012): 65-83.</p></li></ol></aside></section>
+<section id="networks-in-markets-1" class="slide level2">
+<h2>Networks in Markets</h2>
+<p><strong>Trust and Transaction Costs</strong></p>
+<ul>
+<li>Trust networks reduce monitoring costs and increase task focus<sup>1</sup></li>
+<li>Established relationships lower search costs for new business partners</li>
+<li>Repeat interactions enable efficient exchange and coordination among parties</li>
+</ul>
+<p><img data-src="imgs/trust_in_negotiations.jpg" style="width:55.0%"></p>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Uzzi, B., &amp; Dunlap, S. (2005). <em>How to build your network</em>. Harvard Business Review, 83(12), 53.</p></li></ol></aside></section>
+<section id="networks-in-markets-2" class="slide level2">
+<h2>Networks in Markets</h2>
+<p><strong>Platform Economy’s Network Structure</strong></p>
+<ul>
+<li>Platform economics is predicated around the value of connections<sup>1</sup></li>
+<li>Network effects drive scaling (how to leverage networks to get attention?)</li>
+<li>An ecosystem’s advantage relies on networks (e.g., Android is more than an operating system, it’s a complex network of firms, developers, and customers)</li>
+</ul>
+<p><img data-src="imgs/android_vs_appstore.png"></p>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Belleflamme, P., &amp; Peitz, M. (2021). <em>The economics of platforms</em>. Cambridge University Press.</p></li></ol></aside></section>
+<section id="networks-in-organizations" class="slide level2">
+<h2>Networks in Organizations</h2>
+<p><strong>Knowledge Resides in Networks</strong></p>
+<p><em>Organizational Network Analysis</em> allows analysts to understand:</p>
+<ul>
+<li>Knowledge locus and knowledge sharing</li>
+<li>Innovation through diverse connections</li>
+<li>Problem-solving via boundary-spanning ties</li>
+</ul>
+
+<img data-src="imgs/organizational_silos.png" class="r-stretch"></section>
+<section id="networks-in-organizations-1" class="slide level2">
+<h2>Networks in Organizations</h2>
+<p><strong>Teams Function through Networks</strong></p>
+<ul>
+<li>Collaboration patterns affect performance<sup>1</sup></li>
+<li>Informal advice networks complement formal structure<sup>2</sup></li>
+<li>Communication efficiency depends on network position</li>
+</ul>
+<p><img data-src="imgs/team_exchange.jpg" style="width:45.0%"></p>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>Gratton, L., &amp; Erickson, T. J. (2007). <em>Eight ways to build collaborative teams</em>. Harvard Business Review, 85(11), 100.</p></li><li id="fn5"><p>Cross, R., Ehrlich, K., Dawson, R., &amp; Helferich, J. (2008). <em>Managing collaboration: Improving team effectiveness through a network perspective</em>. California Management Review, 50(4), 74-98.</p></li></ol></aside></section>
+<section id="networks-in-organizations-2" class="slide level2">
+<h2>Networks in Organizations</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Networks Enable Strategy</strong></p>
+<ul>
+<li>Sparsely connected networks offer value creation opportunities<sup>1</sup></li>
+<li>Those who connect otherwise disconnected groups have information advantages<sup>2</sup></li>
+<li>Central nodes have influence and power<sup>3</sup></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/the_prince.jpg"></p>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>Burt, R. S. (2005). <em>Brokerage and closure: An introduction to social capital</em>. Oxford University Press, USA.</p></li><li id="fn7"><p>Burt, R. S. (2004). <em>Structural holes and good ideas</em>. American Journal of Sociology, 110(2), 349-399.</p></li><li id="fn8"><p>Battilana, J., &amp; Casciaro, T. (2013). The network secrets of great change agents. <em>Harvard Business Review</em>, 91(7), 62-68.</p></li></ol></aside></section>
+<section id="your-learning-journey" class="slide level2">
+<h2>Your Learning Journey</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Timeline</a></li><li><a href="#tabset-1-2">Practical Focus</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a></a>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%</span>
+<span id="cb1-2"><a></a>gantt</span>
+<span id="cb1-3"><a></a>    title Gantt chart of the module</span>
+<span id="cb1-4"><a></a>    dateFormat YYYY-MM-DD</span>
+<span id="cb1-5"><a></a>    axisFormat %b %d</span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a>    section Topics</span>
+<span id="cb1-8"><a></a>    Foundations:done, topic1, 2025-09-29, 7d</span>
+<span id="cb1-9"><a></a>    Centrality :active, topic2, 2025-10-06, 14d</span>
+<span id="cb1-10"><a></a>    Dynamics   :topic3, 2025-10-20, 14d</span>
+<span id="cb1-11"><a></a>    Communities:topic4, 2025-11-17, 14d</span>
+<span id="cb1-12"><a></a>    Performance:topic5, 2025-12-01, 14d</span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a>    section Teaching Cases</span>
+<span id="cb1-15"><a></a>    RCB: crit, milestone, case0, 2025-10-08, 0d</span>
+<span id="cb1-16"><a></a>    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d</span>
+<span id="cb1-17"><a></a>    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d</span>
+<span id="cb1-18"><a></a>    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d</span>
+<span id="cb1-19"><a></a>    Employee performance:crit, milestone, case4, 2025-12-10, 0d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%
+gantt
+    title Gantt chart of the module
+    dateFormat YYYY-MM-DD
+    axisFormat %b %d
+
+    section Topics
+    Foundations:done, topic1, 2025-09-29, 7d
+    Centrality :active, topic2, 2025-10-06, 14d
+    Dynamics   :topic3, 2025-10-20, 14d
+    Communities:topic4, 2025-11-17, 14d
+    Performance:topic5, 2025-12-01, 14d
+
+    section Teaching Cases
+    RCB: crit, milestone, case0, 2025-10-08, 0d
+    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d
+    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d
+    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d
+    Employee performance:crit, milestone, case4, 2025-12-10, 0d
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li class="fragment">Real business cases (e.g., RBC fraud detection, marketing through Twitch)</li>
+<li class="fragment">Hands-on coding in R and Python</li>
+<li class="fragment">Actionable insights for business decision-making</li>
+</ul>
+</div>
+</div>
+</div>
 
 
 </section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
