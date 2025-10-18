@@ -38,7 +38,7 @@ week 1) and [slideshow](../week-2/slideshow_3.html) (from week 2)
 
 🧮 [Measuring dyadic processes](practice_1.qmd)
 
-<!-- 🧮 [Measuring triadic processes](practice_2.qmd) -->
+🧮 [Measuring triadic processes](practice_2.qmd)
 
 :::
 

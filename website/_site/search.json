@@ -539,7 +539,7 @@
     "href": "weeks/week-4/main.html#practice",
     "title": "Week 4",
     "section": "Practice",
-    "text": "Practice\n\n\n\n\n\n\n💻\n\n\n\n🧮 Measuring dyadic processes",
+    "text": "Practice\n\n\n\n\n\n\n💻\n\n\n\n🧮 Measuring dyadic processes\n🧮 Measuring triadic processes",
     "crumbs": [
       "Weekly materials",
       "Week 4"
@@ -578,15 +578,15 @@
     "objectID": "weeks/week-4/slideshow.html#week-4-overview",
     "href": "weeks/week-4/slideshow.html#week-4-overview",
     "title": "Dyads, Triads, and Network Dynamics",
-    "section": "",
-    "text": "Key Questions:\n\nWhy do networks look the way they look?\nWhat processes generate network structures?\nHow can we test for and model these processes?\n\nTopics:\n\nTaxonomy of network formation mechanisms\nDyadic and triadic processes\nStatistical tests for network effects\nExponential Random Graph Models (ERGMs)\nNetwork dynamics"
+    "section": "Week 4 Overview",
+    "text": "Week 4 Overview\nKey Questions:\n\nWhy do networks look the way they look?\nWhat processes generate network structures?\nHow can we test for and model these processes?\n\nTopics:\n\nTaxonomy of network formation mechanisms\nDyadic and triadic processes\nStatistical tests for network effects\nExponential Random Graph Models (ERGMs)\nNetwork dynamics"
   },
   {
     "objectID": "weeks/week-4/slideshow.html#why-do-networks-look-the-way-they-look",
     "href": "weeks/week-4/slideshow.html#why-do-networks-look-the-way-they-look",
     "title": "Dyads, Triads, and Network Dynamics",
     "section": "Why Do Networks Look the Way They Look?",
-    "text": "Why Do Networks Look the Way They Look?\n\n\nNetworks are not random - they exhibit consistent structural patterns:\n\nClustering: Friends of friends tend to be friends\nDegree heterogeneity: Some nodes have many connections, others few\nHomophily: Similar nodes connect more often\nSmall world: Short path lengths despite local clustering\n\nCentral Question: What social, biological, or physical processes create these patterns?\n\nTypical network: hubs, clusters, paths"
+    "text": "Why Do Networks Look the Way They Look?\n\n\nNetworks are not random - they exhibit consistent structural patterns:\n\nClustering: Friends of friends tend to be friends\nDegree heterogeneity: Some nodes have many connections, others few\nHomophily: Similar nodes connect more often\nSmall world: Short path lengths despite local clustering\n\nCentral Question: What social, biological, or physical processes create these patterns?\n\n\n\n\n\n\n\n\n\n\nTypical network: hubs, clusters, paths"
   },
   {
     "objectID": "weeks/week-4/slideshow.html#the-formation-question",
@@ -754,7 +754,7 @@
     "href": "weeks/week-4/slideshow.html#stochastic-actor-oriented-models",
     "title": "Dyads, Triads, and Network Dynamics",
     "section": "Stochastic Actor-Oriented Models",
-    "text": "Stochastic Actor-Oriented Models\n\n\nKey assumption: Actors make rational decisions about ties\nProcess:\n\nActors get random opportunities to change ties\nThey evaluate potential changes via utility function\nThey choose change that maximizes utility\n\nUtility function includes:\n\nStructural preferences (transitivity, reciprocity)\nAttribute preferences (homophily)\nCosts and benefits\n\nSoftware: RSiena package in R\nAdvantage: Separates selection from influence effects!\n\n```"
+    "text": "Stochastic Actor-Oriented Models\n\n\nKey assumption: Actors make rational decisions about ties\nProcess:\n\nActors get random opportunities to change ties\nThey evaluate potential changes via utility function\nThey choose change that maximizes utility\n\nUtility function includes:\n\nStructural preferences (transitivity, reciprocity)\nAttribute preferences (homophily)\nCosts and benefits\n\nSoftware: RSiena package in R\nAdvantage: Separates selection from influence effects!\n\n\n\n\n\n\n\n\n\n\n```"
   },
   {
     "objectID": "weeks/week-4/slideshow.html#comparing-modeling-approaches",
