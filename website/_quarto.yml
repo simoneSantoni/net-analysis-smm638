@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "!README.qmd"
 
 website:
   title: "SMM638 - Network Analytics"
@@ -103,17 +106,9 @@ format:
     callout-icon: false
     citations-hover: true
     footnotes-hover: true
-  revealjs:
-    theme: default
-    slide-number: true
-    transition: slide
-    chalkboard: true
-    multiplex: false
-    code-fold: true
-    code-summary: ""
 
 execute:
-  freeze: false
+  freeze: auto
   echo: true
   warning: false
   message: false
