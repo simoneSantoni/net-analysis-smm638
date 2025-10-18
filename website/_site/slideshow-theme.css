@@ -1,0 +1,385 @@
+/* Global RevealJS theme for SMM638 Network Analytics */
+
+/* Import Atkinson Hyperlegible font */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Primary colors consistent with website theme */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #e74c3c;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --dark-color: #2c3e50;
+  --light-gray: #ecf0f1;
+  --forest-green: #228B22;
+}
+
+/* Base reveal settings - standardized font size for all slides */
+.reveal {
+  font-family: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 24px;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* Title slide */
+.reveal .slide-title,
+.reveal h1.title {
+  color: var(--forest-green);
+  font-weight: 700;
+}
+
+.reveal .subtitle {
+  color: var(--dark-color);
+  opacity: 0.8;
+}
+
+.reveal .author,
+.reveal .date {
+  font-size: 0.9em;
+  color: var(--dark-color);
+  opacity: 0.7;
+}
+
+/* Headings */
+.reveal h1 {
+  font-size: 2.5em;
+}
+
+.reveal h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  border-bottom: 3px solid var(--forest-green);
+  padding-bottom: 0.3em;
+}
+
+.reveal h3 {
+  font-size: 1.4em;
+}
+
+.reveal h4 {
+  font-size: 1.2em;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: var(--forest-green);
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+}
+
+/* Links */
+.reveal a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.reveal a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Strong/bold text */
+.reveal strong,
+.reveal b {
+  color: var(--dark-color);
+  font-weight: 700;
+}
+
+/* Lists */
+.reveal ul,
+.reveal ol {
+  line-height: 1.8;
+  margin-left: 0;
+}
+
+.reveal li {
+  margin-bottom: 0.5em;
+}
+
+/* Code */
+.reveal code {
+  background-color: var(--light-gray);
+  color: var(--secondary-color);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  font-family: "Source Code Pro", "Consolas", "Monaco", monospace;
+}
+
+.reveal pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+.reveal pre code {
+  background-color: transparent;
+  color: var(--dark-color);
+  padding: 0;
+  font-size: 1em;
+}
+
+/* Tables */
+.reveal table {
+  border-collapse: collapse;
+  margin: 1em auto;
+  font-size: 0.95em;
+}
+
+.reveal table th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875em;
+  letter-spacing: 0.025em;
+  padding: 0.75em 1em;
+}
+
+.reveal table td {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.reveal table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Callout boxes */
+.reveal .callout {
+  border-left: 4px solid var(--primary-color);
+  background-color: #e8f4fd;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.375rem;
+  font-size: 0.95em;
+}
+
+.reveal .callout-note {
+  border-left-color: var(--primary-color);
+  background-color: #e8f4fd;
+}
+
+.reveal .callout-warning {
+  border-left-color: var(--warning-color);
+  background-color: #fff7e6;
+}
+
+.reveal .callout-important {
+  border-left-color: var(--secondary-color);
+  background-color: #ffe6e6;
+}
+
+.reveal .callout-tip {
+  border-left-color: var(--success-color);
+  background-color: #e8f8f1;
+}
+
+.reveal .callout-title {
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+/* Images */
+.reveal img {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Columns */
+.reveal .columns {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.reveal .column {
+  flex: 1;
+}
+
+/* Incremental lists */
+.reveal .fragment {
+  opacity: 0.3;
+}
+
+.reveal .fragment.visible {
+  opacity: 1;
+}
+
+/* Slide numbers */
+.reveal .slide-number {
+  color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
+
+/* Progress bar */
+.reveal .progress {
+  background: var(--light-gray);
+  color: var(--primary-color);
+  height: 3px;
+}
+
+.reveal .progress span {
+  background: var(--primary-color);
+}
+
+/* Controls */
+.reveal .controls {
+  color: var(--primary-color);
+}
+
+/* Footnotes */
+.reveal .aside-footnotes {
+  font-size: 0.6em;
+  color: #6c757d;
+  margin-top: 2em;
+  border-top: 1px solid #dee2e6;
+  padding-top: 0.5em;
+}
+
+/* Blockquotes */
+.reveal blockquote {
+  background-color: var(--light-gray);
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--dark-color);
+  font-size: 0.95em;
+}
+
+/* Section dividers */
+.reveal hr {
+  border: none;
+  border-top: 2px solid var(--primary-color);
+  margin: 2em 0;
+}
+
+/* Exercise and warning boxes */
+.reveal .exercise-box {
+  background-color: #e8f4fd;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.95em;
+}
+
+.reveal .exercise-box h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.reveal .warning-box {
+  background-color: #fff7e6;
+  border: 2px solid var(--warning-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.95em;
+}
+
+.reveal .warning-box h3 {
+  color: var(--warning-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Small text utility */
+.small {
+  font-size: 0.75em;
+}
+
+/* Medium text utility */
+.medium {
+  font-size: 0.9em;
+}
+
+/* Large text utility */
+.large {
+  font-size: 1.2em;
+}
+
+/* Extra large text utility */
+.xlarge {
+  font-size: 1.5em;
+}
+
+/* Center alignment */
+.center {
+  text-align: center;
+}
+
+/* Panel tabset */
+.reveal .panel-tabset {
+  margin: 1.5rem 0;
+}
+
+.reveal .panel-tabset-tabby {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.reveal .panel-tabset-tabby li {
+  margin: 0;
+}
+
+.reveal .panel-tabset-tabby a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--light-gray);
+  color: var(--dark-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.reveal .panel-tabset-tabby a:hover,
+.reveal .panel-tabset-tabby a.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Source code blocks - ensure consistent sizing */
+.reveal .sourceCode {
+  font-size: 0.85em;
+}
+
+/* Math formulas */
+.reveal .math {
+  font-size: 0.95em;
+}
+
+/* Definition lists */
+.reveal dl {
+  font-size: 0.95em;
+}
+
+.reveal dt {
+  font-weight: 700;
+  color: var(--forest-green);
+  margin-top: 1em;
+}
+
+.reveal dd {
+  margin-left: 1.5em;
+  margin-bottom: 0.5em;
+}

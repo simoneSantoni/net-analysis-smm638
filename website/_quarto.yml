@@ -77,6 +77,9 @@ website:
             href: weeks/week-9/main.qmd
           - text: "Week 10"
             href: weeks/week-10/main.qmd
+          - text: "---"
+          - text: "All Slideshows"
+            href: slides.qmd
 
       - section: "Supplemental notes"
         contents:

@@ -1,0 +1,20 @@
+---
+title: "Course Slideshows"
+format: html
+---
+
+## Week 2: Network Centrality
+
+1. [Networks, Network Analysis & Business Relevance](weeks/week-2/slideshow_1.html)
+2. [Why Network Analysis Matters](weeks/week-2/slideshow_2.html)
+3. [Fundamental Network Concepts](weeks/week-2/slideshow_3.html)
+4. [Taxonomy of Network Analysis Indicators](weeks/week-2/slideshow_4.html)
+5. [Network Centrality](weeks/week-2/slideshow_5.html)
+
+## Week 4: Network Dynamics
+
+- [Dyads, Triads, and Network Dynamics](weeks/week-4/slideshow.html)
+
+---
+
+*Note: Click on any slideshow title to view the presentation. Use arrow keys to navigate through slides.*
