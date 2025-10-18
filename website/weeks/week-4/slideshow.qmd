@@ -1,13 +1,14 @@
 ---
 title: "Dyads, Triads, and Network Dynamics"
-date: "today"
+author: "SMM638 Network Analytics"
 format:
   revealjs:
-    theme: slides.scss
+    theme: default
     slide-number: true
     transition: slide
     chalkboard: true
     multiplex: false
+    css: ../../slideshow-theme.css
     code-fold: true
     code-summary: ""
 jupyter: python3
@@ -909,10 +910,12 @@ plt.show()
 **Structural balance** (Heider, 1946): Cognitive consistency in signed networks
 
 **Balanced triangles** (all relationships consistent):
+
 - **+++**: Three mutual friends (stable)
 - **+--**: Two enemies share a common enemy (stable)
 
 **Unbalanced triangles** (tension):
+
 - **++-**: Friend of friend is enemy (unstable)  
 - **---**: Three mutual enemies (unstable)
 

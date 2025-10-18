@@ -347,8 +347,8 @@
     "objectID": "weeks/week-2/slideshow_4.html#three-levels-of-analysis",
     "href": "weeks/week-2/slideshow_4.html#three-levels-of-analysis",
     "title": "Taxonomy of Network Analysis Indicators",
-    "section": "",
-    "text": "Network indicators operate at different scales:\n\n\n\n\n\n\n\n\nLevel\nFocus\nQuestions\n\n\n\n\nMacro\nEntire network\nHow big? How centralized? How connected?\n\n\nMeso\nGroups/Communities\nAre there clusters of nodes? How modular?\n\n\nMicro/Node\nIndividual positions\nWho is central? Who bridges groups?\n\n\n\n\n\n\n\n\n\nKey Principle: Different levels reveal different insights\n\nMacro: Overall structure and properties\nMeso: Subgroup organization\n\nMicro: Individual advantages and constraints"
+    "section": "Three Levels of Analysis",
+    "text": "Three Levels of Analysis\nNetwork indicators operate at different scales:\n\n\n\n\n\n\n\n\nLevel\nFocus\nQuestions\n\n\n\n\nMacro\nEntire network\nHow big? How centralized? How connected?\n\n\nMeso\nGroups/Communities\nAre there clusters of nodes? How modular?\n\n\nMicro/Node\nIndividual positions\nWho is central? Who bridges groups?\n\n\n\n\n\n\n\n\n\nCaution\n\n\nKey Principle: Different levels reveal different insights\n\nMacro: Overall structure and properties\nMeso: Subgroup organization\n\nMicro: Individual advantages and constraints"
   },
   {
     "objectID": "weeks/week-2/slideshow_4.html#macro-level-indicators",
@@ -383,21 +383,21 @@
     "href": "weeks/week-2/slideshow_4.html#example-network-modularity",
     "title": "Taxonomy of Network Analysis Indicators",
     "section": "Example: Network Modularity",
-    "text": "Example: Network Modularity\n\n\nDefinition: Strength of division into communities\n\nMeasures how well network separates into distinct groups\nHigher values indicate stronger community structure\n\nBusiness Example: Corporate R&D Network\nHigher Modularity\n\nClear separation: Chemistry, Biology, Engineering teams\nLimited cross-disciplinary collaboration\nPotential for siloed innovation\n\nLower Modularity\n\nExtensive cross-team connections\nInterdisciplinary collaboration\nPotential for breakthrough innovation but coordination challenges\n\nStrategic Implication: Community structure reflects organizational integration vs. specialization trade-offs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe top network seems to have two communities ({A, B, C} and {D, E, F} triads)\nThe bottom network does not show any obvious community structure\nWe will explore modularity indicators and community detection algorithms in detail in Weeks 7 and 8."
+    "text": "Example: Network Modularity\n\n\nDefinition: Strength of division into communities\n\nMeasures how well network separates into distinct groups\nHigher values indicate stronger community structure\n\nBusiness Example: Corporate R&D Network\nHigher Modularity\n\nClear separation: Chemistry, Biology, Engineering teams\nLimited cross-disciplinary collaboration\nPotential for siloed innovation\n\nLower Modularity\n\nExtensive cross-team connections\nInterdisciplinary collaboration\nPotential for breakthrough innovation but coordination challenges\n\nStrategic Implication: Community structure reflects organizational integration vs. specialization trade-offs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nThe top network seems to have two communities ({A, B, C} and {D, E, F} triads)\nThe bottom network does not show any obvious community structure\nWe will explore modularity indicators and community detection algorithms in detail in Weeks 7 and 8."
   },
   {
     "objectID": "weeks/week-2/slideshow_4.html#node-level-indicators",
     "href": "weeks/week-2/slideshow_4.html#node-level-indicators",
     "title": "Taxonomy of Network Analysis Indicators",
     "section": "Node-Level Indicators",
-    "text": "Node-Level Indicators\nIndividual Position and Influence\nCharacterize actor positions within the network\nMajor Categories:\n\nCentrality Measures: Various ways to measure importance\n\nDegree, Closeness, Betweenness, Eigenvector\n\nStructural Position: Role in network architecture\n\nBridges, Brokers, Isolates, Cliques\n\nLocal Clustering: Cohesion of immediate neighborhood\nEmbeddedness: Integration into network structure\n\nPurpose: Identify influential actors, structural advantages, and vulnerabilities\n\n\n\n\n\n\nMuch more to follow on node-level indicators today"
+    "text": "Node-Level Indicators\nIndividual Position and Influence\nCharacterize actor positions within the network\nMajor Categories:\n\nCentrality Measures: Various ways to measure importance\n\nDegree, Closeness, Betweenness, Eigenvector\n\nStructural Position: Role in network architecture\n\nBridges, Brokers, Isolates, Cliques\n\nLocal Clustering: Cohesion of immediate neighborhood\nEmbeddedness: Integration into network structure\n\nPurpose: Identify influential actors, structural advantages, and vulnerabilities\n\n\n\n\n\n\nNote\n\n\nMuch more to follow on node-level indicators today"
   },
   {
     "objectID": "weeks/week-2/slideshow_4.html#summary-levels-in-practice",
     "href": "weeks/week-2/slideshow_4.html#summary-levels-in-practice",
     "title": "Taxonomy of Network Analysis Indicators",
     "section": "Summary: Levels in Practice",
-    "text": "Summary: Levels in Practice\nIntegrated Analysis Framework:\nMacro Level → Strategic organizational design\n\nShould we have a centralized or distributed structure?\nHow connected is our organization overall?\n\nMeso Level → Team and department dynamics\n\nAre we too siloed or too integrated?\nWhere are the boundaries between groups?\n\nMicro Level → Individual talent management\n\nWho are our key connectors and influencers?\nWho has structural advantages or disadvantages?\n\n\n\n\n\n\n\nBest Practice: Analyze networks at multiple levels simultaneously for comprehensive insights"
+    "text": "Summary: Levels in Practice\nIntegrated Analysis Framework:\nMacro Level → Strategic organizational design\n\nShould we have a centralized or distributed structure?\nHow connected is our organization overall?\n\nMeso Level → Team and department dynamics\n\nAre we too siloed or too integrated?\nWhere are the boundaries between groups?\n\nMicro Level → Individual talent management\n\nWho are our key connectors and influencers?\nWho has structural advantages or disadvantages?\n\n\n\n\n\n\n\nImportant\n\n\nBest Practice: Analyze networks at multiple levels simultaneously for comprehensive insights"
   },
   {
     "objectID": "weeks/week-2/perform_2.html",
@@ -1273,8 +1273,8 @@
     "objectID": "weeks/week-2/slideshow_1.html#what-are-networks",
     "href": "weeks/week-2/slideshow_1.html#what-are-networks",
     "title": "Networks, Network Analysis & Business Relevance",
-    "section": "",
-    "text": "Networks are structures of interconnected entities\n\nEntities are interconnected via specific relationships\nExamples of relationships are:\n\nResource flow (e.g., economic exchange)\nInformation exchange (e.g., electronic communication)\nPhysical connection (e.g., London tube)\nMembership (e.g., student-program affiliation)\n\n\n\n\n\n\n\n\nNetworks and graphs are interrelated yet distinct concepts: graphs are mathematical constructs, while networks regard concrete relationships between entities that can be represented using graphs"
+    "section": "What Are Networks?",
+    "text": "What Are Networks?\nNetworks are structures of interconnected entities\n\nEntities are interconnected via specific relationships\nExamples of relationships are:\n\nResource flow (e.g., economic exchange)\nInformation exchange (e.g., electronic communication)\nPhysical connection (e.g., London tube)\nMembership (e.g., student-program affiliation)\n\n\n\n\n\n\n\n\nNote\n\n\nNetworks and graphs are interrelated yet distinct concepts: graphs are mathematical constructs, while networks regard concrete relationships between entities that can be represented using graphs"
   },
   {
     "objectID": "weeks/week-2/slideshow_1.html#what-to-expect-network-analysis",
@@ -1295,21 +1295,21 @@
     "href": "weeks/week-2/slideshow_1.html#networks-in-markets",
     "title": "Networks, Network Analysis & Business Relevance",
     "section": "Networks in Markets",
-    "text": "Networks in Markets\nInformation Flow\n\nProduct reviews and recommendations spread through networks1\nMarket intelligence travels via professional connections\nInnovation diffuses along network pathways"
+    "text": "Networks in Markets\nInformation Flow\n\nProduct reviews and recommendations spread through networks1\nMarket intelligence travels via professional connections\nInnovation diffuses along network pathways\n\n\nOestreicher-Singer, Gal, and Arun Sundararajan. Recommendation networks and the long tail of electronic commerce. MIS Quarterly (2012): 65-83."
   },
   {
     "objectID": "weeks/week-2/slideshow_1.html#networks-in-markets-1",
     "href": "weeks/week-2/slideshow_1.html#networks-in-markets-1",
     "title": "Networks, Network Analysis & Business Relevance",
     "section": "Networks in Markets",
-    "text": "Networks in Markets\nTrust and Transaction Costs\n\nTrust networks reduce monitoring costs and increase task focus2\nEstablished relationships lower search costs for new business partners\nRepeat interactions enable efficient exchange and coordination among parties"
+    "text": "Networks in Markets\nTrust and Transaction Costs\n\nTrust networks reduce monitoring costs and increase task focus1\nEstablished relationships lower search costs for new business partners\nRepeat interactions enable efficient exchange and coordination among parties\n\n\nUzzi, B., & Dunlap, S. (2005). How to build your network. Harvard Business Review, 83(12), 53."
   },
   {
     "objectID": "weeks/week-2/slideshow_1.html#networks-in-markets-2",
     "href": "weeks/week-2/slideshow_1.html#networks-in-markets-2",
     "title": "Networks, Network Analysis & Business Relevance",
     "section": "Networks in Markets",
-    "text": "Networks in Markets\nPlatform Economy’s Network Structure\n\nPlatform economics is predicated around the value of connections3\nNetwork effects drive scaling (how to leverage networks to get attention?)\nAn ecosystem’s advantage relies on networks (e.g., Android is more than an operating system, it’s a complex network of firms, developers, and customers)"
+    "text": "Networks in Markets\nPlatform Economy’s Network Structure\n\nPlatform economics is predicated around the value of connections1\nNetwork effects drive scaling (how to leverage networks to get attention?)\nAn ecosystem’s advantage relies on networks (e.g., Android is more than an operating system, it’s a complex network of firms, developers, and customers)\n\n\nBelleflamme, P., & Peitz, M. (2021). The economics of platforms. Cambridge University Press."
   },
   {
     "objectID": "weeks/week-2/slideshow_1.html#networks-in-organizations",
@@ -1323,21 +1323,21 @@
     "href": "weeks/week-2/slideshow_1.html#networks-in-organizations-1",
     "title": "Networks, Network Analysis & Business Relevance",
     "section": "Networks in Organizations",
-    "text": "Networks in Organizations\nTeams Function through Networks\n\nCollaboration patterns affect performance4\nInformal advice networks complement formal structure5\nCommunication efficiency depends on network position"
+    "text": "Networks in Organizations\nTeams Function through Networks\n\nCollaboration patterns affect performance1\nInformal advice networks complement formal structure2\nCommunication efficiency depends on network position\n\n\nGratton, L., & Erickson, T. J. (2007). Eight ways to build collaborative teams. Harvard Business Review, 85(11), 100.Cross, R., Ehrlich, K., Dawson, R., & Helferich, J. (2008). Managing collaboration: Improving team effectiveness through a network perspective. California Management Review, 50(4), 74-98."
   },
   {
     "objectID": "weeks/week-2/slideshow_1.html#networks-in-organizations-2",
     "href": "weeks/week-2/slideshow_1.html#networks-in-organizations-2",
     "title": "Networks, Network Analysis & Business Relevance",
     "section": "Networks in Organizations",
-    "text": "Networks in Organizations\n\n\nNetworks Enable Strategy\n\nSparsely connected networks offer value creation opportunities6\nThose who connect otherwise disconnected groups have information advantages7\nCentral nodes have influence and power8"
+    "text": "Networks in Organizations\n\n\nNetworks Enable Strategy\n\nSparsely connected networks offer value creation opportunities1\nThose who connect otherwise disconnected groups have information advantages2\nCentral nodes have influence and power3\n\n\n\n\nBurt, R. S. (2005). Brokerage and closure: An introduction to social capital. Oxford University Press, USA.Burt, R. S. (2004). Structural holes and good ideas. American Journal of Sociology, 110(2), 349-399.Battilana, J., & Casciaro, T. (2013). The network secrets of great change agents. Harvard Business Review, 91(7), 62-68."
   },
   {
     "objectID": "weeks/week-2/slideshow_1.html#your-learning-journey",
     "href": "weeks/week-2/slideshow_1.html#your-learning-journey",
     "title": "Networks, Network Analysis & Business Relevance",
     "section": "Your Learning Journey",
-    "text": "Your Learning Journey\n\nTimelinePractical Focus\n\n\n\n%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%\ngantt\n    title Gantt chart of the module\n    dateFormat YYYY-MM-DD\n    axisFormat %b %d\n\n    section Topics\n    Foundations:done, topic1, 2025-09-29, 7d\n    Centrality :active, topic2, 2025-10-06, 14d\n    Dynamics   :topic3, 2025-10-20, 14d\n    Communities:topic4, 2025-11-17, 14d\n    Performance:topic5, 2025-12-01, 14d\n\n    section Teaching Cases\n    RCB: crit, milestone, case0, 2025-10-08, 0d\n    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d\n    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d\n    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d\n    Employee performance:crit, milestone, case4, 2025-12-10, 0d\n\n\n\n\n%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%\ngantt\n    title Gantt chart of the module\n    dateFormat YYYY-MM-DD\n    axisFormat %b %d\n\n    section Topics\n    Foundations:done, topic1, 2025-09-29, 7d\n    Centrality :active, topic2, 2025-10-06, 14d\n    Dynamics   :topic3, 2025-10-20, 14d\n    Communities:topic4, 2025-11-17, 14d\n    Performance:topic5, 2025-12-01, 14d\n\n    section Teaching Cases\n    RCB: crit, milestone, case0, 2025-10-08, 0d\n    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d\n    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d\n    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d\n    Employee performance:crit, milestone, case4, 2025-12-10, 0d\n\n\n\n\n\n\n\n\n\n\nReal business cases (e.g., RBC fraud detection, marketing through Twitch)\nHands-on coding in R and Python\nActionable insights for business decision-making"
+    "text": "Your Learning Journey\n\nTimelinePractical Focus\n\n\n\n\nCode\n%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%\ngantt\n    title Gantt chart of the module\n    dateFormat YYYY-MM-DD\n    axisFormat %b %d\n\n    section Topics\n    Foundations:done, topic1, 2025-09-29, 7d\n    Centrality :active, topic2, 2025-10-06, 14d\n    Dynamics   :topic3, 2025-10-20, 14d\n    Communities:topic4, 2025-11-17, 14d\n    Performance:topic5, 2025-12-01, 14d\n\n    section Teaching Cases\n    RCB: crit, milestone, case0, 2025-10-08, 0d\n    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d\n    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d\n    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d\n    Employee performance:crit, milestone, case4, 2025-12-10, 0d\n\n\n\n\n\n%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%\ngantt\n    title Gantt chart of the module\n    dateFormat YYYY-MM-DD\n    axisFormat %b %d\n\n    section Topics\n    Foundations:done, topic1, 2025-09-29, 7d\n    Centrality :active, topic2, 2025-10-06, 14d\n    Dynamics   :topic3, 2025-10-20, 14d\n    Communities:topic4, 2025-11-17, 14d\n    Performance:topic5, 2025-12-01, 14d\n\n    section Teaching Cases\n    RCB: crit, milestone, case0, 2025-10-08, 0d\n    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d\n    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d\n    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d\n    Employee performance:crit, milestone, case4, 2025-12-10, 0d\n\n\n\n\n\n\n\n\n\nReal business cases (e.g., RBC fraud detection, marketing through Twitch)\nHands-on coding in R and Python\nActionable insights for business decision-making"
   },
   {
     "objectID": "weeks/week-2/slideshow_1.html#footnotes",
@@ -1448,29 +1448,29 @@
     "objectID": "weeks/week-2/slideshow_2.html#the-rbc-challenge",
     "href": "weeks/week-2/slideshow_2.html#the-rbc-challenge",
     "title": "Why Network Analysis Matters",
-    "section": "",
-    "text": "Context: First-Party Fraud Detection\n\nRBC: Canada’s largest bank with 15+ million clients, 6.5M cards\nProblem: Detecting fraudulent credit applications by own customers\nTraditional approach: Rule-based systems with 85:1 false positive ratio\nCost: $10M upfront + $1M annual maintenance + 30TB weekly data processing\n\nMcKenzie’s Mission: Reduce false positives from 85:1 to 10:1\n\n\n\n\n\n\nThe Connected Explosion: “Ten fraudsters sharing 10 common data elements can create 100 false identities; if they defraud 4 financial instruments per identity with $5,000 credit limit, potential loss = $2 million”"
+    "section": "The RBC Challenge",
+    "text": "The RBC Challenge\nContext: First-Party Fraud Detection\n\nRBC: Canada’s largest bank with 15+ million clients, 6.5M cards\nProblem: Detecting fraudulent credit applications by own customers\nTraditional approach: Rule-based systems with 85:1 false positive ratio\nCost: $10M upfront + $1M annual maintenance + 30TB weekly data processing\n\nMcKenzie’s Mission: Reduce false positives from 85:1 to 10:1\n\n\n\n\n\n\nImportant\n\n\nThe Connected Explosion: “Ten fraudsters sharing 10 common data elements can create 100 false identities; if they defraud 4 financial instruments per identity with $5,000 credit limit, potential loss = $2 million”"
   },
   {
     "objectID": "weeks/week-2/slideshow_2.html#why-networks-detect-fraud-better",
     "href": "weeks/week-2/slideshow_2.html#why-networks-detect-fraud-better",
     "title": "Why Network Analysis Matters",
     "section": "Why Networks Detect Fraud Better",
-    "text": "Why Networks Detect Fraud Better\n\n\n\n\n\n\n\n\nTraditional Fraud Detection Limitations:\nIndividual attribute checking misses organized fraud patterns:\n\nCredit scores, income verification, address validation\nEach application evaluated in isolation\nFraudsters exploit this independence\n\n\n\n\n\n\n\n\n\n\n\nNetwork Analysis Advantage:\nReveals the connected explosion - fraudsters’ coordination creates detectable signatures:\n\nShared phone numbers across multiple applications\nCommon email domains and IP addresses\nLinked banking activities and transactions\nConnected social security numbers and addresses"
+    "text": "Why Networks Detect Fraud Better\n\n\n\n\n\n\n\n\nImportant\n\n\nTraditional Fraud Detection Limitations:\nIndividual attribute checking misses organized fraud patterns:\n\nCredit scores, income verification, address validation\nEach application evaluated in isolation\nFraudsters exploit this independence\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nNetwork Analysis Advantage:\nReveals the connected explosion - fraudsters’ coordination creates detectable signatures:\n\nShared phone numbers across multiple applications\nCommon email domains and IP addresses\nLinked banking activities and transactions\nConnected social security numbers and addresses"
   },
   {
     "objectID": "weeks/week-2/slideshow_2.html#fraudsters-face-a-paradox",
     "href": "weeks/week-2/slideshow_2.html#fraudsters-face-a-paradox",
     "title": "Why Network Analysis Matters",
     "section": "Fraudsters Face a Paradox",
-    "text": "Fraudsters Face a Paradox\n\n\n\n\n\n\nFraudsters’ greatest strength (coordination) becomes their Achilles’ heel (detectability through network patterns)"
+    "text": "Fraudsters Face a Paradox\n\n\n\n\n\n\nNote\n\n\nFraudsters’ greatest strength (coordination) becomes their Achilles’ heel (detectability through network patterns)"
   },
   {
     "objectID": "weeks/week-2/slideshow_2.html#the-analytical-challenge",
     "href": "weeks/week-2/slideshow_2.html#the-analytical-challenge",
     "title": "Why Network Analysis Matters",
     "section": "The Analytical Challenge",
-    "text": "The Analytical Challenge\n16 Fraud Detection Rules Applied to 13,731 Customers\nKey Performance Metrics:\n\n\n\n\n\n\n\n\n\n\nRule\nPositive Hits\nTrue Positives\nDetection Rate\nFalse Positive Rate\n\n\n\n\nR1\n3,221\n189 (45.5%)\n45.5%\n17:1\n\n\nR27\n2,057\n169 (40.7%)\n40.7%\n12:1\n\n\nR18\n9,107\n84 (20.2%)\n20.2%\n108:1 ⚠️\n\n\n\n\n\n\n\n\n\nThe Core Trade-off:\n\nHigher detection rate → More false positives → Higher investigation costs\nLower false positive rate → Fewer fraudsters caught → Higher fraud losses\n\nNeither single rule achieves the 10:1 target"
+    "text": "The Analytical Challenge\n16 Fraud Detection Rules Applied to 13,731 Customers\nKey Performance Metrics:\n\n\n\n\n\n\n\n\n\n\nRule\nPositive Hits\nTrue Positives\nDetection Rate\nFalse Positive Rate\n\n\n\n\nR1\n3,221\n189 (45.5%)\n45.5%\n17:1\n\n\nR27\n2,057\n169 (40.7%)\n40.7%\n12:1\n\n\nR18\n9,107\n84 (20.2%)\n20.2%\n108:1 ⚠️\n\n\n\n\n\n\n\n\n\nCaution\n\n\nThe Core Trade-off:\n\nHigher detection rate → More false positives → Higher investigation costs\nLower false positive rate → Fewer fraudsters caught → Higher fraud losses\n\nNeither single rule achieves the 10:1 target"
   },
   {
     "objectID": "weeks/week-2/slideshow_2.html#business-value-three-critical-insights",
@@ -1484,14 +1484,14 @@
     "href": "weeks/week-2/slideshow_2.html#what-business-analysts-must-understand",
     "title": "Why Network Analysis Matters",
     "section": "What Business Analysts Must Understand",
-    "text": "What Business Analysts Must Understand\nThe Multi-Dimensional Optimization Problem:\nTechnical Dimensions:\n\nFeature engineering from network patterns\nModel performance (precision, recall, F1-score)\nComputational efficiency and scalability\n\nBusiness Dimensions:\n\nCustomer experience (minimizing false accusations)\nOperational efficiency (investigation team capacity)\nFinancial impact (fraud losses vs. prevention costs)\n\nStrategic Dimensions:\n\nSystem evolution as fraudsters adapt\nIntegration with legacy banking systems\nRegulatory compliance and data privacy\n\n\n\n\n\n\n\nReal Outcome: By end of 2015, RBC reduced false positive ratio to 24:1 (progress but still above 10:1 target). In March 2016, discontinued SNA to revamp ETL infrastructure."
+    "text": "What Business Analysts Must Understand\nThe Multi-Dimensional Optimization Problem:\nTechnical Dimensions:\n\nFeature engineering from network patterns\nModel performance (precision, recall, F1-score)\nComputational efficiency and scalability\n\nBusiness Dimensions:\n\nCustomer experience (minimizing false accusations)\nOperational efficiency (investigation team capacity)\nFinancial impact (fraud losses vs. prevention costs)\n\nStrategic Dimensions:\n\nSystem evolution as fraudsters adapt\nIntegration with legacy banking systems\nRegulatory compliance and data privacy\n\n\n\n\n\n\n\nTip\n\n\nReal Outcome: By end of 2015, RBC reduced false positive ratio to 24:1 (progress but still above 10:1 target). In March 2016, discontinued SNA to revamp ETL infrastructure."
   },
   {
     "objectID": "weeks/week-2/slideshow_2.html#key-lessons-for-analysts",
     "href": "weeks/week-2/slideshow_2.html#key-lessons-for-analysts",
     "title": "Why Network Analysis Matters",
     "section": "Key Lessons for Analysts",
-    "text": "Key Lessons for Analysts\n1. Context Matters More Than Algorithms\n\nBest model must align with business constraints\nPure accuracy is not the goal—balanced performance is\n\n2. Trade-offs Are Inherent\n\nDetection rate vs. false positive rate\nThoroughness vs. operational efficiency\n\nReal-time responsiveness vs. computational cost\n\n3. Network Analysis Reveals Hidden Patterns\n\nIndividual-level analysis misses organized fraud\nConnectivity is both the crime’s structure and its detection mechanism\nNetwork thinking transforms how we identify risk\n\n\n\n\n\n\n\nThis case demonstrates why business analysts need both technical skills (modeling, optimization) and business judgment (trade-off management, stakeholder communication)"
+    "text": "Key Lessons for Analysts\n1. Context Matters More Than Algorithms\n\nBest model must align with business constraints\nPure accuracy is not the goal—balanced performance is\n\n2. Trade-offs Are Inherent\n\nDetection rate vs. false positive rate\nThoroughness vs. operational efficiency\n\nReal-time responsiveness vs. computational cost\n\n3. Network Analysis Reveals Hidden Patterns\n\nIndividual-level analysis misses organized fraud\nConnectivity is both the crime’s structure and its detection mechanism\nNetwork thinking transforms how we identify risk\n\n\n\n\n\n\n\nNote\n\n\nThis case demonstrates why business analysts need both technical skills (modeling, optimization) and business judgment (trade-off management, stakeholder communication)"
   },
   {
     "objectID": "weeks/week-2/slideshow_3.html",
@@ -1504,8 +1504,8 @@
     "objectID": "weeks/week-2/slideshow_3.html#what-is-a-graph",
     "href": "weeks/week-2/slideshow_3.html#what-is-a-graph",
     "title": "Fundamental Network Concepts",
-    "section": "",
-    "text": "Mathematical Foundation:\nA graph \\(G\\) is defined as: \\(G = \\{V, E\\}\\)\nWhere:\n\n\\(V = [v_1, v_2, ..., v_i, ..., v_n]\\) (vertices/nodes)\n\\(E = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j)]\\) (edges/links)\n\nIn Plain Language:\n\nVertices (Nodes): The entities or objects\nEdges (Links/Ties): The connections or relationships\nGraph: The complete structure of nodes and edges"
+    "section": "What is a Graph?",
+    "text": "What is a Graph?\nMathematical Foundation:\nA graph \\(G\\) is defined as: \\(G = \\{V, E\\}\\)\nWhere:\n\n\\(V = [v_1, v_2, ..., v_i, ..., v_n]\\) (vertices/nodes)\n\\(E = [(v_1, v_2), (v_1, v_i), ..., (v_i, v_j)]\\) (edges/links)\n\nIn Plain Language:\n\nVertices (Nodes): The entities or objects\nEdges (Links/Ties): The connections or relationships\nGraph: The complete structure of nodes and edges"
   },
   {
     "objectID": "weeks/week-2/slideshow_3.html#vertices-nodes",
@@ -1596,7 +1596,7 @@
     "href": "weeks/week-2/slideshow_3.html#key-takeaways",
     "title": "Fundamental Network Concepts",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\n\n\n\n\n\n\n\nCore Building Blocks:\n\nNetworks = Nodes + Edges + Relationships\nDirection matters: Symmetric vs. Asymmetric\nWeights capture relationship intensity\nSigns represent positive/negative ties\nMode determines what connects to what\n\n\n\n\n\n\n\n\n\n\n\nAnalytical Foundation:\n\nChoice of representation affects analysis\nDifferent network types require different methods\nSubstructures (dyads, triads) reveal patterns\nComplex networks require sophisticated approaches\n\nNext: We’ll use these concepts to measure and analyze real networks"
+    "text": "Key Takeaways\n\n\n\n\n\n\n\n\nCaution\n\n\nCore Building Blocks:\n\nNetworks = Nodes + Edges + Relationships\nDirection matters: Symmetric vs. Asymmetric\nWeights capture relationship intensity\nSigns represent positive/negative ties\nMode determines what connects to what\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nAnalytical Foundation:\n\nChoice of representation affects analysis\nDifferent network types require different methods\nSubstructures (dyads, triads) reveal patterns\nComplex networks require sophisticated approaches\n\nNext: We’ll use these concepts to measure and analyze real networks"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html",
@@ -1609,15 +1609,15 @@
     "objectID": "weeks/week-2/slideshow_5.html#what-is-centrality",
     "href": "weeks/week-2/slideshow_5.html#what-is-centrality",
     "title": "Network Centrality",
-    "section": "",
-    "text": "The Fundamental Question:\n\nWhich node is most important in this network?\n\nTwo Core Perspectives:\n\nAdvantageous Position: Who has structural advantages?\n\nAccess to resources\nControl over information\nInfluence over others\n\nNetwork Functioning: Who is critical for network operations?\n\nFacilitating flows\nConnecting groups\nMaintaining coherence\n\n\n\n\n\n\n\n\nKey Insight: “Importance” depends on context and mechanism"
+    "section": "What is Centrality?",
+    "text": "What is Centrality?\nThe Fundamental Question:\n\nWhich node is most important in this network?\n\nTwo Core Perspectives:\n\nAdvantageous Position: Who has structural advantages?\n\nAccess to resources\nControl over information\nInfluence over others\n\nNetwork Functioning: Who is critical for network operations?\n\nFacilitating flows\nConnecting groups\nMaintaining coherence\n\n\n\n\n\n\n\n\nImportant\n\n\nKey Insight: “Importance” depends on context and mechanism"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#the-centrality-family",
     "href": "weeks/week-2/slideshow_5.html#the-centrality-family",
     "title": "Network Centrality",
     "section": "The Centrality Family",
-    "text": "The Centrality Family\n\n\n\n\n\n\n\n\nMeasure\nFocus\nQuestion\n\n\n\n\nDegree\nDirect connections\nWho knows the most people?\n\n\nCloseness\nReachability\nWho can reach everyone quickly?\n\n\nBetweenness\nBrokerage\nWho controls information flow?\n\n\nEigenvector\nConnection quality\nWho is connected to important others?\n\n\nClustering\nLocal cohesion\nHow interconnected is the neighborhood?\n\n\nPageRank\nPrestige\nWho receives quality endorsements?\n\n\n\n\n\n\n\n\n\nEach measure captures different aspects of structural importance"
+    "text": "The Centrality Family\n\n\n\n\n\n\n\n\nMeasure\nFocus\nQuestion\n\n\n\n\nDegree\nDirect connections\nWho knows the most people?\n\n\nCloseness\nReachability\nWho can reach everyone quickly?\n\n\nBetweenness\nBrokerage\nWho controls information flow?\n\n\nEigenvector\nConnection quality\nWho is connected to important others?\n\n\nClustering\nLocal cohesion\nHow interconnected is the neighborhood?\n\n\nPageRank\nPrestige\nWho receives quality endorsements?\n\n\n\n\n\n\n\n\n\nCaution\n\n\nEach measure captures different aspects of structural importance"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#degree-centrality",
@@ -1631,35 +1631,35 @@
     "href": "weeks/week-2/slideshow_5.html#degree-centrality-interpretation",
     "title": "Network Centrality",
     "section": "Degree Centrality: Interpretation",
-    "text": "Degree Centrality: Interpretation\n\n\nUndirected Networks:\n\nMany friends, contacts, or connections\nHigh visibility and local influence\nDirect access to information and resources\nPotential for rapid mobilization\n\n\nDirected Networks:\n\nHigh in-degree: Popular, prestigious, sought after\n\nExample: Highly cited papers, celebrity Twitter accounts\n\nHigh out-degree: Active, gregarious, outgoing\n\nExample: Frequent emailers, prolific citers\n\n\n\n\n\n\n\n\n\n\nLimitations: Ignores indirect connections and network structure beyond immediate neighbors"
+    "text": "Degree Centrality: Interpretation\n\n\nUndirected Networks:\n\nMany friends, contacts, or connections\nHigh visibility and local influence\nDirect access to information and resources\nPotential for rapid mobilization\n\n\nDirected Networks:\n\nHigh in-degree: Popular, prestigious, sought after\n\nExample: Highly cited papers, celebrity Twitter accounts\n\nHigh out-degree: Active, gregarious, outgoing\n\nExample: Frequent emailers, prolific citers\n\n\n\n\n\n\n\n\n\nWarning\n\n\nLimitations: Ignores indirect connections and network structure beyond immediate neighbors"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#degree-centrality-business-example",
     "href": "weeks/week-2/slideshow_5.html#degree-centrality-business-example",
     "title": "Network Centrality",
     "section": "Degree Centrality: Business Example",
-    "text": "Degree Centrality: Business Example\n\n\nR&D Lab Technical Advice Network\nHigh Degree Scientist (sought by 18 colleagues for advice)\n\nRecognized expert with broad technical knowledge\nCentral information hub in the laboratory\nHigh visibility and influence on research directions\nRisk: Bottleneck for problem-solving, time constraints\n\nLow Degree Scientist (consults with 3 colleagues)\n\nFocused expertise in specialized area\nMay have deep knowledge in niche domain\nLess demand on time for advice-giving\nOpportunity: Develop broader skillset, increase collaboration\n\nReal Pattern: Power-law distribution—few scientists provide most technical advice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMagenta node: High degree (central expert)\nBlack nodes: ‘7’ is a low degree node example (peripheral)"
+    "text": "Degree Centrality: Business Example\n\n\nR&D Lab Technical Advice Network\nHigh Degree Scientist (sought by 18 colleagues for advice)\n\nRecognized expert with broad technical knowledge\nCentral information hub in the laboratory\nHigh visibility and influence on research directions\nRisk: Bottleneck for problem-solving, time constraints\n\nLow Degree Scientist (consults with 3 colleagues)\n\nFocused expertise in specialized area\nMay have deep knowledge in niche domain\nLess demand on time for advice-giving\nOpportunity: Develop broader skillset, increase collaboration\n\nReal Pattern: Power-law distribution—few scientists provide most technical advice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nMagenta node: High degree (central expert)\nBlack nodes: ‘7’ is a low degree node example (peripheral)"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#closeness-centrality",
     "href": "weeks/week-2/slideshow_5.html#closeness-centrality",
     "title": "Network Centrality",
     "section": "Closeness Centrality",
-    "text": "Closeness Centrality\n\n\nDefinition: Inverse of average distance to all other nodes\n\\[C_C(i) = \\frac{n-1}{\\sum_{j \\neq i} d(i,j)}\\]\nwhere \\(d(i,j)\\) is the shortest path distance from \\(i\\) to \\(j\\)\nAlternative (Harmonic Mean):\n\\[C_C^{harm}(i) = \\sum_{j \\neq i} \\frac{1}{d(i,j)}\\]\nIntuition: How quickly can node \\(i\\) reach everyone else?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMagenta path: Shortest path between nodes 3 and 10 is through 4 and 9\nCloseness considers the shortest path between node \\(i\\) and all other nodes in the network"
+    "text": "Closeness Centrality\n\n\nDefinition: Inverse of average distance to all other nodes\n\\[C_C(i) = \\frac{n-1}{\\sum_{j \\neq i} d(i,j)}\\]\nwhere \\(d(i,j)\\) is the shortest path distance from \\(i\\) to \\(j\\)\nAlternative (Harmonic Mean):\n\\[C_C^{harm}(i) = \\sum_{j \\neq i} \\frac{1}{d(i,j)}\\]\nIntuition: How quickly can node \\(i\\) reach everyone else?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nMagenta path: Shortest path between nodes 3 and 10 is through 4 and 9\nCloseness considers the shortest path between node \\(i\\) and all other nodes in the network"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#closeness-centrality-interpretation",
     "href": "weeks/week-2/slideshow_5.html#closeness-centrality-interpretation",
     "title": "Network Centrality",
     "section": "Closeness Centrality: Interpretation",
-    "text": "Closeness Centrality: Interpretation\nWhat High Closeness Means:\n\nCan quickly access information from anywhere in network\nEfficient communication with all other nodes\nPotential for rapid dissemination\nStrategic position for time-sensitive activities\n\nApplications:\n\nSupply chains: Central warehouses minimize delivery times\nOrganizations: Managers with high closeness coordinate efficiently\nEpidemic control: High closeness nodes are early infection points\nInnovation: Quick access to diverse information sources\n\n\n\n\n\n\n\nLimitations: Requires connected network; sensitive to network size; ignores edge weights initially"
+    "text": "Closeness Centrality: Interpretation\nWhat High Closeness Means:\n\nCan quickly access information from anywhere in network\nEfficient communication with all other nodes\nPotential for rapid dissemination\nStrategic position for time-sensitive activities\n\nApplications:\n\nSupply chains: Central warehouses minimize delivery times\nOrganizations: Managers with high closeness coordinate efficiently\nEpidemic control: High closeness nodes are early infection points\nInnovation: Quick access to diverse information sources\n\n\n\n\n\n\n\nCaution\n\n\nLimitations: Requires connected network; sensitive to network size; ignores edge weights initially"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#closeness-example-knowledge-networks",
     "href": "weeks/week-2/slideshow_5.html#closeness-example-knowledge-networks",
     "title": "Network Centrality",
     "section": "Closeness Example: Knowledge Networks",
-    "text": "Closeness Example: Knowledge Networks\n\n\nEngineering Consulting Firm\nHigh Closeness Engineer (avg distance = 2.1)\n\nCan quickly reach any expertise in the firm\nEfficient problem-solving through quick consultation\nIdeal for project coordination roles\nFast knowledge integration\n\nLow Closeness Engineer (avg distance = 4.8)\n\nIsolated in organizational periphery\nSlower access to firm-wide expertise\nMay develop specialized deep knowledge\nPotential: Mentorship to improve integration\n\nStrategic Implication: Closeness predicts coordination effectiveness\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMagenta node: High closeness (central position)\nBlack node: Low closeness (peripheral position)"
+    "text": "Closeness Example: Knowledge Networks\n\n\nEngineering Consulting Firm\nHigh Closeness Engineer (avg distance = 2.1)\n\nCan quickly reach any expertise in the firm\nEfficient problem-solving through quick consultation\nIdeal for project coordination roles\nFast knowledge integration\n\nLow Closeness Engineer (avg distance = 4.8)\n\nIsolated in organizational periphery\nSlower access to firm-wide expertise\nMay develop specialized deep knowledge\nPotential: Mentorship to improve integration\n\nStrategic Implication: Closeness predicts coordination effectiveness\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nMagenta node: High closeness (central position)\nBlack node: Low closeness (peripheral position)"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#betweenness-centrality",
@@ -1673,14 +1673,14 @@
     "href": "weeks/week-2/slideshow_5.html#betweenness-the-broker-position",
     "title": "Network Centrality",
     "section": "Betweenness: The Broker Position",
-    "text": "Betweenness: The Broker Position\nWhat High Betweenness Means:\n\nControls information flow between others\nBroker between different groups or communities\nCan delay, distort, or facilitate communication\nStructural hole position (Burt’s theory)\n\nStrategic Value:\n\nInformation arbitrage: Access to diverse information\nGatekeeping power: Control what information passes\nInnovation potential: Recombination of ideas from different groups\nPolitical capital: Both sides need the broker\n\n\n\n\n\n\n\nRisk: Bottleneck position—removal disrupts network flow"
+    "text": "Betweenness: The Broker Position\nWhat High Betweenness Means:\n\nControls information flow between others\nBroker between different groups or communities\nCan delay, distort, or facilitate communication\nStructural hole position (Burt’s theory)\n\nStrategic Value:\n\nInformation arbitrage: Access to diverse information\nGatekeeping power: Control what information passes\nInnovation potential: Recombination of ideas from different groups\nPolitical capital: Both sides need the broker\n\n\n\n\n\n\n\nImportant\n\n\nRisk: Bottleneck position—removal disrupts network flow"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#betweenness-example-innovation-networks",
     "href": "weeks/week-2/slideshow_5.html#betweenness-example-innovation-networks",
     "title": "Network Centrality",
     "section": "Betweenness Example: Innovation Networks",
-    "text": "Betweenness Example: Innovation Networks\n\n\nPharmaceutical R&D Network\nHigh Betweenness Scientist (bridges Chemistry & Biology labs)\n\nUnique position connecting two specialized domains\nControls knowledge transfer between groups\nFirst to see combination opportunities\nCareer advantage: Valuable to both groups\nOrganizational value: Enables cross-disciplinary projects\n\nLow Betweenness Scientist (within dense cluster)\n\nEmbedded in single community\nMany redundant paths don’t pass through them\nDeep specialization possible\nInnovation: Incremental improvements\n\nFinding: High betweenness predicts cross-disciplinary breakthroughs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMagenta node: High betweenness (broker position)\nBlack node: Low betweenness (embedded in group)"
+    "text": "Betweenness Example: Innovation Networks\n\n\nPharmaceutical R&D Network\nHigh Betweenness Scientist (bridges Chemistry & Biology labs)\n\nUnique position connecting two specialized domains\nControls knowledge transfer between groups\nFirst to see combination opportunities\nCareer advantage: Valuable to both groups\nOrganizational value: Enables cross-disciplinary projects\n\nLow Betweenness Scientist (within dense cluster)\n\nEmbedded in single community\nMany redundant paths don’t pass through them\nDeep specialization possible\nInnovation: Incremental improvements\n\nFinding: High betweenness predicts cross-disciplinary breakthroughs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nMagenta node: High betweenness (broker position)\nBlack node: Low betweenness (embedded in group)"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#eigenvector-centrality",
@@ -1694,7 +1694,7 @@
     "href": "weeks/week-2/slideshow_5.html#eigenvector-centrality-quality-vs.-quantity",
     "title": "Network Centrality",
     "section": "Eigenvector Centrality: Quality vs. Quantity",
-    "text": "Eigenvector Centrality: Quality vs. Quantity\n\n\nDegree vs. Eigenvector:\n\nDegree: Counts all connections equally (1 point per neighbor)\nEigenvector: Weights neighbors by their importance\n\nExample Scenarios:\nScenario A: High Degree, Low Eigenvector\n\n50 connections to peripheral nodes\n“Popular among the unpopular”\nVolume without prestige\n\nScenario B: Low Degree, High Eigenvector\n\n3 connections to highly central nodes\n“Connected to the elite”\nQuality over quantity\n\n\n\n\n\n\n\nClassic Example: Craig Robinson (former Oregon State basketball coach) has high eigenvector centrality because he’s President Obama’s brother-in-law\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTop network (Scenario A): Node A (magenta) has high degree (6 connections) but low eigenvector centrality (connected to peripheral nodes shown in black)\nBottom network (Scenario B): Node A (magenta) has low degree (1 connection) but high eigenvector centrality (connected to highly central cluster shown in emerald)"
+    "text": "Eigenvector Centrality: Quality vs. Quantity\n\n\nDegree vs. Eigenvector:\n\nDegree: Counts all connections equally (1 point per neighbor)\nEigenvector: Weights neighbors by their importance\n\nExample Scenarios:\nScenario A: High Degree, Low Eigenvector\n\n50 connections to peripheral nodes\n“Popular among the unpopular”\nVolume without prestige\n\nScenario B: Low Degree, High Eigenvector\n\n3 connections to highly central nodes\n“Connected to the elite”\nQuality over quantity\n\n\n\n\n\n\n\nNote\n\n\nClassic Example: Craig Robinson (former Oregon State basketball coach) has high eigenvector centrality because he’s President Obama’s brother-in-law\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nTop network (Scenario A): Node A (magenta) has high degree (6 connections) but low eigenvector centrality (connected to peripheral nodes shown in black)\nBottom network (Scenario B): Node A (magenta) has low degree (1 connection) but high eigenvector centrality (connected to highly central cluster shown in emerald)"
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#eigenvector-example-venture-capital",
@@ -1708,14 +1708,14 @@
     "href": "weeks/week-2/slideshow_5.html#clustering-coefficient",
     "title": "Network Centrality",
     "section": "Clustering Coefficient",
-    "text": "Clustering Coefficient\n\n\nDefinition: Proportion of neighbors that are also connected\n\\[C_{clust}(i) = \\frac{2e_i}{k_i(k_i-1)}\\]\nwhere:\n\n\\(k_i\\) = degree of node \\(i\\)\n\\(e_i\\) = number of edges between neighbors of \\(i\\)\n\nInterpretation: How interconnected is node \\(i\\)’s neighborhood?\nRange: 0 (no neighbors connected) to 1 (all neighbors connected)\nKey Insight:\n\nClosed triad: Node’s neighbors are connected → High clustering\nOpen triad: Node’s neighbors are not connected → Low clustering\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTop network (Closed triad): Node A (magenta) has clustering coefficient = 1.0. Both neighbors B and C (emerald) are connected to each other.\nBottom network (Open triad): Node A (black) has clustering coefficient = 0.0. Neighbors B and C (emerald) are not connected."
+    "text": "Clustering Coefficient\n\n\nDefinition: Proportion of neighbors that are also connected\n\\[C_{clust}(i) = \\frac{2e_i}{k_i(k_i-1)}\\]\nwhere:\n\n\\(k_i\\) = degree of node \\(i\\)\n\\(e_i\\) = number of edges between neighbors of \\(i\\)\n\nInterpretation: How interconnected is node \\(i\\)’s neighborhood?\nRange: 0 (no neighbors connected) to 1 (all neighbors connected)\nKey Insight:\n\nClosed triad: Node’s neighbors are connected → High clustering\nOpen triad: Node’s neighbors are not connected → Low clustering\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nTop network (Closed triad): Node A (magenta) has clustering coefficient = 1.0. Both neighbors B and C (emerald) are connected to each other.\nBottom network (Open triad): Node A (black) has clustering coefficient = 0.0. Neighbors B and C (emerald) are not connected."
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#clustering-coefficient-embeddedness",
     "href": "weeks/week-2/slideshow_5.html#clustering-coefficient-embeddedness",
     "title": "Network Centrality",
     "section": "Clustering Coefficient: Embeddedness",
-    "text": "Clustering Coefficient: Embeddedness\n\n\nWhat High Clustering Means:\n\nNode is part of a dense, cohesive group\nHigh social capital and trust\nInformation redundancy (everyone knows everyone)\nStrong group norms and social control\nClosure benefits (Coleman’s theory)\n\nWhat Low Clustering Means:\n\nNode bridges disconnected groups\nAccess to diverse, non-redundant information\nWeak tie advantages (Granovetter’s theory)\nBrokerage opportunities\nLess embedded, more autonomous\n\nTrade-off: Closure (trust, coordination) vs. Brokerage (novelty, diversity)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTop network (High Clustering): Node A (magenta) is embedded in a dense, cohesive group where neighbors B, C, D, E (emerald) are highly interconnected. Closure benefits.\nBottom network (Low Clustering): Node A (black) bridges disconnected groups. Neighbors B, C, D, E (emerald) are not connected to each other. Brokerage opportunities."
+    "text": "Clustering Coefficient: Embeddedness\n\n\nWhat High Clustering Means:\n\nNode is part of a dense, cohesive group\nHigh social capital and trust\nInformation redundancy (everyone knows everyone)\nStrong group norms and social control\nClosure benefits (Coleman’s theory)\n\nWhat Low Clustering Means:\n\nNode bridges disconnected groups\nAccess to diverse, non-redundant information\nWeak tie advantages (Granovetter’s theory)\nBrokerage opportunities\nLess embedded, more autonomous\n\nTrade-off: Closure (trust, coordination) vs. Brokerage (novelty, diversity)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nTop network (High Clustering): Node A (magenta) is embedded in a dense, cohesive group where neighbors B, C, D, E (emerald) are highly interconnected. Closure benefits.\nBottom network (Low Clustering): Node A (black) bridges disconnected groups. Neighbors B, C, D, E (emerald) are not connected to each other. Brokerage opportunities."
   },
   {
     "objectID": "weeks/week-2/slideshow_5.html#clustering-example-scientific-collaboration",
@@ -1785,7 +1785,7 @@
     "href": "weeks/week-2/slideshow_5.html#key-takeaways",
     "title": "Network Centrality",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\n\n\n\n\n\n\n\nCore Concepts:\n\nCentrality measures importance, but importance is multidimensional\nDifferent measures capture different mechanisms and advantages\nContext matters: Same structure, different meanings\nCentrality distributions reveal inequality and vulnerability\nCompare multiple measures for comprehensive understanding\n\n\n\n\n\n\n\n\n\n\n\nPractical Wisdom:\n\nNo single “best” centrality measure\nMatch measure to substantive question\nConsider computational constraints\nInterpret in context of research question"
+    "text": "Key Takeaways\n\n\n\n\n\n\n\n\nImportant\n\n\nCore Concepts:\n\nCentrality measures importance, but importance is multidimensional\nDifferent measures capture different mechanisms and advantages\nContext matters: Same structure, different meanings\nCentrality distributions reveal inequality and vulnerability\nCompare multiple measures for comprehensive understanding\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nPractical Wisdom:\n\nNo single “best” centrality measure\nMatch measure to substantive question\nConsider computational constraints\nInterpret in context of research question"
   },
   {
     "objectID": "weeks/week-7/main.html",

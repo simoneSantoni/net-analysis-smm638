@@ -1,15 +1,15 @@
 ---
 title: "Networks, Network Analysis & Business Relevance"
 subtitle: "Setting Expectations for SMM638"
-date: "today"
+author: "SMM638 Network Analytics"
 format:
   revealjs:
-    output-file: slideshow_1-slides.html
-    theme: slides.scss
+    theme: default
     slide-number: true
     transition: slide
     chalkboard: true
     multiplex: false
+    css: ../../slideshow-theme.css
     code-fold: true
     code-summary: ""
 ---
