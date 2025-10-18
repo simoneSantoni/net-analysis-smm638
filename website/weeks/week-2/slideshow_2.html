@@ -9,8 +9,8 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="dcterms.date" content="2025-10-18">
-  <title>SMM638 - Network Analytics – Taxonomy of Network Analysis Indicators</title>
+  <meta name="author" content="SMM638 Network Analytics">
+  <title>SMM638 - Network Analytics – Why Network Analysis Matters</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +29,8 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-fab765895f71d2789d5da185ec78f6f4.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../../slideshow-theme.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -129,45 +130,146 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Taxonomy of Network Analysis Indicators</h1>
-  <p class="subtitle">Macro, Meso, and Node-Level Measures</p>
+  <h1 class="title">Why Network Analysis Matters</h1>
+  <p class="subtitle">Insights from the Royal Bank of Canada Case</p>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+SMM638 Network Analytics 
+</div>
+</div>
 </div>
 
-  <p class="date">2025-10-18</p>
 </section>
-<section id="three-levels-of-analysis" class="slide level2">
-<h2>Three Levels of Analysis</h2>
-<p><strong>Network indicators operate at different scales:</strong></p>
+<section id="the-rbc-challenge" class="slide level2">
+<h2>The RBC Challenge</h2>
+<p><strong>Context: First-Party Fraud Detection</strong></p>
+<ul>
+<li>RBC: Canada’s largest bank with 15+ million clients, 6.5M cards</li>
+<li><strong>Problem</strong>: Detecting fraudulent credit applications by own customers</li>
+<li><strong>Traditional approach</strong>: Rule-based systems with <strong>85:1 false positive ratio</strong></li>
+<li><strong>Cost</strong>: $10M upfront + $1M annual maintenance + 30TB weekly data processing</li>
+</ul>
+<p><strong>McKenzie’s Mission: Reduce false positives from 85:1 to 10:1</strong></p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>The Connected Explosion</strong>: “Ten fraudsters sharing 10 common data elements can create 100 false identities; if they defraud 4 financial instruments per identity with $5,000 credit limit, potential loss = <strong>$2 million</strong>”</p>
+</div>
+</div>
+</div>
+</section>
+<section id="why-networks-detect-fraud-better" class="slide level2">
+<h2>Why Networks Detect Fraud Better</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Traditional Fraud Detection Limitations:</strong></p>
+<p>Individual attribute checking misses organized fraud patterns:</p>
+<ul>
+<li>Credit scores, income verification, address validation</li>
+<li>Each application evaluated in isolation</li>
+<li>Fraudsters exploit this independence</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Network Analysis Advantage:</strong></p>
+<p>Reveals the <strong>connected explosion</strong> - fraudsters’ coordination creates detectable signatures:</p>
+<ul>
+<li>Shared phone numbers across multiple applications</li>
+<li>Common email domains and IP addresses</li>
+<li>Linked banking activities and transactions</li>
+<li>Connected social security numbers and addresses</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="fraudsters-face-a-paradox" class="slide level2">
+<h2>Fraudsters Face a Paradox</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Fraudsters’ greatest strength (coordination) becomes their <strong>Achilles’ heel</strong> (detectability through network patterns)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-analytical-challenge" class="slide level2">
+<h2>The Analytical Challenge</h2>
+<p><strong>16 Fraud Detection Rules Applied to 13,731 Customers</strong></p>
+<p><strong>Key Performance Metrics:</strong></p>
 <table class="caption-top">
 <colgroup>
+<col style="width: 8%">
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 21%">
 <col style="width: 28%">
-<col style="width: 28%">
-<col style="width: 44%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Level</th>
-<th>Focus</th>
-<th>Questions</th>
+<th>Rule</th>
+<th>Positive Hits</th>
+<th>True Positives</th>
+<th>Detection Rate</th>
+<th>False Positive Rate</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Macro</strong></td>
-<td>Entire network</td>
-<td>How big? How centralized? How connected?</td>
+<td>R1</td>
+<td>3,221</td>
+<td>189 (45.5%)</td>
+<td>45.5%</td>
+<td>17:1</td>
 </tr>
 <tr class="even">
-<td><strong>Meso</strong></td>
-<td>Groups/Communities</td>
-<td>Are there clusters of nodes? How modular?</td>
+<td>R27</td>
+<td>2,057</td>
+<td>169 (40.7%)</td>
+<td>40.7%</td>
+<td>12:1</td>
 </tr>
 <tr class="odd">
-<td><strong>Micro/Node</strong></td>
-<td>Individual positions</td>
-<td>Who is central? Who bridges groups?</td>
+<td>R18</td>
+<td>9,107</td>
+<td>84 (20.2%)</td>
+<td>20.2%</td>
+<td><strong>108:1</strong> ⚠️</td>
 </tr>
 </tbody>
 </table>
@@ -180,224 +282,89 @@
 <p><strong>Caution</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Key Principle:</strong> Different levels reveal different insights</p>
+<p><strong>The Core Trade-off:</strong></p>
 <ul>
-<li>Macro: Overall structure and properties</li>
-<li>Meso: Subgroup organization<br>
+<li>Higher detection rate → More false positives → Higher investigation costs</li>
+<li>Lower false positive rate → Fewer fraudsters caught → Higher fraud losses</li>
+</ul>
+<p><strong>Neither single rule achieves the 10:1 target</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="business-value-three-critical-insights" class="slide level2 smaller">
+<h2>Business Value: Three Critical Insights</h2>
+<p><strong>1. Precision Enhancement Through Combined Rules</strong></p>
+<ul>
+<li><strong>Logit model</strong> combining 16 rules outperforms any single rule</li>
+<li>Achieves <strong>2.7:1 false positive ratio</strong> at optimal threshold (0.275)</li>
+<li>Trade-off: Only 13% detection rate at lowest FP ratio</li>
+<li><strong>Sweet spot</strong>: 80% detection (330/415 fraudsters) at 10:1 ratio (threshold = 0.05)</li>
+</ul>
+<p><strong>2. Cost-Benefit Analysis</strong></p>
+<p>Must balance: - Average cost of undetected fraudster ($2M potential loss per ring) - Average cost per investigation ($500-2000 per positive hit) - Data processing costs (ETL: 30TB weekly, 5 days processing time)</p>
+<p><strong>3. System Performance Optimization</strong></p>
+<ul>
+<li><strong>Real-time vs.&nbsp;batch processing</strong>: 5-day lag creates vulnerability window</li>
+<li><strong>Super clusters</strong>: Everyone-connected-to-everyone formations require threshold tuning</li>
+<li><strong>Scalability</strong>: Managing millions of accounts with complex network algorithms</li>
+</ul>
+</section>
+<section id="what-business-analysts-must-understand" class="slide level2 smaller">
+<h2>What Business Analysts Must Understand</h2>
+<p><strong>The Multi-Dimensional Optimization Problem:</strong></p>
+<p><strong>Technical Dimensions:</strong></p>
+<ul>
+<li>Feature engineering from network patterns</li>
+<li>Model performance (precision, recall, F1-score)</li>
+<li>Computational efficiency and scalability</li>
+</ul>
+<p><strong>Business Dimensions:</strong></p>
+<ul>
+<li>Customer experience (minimizing false accusations)</li>
+<li>Operational efficiency (investigation team capacity)</li>
+<li>Financial impact (fraud losses vs.&nbsp;prevention costs)</li>
+</ul>
+<p><strong>Strategic Dimensions:</strong></p>
+<ul>
+<li>System evolution as fraudsters adapt</li>
+<li>Integration with legacy banking systems</li>
+<li>Regulatory compliance and data privacy</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Real Outcome</strong>: By end of 2015, RBC reduced false positive ratio to 24:1 (progress but still above 10:1 target). In March 2016, discontinued SNA to revamp ETL infrastructure.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="key-lessons-for-analysts" class="slide level2 smaller">
+<h2>Key Lessons for Analysts</h2>
+<p><strong>1. Context Matters More Than Algorithms</strong></p>
+<ul>
+<li>Best model must align with business constraints</li>
+<li>Pure accuracy is not the goal—balanced performance is</li>
+</ul>
+<p><strong>2. Trade-offs Are Inherent</strong></p>
+<ul>
+<li>Detection rate vs.&nbsp;false positive rate</li>
+<li>Thoroughness vs.&nbsp;operational efficiency<br>
 </li>
-<li>Micro: Individual advantages and constraints</li>
+<li>Real-time responsiveness vs.&nbsp;computational cost</li>
 </ul>
-</div>
-</div>
-</div>
-</section>
-<section id="macro-level-indicators" class="slide level2">
-<h2>Macro-Level Indicators</h2>
-<p><strong>Whole Network Properties</strong></p>
-<p>Characterize the overall structure and global patterns</p>
-<p><strong>Key Measures:</strong></p>
-<ol type="1">
-<li><strong>Network Size</strong>: Number of nodes and edges</li>
-<li><strong>Density</strong>: Proportion of possible connections realized</li>
-<li><strong>Centralization</strong>: Concentration of connections<br>
-</li>
-<li><strong>Diameter</strong>: Maximum distance between any two nodes</li>
-<li><strong>Average Path Length</strong>: Mean distance across all pairs</li>
-<li><strong>Fragmentation</strong>: Presence of disconnected components</li>
-</ol>
-<p><strong>Purpose:</strong> Understand network-wide characteristics and compare across networks</p>
-</section>
-<section id="example-network-size-and-density" class="slide level2 smaller">
-<h2>Example: Network Size and Density</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Definition:</strong> Basic structural properties</p>
+<p><strong>3. Network Analysis Reveals Hidden Patterns</strong></p>
 <ul>
-<li><strong>Node count</strong>: Total number of vertices (<span class="math inline">\(n\)</span>)</li>
-<li><strong>Edge count</strong>: Total number of connections (<span class="math inline">\(m\)</span>)</li>
-<li><strong>Possible edges</strong>: <span class="math inline">\(\frac{n(n-1)}{2}\)</span> for undirected networks</li>
+<li>Individual-level analysis misses organized fraud</li>
+<li>Connectivity is both the crime’s structure and its detection mechanism</li>
+<li>Network thinking transforms how we identify risk</li>
 </ul>
-<p><strong>Business Example: LinkedIn Network</strong></p>
-<ul>
-<li><strong>Small startup network</strong> (50 employees)
-<ul>
-<li>Possible connections: 1,225</li>
-<li>Observed connections: 245</li>
-<li>Density: 20%</li>
-</ul></li>
-<li><strong>Large corporation network</strong> (5,000 employees)
-<ul>
-<li>Possible connections: 12,497,500</li>
-<li>Observed connections: 187,500</li>
-<li>Density: 1.5%</li>
-</ul></li>
-</ul>
-<p><strong>Insight:</strong> Larger networks typically have lower density</p>
-</div><div class="column" style="width:40%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="slideshow_4_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Network Metrics:</strong></p>
-<table style="border-collapse: collapse; margin: auto; font-size: 14px;">
-<tbody><tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">
-Nodes (n)
-</td>
-<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
-5
-</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">
-Edges (m)
-</td>
-<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
-6
-</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">
-Possible Edges
-</td>
-<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
-10
-</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">
-Density
-</td>
-<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
-60.0%
-</td>
-</tr>
-</tbody></table>
-</div></div>
-</section>
-<section id="example-centralization" class="slide level2 smaller">
-<h2>Example: Centralization</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Definition:</strong> Extent to which connections concentrate around few nodes</p>
-<ul>
-<li><strong>High centralization</strong>: Star-like, hierarchical structure</li>
-<li><strong>Low centralization</strong>: Distributed, egalitarian structure</li>
-</ul>
-<p><strong>Business Example: Communication Patterns</strong></p>
-<p><strong>Startup (Low Centralization = 0.25)</strong></p>
-<ul>
-<li>Flat structure with distributed communication</li>
-<li>Multiple people coordinate projects</li>
-<li>Information flows through many channels</li>
-</ul>
-<p><strong>Traditional Corporation (High Centralization = 0.78)</strong></p>
-<ul>
-<li>Hub-and-spoke: most communication through managers</li>
-<li>Clear hierarchy and formal reporting</li>
-<li>Information bottlenecks at central nodes</li>
-</ul>
-<p><strong>Implication:</strong> Centralization affects agility, innovation, and resilience</p>
-</div><div class="column" style="width:40%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="slideshow_4_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Network Metrics:</strong></p>
-<table style="border-collapse: collapse; margin: auto; font-size: 13px;">
-<tbody><tr>
-<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">
-Network
-</th>
-<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">
-Size
-</th>
-<th style="padding: 6px; border: 1px solid #ddd; font-weight: bold;">
-Density
-</th>
-</tr>
-<tr>
-<td style="padding: 6px; border: 1px solid #ddd;">
-Higher centralization (top)
-</td>
-<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">
-5 nodes, 4 edges
-</td>
-<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">
-40.0%
-</td>
-</tr>
-<tr>
-<td style="padding: 6px; border: 1px solid #ddd;">
-Lower centralization (bottom)
-</td>
-<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">
-5 nodes, 8 edges
-</td>
-<td style="padding: 6px; border: 1px solid #ddd; text-align: center;">
-80.0%
-</td>
-</tr>
-</tbody></table>
-</div></div>
-</section>
-<section id="meso-level-indicators" class="slide level2">
-<h2>Meso-Level Indicators</h2>
-<p><strong>Community and Subgroup Structure</strong></p>
-<p>Identify cohesive groups and organizational patterns</p>
-<p><strong>Key Measures:</strong></p>
-<ol type="1">
-<li><strong>Modularity</strong>: Quality of network partitioning into groups</li>
-<li><strong>Community Detection</strong>: Algorithmic identification of clusters</li>
-<li><strong>Core-Periphery</strong>: Distinction between dense core and sparse periphery</li>
-<li><strong>Structural Holes</strong>: Gaps between groups creating brokerage opportunities</li>
-<li><strong>k-cores</strong>: Subgraphs where all nodes have minimum degree k</li>
-</ol>
-<p><strong>Purpose:</strong> Reveal hidden organizational structure and group boundaries</p>
-</section>
-<section id="example-network-modularity" class="slide level2 smaller">
-<h2>Example: Network Modularity</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><strong>Definition:</strong> Strength of division into communities</p>
-<ul>
-<li>Measures how well network separates into distinct groups</li>
-<li>Higher values indicate stronger community structure</li>
-</ul>
-<p><strong>Business Example: Corporate R&amp;D Network</strong></p>
-<p><strong>Higher Modularity</strong></p>
-<ul>
-<li>Clear separation: Chemistry, Biology, Engineering teams</li>
-<li>Limited cross-disciplinary collaboration</li>
-<li>Potential for siloed innovation</li>
-</ul>
-<p><strong>Lower Modularity</strong></p>
-<ul>
-<li>Extensive cross-team connections</li>
-<li>Interdisciplinary collaboration</li>
-<li>Potential for breakthrough innovation but coordination challenges</li>
-</ul>
-<p><strong>Strategic Implication:</strong> Community structure reflects organizational integration vs.&nbsp;specialization trade-offs</p>
-</div><div class="column" style="width:40%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="slideshow_4_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -407,74 +374,7 @@ Lower centralization (bottom)
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>The top network seems to have two communities ({A, B, C} and {D, E, F} triads)</strong></p>
-<p><strong>The bottom network does not show any obvious community structure</strong></p>
-<p>We will explore modularity indicators and community detection algorithms in detail in <strong>Weeks 7 and 8</strong>.</p>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="node-level-indicators" class="slide level2 smaller">
-<h2>Node-Level Indicators</h2>
-<p><strong>Individual Position and Influence</strong></p>
-<p>Characterize actor positions within the network</p>
-<p><strong>Major Categories:</strong></p>
-<ol type="1">
-<li><p><strong>Centrality Measures</strong>: Various ways to measure importance</p>
-<ul>
-<li>Degree, Closeness, Betweenness, Eigenvector</li>
-</ul></li>
-<li><p><strong>Structural Position</strong>: Role in network architecture</p>
-<ul>
-<li>Bridges, Brokers, Isolates, Cliques</li>
-</ul></li>
-<li><p><strong>Local Clustering</strong>: Cohesion of immediate neighborhood</p></li>
-<li><p><strong>Embeddedness</strong>: Integration into network structure</p></li>
-</ol>
-<p><strong>Purpose:</strong> Identify influential actors, structural advantages, and vulnerabilities</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Much more to follow on node-level indicators today</strong></p>
-</div>
-</div>
-</div>
-</section>
-<section id="summary-levels-in-practice" class="slide level2 smaller">
-<h2>Summary: Levels in Practice</h2>
-<p><strong>Integrated Analysis Framework:</strong></p>
-<p><strong>Macro Level</strong> → Strategic organizational design</p>
-<ul>
-<li>Should we have a centralized or distributed structure?</li>
-<li>How connected is our organization overall?</li>
-</ul>
-<p><strong>Meso Level</strong> → Team and department dynamics</p>
-<ul>
-<li>Are we too siloed or too integrated?</li>
-<li>Where are the boundaries between groups?</li>
-</ul>
-<p><strong>Micro Level</strong> → Individual talent management</p>
-<ul>
-<li>Who are our key connectors and influencers?</li>
-<li>Who has structural advantages or disadvantages?</li>
-</ul>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Best Practice:</strong> Analyze networks at multiple levels simultaneously for comprehensive insights</p>
+<p>This case demonstrates why business analysts need both technical skills (modeling, optimization) and business judgment (trade-off management, stakeholder communication)</p>
 </div>
 </div>
 </div>
