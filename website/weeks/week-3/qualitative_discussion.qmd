@@ -4,7 +4,7 @@ subtitle: "Business Insights from Social Network Analysis"
 date: "today"
 format:
   revealjs:
-    theme: slides.scss
+    css: ../../slideshow-theme.css
     transition: slide
     slide-number: true
     chalkboard: true

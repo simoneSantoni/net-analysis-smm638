@@ -888,5 +888,54 @@
     "title": "Taxonomy of Network Analysis Indicators",
     "section": "Summary: Levels in Practice",
     "text": "Summary: Levels in Practice\nIntegrated Analysis Framework:\nMacro Level → Strategic organizational design\n\nShould we have a centralized or distributed structure?\nHow connected is our organization overall?\n\nMeso Level → Team and department dynamics\n\nAre we too siloed or too integrated?\nWhere are the boundaries between groups?\n\nMicro Level → Individual talent management\n\nWho are our key connectors and influencers?\nWho has structural advantages or disadvantages?\n\n\n\n\n\n\n\nImportant\n\n\nBest Practice: Analyze networks at multiple levels simultaneously for comprehensive insights"
+  },
+  {
+    "objectID": "weeks/week-3/qualitative_discussion.html#the-strategic-context",
+    "href": "weeks/week-3/qualitative_discussion.html#the-strategic-context",
+    "title": "Who is the Right Influencer?",
+    "section": "The Strategic Context",
+    "text": "The Strategic Context\n\n\nSpace Games Inc.’s Challenge\nCompany Background\n\nSmall gaming company in Singapore\nLaunching “Thrive in Space 5” (5th version)\nTarget: Gamers aged 16-25\nCampaign: “Thrive to Survive” on Twitch\nTimeline: 1 month to launch\n\nCMO Tina Lohn’s Dilemma\nThree critical questions facing senior management:\n\nSelection: Which influencers should we choose?\nJustification: How do we prove ROI to leadership?\nMethodology: What metrics actually matter?\n\n\n\n\n\nThe Core Problem\n\n\nFollower count alone is misleading\nTraditional metrics don’t reveal:\n\nWho influences other influencers?\nWho bridges multiple communities?\nWho has authentic audience engagement?\nWho aligns with brand values?\n\n\n\n\n\n\n\n\n\n\nWhy This Matters\n\n\nFailed influencer campaigns often result from poor selection, regardless of budget size"
+  },
+  {
+    "objectID": "weeks/week-3/qualitative_discussion.html#understanding-twitchs-unique-value",
+    "href": "weeks/week-3/qualitative_discussion.html#understanding-twitchs-unique-value",
+    "title": "Who is the Right Influencer?",
+    "section": "Understanding Twitch’s Unique Value",
+    "text": "Understanding Twitch’s Unique Value\nWhy Twitch for Gaming Products?\n\n\nPlatform Characteristics\nLive Streaming Advantage\n\nReal-time product demonstrations\nAuthentic, unscripted reactions\nHigh interactivity (chat features)\nCommunity trust and credibility\n\nAudience Demographics\n\n73% aged 16-34 (perfect fit!)\n65% male, 35% female\nGaming-focused community\nHigh engagement rates\n\nMonetization Ready\n\nAffiliate program structure\nSubscription revenue models\nDonation capabilities\nProfessional content creators\n\n\nNetwork Structure Insights\nKey Finding: Network is dense with distinct super-users\n\nAverage followers: 6.22 per user\nMaximum followers: 465 (User 4949)\nDistribution highly skewed\nSub-communities within larger network\n\nStrategic Implications:\n\nFew users have outsized influence\nCommunities cluster around topics\nInformation spreads through hubs\nSuper-users bridge multiple groups\n\n\n\n\n\n\n\nBusiness Opportunity\n\n\nSelect influencers who are well-connected within the network, not just those with high follower counts"
+  },
+  {
+    "objectID": "weeks/week-3/qualitative_discussion.html#strategic-selection-framework",
+    "href": "weeks/week-3/qualitative_discussion.html#strategic-selection-framework",
+    "title": "Who is the Right Influencer?",
+    "section": "Strategic Selection Framework",
+    "text": "Strategic Selection Framework\nMoving Beyond Simple Metrics\n\n\n\nCritical Business Insight\n\n\nNetwork position matters more than network size\nAn influencer connected to other influential users has multiplier effects that raw follower count misses\n\n\n\nThree-Stage Selection Process\n\nStage 1: Apply Business FiltersStage 2: Network AnalysisStage 3: Qualitative Validation\n\n\nRemove Misaligned Candidates\n✗ Mature Content Channels\n\nNot age-appropriate for 16+ game\nBrand safety concerns\nReduced candidate pool by 55%\n\n✓ Require Affiliate Status\n\nProfessional monetization capability\nExperience with sponsored content\nFTC disclosure compliance\nOnly 5% of streamers qualify\n\nResult: Initial filtering based on business requirements, not just network metrics\n\n\nIdentify True Influencers\nFocus on two key dimensions:\nEigenvector Centrality (High)\n\nConnected to other influential streamers\nMessage spreads through important nodes\nAccess to influential audiences\nBusiness Value: Credibility by association\n\nBetweenness Centrality (High)\n\nBridges multiple gaming communities\nFacilitates cross-community reach\nInformation gatekeeper role\nBusiness Value: Broader market penetration\n\nIdeal Quadrant: High Eigenvector + High Betweenness\n\n\nProfile Checks for Final Selection\nGenre Alignment\n\nPlays games similar to Thrive in Space?\nSpace/strategy game background?\nAudience interested in multiplayer games?\n\nContent Style\n\nMulti-game streamers (more credible)\nProfessional streaming quality\nPositive community management\nConsistent schedule\n\nAuthenticity Markers\n\nGenuine enthusiasm for games\nNo controversial associations\nValues align with Space Games Inc.\nHistory of successful partnerships\n\nFinal Selection: Choose 3 influencers from different communities"
+  },
+  {
+    "objectID": "weeks/week-3/qualitative_discussion.html#roi-framework",
+    "href": "weeks/week-3/qualitative_discussion.html#roi-framework",
+    "title": "Who is the Right Influencer?",
+    "section": "ROI Framework",
+    "text": "ROI Framework\n\n\nBuilding the Financial Case\nRevenue Calculation\n\n\n\nRevenue Formula (Simplified)\n\n\nRevenue = Price × (Direct Reach + Indirect Reach) × Conversion Uplift\nE.g.:\n\nPrice: $29.99 per game\nDirect Reach: Influencer’s followers\nIndirect Reach: Network effect (2-3x)\nConversion Uplift: 0.04% above baseline\n\n\n\n\n\nCost Components\nDirect Costs\nInfluencer Fees\n\n$500-5,000 per stream\nBased on follower count & engagement\nPerformance bonuses possible\n\nProduct Costs\n\nFree game copies for influencers\nDiscount codes (reduced margins)\nShipping/digital delivery costs\n\nIndirect Costs\nCampaign Management\n\nStaff time for coordination\nContent creation support\nPerformance monitoring\n\nLegal & Compliance\n\nContract preparation\nFTC disclosure requirements\nRights management"
+  },
+  {
+    "objectID": "weeks/week-3/qualitative_discussion.html#beyond-roi-strategic-value",
+    "href": "weeks/week-3/qualitative_discussion.html#beyond-roi-strategic-value",
+    "title": "Who is the Right Influencer?",
+    "section": "Beyond ROI: Strategic Value",
+    "text": "Beyond ROI: Strategic Value\n\n\nLong-term Business Value\nBrand Building Impact\nMarket Positioning\n\nExposure to core gaming demographic\nAssociation with trusted community voices\nCategory leadership opportunities\n\nSocial Proof Generation\n\nThird-party validation of game quality\nAuthentic viewer testimonials\nUser-generated content creation\n\nCommunity Development\n\nOngoing player engagement\nFoundation for future launches\nLoyalty program opportunities\n\n\n\n\n\n\n\nStrategic Insight\n\n\nInitial campaigns create lasting relationships that benefit future product launches\n\n\n\n\nRisk Mitigation Framework\nKey Risk Factors\n\n\n\n\n\n\nBrand Alignment Risks\n\n\nPotential Issues\n\nInfluencer controversy\nAudience backlash\nValues misalignment\n\nMitigation Strategy\n\nThorough background checks\nPerformance-based contracts\nCrisis response planning\n\n\n\n\nPortfolio Approach Benefits\nRisk Diversification\n\nSelect 3 influencers from different communities\nMinimize single-point-of-failure\nTest different messaging approaches\n\nLearning Opportunities\n\nA/B test content strategies\nIdentify best-performing segments\nOptimize future campaigns"
+  },
+  {
+    "objectID": "weeks/week-3/qualitative_discussion.html#strategic-lessons-implementation",
+    "href": "weeks/week-3/qualitative_discussion.html#strategic-lessons-implementation",
+    "title": "Who is the Right Influencer?",
+    "section": "Strategic Lessons & Implementation",
+    "text": "Strategic Lessons & Implementation\nKey Business Takeaways\n\n\n\n\n\n1. Systematic Beats Intuitive\n\n\nTraditional Approach (Avoid)\n\nSelect by follower count\nChoose recognizable names\nRely on personal connections\n\nNetwork-Informed Approach (Adopt)\n\nAnalyze network position\nConsider multiple centrality measures\nBalance reach with influence\nValidate with qualitative checks\n\nBusiness Impact:\n\nHigher conversion rates\nLower risk of mismatch\nBetter ROI per dollar spent\n\n\n\n\n\n\n\n2. Authenticity Cannot Be Faked\n\n\nCase Evidence from Teaching Note\n❌ Pepsi/Kendall Jenner - Tone-deaf messaging\n❌ Bud Light Controversy - Poor influencer fit\n❌ Genre Misalignment - Audience skepticism\n✓ Successful Patterns\n\nInfluencer genuinely plays similar games\nNatural fit with brand values\nAudience already interested in genre\nHistory of authentic endorsements\n\nBusiness Impact: Protects brand reputation\n\n\n\n\n\n\n\n3. Community Diversity Multiplies Reach\n\n\nStrategic Rationale\nSelect from different network communities:\n\nCommunity A: Space strategy gamers\nCommunity B: Multiplayer enthusiasts\n\nCommunity C: Building/simulation fans\n\nBenefits:\n\nMinimize audience overlap\nCross-pollinate messages\nReach broader market segments\nA/B test different approaches\n\nBusiness Impact: Maximum reach per dollar\n\n\n\n\n\n\n4. Performance-Based Alignment\n\n\nContract Structure Recommendation\nAvoid: Pure flat fee arrangements\nPrefer: Hybrid performance model\n\nBase fee: $300-500\nPerformance bonus: 10-15% of attributed sales\nUnique discount codes for tracking\nMilestone bonuses for engagement\n\nWhy This Works:\n\nAligns influencer incentives\nReduces downside risk\nEasier ROI justification\nMotivates authentic promotion\n\nBusiness Impact: Better campaign outcomes"
+  },
+  {
+    "objectID": "weeks/week-3/qualitative_discussion.html#the-success-formula",
+    "href": "weeks/week-3/qualitative_discussion.html#the-success-formula",
+    "title": "Who is the Right Influencer?",
+    "section": "The Success Formula",
+    "text": "The Success Formula\n\n\n\n\n\n\nBottom Line for Space Games Inc.\n\n\nInfluencer Marketing Success Requires:\n\nData-Driven Selection - Network analysis identifies hidden influence\nStrategic Thinking - Brand fit and community diversity matter\nDisciplined Execution - Performance contracts and active management\nContinuous Learning - Measure, adapt, and optimize\n\nThe combination of network science and business judgment creates sustainable competitive advantage in the gaming market."
   }
 ]
