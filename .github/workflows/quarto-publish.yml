@@ -77,7 +77,7 @@ jobs:
       - name: Render Quarto Project
         run: |
           cd website
-          quarto render --to html
+          quarto render
         timeout-minutes: 15
 
       - name: Setup Pages
