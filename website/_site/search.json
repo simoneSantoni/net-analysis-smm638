@@ -937,5 +937,595 @@
     "title": "Who is the Right Influencer?",
     "section": "The Success Formula",
     "text": "The Success Formula\n\n\n\n\n\n\nBottom Line for Space Games Inc.\n\n\nInfluencer Marketing Success Requires:\n\nData-Driven Selection - Network analysis identifies hidden influence\nStrategic Thinking - Brand fit and community diversity matter\nDisciplined Execution - Performance contracts and active management\nContinuous Learning - Measure, adapt, and optimize\n\nThe combination of network science and business judgment creates sustainable competitive advantage in the gaming market."
+  },
+  {
+    "objectID": "weeks/week-8/main.html",
+    "href": "weeks/week-8/main.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 8"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#week-4-overview",
+    "href": "weeks/week-4/slideshow.html#week-4-overview",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Week 4 Overview",
+    "text": "Week 4 Overview\nKey Questions:\n\nWhy do networks look the way they look?\nWhat processes generate network structures?\nHow can we test for and model these processes?\n\nTopics:\n\nTaxonomy of network formation mechanisms\nDyadic and triadic processes\nStatistical tests for network effects\nExponential Random Graph Models (ERGMs)\nNetwork dynamics"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#why-do-networks-look-the-way-they-look",
+    "href": "weeks/week-4/slideshow.html#why-do-networks-look-the-way-they-look",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Why Do Networks Look the Way They Look?",
+    "text": "Why Do Networks Look the Way They Look?\n\n\nNetworks are not random - they exhibit consistent structural patterns:\n\nClustering: Friends of friends tend to be friends\nDegree heterogeneity: Some nodes have many connections, others few\nHomophily: Similar nodes connect more often\nSmall world: Short path lengths despite local clustering\n\nCentral Question: What social, biological, or physical processes create these patterns?\n\n\n\n\n\n\n\n\n\n\nTypical network: hubs, clusters, paths"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#the-formation-question",
+    "href": "weeks/week-4/slideshow.html#the-formation-question",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "The Formation Question",
+    "text": "The Formation Question\nTwo complementary perspectives:\n\nStructural mechanisms: Network topology drives new connections\n\nExample: Triadic closure creates clusters\n\nAttribute-based mechanisms: Node characteristics drive connections\n\nExample: Homophily - similarity breeds connection\n\n\nChallenge: Disentangling these effects requires sophisticated statistical models"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#taxonomy-of-network-effects",
+    "href": "weeks/week-4/slideshow.html#taxonomy-of-network-effects",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Taxonomy of Network Effects",
+    "text": "Taxonomy of Network Effects\nMajor categories of network formation processes:\n\n\n\nCategory\nDescription\nExample\n\n\n\n\nDyadic\nTwo-node processes\nHomophily, reciprocity\n\n\nTriadic\nThree-node processes\nTransitivity, balance\n\n\nHigher-order\nFour+ node processes\nK-cores, cliques\n\n\nNode-level\nIndividual preferences\nPreferential attachment\n\n\nExogenous\nExternal factors\nGeography, institutions"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#dyadic-processes-definition",
+    "href": "weeks/week-4/slideshow.html#dyadic-processes-definition",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Dyadic Processes: Definition",
+    "text": "Dyadic Processes: Definition\n\n\nDyadic processes operate on pairs of nodes (dyads)\nA dyad can be in three states:\n\nNull: No connection (i → j and j → i both absent)\nAsymmetric: One-way connection (i → j OR j → i)\nMutual: Two-way connection (i → j AND j → i)\n\nDyadic processes explain why specific pairs of nodes connect"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#dyadic-process-reciprocity",
+    "href": "weeks/week-4/slideshow.html#dyadic-process-reciprocity",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Dyadic Process: Reciprocity",
+    "text": "Dyadic Process: Reciprocity\n\n\nDefinition: The tendency for directed edges to be reciprocated\nMechanism: If i → j exists, j → i becomes more likely\nExamples:\n\nSocial media: You follow back those who follow you\nCollaboration: Co-authorship often becomes bidirectional\nTrade: Countries with import relationships develop export relationships\n\nStatistical signature: Higher proportion of mutual dyads than expected by chance"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#dyadic-process-homophily",
+    "href": "weeks/week-4/slideshow.html#dyadic-process-homophily",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Dyadic Process: Homophily",
+    "text": "Dyadic Process: Homophily\n\n\nDefinition: “Similarity breeds connection” - nodes with similar attributes connect more\nTypes:\n\nDemographic: Age, gender, ethnicity\nBehavioral: Interests, activities\nStatus: Education, occupation\n\nFormula: \\(Pr(e_{ij} = 1 | phi(A_{i}, A_{j}))\\)\nwhere \\(\\phi\\) is a similarity or distance function.\nEmpirical Evidence:\n\nWikipedia editors (Crandall et al., 2008): Editors with similar editing patterns more likely to communicate\nUniversity email network (Kossinets & Watts, 2006): Students taking same classes form connections at higher rates"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#dyadic-process-homophily-vs-selection",
+    "href": "weeks/week-4/slideshow.html#dyadic-process-homophily-vs-selection",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Dyadic Process: Homophily vs Selection",
+    "text": "Dyadic Process: Homophily vs Selection\nCritical distinction:\n\nSelection (homophily): Similar people connect\nInfluence: Connected people become similar\n\nProblem: Observational data shows correlation, not causation!\nEmpirical example - Wikipedia editors (Crandall et al., 2008):\n\nTracked similarity over time relative to first communication\nBefore contact: Rapid increase in similarity (selection)\nAfter contact: Continued slower increase (influence)\nBoth processes operate simultaneously!\n\nSolutions:\n\nLongitudinal data tracking changes over time\nStatistical models that separate effects (e.g., SAOMs)\nNatural experiments"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#other-dyadic-processes",
+    "href": "weeks/week-4/slideshow.html#other-dyadic-processes",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Other Dyadic Processes",
+    "text": "Other Dyadic Processes\n\n\nHeterophily: Attraction to difference (opposite of homophily)\n\nExample: Dating networks, mentor-mentee relationships\n\nDistance/Geography: Physical proximity increases connection probability\n\nExample: Friendship networks, communication patterns\n\nStatus homophily: Nodes connect within same status level\n\nExample: Corporate networks, academic citations\n\nResource exchange: Complementary needs drive connections\n\nExample: Economic networks, mutualistic relationships"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-processes-definition",
+    "href": "weeks/week-4/slideshow.html#triadic-processes-definition",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Processes: Definition",
+    "text": "Triadic Processes: Definition\n\n\nTriadic processes involve three nodes forming triangles\nKey configurations:\n\nOpen triad: A-B, B-C exist but A-C absent\nClosed triad (triangle): A-B, B-C, and A-C all exist\n\nCore insight: The presence of two edges affects the probability of the third"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-process-transitivity",
+    "href": "weeks/week-4/slideshow.html#triadic-process-transitivity",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Process: Transitivity",
+    "text": "Triadic Process: Transitivity\n\n\nDefinition: “Friends of friends become friends”\nMechanism: If A→B and B→C, then A→C becomes more likely\nAlso called: Triadic closure, clustering\nExamples:\n\nSocial networks: Introduced through mutual friends\nAcademic collaboration: Co-authors of co-authors collaborate\nProtein networks: Proteins interacting with same partner interact\n\nMeasurement: Clustering coefficient, transitivity ratio"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#empirical-evidence-triadic-focal-closure",
+    "href": "weeks/week-4/slideshow.html#empirical-evidence-triadic-focal-closure",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Empirical Evidence: Triadic & Focal Closure",
+    "text": "Empirical Evidence: Triadic & Focal Closure\n\n\nKossinets & Watts (2006)3: Email network at large US university\nData: ~22,000 students over one year\nKey findings:\nTriadic closure (shared friends):\n\nProbability increases roughly linearly with common friends\nStrong effect: 2 common friends &gt; 2× effect of 1 friend\n\nFocal closure (shared activities/classes):\n\nFirst shared class has similar effect to one friend\nDiminishing returns for additional classes\nCurve levels off (different from triadic closure)\n\nImplication: Both structural and contextual effects matter!\n3 Kossinets, G., & Watts, D. J. (2006). Empirical analysis of an evolving social network. science, 311(5757), 88-90."
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#focal-vs-membership-closure-key-distinction",
+    "href": "weeks/week-4/slideshow.html#focal-vs-membership-closure-key-distinction",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Focal vs Membership Closure: Key Distinction",
+    "text": "Focal vs Membership Closure: Key Distinction\n\n\nFocal Closure (Easley & Kleinberg, 2010)2:\n\nPeople meet through shared activities/contexts (foci)\nExamples: Classes, workplaces, clubs, events\nMechanism: Physical proximity + repeated interaction\nPattern: Bipartite structure (people ↔︎ activities)\n\nMembership Closure:\n\nPeople connect through shared group memberships\nExamples: Organizations, committees, teams\nMechanism: Formal affiliation creates opportunities\nPattern: Overlapping group boundaries\n\nKey insight: Context matters as much as network structure!\n2 Easley, D., & Kleinberg, J. (2010). Networks, crowds, and markets: Reasoning about a highly connected world (Vol. 1). Cambridge: Cambridge university press."
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-process-balance-theory",
+    "href": "weeks/week-4/slideshow.html#triadic-process-balance-theory",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Process: Balance Theory",
+    "text": "Triadic Process: Balance Theory\nStructural balance (Heider, 1946): Cognitive consistency in signed networks\nBalanced triangles (all relationships consistent):\n\n+++: Three mutual friends (stable)\n+–: Two enemies share a common enemy (stable)\n\nUnbalanced triangles (tension):\n\n++-: Friend of friend is enemy (unstable)\n\n—: Three mutual enemies (unstable)\n\nPrediction: Networks evolve toward balanced states"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-configurations-in-directed-networks",
+    "href": "weeks/week-4/slideshow.html#triadic-configurations-in-directed-networks",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Configurations in Directed Networks",
+    "text": "Triadic Configurations in Directed Networks\n\n\n16 possible triadic configurations (triads census)1:\nKey patterns:\n\n003: Empty (no edges)\n012: One edge only\n102: Two edges, no transitivity\n030T: Transitive triple\n300: Complete triangle\n\nDifferent processes favor different configurations\nEach tells us something about network formation mechanisms!\n1 Vladimir Batagelj and Andrej Mrvar, A subquadratic triad census algorithm for large sparse networks with small maximum degree, University of Ljubljana, http://vlado.fmf.uni-lj.si/pub/networks/doc/triads/triads.pdf"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#triadic-process-cyclicity-vs-transitivity",
+    "href": "weeks/week-4/slideshow.html#triadic-process-cyclicity-vs-transitivity",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Triadic Process: Cyclicity vs Transitivity",
+    "text": "Triadic Process: Cyclicity vs Transitivity\n\n\nTransitivity: A→B→C implies A→C (hierarchical)\n\nCreates hierarchies, rankings\nExample: Citation networks, food webs\n\nCyclicity: A→B→C implies C→A (circular)\n\nCreates exchange cycles\nExample: Rock-paper-scissors, circular status\n\nDistinction matters for understanding network function!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#statistical-tests-for-network-effects",
+    "href": "weeks/week-4/slideshow.html#statistical-tests-for-network-effects",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Statistical Tests for Network Effects",
+    "text": "Statistical Tests for Network Effects\nChallenge: Network data violates independence assumptions\nClassical approach fails: Standard statistical tests assume independent observations\nSolutions:\n\nPermutation tests: Randomize while preserving structure\nConditional Uniform Graph (CUG) tests: Compare to random graphs\nQuadratic Assignment Procedure (QAP): Correlation with permutation"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#permutation-tests-for-networks",
+    "href": "weeks/week-4/slideshow.html#permutation-tests-for-networks",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Permutation Tests for Networks",
+    "text": "Permutation Tests for Networks\n\n\nLogic:\n\nCalculate observed statistic (e.g., clustering)\nGenerate random networks preserving certain properties\nCalculate statistic on random networks\nCompare: Is observed value extreme?\n\nKey decision: What to preserve when randomizing?\n\nNode degrees?\nNumber of edges?\nDyad distributions?\n\nP-value: Proportion of random networks with more extreme values"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#qap-regression",
+    "href": "weeks/week-4/slideshow.html#qap-regression",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "QAP Regression",
+    "text": "QAP Regression\nQuadratic Assignment Procedure: Test relationship between network matrices\nUse case: Does network Y depend on network X?\nExample: Does friendship (Y) depend on geographic proximity (X)?\nProcedure:\n\nRegress Y on X, get coefficient β\nPermute rows/columns of Y simultaneously\nRepeat regression, get β*\nRepeat 1000+ times\nP-value: proportion where |β*| &gt; |β|\n\nAdvantage: Accounts for network dependencies"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#exponential-random-graph-models-ergms",
+    "href": "weeks/week-4/slideshow.html#exponential-random-graph-models-ergms",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Exponential Random Graph Models (ERGMs)",
+    "text": "Exponential Random Graph Models (ERGMs)\nCore idea: Model probability of observing a network as function of its features\nForm: \\[P(Y = y) = \\frac{1}{\\kappa} \\exp\\left(\\sum_k \\theta_k s_k(y)\\right)\\]\nWhere:\n\n\\(Y\\): Random network\n\\(s_k(y)\\): Network statistics (edges, triangles, etc.)\n\\(\\theta_k\\): Parameters (effects to estimate)\n\\(\\kappa\\): Normalizing constant"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#ergm-intuition",
+    "href": "weeks/week-4/slideshow.html#ergm-intuition",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "ERGM: Intuition",
+    "text": "ERGM: Intuition\nThink of it as logistic regression for networks\nInstead of: P(person votes yes) = f(age, income, …)\nWe have: P(network has this structure) = f(edges, triangles, homophily, …)\nKey insight: Model entire network as outcome, not individual ties\nAdvantages:\n\nTests multiple mechanisms simultaneously\nControls for confounding effects\nProvides effect sizes, not just significance"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#common-ergm-terms",
+    "href": "weeks/week-4/slideshow.html#common-ergm-terms",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Common ERGM Terms",
+    "text": "Common ERGM Terms\n\n\n\nTerm\nEffect\nInterpretation\n\n\n\n\nedges\nDensity\nOverall connection probability\n\n\nmutual\nReciprocity\nTendency for reciprocation\n\n\ntriangle\nTransitivity\nTendency for closure\n\n\nnodematch(\"attr\")\nHomophily\nSame-attribute connection\n\n\nnodecov(\"attr\")\nAttribute effect\nNode attribute influence\n\n\ngwesp\nShared partners\nWeighted transitivity\n\n\n\nModel specification: Choose terms based on theory!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#ergm-interpretation",
+    "href": "weeks/week-4/slideshow.html#ergm-interpretation",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "ERGM: Interpretation",
+    "text": "ERGM: Interpretation\nPositive coefficient (θ &gt; 0): Configuration is more likely than chance\nNegative coefficient (θ &lt; 0): Configuration is less likely than chance\nExample interpretation:\nedges: -2.5    (low baseline density)\nmutual: 1.8    (strong reciprocity)\ntriangle: 0.4  (moderate transitivity)\nnodematch(\"gender\"): 0.6  (gender homophily)\nReading: Controlling for density, reciprocity, and triangles, same-gender ties are more likely"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#ergm-challenges",
+    "href": "weeks/week-4/slideshow.html#ergm-challenges",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "ERGM: Challenges",
+    "text": "ERGM: Challenges\nDegeneracy problem: Some specifications lead to extreme networks\n\nAll edges or no edges\nComplete clustering or no clustering\n\nComputational challenge: Calculating κ is often intractable\nSolutions:\n\nUse geometrically-weighted terms (GWESP, GWDSP)\nMarkov Chain Monte Carlo (MCMC) estimation\nCareful model specification and testing"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#network-dynamics-models",
+    "href": "weeks/week-4/slideshow.html#network-dynamics-models",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Network Dynamics Models",
+    "text": "Network Dynamics Models\nSo far: Models of static networks (single time point)\nReality: Networks evolve over time\nDynamic approaches:\n\nTemporal ERGMs: ERGMs on network changes\nStochastic Actor-Oriented Models (SAOMs): Actor-driven change\nRelational Event Models (REMs): Continuous-time interactions"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#stochastic-actor-oriented-models",
+    "href": "weeks/week-4/slideshow.html#stochastic-actor-oriented-models",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Stochastic Actor-Oriented Models",
+    "text": "Stochastic Actor-Oriented Models\n\n\nKey assumption: Actors make rational decisions about ties\nProcess:\n\nActors get random opportunities to change ties\nThey evaluate potential changes via utility function\nThey choose change that maximizes utility\n\nUtility function includes:\n\nStructural preferences (transitivity, reciprocity)\nAttribute preferences (homophily)\nCosts and benefits\n\nSoftware: RSiena package in R\nAdvantage: Separates selection from influence effects!\n\n\n\n\n\n\n\n\n\n\n```"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#comparing-modeling-approaches",
+    "href": "weeks/week-4/slideshow.html#comparing-modeling-approaches",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Comparing Modeling Approaches",
+    "text": "Comparing Modeling Approaches\n\n\n\nApproach\nTime\nQuestion\nStrength\n\n\n\n\nERGM\nStatic\nWhat structure?\nMultiple mechanisms\n\n\nSAOM\nPanel\nHow does it change?\nSelection vs influence\n\n\nREM\nContinuous\nWhen do events occur?\nPrecise timing\n\n\nTERGM\nDiscrete steps\nWhat changes?\nNetwork evolution\n\n\n\nChoice depends on:\n\nData structure (cross-sectional vs longitudinal)\nResearch question (structure vs process)\nComputational resources"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#summary-key-takeaways",
+    "href": "weeks/week-4/slideshow.html#summary-key-takeaways",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Summary: Key Takeaways",
+    "text": "Summary: Key Takeaways\n\nNetwork structure emerges from systematic processes, not randomness\nDyadic processes (reciprocity, homophily) explain pairwise connections\nTriadic processes (transitivity, balance) explain local clustering\nStatistical tests must account for network dependencies (permutation, QAP)\nERGMs model network probability as function of multiple mechanisms\nDynamic models capture how networks evolve over time\n\nNext steps: Applying these models to real data!"
+  },
+  {
+    "objectID": "weeks/week-4/slideshow.html#further-reading-resources",
+    "href": "weeks/week-4/slideshow.html#further-reading-resources",
+    "title": "Dyads, Triads, and Network Dynamics",
+    "section": "Further Reading & Resources",
+    "text": "Further Reading & Resources\nCore texts:\n\nLusher, Koskinen & Robins (2013). Exponential Random Graph Models for Social Networks\nSnijders, van de Bunt & Steglich (2010). “Introduction to SAOMs”\nWasserman & Faust (1994). Social Network Analysis\n\nSoftware:\n\nstatnet package (R): ERGMs\nRSiena package (R): SAOMs\nigraph package (R/Python): Basic network analysis\n\nOnline resources: INSNA workshops, Summer institutes"
+  },
+  {
+    "objectID": "weeks/week-3/perform.html",
+    "href": "weeks/week-3/perform.html",
+    "title": "Assignment: Influencer Selection for Space Games Inc.",
+    "section": "",
+    "text": "Using the Twitch network data (Twitch_edges.csv and Twitch_nodes.csv), identify 3 optimal influencers for Space Games Inc.’s “Thrive in Space 5” campaign.\nYour analysis should: 1. Filter out mature content channels and non-affiliate streamers 2. Calculate eigenvector and betweenness centrality measures 3. Create a quadrant plot to identify high-performing candidates 4. Detect communities and select one influencer from each of 3 different communities 5. Justify your selections with expected ROI calculations\nSubmit an R Markdown/Quarto document with code, visualizations, and a 300-word strategic rationale.\n\n\n\n\n\n\nSubmission Details\n\n\n\n\nDue Date: October 20, 2025\nSubmit to: Simone.Santoni.1@city.ac.uk\nSubject Line: SMM638 Week 3 Assignment - [Your Name]"
+  },
+  {
+    "objectID": "weeks/week-3/perform.html#assignment-overview",
+    "href": "weeks/week-3/perform.html#assignment-overview",
+    "title": "Assignment: Influencer Selection for Space Games Inc.",
+    "section": "",
+    "text": "Using the Twitch network data (Twitch_edges.csv and Twitch_nodes.csv), identify 3 optimal influencers for Space Games Inc.’s “Thrive in Space 5” campaign.\nYour analysis should: 1. Filter out mature content channels and non-affiliate streamers 2. Calculate eigenvector and betweenness centrality measures 3. Create a quadrant plot to identify high-performing candidates 4. Detect communities and select one influencer from each of 3 different communities 5. Justify your selections with expected ROI calculations\nSubmit an R Markdown/Quarto document with code, visualizations, and a 300-word strategic rationale.\n\n\n\n\n\n\nSubmission Details\n\n\n\n\nDue Date: October 20, 2025\nSubmit to: Simone.Santoni.1@city.ac.uk\nSubject Line: SMM638 Week 3 Assignment - [Your Name]"
+  },
+  {
+    "objectID": "weeks/week-3/eda.html",
+    "href": "weeks/week-3/eda.html",
+    "title": "SMM638 - Network Analytics",
+    "section": "",
+    "text": "Explore the Twitch streamer network dataset to understand node attributes before applying centrality measures.\n\n# Load required libraries\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(knitr)\n\n# Set theme for plots\ntheme_set(theme_minimal())\n\n\n# Read the Twitch nodes data\ntwitch_nodes &lt;- read_csv(\"../../../data/twitch/Twitch_nodes.csv\")\n\n# Display data structure\ncat(\"Dataset dimensions:\", nrow(twitch_nodes), \"rows,\", ncol(twitch_nodes), \"columns\\n\")\n\nDataset dimensions: 7126 rows, 6 columns"
+  },
+  {
+    "objectID": "weeks/week-3/eda.html#perform",
+    "href": "weeks/week-3/eda.html#perform",
+    "title": "SMM638 - Network Analytics",
+    "section": "Perform",
+    "text": "Perform\n\n\n\n\n\n\n📝 Perform\n\n\n\n✏️ Analyze the ‘Twitch’ case study according to a network centrality approach (refer to the case studies section of SMM638’s Moodle page).\n💡 Resources on how to discuss business case studies: The Case Method"
+  },
+  {
+    "objectID": "weeks/week-3/eda.html#ponder",
+    "href": "weeks/week-3/eda.html#ponder",
+    "title": "SMM638 - Network Analytics",
+    "section": "Ponder",
+    "text": "Ponder\nNetwork centrality applications\nBorgatti, S. P. (2005). Centrality and network flow. Social Networks, 27(1), 55-71.\nIdentifying key players in networks\nBorgatti, S. P. (2006). Identifying sets of key players in a social network. Computational & Mathematical Organization Theory, 12(1), 21-34.\nCentrality in organizational networks\nSparrowe, R. T., Liden, R. C., Wayne, S. J., & Kraimer, M. L. (2001). Social networks and the performance of individuals and groups. Academy of Management Journal, 44(2), 316-325."
+  },
+  {
+    "objectID": "useful_links.html",
+    "href": "useful_links.html",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks"
+  },
+  {
+    "objectID": "useful_links.html#course-resources",
+    "href": "useful_links.html#course-resources",
+    "title": "Useful Links",
+    "section": "",
+    "text": "GitHub Repository\nMoodle Page (login required)\n\n\n\n\n\n\n\nigraph R Package\ntidygraph Documentation\nggraph Gallery\nstatnet Project\n\n\n\n\n\nNetworkX Documentation\nPython Graph Tool\nPyVis Interactive Networks\n\n\n\n\n\n\n\n\nNetwork Science by Barabási (Free)\nIntroduction to Network Science\n\n\n\n\n\nNetwork Analysis with R\nNetworkX Tutorial\nCRAN Task View: Social Network Analysis\n\n\n\n\n\n\nGephi - Open source network visualization\nCytoscape - Network visualization platform\nD3.js Force Layout - Web-based networks\n\n\n\n\n\nStanford Large Network Dataset Collection\nNetwork Repository\nKonect - Network Collection\n\n\n\n\n\nINSNA - International Network for Social Network Analysis\nNetSci Society\nReddit r/Networks"
+  },
+  {
+    "objectID": "course/support.html",
+    "href": "course/support.html",
+    "title": "Course Support",
+    "section": "",
+    "text": "Network analysis can be challenging, but you don’t have to navigate it alone. This page provides information about all the support resources available to help you succeed in SMM638 - Network Analytics.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#support-resources",
+    "href": "course/support.html#support-resources",
+    "title": "Course Support",
+    "section": "Support Resources",
+    "text": "Support Resources\n\nCourse Forum\nAccess the course forum through module SMM638’s Moodle website for:\n\nAsking questions (conceptual or technical)\nSharing helpful resources\nDiscussing course material\nFinding study partners\n\nForum Guidelines:\n\nSearch before posting (your question may be answered)\nUse descriptive titles\nInclude error messages and code snippets\nBe respectful and helpful\nDon’t share complete assignment solutions\n\n\n\nEmail Support\nModule Leader: Simone.Santoni.1@city.ac.uk\nInstructor: Erwanghao.Yu@bayes.ac.uk\nWhen to email:\n\nPersonal matters (illness, accommodations)\nScheduling appointments\nUrgent technical issues\nAdministrative questions\n\nResponse time: 24-48 hours on weekdays\nEmail tips:\n\nUse clear subject line: “SMM638: [Topic]”\nInclude your student ID\nBe specific about your issue\nAttach relevant files if needed",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#common-issues-and-solutions",
+    "href": "course/support.html#common-issues-and-solutions",
+    "title": "Course Support",
+    "section": "Common Issues and Solutions",
+    "text": "Common Issues and Solutions\n\nInstallation Problems\n\n\n\n\n\n\nCommon Installation Issues:\nProblem: R/RStudio won’t install\n\nQuick fix attempt: Check system requirements, disable antivirus temporarily, run as administrator\n\nProblem: Python packages won’t install\n\nQuick fix attempt: Update conda/pip, check firewall settings, try different repository\n\nProblem: Network analysis packages won’t import\n\nQuick fix attempt: Verify installation with library() in R or import in Python, reinstall package, check dependencies (igraph, networkx, etc.)\n\n\n\n\n\n\nNetwork Analysis Challenges\n“I don’t know where to start with network analysis”:\n\nStart with simple network visualizations\nUnderstand your data structure (nodes and edges)\nBegin with basic centrality measures\nUse sample networks before your own data\nLook at similar network examples in the literature\n\n“My network code doesn’t work”:\n\nCheck your data format (edge list, adjacency matrix)\nVerify node and edge attributes\nEnsure proper package loading (igraph, networkx)\nTest with small sample networks first\nCheck for isolated nodes or missing edges\n\n“I don’t understand network concepts”:\n\nReview the network terminology glossary\nPractice with interactive network examples\nVisualize concepts with simple networks\nAsk specific questions on the forum\nAttend office hours with concrete examples",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#study-resources",
+    "href": "course/support.html#study-resources",
+    "title": "Course Support",
+    "section": "Study Resources",
+    "text": "Study Resources\n\nRecommended Learning Path\n\nBefore Class:\n\nReview previous material\nRead assigned sections\nNote questions\n\nDuring Class:\n\nTake active notes\nTry examples\nAsk questions\n\nAfter Class:\n\nReview notes same day\nComplete exercises\nPractice additional problems\n\n\n\n\nPeer Support\nStudy Groups:\n\nForm groups of 3-4 students\nMeet regularly to review material\nWork through problems together\nShare different approaches\n\nPeer Tutoring:\n\nAdvanced students available for tutoring\nSign up through course website\nFree service for enrolled students",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#mental-health-and-wellbeing",
+    "href": "course/support.html#mental-health-and-wellbeing",
+    "title": "Course Support",
+    "section": "Mental Health and Wellbeing",
+    "text": "Mental Health and Wellbeing\nProgramming can be frustrating at times. Remember:\n\n\n\n\n\n\nIt’s normal to:\n\nFeel stuck sometimes\nNeed multiple attempts\nMake lots of errors\nNeed to ask for help\nTake breaks when frustrated\n\n\n\n\nCampus Resources: See “Your health and wellbeing” page, hosted in the University’s website.\n\nPersonal Emergencies\nIllness or emergency: - Email instructor ASAP - Provide documentation if extended - Discuss makeup options - Don’t fall behind",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#faq",
+    "href": "course/support.html#faq",
+    "title": "Course Support",
+    "section": "FAQ",
+    "text": "FAQ\nQ: How much time should I spend on this course? A: Plan for 2-3 hours outside class for every hour in class (6-9 hours/week total).\nQ: Do I need prior programming experience? A: Basic programming experience in R or Python is helpful but not required. We’ll cover the essentials for network analysis.\nQ: Can I use AI tools like ChatGPT? A: You may use them for learning and understanding concepts, but submitted work must be your own. Always cite any AI assistance received.\nQ: What if I’m falling behind? A: Seek help immediately. Network analysis concepts build on each other, so early gaps become bigger problems later.\nQ: Do I need a powerful computer? A: No, basic network analysis doesn’t require much computing power. Any computer from the last 5 years should work fine.\nQ: Should I use R or Python for network analysis? A: Both are excellent. We’ll primarily use R with igraph, but Python with NetworkX is also supported. Choose based on your comfort level.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/support.html#success-tips",
+    "href": "course/support.html#success-tips",
+    "title": "Course Support",
+    "section": "Success Tips",
+    "text": "Success Tips\n\n\n\n\n\n\nTop tips from successful network analysis students:\n\nStart with simple networks - Build complexity gradually\nVisualize first - Always plot your networks to understand structure\nThink about the domain - Network interpretation depends on context\nPractice with real data - Work with networks from your field of interest\nLearn the terminology - Master key concepts like centrality, clustering, paths\nAsk “why” questions - Don’t just calculate metrics, understand their meaning\nDocument your analysis - Network studies require clear interpretation\nCompare measures - Different centrality metrics tell different stories\n\n\n\n\nRemember: We want you to succeed! Don’t hesitate to reach out when you need help.",
+    "crumbs": [
+      "Course Information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course/faq.html",
+    "href": "course/faq.html",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference."
+  },
+  {
+    "objectID": "course/faq.html#general-questions",
+    "href": "course/faq.html#general-questions",
+    "title": "Frequently Asked Questions",
+    "section": "",
+    "text": "Network analytics is the study of relationships and connections between entities (nodes) in complex systems. It combines graph theory, statistics, and computational methods to uncover patterns in networked data.\n\n\n\nBasic programming knowledge is helpful but not required. We’ll cover R and Python fundamentals in the first week. The course is designed to accommodate beginners while challenging advanced students.\n\n\n\nBoth are excellent choices. R has stronger statistical packages for network analysis (igraph, statnet), while Python offers better integration with machine learning tools. We’ll teach both and you can choose based on your preference."
+  },
+  {
+    "objectID": "course/faq.html#course-logistics",
+    "href": "course/faq.html#course-logistics",
+    "title": "Frequently Asked Questions",
+    "section": "Course Logistics",
+    "text": "Course Logistics\n\nHow much time should I dedicate to this course?\nExpect to spend 8-10 hours per week:\n\n3 hours: Lectures and tutorials\n3-4 hours: Readings and videos\n2-3 hours: Assignments and practice\n\n\n\nCan I audit the course?\nPlease contact the instructor to discuss auditing options. Priority is given to enrolled students.\n\n\nAre lectures recorded?\nYes, all lectures are recorded and available on Moodle within 24 hours. However, live attendance is strongly encouraged for interactive elements."
+  },
+  {
+    "objectID": "course/faq.html#technical-questions",
+    "href": "course/faq.html#technical-questions",
+    "title": "Frequently Asked Questions",
+    "section": "Technical Questions",
+    "text": "Technical Questions\n\nWhat computer specifications do I need?\n\nRAM: 8GB minimum (16GB recommended)\nStorage: 10GB free space\nOS: Windows 10+, macOS 10.14+, or Linux\nInternet connection for package downloads\n\n\n\nHow do I install the required software?\nDetailed installation guides are provided in Week 1 materials. We also offer installation support sessions.\n\n\nCan I use cloud-based tools instead?\nYes! Options include:\n\nGoogle Colab (Python)\nRStudio Cloud\nBinder for Jupyter notebooks"
+  },
+  {
+    "objectID": "course/faq.html#assessment",
+    "href": "course/faq.html#assessment",
+    "title": "Frequently Asked Questions",
+    "section": "Assessment",
+    "text": "Assessment\n\nCan I work with others on assignments?\n\nMid-term project: Yes (teams of 3-4)\nFinal project: No (individual work)\nWeekly exercises: Discussion encouraged, but submit your own work\n\n\n\nWhat if I submit late?\nLate submissions receive a 10% penalty per day. Extensions may be granted for documented emergencies.\n\n\nHow are projects graded?\nProjects are evaluated on:\n\nTechnical correctness (30%)\nAnalytical depth (30%)\nBusiness relevance (30%)\nPresentation quality (10%)"
+  },
+  {
+    "objectID": "course/faq.html#career-applications",
+    "href": "course/faq.html#career-applications",
+    "title": "Frequently Asked Questions",
+    "section": "Career & Applications",
+    "text": "Career & Applications\n\nHow is network analytics used in industry?\nCommon applications include:\n\nSocial media analysis\nSupply chain optimization\nFraud detection\nRecommendation systems\nOrganizational design\nMarket structure analysis\n\n\n\nWhat career paths benefit from network analytics?\n\nData Scientists\nBusiness Analysts\nMarketing Analysts\nOperations Research\nManagement Consultants\nSocial Media Strategists\n\n\n\nWill this help with my dissertation/thesis?\nAbsolutely! Network analysis is increasingly used in business research. We can discuss how to apply these methods to your research interests."
+  },
+  {
+    "objectID": "course/faq.html#getting-help",
+    "href": "course/faq.html#getting-help",
+    "title": "Frequently Asked Questions",
+    "section": "Getting Help",
+    "text": "Getting Help\n\nI’m struggling with the material. What should I do?\n\nAttend office hours\nPost questions on Moodle forums\nForm study groups with classmates\nReview recorded lectures\nSchedule one-on-one meeting with instructor\n\n\n\nWhere can I find additional practice problems?\n\nEnd of chapter exercises in textbooks\nGitHub repository practice sets\nOnline courses (Coursera, DataCamp)\nKaggle competitions\n\n\n\nWhat if I have accessibility needs?\nPlease contact Student Services and the instructor as soon as possible. We’ll work together to ensure appropriate accommodations.\n\n\n\n\n\n\n\nStill have questions?\n\n\n\nPost on the Moodle forum or email the instructor at simone.santoni.1@city.ac.uk"
+  },
+  {
+    "objectID": "course/schedule.html",
+    "href": "course/schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "📅 Weekly Breakdown\n\n\n\nWeek\nTopic\nPrepare\nSlides\nCase\nLab\nPonder\nProject\n\n\n\n\n1\nIntroduction to network analytics\n\n\n\n\n🤔\n\n\n\n2\nNetwork Centrality\n📚\n🙾\n\n\n\n\n\n\n3\n(cont’ed)\n\n\n🙋\n\n\n\n\n\n4\nDyads, triads, and network dynamics\n📚\n🙾\n\n🥼\n\n\n\n\n5\n(cont’ed)\n\n\n🙋\n🥼\n\n\n\n\n6\nMid-term project\n\n\n\n\n\n💻\n\n\n7\nNetwork cohesion and communities\n📚\n🙾\n\n🥼\n\n\n\n\n8\n(cont’ed)\n\n\n🙋\n\n\n💻\n\n\n9\nNetwork position and performance\n📚\n🙾\n\n\n\n\n\n\n10\n(cont’ed)\n\n\n🙋\n\n\n\n\n\n\n\n\n\n\n\n\nAdjustments and Updates\n\n\n\nThis schedule is subject to change based on:\n\nClass progress and needs\nUniversity calendar changes\nUnexpected closures\n\nAll changes will be announced in class and posted on the course website.",
+    "crumbs": [
+      "Course Information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html",
+    "href": "project/finalCourseProject/main.html",
+    "title": "Final Course Project",
+    "section": "",
+    "text": "Content coming soon.",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1/network_labor_mkts_and_job_search.html",
+    "href": "weeks/week-1/network_labor_mkts_and_job_search.html",
+    "title": "Networks, labor markets, and job search",
+    "section": "",
+    "text": "Imagine you are actively searching for a new job in your field. Reflect on your interpersonal network and consider the following questions:\n\nHow could your personal and professional connections facilitate your job search? Consider the direct and indirect ways your network might help you discover opportunities, gain introductions, or learn about organizations.\nWhich specific contacts would be most valuable in this process, and why? Think about what makes certain connections particularly helpful. Consider factors such as:\n\nTheir industry knowledge or position\nThe strength of your relationship with them\nThe breadth and quality of their network\nTheir willingness and ability to advocate for you\n\nWhat patterns do you notice about the most valuable connections? Reflect on whether proximity, trust, expertise, or other factors determine a connection’s utility in job search contexts.\n\n\n\nWrite a 300-word essay responding to these questions and submit it via email to Simone.Santoni.1@city.ac.uk by October 6."
+  },
+  {
+    "objectID": "weeks/week-1/network_labor_mkts_and_job_search.html#submission",
+    "href": "weeks/week-1/network_labor_mkts_and_job_search.html#submission",
+    "title": "Networks, labor markets, and job search",
+    "section": "",
+    "text": "Write a 300-word essay responding to these questions and submit it via email to Simone.Santoni.1@city.ac.uk by October 6."
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html",
+    "href": "weeks/week-3/gamers_eda.html",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "",
+    "text": "This exploratory data analysis examines the Twitch network dataset, focusing on node attributes of Twitch streamers. The dataset includes information about streamer activity, content type, viewership, and affiliate status.\n\n\nCode\n# Load required libraries\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(knitr)\n\n# Set theme for plots\ntheme_set(theme_minimal())\n\n\n\n\nCode\n# Read the Twitch nodes data\ntwitch_nodes &lt;- read_csv(\"../../../data/twitch/Twitch_nodes.csv\")\n\n# Display data structure\ncat(\"Dataset dimensions:\", nrow(twitch_nodes), \"rows,\", ncol(twitch_nodes), \"columns\\n\")\n\n\nDataset dimensions: 7126 rows, 6 columns"
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html#introduction",
+    "href": "weeks/week-3/gamers_eda.html#introduction",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "",
+    "text": "This exploratory data analysis examines the Twitch network dataset, focusing on node attributes of Twitch streamers. The dataset includes information about streamer activity, content type, viewership, and affiliate status.\n\n\nCode\n# Load required libraries\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(scales)\nlibrary(knitr)\n\n# Set theme for plots\ntheme_set(theme_minimal())\n\n\n\n\nCode\n# Read the Twitch nodes data\ntwitch_nodes &lt;- read_csv(\"../../../data/twitch/Twitch_nodes.csv\")\n\n# Display data structure\ncat(\"Dataset dimensions:\", nrow(twitch_nodes), \"rows,\", ncol(twitch_nodes), \"columns\\n\")\n\n\nDataset dimensions: 7126 rows, 6 columns"
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html#data-overview",
+    "href": "weeks/week-3/gamers_eda.html#data-overview",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "Data Overview",
+    "text": "Data Overview\nThe Twitch dataset contains information about streamers including: - ID: Streamer identifier - Days_active: Number of days the streamer has been active - Mature_content: Whether the channel contains mature content (TRUE/FALSE) - Views: Total number of views - Affiliate: Whether the streamer has affiliate status (TRUE/FALSE) - Channel_ID: Unique channel identifier\n\n\nCode\n# Create a summary table of data types\ndata_summary &lt;- data.frame(\n  Variable = names(twitch_nodes),\n  Type = sapply(twitch_nodes, class),\n  Missing = sapply(twitch_nodes, function(x) sum(is.na(x))),\n  Unique = sapply(twitch_nodes, function(x) length(unique(x))),\n  stringsAsFactors = FALSE,\n  row.names = NULL\n)\n\nkable(data_summary, caption = \"Data Structure Summary\", row.names = FALSE)\n\n\n\nData Structure Summary\n\n\nVariable\nType\nMissing\nUnique\n\n\n\n\nID\nnumeric\n0\n7126\n\n\nDays_active\nnumeric\n0\n2565\n\n\nMature_content\nlogical\n0\n2\n\n\nViews\nnumeric\n0\n5822\n\n\nAffiliate\nlogical\n0\n2\n\n\nChannel_ID\nnumeric\n0\n7126"
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html#distribution-analysis",
+    "href": "weeks/week-3/gamers_eda.html#distribution-analysis",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "Distribution Analysis",
+    "text": "Distribution Analysis\n\nViews Distribution\n\n\nCode\n# Calculate summary statistics\nviews_summary &lt;- twitch_nodes %&gt;%\n  summarise(\n    Min = min(Views),\n    Q1 = quantile(Views, 0.25),\n    Median = median(Views),\n    Mean = mean(Views),\n    Q3 = quantile(Views, 0.75),\n    Max = max(Views)\n  )\n\nkable(views_summary, caption = \"Views Summary Statistics\", format.args = list(big.mark = \",\"))\n\n\n\nViews Summary Statistics\n\n\nMin\nQ1\nMedian\nMean\nQ3\nMax\n\n\n\n\n5\n1,743\n4,839.5\n193,470.2\n15,263\n178,500,544\n\n\n\n\n\nCode\n# Create histogram with log scale\np1 &lt;- ggplot(twitch_nodes, aes(x = Views)) +\n  geom_histogram(bins = 50, fill = \"#9146FF\", alpha = 0.8, color = \"white\") +\n  scale_x_log10(labels = comma) +\n  geom_vline(aes(xintercept = median(Views)), \n             color = \"red\", linetype = \"dashed\", size = 1) +\n  labs(title = \"Distribution of Channel Views (Log Scale)\",\n       subtitle = paste(\"Median:\", format(median(twitch_nodes$Views), big.mark = \",\")),\n       x = \"Views (log scale)\",\n       y = \"Number of Streamers\") +\n  theme(plot.title = element_text(hjust = 0.5, face = \"bold\"),\n        plot.subtitle = element_text(hjust = 0.5))\n\np1\n\n\n\n\n\n\n\n\n\n\n\nCategorical Variables\n\n\nCode\n# Create summary tables\ncategorical_summary &lt;- bind_rows(\n  twitch_nodes %&gt;%\n    count(Mature_content) %&gt;%\n    mutate(Variable = \"Mature Content\",\n           Category = as.character(Mature_content),\n           Percentage = round(n / sum(n) * 100, 1)),\n  \n  twitch_nodes %&gt;%\n    count(Affiliate) %&gt;%\n    mutate(Variable = \"Affiliate Status\",\n           Category = as.character(Affiliate),\n           Percentage = round(n / sum(n) * 100, 1))\n) %&gt;%\n  select(Variable, Category, n, Percentage)\n\nkable(categorical_summary, caption = \"Categorical Variables Distribution\")\n\n\n\nCategorical Variables Distribution\n\n\nVariable\nCategory\nn\nPercentage\n\n\n\n\nMature Content\nFALSE\n3238\n45.4\n\n\nMature Content\nTRUE\n3888\n54.6\n\n\nAffiliate Status\nFALSE\n6742\n94.6\n\n\nAffiliate Status\nTRUE\n384\n5.4"
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html#relationship-analysis",
+    "href": "weeks/week-3/gamers_eda.html#relationship-analysis",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "Relationship Analysis",
+    "text": "Relationship Analysis\n\nAffiliate Status vs Views\n\n\nCode\np2 &lt;- twitch_nodes %&gt;%\n  mutate(Affiliate = factor(Affiliate, \n                           levels = c(FALSE, TRUE),\n                           labels = c(\"Non-Affiliate\", \"Affiliate\"))) %&gt;%\n  ggplot(aes(x = Affiliate, y = Views, fill = Affiliate)) +\n  geom_violin(alpha = 0.6) +\n  geom_boxplot(width = 0.2, alpha = 0.8) +\n  scale_y_log10(labels = comma) +\n  scale_fill_manual(values = c(\"#9146FF\", \"#1DB954\")) +\n  labs(title = \"Views Distribution by Affiliate Status\",\n       x = \"Affiliate Status\",\n       y = \"Views (log scale)\") +\n  theme(legend.position = \"none\",\n        plot.title = element_text(hjust = 0.5, face = \"bold\"))\n\np2\n\n\n\n\n\n\n\n\n\n\n\nDays Active vs Views\n\n\nCode\np3 &lt;- ggplot(twitch_nodes, aes(x = Days_active, y = Views)) +\n  geom_point(aes(color = Affiliate, shape = Mature_content), \n             alpha = 0.6, size = 2) +\n  scale_y_log10(labels = comma) +\n  scale_color_manual(values = c(\"#9146FF\", \"#1DB954\"),\n                     labels = c(\"Non-Affiliate\", \"Affiliate\")) +\n  scale_shape_manual(values = c(16, 17),\n                     labels = c(\"Non-Mature\", \"Mature\")) +\n  geom_smooth(method = \"lm\", se = TRUE, alpha = 0.2) +\n  labs(title = \"Relationship between Days Active and Views\",\n       x = \"Days Active\",\n       y = \"Views (log scale)\",\n       color = \"Affiliate Status\",\n       shape = \"Content Type\") +\n  theme(plot.title = element_text(hjust = 0.5, face = \"bold\"))\n\np3"
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html#cross-tabulation-analysis",
+    "href": "weeks/week-3/gamers_eda.html#cross-tabulation-analysis",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "Cross-tabulation Analysis",
+    "text": "Cross-tabulation Analysis\n\n\nCode\n# Create detailed cross-tabulation\ncross_analysis &lt;- twitch_nodes %&gt;%\n  group_by(Mature_content, Affiliate) %&gt;%\n  summarise(\n    Count = n(),\n    Avg_Views = mean(Views),\n    Median_Views = median(Views),\n    Avg_Days_Active = mean(Days_active),\n    .groups = \"drop\"\n  ) %&gt;%\n  mutate(\n    Avg_Views = round(Avg_Views),\n    Avg_Days_Active = round(Avg_Days_Active),\n    Mature_content = ifelse(Mature_content, \"Mature\", \"Non-Mature\"),\n    Affiliate = ifelse(Affiliate, \"Affiliate\", \"Non-Affiliate\")\n  )\n\nkable(cross_analysis, \n      caption = \"Average Metrics by Content Type and Affiliate Status\",\n      format.args = list(big.mark = \",\"))\n\n\n\nAverage Metrics by Content Type and Affiliate Status\n\n\n\n\n\n\n\n\n\n\nMature_content\nAffiliate\nCount\nAvg_Views\nMedian_Views\nAvg_Days_Active\n\n\n\n\nNon-Mature\nNon-Affiliate\n3,041\n18,934\n3,261\n1,487\n\n\nNon-Mature\nAffiliate\n197\n4,393,289\n478,931\n1,966\n\n\nMature\nNon-Affiliate\n3,701\n17,297\n5,584\n1,514\n\n\nMature\nAffiliate\n187\n2,094,097\n488,224\n1,913"
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html#statistical-tests",
+    "href": "weeks/week-3/gamers_eda.html#statistical-tests",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "Statistical Tests",
+    "text": "Statistical Tests\n\n\nCode\n# Affiliate status comparison\naffiliate_test &lt;- t.test(log10(Views + 1) ~ Affiliate, data = twitch_nodes)\ncat(\"T-test: Affiliate vs Non-Affiliate (log-transformed views)\\n\")\n\n\nT-test: Affiliate vs Non-Affiliate (log-transformed views)\n\n\nCode\ncat(\"t =\", round(affiliate_test$statistic, 4), \"\\n\")\n\n\nt = -54.6025 \n\n\nCode\ncat(\"p-value =\", format.pval(affiliate_test$p.value), \"\\n\")\n\n\np-value = &lt; 2.22e-16 \n\n\nCode\ncat(\"Mean difference =\", round(diff(affiliate_test$estimate), 4), \"log units\\n\")\n\n\nMean difference = 2.095 log units"
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html#top-performers",
+    "href": "weeks/week-3/gamers_eda.html#top-performers",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "Top Performers",
+    "text": "Top Performers\n\n\nCode\n# Identify top 10 channels by views\ntop_channels &lt;- twitch_nodes %&gt;%\n  arrange(desc(Views)) %&gt;%\n  slice_head(n = 10) %&gt;%\n  mutate(\n    Rank = row_number(),\n    Views = format(Views, big.mark = \",\"),\n    Content_Type = ifelse(Mature_content, \"Mature\", \"Non-Mature\"),\n    Status = ifelse(Affiliate, \"Affiliate\", \"Non-Affiliate\")\n  ) %&gt;%\n  select(Rank, Channel_ID, Views, Days_active, Content_Type, Status)\n\nkable(top_channels, caption = \"Top 10 Twitch Channels by Views\")\n\n\n\nTop 10 Twitch Channels by Views\n\n\nRank\nChannel_ID\nViews\nDays_active\nContent_Type\nStatus\n\n\n\n\n1\n27942990\n178,500,544\n2443\nNon-Mature\nAffiliate\n\n\n2\n20786541\n89,506,813\n2784\nNon-Mature\nAffiliate\n\n\n3\n56648155\n74,201,622\n1703\nNon-Mature\nAffiliate\n\n\n4\n261715\n49,482,563\n3904\nNon-Mature\nAffiliate\n\n\n5\n23735582\n46,682,923\n2632\nNon-Mature\nAffiliate\n\n\n6\n19623411\n35,482,126\n2825\nMature\nAffiliate\n\n\n7\n39677337\n34,356,681\n2086\nNon-Mature\nAffiliate\n\n\n8\n497952\n32,861,608\n3820\nMature\nAffiliate\n\n\n9\n30623831\n31,417,100\n2338\nNon-Mature\nAffiliate\n\n\n10\n30281925\n30,977,250\n2351\nMature\nAffiliate"
+  },
+  {
+    "objectID": "weeks/week-3/gamers_eda.html#key-insights",
+    "href": "weeks/week-3/gamers_eda.html#key-insights",
+    "title": "Twitch Network: Exploratory Data Analysis",
+    "section": "Key Insights",
+    "text": "Key Insights\n\n\nCode\n# Calculate key metrics\ninsights &lt;- list(\n  total_streamers = nrow(twitch_nodes),\n  avg_views = mean(twitch_nodes$Views),\n  median_views = median(twitch_nodes$Views),\n  affiliate_rate = mean(twitch_nodes$Affiliate) * 100,\n  mature_content_rate = mean(twitch_nodes$Mature_content) * 100,\n  views_ratio = mean(twitch_nodes$Views) / median(twitch_nodes$Views)\n)\n\n\nSummary of Key Findings:\n\nTotal streamers analyzed: 7,126\nHighly skewed viewership: Average views (193,470) are 40x higher than median views (4,839.5), indicating extreme concentration\nAffiliate rate: Only 5.4% of streamers have affiliate status\nMature content: 54.6% of channels are marked as mature\nAffiliate advantage: Affiliate streamers have significantly higher viewership (p &lt; 0.001)\n\nThis analysis provides context for understanding how node attributes might relate to network centrality measures in the Twitch streamer ecosystem."
+  },
+  {
+    "objectID": "weeks/week-4/main.html",
+    "href": "weeks/week-4/main.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "📚\n\n\n\n📖 Revise the syllabus\n📖 Revise key network concepts notes (from week 1) and slideshow (from week 2)\n📖 Read Empirical Analysis of an Evolving Social Network",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#prepare",
+    "href": "weeks/week-4/main.html#prepare",
+    "title": "Week 4",
+    "section": "",
+    "text": "📚\n\n\n\n📖 Revise the syllabus\n📖 Revise key network concepts notes (from week 1) and slideshow (from week 2)\n📖 Read Empirical Analysis of an Evolving Social Network",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#participate",
+    "href": "weeks/week-4/main.html#participate",
+    "title": "Week 4",
+    "section": "Participate",
+    "text": "Participate\n\n\n\n\n\n\n👥\n\n\n\n📉 Slideshow:\nDyads, triads, and network effects",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#practice",
+    "href": "weeks/week-4/main.html#practice",
+    "title": "Week 4",
+    "section": "Practice",
+    "text": "Practice\n\n\n\n\n\n\n💻\n\n\n\n🧮 Measuring dyadic processes\n🧮 Measuring triadic processes",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#perform",
+    "href": "weeks/week-4/main.html#perform",
+    "title": "Week 4",
+    "section": "Perform",
+    "text": "Perform\n\n\n\n\n\n\n📝\n\n\n\nThis week, we will not work on real world business problems and datasets.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/main.html#ponder",
+    "href": "weeks/week-4/main.html#ponder",
+    "title": "Week 4",
+    "section": "Ponder",
+    "text": "Ponder\n\n\n\n\n\n\n🤔\n\n\n\nDyadic and Triadic Structure\nChapter 13 (“Dyads”) and 14 (“Triads”) from Wasserman, S., & Faust K. (1994). Social Network Analysis. Cambridge University Press.\nChapter 7 (“Dyads and Triads”) from Rawlings C. et al. (2023). Online Appendix to Network Analysis: Integrating Social Network Theory, Method, and Application with R Cambridge University Press.\nExponential Random Graph Models\nChapter 33 (“Random Graph Models”) from Levey et al. (2024). The Sage Handbook of Social Network Analysis. Sage.\nNetwork Dynamics\nChapter 34 (“Network Dynamics”) from McLevey et al. (2024). The Sage Handbook od Social Network Analysis.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 4"
+    ]
+  },
+  {
+    "objectID": "weeks/week-4/practice_2.html",
+    "href": "weeks/week-4/practice_2.html",
+    "title": "Practice 2",
+    "section": "",
+    "text": "Coming Soon\nThis practice exercise is under development."
+  },
+  {
+    "objectID": "weeks/week-5/main.html",
+    "href": "weeks/week-5/main.html",
+    "title": "Week 5",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 5"
+    ]
+  },
+  {
+    "objectID": "weeks/week-9/main.html",
+    "href": "weeks/week-9/main.html",
+    "title": "Week 9",
+    "section": "",
+    "text": "Note\n\n\n\nContent coming soon.",
+    "crumbs": [
+      "Weekly materials",
+      "Week 9"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Network Analytics－SMM638",
+    "section": "",
+    "text": "A Barabasi-Albert preferential attachment network with 100 nodes - node size proportional to node degree"
   }
 ]

@@ -32,7 +32,7 @@ jupyter: python3
 
 ---
 
-## Why Do Networks Look the Way They Look?
+## Why Do Networks Look the Way They Look? {.smaller}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -79,7 +79,7 @@ for node in g.nodes():
 pos = nx.spring_layout(g, seed=123)
 
 # Plot
-plt.figure(figsize=(5, 6))
+plt.figure(figsize=(4, 4))
 plt.gca().set_facecolor('white')
 
 # Draw edges
@@ -114,7 +114,7 @@ Two complementary perspectives:
 
 ---
 
-## Taxonomy of Network Effects {.smaller}
+## Taxonomy of Network Effects
 
 **Major categories of network formation processes:**
 
@@ -161,9 +161,9 @@ def create_dyad_plot(title, node_color, show_arrows="none"):
     
     # Add node labels
     ax.text(0, 0, 'i', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
     ax.text(3, 0, 'j', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
     
     # Add arrows based on type
     if show_arrows == "single":
@@ -204,9 +204,9 @@ fig, axes = plt.subplots(3, 1, figsize=(5, 6))
 # Null dyad
 axes[0].scatter([0, 3], [0, 0], s=800, c='#000000', zorder=3)
 axes[0].text(0, 0, 'i', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[0].text(3, 0, 'j', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[0].set_xlim(-0.5, 3.5)
 axes[0].set_ylim(-0.4, 0.4)
 axes[0].set_aspect('equal')
@@ -216,9 +216,9 @@ axes[0].set_title('Null Dyad', fontsize=11, fontweight='bold')
 # Asymmetric dyad
 axes[1].scatter([0, 3], [0, 0], s=800, c='#50C878', zorder=3)
 axes[1].text(0, 0, 'i', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[1].text(3, 0, 'j', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 arrow = FancyArrowPatch((0.2, 0), (2.8, 0), 
                        arrowstyle='->', mutation_scale=20,
                        color='#4A4A4A', linewidth=2)
@@ -232,9 +232,9 @@ axes[1].set_title('Asymmetric Dyad', fontsize=11, fontweight='bold')
 # Mutual dyad
 axes[2].scatter([0, 3], [0, 0], s=800, c='#c41c85', zorder=3)
 axes[2].text(0, 0, 'i', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[2].text(3, 0, 'j', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 arrow1 = FancyArrowPatch((0.2, 0), (2.8, 0),
                         connectionstyle="arc3,rad=0.3",
                         arrowstyle='->', mutation_scale=20,
@@ -290,9 +290,9 @@ fig, axes = plt.subplots(2, 1, figsize=(5, 6))
 # Asymmetric -> Mutual
 axes[0].scatter([0, 3], [0, 0], s=800, c='#50C878', zorder=3)
 axes[0].text(0, 0, 'A', ha='center', va='center', color='white', 
-            fontsize=14, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[0].text(3, 0, 'B', ha='center', va='center', color='white', 
-            fontsize=14, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 
 # Existing edge A -> B
 arrow1 = FancyArrowPatch((0.2, 0), (2.8, 0), 
@@ -314,14 +314,14 @@ axes[0].set_xlim(-0.5, 3.5)
 axes[0].set_ylim(-0.5, 0.8)
 axes[0].set_aspect('equal')
 axes[0].axis('off')
-axes[0].set_title('Asymmetric → Mutual', fontsize=12, fontweight='bold')
+axes[0].set_title('Asymmetric → Mutual', fontsize=11, fontweight='bold')
 
 # Reciprocated Connection
 axes[1].scatter([0, 3], [0, 0], s=800, c='#c41c85', zorder=3)
 axes[1].text(0, 0, 'A', ha='center', va='center', color='white', 
-            fontsize=14, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[1].text(3, 0, 'B', ha='center', va='center', color='white', 
-            fontsize=14, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 
 # Bidirectional arrows
 arrow3 = FancyArrowPatch((0.2, 0.05), (2.8, 0.05),
@@ -337,7 +337,7 @@ axes[1].set_xlim(-0.5, 3.5)
 axes[1].set_ylim(-0.5, 0.5)
 axes[1].set_aspect('equal')
 axes[1].axis('off')
-axes[1].set_title('Reciprocated Connection', fontsize=12, fontweight='bold')
+axes[1].set_title('Reciprocated Connection', fontsize=11, fontweight='bold')
 
 plt.tight_layout()
 plt.show()
@@ -359,7 +359,9 @@ plt.show()
 - **Behavioral**: Interests, activities
 - **Status**: Education, occupation
 
-**Formula**: P(edge|similar) > P(edge|dissimilar)
+**Formula**:  $Pr(e_{ij} = 1 | phi(A_{i}, A_{j}))$
+
+where $\phi$ is a similarity or distance function.
 
 **Empirical Evidence:**
 
@@ -402,9 +404,9 @@ nx.draw_networkx_edges(g, pos, edge_color='#D3D3D3', width=2, alpha=0.7)
 nx.draw_networkx_nodes(g, pos, node_color=colors, node_size=600)
 
 # Draw labels
-nx.draw_networkx_labels(g, pos, font_color='white', font_size=12, font_weight='bold')
+nx.draw_networkx_labels(g, pos, font_color='white', font_size=10, font_weight='bold')
 
-plt.title('Similar nodes cluster together', fontsize=12, fontweight='bold', pad=20)
+plt.title('Similar nodes cluster together', fontsize=11, fontweight='bold', pad=20)
 plt.xlim(-0.5, 4.5)
 plt.ylim(-0.5, 1.4)
 plt.axis('off')
@@ -416,7 +418,7 @@ plt.show()
 
 ---
 
-## Dyadic Process: Homophily vs Selection
+## Dyadic Process: Homophily vs Selection {.smaller}
 
 **Critical distinction:**
 
@@ -483,7 +485,7 @@ axes[0].set_xlim(-0.5, 2.5)
 axes[0].set_ylim(-0.5, 0.5)
 axes[0].set_aspect('equal')
 axes[0].axis('off')
-axes[0].set_title('Heterophily', fontsize=10, fontweight='bold')
+axes[0].set_title('Heterophily', fontsize=11, fontweight='bold')
 
 # Geography
 axes[1].scatter([0, 1, 3, 4], [0, 0, 0, 0], s=600, c='#000000', zorder=3)
@@ -501,7 +503,7 @@ axes[1].set_xlim(-0.5, 4.5)
 axes[1].set_ylim(-0.5, 0.5)
 axes[1].set_aspect('equal')
 axes[1].axis('off')
-axes[1].set_title('Geography', fontsize=10, fontweight='bold')
+axes[1].set_title('Geography', fontsize=11, fontweight='bold')
 
 # Resource Exchange
 axes[2].scatter([0, 2], [0, 0], s=600, c=['#50C878', '#c41c85'], zorder=3)
@@ -517,7 +519,7 @@ axes[2].set_xlim(-0.5, 2.5)
 axes[2].set_ylim(-0.5, 0.5)
 axes[2].set_aspect('equal')
 axes[2].axis('off')
-axes[2].set_title('Resource Exchange', fontsize=10, fontweight='bold')
+axes[2].set_title('Resource Exchange', fontsize=11, fontweight='bold')
 
 plt.tight_layout()
 plt.show()
@@ -628,7 +630,7 @@ pos1 = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
 axes[0].set_facecolor('white')
 nx.draw_networkx_edges(g1, pos1, ax=axes[0], edge_color='#D3D3D3', width=2.5)
 nx.draw_networkx_nodes(g1, pos1, ax=axes[0], node_color='#000000', node_size=700)
-nx.draw_networkx_labels(g1, pos1, ax=axes[0], font_color='white', font_size=14, font_weight='bold')
+nx.draw_networkx_labels(g1, pos1, ax=axes[0], font_color='white', font_size=10, font_weight='bold')
 axes[0].set_xlim(-0.5, 2.5)
 axes[0].set_ylim(-0.5, 1.4)
 axes[0].set_aspect('equal')
@@ -645,9 +647,9 @@ nx.draw_networkx_edges(g2, pos2, ax=axes[1], edge_color='#D3D3D3', width=2.5)
 # Add dashed potential edge
 axes[1].plot([0, 2], [0, 0], color='#50C878', linewidth=2, linestyle='dashed')
 nx.draw_networkx_nodes(g2, pos2, ax=axes[1], node_color='#50C878', node_size=700)
-nx.draw_networkx_labels(g2, pos2, ax=axes[1], font_color='white', font_size=14, font_weight='bold')
+nx.draw_networkx_labels(g2, pos2, ax=axes[1], font_color='white', font_size=10, font_weight='bold')
 axes[1].text(1, -0.3, 'closure pressure', ha='center', va='center',
-            fontsize=10, color='#50C878', style='italic')
+            fontsize=9, color='#50C878', style='italic')
 axes[1].set_xlim(-0.5, 2.5)
 axes[1].set_ylim(-0.6, 1.4)
 axes[1].set_aspect('equal')
@@ -662,7 +664,7 @@ pos3 = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
 axes[2].set_facecolor('white')
 nx.draw_networkx_edges(g3, pos3, ax=axes[2], edge_color='#D3D3D3', width=2.5)
 nx.draw_networkx_nodes(g3, pos3, ax=axes[2], node_color='#c41c85', node_size=700)
-nx.draw_networkx_labels(g3, pos3, ax=axes[2], font_color='white', font_size=14, font_weight='bold')
+nx.draw_networkx_labels(g3, pos3, ax=axes[2], font_color='white', font_size=10, font_weight='bold')
 axes[2].set_xlim(-0.5, 2.5)
 axes[2].set_ylim(-0.5, 1.4)
 axes[2].set_aspect('equal')
@@ -944,7 +946,7 @@ def draw_triangle_with_signs(ax, edge_signs, node_color, title):
         # Add sign label at midpoint
         mid_x, mid_y = (x1 + x2) / 2, (y1 + y2) / 2
         ax.text(mid_x, mid_y, edge_signs[i], ha='center', va='center',
-                fontsize=12, fontweight='bold', 
+                fontsize=10, fontweight='bold', 
                 bbox=dict(boxstyle='circle,pad=0.2', facecolor='white', edgecolor='none'))
     
     # Draw nodes
@@ -955,7 +957,7 @@ def draw_triangle_with_signs(ax, edge_signs, node_color, title):
     ax.set_ylim(-0.5, 1.4)
     ax.set_aspect('equal')
     ax.axis('off')
-    ax.set_title(title, fontsize=10, fontweight='bold')
+    ax.set_title(title, fontsize=11, fontweight='bold')
 
 fig, axes = plt.subplots(1, 3, figsize=(12, 4))
 
@@ -1011,16 +1013,16 @@ pos = {'A': (0, 0), 'B': (1, 1), 'C': (2, 0)}
 # 003: Empty
 axes[0,0].scatter([0, 1, 2], [0, 1, 0], s=400, c='#000000', zorder=3)
 axes[0,0].text(0, 0, 'A', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[0,0].text(1, 1, 'B', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[0,0].text(2, 0, 'C', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[0,0].set_xlim(-0.5, 2.5)
 axes[0,0].set_ylim(-0.5, 1.4)
 axes[0,0].set_aspect('equal')
 axes[0,0].axis('off')
-axes[0,0].set_title('003: Empty', fontsize=9, fontweight='bold')
+axes[0,0].set_title('003: Empty', fontsize=11, fontweight='bold')
 
 # 012: Single Edge
 axes[0,1].scatter([0, 1, 2], [0, 1, 0], s=400, c='#000000', zorder=3)
@@ -1029,16 +1031,16 @@ arrow = FancyArrowPatch((0.1, 0.1), (0.9, 0.9),
                        color='#D3D3D3', linewidth=1.5)
 axes[0,1].add_patch(arrow)
 axes[0,1].text(0, 0, 'A', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[0,1].text(1, 1, 'B', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[0,1].text(2, 0, 'C', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[0,1].set_xlim(-0.5, 2.5)
 axes[0,1].set_ylim(-0.5, 1.4)
 axes[0,1].set_aspect('equal')
 axes[0,1].axis('off')
-axes[0,1].set_title('012: Single Edge', fontsize=9, fontweight='bold')
+axes[0,1].set_title('012: Single Edge', fontsize=11, fontweight='bold')
 
 # 030T: Transitive
 axes[1,0].scatter([0, 1, 2], [0, 1, 0], s=400, c='#50C878', zorder=3)
@@ -1055,16 +1057,16 @@ axes[1,0].add_patch(arrow1)
 axes[1,0].add_patch(arrow2)
 axes[1,0].add_patch(arrow3)
 axes[1,0].text(0, 0, 'A', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[1,0].text(1, 1, 'B', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[1,0].text(2, 0, 'C', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[1,0].set_xlim(-0.5, 2.5)
 axes[1,0].set_ylim(-0.5, 1.4)
 axes[1,0].set_aspect('equal')
 axes[1,0].axis('off')
-axes[1,0].set_title('030T: Transitive', fontsize=9, fontweight='bold')
+axes[1,0].set_title('030T: Transitive', fontsize=11, fontweight='bold')
 
 # 300: Complete
 axes[1,1].scatter([0, 1, 2], [0, 1, 0], s=400, c='#c41c85', zorder=3)
@@ -1083,16 +1085,16 @@ for start, end in arrow_configs:
                            color='#D3D3D3', linewidth=1.5)
     axes[1,1].add_patch(arrow)
 axes[1,1].text(0, 0, 'A', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[1,1].text(1, 1, 'B', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[1,1].text(2, 0, 'C', ha='center', va='center', color='white', 
-              fontsize=8, fontweight='bold', zorder=4)
+              fontsize=10, fontweight='bold', zorder=4)
 axes[1,1].set_xlim(-0.5, 2.5)
 axes[1,1].set_ylim(-0.5, 1.4)
 axes[1,1].set_aspect('equal')
 axes[1,1].axis('off')
-axes[1,1].set_title('300: Complete', fontsize=9, fontweight='bold')
+axes[1,1].set_title('300: Complete', fontsize=11, fontweight='bold')
 
 plt.tight_layout()
 plt.show()
@@ -1147,13 +1149,13 @@ axes[0].add_patch(arrow1)
 axes[0].add_patch(arrow2)
 axes[0].add_patch(arrow3)
 axes[0].text(0, 0, 'A', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[0].text(1, 1, 'B', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[0].text(2, 0, 'C', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[0].text(1, -0.4, 'A dominates all', ha='center', va='center',
-            fontsize=10, color='#c41c85', style='italic')
+            fontsize=9, color='#c41c85', style='italic')
 axes[0].set_xlim(-0.5, 2.5)
 axes[0].set_ylim(-0.6, 1.4)
 axes[0].set_aspect('equal')
@@ -1175,13 +1177,13 @@ axes[1].add_patch(arrow4)
 axes[1].add_patch(arrow5)
 axes[1].add_patch(arrow6)
 axes[1].text(0, 0, 'A', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[1].text(1, 1, 'B', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[1].text(2, 0, 'C', ha='center', va='center', color='white', 
-            fontsize=12, fontweight='bold', zorder=4)
+            fontsize=10, fontweight='bold', zorder=4)
 axes[1].text(1, -0.4, 'No global ranking', ha='center', va='center',
-            fontsize=10, color='#50C878', style='italic')
+            fontsize=9, color='#50C878', style='italic')
 axes[1].set_xlim(-0.5, 2.5)
 axes[1].set_ylim(-0.6, 1.4)
 axes[1].set_aspect('equal')
@@ -1210,7 +1212,7 @@ plt.show()
 
 ---
 
-## Permutation Tests for Networks
+## Permutation Tests for Networks {.smaller}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -1241,7 +1243,7 @@ import numpy as np
 
 np.random.seed(123)
 
-fig, axes = plt.subplots(3, 1, figsize=(5, 8))
+fig, axes = plt.subplots(3, 1, figsize=(5, 6))
 pos = {'A': (0, 0), 'B': (1, 0), 'C': (0.5, 0.87), 'D': (-0.5, 0.5)}
 
 # Observed Network
@@ -1256,7 +1258,7 @@ axes[0].set_xlim(-1, 1.5)
 axes[0].set_ylim(-0.5, 1.4)
 axes[0].set_aspect('equal')
 axes[0].axis('off')
-axes[0].set_title('Observed Network', fontsize=10, fontweight='bold')
+axes[0].set_title('Observed Network', fontsize=11, fontweight='bold')
 
 # Random Network 1
 g_r1 = nx.Graph()
@@ -1270,7 +1272,7 @@ axes[1].set_xlim(-1, 1.5)
 axes[1].set_ylim(-0.5, 1.4)
 axes[1].set_aspect('equal')
 axes[1].axis('off')
-axes[1].set_title('Random Network 1', fontsize=10, fontweight='bold')
+axes[1].set_title('Random Network 1', fontsize=11, fontweight='bold')
 
 # Random Network 2
 g_r2 = nx.Graph()
@@ -1285,7 +1287,7 @@ axes[2].set_xlim(-1, 1.5)
 axes[2].set_ylim(-0.5, 1.4)
 axes[2].set_aspect('equal')
 axes[2].axis('off')
-axes[2].set_title('Random Network 2', fontsize=10, fontweight='bold')
+axes[2].set_title('Random Network 2', fontsize=11, fontweight='bold')
 
 plt.tight_layout()
 plt.show()
@@ -1475,7 +1477,7 @@ for box in boxes:
     
     # Add text
     ax.text(x, y, box['text'], ha='center', va='center', 
-           color='white', fontsize=7, fontweight='bold')
+           color='white', fontsize=9, fontweight='bold')
 
 # Draw arrows
 arrow_pairs = [(6, 5), (5, 4), (4, 3), (3, 2), (2, 1), (1, 0)]

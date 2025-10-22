@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-18">
+<meta name="dcterms.date" content="2025-10-22">
 
-<title>Assignment: Influencer Selection for Space Games Inc. – SMM638 - Network Analytics</title>
+<title>Week 8 – SMM638 - Network Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../weeks/week-9/main.html" rel="next">
+<link href="../../weeks/week-7/main.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -247,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Assignment: Influencer Selection for Space Games Inc.</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-8/main.html">Week 8</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -395,7 +397,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-8/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../weeks/week-8/main.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 8</span></a>
   </div>
 </li>
@@ -409,6 +411,13 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../weeks/week-10/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Slideshows</span></a>
   </div>
 </li>
       </ul>
@@ -435,23 +444,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#assignment-overview" id="toc-assignment-overview" class="nav-link active" data-scroll-target="#assignment-overview">Assignment Overview</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-8/main.html">Week 8</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Assignment: Influencer Selection for Space Games Inc.</h1>
-<p class="subtitle lead">Applying Network Analysis to the Twitch Case Study</p>
+<h1 class="title">Week 8</h1>
+<p class="subtitle lead">Network cohesion and community - case discussion</p>
 </div>
 
 
@@ -462,7 +465,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 18, 2025</p>
+      <p class="date">October 22, 2025</p>
     </div>
   </div>
   
@@ -474,31 +477,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="assignment-overview" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-overview">Assignment Overview</h2>
-<p>Using the Twitch network data (<code>Twitch_edges.csv</code> and <code>Twitch_nodes.csv</code>), identify 3 optimal influencers for Space Games Inc.’s “Thrive in Space 5” campaign.</p>
-<p>Your analysis should: 1. Filter out mature content channels and non-affiliate streamers 2. Calculate eigenvector and betweenness centrality measures 3. Create a quadrant plot to identify high-performing candidates 4. Detect communities and select one influencer from each of 3 different communities 5. Justify your selections with expected ROI calculations</p>
-<p>Submit an R Markdown/Quarto document with code, visualizations, and a 300-word strategic rationale.</p>
-<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Submission Details
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><strong>Due Date</strong>: October 20, 2025</li>
-<li><strong>Submit to</strong>: Simone.Santoni.1@city.ac.uk</li>
-<li><strong>Subject Line</strong>: SMM638 Week 3 Assignment - [Your Name]</li>
-</ul>
+<p>Content coming soon.</p>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -913,6 +906,18 @@ Submission Details
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../weeks/week-7/main.html" class="pagination-link" aria-label="Week 7">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 7</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../weeks/week-9/main.html" class="pagination-link" aria-label="Week 9">
+        <span class="nav-page-text">Week 9</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
