@@ -41,7 +41,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          install.packages(c('tidyverse', 'knitr', 'rmarkdown', 'dplyr', 'tidyr', 'ggplot2', 'igraph', 'tidygraph', 'ggraph', 'gridExtra', 'readr', 'scales', 'tibble', 'viridis', 'RColorBrewer'), repos='https://cloud.r-project.org/')
+          install.packages(c('tidyverse', 'knitr', 'rmarkdown', 'dplyr', 'tidyr', 'ggplot2', 'igraph', 'tidygraph', 'ggraph', 'gridExtra', 'readr', 'scales', 'tibble', 'viridis', 'RColorBrewer', 'sna', 'network'), repos='https://cloud.r-project.org/')
         shell: Rscript {0}
 
       - name: Setup Python
