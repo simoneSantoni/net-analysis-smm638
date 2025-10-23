@@ -1229,7 +1229,6 @@ plt.show()
 - Number of edges?
 - Dyad distributions?
 
-**P-value**: Proportion of random networks with more extreme values
 :::
 
 ::: {.column width="50%"}
@@ -1294,6 +1293,30 @@ plt.show()
 ```
 :::
 ::::
+
+---
+
+## Graph Uniform Test {.smaller}
+
+In network analyses, permutation tests are often called **Graph Uniform Tests**.
+
+**Purpose**: Test whether an observed network differs significantly from random networks
+
+**Fundamental Aspects**:
+
+- **Null Hypothesis**: Observed network is drawn from a uniform distribution of graphs
+- **Test Statistic**: Any network property (density, clustering, centralization, etc.)
+- **Procedure**:
+  1. Calculate test statistic on observed network
+  2. Generate many random networks with same size and density
+  3. Calculate test statistic for each random network
+  4. Compare observed statistic to distribution of random statistics
+
+**Interpretation**:
+- **p < 0.05**: Network structure differs significantly from random
+- **p ≥ 0.05**: Cannot reject that network is random
+
+**Applications**: Detect non-random patterns in social networks, communication networks, biological networks
 
 ---
 
