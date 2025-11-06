@@ -46,8 +46,8 @@ theme_set(theme_minimal(base_size = 12))
 
 ```{r load-data}
 # Read Twitch network data
-edges <- read_csv("data/twitch/Twitch_edges.csv")
-nodes <- read_csv("data/twitch/Twitch_nodes.csv")
+edges <- read_csv("../../../data/twitch/Twitch_edges.csv")
+nodes <- read_csv("../../../data/twitch/Twitch_nodes.csv")
 
 cat("Network structure:\n")
 cat("- Nodes:", nrow(nodes), "\n")

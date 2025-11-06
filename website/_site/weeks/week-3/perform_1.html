@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-18">
+<meta name="dcterms.date" content="2025-11-06">
 
-<title>Week 3 – SMM638 - Network Analytics</title>
+<title>Assignment: Influencer Selection for Space Games Inc. – SMM638 - Network Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../weeks/week-4/main.html" rel="next">
-<link href="../../weeks/week-2/main.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -249,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-3/main.html">Week 3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Assignment: Influencer Selection for Space Games Inc.</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -367,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../weeks/week-3/main.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../weeks/week-3/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3</span></a>
   </div>
 </li>
@@ -413,6 +411,13 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Week 10</span></a>
   </div>
 </li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Slideshows</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -442,11 +447,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
-  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
-  <li><a href="#perform" id="toc-perform" class="nav-link" data-scroll-target="#perform">Perform</a></li>
-  <li><a href="#ponder" id="toc-ponder" class="nav-link" data-scroll-target="#ponder">Ponder</a></li>
+  <li><a href="#assignment-overview" id="toc-assignment-overview" class="nav-link active" data-scroll-target="#assignment-overview">Assignment Overview</a></li>
   </ul>
 </nav>
     </div>
@@ -454,10 +455,10 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-3/main.html">Week 3</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 3</h1>
-<p class="subtitle lead">Network centrality - case discussion</p>
+<h1 class="title">Assignment: Influencer Selection for Space Games Inc.</h1>
+<p class="subtitle lead">Applying Network Analysis to the Twitch Case Study</p>
 </div>
 
 
@@ -468,7 +469,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 18, 2025</p>
+      <p class="date">November 6, 2025</p>
     </div>
   </div>
   
@@ -480,105 +481,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="prepare" class="level2">
-<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<section id="assignment-overview" class="level2">
+<h2 class="anchored" data-anchor-id="assignment-overview">Assignment Overview</h2>
+<p>Using the Twitch network data (<code>Twitch_edges.csv</code> and <code>Twitch_nodes.csv</code>), identify 3 optimal influencers for Space Games Inc.’s “Thrive in Space 5” campaign.</p>
+<p>Your analysis should: 1. Filter out mature content channels and non-affiliate streamers 2. Calculate eigenvector and betweenness centrality measures 3. Create a quadrant plot to identify high-performing candidates 4. Detect communities and select one influencer from each of 3 different communities 5. Justify your selections with expected ROI calculations</p>
+<p>Submit an R Markdown/Quarto document with code, visualizations, and a 300-word strategic rationale.</p>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-📚
+Submission Details
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>📖 Review <a href="../../weeks/week-2/main.html#participate">Week 2 slideshows</a> on network centrality</p>
-<p>📖 Revise centrality measures: degree, closeness, betweenness, and eigenvector centrality</p>
-</div>
-</div>
-</section>
-<section id="participate" class="level2">
-<h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-👥
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>🙋 <strong>Case Discussion</strong>: “Who Is the Right Influencer? A Social Network Analysis”</p>
-<p>This week we focus on applying centrality concepts through case study discussion.</p>
-<p><strong>Materials</strong>:</p>
 <ul>
-<li>Electronic copy of the case available in Moodle’s “case studies” section</li>
-<li><a href="../../weeks/week-3/qualitative_discussion.html">Qualitative discussion of the case (made available after the class)</a></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-💻
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Hands-on Analysis</strong>: Explore the Twitch dataset to understand node attributes before applying centrality measures</p>
-<ul>
-<li><a href="../../weeks/week-3/gamers_eda.html">Exploratory data analysis of Twitch gamers</a></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="perform" class="level2">
-<h2 class="anchored" data-anchor-id="perform">Perform</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-📝
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Assignment</strong>: <a href="../../weeks/week-3/perform.html">Influencer Selection for Space Games Inc.</a></p>
-<p>Apply the strategic framework from the Twitch case discussion to identify optimal influencers using R network analysis.</p>
-<ul>
-<li><strong>Due</strong>: October 20, 2025</li>
+<li><strong>Due Date</strong>: October 20, 2025</li>
 <li><strong>Submit to</strong>: Simone.Santoni.1@city.ac.uk</li>
+<li><strong>Subject Line</strong>: SMM638 Week 3 Assignment - [Your Name]</li>
 </ul>
-</div>
-</div>
-</section>
-<section id="ponder" class="level2">
-<h2 class="anchored" data-anchor-id="ponder">Ponder</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-🤔
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Centrality Measures: Commonalities and Differences</strong></p>
-<p>Reflect on the four centrality measures discussed (degree, closeness, betweenness, eigenvector):</p>
-<ul>
-<li><strong>Commonalities</strong>: What do all centrality measures attempt to capture? How do they help identify important nodes?</li>
-<li><strong>Differences</strong>: When would you choose one measure over another? What unique insights does each provide?</li>
-<li><strong>Trade-offs</strong>: Can a node rank high on one measure but low on another? What does this tell us?</li>
-</ul>
-<p>Consider real-world examples: social media influencers (degree vs.&nbsp;eigenvector), transportation hubs (betweenness), or emergency response networks (closeness).</p>
 </div>
 </div>
 
@@ -998,18 +920,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../weeks/week-2/main.html" class="pagination-link" aria-label="Week 2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 2</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../weeks/week-4/main.html" class="pagination-link" aria-label="Week 4">
-        <span class="nav-page-text">Week 4</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
