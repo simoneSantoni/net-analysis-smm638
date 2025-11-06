@@ -3,7 +3,12 @@
     "r.rpath.linux": "/home/simone/miniconda3/bin/R",
     "r.lsp.enabled": true,
     "r.lsp.diagnostics": true,
-    "r.plot.useHttpgd": true,
+    "r.plot.useHttpgd": false,
+    "r.plot.defaults": {
+        "width": 7,
+        "height": 7,
+        "pointsize": 12
+    },
     "r.sessionWatcher": true,
     "r.bracketedPaste": true,
     "r.alwaysUseActiveTerminal": true,
