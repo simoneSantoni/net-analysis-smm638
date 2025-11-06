@@ -6,7 +6,63 @@ date: "today"
 callout-appearance: "default"
 ---
 
+## Prepare
+
 ::: {.callout-note}
-Content coming soon.
+## 📚
+
+📖 Review [Week 4 materials](../week-4/main.qmd) on dyads, triads, and network dynamics
+
+📖 Revise theoretical concepts: dyadic reciprocity, triadic closure, and network evolution
+
+:::
+
+## Participate
+
+::: {.callout-note}
+## 👥
+
+🙋 **Case Discussion**: Applying dyadic and triadic analysis to real-world networks
+
+This week we focus on applying dyadic and triadic concepts through case study discussion.
+
+:::
+
+## Practice
+
+::: {.callout-note}
+##  💻
+
+**Hands-on Analysis**: Apply network dynamics concepts to understand relationship formation and evolution
+
+Materials will be provided during the session.
+
+:::
+
+## Perform
+
+::: {.callout-note}
+##  📝
+
+**No Assignment This Week**
+
+This week focuses on case discussion and practical application. No performance assignment is required.
+
+:::
+
+## Ponder
+
+::: {.callout-note}
+## 🤔
+
+**From Theory to Practice: Network Dynamics in Action**
+
+Reflect on how dyadic and triadic patterns shape network evolution in organizational contexts:
+
+- **Reciprocity dynamics**: How do reciprocal relationships form and persist in professional networks? What factors promote or inhibit reciprocity?
+- **Triadic closure processes**: In what contexts does triadic closure accelerate network formation? When might it create insularity or echo chambers?
+- **Temporal patterns**: How do networks evolve over time? What triggers rapid structural change versus gradual evolution?
+
+Consider applications: knowledge sharing networks (expertise flow), inter-organizational collaborations (strategic partnerships), or innovation networks (idea diffusion).
 
 :::
