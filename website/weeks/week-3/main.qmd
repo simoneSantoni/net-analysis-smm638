@@ -48,9 +48,14 @@ This week we focus on applying centrality concepts through case study discussion
 ::: {.callout-note}
 ##  📝
 
-**Assignment**: [Influencer Selection for Space Games Inc.](perform.qmd)
+**Assignment**: Influencer Selection for Space Games Inc.
 
 Apply the strategic framework from the Twitch case discussion to identify optimal influencers using R network analysis.
+
+**Materials**:
+
+- [Assignment brief (perform_1.qmd)](perform_1.qmd) - Requirements and submission details
+- [Worked example: 2×2 Framework Analysis (perform_2.qmd)](perform_2.qmd) - Complete R-based implementation of network size vs. diversity framework
 
 - **Due**: October 20, 2025
 - **Submit to**: Simone.Santoni.1@city.ac.uk

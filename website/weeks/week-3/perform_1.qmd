@@ -1,0 +1,26 @@
+---
+title: "Assignment: Influencer Selection for Space Games Inc."
+subtitle: "Applying Network Analysis to the Twitch Case Study"
+date: "today"
+format: html
+---
+
+## Assignment Overview
+
+Using the Twitch network data (`Twitch_edges.csv` and `Twitch_nodes.csv`), identify 3 optimal influencers for Space Games Inc.'s "Thrive in Space 5" campaign. 
+
+Your analysis should:
+1. Filter out mature content channels and non-affiliate streamers
+2. Calculate eigenvector and betweenness centrality measures
+3. Create a quadrant plot to identify high-performing candidates
+4. Detect communities and select one influencer from each of 3 different communities
+5. Justify your selections with expected ROI calculations
+
+Submit an R Markdown/Quarto document with code, visualizations, and a 300-word strategic rationale.
+
+::: {.callout-important}
+## Submission Details
+- **Due Date**: October 20, 2025
+- **Submit to**: Simone.Santoni.1@city.ac.uk
+- **Subject Line**: SMM638 Week 3 Assignment - [Your Name]
+:::

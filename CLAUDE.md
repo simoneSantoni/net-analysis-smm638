@@ -49,7 +49,9 @@ The repository has **two parallel directory structures** that must be kept in sy
 
 - **Rendering behavior**:
   - `freeze: auto` means computational results are cached in `_freeze/`
-  - Jupyter kernel configured for R (though content can be R or Python)
+  - Jupyter kernel configured for Python 3 by default
+  - Content uses both R and Python: R code chunks (via knitr) for network visualizations (igraph, ggraph), Python (via Jupyter) for some slideshows
+  - R is the primary language for most weekly materials and practice exercises
 
 ## Common Commands
 
@@ -67,6 +69,13 @@ The rendered site will be in `website/_site/`.
 cd website
 quarto preview
 ```
+
+**Render a single file** (faster for testing individual pages):
+```bash
+cd website
+quarto render weeks/week-4/slideshow.qmd
+```
+Note: Single file rendering won't include full site navigation/theme unless part of a full site render.
 
 **Deploy to GitHub Pages**:
 Push to the `master` branch triggers automatic deployment via GitHub Actions (`.github/workflows/quarto-publish.yml`). The workflow:
@@ -119,9 +128,10 @@ format:
     transition: slide
     chalkboard: true
     multiplex: false
-    css: custom-slides.css
+    css: ../../slideshow-theme.css  # Shared theme at website/slideshow-theme.css
     code-fold: true
     code-summary: ""
+jupyter: python3  # Add this if using Python code chunks
 ---
 ```
 
@@ -189,12 +199,19 @@ When syllabus.qmd is configured for PDF output (via YAML frontmatter), ensure th
 
 ### Theme Customization
 
+**Website theme files**:
 - Light theme: `website/theme.scss`
 - Dark theme: `website/theme-dark.scss`
 - Theme switcher JS: `website/theme-switcher.js`
 - Additional styles: `website/styles.css`
 
-Modify these files to change colors, fonts, layout, etc. Changes apply across the entire site.
+**Slideshow theme**:
+- Shared RevealJS theme: `website/slideshow-theme.css`
+- Uses Atkinson Hyperlegible font
+- Color scheme: forest green (#228B22) for titles, primary (#3498db), secondary (#e74c3c)
+- Reference from week directories using: `css: ../../slideshow-theme.css`
+
+Modify these files to change colors, fonts, layout, etc. Website theme changes apply across all HTML pages; slideshow theme affects only RevealJS presentations.
 
 ## GitHub Actions Workflow
 
@@ -203,11 +220,12 @@ Modify these files to change colors, fonts, layout, etc. Changes apply across th
 **Trigger**: Push to `master` branch or manual workflow dispatch
 
 **Key configuration**:
-- Uses R version 4.3.0
+- Uses R version 4.3.0 and Python 3.11
 - Installs system dependencies for R graphics (libcurl, libfontconfig, etc.)
 - Sets up TinyTeX for PDF rendering (needed for syllabus)
+- Installs Python packages: numpy, scipy, matplotlib, pandas, networkx, plotly, seaborn, jupyter
 - Caches R packages for faster builds
-- 20-minute timeout for rendering
+- 15-minute timeout for rendering
 - Renders from `website/` directory (not root)
 - Uploads `website/_site` as artifact
 - Deploys using `actions/deploy-pages@v4`
@@ -215,9 +233,10 @@ Modify these files to change colors, fonts, layout, etc. Changes apply across th
 
 ## Important Notes
 
-- **Week 6 bug**: In `_quarto.yml` line 71, "Week 6" incorrectly links to `weeks/week-5/main.qmd` (should be `week-6`)
 - **Content location**: All new content goes in `website/` subdirectories, not root-level directories
 - **Static assets**: Images go in `website/imgs/`, site-wide libraries in `website/site_libs/`
 - **PDF downloads**: Must be placed in corresponding `website/` directory to be accessible on the published site
 - **Quarto rendering**: Always run from `website/` directory, not repository root
-- **Data directory**: Network datasets are stored in root `/data/` directory with subdirectories for different sources
+- **Data directory**: Network datasets are stored in root `/data/` directory with subdirectories (deezer, twitch, xoxoday)
+- **Slideshow theme**: All slideshows should reference the shared CSS file at `website/slideshow-theme.css` using relative path `../../slideshow-theme.css`
+- **Weekly materials naming**: Each week contains `main.qmd` (landing page), `slideshow*.qmd` (RevealJS slides), `practice*.qmd` (exercises), and `perform*.qmd` (performance analysis/examples)
