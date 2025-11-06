@@ -13,9 +13,10 @@ callout-appearance: "default"
 
 📖 Revise the [syllabus](../../course/syllabus.qmd)
 
-📖 Revise key network concepts: [notes](../week-1/network_terms.qmd) (from week 1) and [slideshow](../week-2/slideshow_3-slides.html) (from week 2)
+📖 Revise key network concepts [notes](../week-1/network_terms.qmd) (from
+week 1) and [slideshow](../week-2/slideshow_3-slides.html) (from week 2)
 
-📖 Read: [Empirical Analysis of an Evolving Social Network](https://go.exlibris.link/ls4pB53Y)
+📖 Read [Empirical Analysis of an Evolving Social Network](https://go.exlibris.link/ls4pB53Y)
 
 :::
 
@@ -24,32 +25,29 @@ callout-appearance: "default"
 ::: {.callout-note}
 ## 👥
 
-📉 **Slideshow**: [Dyads, triads, and network effects](slideshow.html)
+📉 Slideshow:
 
-This week we explore foundational building blocks of networks and how they shape network dynamics.
+[Dyads, triads, and network effects](slideshow.html)
 
 :::
 
 ## Practice
 
 ::: {.callout-note}
-##  💻
+## 💻
 
-**Hands-on Analysis**: Apply dyadic and triadic analysis techniques to understand network structure
+🧮 [Measuring dyadic processes](practice_1.qmd)
 
-- [Measuring dyadic processes](practice_1.qmd)
-- [Measuring triadic processes](practice_2.qmd)
+🧮 [Measuring triadic processes](practice_2.qmd)
 
 :::
 
 ## Perform
 
 ::: {.callout-note}
-##  📝
+## 📝
 
-**No Assignment This Week**
-
-This week focuses on building theoretical foundations. No performance assignment is required.
+This week, we will **not** work on real world business problems and datasets.
 
 :::
 
@@ -58,21 +56,25 @@ This week focuses on building theoretical foundations. No performance assignment
 ::: {.callout-note}
 ## 🤔
 
-**From Building Blocks to Network Structure**
+**Dyadic and Triadic Structure**
 
-Reflect on how dyadic and triadic patterns aggregate to form larger network structures:
+Chapter 13 ("Dyads") and 14 ("Triads") from Wasserman, S., & Faust K.
+(1994). [**Social Network Analysis**](https://go.exlibris.link/rW0j0hZX). Cambridge University Press.
 
-- **Dyadic reciprocity**: Why do some networks have high reciprocity while others don't? What does this reveal about relationship formation?
-- **Triadic closure**: How does the principle "friends of friends become friends" shape network evolution? When might this principle fail?
-- **Network dynamics**: How do local interaction patterns (dyads and triads) create emergent global network properties?
+Chapter 7 ("Dyads and Triads") from Rawlings C. et al. (2023). [**Online
+Appendix to Network Analysis: Integrating Social Network Theory, Method, and
+Application with R**](https://inarwhal.github.io/NetworkAnalysisR-book/)
+Cambridge University Press.
 
-Consider examples: professional networks (weak reciprocity, strategic triads), romantic relationships (high reciprocity, exclusive triads), or collaboration networks (project-based triads).
+**Exponential Random Graph Models**
 
-**Further Reading**:
+Chapter 33 ("Random Graph Models") from Levey et al. (2024). [**The Sage
+Handbook of Social Network Analysis**](https://go.exlibris.link/xdR3Hpkn).
+Sage.
 
-- **Dyadic and Triadic Structure**: Chapters 13-14 from Wasserman & Faust (1994), [Social Network Analysis](https://go.exlibris.link/rW0j0hZX)
-- **Applied Analysis with R**: Chapter 7 from Rawlings et al. (2023), [Network Analysis with R](https://inarwhal.github.io/NetworkAnalysisR-book/)
-- **Random Graph Models**: Chapter 33 from Levey et al. (2024), [The Sage Handbook of Social Network Analysis](https://go.exlibris.link/xdR3Hpkn)
-- **Network Dynamics**: Chapter 34 from McLevey et al. (2024), [The Sage Handbook of Social Network Analysis](https://go.exlibris.link/xdR3Hpkn)
+**Network Dynamics**
+
+Chapter 34 ("Network Dynamics") from McLevey et al. (2024). [**The Sage
+Handbook od Social Network Analysis**](https://go.exlibris.link/xdR3Hpkn).
 
 :::
