@@ -7,6 +7,8 @@ format:
     toc-depth: 3
     code-fold: false
     code-tools: true
+execute:
+  freeze: auto
 ---
 
 ## Overview

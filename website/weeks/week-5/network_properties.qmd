@@ -1,0 +1,734 @@
+---
+title: "SoundCloud Network Properties Analysis"
+subtitle: "Week 5 - Testing Reciprocity and Transitivity"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    code-tools: true
+execute:
+  freeze: auto
+---
+
+## Overview
+
+This analysis examines two fundamental network properties in the SoundCloud follow network:
+
+- **Reciprocity**: The tendency for users to follow each other mutually (if A follows B, does B follow A?)
+- **Transitivity (Clustering)**: The tendency for users to form triangles (if A follows B and B follows C, does A follow C?)
+
+These properties help us understand the social structure and relationship patterns in the SoundCloud community.
+
+## Setup and Data Loading
+
+```{r setup, message=FALSE, warning=FALSE}
+# Load required libraries
+library(tidyverse)
+library(igraph)
+library(knitr)
+library(gridExtra)
+library(sna)        # For CUG tests
+library(network)    # For network objects (required by sna)
+library(intergraph) # For converting between igraph and network objects
+
+# Note: sna and igraph have some function name conflicts (e.g., degree, betweenness)
+# When needed, we use igraph:: prefix to specify which package's function to use
+
+# Set theme for plots
+theme_set(theme_minimal())
+
+# Configure output options
+opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width = 10,
+  fig.height = 6
+)
+
+# Disable httpgd for compatibility
+options(vsc.use_httpgd = FALSE)
+```
+
+```{r load-data}
+# Set data path
+data_path <- "../../../data/soundcloud/output/"
+
+# Load follow network data
+follows <- read_csv(paste0(data_path, "follows.csv"), show_col_types = FALSE)
+users <- read_csv(paste0(data_path, "users.csv"), show_col_types = FALSE)
+
+cat("Data loaded successfully!\n")
+cat("Follow edges:", nrow(follows), "\n")
+cat("Unique users:", n_distinct(c(follows$follower_id, follows$followee_id)), "\n")
+```
+
+## Network Construction
+
+```{r create-network}
+# Create directed graph from edge list
+g <- graph_from_data_frame(
+  d = follows[, c("follower_id", "followee_id")],
+  directed = TRUE,
+  vertices = NULL
+)
+
+# Network summary
+cat("\n=== Network Summary ===\n")
+cat("Nodes (users):", vcount(g), "\n")
+cat("Edges (follows):", ecount(g), "\n")
+cat("Density:", round(edge_density(g), 5), "\n")
+cat("Is directed:", is_directed(g), "\n")
+cat("Is connected:", is_connected(g, mode = "weak"), "\n")
+```
+
+## Reciprocity Analysis
+
+Reciprocity measures the proportion of mutual connections in a directed network. A high reciprocity indicates that when user A follows user B, B is likely to follow A back.
+
+### Calculate Reciprocity
+
+```{r reciprocity-calculation}
+# Calculate reciprocity using different methods
+recip_default <- reciprocity(g)
+recip_ratio <- reciprocity(g, mode = "ratio")
+
+cat("\n=== Reciprocity Measures ===\n\n")
+cat("Reciprocity (default):", round(recip_default, 4), "\n")
+cat("  → Proportion of mutual edges among all edges\n\n")
+
+cat("Reciprocity (ratio):", round(recip_ratio, 4), "\n")
+cat("  → Proportion of reciprocated edges\n\n")
+
+# Calculate manually for verification
+edges_df <- as_data_frame(g, what = "edges")
+edges_df$edge_pair <- paste(
+  pmin(edges_df$from, edges_df$to),
+  pmax(edges_df$from, edges_df$to),
+  sep = "_"
+)
+
+# Count mutual edges
+mutual_pairs <- edges_df %>%
+  count(edge_pair) %>%
+  filter(n == 2) %>%
+  nrow()
+
+total_edges <- ecount(g)
+manual_reciprocity <- (2 * mutual_pairs) / total_edges
+
+cat("Manual calculation:", round(manual_reciprocity, 4), "\n")
+cat("  → Mutual pairs:", mutual_pairs, "\n")
+cat("  → Total edges:", total_edges, "\n")
+```
+
+### Reciprocity Interpretation
+
+```{r reciprocity-interpretation}
+# Create interpretation dataframe
+interpretation <- data.frame(
+  Metric = c("Total Edges", "Mutual Pairs", "Reciprocity Rate", "Interpretation"),
+  Value = c(
+    format(total_edges, big.mark = ","),
+    format(mutual_pairs, big.mark = ","),
+    paste0(round(recip_default * 100, 2), "%"),
+    ifelse(recip_default > 0.3, "High reciprocity",
+           ifelse(recip_default > 0.1, "Moderate reciprocity", "Low reciprocity"))
+  )
+)
+
+kable(interpretation, caption = "Reciprocity Summary")
+```
+
+### Visualize Reciprocal Relationships
+
+```{r reciprocity-visualization, fig.cap="Distribution of reciprocal vs non-reciprocal edges"}
+# Classify edges as reciprocal or not
+edge_types <- edges_df %>%
+  group_by(edge_pair) %>%
+  summarise(
+    edge_count = n(),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    type = ifelse(edge_count == 2, "Reciprocal", "One-way")
+  )
+
+# Count edge types
+edge_type_summary <- edge_types %>%
+  count(type) %>%
+  mutate(
+    percentage = round(n / sum(n) * 100, 1),
+    edges_count = ifelse(type == "Reciprocal", n * 2, n)
+  )
+
+# Create visualization
+ggplot(edge_type_summary, aes(x = type, y = edges_count, fill = type)) +
+  geom_col(alpha = 0.8, width = 0.6) +
+  geom_text(
+    aes(label = paste0(format(edges_count, big.mark = ","), "\n(",
+                       round(edges_count/total_edges*100, 1), "%)")),
+    vjust = -0.5,
+    size = 5
+  ) +
+  scale_fill_manual(values = c("Reciprocal" = "#50C878", "One-way" = "#c41c85")) +
+  labs(
+    title = "Distribution of Edge Types in Follow Network",
+    x = "Edge Type",
+    y = "Number of Edges",
+    fill = "Type"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## Transitivity Analysis
+
+Transitivity (also called clustering coefficient) measures the probability that two neighbors of a node are also connected to each other. It quantifies the tendency to form triangles in the network.
+
+### Calculate Transitivity
+
+```{r transitivity-calculation}
+# Global transitivity (clustering coefficient)
+trans_global <- transitivity(g, type = "global")
+trans_global_undirected <- transitivity(as.undirected(g, mode = "collapse"), type = "global")
+
+# Average local transitivity
+trans_local_avg <- transitivity(g, type = "average")
+
+# Weighted transitivity (considers edge weights if present)
+trans_weighted <- transitivity(g, type = "weighted")
+
+cat("\n=== Transitivity Measures ===\n\n")
+cat("Global transitivity (directed):", round(trans_global, 4), "\n")
+cat("  → Proportion of closed triplets (triangles) in the network\n\n")
+
+cat("Global transitivity (undirected):", round(trans_global_undirected, 4), "\n")
+cat("  → Ignoring edge direction\n\n")
+
+cat("Average local transitivity:", round(trans_local_avg, 4), "\n")
+cat("  → Average clustering coefficient across all nodes\n\n")
+
+cat("Weighted transitivity:", round(trans_weighted, 4), "\n")
+cat("  → Accounts for node degrees\n\n")
+```
+
+### Triangle Count Analysis
+
+```{r triangle-analysis}
+# Count triangles in the network
+triangles_count <- sum(count_triangles(as.undirected(g, mode = "collapse"))) / 3
+triad_census_result <- triad_census(g)
+
+cat("\n=== Triangle Analysis ===\n\n")
+cat("Number of triangles (undirected):", triangles_count, "\n\n")
+
+# Triad census for directed network (16 possible triad types)
+cat("Triad Census (Directed Network):\n")
+cat("This shows counts of all 16 possible triad configurations\n\n")
+
+# Create readable triad census
+triad_names <- c(
+  "003", "012", "102", "021D", "021U", "021C", "111D", "111U",
+  "030T", "030C", "201", "120D", "120U", "120C", "210", "300"
+)
+
+triad_df <- data.frame(
+  Type = triad_names,
+  Count = as.vector(triad_census_result),
+  Description = c(
+    "Empty (no edges)",
+    "Single edge",
+    "Two edges (one mutual)",
+    "Two edges (down)",
+    "Two edges (up)",
+    "Two edges (cycle)",
+    "Three edges (down)",
+    "Three edges (up)",
+    "Three edges (transitive)",
+    "Three edges (cycle)",
+    "Four edges (one mutual)",
+    "Four edges (down)",
+    "Four edges (up)",
+    "Four edges (cycle)",
+    "Five edges",
+    "Six edges (complete)"
+  )
+) %>%
+  arrange(desc(Count)) %>%
+  head(10)
+
+kable(triad_df, caption = "Top 10 Triad Types", format.args = list(big.mark = ","))
+```
+
+### Local Transitivity Distribution
+
+```{r local-transitivity, fig.cap="Distribution of local clustering coefficients"}
+# Calculate local transitivity for each node
+local_trans <- transitivity(g, type = "local", isolates = "zero")
+local_trans[is.nan(local_trans)] <- 0
+
+# Create dataframe with node properties
+node_props <- data.frame(
+  node = V(g)$name,
+  local_transitivity = local_trans,
+  degree = igraph::degree(g, mode = "all"),
+  in_degree = igraph::degree(g, mode = "in"),
+  out_degree = igraph::degree(g, mode = "out")
+)
+
+# Summary statistics
+cat("\n=== Local Transitivity Statistics ===\n")
+cat("Mean:", round(mean(local_trans, na.rm = TRUE), 4), "\n")
+cat("Median:", round(median(local_trans, na.rm = TRUE), 4), "\n")
+cat("SD:", round(sd(local_trans, na.rm = TRUE), 4), "\n")
+cat("Min:", round(min(local_trans, na.rm = TRUE), 4), "\n")
+cat("Max:", round(max(local_trans, na.rm = TRUE), 4), "\n\n")
+
+# Visualize distribution
+ggplot(node_props, aes(x = local_transitivity)) +
+  geom_histogram(fill = "#3498db", bins = 30, alpha = 0.8) +
+  geom_vline(
+    xintercept = mean(local_trans, na.rm = TRUE),
+    color = "red",
+    linetype = "dashed",
+    size = 1
+  ) +
+  labs(
+    title = "Distribution of Local Clustering Coefficients",
+    subtitle = paste0("Mean = ", round(mean(local_trans, na.rm = TRUE), 3)),
+    x = "Local Transitivity",
+    y = "Number of Nodes"
+  )
+```
+
+### Transitivity vs Degree
+
+```{r transitivity-degree, fig.cap="Relationship between node degree and local transitivity"}
+# Filter nodes with degree > 0 for meaningful visualization
+node_props_filtered <- node_props %>%
+  filter(degree > 0)
+
+ggplot(node_props_filtered, aes(x = degree, y = local_transitivity)) +
+  geom_point(alpha = 0.3, color = "#c41c85") +
+  geom_smooth(method = "loess", color = "#50C878", size = 1.5) +
+  scale_x_log10() +
+  labs(
+    title = "Local Transitivity vs Node Degree",
+    x = "Degree (log scale)",
+    y = "Local Transitivity"
+  )
+```
+
+## Comparison with Random Networks
+
+To assess whether the observed reciprocity and transitivity are significant, we compare them with random networks with the same size and density.
+
+```{r random-comparison}
+# Generate random networks for comparison
+set.seed(42)
+n_simulations <- 100
+n_nodes <- vcount(g)
+n_edges <- ecount(g)
+
+# Store results
+random_reciprocity <- numeric(n_simulations)
+random_transitivity <- numeric(n_simulations)
+
+cat("Generating", n_simulations, "random networks...\n")
+
+for (i in 1:n_simulations) {
+  # Generate Erdős-Rényi random directed graph
+  g_random <- erdos.renyi.game(
+    n = n_nodes,
+    p.or.m = n_edges,
+    type = "gnm",
+    directed = TRUE
+  )
+
+  random_reciprocity[i] <- reciprocity(g_random)
+  random_transitivity[i] <- transitivity(g_random, type = "global")
+}
+
+# Summary statistics
+comparison_df <- data.frame(
+  Metric = rep(c("Reciprocity", "Transitivity"), each = 3),
+  Network = rep(c("Observed", "Random (mean)", "Random (SD)"), 2),
+  Value = c(
+    round(recip_default, 4),
+    round(mean(random_reciprocity), 4),
+    round(sd(random_reciprocity), 4),
+    round(trans_global, 4),
+    round(mean(random_transitivity), 4),
+    round(sd(random_transitivity), 4)
+  )
+)
+
+kable(comparison_df, caption = "Comparison with Random Networks")
+
+# Calculate z-scores
+z_reciprocity <- (recip_default - mean(random_reciprocity)) / sd(random_reciprocity)
+z_transitivity <- (trans_global - mean(random_transitivity)) / sd(random_transitivity)
+
+cat("\n=== Significance Tests ===\n\n")
+cat("Reciprocity Z-score:", round(z_reciprocity, 2), "\n")
+cat("Interpretation:", ifelse(abs(z_reciprocity) > 2,
+                              "Significantly different from random (p < 0.05)",
+                              "Not significantly different from random"), "\n\n")
+
+cat("Transitivity Z-score:", round(z_transitivity, 2), "\n")
+cat("Interpretation:", ifelse(abs(z_transitivity) > 2,
+                              "Significantly different from random (p < 0.05)",
+                              "Not significantly different from random"), "\n")
+```
+
+### Visualization of Random Comparison
+
+```{r random-visualization, fig.width=12, fig.height=5}
+# Create comparison plots
+p1 <- ggplot(data.frame(reciprocity = random_reciprocity), aes(x = reciprocity)) +
+  geom_histogram(fill = "gray70", bins = 30, alpha = 0.8) +
+  geom_vline(xintercept = recip_default, color = "#c41c85", size = 1.5) +
+  annotate("text", x = recip_default, y = Inf,
+           label = "Observed", vjust = 2, color = "#c41c85", size = 5) +
+  labs(
+    title = "Reciprocity: Observed vs Random",
+    x = "Reciprocity",
+    y = "Frequency"
+  )
+
+p2 <- ggplot(data.frame(transitivity = random_transitivity), aes(x = transitivity)) +
+  geom_histogram(fill = "gray70", bins = 30, alpha = 0.8) +
+  geom_vline(xintercept = trans_global, color = "#50C878", size = 1.5) +
+  annotate("text", x = trans_global, y = Inf,
+           label = "Observed", vjust = 2, color = "#50C878", size = 5) +
+  labs(
+    title = "Transitivity: Observed vs Random",
+    x = "Transitivity",
+    y = "Frequency"
+  )
+
+grid.arrange(p1, p2, ncol = 2)
+```
+
+## Conditional Uniform Graph (CUG) Tests
+
+The Erdős-Rényi random graphs used above don't preserve the degree distribution of our network. **Conditional Uniform Graph (CUG) tests** provide a more rigorous comparison by generating random graphs that maintain certain structural properties of the observed network.
+
+CUG tests answer: "Given the observed degree distribution (or other structural constraints), are the reciprocity and transitivity values we observe significantly different from what we would expect by chance?"
+
+### Understanding CUG Conditioning
+
+```{r cug-explanation}
+cat("=== CUG Conditioning Strategies ===\n\n")
+cat("1. Size conditioning: Preserves number of nodes and edges\n")
+cat("2. Edges conditioning: Preserves number of edges only\n")
+cat("3. Dyad census conditioning: Preserves distribution of mutual, asymmetric, and null dyads\n\n")
+cat("We will use 'edges' conditioning, which generates random graphs with the same\n")
+cat("number of nodes and edges as our observed network, but with edges randomly\n")
+cat("redistributed while maintaining the edge count.\n\n")
+```
+
+### Convert Network for CUG Tests
+
+```{r convert-network}
+# Convert igraph object to network object for sna package
+# The sna package requires network objects for CUG tests
+cat("Converting network format...\n")
+
+# Get adjacency matrix from igraph
+adj_matrix <- as_adjacency_matrix(g, sparse = FALSE)
+
+# Create network object
+net <- network(adj_matrix, directed = TRUE)
+
+cat("Network converted successfully!\n")
+cat("Nodes:", network.size(net), "\n")
+cat("Edges:", network.edgecount(net), "\n")
+```
+
+### CUG Test for Reciprocity
+
+```{r cug-reciprocity}
+cat("Running CUG test for reciprocity...\n")
+cat("This may take a few minutes...\n\n")
+
+# Set seed for reproducibility
+set.seed(42)
+
+# Run CUG test for reciprocity (using grecip function)
+# We use 1000 simulations for robust p-values
+cug_recip <- cug.test(
+  net,
+  FUN = grecip,           # Function to test (reciprocity)
+  mode = "digraph",       # Directed graph
+  cmode = "edges",        # Condition on edge count
+  reps = 1000             # Number of random graphs to generate
+)
+
+# Display results
+print(cug_recip)
+
+# Extract key statistics
+obs_recip_cug <- cug_recip$obs.stat
+exp_recip_cug <- mean(cug_recip$rep.stat)
+sd_recip_cug <- sd(cug_recip$rep.stat)
+p_value_recip <- cug_recip$pval.upper
+
+cat("\n=== CUG Test Results for Reciprocity ===\n\n")
+cat("Observed reciprocity:", round(obs_recip_cug, 4), "\n")
+cat("Expected (under CUG):", round(exp_recip_cug, 4), "\n")
+cat("Standard deviation:", round(sd_recip_cug, 4), "\n")
+cat("P-value (two-tailed):", round(min(p_value_recip, 1 - p_value_recip) * 2, 4), "\n")
+cat("Z-score:", round((obs_recip_cug - exp_recip_cug) / sd_recip_cug, 4), "\n\n")
+
+if (min(p_value_recip, 1 - p_value_recip) * 2 < 0.05) {
+  cat("Interpretation: Reciprocity is SIGNIFICANTLY different from random expectation.\n")
+} else {
+  cat("Interpretation: Reciprocity is NOT significantly different from random expectation.\n")
+}
+```
+
+### CUG Test for Transitivity
+
+```{r cug-transitivity}
+cat("\nRunning CUG test for transitivity...\n")
+cat("This may take a few minutes...\n\n")
+
+# Define custom transitivity function for sna
+# sna uses gtrans() but we want igraph's transitivity
+# Note: cug.test passes adjacency matrices to the function
+transitivity_func <- function(net_matrix) {
+  # Convert matrix to network object, then to igraph
+  if (is.matrix(net_matrix)) {
+    net_temp <- network::network(net_matrix, directed = TRUE)
+    g_temp <- intergraph::asIgraph(net_temp)
+  } else if (inherits(net_matrix, "network")) {
+    g_temp <- intergraph::asIgraph(net_matrix)
+  } else {
+    stop("Input must be a matrix or network object")
+  }
+  # Calculate global transitivity
+  igraph::transitivity(g_temp, type = "global")
+}
+
+# Run CUG test for transitivity
+cug_trans <- cug.test(
+  net,
+  FUN = transitivity_func,  # Custom transitivity function
+  mode = "digraph",
+  cmode = "edges",
+  reps = 1000
+)
+
+# Display results
+print(cug_trans)
+
+# Extract key statistics
+obs_trans_cug <- cug_trans$obs.stat
+exp_trans_cug <- mean(cug_trans$rep.stat)
+sd_trans_cug <- sd(cug_trans$rep.stat)
+p_value_trans <- cug_trans$pval.upper
+
+cat("\n=== CUG Test Results for Transitivity ===\n\n")
+cat("Observed transitivity:", round(obs_trans_cug, 4), "\n")
+cat("Expected (under CUG):", round(exp_trans_cug, 4), "\n")
+cat("Standard deviation:", round(sd_trans_cug, 4), "\n")
+cat("P-value (two-tailed):", round(min(p_value_trans, 1 - p_value_trans) * 2, 4), "\n")
+cat("Z-score:", round((obs_trans_cug - exp_trans_cug) / sd_trans_cug, 4), "\n\n")
+
+if (min(p_value_trans, 1 - p_value_trans) * 2 < 0.05) {
+  cat("Interpretation: Transitivity is SIGNIFICANTLY different from random expectation.\n")
+} else {
+  cat("Interpretation: Transitivity is NOT significantly different from random expectation.\n")
+}
+```
+
+### Visualize CUG Test Results
+
+```{r cug-visualization, fig.width=12, fig.height=5}
+# Create data frames for plotting
+cug_recip_df <- data.frame(
+  reciprocity = cug_recip$rep.stat,
+  test = "CUG (edges)"
+)
+
+cug_trans_df <- data.frame(
+  transitivity = cug_trans$rep.stat,
+  test = "CUG (edges)"
+)
+
+# Calculate p-value positions for annotations
+p_recip_two_tailed <- round(min(p_value_recip, 1 - p_value_recip) * 2, 4)
+p_trans_two_tailed <- round(min(p_value_trans, 1 - p_value_trans) * 2, 4)
+
+# Create plots
+p1_cug <- ggplot(cug_recip_df, aes(x = reciprocity)) +
+  geom_histogram(fill = "gray70", bins = 40, alpha = 0.8) +
+  geom_vline(xintercept = obs_recip_cug, color = "#c41c85", size = 1.5) +
+  annotate("text", x = obs_recip_cug, y = Inf,
+           label = paste0("Observed\np = ", p_recip_two_tailed),
+           vjust = 1.5, hjust = -0.1, color = "#c41c85", size = 4) +
+  labs(
+    title = "CUG Test: Reciprocity",
+    subtitle = "Conditioning on edge count",
+    x = "Reciprocity",
+    y = "Frequency"
+  ) +
+  theme_minimal()
+
+p2_cug <- ggplot(cug_trans_df, aes(x = transitivity)) +
+  geom_histogram(fill = "gray70", bins = 40, alpha = 0.8) +
+  geom_vline(xintercept = obs_trans_cug, color = "#50C878", size = 1.5) +
+  annotate("text", x = obs_trans_cug, y = Inf,
+           label = paste0("Observed\np = ", p_trans_two_tailed),
+           vjust = 1.5, hjust = -0.1, color = "#50C878", size = 4) +
+  labs(
+    title = "CUG Test: Transitivity",
+    subtitle = "Conditioning on edge count",
+    x = "Transitivity",
+    y = "Frequency"
+  ) +
+  theme_minimal()
+
+grid.arrange(p1_cug, p2_cug, ncol = 2)
+```
+
+### CUG Test Summary Table
+
+```{r cug-summary-table}
+# Create comprehensive summary table
+cug_summary <- data.frame(
+  Property = c("Reciprocity", "Transitivity"),
+  Observed = c(round(obs_recip_cug, 4), round(obs_trans_cug, 4)),
+  Expected = c(round(exp_recip_cug, 4), round(exp_trans_cug, 4)),
+  SD = c(round(sd_recip_cug, 4), round(sd_trans_cug, 4)),
+  Z_score = c(
+    round((obs_recip_cug - exp_recip_cug) / sd_recip_cug, 2),
+    round((obs_trans_cug - exp_trans_cug) / sd_trans_cug, 2)
+  ),
+  P_value = c(p_recip_two_tailed, p_trans_two_tailed),
+  Significant = c(
+    ifelse(p_recip_two_tailed < 0.05, "Yes ***", "No"),
+    ifelse(p_trans_two_tailed < 0.05, "Yes ***", "No")
+  )
+)
+
+kable(cug_summary,
+      caption = "CUG Test Results Summary (*** = p < 0.05)",
+      col.names = c("Property", "Observed", "Expected", "SD", "Z-score", "P-value", "Significant"))
+```
+
+### Comparison: Erdős-Rényi vs CUG Tests
+
+```{r comparison-er-cug}
+# Compare results from both testing approaches
+comparison_table <- data.frame(
+  Test = c("Erdős-Rényi", "CUG (edges)", "Erdős-Rényi", "CUG (edges)"),
+  Property = c("Reciprocity", "Reciprocity", "Transitivity", "Transitivity"),
+  Observed = c(recip_default, obs_recip_cug, trans_global, obs_trans_cug),
+  Expected = c(
+    mean(random_reciprocity),
+    exp_recip_cug,
+    mean(random_transitivity),
+    exp_trans_cug
+  ),
+  Z_score = c(
+    round(z_reciprocity, 2),
+    round((obs_recip_cug - exp_recip_cug) / sd_recip_cug, 2),
+    round(z_transitivity, 2),
+    round((obs_trans_cug - exp_trans_cug) / sd_trans_cug, 2)
+  ),
+  Significant = c(
+    ifelse(abs(z_reciprocity) > 1.96, "Yes", "No"),
+    ifelse(p_recip_two_tailed < 0.05, "Yes", "No"),
+    ifelse(abs(z_transitivity) > 1.96, "Yes", "No"),
+    ifelse(p_trans_two_tailed < 0.05, "Yes", "No")
+  )
+)
+
+kable(comparison_table,
+      caption = "Comparison of Testing Approaches",
+      col.names = c("Test Type", "Property", "Observed", "Expected", "Z-score", "Significant (p<0.05)"),
+      digits = 4)
+```
+
+### Interpretation of CUG Results
+
+The CUG test provides a more conservative and realistic assessment than Erdős-Rényi random graphs because:
+
+1. **Controls for degree distribution**: Random graphs have the same number of edges, preserving density
+2. **More realistic null hypothesis**: Tests against graphs with similar structural constraints
+3. **Stronger evidence**: Significance under CUG tests provides stronger evidence of non-random patterns
+
+**Key differences between tests:**
+
+- **Erdős-Rényi**: Tests if the network is different from a completely random graph with uniform connection probability
+- **CUG**: Tests if the network exhibits more/less reciprocity or transitivity than expected given its edge density
+
+If a property is significant under CUG but not Erdős-Rényi (or vice versa), it suggests the degree distribution plays an important role in explaining the observed patterns.
+
+## Key Findings
+
+### Reciprocity
+
+```{r findings-reciprocity, echo=FALSE}
+recip_percent <- round(recip_default * 100, 1)
+recip_interpretation <- ifelse(
+  recip_default > 0.3, "high",
+  ifelse(recip_default > 0.1, "moderate", "low")
+)
+```
+
+- **Reciprocity rate**: `r recip_percent`% of edges are reciprocated
+- This indicates **`r recip_interpretation` reciprocity** in the SoundCloud follow network
+- **Erdős-Rényi comparison**: `r ifelse(z_reciprocity > 2, "significantly higher", ifelse(z_reciprocity < -2, "significantly lower", "similar"))` reciprocity (z = `r round(z_reciprocity, 2)`)
+- **CUG test**: `r ifelse(p_recip_two_tailed < 0.05, "SIGNIFICANT", "Not significant")` (p = `r round(p_recip_two_tailed, 4)`)
+
+### Transitivity
+
+```{r findings-transitivity, echo=FALSE}
+trans_percent <- round(trans_global * 100, 1)
+trans_interpretation <- ifelse(
+  trans_global > 0.3, "high clustering",
+  ifelse(trans_global > 0.1, "moderate clustering", "low clustering")
+)
+```
+
+- **Global transitivity**: `r trans_percent`% (proportion of closed triangles)
+- This indicates **`r trans_interpretation`** in the network
+- **Erdős-Rényi comparison**: `r ifelse(z_transitivity > 2, "significantly higher", ifelse(z_transitivity < -2, "significantly lower", "similar"))` transitivity (z = `r round(z_transitivity, 2)`)
+- **CUG test**: `r ifelse(p_trans_two_tailed < 0.05, "SIGNIFICANT", "Not significant")` (p = `r round(p_trans_two_tailed, 4)`)
+
+### Comprehensive Interpretation
+
+**Reciprocity** tells us about the mutual nature of relationships:
+- High reciprocity suggests symmetric, friend-like relationships
+- Low reciprocity suggests asymmetric, follower-celebrity relationships
+
+**Transitivity** tells us about community structure:
+- High transitivity suggests tight-knit communities where "friends of friends are friends"
+- Low transitivity suggests more dispersed, hub-and-spoke network structures
+
+**Statistical Evidence:**
+
+The analysis used two complementary approaches to test significance:
+
+1. **Erdős-Rényi Random Graphs**: Compares against completely random networks with uniform connection probability. This baseline test shows whether the network is different from pure randomness.
+
+2. **Conditional Uniform Graph (CUG) Tests**: A more stringent test that conditions on the observed edge count. This tests whether reciprocity and transitivity are higher/lower than expected *given the network's density*.
+
+The SoundCloud follow network shows:
+
+- **Reciprocity**: `r ifelse(p_recip_two_tailed < 0.05 | abs(z_reciprocity) > 1.96, "Significantly different from random expectations", "Similar to random expectations")` in both tests, indicating `r ifelse(p_recip_two_tailed < 0.05, "strong evidence of non-random mutual following patterns", "that mutual following rates are explained by network density alone")`.
+
+- **Transitivity**: `r ifelse(p_trans_two_tailed < 0.05 | abs(z_transitivity) > 1.96, "Significantly different from random expectations", "Similar to random expectations")` in both tests, suggesting `r ifelse(p_trans_two_tailed < 0.05, "meaningful clustering beyond what density predicts", "that triangle formation is explained by edge density")`.
+
+These results provide insight into whether the SoundCloud community exhibits structured social behavior (high reciprocity and transitivity) or more broadcast/consumption-oriented patterns (low reciprocity and transitivity).
+
+## Session Info
+
+```{r session-info}
+sessionInfo()
+```

@@ -55,11 +55,23 @@ This week we analyze SoundCloud's recommendation system challenge through the le
 Explore how network structure informs content discovery and recommendation algorithms using real SoundCloud data.
 
 - Analyze creator collaboration patterns and influence propagation
-- Identify taste-making nodes and community structures  
+- Identify taste-making nodes and community structures
 - Evaluate different recommendation approaches using network metrics
 - Examine user engagement patterns and platform dynamics
 
 The EDA provides a comprehensive analysis of the SoundCloud dataset covering users, tracks, social connections, and engagement patterns from 2019-2020.
+
+**📊 [SoundCloud Network Properties Analysis - Reciprocity & Transitivity](network_properties.qmd)**
+
+Test for fundamental network properties in the SoundCloud follow network:
+
+- Calculate and interpret reciprocity (mutual following patterns)
+- Analyze transitivity/clustering (triangle formation tendency)
+- Compare observed properties against random network baselines
+- Conduct rigorous statistical tests (Erdős-Rényi and CUG tests)
+- Understand what these patterns reveal about community structure
+
+This analysis uses both classical random graph comparisons and Conditional Uniform Graph (CUG) tests to rigorously evaluate whether the SoundCloud network exhibits structured social patterns.
 
 :::
 
