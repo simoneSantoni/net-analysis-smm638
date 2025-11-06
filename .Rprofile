@@ -64,3 +64,8 @@ if (interactive()) {
   try(utils::loadhistory(".Rhistory"), silent = TRUE)
   .Last <- function() try(utils::savehistory(".Rhistory"), silent = TRUE)
 }
+
+# R attach
+if (interactive() && Sys.getenv("RSTUDIO") == "") {
+  source(file.path(Sys.getenv(if (.Platform$OS.type == "windows") "USERPROFILE" else "HOME"), ".vscode-R", "init.R"))
+}

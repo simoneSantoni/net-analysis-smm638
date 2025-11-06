@@ -50,13 +50,16 @@ This week we analyze SoundCloud's recommendation system challenge through the le
 
 **Hands-on Analysis**: Network-based recommendation systems
 
-Explore how network structure informs content discovery and recommendation algorithms.
+**📊 [SoundCloud Network Data - Exploratory Data Analysis](soundcloud_eda.qmd)**
+
+Explore how network structure informs content discovery and recommendation algorithms using real SoundCloud data.
 
 - Analyze creator collaboration patterns and influence propagation
-- Identify taste-making nodes and community structures
+- Identify taste-making nodes and community structures  
 - Evaluate different recommendation approaches using network metrics
+- Examine user engagement patterns and platform dynamics
 
-Materials will be provided during the session.
+The EDA provides a comprehensive analysis of the SoundCloud dataset covering users, tracks, social connections, and engagement patterns from 2019-2020.
 
 :::
 

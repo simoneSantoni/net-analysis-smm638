@@ -1,0 +1,59 @@
+{
+  // R Extension Settings
+  "r.bracketedPaste": true,
+  "r.sessionWatcher": true,
+  "r.alwaysUseActiveTerminal": true,
+  
+  // Disable httpgd to prevent errors
+  "r.plot.useHttpgd": false,
+  
+  // R Path Settings (adjust paths as needed for your system)
+  "r.rterm.windows": "C:\\Program Files\\R\\R-4.3.0\\bin\\x64\\R.exe",
+  "r.rpath.windows": "C:\\Program Files\\R\\R-4.3.0\\bin\\x64\\R.exe",
+  "r.rterm.mac": "/usr/local/bin/R",
+  "r.rpath.mac": "/usr/local/bin/R",
+  "r.rterm.linux": "/usr/bin/R",
+  "r.rpath.linux": "/usr/bin/R",
+  
+  // R terminal options
+  "r.rterm.option": [
+    "--no-save",
+    "--no-restore",
+    "--quiet"
+  ],
+  
+  // LSP settings
+  "r.lsp.enabled": true,
+  "r.lsp.diagnostics": true,
+  "r.lsp.debug": false,
+  
+  // Plot settings
+  "r.plot.defaults": {
+    "width": 7,
+    "height": 7,
+    "pointsize": 12
+  },
+  
+  // Code formatting
+  "[r]": {
+    "editor.defaultFormatter": "REditorSupport.r",
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "on"
+  },
+  
+  // File associations
+  "files.associations": {
+    "*.R": "r",
+    "*.Rmd": "rmarkdown",
+    "*.qmd": "quarto",
+    "*.Rproj": "xml",
+    ".Rprofile": "r",
+    ".Renviron": "properties"
+  },
+  
+  // Quarto settings (if using Quarto)
+  "quarto.render.previewType": "external",
+  "quarto.assist.activate": true
+}
