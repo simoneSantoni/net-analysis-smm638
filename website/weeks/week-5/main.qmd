@@ -1,7 +1,7 @@
 ---
 title: "Week 5"
 format: html
-subtitle: "Dyads, triads, and network dynamics - case discussion"
+subtitle: "Network dynamics and platform ecosystems - case discussion"
 date: "today"
 callout-appearance: "default"
 ---
@@ -13,7 +13,9 @@ callout-appearance: "default"
 
 📖 Review [Week 4 materials](../week-4/main.qmd) on dyads, triads, and network dynamics
 
-📖 Revise theoretical concepts: dyadic reciprocity, triadic closure, and network evolution
+📖 Read the case study: **"SoundCloud: Tuning the Algorithm of Discovery"** (available in Moodle's case studies section)
+
+📖 Revise key concepts: network effects, multi-layered networks, and creator-listener dynamics
 
 :::
 
@@ -22,9 +24,20 @@ callout-appearance: "default"
 ::: {.callout-note}
 ## 👥
 
-🙋 **Case Discussion**: Applying dyadic and triadic analysis to real-world networks
+🙋 **Case Discussion**: "SoundCloud: Tuning the Algorithm of Discovery"
 
-This week we focus on applying dyadic and triadic concepts through case study discussion.
+This week we analyze SoundCloud's recommendation system challenge through the lens of network science. CEO Michael Weissman must choose between three strategic options for overhauling the platform's music discovery engine:
+
+1. **License existing technology** from Google, Amazon, or Spotify
+2. **Build a proprietary network analysis system** leveraging creator-listener relationships
+3. **Develop a hybrid human-algorithmic approach** combining community curation with machine learning
+
+**Key Discussion Questions**:
+
+- How does SoundCloud's multi-layered network structure (creators ↔ listeners ↔ content) create unique opportunities for recommendation systems?
+- What network metrics could identify emerging artists and musical trends before they become mainstream?
+- How should SoundCloud balance algorithm-driven discovery with maintaining its creator community culture?
+- What are the strategic trade-offs between speed-to-market, competitive differentiation, and technical risk?
 
 :::
 
@@ -33,7 +46,13 @@ This week we focus on applying dyadic and triadic concepts through case study di
 ::: {.callout-note}
 ##  💻
 
-**Hands-on Analysis**: Apply network dynamics concepts to understand relationship formation and evolution
+**Hands-on Analysis**: Network-based recommendation systems
+
+Explore how network structure informs content discovery and recommendation algorithms.
+
+- Analyze creator collaboration patterns and influence propagation
+- Identify taste-making nodes and community structures
+- Evaluate different recommendation approaches using network metrics
 
 Materials will be provided during the session.
 
@@ -46,7 +65,7 @@ Materials will be provided during the session.
 
 **No Assignment This Week**
 
-This week focuses on case discussion and practical application. No performance assignment is required.
+This week focuses on case discussion and understanding how network dynamics shape platform strategy. No performance assignment is required.
 
 :::
 
@@ -55,14 +74,21 @@ This week focuses on case discussion and practical application. No performance a
 ::: {.callout-note}
 ## 🤔
 
-**From Theory to Practice: Network Dynamics in Action**
+**Platform Ecosystems and Network Effects**
 
-Reflect on how dyadic and triadic patterns shape network evolution in organizational contexts:
+Reflect on how network dynamics shape digital platform strategy and value creation:
 
-- **Reciprocity dynamics**: How do reciprocal relationships form and persist in professional networks? What factors promote or inhibit reciprocity?
-- **Triadic closure processes**: In what contexts does triadic closure accelerate network formation? When might it create insularity or echo chambers?
-- **Temporal patterns**: How do networks evolve over time? What triggers rapid structural change versus gradual evolution?
+- **Multi-sided markets**: How do platforms balance the needs of different stakeholder groups (creators vs. consumers)? When do their interests align or conflict?
+- **Network effects vs. quality**: Can platform growth dilute content quality? How can recommendation systems address the signal-to-noise problem at scale?
+- **Path dependencies**: How do early strategic decisions (e.g., SoundCloud's creator-first approach) create both opportunities and constraints for future growth?
+- **Make vs. buy decisions**: When should platforms build proprietary technology versus licensing external solutions? What factors should drive this choice?
 
-Consider applications: knowledge sharing networks (expertise flow), inter-organizational collaborations (strategic partnerships), or innovation networks (idea diffusion).
+Consider other platform examples: YouTube (creators and viewers), Airbnb (hosts and guests), Uber (drivers and riders), or GitHub (developers and projects).
+
+**Further Reading**:
+
+- **Platform strategy**: Parker, G., Van Alstyne, M., & Choudary, S. P. (2016). *Platform Revolution*. Norton.
+- **Network effects in tech**: Eisenmann, T., Parker, G., & Van Alstyne, M. (2006). "Strategies for Two-Sided Markets". *Harvard Business Review*.
+- **Recommendation systems**: Ricci, F., Rokach, L., & Shapira, B. (2015). *Recommender Systems Handbook*. Springer.
 
 :::
