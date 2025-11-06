@@ -26,8 +26,6 @@ callout-appearance: "default"
 
 🙋 **Case Discussion**: "SoundCloud: Tuning the Algorithm of Discovery"
 
-**📊 [View Presentation: SoundCloud Case Study](soundcloud_case.qmd)**
-
 This week we analyze SoundCloud's recommendation system challenge through the lens of network science. CEO Michael Weissman must choose between three strategic options for overhauling the platform's music discovery engine:
 
 1. **License existing technology** from Google, Amazon, or Spotify
