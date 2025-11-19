@@ -7,6 +7,6 @@ callout-appearance: "default"
 ---
 
 ::: {.callout-note}
-Content coming soon.
+All done here!
 
 :::

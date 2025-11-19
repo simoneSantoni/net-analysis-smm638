@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-22">
+<meta name="dcterms.date" content="2025-11-19">
 
 <title>Week 5 – SMM638 - Network Analytics</title>
 <style>
@@ -35,18 +35,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../weeks/week-4/main.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ffbf04281a9cfad039c1e61125a1472c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-0d8a476309120394edd74ac61f9e1819.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-ffbf04281a9cfad039c1e61125a1472c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b25cb6ef9275ed217fc2e4ff85f8cf91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-702d9172da3b3d749f5039613a8b0eaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b25cb6ef9275ed217fc2e4ff85f8cf91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -264,7 +265,8 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../imgs/r-module-icon-light.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../../imgs/r-module-icon-light.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../imgs/r-module-icon-light.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/simoneSantoni/net-analysis-smm638" title="Repository" class="quarto-navigation-tool px-1" aria-label="Repository"><i class="bi bi-github"></i></a>
@@ -444,8 +446,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#perform" id="toc-perform" class="nav-link" data-scroll-target="#perform">Perform</a></li>
+  <li><a href="#ponder" id="toc-ponder" class="nav-link" data-scroll-target="#ponder">Ponder</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -454,7 +466,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/week-1/main.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../../weeks/week-5/main.html">Week 5</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Week 5</h1>
-<p class="subtitle lead">Dyads, triads, and network dynamics - case discussion</p>
+<p class="subtitle lead">Network dynamics and platform ecosystems - case discussion</p>
 </div>
 
 
@@ -465,7 +477,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 22, 2025</p>
+      <p class="date">November 19, 2025</p>
     </div>
   </div>
   
@@ -477,21 +489,137 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="prepare" class="level2">
+<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>📚
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Content coming soon.</p>
+<p>📖 Review <a href="../../weeks/week-4/main.html">Week 4 materials</a> on dyads, triads, and network dynamics</p>
+<p>📖 Read the case study: <strong>“SoundCloud: Tuning the Algorithm of Discovery”</strong> (available in Moodle’s case studies section)</p>
+<p>📖 Revise key concepts: network effects, multi-layered networks, and creator-listener dynamics</p>
+</div>
+</div>
+</section>
+<section id="participate" class="level2">
+<h2 class="anchored" data-anchor-id="participate">Participate</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>👥
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🙋 <strong>Case Discussion</strong>: “SoundCloud: Tuning the Algorithm of Discovery”</p>
+<p>This week we analyze SoundCloud’s recommendation system challenge through the lens of network science. CEO Michael Weissman must choose between three strategic options for overhauling the platform’s music discovery engine:</p>
+<ol type="1">
+<li><strong>License existing technology</strong> from Google, Amazon, or Spotify</li>
+<li><strong>Build a proprietary network analysis system</strong> leveraging creator-listener relationships</li>
+<li><strong>Develop a hybrid human-algorithmic approach</strong> combining community curation with machine learning</li>
+</ol>
+<p><strong>Key Discussion Questions</strong>:</p>
+<ul>
+<li>How does SoundCloud’s multi-layered network structure (creators ↔︎ listeners ↔︎ content) create unique opportunities for recommendation systems?</li>
+<li>What network metrics could identify emerging artists and musical trends before they become mainstream?</li>
+<li>How should SoundCloud balance algorithm-driven discovery with maintaining its creator community culture?</li>
+<li>What are the strategic trade-offs between speed-to-market, competitive differentiation, and technical risk?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>💻
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Hands-on Analysis</strong>: Network-based recommendation systems</p>
+<p><strong>📊 <a href="../../weeks/week-5/soundcloud_eda.html">SoundCloud Network Data - Exploratory Data Analysis</a></strong></p>
+<p>Explore how network structure informs content discovery and recommendation algorithms using real SoundCloud data.</p>
+<ul>
+<li>Analyze creator collaboration patterns and influence propagation</li>
+<li>Identify taste-making nodes and community structures</li>
+<li>Evaluate different recommendation approaches using network metrics</li>
+<li>Examine user engagement patterns and platform dynamics</li>
+</ul>
+<p>The EDA provides a comprehensive analysis of the SoundCloud dataset covering users, tracks, social connections, and engagement patterns from 2019-2020.</p>
+<p><strong>📊 <a href="../../weeks/week-5/network_properties.html">SoundCloud Network Properties Analysis - Reciprocity &amp; Transitivity</a></strong></p>
+<p>Test for fundamental network properties in the SoundCloud follow network:</p>
+<ul>
+<li>Calculate and interpret reciprocity (mutual following patterns)</li>
+<li>Analyze transitivity/clustering (triangle formation tendency)</li>
+<li>Compare observed properties against random network baselines</li>
+<li>Conduct rigorous statistical tests (Erdős-Rényi and CUG tests)</li>
+<li>Understand what these patterns reveal about community structure</li>
+</ul>
+<p>This analysis uses both classical random graph comparisons and Conditional Uniform Graph (CUG) tests to rigorously evaluate whether the SoundCloud network exhibits structured social patterns.</p>
+</div>
+</div>
+</section>
+<section id="perform" class="level2">
+<h2 class="anchored" data-anchor-id="perform">Perform</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>📝
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>No Assignment This Week</strong></p>
+<p>This week focuses on case discussion and understanding how network dynamics shape platform strategy. No performance assignment is required.</p>
+</div>
+</div>
+</section>
+<section id="ponder" class="level2">
+<h2 class="anchored" data-anchor-id="ponder">Ponder</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>🤔
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Platform Ecosystems and Network Effects</strong></p>
+<p>Reflect on how network dynamics shape digital platform strategy and value creation:</p>
+<ul>
+<li><strong>Multi-sided markets</strong>: How do platforms balance the needs of different stakeholder groups (creators vs.&nbsp;consumers)? When do their interests align or conflict?</li>
+<li><strong>Network effects vs.&nbsp;quality</strong>: Can platform growth dilute content quality? How can recommendation systems address the signal-to-noise problem at scale?</li>
+<li><strong>Path dependencies</strong>: How do early strategic decisions (e.g., SoundCloud’s creator-first approach) create both opportunities and constraints for future growth?</li>
+<li><strong>Make vs.&nbsp;buy decisions</strong>: When should platforms build proprietary technology versus licensing external solutions? What factors should drive this choice?</li>
+</ul>
+<p>Consider other platform examples: YouTube (creators and viewers), Airbnb (hosts and guests), Uber (drivers and riders), or GitHub (developers and projects).</p>
+<p><strong>Further Reading</strong>:</p>
+<ul>
+<li><strong>Platform strategy</strong>: Parker, G., Van Alstyne, M., &amp; Choudary, S. P. (2016). <em>Platform Revolution</em>. Norton.</li>
+<li><strong>Network effects in tech</strong>: Eisenmann, T., Parker, G., &amp; Van Alstyne, M. (2006). “Strategies for Two-Sided Markets”. <em>Harvard Business Review</em>.</li>
+<li><strong>Recommendation systems</strong>: Ricci, F., Rokach, L., &amp; Shapira, B. (2015). <em>Recommender Systems Handbook</em>. Springer.</li>
+</ul>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -558,13 +686,14 @@ Note
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

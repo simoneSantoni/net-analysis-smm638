@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="SMM638 Network Analytics">
   <title>SMM638 - Network Analytics – Networks, Network Analysis &amp; Business Relevance</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link rel="stylesheet" href="../../slideshow-theme.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -360,7 +360,7 @@ SMM638 Network Analytics
 <div class="cell" data-reveal="true" data-layout-align="default">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a></a>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a></a>%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'18px', 'primaryColor':'#9B59B6', 'primaryBorderColor':'#8E44AD', 'primaryTextColor':'#000000', 'gridColor':'#000000', 'lineColor':'#000000', 'doneTaskBkgColor':'#D3D3D3', 'doneTaskBorderColor':'#A9A9A9', 'activeTaskBkgColor':'#D3D3D3', 'activeTaskBorderColor':'#A9A9A9', 'taskBkgColor':'#D3D3D3', 'taskBorderColor':'#A9A9A9', 'critBkgColor':'#9B59B6', 'critBorderColor':'#8E44AD', 'todayLineColor':'#FF0000'}}}%%</span>
 <span id="cb1-2"><a></a>gantt</span>
 <span id="cb1-3"><a></a>    title Gantt chart of the module</span>
 <span id="cb1-4"><a></a>    dateFormat YYYY-MM-DD</span>
@@ -378,7 +378,7 @@ SMM638 Network Analytics
 <span id="cb1-16"><a></a>    Who is the right influencer?:crit, milestone, case1, 2025-10-15, 0d</span>
 <span id="cb1-17"><a></a>    Feeding Soundcloud's recommendation system:crit, milestone, case2, 2025-10-29, 0d</span>
 <span id="cb1-18"><a></a>    Profiling beer enthusiasts:crit, milestone, case3, 2025-11-19, 0d</span>
-<span id="cb1-19"><a></a>    Employee performance:crit, milestone, case4, 2025-12-10, 0d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-19"><a></a>    Employee performance:crit, milestone, case4, 2025-12-10, 0d</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -614,7 +614,7 @@ gantt
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -688,13 +688,14 @@ gantt
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

@@ -1,13 +1,234 @@
 ---
 title: "Final Course Project"
 format: html
-subtitle: "Individual Network Analysis Research"
+subtitle: "Community Detection for Customer Segmentation"
 date: "today"
 ---
 
+## Project Overview
+
+This final project requires you to **design a comprehensive analytical approach** to solve a real-world business problem: customer segmentation for a music streaming platform. You will develop a research design document that addresses how Elena Martinez, Chief Data Scientist at a European music streaming platform, should approach a network-based customer segmentation strategy.
 
 ::: {.callout-note}
-Content coming soon.
+## Key Focus: Design, Not Implementation
 
+This project emphasizes **analytical design and strategic thinking** rather than coding and model implementation. You are creating a blueprint for analysis, not conducting the full analysis itself.
 :::
+
+## Background
+
+Traditional demographic segmentation (age, location, subscription tier) has proven inadequate for music streaming platforms. Music preferences transcend demographic boundaries—a 45-year-old executive might share the same taste in electronic music as a 22-year-old student. The platform needs a better way to segment 6 million active listeners based on their genre preferences and social connections.
+
+## The Business Challenge
+
+Elena Martinez's team at a major European music streaming platform faces a critical decision: should they move from demographic segmentation to a genre-based, network-driven approach? If so, how should they implement it?
+
+The fundamental insight is that **genres cluster naturally based on audience similarity**—genres that share overlapping listener bases tend to form communities. But there's also a social dimension: users connect with friends on the platform, and these social ties might influence genre preferences.
+
+## Your Task
+
+You will develop a **research design document** that proposes how to analyze the Deezer platform data and address Elena's challenge. Your design should articulate:
+
+1. **The analytical approach** to understanding genre preferences and social connections
+2. **The methodological rationale** for community detection methods
+3. **A comparison framework** for evaluating different segmentation approaches
+4. **Strategic recommendations** for business implementation
+
+## Data
+
+You have been provided with real data from 54,573 Deezer users in Croatia:
+
+- **Genre preferences** (`HR_genres.json`): User listening habits across 84 music genres
+- **Social network** (`HR_edges.csv`): 498,202 friendship connections between users
+
+::: {.callout-tip}
+## Data Location
+
+- Genre preferences: [HR_genres.json](https://github.com/simoneSantoni/net-analysis-smm638/blob/master/data/deezer/HR_genres.json)
+- Social edges: [HR_edges.csv](https://github.com/simoneSantoni/net-analysis-smm638/blob/master/data/deezer/HR_edges.csv)
+:::
+
+## Required Document Components
+
+Your research design document should address the following:
+
+### 1. Problem Framing and Context
+
+- Articulate the limitations of current demographic segmentation
+- Explain the rationale for a network-based approach
+- Define the scope and objectives of your proposed analysis
+
+### 2. Data and Network Architecture
+
+- Describe your approach to representing the available data as network(s)
+- Justify your choices of network representations
+- Identify relevant network properties to explore
+
+### 3. Methodological Design
+
+- Propose methods for measuring relationships between genres
+- Propose strategies for identifying communities or clusters
+- Explain how you would evaluate the quality of your segmentation
+- Justify your methodological choices
+
+### 4. Comparative Analysis
+
+- Compare different analytical approaches you could take
+- Discuss trade-offs, data requirements, and expected outcomes
+- Recommend which approach is most suitable and why
+
+### 5. Business Strategy and Implementation
+
+- Translate your technical approach into business value
+- Propose validation strategies to assess impact
+- Address practical implementation considerations
+
+## Deliverable
+
+::: {.callout-warning}
+## Single Document Submission
+
+You must submit **one discursive research design document** that addresses all case questions.
+:::
+
+### Document Specifications
+
+- **Format**: PDF
+- **Length**: Approximately **3,000 words** (±10% acceptable)
+- **Structure**: Essay format with clear sections corresponding to the required components
+- **Style**: Professional business-academic writing
+- **References**: Cite course materials, academic literature, and the teaching case
+- **Figures/Tables**: Include conceptual diagrams where helpful (optional, do not count toward word limit)
+
+### Document Structure
+
+Your document should flow as a cohesive narrative, but should address:
+
+1. **Executive Summary** (200-300 words)
+   - Brief overview of the business problem and your proposed approach
+
+2. **Problem Analysis** (400-500 words)
+   - Context and limitations of current demographic segmentation
+   - Rationale for network-based approach
+
+3. **Methodological Design** (1200-1500 words)
+   - Network construction approach
+   - Similarity measurement strategies
+   - Community detection methodology
+   - Quality evaluation metrics
+
+4. **Comparative Framework** (600-800 words)
+   - Comparison of different clustering approaches
+   - Trade-offs and expected outcomes
+
+5. **Business Recommendations** (400-600 words)
+   - Strategic implications
+   - Implementation roadmap
+   - Validation strategy
+
+6. **Conclusion** (200-300 words)
+   - Summary of key insights and recommendations
+
+::: {.callout-note}
+## Note on Implementation
+
+You are **not required** to write code or implement the analysis. This is a **design document** that proposes how the analysis should be conducted. Focus on demonstrating your understanding of network analysis concepts and their business application.
+:::
+
+## Evaluation Criteria
+
+Your project will be evaluated based on:
+
+| Criterion | Weight | Description |
+|-----------|--------|-------------|
+| **Conceptual Understanding** | 35% | Depth of understanding of network analysis concepts; appropriateness of proposed methods; theoretical justification |
+| **Analytical Design** | 30% | Quality of research design; comparison of multiple approaches; understanding of trade-offs and limitations |
+| **Business Insight** | 25% | Translation of technical concepts into business value; strategic thinking; practical implementation considerations |
+| **Communication** | 10% | Clarity and coherence of writing; logical structure; professional presentation |
+
+## Key Questions to Address
+
+Your analysis should answer:
+
+::: {.callout-important}
+## Core Questions
+
+1. **How would you analyze this data to persuade the advisory board to fund the innovative, network-based approach to customer segmentation?**
+   - What evidence demonstrates the limitations of demographic segmentation?
+   - What insights does network analysis provide that traditional methods miss?
+
+2. **What are the expected advantages of genre-based segmentation over demographic segmentation?**
+   - How does it improve recommendation accuracy?
+   - How does it enable better targeting for marketing campaigns?
+   - What operational efficiencies might it create?
+
+3. **How might the identified communities change if we include social network data?**
+   - Do social connections reveal different genre communities than preference overlap alone?
+   - Which approach (preference-only, network-enhanced, or dual) is most valuable?
+
+4. **How could the platform validate whether these communities lead to better business outcomes?**
+   - What metrics would you track (engagement, retention, revenue)?
+   - What A/B test would you design?
+   - What are the risks and limitations?
+:::
+
+## Writing Guidance
+
+::: {.callout-tip collapse="true"}
+## Tips for Design Documents
+
+1. **Be specific**: Identify and name the specific methods you propose
+2. **Justify your choices**: Explain why your chosen methods are appropriate for this context
+3. **Consider trade-offs**: Discuss advantages and limitations of different approaches
+4. **Link technical to business**: Always connect analytical choices to business objectives
+5. **Be realistic**: Acknowledge data quality, computational, and organizational constraints
+6. **Structure logically**: Each section should flow naturally into the next
+7. **Write professionally**: Address your audience (Elena and the advisory board)
+:::
+
+## Resources
+
+- **Course materials**: All lectures and readings from SMM638
+- **Teaching case**: Case NA-2024-CD-012 (Community Detection for Customer Segmentation)
+- **Academic reference**: Xu, J. et al. (2025). "The dual clustering of tastes and ties." *Poetics*.
+
+## Submission Details
+
+::: {.callout-warning}
+## Submission Requirements
+
+- **Due date**: [To be specified by instructor]
+- **Format**: Single PDF document
+- **Filename**: `SMM638_FinalProject_[YourName].pdf`
+- **Submission method**: Via course learning management system
+:::
+
+## Academic Integrity
+
+- This is an **individual project**
+- You may discuss high-level approaches with classmates, but your written document must be your own work
+- Properly cite all sources, including course materials, academic papers, and the teaching case
+- Use of AI tools (e.g., ChatGPT) for writing assistance must be disclosed in your document
+- Plagiarism or inappropriate collaboration will result in academic penalties
+
+## Tips for Success
+
+::: {.callout-tip collapse="true"}
+## Click to expand tips
+
+1. **Read the teaching case carefully**: Understand Elena's challenge and the business context
+2. **Review course materials**: Draw on relevant lectures and concepts from the course
+3. **Be specific**: Name specific methods and explain your reasoning
+4. **Think strategically**: This is a business decision, not just a technical exercise
+5. **Consider constraints**: Address real-world implementation challenges
+6. **Write clearly**: Use logical structure and clear transitions
+7. **Proofread**: Check for errors before submitting
+8. **Stay within word count**: Conciseness is a professional skill
+:::
+
+---
+
+**Questions?** Contact the instructor or post in the course discussion forum.
+
+**Good luck!** This project is your opportunity to demonstrate mastery of network analysis methods while solving a realistic business problem
 
