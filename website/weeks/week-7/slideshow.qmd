@@ -12,7 +12,7 @@ format:
     css: ../../slideshow-theme.css
     code-fold: true
     code-summary: ""
-jupyter: python3
+
 ---
 
 ## Part 1: Network Communities
@@ -64,16 +64,16 @@ What we will learn (Weeks 7 and 8):
 
 ## Example: Academic Department
 
-```python
+```r
 # Two orthogonal dimensions of structure
 
 # Communities (based on direct interaction)
-ML_group = ["Prof_A", "PhD_1", "PhD_2"]
-Theory_group = ["Prof_B", "PhD_3", "PhD_4"]
+ML_group <- c("Prof_A", "PhD_1", "PhD_2")
+Theory_group <- c("Prof_B", "PhD_3", "PhD_4")
 
 # Positions (based on role similarity)
-Senior = ["Prof_A", "Prof_B"]  # Both advise
-Junior = ["PhD_1", "PhD_2", "PhD_3", "PhD_4"]  # All advised
+Senior <- c("Prof_A", "Prof_B")  # Both advise
+Junior <- c("PhD_1", "PhD_2", "PhD_3", "PhD_4")  # All advised
 ```
 
 A junior ML researcher and junior theorist:
@@ -146,20 +146,19 @@ Homophily → dense cohesive groups → small-world structure
 
 ## Weak Ties: Visual Demonstration
 
-```python
-import networkx as nx
-import matplotlib.pyplot as plt
+```r
+library(igraph)
 
 # Two dense communities
-G = nx.complete_graph(10)
-H = nx.complete_graph(10)
-G = nx.disjoint_union(G, H)
+g1 <- make_full_graph(10)
+g2 <- make_full_graph(10)
+g <- disjoint_union(g1, g2)
 
 # Add weak tie bridges
-G.add_edges_from([(5, 15), (7, 17), (2, 12)])
+g <- add_edges(g, c(5,15, 7,17, 2,12))
 
 # Calculate betweenness
-btw = nx.edge_betweenness_centrality(G)
+btw <- edge_betweenness(g)
 
 # Weak ties have highest betweenness!
 # They are bottlenecks for information flow
@@ -202,16 +201,16 @@ Small-world = "Best of both worlds"
 
 ## Creating a Small-World Network
 
-```python
+```r
 # Watts-Strogatz model
-import networkx as nx
+library(igraph)
 
-n = 100      # nodes
-k = 6        # neighbors
-p = 0.1      # rewiring probability
+n <- 100      # nodes
+k <- 6        # neighbors
+p <- 0.1      # rewiring probability
 
 # Start with ring, rewire 10% of edges
-G = nx.watts_strogatz_graph(n, k, p)
+g <- watts.strogatz.game(1, n, k/2, p)
 
 # Result: high clustering (like regular)
 #         + short paths (like random)
@@ -316,15 +315,15 @@ $$Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i
 
 Many algorithms have a **resolution** parameter controlling granularity:
 
-```python
+```r
 # Higher resolution → more, smaller communities
-communities_fine = louvain(G, resolution=2.0)  # 8 communities
+communities_fine <- cluster_louvain(g, resolution=2.0)  # 8 communities
 
 # Default resolution
-communities_default = louvain(G, resolution=1.0)  # 4 communities
+communities_default <- cluster_louvain(g, resolution=1.0)  # 4 communities
 
 # Lower resolution → fewer, larger communities  
-communities_coarse = louvain(G, resolution=0.5)  # 2 communities
+communities_coarse <- cluster_louvain(g, resolution=0.5)  # 2 communities
 ```
 
 **Choice depends on your research question**
@@ -400,20 +399,18 @@ Most common in practice: **Structural equivalence**
 
 ## Measuring Structural Equivalence
 
-```python
-import numpy as np
-from scipy.spatial.distance import pdist, squareform
+```r
+library(igraph)
 
 # Adjacency matrix
-A = [[0, 1, 1, 0],
-     [1, 0, 1, 0],
-     [0, 0, 0, 1],
-     [0, 0, 1, 0]]
+A <- matrix(c(0, 1, 1, 0,
+              1, 0, 1, 0,
+              0, 0, 0, 1,
+              0, 0, 1, 0), nrow=4, byrow=TRUE)
 
-# Correlation distance (1 - correlation)
-# Nodes with similar tie profiles have high correlation
-corr = np.corrcoef(A)
-equivalence = corr  # Higher = more equivalent
+# Correlation (nodes with similar tie profiles)
+# cor() correlates columns, so transpose for row profiles
+equivalence <- cor(t(A))  # Higher = more equivalent
 ```
 
 ---
