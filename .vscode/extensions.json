@@ -1,5 +1,6 @@
 {
 	"recommendations": [
-		"anthropic.claude-code"
+		"anthropic.claude-code",
+		"julialang.language-julia"
 	]
 }

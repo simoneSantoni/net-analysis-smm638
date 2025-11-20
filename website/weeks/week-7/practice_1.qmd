@@ -1,0 +1,600 @@
+---
+title: "Community Detection in R"
+subtitle: "Identifying cohesive subgroups in networks"
+format: 
+  html:
+    code-fold: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+execute:
+  warning: false
+  message: false
+---
+
+# Introduction
+
+This tutorial demonstrates how to detect and analyze communities in networks using R. We'll explore multiple algorithms, compare their results, and learn how to assess community structure quality.
+
+## Learning Objectives
+
+By the end of this tutorial, you will be able to:
+
+- Implement multiple community detection algorithms in R
+- Calculate and interpret modularity scores
+- Compare community detection methods
+- Visualize community structure
+- Assess the quality and robustness of detected communities
+
+## Required Packages
+
+```{r}
+#| label: setup
+
+# Load required packages
+library(igraph)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(patchwork)
+
+# Set seed for reproducibility
+set.seed(42)
+```
+
+# Loading and Exploring Network Data
+
+## Example 1: Karate Club Network
+
+We'll start with the classic Zachary's Karate Club network - a well-studied network documenting social interactions in a karate club that eventually split into two groups.
+
+```{r}
+#| label: load-karate
+
+# Load the karate club network
+karate <- make_graph("Zachary")
+
+# Basic network statistics
+cat("Network size:", vcount(karate), "nodes\n")
+cat("Network edges:", ecount(karate), "edges\n")
+cat("Network density:", edge_density(karate), "\n")
+cat("Average clustering:", transitivity(karate, type = "average"), "\n")
+```
+
+## Visualizing the Original Network
+
+```{r}
+#| label: viz-original
+#| fig-width: 8
+#| fig-height: 6
+
+# Set layout for consistent visualization
+set.seed(42)
+layout_karate <- layout_with_fr(karate)
+
+# Plot the network
+plot(karate,
+     layout = layout_karate,
+     vertex.size = 10,
+     vertex.label.cex = 0.7,
+     vertex.color = "lightblue",
+     vertex.frame.color = "darkblue",
+     edge.color = "gray80",
+     main = "Zachary's Karate Club Network")
+```
+
+# Community Detection Algorithms
+
+## Method 1: Louvain Algorithm
+
+The Louvain algorithm is a fast, hierarchical method that maximizes modularity.
+
+```{r}
+#| label: louvain
+
+# Detect communities using Louvain
+louvain_comm <- cluster_louvain(karate)
+
+# Summary statistics
+cat("Number of communities:", length(louvain_comm), "\n")
+cat("Modularity:", modularity(louvain_comm), "\n")
+cat("Community sizes:", sizes(louvain_comm), "\n")
+
+# Community membership
+print(membership(louvain_comm))
+```
+
+### Visualizing Louvain Communities
+
+```{r}
+#| label: viz-louvain
+#| fig-width: 8
+#| fig-height: 6
+
+# Define colors for communities
+colors <- c("coral", "lightblue", "lightgreen", "gold", "plum")
+
+plot(louvain_comm, karate,
+     layout = layout_karate,
+     vertex.size = 10,
+     vertex.label.cex = 0.7,
+     edge.color = "gray80",
+     main = paste0("Louvain Algorithm\nModularity = ", 
+                   round(modularity(louvain_comm), 3)))
+```
+
+## Method 2: Edge Betweenness
+
+The edge betweenness algorithm identifies communities by removing edges with high betweenness.
+
+```{r}
+#| label: edge-betweenness
+
+# Detect communities using edge betweenness
+eb_comm <- cluster_edge_betweenness(karate)
+
+cat("Number of communities:", length(eb_comm), "\n")
+cat("Modularity:", modularity(eb_comm), "\n")
+cat("Community sizes:", sizes(eb_comm), "\n")
+```
+
+### Visualizing Edge Betweenness Communities
+
+```{r}
+#| label: viz-edge-betweenness
+#| fig-width: 8
+#| fig-height: 6
+
+plot(eb_comm, karate,
+     layout = layout_karate,
+     vertex.size = 10,
+     vertex.label.cex = 0.7,
+     edge.color = "gray80",
+     main = paste0("Edge Betweenness Algorithm\nModularity = ", 
+                   round(modularity(eb_comm), 3)))
+```
+
+## Method 3: Walktrap
+
+The walktrap algorithm uses random walks to identify communities.
+
+```{r}
+#| label: walktrap
+
+# Detect communities using walktrap
+walktrap_comm <- cluster_walktrap(karate)
+
+cat("Number of communities:", length(walktrap_comm), "\n")
+cat("Modularity:", modularity(walktrap_comm), "\n")
+cat("Community sizes:", sizes(walktrap_comm), "\n")
+```
+
+### Visualizing Walktrap Communities
+
+```{r}
+#| label: viz-walktrap
+#| fig-width: 8
+#| fig-height: 6
+
+plot(walktrap_comm, karate,
+     layout = layout_karate,
+     vertex.size = 10,
+     vertex.label.cex = 0.7,
+     edge.color = "gray80",
+     main = paste0("Walktrap Algorithm\nModularity = ", 
+                   round(modularity(walktrap_comm), 3)))
+```
+
+## Method 4: Leading Eigenvector (Spectral)
+
+This method uses the leading eigenvector of the modularity matrix.
+
+```{r}
+#| label: spectral
+
+# Detect communities using leading eigenvector
+spectral_comm <- cluster_leading_eigen(karate)
+
+cat("Number of communities:", length(spectral_comm), "\n")
+cat("Modularity:", modularity(spectral_comm), "\n")
+cat("Community sizes:", sizes(spectral_comm), "\n")
+```
+
+### Visualizing Spectral Communities
+
+```{r}
+#| label: viz-spectral
+#| fig-width: 8
+#| fig-height: 6
+
+plot(spectral_comm, karate,
+     layout = layout_karate,
+     vertex.size = 10,
+     vertex.label.cex = 0.7,
+     edge.color = "gray80",
+     main = paste0("Spectral Method\nModularity = ", 
+                   round(modularity(spectral_comm), 3)))
+```
+
+## Method 5: Fast Greedy
+
+A hierarchical agglomerative algorithm that's fast for large networks.
+
+```{r}
+#| label: fast-greedy
+
+# Detect communities using fast greedy
+fg_comm <- cluster_fast_greedy(karate)
+
+cat("Number of communities:", length(fg_comm), "\n")
+cat("Modularity:", modularity(fg_comm), "\n")
+cat("Community sizes:", sizes(fg_comm), "\n")
+```
+
+# Comparing Methods
+
+## Summary Comparison Table
+
+```{r}
+#| label: comparison-table
+
+# Create comparison data frame
+comparison <- data.frame(
+  Method = c("Louvain", "Edge Betweenness", "Walktrap", 
+             "Spectral", "Fast Greedy"),
+  Communities = c(length(louvain_comm), length(eb_comm), 
+                  length(walktrap_comm), length(spectral_comm), 
+                  length(fg_comm)),
+  Modularity = c(modularity(louvain_comm), modularity(eb_comm),
+                 modularity(walktrap_comm), modularity(spectral_comm),
+                 modularity(fg_comm))
+)
+
+# Display table
+knitr::kable(comparison, 
+             digits = 4,
+             caption = "Comparison of Community Detection Methods")
+```
+
+## Modularity Comparison Plot
+
+```{r}
+#| label: modularity-plot
+#| fig-width: 8
+#| fig-height: 5
+
+ggplot(comparison, aes(x = reorder(Method, Modularity), y = Modularity)) +
+  geom_col(fill = "steelblue", alpha = 0.8) +
+  geom_text(aes(label = round(Modularity, 3)), 
+            vjust = -0.5, size = 4) +
+  coord_flip() +
+  labs(title = "Modularity Scores by Community Detection Method",
+       x = "Method",
+       y = "Modularity") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold", size = 14))
+```
+
+## Agreement Between Methods
+
+Calculate how similar the community assignments are across methods.
+
+```{r}
+#| label: method-agreement
+
+# Function to calculate normalized mutual information
+calculate_nmi <- function(comm1, comm2) {
+  compare(comm1, comm2, method = "nmi")
+}
+
+# Create agreement matrix
+methods_list <- list(
+  Louvain = louvain_comm,
+  EdgeBet = eb_comm,
+  Walktrap = walktrap_comm,
+  Spectral = spectral_comm,
+  FastGreedy = fg_comm
+)
+
+# Calculate pairwise NMI
+nmi_matrix <- matrix(0, nrow = 5, ncol = 5)
+rownames(nmi_matrix) <- colnames(nmi_matrix) <- names(methods_list)
+
+for(i in 1:5) {
+  for(j in 1:5) {
+    nmi_matrix[i,j] <- calculate_nmi(methods_list[[i]], methods_list[[j]])
+  }
+}
+
+# Display as heatmap
+library(reshape2)
+nmi_long <- melt(nmi_matrix)
+
+ggplot(nmi_long, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  geom_text(aes(label = round(value, 2)), color = "white", size = 4) +
+  scale_fill_gradient2(low = "blue", mid = "purple", high = "red",
+                       midpoint = 0.5, limit = c(0, 1)) +
+  labs(title = "Agreement Between Methods (NMI)",
+       x = "", y = "", fill = "NMI") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(face = "bold", size = 14))
+```
+
+# Assessing Community Quality
+
+## Within vs. Between Community Density
+
+```{r}
+#| label: density-analysis
+
+# Function to calculate within and between community density
+analyze_density <- function(graph, communities) {
+  membership <- membership(communities)
+  n_comm <- max(membership)
+  
+  within_density <- numeric(n_comm)
+  
+  for(i in 1:n_comm) {
+    subgraph <- induced_subgraph(graph, which(membership == i))
+    within_density[i] <- edge_density(subgraph)
+  }
+  
+  # Calculate between community density
+  total_possible <- vcount(graph) * (vcount(graph) - 1) / 2
+  within_nodes <- sapply(1:n_comm, function(i) sum(membership == i))
+  within_possible <- sum(within_nodes * (within_nodes - 1) / 2)
+  between_possible <- total_possible - within_possible
+  
+  between_edges <- ecount(graph) - 
+    sum(sapply(1:n_comm, function(i) {
+      ecount(induced_subgraph(graph, which(membership == i)))
+    }))
+  
+  between_density <- between_edges / between_possible
+  
+  list(
+    within_mean = mean(within_density),
+    within_sd = sd(within_density),
+    between = between_density,
+    ratio = mean(within_density) / between_density
+  )
+}
+
+# Analyze Louvain communities
+density_stats <- analyze_density(karate, louvain_comm)
+
+cat("Within-community density (mean):", round(density_stats$within_mean, 3), "\n")
+cat("Between-community density:", round(density_stats$between, 3), "\n")
+cat("Ratio (within/between):", round(density_stats$ratio, 2), "\n")
+```
+
+## Community Size Distribution
+
+```{r}
+#| label: size-distribution
+#| fig-width: 8
+#| fig-height: 5
+
+# Create data frame of community sizes for all methods
+size_data <- data.frame(
+  Method = rep(names(methods_list), sapply(methods_list, length)),
+  Size = unlist(lapply(methods_list, sizes))
+)
+
+ggplot(size_data, aes(x = Method, y = Size, fill = Method)) +
+  geom_boxplot(alpha = 0.7) +
+  geom_jitter(width = 0.2, alpha = 0.5) +
+  labs(title = "Community Size Distribution by Method",
+       x = "Method",
+       y = "Community Size") +
+  theme_minimal() +
+  theme(legend.position = "none",
+        plot.title = element_text(face = "bold", size = 14))
+```
+
+# Resolution Parameter Exploration
+
+For algorithms that support resolution parameters (like Louvain), we can explore different levels of granularity.
+
+```{r}
+#| label: resolution-sweep
+#| fig-width: 10
+#| fig-height: 6
+
+# Sweep resolution parameter
+resolutions <- seq(0.5, 2.0, by = 0.1)
+results <- data.frame(
+  resolution = numeric(),
+  n_communities = numeric(),
+  modularity = numeric()
+)
+
+for(res in resolutions) {
+  comm <- cluster_louvain(karate, resolution = res)
+  results <- rbind(results, data.frame(
+    resolution = res,
+    n_communities = length(comm),
+    modularity = modularity(comm)
+  ))
+}
+
+# Create plots
+p1 <- ggplot(results, aes(x = resolution, y = n_communities)) +
+  geom_line(color = "steelblue", size = 1.2) +
+  geom_point(color = "steelblue", size = 3) +
+  labs(title = "Resolution vs Number of Communities",
+       x = "Resolution Parameter",
+       y = "Number of Communities") +
+  theme_minimal()
+
+p2 <- ggplot(results, aes(x = resolution, y = modularity)) +
+  geom_line(color = "coral", size = 1.2) +
+  geom_point(color = "coral", size = 3) +
+  labs(title = "Resolution vs Modularity",
+       x = "Resolution Parameter",
+       y = "Modularity") +
+  theme_minimal()
+
+p1 + p2
+```
+
+# Example 2: Larger Network (Random Scale-Free Network)
+
+Let's apply what we've learned to a larger network. We'll generate a scale-free network using the Barabási-Albert model, which is common in many real-world networks.
+
+```{r}
+#| label: larger-network
+#| fig-width: 10
+#| fig-height: 8
+
+# Generate a larger scale-free network
+set.seed(42)
+large_net <- sample_pa(n = 100, power = 1, m = 2, directed = FALSE)
+
+cat("Network size:", vcount(large_net), "nodes\n")
+cat("Network edges:", ecount(large_net), "edges\n")
+cat("Network density:", round(edge_density(large_net), 4), "\n")
+
+# Apply Louvain
+large_comm <- cluster_louvain(large_net)
+
+cat("\nCommunities detected:", length(large_comm), "\n")
+cat("Modularity:", round(modularity(large_comm), 3), "\n")
+cat("Community sizes:", sizes(large_comm), "\n")
+
+# Visualize
+set.seed(42)
+plot(large_comm, large_net,
+     vertex.size = 6,
+     vertex.label = NA,
+     edge.color = "gray90",
+     main = paste0("Scale-Free Network Communities (n=100)\n",
+                   "Louvain Algorithm, Modularity = ", 
+                   round(modularity(large_comm), 3)))
+```
+
+# Hierarchical Community Structure
+
+Some algorithms (like edge betweenness and fast greedy) create hierarchical dendrograms.
+
+```{r}
+#| label: dendrogram
+#| fig-width: 10
+#| fig-height: 6
+
+# Use fast greedy to get hierarchy
+fg_karate <- cluster_fast_greedy(karate)
+
+# Plot dendrogram
+plot(as.dendrogram(fg_karate),
+     main = "Hierarchical Community Structure\nFast Greedy Algorithm",
+     xlab = "Node",
+     ylab = "Merge Height")
+```
+
+# Stability Analysis
+
+Test how stable communities are to network perturbations.
+
+```{r}
+#| label: stability
+
+# Function to assess stability
+assess_stability <- function(graph, n_iterations = 100, 
+                             removal_prop = 0.1) {
+  
+  original_comm <- cluster_louvain(graph)
+  original_membership <- membership(original_comm)
+  
+  similarities <- numeric(n_iterations)
+  
+  for(i in 1:n_iterations) {
+    # Remove random edges
+    edges_to_remove <- sample(ecount(graph), 
+                               size = floor(ecount(graph) * removal_prop))
+    perturbed <- delete_edges(graph, edges_to_remove)
+    
+    # Detect communities in perturbed network
+    perturbed_comm <- cluster_louvain(perturbed)
+    
+    # Calculate similarity
+    similarities[i] <- compare(original_comm, perturbed_comm, 
+                               method = "nmi")
+  }
+  
+  similarities
+}
+
+# Run stability analysis
+stability_scores <- assess_stability(karate, n_iterations = 50)
+
+cat("Mean stability (NMI):", round(mean(stability_scores), 3), "\n")
+cat("SD stability:", round(sd(stability_scores), 3), "\n")
+
+# Plot
+data.frame(NMI = stability_scores) %>%
+  ggplot(aes(x = NMI)) +
+  geom_histogram(bins = 20, fill = "steelblue", alpha = 0.7) +
+  geom_vline(xintercept = mean(stability_scores), 
+             color = "red", linetype = "dashed", size = 1) +
+  labs(title = "Community Detection Stability",
+       subtitle = "After removing 10% of edges (50 iterations)",
+       x = "Normalized Mutual Information",
+       y = "Frequency") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold", size = 14))
+```
+
+# Key Takeaways
+
+1. **Multiple methods exist**: Different algorithms can produce different results. Always compare multiple approaches.
+
+2. **Modularity is key**: Higher modularity generally indicates better community structure, but it's not the only metric to consider.
+
+3. **Context matters**: The "best" method depends on your network properties and research questions.
+
+4. **Resolution matters**: Many algorithms have parameters that control the granularity of detected communities.
+
+5. **Stability is important**: Test how robust your communities are to perturbations.
+
+6. **Visual inspection helps**: Always visualize your communities to ensure they make substantive sense.
+
+# Exercises
+
+## Exercise 1: Compare Methods on Your Own Data
+
+Load a network dataset of your choice and:
+
+1. Apply at least three different community detection methods
+2. Compare their modularity scores
+3. Visualize the results
+4. Assess agreement between methods using NMI
+
+## Exercise 2: Resolution Exploration
+
+Using the Louvain algorithm:
+
+1. Sweep the resolution parameter from 0.3 to 2.5
+2. Create a plot showing how the number of communities changes
+3. Identify the "elbow point" where adding resolution stops being useful
+
+## Exercise 3: Community Characteristics
+
+For the best community structure you find:
+
+1. Calculate within vs. between community density
+2. Identify which nodes are "bridges" between communities
+3. Examine node-level attributes (if available) to see if communities correspond to meaningful groups
+
+# Additional Resources
+
+- **igraph documentation**: [Community detection reference](https://igraph.org/r/doc/communities.html)
+- **Modularity paper**: Newman & Girvan (2004), *Physical Review E*
+- **Louvain algorithm**: Blondel et al. (2008), *Journal of Statistical Mechanics*
+- **Comparison of methods**: Fortunato (2010), *Physics Reports*
+
+---
+
+**Next Steps**: After mastering community detection, proceed to `practice_2.qmd` to learn about blockmodeling and role analysis.

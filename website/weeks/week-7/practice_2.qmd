@@ -1,0 +1,397 @@
+---
+title: "Community Detection in Python"
+subtitle: "Exploring communities with NetworkX"
+format:
+  html:
+    code-fold: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+jupyter: python3
+execute:
+  warning: false
+  message: false
+---
+
+# Introduction
+
+This tutorial demonstrates how to detect and analyze communities in networks using **Python** and **NetworkX**. We'll implement several community detection algorithms, compare their results, and visualize the detected communities.
+
+## Learning Objectives
+
+By the end of this tutorial, you will be able to:
+
+- Load and explore network data in Python using NetworkX
+- Apply multiple community detection algorithms
+- Compute and interpret modularity
+- Compare community partitions across methods
+- Visualize community structure
+
+## Setup
+
+```{python}
+#| label: setup
+
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+from networkx.algorithms import community as nx_comm
+
+# Optional: Louvain community detection if installed
+try:
+    import community as community_louvain
+    HAVE_LOUVAIN = True
+except ImportError:
+    HAVE_LOUVAIN = False
+
+np.random.seed(42)
+```
+
+# Example 1: Zachary's Karate Club Network
+
+## Loading the Network
+
+```{python}
+#| label: load-karate
+
+G = nx.karate_club_graph()
+
+print(f"Number of nodes: {G.number_of_nodes()}")
+print(f"Number of edges: {G.number_of_edges()}")
+print(f"Average clustering: {nx.average_clustering(G):.3f}")
+```
+
+## Visualizing the Original Network
+
+```{python}
+#| label: viz-original
+#| fig-width: 8
+#| fig-height: 6
+
+pos = nx.spring_layout(G, seed=42)
+
+plt.figure(figsize=(8, 6))
+nx.draw_networkx(
+    G,
+    pos=pos,
+    node_size=300,
+    node_color="lightblue",
+    edge_color="lightgray",
+    with_labels=True,
+    font_size=8,
+)
+plt.title("Zachary's Karate Club Network")
+plt.axis("off")
+plt.show()
+```
+
+# Community Detection Algorithms
+
+We'll apply several algorithms and compare their results.
+
+Helper function to convert sets of communities into a membership vector and compute modularity.
+
+```{python}
+#| label: helpers
+
+from itertools import count
+
+
+def partition_to_membership(G, communities):
+    """Convert iterable of sets to dict node -> community_id."""
+    membership = {}
+    for cid, comm in enumerate(communities):
+        for node in comm:
+            membership[node] = cid
+    return membership
+
+
+def print_partition_stats(G, communities, name):
+    modularity = nx_comm.modularity(G, communities)
+    sizes = [len(c) for c in communities]
+    print(f"=== {name} ===")
+    print(f"Number of communities: {len(communities)}")
+    print(f"Community sizes: {sizes}")
+    print(f"Modularity: {modularity:.3f}\n")
+    return modularity
+```
+
+## Method 1: Greedy Modularity (Clauset-Newman-Moore)
+
+```{python}
+#| label: greedy
+
+greedy_comms = list(nx_comm.greedy_modularity_communities(G))
+mod_greedy = print_partition_stats(G, greedy_comms, "Greedy Modularity")
+```
+
+### Visualization
+
+```{python}
+#| label: viz-greedy
+#| fig-width: 8
+#| fig-height: 6
+
+membership_greedy = partition_to_membership(G, greedy_comms)
+
+# Assign colors by community
+unique_comms = sorted(set(membership_greedy.values()))
+color_map = plt.cm.get_cmap("tab10", len(unique_comms))
+node_colors = [color_map(membership_greedy[n]) for n in G.nodes()]
+
+plt.figure(figsize=(8, 6))
+nx.draw_networkx(
+    G,
+    pos=pos,
+    node_color=node_colors,
+    node_size=300,
+    edge_color="lightgray",
+    with_labels=True,
+    font_size=8,
+)
+plt.title(f"Greedy Modularity Communities\nModularity = {mod_greedy:.3f}")
+plt.axis("off")
+plt.show()
+```
+
+## Method 2: Label Propagation
+
+Asynchronous label propagation is a fast, diffusion-like community detection method.
+
+```{python}
+#| label: label-propagation
+
+lpa_comms = list(nx_comm.asyn_lpa_communities(G, weight=None, seed=42))
+mod_lpa = print_partition_stats(G, lpa_comms, "Label Propagation")
+```
+
+### Visualization
+
+```{python}
+#| label: viz-lpa
+#| fig-width: 8
+#| fig-height: 6
+
+membership_lpa = partition_to_membership(G, lpa_comms)
+
+unique_comms = sorted(set(membership_lpa.values()))
+color_map = plt.cm.get_cmap("tab10", len(unique_comms))
+node_colors = [color_map(membership_lpa[n]) for n in G.nodes()]
+
+plt.figure(figsize=(8, 6))
+nx.draw_networkx(
+    G,
+    pos=pos,
+    node_color=node_colors,
+    node_size=300,
+    edge_color="lightgray",
+    with_labels=True,
+    font_size=8,
+)
+plt.title(f"Label Propagation Communities\nModularity = {mod_lpa:.3f}")
+plt.axis("off")
+plt.show()
+```
+
+## Method 3: Girvan-Newman (Edge Betweenness)
+
+The Girvan-Newman algorithm progressively removes edges with high betweenness.
+
+```{python}
+#| label: girvan-newman
+
+from itertools import islice
+
+# Generate successive partitions (hierarchy)
+comp = nx_comm.girvan_newman(G)
+
+# Take the partition with 2 communities (first split)
+first_level = next(comp)
+
+# Optionally, get partition with 3 communities
+second_level = next(comp)
+
+# Choose which level to analyze
+gn_comms = list(first_level)
+mod_gn = print_partition_stats(G, gn_comms, "Girvan-Newman (2-way split)")
+```
+
+### Visualization
+
+```{python}
+#| label: viz-gn
+#| fig-width: 8
+#| fig-height: 6
+
+membership_gn = partition_to_membership(G, gn_comms)
+
+unique_comms = sorted(set(membership_gn.values()))
+color_map = plt.cm.get_cmap("tab10", len(unique_comms))
+node_colors = [color_map(membership_gn[n]) for n in G.nodes()]
+
+plt.figure(figsize=(8, 6))
+nx.draw_networkx(
+    G,
+    pos=pos,
+    node_color=node_colors,
+    node_size=300,
+    edge_color="lightgray",
+    with_labels=True,
+    font_size=8,
+)
+plt.title(f"Girvan-Newman Communities (2-way)\nModularity = {mod_gn:.3f}")
+plt.axis("off")
+plt.show()
+```
+
+## Optional: Louvain Algorithm (If Available)
+
+```{python}
+#| label: louvain
+
+if HAVE_LOUVAIN:
+    print("Louvain package detected. Running Louvain community detection...\n")
+    louvain_partition = community_louvain.best_partition(G)
+
+    # Convert partition dict -> communities list
+    comm_dict = {}
+    for node, cid in louvain_partition.items():
+        comm_dict.setdefault(cid, set()).add(node)
+    louvain_comms = list(comm_dict.values())
+
+    mod_louvain = nx_comm.modularity(G, louvain_comms)
+    print(f"=== Louvain ===")
+    print(f"Number of communities: {len(louvain_comms)}")
+    print(f"Modularity: {mod_louvain:.3f}\n")
+
+    # Visualization
+    unique_comms = sorted(set(louvain_partition.values()))
+    color_map = plt.cm.get_cmap("tab10", len(unique_comms))
+    node_colors = [color_map(louvain_partition[n]) for n in G.nodes()]
+
+    plt.figure(figsize=(8, 6))
+    nx.draw_networkx(
+        G,
+        pos=pos,
+        node_color=node_colors,
+        node_size=300,
+        edge_color="lightgray",
+        with_labels=True,
+        font_size=8,
+    )
+    plt.title(f"Louvain Communities\nModularity = {mod_louvain:.3f}")
+    plt.axis("off")
+    plt.show()
+else:
+    print("python-louvain package not installed; skipping Louvain example.\n")
+```
+
+# Comparing Methods
+
+## Summary Table
+
+```{python}
+#| label: comparison
+
+results = [
+    {"method": "Greedy", "modularity": mod_greedy, "n_communities": len(greedy_comms)},
+    {"method": "Label Propagation", "modularity": mod_lpa, "n_communities": len(lpa_comms)},
+    {"method": "Girvan-Newman (2-way)", "modularity": mod_gn, "n_communities": len(gn_comms)},
+]
+
+if HAVE_LOUVAIN:
+    results.append({"method": "Louvain", "modularity": mod_louvain, "n_communities": len(louvain_comms)})
+
+comparison_df = pd.DataFrame(results)
+comparison_df
+```
+
+## Modularity Bar Plot
+
+```{python}
+#| label: modularity-plot
+#| fig-width: 8
+#| fig-height: 4
+
+plt.figure(figsize=(8, 4))
+plt.bar(comparison_df["method"], comparison_df["modularity"], color="steelblue")
+plt.xticks(rotation=30, ha="right")
+plt.ylabel("Modularity")
+plt.title("Modularity by Community Detection Method")
+for i, v in enumerate(comparison_df["modularity" ]):
+    plt.text(i, v + 0.01, f"{v:.3f}", ha="center", va="bottom", fontsize=9)
+plt.ylim(0, max(comparison_df["modularity"]) + 0.1)
+plt.tight_layout()
+plt.show()
+```
+
+# Example 2: Larger Network (Scale-Free)
+
+```{python}
+#| label: larger-network
+#| fig-width: 8
+#| fig-height: 6
+
+# Generate a scale-free network using Barabási-Albert model
+np.random.seed(42)
+H = nx.barabasi_albert_graph(n=200, m=2)
+
+print(f"Nodes: {H.number_of_nodes()}, Edges: {H.number_of_edges()}")
+
+# Detect communities using greedy modularity
+greedy_large = list(nx_comm.greedy_modularity_communities(H))
+mod_large = nx_comm.modularity(H, greedy_large)
+print(f"Greedy modularity communities: {len(greedy_large)}")
+print(f"Modularity: {mod_large:.3f}")
+
+# Visualize (without labels for clarity)
+pos_large = nx.spring_layout(H, seed=42)
+mem_large = partition_to_membership(H, greedy_large)
+unique_large = sorted(set(mem_large.values()))
+color_map = plt.cm.get_cmap("tab20", len(unique_large))
+node_colors = [color_map(mem_large[n]) for n in H.nodes()]
+
+plt.figure(figsize=(8, 6))
+nx.draw_networkx(
+    H,
+    pos=pos_large,
+    node_color=node_colors,
+    node_size=40,
+    edge_color="lightgray",
+    with_labels=False,
+)
+plt.title(f"Scale-Free Network (n=200)\nGreedy Modularity, Modularity = {mod_large:.3f}")
+plt.axis("off")
+plt.show()
+```
+
+# Key Takeaways
+
+1. Different algorithms can yield different numbers of communities and modularity values.
+2. Greedy modularity is often a good default method in NetworkX.
+3. Label propagation is fast and parameter-free but can be unstable.
+4. Girvan-Newman provides a hierarchical view but is computationally expensive.
+5. Louvain (if available) is a widely used modularity-maximizing algorithm.
+
+# Exercises
+
+1. **Compare Methods on a New Network**  
+   Load another NetworkX example graph (e.g., `nx.les_miserables_graph()` or `nx.davis_southern_women_graph()`) and:
+   - Apply at least three community detection methods
+   - Compare modularity scores
+   - Visualize community assignments
+
+2. **Resolution Exploration (Advanced)**  
+   Implement a simple resolution sweep for the greedy algorithm by modifying the graph (e.g., thresholding edge weights or adding/removing edges) and observe how community structure changes.
+
+3. **Community Characteristics**  
+   For your favorite partition on the karate club graph:
+   - Compute within- and between-community edge densities
+   - Identify bridge nodes that connect different communities
+   - Interpret what these communities might represent substantively.
+
+---
+
+**Next Steps**: After working through this Python tutorial, revisit `practice_1.qmd` (R) and compare the workflows and results across languages.
