@@ -57,7 +57,7 @@
     "href": "weeks/week-7/slideshow.html#definitions-of-network-communities",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Definitions of Network Communities",
-    "text": "Definitions of Network Communities\n\nStrong\nWeak\nDensity-based operational definitions"
+    "text": "Definitions of Network Communities\n\nStrong: Cliques (all nodes connected to all others)\nWeak: Subgraphs where internal density &gt; external density\nLS Sets: Subsets where any proper subset has more ties to the set than to outsiders"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#example-of-communities-in-a-strong-sense",
@@ -85,14 +85,14 @@
     "href": "weeks/week-7/slideshow.html#the-connection-between-network-communities-and-modularity",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "The Connection between Network Communities and Modularity",
-    "text": "The Connection between Network Communities and Modularity\nDefinition of modularity; modularity maximization."
+    "text": "The Connection between Network Communities and Modularity\nModularity is the most common metric for defining communities. It compares the observed number of edges within groups to what we would expect in a random network with the same degree distribution."
   },
   {
     "objectID": "weeks/week-7/slideshow.html#community-detection-algorithms-in-action",
     "href": "weeks/week-7/slideshow.html#community-detection-algorithms-in-action",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Community Detection Algorithms in Action",
-    "text": "Community Detection Algorithms in Action\nR-style examples and workflow."
+    "text": "Community Detection Algorithms in Action\n\n\nCode\nlibrary(igraph)\n\n# Load network\ng &lt;- make_graph(\"Zachary\")  # or read from file\n\n# Method 1: Louvain (fast, modularity-based)\ncomm_louvain &lt;- cluster_louvain(g)\n\n# Method 2: Leiden (improved Louvain)\ncomm_leiden &lt;- cluster_leiden(g)\n\n# Method 3: Walktrap (random walk-based)\ncomm_walktrap &lt;- cluster_walktrap(g, steps = 4)\n\n# Method 4: Edge Betweenness (hierarchical)\ncomm_edgebet &lt;- cluster_edge_betweenness(g)\n\n# Method 5: Fast Greedy (hierarchical modularity)\ncomm_fastgreedy &lt;- cluster_fast_greedy(g)\n\n# Extract results\nmembership(comm_louvain)         # Community assignments\nlength(comm_louvain)             # Number of communities\nsizes(comm_louvain)              # Community sizes\nmodularity(comm_louvain)         # Modularity score\n\n# Compare methods\ncompare(comm_louvain, comm_leiden, method = \"nmi\")  # Agreement\n\n# Visualize\nplot(comm_louvain, g,\n     vertex.size = 8,\n     edge.color = \"gray80\",\n     main = \"Communities\")"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#part-ii-roles-and-positions",
@@ -113,28 +113,28 @@
     "href": "weeks/week-7/slideshow.html#rendering-roles-in-network-data",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Rendering Roles in Network Data",
-    "text": "Rendering Roles in Network Data\nIntuition, approaches, use cases."
+    "text": "Rendering Roles in Network Data\nIntuition - Complex networks are hard to understand node-by-node - We group nodes that “do the same thing” - Example: In a hospital, all nurses have similar ties to doctors and patients\nApproaches - Blockmodeling (discrete partitions) - Hierarchical clustering (continuous similarity)"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#rendering-roles-algorithms",
     "href": "weeks/week-7/slideshow.html#rendering-roles-algorithms",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Rendering Roles: Algorithms",
-    "text": "Rendering Roles: Algorithms\nBlockmodeling, equivalence types, clustering."
+    "text": "Rendering Roles: Algorithms\n\n\nCode\nlibrary(igraph)\n\ng &lt;- sample_pa(20, directed = TRUE)\nadj &lt;- as.matrix(as_adjacency_matrix(g))\n\n# Method 1: Correlation-based equivalence\nequiv_cor &lt;- cor(t(adj))          # Correlate row profiles\ndist_cor &lt;- as.dist(1 - equiv_cor)\nhc_cor &lt;- hclust(dist_cor, method = \"complete\")\npositions_cor &lt;- cutree(hc_cor, k = 4)\n\n# Method 2: Euclidean distance equivalence\ndist_euclidean &lt;- dist(adj, method = \"euclidean\")\nhc_euclidean &lt;- hclust(dist_euclidean, method = \"ward.D2\")\npositions_euclidean &lt;- cutree(hc_euclidean, k = 4)\n\n# Visualize dendrogram\nplot(hc_cor, main = \"Position Hierarchy\", xlab = \"Node\")\nrect.hclust(hc_cor, k = 4, border = \"red\")\n\n# Create image matrix\nn_pos &lt;- max(positions_cor)\nimage_matrix &lt;- matrix(0, nrow = n_pos, ncol = n_pos)\n\nfor(i in 1:n_pos) {\n  for(j in 1:n_pos) {\n    block &lt;- adj[positions_cor == i, positions_cor == j]\n    image_matrix[i, j] &lt;- mean(block)\n  }\n}\n\nprint(round(image_matrix, 2))\n\n# Visualize with position colors\nV(g)$color &lt;- rainbow(n_pos)[positions_cor]\nplot(g, vertex.size = 8, main = \"Network by Position\")"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#rendering-positions-in-network-data",
     "href": "weeks/week-7/slideshow.html#rendering-positions-in-network-data",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Rendering Positions in Network Data",
-    "text": "Rendering Positions in Network Data\nTriad profiles, multiplexity, centrality patterns."
+    "text": "Rendering Positions in Network Data\nTriad Census - Analyzing the frequency of different triad types (e.g., transitive, cyclic) - Different roles (e.g., broker vs. isolate) show different triad profiles\nMultiplexity - Roles often defined by multiple types of ties (e.g., friend + coworker)"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#rendering-positions-algorithms",
     "href": "weeks/week-7/slideshow.html#rendering-positions-algorithms",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Rendering Positions: Algorithms",
-    "text": "Rendering Positions: Algorithms\nSimilarity matrices, clustering, blockmodels."
+    "text": "Rendering Positions: Algorithms\nSimilarity Matrices - Compute similarity between every pair of nodes (correlation, distance)\nClustering - Group similar nodes using hierarchical or k-means clustering\nBlockmodels - Permute the adjacency matrix to reveal blocks of high/low density"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#wrap-up",
@@ -2056,7 +2056,7 @@
     "href": "weeks/week-7/main.html#participate",
     "title": "Week 7",
     "section": "Participate",
-    "text": "Participate\n\n\n\n\n\n\nNote👥\n\n\n\n📉 Slideshow: Communities, Roles, and Positions\nKey topics covered:\nTheoretical Foundations: - Durkheim’s mechanical vs. organic solidarity - Granovetter’s strength of weak ties - Watts-Strogatz small-world networks - Homophily and social integration\nPart I: Network Communities\n\nSocial cohesion and integration\nMeasuring connectivity: density, clustering, path lengths\nSmall-world networks and the strength of weak ties\nUnderstanding modularity: formula, interpretation, thresholds\nCommunity detection algorithms:\n\nLouvain and Leiden (modularity-based)\nWalktrap (random walk-based)\nEdge betweenness (Girvan-Newman)\nLabel propagation\n\nAlgorithm comparison: when to use each method\nResolution parameter: controlling community granularity\nAssessing community structure and fit\n\nPart II: Roles and Positions\n\nFrom actors to roles: the dramaturgical metaphor\nTypes of structural equivalence: structural, regular, automorphic\nMeasuring equivalence: correlation and distance methods\nBlockmodeling procedures and image matrices\nCONCOR algorithm: convergence of iterated correlations\nHierarchical cluster analysis\nMulti-relational role structures\nIdeal role types and assessing fit\n\nIntegration: Communities ≠ Positions\n\nComparing connectionist and positional approaches\nWhen partitions align vs. diverge\nAdjusted Rand Index for measuring overlap\nMethodological pluralism",
+    "text": "Participate\n\n\n\n\n\n\nNote👥\n\n\n\n📉 Slideshow: Communities, Roles, and Positions\nKey topics covered:\n\nNetwork Communities: Cohesion, modularity, and detection algorithms\nRoles and Positions: Structural equivalence, blockmodeling, and image matrices\nIntegration: How communities and positions offer complementary views of social structure",
     "crumbs": [
       "Weekly materials",
       "Week 7"

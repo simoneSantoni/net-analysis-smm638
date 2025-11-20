@@ -413,9 +413,9 @@ SMM638 Network Analytics
 <section id="definitions-of-network-communities" class="slide level2">
 <h2>Definitions of Network Communities</h2>
 <ul>
-<li><strong>Strong</strong></li>
-<li><strong>Weak</strong></li>
-<li><strong>Density-based operational definitions</strong></li>
+<li><strong>Strong</strong>: Cliques (all nodes connected to all others)</li>
+<li><strong>Weak</strong>: Subgraphs where internal density &gt; external density</li>
+<li><strong>LS Sets</strong>: Subsets where any proper subset has more ties to the set than to outsiders</li>
 </ul>
 </section>
 <section id="example-of-communities-in-a-strong-sense" class="slide level2">
@@ -442,7 +442,7 @@ SMM638 Network Analytics
 </section>
 <section id="the-connection-between-network-communities-and-modularity" class="slide level2">
 <h2>The Connection between Network Communities and Modularity</h2>
-<p>Definition of modularity; modularity maximization.</p>
+<p><strong>Modularity</strong> is the most common metric for defining communities. It compares the observed number of edges within groups to what we would expect in a random network with the same degree distribution.</p>
 </section>
 <section id="understanding-modularity" class="slide level2">
 <h2>Understanding Modularity</h2>
@@ -548,7 +548,45 @@ SMM638 Network Analytics
 </section>
 <section id="community-detection-algorithms-in-action" class="slide level2">
 <h2>Community Detection Algorithms in Action</h2>
-<p>R-style examples and workflow.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(igraph)</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a><span class="co"># Load network</span></span>
+<span id="cb5-4"><a></a>g <span class="ot">&lt;-</span> <span class="fu">make_graph</span>(<span class="st">"Zachary"</span>)  <span class="co"># or read from file</span></span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a><span class="co"># Method 1: Louvain (fast, modularity-based)</span></span>
+<span id="cb5-7"><a></a>comm_louvain <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g)</span>
+<span id="cb5-8"><a></a></span>
+<span id="cb5-9"><a></a><span class="co"># Method 2: Leiden (improved Louvain)</span></span>
+<span id="cb5-10"><a></a>comm_leiden <span class="ot">&lt;-</span> <span class="fu">cluster_leiden</span>(g)</span>
+<span id="cb5-11"><a></a></span>
+<span id="cb5-12"><a></a><span class="co"># Method 3: Walktrap (random walk-based)</span></span>
+<span id="cb5-13"><a></a>comm_walktrap <span class="ot">&lt;-</span> <span class="fu">cluster_walktrap</span>(g, <span class="at">steps =</span> <span class="dv">4</span>)</span>
+<span id="cb5-14"><a></a></span>
+<span id="cb5-15"><a></a><span class="co"># Method 4: Edge Betweenness (hierarchical)</span></span>
+<span id="cb5-16"><a></a>comm_edgebet <span class="ot">&lt;-</span> <span class="fu">cluster_edge_betweenness</span>(g)</span>
+<span id="cb5-17"><a></a></span>
+<span id="cb5-18"><a></a><span class="co"># Method 5: Fast Greedy (hierarchical modularity)</span></span>
+<span id="cb5-19"><a></a>comm_fastgreedy <span class="ot">&lt;-</span> <span class="fu">cluster_fast_greedy</span>(g)</span>
+<span id="cb5-20"><a></a></span>
+<span id="cb5-21"><a></a><span class="co"># Extract results</span></span>
+<span id="cb5-22"><a></a><span class="fu">membership</span>(comm_louvain)         <span class="co"># Community assignments</span></span>
+<span id="cb5-23"><a></a><span class="fu">length</span>(comm_louvain)             <span class="co"># Number of communities</span></span>
+<span id="cb5-24"><a></a><span class="fu">sizes</span>(comm_louvain)              <span class="co"># Community sizes</span></span>
+<span id="cb5-25"><a></a><span class="fu">modularity</span>(comm_louvain)         <span class="co"># Modularity score</span></span>
+<span id="cb5-26"><a></a></span>
+<span id="cb5-27"><a></a><span class="co"># Compare methods</span></span>
+<span id="cb5-28"><a></a><span class="fu">compare</span>(comm_louvain, comm_leiden, <span class="at">method =</span> <span class="st">"nmi"</span>)  <span class="co"># Agreement</span></span>
+<span id="cb5-29"><a></a></span>
+<span id="cb5-30"><a></a><span class="co"># Visualize</span></span>
+<span id="cb5-31"><a></a><span class="fu">plot</span>(comm_louvain, g,</span>
+<span id="cb5-32"><a></a>     <span class="at">vertex.size =</span> <span class="dv">8</span>,</span>
+<span id="cb5-33"><a></a>     <span class="at">edge.color =</span> <span class="st">"gray80"</span>,</span>
+<span id="cb5-34"><a></a>     <span class="at">main =</span> <span class="st">"Communities"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 </section>
 <section id="part-ii-roles-and-positions" class="slide level2">
 <h2>Part II: Roles and Positions</h2>
@@ -560,19 +598,63 @@ SMM638 Network Analytics
 </section>
 <section id="rendering-roles-in-network-data" class="slide level2">
 <h2>Rendering Roles in Network Data</h2>
-<p>Intuition, approaches, use cases.</p>
+<p><strong>Intuition</strong> - Complex networks are hard to understand node-by-node - We group nodes that “do the same thing” - Example: In a hospital, all nurses have similar ties to doctors and patients</p>
+<p><strong>Approaches</strong> - Blockmodeling (discrete partitions) - Hierarchical clustering (continuous similarity)</p>
 </section>
 <section id="rendering-roles-algorithms" class="slide level2">
 <h2>Rendering Roles: Algorithms</h2>
-<p>Blockmodeling, equivalence types, clustering.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(igraph)</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a>g <span class="ot">&lt;-</span> <span class="fu">sample_pa</span>(<span class="dv">20</span>, <span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-4"><a></a>adj <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">as_adjacency_matrix</span>(g))</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a><span class="co"># Method 1: Correlation-based equivalence</span></span>
+<span id="cb6-7"><a></a>equiv_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">t</span>(adj))          <span class="co"># Correlate row profiles</span></span>
+<span id="cb6-8"><a></a>dist_cor <span class="ot">&lt;-</span> <span class="fu">as.dist</span>(<span class="dv">1</span> <span class="sc">-</span> equiv_cor)</span>
+<span id="cb6-9"><a></a>hc_cor <span class="ot">&lt;-</span> <span class="fu">hclust</span>(dist_cor, <span class="at">method =</span> <span class="st">"complete"</span>)</span>
+<span id="cb6-10"><a></a>positions_cor <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc_cor, <span class="at">k =</span> <span class="dv">4</span>)</span>
+<span id="cb6-11"><a></a></span>
+<span id="cb6-12"><a></a><span class="co"># Method 2: Euclidean distance equivalence</span></span>
+<span id="cb6-13"><a></a>dist_euclidean <span class="ot">&lt;-</span> <span class="fu">dist</span>(adj, <span class="at">method =</span> <span class="st">"euclidean"</span>)</span>
+<span id="cb6-14"><a></a>hc_euclidean <span class="ot">&lt;-</span> <span class="fu">hclust</span>(dist_euclidean, <span class="at">method =</span> <span class="st">"ward.D2"</span>)</span>
+<span id="cb6-15"><a></a>positions_euclidean <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc_euclidean, <span class="at">k =</span> <span class="dv">4</span>)</span>
+<span id="cb6-16"><a></a></span>
+<span id="cb6-17"><a></a><span class="co"># Visualize dendrogram</span></span>
+<span id="cb6-18"><a></a><span class="fu">plot</span>(hc_cor, <span class="at">main =</span> <span class="st">"Position Hierarchy"</span>, <span class="at">xlab =</span> <span class="st">"Node"</span>)</span>
+<span id="cb6-19"><a></a><span class="fu">rect.hclust</span>(hc_cor, <span class="at">k =</span> <span class="dv">4</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span>
+<span id="cb6-20"><a></a></span>
+<span id="cb6-21"><a></a><span class="co"># Create image matrix</span></span>
+<span id="cb6-22"><a></a>n_pos <span class="ot">&lt;-</span> <span class="fu">max</span>(positions_cor)</span>
+<span id="cb6-23"><a></a>image_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> n_pos, <span class="at">ncol =</span> n_pos)</span>
+<span id="cb6-24"><a></a></span>
+<span id="cb6-25"><a></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_pos) {</span>
+<span id="cb6-26"><a></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_pos) {</span>
+<span id="cb6-27"><a></a>    block <span class="ot">&lt;-</span> adj[positions_cor <span class="sc">==</span> i, positions_cor <span class="sc">==</span> j]</span>
+<span id="cb6-28"><a></a>    image_matrix[i, j] <span class="ot">&lt;-</span> <span class="fu">mean</span>(block)</span>
+<span id="cb6-29"><a></a>  }</span>
+<span id="cb6-30"><a></a>}</span>
+<span id="cb6-31"><a></a></span>
+<span id="cb6-32"><a></a><span class="fu">print</span>(<span class="fu">round</span>(image_matrix, <span class="dv">2</span>))</span>
+<span id="cb6-33"><a></a></span>
+<span id="cb6-34"><a></a><span class="co"># Visualize with position colors</span></span>
+<span id="cb6-35"><a></a><span class="fu">V</span>(g)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="fu">rainbow</span>(n_pos)[positions_cor]</span>
+<span id="cb6-36"><a></a><span class="fu">plot</span>(g, <span class="at">vertex.size =</span> <span class="dv">8</span>, <span class="at">main =</span> <span class="st">"Network by Position"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 </section>
 <section id="rendering-positions-in-network-data" class="slide level2">
 <h2>Rendering Positions in Network Data</h2>
-<p>Triad profiles, multiplexity, centrality patterns.</p>
+<p><strong>Triad Census</strong> - Analyzing the frequency of different triad types (e.g., transitive, cyclic) - Different roles (e.g., broker vs.&nbsp;isolate) show different triad profiles</p>
+<p><strong>Multiplexity</strong> - Roles often defined by multiple types of ties (e.g., friend + coworker)</p>
 </section>
 <section id="rendering-positions-algorithms" class="slide level2">
 <h2>Rendering Positions: Algorithms</h2>
-<p>Similarity matrices, clustering, blockmodels.</p>
+<p><strong>Similarity Matrices</strong> - Compute similarity between every pair of nodes (correlation, distance)</p>
+<p><strong>Clustering</strong> - Group similar nodes using hierarchical or k-means clustering</p>
+<p><strong>Blockmodels</strong> - Permute the adjacency matrix to reveal blocks of high/low density</p>
 </section>
 <section id="structural-equivalence-definition" class="slide level2">
 <h2>Structural Equivalence: Definition</h2>
@@ -617,17 +699,17 @@ SMM638 Network Analytics
 </section>
 <section id="measuring-structural-equivalence" class="slide level2">
 <h2>Measuring Structural Equivalence</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(igraph)</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a><span class="co"># Adjacency matrix</span></span>
-<span id="cb5-4"><a></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>,</span>
-<span id="cb5-5"><a></a>              <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>,</span>
-<span id="cb5-6"><a></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>,</span>
-<span id="cb5-7"><a></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb5-8"><a></a></span>
-<span id="cb5-9"><a></a><span class="co"># Correlation (nodes with similar tie profiles)</span></span>
-<span id="cb5-10"><a></a><span class="co"># cor() correlates columns, so transpose for row profiles</span></span>
-<span id="cb5-11"><a></a>equivalence <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">t</span>(A))  <span class="co"># Higher = more equivalent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(igraph)</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="co"># Adjacency matrix</span></span>
+<span id="cb7-4"><a></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>,</span>
+<span id="cb7-5"><a></a>              <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>,</span>
+<span id="cb7-6"><a></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>,</span>
+<span id="cb7-7"><a></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb7-8"><a></a></span>
+<span id="cb7-9"><a></a><span class="co"># Correlation (nodes with similar tie profiles)</span></span>
+<span id="cb7-10"><a></a><span class="co"># cor() correlates columns, so transpose for row profiles</span></span>
+<span id="cb7-11"><a></a>equivalence <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">t</span>(A))  <span class="co"># Higher = more equivalent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="rendering-roles-in-network-data-1" class="slide level2">
 <h2>Rendering Roles in Network Data</h2>
@@ -956,6 +1038,44 @@ Roles/positions = equivalence</p>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

@@ -237,9 +237,10 @@ Result: Small-world structure emerges naturally
 ## Definitions of Network Communities
 
 
-- **Strong**
-- **Weak**
-- **Density-based operational definitions**
+- **Strong**: Cliques (all nodes connected to all others)
+- **Weak**: Subgraphs where internal density > external density
+- **LS Sets**: Subsets where any proper subset has more ties to the set than to outsiders
+
 
 ---
 
@@ -267,7 +268,8 @@ High internal density but not complete; overlapping clusters.
 
 ## The Connection between Network Communities and Modularity
 
-Definition of modularity; modularity maximization.
+**Modularity** is the most common metric for defining communities. It compares the observed number of edges within groups to what we would expect in a random network with the same degree distribution.
+
 
 ---
 
@@ -333,7 +335,46 @@ communities_coarse <- cluster_louvain(g, resolution=0.5)  # 2 communities
 ## Community Detection Algorithms in Action
 
 
-R-style examples and workflow.
+```{r}
+#| label: reference-communities
+#| eval: false
+#| code-fold: show
+
+library(igraph)
+
+# Load network
+g <- make_graph("Zachary")  # or read from file
+
+# Method 1: Louvain (fast, modularity-based)
+comm_louvain <- cluster_louvain(g)
+
+# Method 2: Leiden (improved Louvain)
+comm_leiden <- cluster_leiden(g)
+
+# Method 3: Walktrap (random walk-based)
+comm_walktrap <- cluster_walktrap(g, steps = 4)
+
+# Method 4: Edge Betweenness (hierarchical)
+comm_edgebet <- cluster_edge_betweenness(g)
+
+# Method 5: Fast Greedy (hierarchical modularity)
+comm_fastgreedy <- cluster_fast_greedy(g)
+
+# Extract results
+membership(comm_louvain)         # Community assignments
+length(comm_louvain)             # Number of communities
+sizes(comm_louvain)              # Community sizes
+modularity(comm_louvain)         # Modularity score
+
+# Compare methods
+compare(comm_louvain, comm_leiden, method = "nmi")  # Agreement
+
+# Visualize
+plot(comm_louvain, g,
+     vertex.size = 8,
+     edge.color = "gray80",
+     main = "Communities")
+```
 
 ---
 
@@ -350,25 +391,88 @@ R-style examples and workflow.
 
 ## Rendering Roles in Network Data
 
-Intuition, approaches, use cases.
+**Intuition**
+- Complex networks are hard to understand node-by-node
+- We group nodes that "do the same thing"
+- Example: In a hospital, all nurses have similar ties to doctors and patients
+
+**Approaches**
+- Blockmodeling (discrete partitions)
+- Hierarchical clustering (continuous similarity)
+
 
 ---
 
 ## Rendering Roles: Algorithms
 
-Blockmodeling, equivalence types, clustering.
+```{r}
+#| label: reference-blockmodels
+#| eval: false
+#| code-fold: show
+
+library(igraph)
+
+g <- sample_pa(20, directed = TRUE)
+adj <- as.matrix(as_adjacency_matrix(g))
+
+# Method 1: Correlation-based equivalence
+equiv_cor <- cor(t(adj))          # Correlate row profiles
+dist_cor <- as.dist(1 - equiv_cor)
+hc_cor <- hclust(dist_cor, method = "complete")
+positions_cor <- cutree(hc_cor, k = 4)
+
+# Method 2: Euclidean distance equivalence
+dist_euclidean <- dist(adj, method = "euclidean")
+hc_euclidean <- hclust(dist_euclidean, method = "ward.D2")
+positions_euclidean <- cutree(hc_euclidean, k = 4)
+
+# Visualize dendrogram
+plot(hc_cor, main = "Position Hierarchy", xlab = "Node")
+rect.hclust(hc_cor, k = 4, border = "red")
+
+# Create image matrix
+n_pos <- max(positions_cor)
+image_matrix <- matrix(0, nrow = n_pos, ncol = n_pos)
+
+for(i in 1:n_pos) {
+  for(j in 1:n_pos) {
+    block <- adj[positions_cor == i, positions_cor == j]
+    image_matrix[i, j] <- mean(block)
+  }
+}
+
+print(round(image_matrix, 2))
+
+# Visualize with position colors
+V(g)$color <- rainbow(n_pos)[positions_cor]
+plot(g, vertex.size = 8, main = "Network by Position")
+```
 
 ---
 
 ## Rendering Positions in Network Data
 
-Triad profiles, multiplexity, centrality patterns.
+**Triad Census**
+- Analyzing the frequency of different triad types (e.g., transitive, cyclic)
+- Different roles (e.g., broker vs. isolate) show different triad profiles
+
+**Multiplexity**
+- Roles often defined by multiple types of ties (e.g., friend + coworker)
+
 
 ---
 
 ## Rendering Positions: Algorithms
 
-Similarity matrices, clustering, blockmodels.
+**Similarity Matrices**
+- Compute similarity between every pair of nodes (correlation, distance)
+
+**Clustering**
+- Group similar nodes using hierarchical or k-means clustering
+
+**Blockmodels**
+- Permute the adjacency matrix to reveal blocks of high/low density
+
 
 ---
 

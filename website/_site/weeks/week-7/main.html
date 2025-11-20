@@ -21,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -492,12 +457,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   <li><a href="#perform" id="toc-perform" class="nav-link" data-scroll-target="#perform">Perform</a></li>
   <li><a href="#ponder" id="toc-ponder" class="nav-link" data-scroll-target="#ponder">Ponder</a></li>
-  <li><a href="#quick-reference-essential-r-code" id="toc-quick-reference-essential-r-code" class="nav-link" data-scroll-target="#quick-reference-essential-r-code">Quick Reference: Essential R Code</a>
-  <ul class="collapse">
-  <li><a href="#community-detection-snippets" id="toc-community-detection-snippets" class="nav-link" data-scroll-target="#community-detection-snippets">Community Detection Snippets</a></li>
-  <li><a href="#blockmodeling-snippets" id="toc-blockmodeling-snippets" class="nav-link" data-scroll-target="#blockmodeling-snippets">Blockmodeling Snippets</a></li>
-  <li><a href="#essential-network-data-sources" id="toc-essential-network-data-sources" class="nav-link" data-scroll-target="#essential-network-data-sources">Essential Network Data Sources</a></li>
-  </ul></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
 </nav>
@@ -579,41 +538,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p>📉 Slideshow: <a href="slideshow.html">Communities, Roles, and Positions</a></p>
 <p><strong>Key topics covered</strong>:</p>
-<p><strong>Theoretical Foundations</strong>: - Durkheim’s mechanical vs.&nbsp;organic solidarity - Granovetter’s strength of weak ties - Watts-Strogatz small-world networks - Homophily and social integration</p>
-<p><strong>Part I: Network Communities</strong></p>
 <ul>
-<li>Social cohesion and integration</li>
-<li>Measuring connectivity: density, clustering, path lengths</li>
-<li>Small-world networks and the strength of weak ties</li>
-<li><strong>Understanding modularity</strong>: formula, interpretation, thresholds</li>
-<li>Community detection algorithms:
-<ul>
-<li>Louvain and Leiden (modularity-based)</li>
-<li>Walktrap (random walk-based)</li>
-<li>Edge betweenness (Girvan-Newman)</li>
-<li>Label propagation</li>
-</ul></li>
-<li><strong>Algorithm comparison</strong>: when to use each method</li>
-<li><strong>Resolution parameter</strong>: controlling community granularity</li>
-<li>Assessing community structure and fit</li>
-</ul>
-<p><strong>Part II: Roles and Positions</strong></p>
-<ul>
-<li>From actors to roles: the dramaturgical metaphor</li>
-<li><strong>Types of structural equivalence</strong>: structural, regular, automorphic</li>
-<li><strong>Measuring equivalence</strong>: correlation and distance methods</li>
-<li>Blockmodeling procedures and image matrices</li>
-<li><strong>CONCOR algorithm</strong>: convergence of iterated correlations</li>
-<li>Hierarchical cluster analysis</li>
-<li>Multi-relational role structures</li>
-<li>Ideal role types and assessing fit</li>
-</ul>
-<p><strong>Integration: Communities ≠ Positions</strong></p>
-<ul>
-<li>Comparing connectionist and positional approaches</li>
-<li>When partitions align vs.&nbsp;diverge</li>
-<li>Adjusted Rand Index for measuring overlap</li>
-<li>Methodological pluralism</li>
+<li><strong>Network Communities</strong>: Cohesion, modularity, and detection algorithms</li>
+<li><strong>Roles and Positions</strong>: Structural equivalence, blockmodeling, and image matrices</li>
+<li><strong>Integration</strong>: How communities and positions offer complementary views of social structure</li>
 </ul>
 </div>
 </div>
@@ -752,127 +680,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </div>
 </div>
-</section>
-<section id="quick-reference-essential-r-code" class="level2">
-<h2 class="anchored" data-anchor-id="quick-reference-essential-r-code">Quick Reference: Essential R Code</h2>
-<section id="community-detection-snippets" class="level3">
-<h3 class="anchored" data-anchor-id="community-detection-snippets">Community Detection Snippets</h3>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load network</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">make_graph</span>(<span class="st">"Zachary"</span>)  <span class="co"># or read from file</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Louvain (fast, modularity-based)</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>comm_louvain <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: Leiden (improved Louvain)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>comm_leiden <span class="ot">&lt;-</span> <span class="fu">cluster_leiden</span>(g)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 3: Walktrap (random walk-based)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>comm_walktrap <span class="ot">&lt;-</span> <span class="fu">cluster_walktrap</span>(g, <span class="at">steps =</span> <span class="dv">4</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 4: Edge Betweenness (hierarchical)</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>comm_edgebet <span class="ot">&lt;-</span> <span class="fu">cluster_edge_betweenness</span>(g)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 5: Fast Greedy (hierarchical modularity)</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>comm_fastgreedy <span class="ot">&lt;-</span> <span class="fu">cluster_fast_greedy</span>(g)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract results</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">membership</span>(comm_louvain)         <span class="co"># Community assignments</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(comm_louvain)             <span class="co"># Number of communities</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">sizes</span>(comm_louvain)              <span class="co"># Community sizes</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">modularity</span>(comm_louvain)         <span class="co"># Modularity score</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare methods</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">compare</span>(comm_louvain, comm_leiden, <span class="at">method =</span> <span class="st">"nmi"</span>)  <span class="co"># Agreement</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(comm_louvain, g,</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>     <span class="at">vertex.size =</span> <span class="dv">8</span>,</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>     <span class="at">edge.color =</span> <span class="st">"gray80"</span>,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Communities"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="blockmodeling-snippets" class="level3">
-<h3 class="anchored" data-anchor-id="blockmodeling-snippets">Blockmodeling Snippets</h3>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">sample_pa</span>(<span class="dv">20</span>, <span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>adj <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">as_adjacency_matrix</span>(g))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1: Correlation-based equivalence</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>equiv_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">t</span>(adj))          <span class="co"># Correlate row profiles</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>dist_cor <span class="ot">&lt;-</span> <span class="fu">as.dist</span>(<span class="dv">1</span> <span class="sc">-</span> equiv_cor)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>hc_cor <span class="ot">&lt;-</span> <span class="fu">hclust</span>(dist_cor, <span class="at">method =</span> <span class="st">"complete"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>positions_cor <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc_cor, <span class="at">k =</span> <span class="dv">4</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 2: Euclidean distance equivalence</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>dist_euclidean <span class="ot">&lt;-</span> <span class="fu">dist</span>(adj, <span class="at">method =</span> <span class="st">"euclidean"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>hc_euclidean <span class="ot">&lt;-</span> <span class="fu">hclust</span>(dist_euclidean, <span class="at">method =</span> <span class="st">"ward.D2"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>positions_euclidean <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc_euclidean, <span class="at">k =</span> <span class="dv">4</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize dendrogram</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc_cor, <span class="at">main =</span> <span class="st">"Position Hierarchy"</span>, <span class="at">xlab =</span> <span class="st">"Node"</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">rect.hclust</span>(hc_cor, <span class="at">k =</span> <span class="dv">4</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Create image matrix</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>n_pos <span class="ot">&lt;-</span> <span class="fu">max</span>(positions_cor)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>image_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> n_pos, <span class="at">ncol =</span> n_pos)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_pos) {</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_pos) {</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    block <span class="ot">&lt;-</span> adj[positions_cor <span class="sc">==</span> i, positions_cor <span class="sc">==</span> j]</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    image_matrix[i, j] <span class="ot">&lt;-</span> <span class="fu">mean</span>(block)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(image_matrix, <span class="dv">2</span>))</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize with position colors</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="fu">rainbow</span>(n_pos)[positions_cor]</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">vertex.size =</span> <span class="dv">8</span>, <span class="at">main =</span> <span class="st">"Network by Position"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="essential-network-data-sources" class="level3">
-<h3 class="anchored" data-anchor-id="essential-network-data-sources">Essential Network Data Sources</h3>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Built-in networks</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>karate <span class="ot">&lt;-</span> <span class="fu">make_graph</span>(<span class="st">"Zachary"</span>)              <span class="co"># Karate club</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>dolphins <span class="ot">&lt;-</span> <span class="fu">make_graph</span>(<span class="st">"Dolphins"</span>)            <span class="co"># Dolphin social network</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate synthetic networks</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>erdos_renyi <span class="ot">&lt;-</span> <span class="fu">sample_gnp</span>(<span class="dv">100</span>, <span class="fl">0.05</span>)         <span class="co"># Random</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>barabasi <span class="ot">&lt;-</span> <span class="fu">sample_pa</span>(<span class="dv">100</span>, <span class="at">power =</span> <span class="dv">1</span>)        <span class="co"># Scale-free</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>small_world <span class="ot">&lt;-</span> <span class="fu">watts.strogatz.game</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">5</span>, <span class="fl">0.1</span>)  <span class="co"># Small-world</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Read from file</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>g_edgelist <span class="ot">&lt;-</span> <span class="fu">read_graph</span>(<span class="st">"network.txt"</span>, <span class="at">format =</span> <span class="st">"edgelist"</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>g_graphml <span class="ot">&lt;-</span> <span class="fu">read_graph</span>(<span class="st">"network.graphml"</span>, <span class="at">format =</span> <span class="st">"graphml"</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>g_gml <span class="ot">&lt;-</span> <span class="fu">read_graph</span>(<span class="st">"network.gml"</span>, <span class="at">format =</span> <span class="st">"gml"</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># From adjacency matrix</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>adj_matrix <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">read.csv</span>(<span class="st">"adjacency.csv"</span>, <span class="at">row.names =</span> <span class="dv">1</span>))</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>g_adj <span class="ot">&lt;-</span> <span class="fu">graph_from_adjacency_matrix</span>(adj_matrix, <span class="at">mode =</span> <span class="st">"undirected"</span>)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># From data frame</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>edges_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">from =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>                       <span class="at">to =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>))</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>g_df <span class="ot">&lt;-</span> <span class="fu">graph_from_data_frame</span>(edges_df, <span class="at">directed =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
 </section>
 <section id="additional-resources" class="level2">
 <h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
