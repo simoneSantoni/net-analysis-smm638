@@ -108,6 +108,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -497,21 +526,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#method-1-louvain-algorithm" id="toc-method-1-louvain-algorithm" class="nav-link" data-scroll-target="#method-1-louvain-algorithm"><span class="header-section-number">3.1</span> Method 1: Louvain Algorithm</a>
   <ul class="collapse">
-  <li><a href="#visualizing-louvain-communities" id="toc-visualizing-louvain-communities" class="nav-link" data-scroll-target="#visualizing-louvain-communities"><span class="header-section-number">3.1.1</span> Visualizing Louvain Communities</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works"><span class="header-section-number">3.1.1</span> How it works</a></li>
+  <li><a href="#visualizing-louvain-communities" id="toc-visualizing-louvain-communities" class="nav-link" data-scroll-target="#visualizing-louvain-communities"><span class="header-section-number">3.1.2</span> Visualizing Louvain Communities</a></li>
   </ul></li>
   <li><a href="#method-2-edge-betweenness" id="toc-method-2-edge-betweenness" class="nav-link" data-scroll-target="#method-2-edge-betweenness"><span class="header-section-number">3.2</span> Method 2: Edge Betweenness</a>
   <ul class="collapse">
-  <li><a href="#visualizing-edge-betweenness-communities" id="toc-visualizing-edge-betweenness-communities" class="nav-link" data-scroll-target="#visualizing-edge-betweenness-communities"><span class="header-section-number">3.2.1</span> Visualizing Edge Betweenness Communities</a></li>
+  <li><a href="#how-it-works-1" id="toc-how-it-works-1" class="nav-link" data-scroll-target="#how-it-works-1"><span class="header-section-number">3.2.1</span> How it works</a></li>
+  <li><a href="#visualizing-edge-betweenness-communities" id="toc-visualizing-edge-betweenness-communities" class="nav-link" data-scroll-target="#visualizing-edge-betweenness-communities"><span class="header-section-number">3.2.2</span> Visualizing Edge Betweenness Communities</a></li>
   </ul></li>
   <li><a href="#method-3-walktrap" id="toc-method-3-walktrap" class="nav-link" data-scroll-target="#method-3-walktrap"><span class="header-section-number">3.3</span> Method 3: Walktrap</a>
   <ul class="collapse">
-  <li><a href="#visualizing-walktrap-communities" id="toc-visualizing-walktrap-communities" class="nav-link" data-scroll-target="#visualizing-walktrap-communities"><span class="header-section-number">3.3.1</span> Visualizing Walktrap Communities</a></li>
+  <li><a href="#how-it-works-2" id="toc-how-it-works-2" class="nav-link" data-scroll-target="#how-it-works-2"><span class="header-section-number">3.3.1</span> How it works</a></li>
+  <li><a href="#visualizing-walktrap-communities" id="toc-visualizing-walktrap-communities" class="nav-link" data-scroll-target="#visualizing-walktrap-communities"><span class="header-section-number">3.3.2</span> Visualizing Walktrap Communities</a></li>
   </ul></li>
   <li><a href="#method-4-leading-eigenvector-spectral" id="toc-method-4-leading-eigenvector-spectral" class="nav-link" data-scroll-target="#method-4-leading-eigenvector-spectral"><span class="header-section-number">3.4</span> Method 4: Leading Eigenvector (Spectral)</a>
   <ul class="collapse">
-  <li><a href="#visualizing-spectral-communities" id="toc-visualizing-spectral-communities" class="nav-link" data-scroll-target="#visualizing-spectral-communities"><span class="header-section-number">3.4.1</span> Visualizing Spectral Communities</a></li>
+  <li><a href="#how-it-works-3" id="toc-how-it-works-3" class="nav-link" data-scroll-target="#how-it-works-3"><span class="header-section-number">3.4.1</span> How it works</a></li>
+  <li><a href="#visualizing-spectral-communities" id="toc-visualizing-spectral-communities" class="nav-link" data-scroll-target="#visualizing-spectral-communities"><span class="header-section-number">3.4.2</span> Visualizing Spectral Communities</a></li>
   </ul></li>
-  <li><a href="#method-5-fast-greedy" id="toc-method-5-fast-greedy" class="nav-link" data-scroll-target="#method-5-fast-greedy"><span class="header-section-number">3.5</span> Method 5: Fast Greedy</a></li>
+  <li><a href="#method-5-fast-greedy" id="toc-method-5-fast-greedy" class="nav-link" data-scroll-target="#method-5-fast-greedy"><span class="header-section-number">3.5</span> Method 5: Fast Greedy</a>
+  <ul class="collapse">
+  <li><a href="#how-it-works-4" id="toc-how-it-works-4" class="nav-link" data-scroll-target="#how-it-works-4"><span class="header-section-number">3.5.1</span> How it works</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#comparing-methods" id="toc-comparing-methods" class="nav-link" data-scroll-target="#comparing-methods"><span class="header-section-number">4</span> Comparing Methods</a>
   <ul class="collapse">
@@ -565,17 +601,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>This tutorial demonstrates how to detect and analyze communities in networks using R. We’ll explore multiple algorithms, compare their results, and learn how to assess community structure quality.</p>
+<p>Community detection is a fundamental technique in network analysis used to identify groups of nodes that are more densely connected to each other than to the rest of the network. In a business context, these “communities” often represent meaningful substructures:</p>
+<ul>
+<li><strong>Organizational Analytics</strong>: Identifying informal teams or silos within a company.</li>
+<li><strong>Marketing</strong>: Segmenting customers based on purchasing behavior or social influence.</li>
+<li><strong>Fraud Detection</strong>: Uncovering rings of colluding actors.</li>
+<li><strong>Supply Chain</strong>: Detecting tightly integrated clusters of suppliers.</li>
+</ul>
+<p>This tutorial provides a comprehensive guide to detecting and analyzing these cohesive subgroups using R. We will move beyond simple execution to understand the <em>mechanisms</em> behind different algorithms, how to <em>compare</em> their results, and how to <em>validate</em> the stability of the communities found.</p>
 <section id="learning-objectives" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.1</span> Learning Objectives</h2>
 <p>By the end of this tutorial, you will be able to:</p>
-<ul>
-<li>Implement multiple community detection algorithms in R</li>
-<li>Calculate and interpret modularity scores</li>
-<li>Compare community detection methods</li>
-<li>Visualize community structure</li>
-<li>Assess the quality and robustness of detected communities</li>
-</ul>
+<ol type="1">
+<li><strong>Implement</strong> five distinct community detection algorithms (Louvain, Edge Betweenness, Walktrap, Spectral, and Fast Greedy).</li>
+<li><strong>Evaluate</strong> the quality of partitions using modularity and density metrics.</li>
+<li><strong>Compare</strong> results across methods to identify robust community structures.</li>
+<li><strong>Visualize</strong> communities effectively to communicate insights.</li>
+<li><strong>Assess</strong> the stability of communities to ensure findings are not artifacts of noise.</li>
+</ol>
 </section>
 <section id="required-packages" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="required-packages"><span class="header-section-number">1.2</span> Required Packages</h2>
@@ -596,7 +639,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="2"><span class="header-section-number">2</span> Loading and Exploring Network Data</h1>
 <section id="example-1-karate-club-network" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="example-1-karate-club-network"><span class="header-section-number">2.1</span> Example 1: Karate Club Network</h2>
-<p>We’ll start with the classic Zachary’s Karate Club network - a well-studied network documenting social interactions in a karate club that eventually split into two groups.</p>
+<p>We will begin with the canonical <strong>Zachary’s Karate Club</strong> network. This dataset documents the social interactions between 34 members of a university karate club in the 1970s.</p>
+<p><strong>Why this dataset?</strong> It is the “Hello World” of community detection because the club actually split into two factions during the study due to a conflict between the administrator (John A.) and the instructor (Mr.&nbsp;Hi). This provides us with a “ground truth” to validate our algorithms against—a luxury we rarely have in real-world business data.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the karate club network</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>karate <span class="ot">&lt;-</span> <span class="fu">make_graph</span>(<span class="st">"Zachary"</span>)</span>
@@ -650,7 +694,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="3"><span class="header-section-number">3</span> Community Detection Algorithms</h1>
 <section id="method-1-louvain-algorithm" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="method-1-louvain-algorithm"><span class="header-section-number">3.1</span> Method 1: Louvain Algorithm</h2>
-<p>The Louvain algorithm is a fast, hierarchical method that maximizes modularity.</p>
+<p>The <strong>Louvain algorithm</strong> is one of the most popular methods for community detection due to its efficiency and ability to handle large networks (up to millions of nodes).</p>
+<section id="how-it-works" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="how-it-works"><span class="header-section-number">3.1.1</span> How it works</h3>
+<p>It is a hierarchical, greedy algorithm that optimizes <strong>modularity</strong> (<span class="math inline">\(Q\)</span>). 1. <strong>Local Moving</strong>: Each node is moved to the community of its neighbors that yields the largest increase in modularity. 2. <strong>Aggregation</strong>: A new network is built where nodes are the communities found in step 1. 3. <strong>Repeat</strong>: Steps 1 and 2 are repeated until no further modularity increase is possible.</p>
+<p><strong>Pros</strong>: Very fast; good quality partitions. <strong>Cons</strong>: Can fail to detect small communities in very large networks (resolution limit).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect communities using Louvain</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>louvain_comm <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(karate)</span>
@@ -674,8 +722,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code> [1] 1 1 1 1 2 2 2 1 3 3 2 1 1 1 3 3 2 1 3 1 3 1 3 4 4 4 3 4 4 3 3 4 3 3</code></pre>
 </div>
 </div>
-<section id="visualizing-louvain-communities" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="visualizing-louvain-communities"><span class="header-section-number">3.1.1</span> Visualizing Louvain Communities</h3>
+</section>
+<section id="visualizing-louvain-communities" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="visualizing-louvain-communities"><span class="header-section-number">3.1.2</span> Visualizing Louvain Communities</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define colors for communities</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"coral"</span>, <span class="st">"lightblue"</span>, <span class="st">"lightgreen"</span>, <span class="st">"gold"</span>, <span class="st">"plum"</span>)</span>
@@ -699,7 +748,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="method-2-edge-betweenness" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="method-2-edge-betweenness"><span class="header-section-number">3.2</span> Method 2: Edge Betweenness</h2>
-<p>The edge betweenness algorithm identifies communities by removing edges with high betweenness.</p>
+<p>The <strong>Girvan-Newman (Edge Betweenness)</strong> algorithm is a divisive method based on the concept of “bridges” in a network.</p>
+<section id="how-it-works-1" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="how-it-works-1"><span class="header-section-number">3.2.1</span> How it works</h3>
+<p>It relies on <strong>edge betweenness centrality</strong>—the number of shortest paths passing through an edge. Edges connecting different communities act as bottlenecks and have high betweenness. 1. Calculate betweenness for all edges. 2. Remove the edge with the highest betweenness. 3. Recalculate betweenness for remaining edges. 4. Repeat until no edges remain or a target number of communities is reached.</p>
+<p><strong>Pros</strong>: Intuitively appealing; often very accurate for small networks. <strong>Cons</strong>: Computationally expensive (<span class="math inline">\(O(N^3)\)</span>); not suitable for large graphs (&gt;1000 nodes).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect communities using edge betweenness</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>eb_comm <span class="ot">&lt;-</span> <span class="fu">cluster_edge_betweenness</span>(karate)</span>
@@ -717,8 +770,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Community sizes: 10 6 5 12 1 </code></pre>
 </div>
 </div>
-<section id="visualizing-edge-betweenness-communities" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="visualizing-edge-betweenness-communities"><span class="header-section-number">3.2.1</span> Visualizing Edge Betweenness Communities</h3>
+</section>
+<section id="visualizing-edge-betweenness-communities" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="visualizing-edge-betweenness-communities"><span class="header-section-number">3.2.2</span> Visualizing Edge Betweenness Communities</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(eb_comm, karate,</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">layout =</span> layout_karate,</span>
@@ -739,7 +793,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="method-3-walktrap" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="method-3-walktrap"><span class="header-section-number">3.3</span> Method 3: Walktrap</h2>
-<p>The walktrap algorithm uses random walks to identify communities.</p>
+<p>The <strong>Walktrap algorithm</strong> exploits the tendency of random walks to get “trapped” within densely connected parts of a graph.</p>
+<section id="how-it-works-2" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="how-it-works-2"><span class="header-section-number">3.3.1</span> How it works</h3>
+<p>It defines a distance between nodes based on random walks. If two nodes are in the same community, the probability of getting from one to the other in a random walk is high. The algorithm agglomeratively merges nodes/communities that minimize the squared distance between them.</p>
+<p><strong>Pros</strong>: robust; works well on dense subgraphs. <strong>Cons</strong>: Slower than Louvain; complexity is approx <span class="math inline">\(O(N^2 \log N)\)</span>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect communities using walktrap</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>walktrap_comm <span class="ot">&lt;-</span> <span class="fu">cluster_walktrap</span>(karate)</span>
@@ -757,8 +815,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Community sizes: 9 7 9 4 5 </code></pre>
 </div>
 </div>
-<section id="visualizing-walktrap-communities" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="visualizing-walktrap-communities"><span class="header-section-number">3.3.1</span> Visualizing Walktrap Communities</h3>
+</section>
+<section id="visualizing-walktrap-communities" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="visualizing-walktrap-communities"><span class="header-section-number">3.3.2</span> Visualizing Walktrap Communities</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(walktrap_comm, karate,</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">layout =</span> layout_karate,</span>
@@ -779,7 +838,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="method-4-leading-eigenvector-spectral" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="method-4-leading-eigenvector-spectral"><span class="header-section-number">3.4</span> Method 4: Leading Eigenvector (Spectral)</h2>
-<p>This method uses the leading eigenvector of the modularity matrix.</p>
+<p><strong>Spectral clustering</strong> methods use the linear algebra properties of the graph to find partitions.</p>
+<section id="how-it-works-3" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="how-it-works-3"><span class="header-section-number">3.4.1</span> How it works</h3>
+<p>This specific implementation calculates the <strong>leading eigenvector</strong> of the modularity matrix. The signs of the elements in this eigenvector can be used to split the network into two communities. This process is repeated recursively to subdivide the network further.</p>
+<p><strong>Pros</strong>: Theoretically well-grounded; effective for identifying core structures. <strong>Cons</strong>: Can be slower; sometimes struggles with very small or very disparate community sizes.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect communities using leading eigenvector</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>spectral_comm <span class="ot">&lt;-</span> <span class="fu">cluster_leading_eigen</span>(karate)</span>
@@ -797,8 +860,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Community sizes: 7 12 9 6 </code></pre>
 </div>
 </div>
-<section id="visualizing-spectral-communities" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="visualizing-spectral-communities"><span class="header-section-number">3.4.1</span> Visualizing Spectral Communities</h3>
+</section>
+<section id="visualizing-spectral-communities" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="visualizing-spectral-communities"><span class="header-section-number">3.4.2</span> Visualizing Spectral Communities</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(spectral_comm, karate,</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">layout =</span> layout_karate,</span>
@@ -819,7 +883,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="method-5-fast-greedy" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="method-5-fast-greedy"><span class="header-section-number">3.5</span> Method 5: Fast Greedy</h2>
-<p>A hierarchical agglomerative algorithm that’s fast for large networks.</p>
+<p>The <strong>Fast Greedy</strong> (Clauset-Newman-Moore) algorithm is a hierarchical agglomerative approach designed for speed.</p>
+<section id="how-it-works-4" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="how-it-works-4"><span class="header-section-number">3.5.1</span> How it works</h3>
+<p>It starts with every node in its own community. At each step, it merges the pair of communities that results in the largest increase in modularity. It uses sophisticated data structures to do this efficiently.</p>
+<p><strong>Pros</strong>: Fast; good for large networks. <strong>Cons</strong>: Greedy nature means it can get stuck in local optima; often produces “mega-communities” by merging smaller ones too early.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect communities using fast greedy</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>fg_comm <span class="ot">&lt;-</span> <span class="fu">cluster_fast_greedy</span>(karate)</span>
@@ -839,8 +907,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
+</section>
 <section id="comparing-methods" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Comparing Methods</h1>
+<p>No single algorithm is perfect for every network. The “best” partition often depends on the specific characteristics of your data and your analytical goals. We will compare the methods based on: 1. <strong>Modularity</strong>: How well separated the communities are. 2. <strong>Number of Communities</strong>: Granularity of the partition. 3. <strong>Agreement</strong>: Do different methods find similar structures?</p>
 <section id="summary-comparison-table" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="summary-comparison-table"><span class="header-section-number">4.1</span> Summary Comparison Table</h2>
 <div class="cell">
@@ -977,8 +1047,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="assessing-community-quality" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Assessing Community Quality</h1>
+<p>Modularity is a useful summary statistic, but it’s abstract. To get a concrete sense of community quality, we can look at <strong>density</strong>.</p>
 <section id="within-vs.-between-community-density" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="within-vs.-between-community-density"><span class="header-section-number">5.1</span> Within vs.&nbsp;Between Community Density</h2>
+<p>A “good” community should have: 1. High <strong>internal density</strong>: Nodes within the community are tightly connected. 2. Low <strong>external density</strong>: Few connections exist between different communities.</p>
+<p>We can quantify this by calculating the ratio of internal to external density. A high ratio (&gt;10 or &gt;100) indicates very well-defined groups.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate within and between community density</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>analyze_density <span class="ot">&lt;-</span> <span class="cf">function</span>(graph, communities) {</span>
@@ -1060,7 +1133,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="resolution-parameter-exploration" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Resolution Parameter Exploration</h1>
-<p>For algorithms that support resolution parameters (like Louvain), we can explore different levels of granularity.</p>
+<p>Most real-world networks have community structure at multiple scales (e.g., teams within departments within divisions).</p>
+<p>Algorithms like Louvain allow us to tune a <strong>resolution parameter</strong> (<span class="math inline">\(\gamma\)</span>) to explore this hierarchy: * <strong>Lower <span class="math inline">\(\gamma\)</span> (&lt; 1)</strong>: Favors larger, fewer communities (macro-structure). * <strong>Higher <span class="math inline">\(\gamma\)</span> (&gt; 1)</strong>: Favors smaller, more numerous communities (micro-structure).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sweep resolution parameter</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>resolutions <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="fl">2.0</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
@@ -1162,7 +1236,8 @@ Communities detected: 8 </code></pre>
 </section>
 <section id="hierarchical-community-structure" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> Hierarchical Community Structure</h1>
-<p>Some algorithms (like edge betweenness and fast greedy) create hierarchical dendrograms.</p>
+<p>Hierarchical algorithms (like Fast Greedy, Edge Betweenness, and Walktrap) produce a <strong>dendrogram</strong>—a tree diagram showing how nodes are merged into communities step-by-step.</p>
+<p>This is valuable for business analysis because it allows you to choose the “cut” that makes the most sense for your problem. For example, do you need 3 broad market segments or 15 niche micro-segments?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use fast greedy to get hierarchy</span></span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>fg_karate <span class="ot">&lt;-</span> <span class="fu">cluster_fast_greedy</span>(karate)</span>
@@ -1183,7 +1258,8 @@ Communities detected: 8 </code></pre>
 </section>
 <section id="stability-analysis" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Stability Analysis</h1>
-<p>Test how stable communities are to network perturbations.</p>
+<p>In business analytics, <strong>robustness</strong> is critical. If removing a few random edges (simulating noise or missing data) completely changes your communities, then your findings are unstable and should not be the basis for major strategic decisions.</p>
+<p>We can assess stability by perturbing the network and measuring the similarity (NMI) between the original and perturbed communities.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to assess stability</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>assess_stability <span class="ot">&lt;-</span> <span class="cf">function</span>(graph, <span class="at">n_iterations =</span> <span class="dv">100</span>, </span>
@@ -1246,12 +1322,11 @@ Communities detected: 8 </code></pre>
 <section id="key-takeaways" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> Key Takeaways</h1>
 <ol type="1">
-<li><p><strong>Multiple methods exist</strong>: Different algorithms can produce different results. Always compare multiple approaches.</p></li>
-<li><p><strong>Modularity is key</strong>: Higher modularity generally indicates better community structure, but it’s not the only metric to consider.</p></li>
-<li><p><strong>Context matters</strong>: The “best” method depends on your network properties and research questions.</p></li>
-<li><p><strong>Resolution matters</strong>: Many algorithms have parameters that control the granularity of detected communities.</p></li>
-<li><p><strong>Stability is important</strong>: Test how robust your communities are to perturbations.</p></li>
-<li><p><strong>Visual inspection helps</strong>: Always visualize your communities to ensure they make substantive sense.</p></li>
+<li><strong>No “Silver Bullet”</strong>: Different algorithms optimize different objective functions. Louvain is a great default for large networks, while Edge Betweenness is excellent for small, precise structural analysis.</li>
+<li><strong>Modularity is a Guide, Not a Rule</strong>: High modularity suggests good structure, but beware of the “resolution limit” where small, distinct communities are merged.</li>
+<li><strong>Stability Matters</strong>: Always test if your communities hold up to noise. Unstable communities are likely artifacts of the algorithm rather than real features of the data.</li>
+<li><strong>Business Context is King</strong>: A mathematically optimal partition might not be the most actionable. Visual inspection and domain knowledge are essential to validate if the communities make sense (e.g., “Do these people actually work together?”).</li>
+<li><strong>Resolution Parameters</strong>: Algorithms like Louvain allow you to tune the “resolution” to find smaller or larger communities, which is useful for hierarchical analysis.</li>
 </ol>
 </section>
 <section id="exercises" class="level1" data-number="11">

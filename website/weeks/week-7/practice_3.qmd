@@ -14,7 +14,9 @@ execute:
 
 # Introduction
 
-This tutorial demonstrates how to analyze roles and positions in networks using R. We'll explore structural equivalence, implement the CONCOR algorithm, perform blockmodeling, and create image matrices to understand the underlying role structure of networks.
+This tutorial demonstrates how to analyze **roles and positions** in networks using R. Unlike community detection, which looks for cohesive subgroups (cliques, clusters), role analysis seeks to identify actors who behave similarly, even if they are not connected to each other. For example, two teachers in different schools may never interact, but they occupy the same 'role' because they have similar relationships with students, principals, and parents.
+
+We will explore **structural equivalence**, implement the classic **CONCOR algorithm**, perform **blockmodeling**, and create **image matrices** to uncover the underlying role structure of networks.
 
 ## Learning Objectives
 
@@ -53,14 +55,16 @@ set.seed(42)
 
 ## Concepts
 
-**Structural equivalence** means that actors occupy the same position in a network if they have identical patterns of ties to and from other actors.
+**Structural Equivalence** is the most stringent definition of position. Two actors are structurally equivalent if they have identical ties to and from the exact same other actors. They are perfectly substitutable in the network structure.
 
-Two main types:
+In practice, perfect equivalence is rare. We look for *approximate* equivalence—actors who have *similar* patterns of ties.
 
-1. **Structural equivalence**: Actors have identical ties to the same others
-2. **Regular equivalence**: Actors have ties to others who are themselves equivalent
+There are other forms of equivalence, such as:
 
-We'll focus primarily on structural equivalence and blockmodeling.
+1.  **Structural equivalence**: Actors have identical ties to the same others.
+2.  **Regular equivalence**: Actors have ties to others who are themselves equivalent (e.g., two doctors are equivalent because they both treat patients, even if they treat different patients).
+
+This tutorial focuses on structural equivalence, which is the foundation of classical blockmodeling.
 
 ## Example Network: Corporate Advice Network
 
@@ -119,6 +123,8 @@ cat("Density:", round(edge_density(advice_net), 3), "\n")
 set.seed(42)
 layout_advice <- layout_with_fr(advice_net)
 
+# Set margins to ensure title is within bounding box
+par(mar = c(1, 1, 4, 1))
 plot(advice_net,
      layout = layout_advice,
      vertex.color = "lightblue",
@@ -136,7 +142,11 @@ plot(advice_net,
 
 ## Correlation-Based Similarity
 
-One common approach is to correlate the tie patterns of actors.
+One common approach is to calculate the **Pearson correlation** between the tie profiles (rows/columns of the adjacency matrix) of pairs of actors.
+
+*   **High positive correlation (+1)**: Actors have very similar tie patterns.
+*   **High negative correlation (-1)**: Actors have opposite tie patterns.
+*   Correlation focuses on the *pattern* or *shape* of ties, normalizing for the total number of ties.
 
 ```{r}
 #| label: correlation-similarity
@@ -171,7 +181,10 @@ round(similarity_matrix, 2)
 
 ## Euclidean Distance
 
-Another approach uses Euclidean distance between tie profiles:
+Another approach uses **Euclidean distance** between tie profiles.
+
+*   Measures the geometric distance between actors in the multidimensional space defined by their ties.
+*   Unlike correlation, it is sensitive to the *volume* (number) of ties. Two actors might have the same pattern, but if one has twice as many ties, they will be distant in Euclidean space but highly correlated.
 
 ```{r}
 #| label: euclidean-distance
@@ -213,11 +226,11 @@ if (use_pheatmap) {
            cluster_cols = TRUE,
            display_numbers = TRUE,
            number_format = "%.2f",
-           main = "Structural Equivalence Similarity\n(Correlation-based)",
+           main = "Structural Equivalence Similarity (Correlation-based)",
            color = colorRampPalette(c("white", "lightblue", "darkblue"))(100))
 } else {
   heatmap(similarity_matrix,
-          main = "Structural Equivalence Similarity\n(Correlation-based)",
+          main = "Structural Equivalence Similarity (Correlation-based)",
           col = colorRampPalette(c("white", "lightblue", "darkblue"))(100))
 }
 ```
@@ -239,6 +252,7 @@ dist_matrix <- as.dist(1 - similarity_matrix)
 hc <- hclust(dist_matrix, method = "complete")
 
 # Plot dendrogram
+par(mar = c(5, 4, 5, 2))
 plot(hc,
      main = "Hierarchical Clustering of Structural Equivalence",
      xlab = "Managers",
@@ -268,7 +282,9 @@ print(table(positions))
 
 # CONCOR Algorithm
 
-**CONCOR** (CONvergence of iterated CORrelations) is a classical algorithm for blockmodeling.
+**CONCOR** (CONvergence of iterated CORrelations) is a classical algorithm specifically designed for blockmodeling. It works on a fascinating mathematical property: if you repeatedly calculate the correlation matrix of a correlation matrix, the values eventually converge to a matrix containing only +1 and -1.
+
+This divides the actors into two distinct groups (blocks). We can then apply the procedure recursively to split these groups further, creating a hierarchical blockmodel.
 
 ## Implementing CONCOR
 
@@ -299,6 +315,7 @@ concor_simple <- function(adj_mat, max_iter = 25) {
 concor_result <- concor_simple(advice_mat)
 
 # Plot CONCOR dendrogram
+par(mar = c(5, 4, 5, 2))
 plot(concor_result,
      main = "CONCOR-style Blockmodel Dendrogram")
 
@@ -353,7 +370,9 @@ if (use_pheatmap) {
 
 # Image Matrices
 
-An **image matrix** summarizes the blockmodel by indicating whether ties are present or absent between positions.
+An **image matrix** is a simplified representation of the network. Instead of showing ties between individual actors, it shows ties between *positions* (blocks).
+
+To create it, we calculate the density of ties between every pair of positions. If the density is above a certain threshold (often the overall network density or a specific `alpha` value), we say there is a '1-block' (a tie between positions). Otherwise, it is a '0-block'.
 
 ## Compute Image Matrix
 
@@ -434,6 +453,8 @@ V(image_net)$name <- paste0("Pos", 1:vcount(image_net))
 
 # Plot reduced network
 set.seed(42)
+# Set margins to ensure title is within bounding box
+par(mar = c(1, 1, 4, 1))
 plot(image_net,
      layout = layout_nicely(image_net),
      vertex.color = c("coral", "lightblue", "lightgreen")[1:vcount(image_net)],
@@ -616,6 +637,8 @@ colors <- c("darkred", "orange", "lightblue")[true_positions]
 set.seed(42)
 layout_org <- layout_with_fr(org_net)
 
+# Set margins to ensure title is within bounding box
+par(mar = c(1, 1, 4, 1))
 plot(org_net,
      layout = layout_org,
      vertex.color = colors,
@@ -653,6 +676,7 @@ cat("Discovered positions:\n")
 print(org_positions)
 
 # Dendrogram
+par(mar = c(5, 4, 5, 2))
 plot(org_hc,
      main = "Organizational Network - Hierarchical Clustering",
      xlab = "Employees",
@@ -738,7 +762,12 @@ cat("Euclidean vs CONCOR:",
 
 # Interpretation and Substantive Meaning
 
-When interpreting blockmodels, consider:
+When interpreting blockmodels, consider the **Image Matrix** and the **Block Densities**:
+
+1.  **Reflexive ties (diagonal)**: A '1' on the diagonal (e.g., Pos1 -> Pos1) means the position is internally cohesive (like a community).
+2.  **Asymmetric ties**: A '1' from Pos1 -> Pos2 but '0' from Pos2 -> Pos1 suggests a hierarchy or flow (e.g., advice seeking).
+3.  **Isolates**: A position with '0's everywhere suggests isolated actors.
+4.  **Core-Periphery**: A core position connects to itself and others; a periphery position connects only to the core.
 
 ## Role Interpretation
 
@@ -819,7 +848,7 @@ For the advice network:
 
 ## Exercise 3: Regular Equivalence (Advanced)
 
-Research and implement a measure of regular equivalence:
+Research and implement a measure of regular equivalence (e.g., using the `REGE` algorithm or `equiv.clust` from the `sna` package):
 
 1. Understand the difference from structural equivalence
 2. Apply to the advice network
@@ -838,4 +867,4 @@ Research and implement a measure of regular equivalence:
 
 ---
 
-**Next Steps**: Combine community detection (from practice_1.qmd) with role analysis to explore whether structurally equivalent actors belong to the same communities - they often don't!
+**Next Steps**: Try combining community detection (from `practice_1.qmd`) with role analysis. Do structurally equivalent actors belong to the same communities? Often they don't—community detection finds cohesive groups (friends), while role analysis finds similar types of people (e.g., all the "popular kids" might not be friends with each other, but they occupy the same role).

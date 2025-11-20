@@ -493,12 +493,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This week shifts focus from individual nodes and local structures to understanding networks at a higher level of abstraction. We explore two complementary approaches to seeing social structure:</p>
+<p>This week shifts focus from individual nodes and local structures to understanding networks at a higher level of abstraction, a critical skill for analyzing complex organizational and market systems. We explore two complementary approaches to seeing social structure, drawing on foundational sociological theory:</p>
 <ol type="1">
-<li><strong>Connectionist approaches</strong>: How cohesive communities form through direct ties and resource flows</li>
-<li><strong>Positional approaches</strong>: How roles and positions emerge through similar patterns of ties</li>
+<li><p><strong>Connectionist approaches</strong>: Focusing on <strong>social cohesion</strong> and the formation of communities through direct ties and resource flows. This view aligns with Durkheim’s concept of solidarity, asking what holds groups together. In a business context, this helps identify siloed departments, informal communication clusters, and the robustness of information flow.</p></li>
+<li><p><strong>Positional approaches</strong>: Focusing on <strong>roles and positions</strong> that emerge through similar patterns of ties (structural equivalence). This abstracts away from <em>who</em> knows <em>whom</em> to <em>what</em> function an actor serves (e.g., “broker,” “leader,” “isolate”). This is essential for organizational design, identifying redundant roles, and understanding power dynamics beyond simple hierarchy.</p></li>
 </ol>
-<p>These perspectives help us address fundamental questions about social integration: What holds groups together? How do we identify meaningful subgroups? How do role structures organize social life?</p>
+<p>These perspectives help us address fundamental questions about social integration and structure: How do we identify meaningful subgroups? How do role structures organize economic and social life? And how can these insights drive strategic decision-making?</p>
 </section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
@@ -512,15 +512,27 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>📖 Review the <a href="../../course/syllabus.html">syllabus</a></p>
-<p>📖 Review concepts from previous weeks:</p>
+<p>📖 <strong>Review</strong>:</p>
 <ul>
 <li><a href="../../weeks/week-1/network_terms.html">Network fundamentals</a> (Week 1)</li>
 <li><a href="../week-3/slideshow.html">Centrality measures</a> (Week 3)</li>
 <li><a href="../week-4/slideshow.html">Triadic structures</a> (Week 4)</li>
 </ul>
-<p>📖 <strong>Required readings</strong> - Book chapters available in this directory:</p>
-<p>Chapter 8: “Cohesion and Groups” and Chapter 10: “Positions and Roles” from Rawlings, Craig M., Jeffrey A. Smith, James Moody, and Daniel A. McFarland. <a href="https://go.exlibris.link/5r30tSdj">Network analysis: integrating social network theory, method, and application with R</a>. Cambridge University Press, 2023.</p>
+<p>📖 <strong>Required Readings</strong>:</p>
+<p><strong>Chapter 8: “Cohesion and Groups”</strong> (Rawlings et al., 2023)</p>
+<p><em>Focus on:</em></p>
+<ul>
+<li><p><strong>Ridge Structures</strong>: How networks are composed of peaks of high connectivity and ridges of lower connectivity.</p></li>
+<li><p><strong>Modularity</strong>: The measure of the strength of division of a network into modules (communities).</p></li>
+<li><p><strong>Small Worlds</strong>: The balance between local clustering and global reachability, and its implication for diffusion (e.g., of innovation or risk).</p></li>
+</ul>
+<p><strong>Chapter 10: “Positions and Roles”</strong> (Rawlings et al., 2023)</p>
+<p><em>Focus on:</em></p>
+<ul>
+<li><p><strong>Structural Equivalence</strong>: Actors who have identical ties to and from all other actors.</p></li>
+<li><p><strong>Regular Equivalence</strong>: Actors who have ties to <em>equivalent</em> others (e.g., two managers may not know the same people, but they both supervise employees and report to directors).</p></li>
+<li><p><strong>Blockmodeling</strong>: The inductive method for identifying these roles from data.</p></li>
+</ul>
 </div>
 </div>
 </section>
@@ -537,12 +549,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p>📉 Slideshow: <a href="slideshow.html">Communities, Roles, and Positions</a></p>
-<p><strong>Key topics covered</strong>:</p>
-<ul>
-<li><strong>Network Communities</strong>: Cohesion, modularity, and detection algorithms</li>
-<li><strong>Roles and Positions</strong>: Structural equivalence, blockmodeling, and image matrices</li>
-<li><strong>Integration</strong>: How communities and positions offer complementary views of social structure</li>
-</ul>
 </div>
 </div>
 </section>
@@ -560,53 +566,41 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <section id="tutorial-1-community-detection-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="tutorial-1-community-detection-in-r">Tutorial 1: <a href="../../weeks/week-7/practice_1.html">Community Detection in R</a></h3>
-<p>A comprehensive tutorial covering:</p>
+<p>A comprehensive tutorial on identifying subgroups, essential for market segmentation and organizational analysis:</p>
 <ul>
-<li><strong>Multiple algorithms</strong>: Louvain, Edge Betweenness, Walktrap, Spectral, Fast Greedy</li>
-<li><strong>Method comparison</strong>: Calculate and compare modularity scores across methods</li>
-<li><strong>Agreement analysis</strong>: Use Normalized Mutual Information (NMI) to assess method consistency</li>
-<li><strong>Quality assessment</strong>: Analyze within vs.&nbsp;between community density</li>
-<li><strong>Resolution exploration</strong>: Sweep resolution parameters to find optimal granularity</li>
-<li><strong>Stability testing</strong>: Assess robustness to network perturbations</li>
-<li><strong>Visualization</strong>: Create publication-quality community structure plots</li>
-<li><strong>Hands-on examples</strong>: Karate Club network and scale-free networks</li>
+<li><strong>Algorithm Comparison</strong>: Lou Playground ￼ ￼ VS Code Remote Tunnel Antigravity Knowledge Browser Settings Provide Feedback net-analysis-smm638 / Improve Role Analysis Practice Following Review Changes consider ￼practice_3.qmd– expand and improve the companion text ￼ Thought for 1s</li>
+</ul>
+<p>Analyzed ￼ practice_3.qmd#L1-800 ￼ Thought for 5s</p>
+<p>Analyzed ￼ practice_3.qmd#L801-842 ￼ Thought for 25s</p>
+<p>Edited ￼ practice_3.qmd +34 -14 Open diff ￼ Thought for 4s</p>
+<p>Analyzed ￼ practice_3.qmd#L1-800 ￼ Thought for &lt;1s</p>
+<p>Analyzed ￼ practice_3.qmd#L800-862 ￼ Thought for 6s</p>
+<p>Edited ￼ practice_3.qmd +2 -2 Open diff ￼ Thought for 1s</p>
+<p>Analyzed ￼ practice_3.qmd#L1-800 ￼ Thought for &lt;1s</p>
+<p>I have expanded and improved the companion text for vain, Edge Betweenness, Walktrap, Spectral.</p>
+<ul>
+<li><p><strong>Metric Analysis</strong>: Using Modularity and Normalized Mutual Information (NMI) to validate cluster quality.</p></li>
+<li><p><strong>Stability Testing</strong>: Assessing if your identified segments are robust or artifacts of the data.</p></li>
+<li><p><strong>Business Case</strong>: Identifying distinct communities in a client network.</p></li>
 </ul>
 </section>
 <section id="tutorial-2-community-detection-in-python" class="level3">
 <h3 class="anchored" data-anchor-id="tutorial-2-community-detection-in-python">Tutorial 2: <a href="../../weeks/week-7/practice_2.html">Community Detection in Python</a></h3>
-<p>A parallel tutorial using Python and NetworkX that demonstrates:</p>
+<p>Parallel tutorial using Python/NetworkX:</p>
 <ul>
-<li>Loading and exploring networks in Python</li>
-<li>Applying greedy modularity, label propagation, and Girvan-Newman algorithms</li>
-<li>Optionally running Louvain (if <code>python-louvain</code> is installed)</li>
-<li>Computing modularity using <code>networkx.algorithms.community</code></li>
-<li>Visualizing communities with Matplotlib</li>
-<li>Comparing methods via a modularity summary table and bar plot</li>
-<li>Applying methods to both the karate club graph and a larger scale-free network</li>
+<li><p><strong>Greedy Modularity &amp; Label Propagation</strong>: Fast methods for large-scale networks.</p></li>
+<li><p><strong>Visualizing Communities</strong>: Producing clear reports for stakeholders.</p></li>
+<li><p><strong>Comparative Analysis</strong>: Benchmarking methods to select the best fit for your data.</p></li>
 </ul>
 </section>
 <section id="tutorial-3-role-and-position-analysis-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="tutorial-3-role-and-position-analysis-in-r">Tutorial 3: <a href="../../weeks/week-7/practice_3.html">Role and Position Analysis in R</a></h3>
-<p>A comprehensive tutorial covering blockmodeling and structural equivalence:</p>
+<p>Advanced tutorial on Blockmodeling and Structural Equivalence:</p>
 <ul>
-<li><strong>Structural equivalence measures</strong>: Correlation and Euclidean distance</li>
-<li><strong>CONCOR algorithm</strong>: Classical blockmodeling approach</li>
-<li><strong>Hierarchical clustering</strong>: Identifying positions from tie profiles</li>
-<li><strong>Blockmodels and image matrices</strong>: Reduced network representations</li>
-<li><strong>Block density analysis</strong>: Within vs.&nbsp;between position densities</li>
-<li><strong>Multiple methods comparison</strong>: Comparing different equivalence measures</li>
-<li><strong>Model fit assessment</strong>: Evaluating blockmodel quality</li>
-<li><strong>Practical examples</strong>: Corporate advice networks and organizational hierarchies</li>
-<li><strong>Substantive interpretation</strong>: Understanding role meanings</li>
-</ul>
-</section>
-<section id="advanced-topics-coming-soon" class="level3">
-<h3 class="anchored" data-anchor-id="advanced-topics-coming-soon">Advanced Topics (Coming Soon)</h3>
-<ul>
-<li>Small-world analysis and metrics</li>
-<li>Cohesive blocking and k-components</li>
-<li>Dynamic community detection</li>
-<li>Overlapping community detection</li>
+<li><p><strong>Identifying Roles</strong>: Using CONCOR and hierarchical clustering to find actors with similar behavioral profiles.</p></li>
+<li><p><strong>Image Matrices</strong>: Creating simplified maps of how roles interact (e.g., “How does Sales interact with Engineering?”).</p></li>
+<li><p><strong>Model Fit</strong>: Evaluating how well your reduced model represents the complex reality.</p></li>
+<li><p><strong>Application</strong>: Analyzing a corporate advice network to identify key influencers and bottlenecks.</p></li>
 </ul>
 </section>
 </div>
@@ -624,11 +618,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Application exercises</strong>:</p>
+<p><strong>Application Exercises</strong>:</p>
 <ol type="1">
-<li><p><strong>Community Analysis</strong>: Apply multiple community detection algorithms to a network and compare results. Assess which method best captures substantive communities.</p></li>
-<li><p><strong>Role Structure Analysis</strong>: Perform a blockmodeling analysis to identify role positions in an organizational or social network. Create and interpret the image matrix.</p></li>
-<li><p><strong>Integration</strong>: Examine whether communities correspond to positions - do structurally equivalent actors tend to be in the same community?</p></li>
+<li><p><strong>Organizational Silo Analysis</strong>: Apply community detection algorithms to an internal communication network. Identify if the communities map to formal departments or if cross-functional silos exist. Discuss the implications for organizational agility.</p></li>
+<li><p><strong>Role Identification in Supply Chains</strong>: Perform a blockmodeling analysis on a supply chain network. Identify positions (e.g., “primary suppliers”, “assemblers”, “distributors”) based on transaction patterns rather than labels. Create an image matrix to show the flow of goods between these positions.</p></li>
+<li><p><strong>Structural Integration</strong>: Examine the intersection of communities and roles. Do “brokers” (a positional role) tend to exist at the boundaries of communities? How does this affect information diffusion?</p></li>
 </ol>
 </div>
 </div>
@@ -645,38 +639,26 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<section id="discussion-questions" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-questions">Discussion Questions</h3>
+<p><strong>1. Mechanical vs.&nbsp;Organic Solidarity in Modern Firms</strong> Durkheim distinguished between mechanical solidarity (based on similarity) and organic solidarity (based on interdependence). How do <strong>communities</strong> (clusters of dense ties) and <strong>role structures</strong> (interdependent positions) map onto these concepts? Which form of solidarity is more prevalent in a startup vs.&nbsp;a large bureaucracy?</p>
+<p><strong>2. The “Small World” of Business</strong> Watts and Strogatz (1998) showed that a few random links can drastically reduce the diameter of a network. In a business context, what are the risks and benefits of a “small world” network? Consider the spread of innovation vs.&nbsp;the spread of systemic risk (e.g., financial contagion).</p>
+<p><strong>3. Methodological Pluralism</strong> Why is there no single “best” algorithm for community detection? What does this imply about the nature of social groups? As an analyst, how do you justify your choice of method to a stakeholder who wants “the right answer”?</p>
+</section>
 <section id="core-readings" class="level3">
 <h3 class="anchored" data-anchor-id="core-readings">Core Readings</h3>
-<p><strong>Cohesion and Communities</strong></p>
-<p>Chapter 8 (“Cohesion and Groups”) from Borgatti, S. P., Everett, M. G., Johnson, J. C., &amp; Agneessens, F. (2024). <em>Analyzing Social Networks Using R</em>. Sage Publications.</p>
-<p><strong>Foundational Work on Blockmodeling</strong></p>
-<p>White, H. C., Boorman, S. A., &amp; Breiger, R. L. (1976). Social structure from multiple networks. I. Blockmodels of roles and positions. <em>American Journal of Sociology</em>, 81(4), 730-780.</p>
-<p><strong>Community Detection Algorithms</strong></p>
-<p>Newman, M. E. J., &amp; Girvan, M. (2004). Finding and evaluating community structure in networks. <em>Physical Review E</em>, 69(2), 026113.</p>
-<p>Blondel, V. D., Guillaume, J. L., Lambiotte, R., &amp; Lefebvre, E. (2008). Fast unfolding of communities in large networks. <em>Journal of Statistical Mechanics: Theory and Experiment</em>, 2008(10), P10008.</p>
-<p><strong>Small-World Networks</strong></p>
-<p>Watts, D. J., &amp; Strogatz, S. H. (1998). Collective dynamics of ‘small-world’ networks. <em>Nature</em>, 393(6684), 440-442.</p>
-<p>Granovetter, M. S. (1973). The strength of weak ties. <em>American Journal of Sociology</em>, 78(6), 1360-1380.</p>
+<ul>
+<li><p><strong>Cohesion</strong>: Borgatti, S. P., et al.&nbsp;(2024). <em>Analyzing Social Networks Using R</em>. Chapter 8.</p></li>
+<li><p><strong>Blockmodeling</strong>: White, H. C., Boorman, S. A., &amp; Breiger, R. L. (1976). Social structure from multiple networks. I. Blockmodels of roles and positions. <em>American Journal of Sociology</em>.</p></li>
+</ul>
 </section>
 <section id="supplementary-readings" class="level3">
 <h3 class="anchored" data-anchor-id="supplementary-readings">Supplementary Readings</h3>
-<p><strong>Structural Cohesion</strong></p>
-<p>Moody, J., &amp; White, D. R. (2003). Structural cohesion and embeddedness: A hierarchical concept of social groups. <em>American Sociological Review</em>, 68(1), 103-127.</p>
-<p><strong>Generalized Blockmodeling</strong></p>
-<p>Doreian, P., Batagelj, V., &amp; Ferligoj, A. (2005). <em>Generalized Blockmodeling</em>. Cambridge University Press.</p>
-<p><strong>Role Equivalence</strong></p>
-<p>Burt, R. S. (1990). Detecting role equivalence. <em>Social Networks</em>, 12(1), 83-97.</p>
-<p><strong>Applications</strong></p>
-<p>Padgett, J. F., &amp; Ansell, C. K. (1993). Robust action and the rise of the Medici, 1400-1434. <em>American Journal of Sociology</em>, 98(6), 1259-1319.</p>
-</section>
-<section id="conceptual-connections" class="level3">
-<h3 class="anchored" data-anchor-id="conceptual-connections">Conceptual Connections</h3>
-<p><strong>Mechanical vs.&nbsp;Organic Solidarity</strong></p>
-<p>Consider how Durkheim’s distinction between mechanical solidarity (based on similarity) and organic solidarity (based on differentiated interdependence) maps onto the distinction between communities and role structures.</p>
-<p><strong>Methodological Pluralism</strong></p>
-<p>Reflect on why there is no single “best” method for community detection or blockmodeling. What does this tell us about the nature of social structure?</p>
-<p><strong>Integration of Approaches</strong></p>
-<p>How might communities and positions relate to each other? Can structurally equivalent actors be in different communities? Can community members occupy different positions?</p>
+<ul>
+<li><p><strong>Small Worlds</strong>: Watts, D. J., &amp; Strogatz, S. H. (1998). Collective dynamics of ‘small-world’ networks. <em>Nature</em>.</p></li>
+<li><p><strong>Weak Ties</strong>: Granovetter, M. S. (1973). The strength of weak ties. <em>American Journal of Sociology</em>.</p></li>
+<li><p><strong>Robust Action</strong>: Padgett, J. F., &amp; Ansell, C. K. (1993). Robust action and the rise of the Medici. <em>American Journal of Sociology</em>. (A classic example of using network position for political power).</p></li>
+</ul>
 </section>
 </div>
 </div>

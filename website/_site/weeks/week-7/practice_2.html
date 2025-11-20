@@ -111,6 +111,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -500,17 +529,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#method-1-greedy-modularity-clauset-newman-moore" id="toc-method-1-greedy-modularity-clauset-newman-moore" class="nav-link" data-scroll-target="#method-1-greedy-modularity-clauset-newman-moore"><span class="header-section-number">3.1</span> Method 1: Greedy Modularity (Clauset-Newman-Moore)</a>
   <ul class="collapse">
-  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization"><span class="header-section-number">3.1.1</span> Visualization</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works"><span class="header-section-number">3.1.1</span> How it works</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization"><span class="header-section-number">3.1.2</span> Visualization</a></li>
   </ul></li>
   <li><a href="#method-2-label-propagation" id="toc-method-2-label-propagation" class="nav-link" data-scroll-target="#method-2-label-propagation"><span class="header-section-number">3.2</span> Method 2: Label Propagation</a>
   <ul class="collapse">
-  <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1"><span class="header-section-number">3.2.1</span> Visualization</a></li>
+  <li><a href="#how-it-works-1" id="toc-how-it-works-1" class="nav-link" data-scroll-target="#how-it-works-1"><span class="header-section-number">3.2.1</span> How it works</a></li>
+  <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1"><span class="header-section-number">3.2.2</span> Visualization</a></li>
   </ul></li>
   <li><a href="#method-3-girvan-newman-edge-betweenness" id="toc-method-3-girvan-newman-edge-betweenness" class="nav-link" data-scroll-target="#method-3-girvan-newman-edge-betweenness"><span class="header-section-number">3.3</span> Method 3: Girvan-Newman (Edge Betweenness)</a>
   <ul class="collapse">
-  <li><a href="#visualization-2" id="toc-visualization-2" class="nav-link" data-scroll-target="#visualization-2"><span class="header-section-number">3.3.1</span> Visualization</a></li>
+  <li><a href="#how-it-works-2" id="toc-how-it-works-2" class="nav-link" data-scroll-target="#how-it-works-2"><span class="header-section-number">3.3.1</span> How it works</a></li>
+  <li><a href="#visualization-2" id="toc-visualization-2" class="nav-link" data-scroll-target="#visualization-2"><span class="header-section-number">3.3.2</span> Visualization</a></li>
   </ul></li>
-  <li><a href="#optional-louvain-algorithm-if-available" id="toc-optional-louvain-algorithm-if-available" class="nav-link" data-scroll-target="#optional-louvain-algorithm-if-available"><span class="header-section-number">3.4</span> Optional: Louvain Algorithm (If Available)</a></li>
+  <li><a href="#optional-louvain-algorithm-if-available" id="toc-optional-louvain-algorithm-if-available" class="nav-link" data-scroll-target="#optional-louvain-algorithm-if-available"><span class="header-section-number">3.4</span> Optional: Louvain Algorithm (If Available)</a>
+  <ul class="collapse">
+  <li><a href="#why-use-it" id="toc-why-use-it" class="nav-link" data-scroll-target="#why-use-it"><span class="header-section-number">3.4.1</span> Why use it?</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#comparing-methods" id="toc-comparing-methods" class="nav-link" data-scroll-target="#comparing-methods"><span class="header-section-number">4</span> Comparing Methods</a>
   <ul class="collapse">
@@ -549,17 +584,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>This tutorial demonstrates how to detect and analyze communities in networks using <strong>Python</strong> and <strong>NetworkX</strong>. We’ll implement several community detection algorithms, compare their results, and visualize the detected communities.</p>
+<p>In the Python ecosystem, <strong>NetworkX</strong> is the standard library for graph analysis. While it may not be as performant as <code>igraph</code> for massive networks, its pure Python implementation makes it incredibly accessible and easy to integrate with data science workflows (pandas, scikit-learn).</p>
+<p>This tutorial translates the concepts of community detection into the Python landscape. We will focus on identifying cohesive subgroups that often correspond to: * <strong>Customer Segments</strong>: Groups with similar purchasing patterns. * <strong>Social Circles</strong>: Tightly knit groups of friends or colleagues. * <strong>Functional Modules</strong>: Interdependent components in software or biological systems.</p>
 <section id="learning-objectives" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1.1</span> Learning Objectives</h2>
 <p>By the end of this tutorial, you will be able to:</p>
-<ul>
-<li>Load and explore network data in Python using NetworkX</li>
-<li>Apply multiple community detection algorithms</li>
-<li>Compute and interpret modularity</li>
-<li>Compare community partitions across methods</li>
-<li>Visualize community structure</li>
-</ul>
+<ol type="1">
+<li><strong>Execute</strong> community detection workflows using NetworkX.</li>
+<li><strong>Understand</strong> the algorithmic differences between Greedy Modularity, Label Propagation, and Girvan-Newman.</li>
+<li><strong>Visualize</strong> partitions effectively using <code>matplotlib</code>.</li>
+<li><strong>Bridge</strong> the gap between raw graph data and actionable business insights.</li>
+</ol>
 </section>
 <section id="setup" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">1.2</span> Setup</h2>
@@ -584,6 +619,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example-1-zacharys-karate-club-network" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Example 1: Zachary’s Karate Club Network</h1>
+<p>As in the R tutorial, we use the <strong>Zachary’s Karate Club</strong> network. This small social network serves as an excellent test bed because we can visually verify if the algorithms are making sense.</p>
 <section id="loading-the-network" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="loading-the-network"><span class="header-section-number">2.1</span> Loading the Network</h2>
 <div id="load-karate" class="cell" data-execution_count="2">
@@ -655,6 +691,15 @@ Average clustering: 0.571</code></pre>
 </div>
 <section id="method-1-greedy-modularity-clauset-newman-moore" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="method-1-greedy-modularity-clauset-newman-moore"><span class="header-section-number">3.1</span> Method 1: Greedy Modularity (Clauset-Newman-Moore)</h2>
+<p>The <strong>Greedy Modularity</strong> algorithm (often called Clauset-Newman-Moore) is the standard hierarchical agglomerative method in NetworkX.</p>
+<section id="how-it-works" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="how-it-works"><span class="header-section-number">3.1.1</span> How it works</h3>
+<ol type="1">
+<li>Start with each node in its own community.</li>
+<li>Repeatedly join the pair of communities that produces the largest increase in modularity (<span class="math inline">\(Q\)</span>).</li>
+<li>Stop when no further increase is possible.</li>
+</ol>
+<p><strong>Pros</strong>: Good balance of speed and quality; deterministic (always gives the same result). <strong>Cons</strong>: Can be slower than Louvain on very large graphs; prone to the “resolution limit” (merging small communities).</p>
 <div id="greedy" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>greedy_comms <span class="op">=</span> <span class="bu">list</span>(nx_comm.greedy_modularity_communities(G))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mod_greedy <span class="op">=</span> print_partition_stats(G, greedy_comms, <span class="st">"Greedy Modularity"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -666,8 +711,9 @@ Modularity: 0.411
 </code></pre>
 </div>
 </div>
-<section id="visualization" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="visualization"><span class="header-section-number">3.1.1</span> Visualization</h3>
+</section>
+<section id="visualization" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="visualization"><span class="header-section-number">3.1.2</span> Visualization</h3>
 <div id="cell-viz-greedy" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>membership_greedy <span class="op">=</span> partition_to_membership(G, greedy_comms)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -701,7 +747,16 @@ Modularity: 0.411
 </section>
 <section id="method-2-label-propagation" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="method-2-label-propagation"><span class="header-section-number">3.2</span> Method 2: Label Propagation</h2>
-<p>Asynchronous label propagation is a fast, diffusion-like community detection method.</p>
+<p><strong>Label Propagation</strong> is a unique algorithm because it doesn’t optimize a global metric like modularity. Instead, it uses a local voting mechanism.</p>
+<section id="how-it-works-1" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="how-it-works-1"><span class="header-section-number">3.2.1</span> How it works</h3>
+<ol type="1">
+<li>Every node is initialized with a unique label.</li>
+<li>In each iteration, nodes update their label to the one most frequent among their neighbors (majority vote).</li>
+<li>Ties are broken randomly.</li>
+<li>The process stops when every node has the majority label of its neighbors.</li>
+</ol>
+<p><strong>Pros</strong>: Extremely fast (near linear time); no parameters to tune. <strong>Cons</strong>: <strong>Non-deterministic</strong> (different runs give different results); can get stuck in oscillations; doesn’t guarantee a high modularity score.</p>
 <div id="label-propagation" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lpa_comms <span class="op">=</span> <span class="bu">list</span>(nx_comm.asyn_lpa_communities(G, weight<span class="op">=</span><span class="va">None</span>, seed<span class="op">=</span><span class="dv">42</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mod_lpa <span class="op">=</span> print_partition_stats(G, lpa_comms, <span class="st">"Label Propagation"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -713,8 +768,9 @@ Modularity: 0.437
 </code></pre>
 </div>
 </div>
-<section id="visualization-1" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="visualization-1"><span class="header-section-number">3.2.1</span> Visualization</h3>
+</section>
+<section id="visualization-1" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="visualization-1"><span class="header-section-number">3.2.2</span> Visualization</h3>
 <div id="cell-viz-lpa" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>membership_lpa <span class="op">=</span> partition_to_membership(G, lpa_comms)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -747,7 +803,12 @@ Modularity: 0.437
 </section>
 <section id="method-3-girvan-newman-edge-betweenness" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="method-3-girvan-newman-edge-betweenness"><span class="header-section-number">3.3</span> Method 3: Girvan-Newman (Edge Betweenness)</h2>
-<p>The Girvan-Newman algorithm progressively removes edges with high betweenness.</p>
+<p>The <strong>Girvan-Newman</strong> algorithm is a “divisive” method that focuses on removing bridges between communities.</p>
+<section id="how-it-works-2" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="how-it-works-2"><span class="header-section-number">3.3.1</span> How it works</h3>
+<p>It iteratively removes the edge with the highest <strong>edge betweenness centrality</strong>. * <strong>Betweenness</strong>: The number of shortest paths passing through an edge. * <strong>Logic</strong>: Edges connecting communities act as bottlenecks, so they have high betweenness.</p>
+<p>This method produces a <strong>dendrogram</strong> (hierarchy). We can stop at any level to get a specific number of communities.</p>
+<p><strong>Pros</strong>: Very accurate for small networks; reveals hierarchical structure. <strong>Cons</strong>: <strong>Very slow</strong> (<span class="math inline">\(O(N^3)\)</span>); impractical for networks with &gt;500 nodes.</p>
 <div id="girvan-newman" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> islice</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -771,8 +832,9 @@ Modularity: 0.348
 </code></pre>
 </div>
 </div>
-<section id="visualization-2" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="visualization-2"><span class="header-section-number">3.3.1</span> Visualization</h3>
+</section>
+<section id="visualization-2" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="visualization-2"><span class="header-section-number">3.3.2</span> Visualization</h3>
 <div id="cell-viz-gn" class="cell" data-fig-height="6" data-fig-width="8" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>membership_gn <span class="op">=</span> partition_to_membership(G, gn_comms)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -805,6 +867,10 @@ Modularity: 0.348
 </section>
 <section id="optional-louvain-algorithm-if-available" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="optional-louvain-algorithm-if-available"><span class="header-section-number">3.4</span> Optional: Louvain Algorithm (If Available)</h2>
+<p>The <strong>Louvain algorithm</strong> is arguably the industry standard for community detection, but it is <strong>not</strong> included in the core NetworkX library (it requires the <code>python-louvain</code> or <code>community</code> package).</p>
+<section id="why-use-it" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="why-use-it"><span class="header-section-number">3.4.1</span> Why use it?</h3>
+<p>It is significantly faster than the Greedy Modularity method and often finds higher modularity partitions. It uses a multi-level approach to optimize modularity locally and then aggregate the network.</p>
 <div id="louvain" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> HAVE_LOUVAIN:</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Louvain package detected. Running Louvain community detection...</span><span class="ch">\n</span><span class="st">"</span>)</span>
@@ -848,6 +914,7 @@ Modularity: 0.348
 </div>
 </section>
 </section>
+</section>
 <section id="comparing-methods" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Comparing Methods</h1>
 <section id="summary-table" class="level2" data-number="4.1">
@@ -864,7 +931,7 @@ Modularity: 0.348
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>comparison_df <span class="op">=</span> pd.DataFrame(results)</span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>comparison_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="comparison" class="cell-output cell-output-display" data-execution_count="26">
+<div id="comparison" class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -962,8 +1029,8 @@ Modularity: 0.348
 <span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Nodes: 200, Edges: 396
-Greedy modularity communities: 10
-Modularity: 0.475</code></pre>
+Greedy modularity communities: 12
+Modularity: 0.503</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -977,11 +1044,16 @@ Modularity: 0.475</code></pre>
 <section id="key-takeaways" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Key Takeaways</h1>
 <ol type="1">
-<li>Different algorithms can yield different numbers of communities and modularity values.</li>
-<li>Greedy modularity is often a good default method in NetworkX.</li>
-<li>Label propagation is fast and parameter-free but can be unstable.</li>
-<li>Girvan-Newman provides a hierarchical view but is computationally expensive.</li>
-<li>Louvain (if available) is a widely used modularity-maximizing algorithm.</li>
+<li><strong>Tool Selection</strong>: NetworkX is excellent for education and small-to-medium networks. For massive graphs (millions of nodes), consider <code>igraph</code> or specialized tools like <code>graph-tool</code>.</li>
+<li><strong>Algorithm Trade-offs</strong>:
+<ul>
+<li><strong>Greedy Modularity</strong>: Good default, deterministic.</li>
+<li><strong>Label Propagation</strong>: Fast but unstable (run it multiple times!).</li>
+<li><strong>Girvan-Newman</strong>: Great for understanding structure in small graphs, but too slow for big data.</li>
+<li><strong>Louvain</strong>: The “gold standard” for performance/quality, but requires an extra package.</li>
+</ul></li>
+<li><strong>Visual Verification</strong>: Always visualize your communities (if <span class="math inline">\(N &lt; 1000\)</span>) to ensure they align with the network layout.</li>
+<li><strong>Beyond Modularity</strong>: While we optimized for modularity, remember that real-world communities might overlap or have fuzzy boundaries—features that standard partition algorithms miss.</li>
 </ol>
 </section>
 <section id="exercises" class="level1" data-number="7">
