@@ -1343,7 +1343,7 @@
     "href": "project/finalCourseProject/main.html",
     "title": "Final Course Project",
     "section": "",
-    "text": "Content coming soon.",
+    "text": "This final project requires you to design a comprehensive analytical approach to solve a real-world business problem: customer segmentation for a music streaming platform. You will develop a research design document that addresses how Elena Martinez, Chief Data Scientist at a European music streaming platform, should approach a network-based customer segmentation strategy.\n\n\n\n\n\n\nNoteKey Focus: Design, Not Implementation\n\n\n\nThis project emphasizes analytical design and strategic thinking rather than coding and model implementation. You are creating a blueprint for analysis, not conducting the full analysis itself.",
     "crumbs": [
       "Project",
       "Final course project"
@@ -2149,6 +2149,215 @@
     "crumbs": [
       "Weekly materials",
       "Week 7"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#project-overview",
+    "href": "project/finalCourseProject/main.html#project-overview",
+    "title": "Final Course Project",
+    "section": "",
+    "text": "This final project requires you to design a comprehensive analytical approach to solve a real-world business problem: customer segmentation for a music streaming platform. You will develop a research design document that addresses how Elena Martinez, Chief Data Scientist at a European music streaming platform, should approach a network-based customer segmentation strategy.\n\n\n\n\n\n\nNoteKey Focus: Design, Not Implementation\n\n\n\nThis project emphasizes analytical design and strategic thinking rather than coding and model implementation. You are creating a blueprint for analysis, not conducting the full analysis itself.",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#background",
+    "href": "project/finalCourseProject/main.html#background",
+    "title": "Final Course Project",
+    "section": "Background",
+    "text": "Background\nTraditional demographic segmentation (age, location, subscription tier) has proven inadequate for music streaming platforms. Music preferences transcend demographic boundaries—a 45-year-old executive might share the same taste in electronic music as a 22-year-old student. The platform needs a better way to segment 6 million active listeners based on their genre preferences and social connections.",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#the-business-challenge",
+    "href": "project/finalCourseProject/main.html#the-business-challenge",
+    "title": "Final Course Project",
+    "section": "The Business Challenge",
+    "text": "The Business Challenge\nElena Martinez’s team at a major European music streaming platform faces a critical decision: should they move from demographic segmentation to a genre-based, network-driven approach? If so, how should they implement it?\nElena’s hypothesis is that genres cluster naturally based on shared audiences and social connections. The question is how to identify these clusters and use them for customer segmentation.",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#your-task",
+    "href": "project/finalCourseProject/main.html#your-task",
+    "title": "Final Course Project",
+    "section": "Your Task",
+    "text": "Your Task\nYou will develop a research design document that proposes how to analyze the Deezer platform data and address Elena’s challenge. Your design should articulate:\n\nThe analytical approach to understanding genre preferences and social connections\nThe methodological rationale for your proposed methods\nA comparison framework for evaluating different segmentation approaches\nStrategic recommendations for business implementation",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#data",
+    "href": "project/finalCourseProject/main.html#data",
+    "title": "Final Course Project",
+    "section": "Data",
+    "text": "Data\nYou have been provided with real data from 54,573 Deezer users in Croatia:\n\nGenre preferences (HR_genres.json): User listening habits across 84 music genres\nSocial network (HR_edges.csv): 498,202 friendship connections between users\n\nThese two data tables may help you get a better understanding of users’ interaction patterns and preferences. You may want to use network analysis and conventional EDA to isolate your recommendations’ premises.\n\n\n\n\n\n\nTipData Location\n\n\n\n\nGenre preferences: HR_genres.json\nSocial edges: HR_edges.csv",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#required-document-components",
+    "href": "project/finalCourseProject/main.html#required-document-components",
+    "title": "Final Course Project",
+    "section": "Required Document Components",
+    "text": "Required Document Components\nYour research design document should address the following:\n\n1. Problem Framing and Context\n\nExplain the rationale for a network-based approach\nDefine the scope and objectives of your proposed analysis\n\n\n\n2. Data Representation\n\nDescribe your approach to representing the available data\nJustify your representational choices\n\n\n\n3. Methodological Design\n\nPropose methods for measuring relationships between genres and/or users\nPropose strategies for identifying customer segments\nExplain how you would evaluate the quality of your segmentation\nJustify your methodological choices\n\n\n\n4. Comparative Analysis\n\nCompare different analytical approaches you could take\nDiscuss trade-offs, data requirements, and expected outcomes\nRecommend which approach is most suitable and why\n\n\n\n5. Business Strategy and Implementation\n\nTranslate your technical approach into business value\nPropose validation strategies to assess impact\nAddress practical implementation considerations",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#deliverable",
+    "href": "project/finalCourseProject/main.html#deliverable",
+    "title": "Final Course Project",
+    "section": "Deliverable",
+    "text": "Deliverable\n\n\n\n\n\n\nWarningSingle Document Submission\n\n\n\nYou must submit one discursive research design document that addresses all case questions.\n\n\n\nDocument Specifications\n\nFormat: PDF\nLength: Approximately 3,000 words (±10% acceptable)\nStructure: Essay format with clear sections corresponding to the required components\nStyle: Professional business-academic writing\nReferences: Cite course materials, academic literature, and the teaching case\nFigures/Tables: Include conceptual diagrams where helpful (optional, do not count toward word limit)\n\n\n\nDistribution of Words Across Document Components\nYour document should flow as a cohesive narrative, but should address:\n\nProblem Framing and Context (200-300 words)\nData Representation (400-500 words)\nMethodological Design (1,200-1,500 words)\nComparative Analysis (600-800 words)\nBusiness Strategy and Implementation (400-600 words)\n\n\n\n\n\n\n\nNoteNote on Implementation\n\n\n\nYou are not required to write code or implement the analysis. This is a design document that proposes how the analysis should be conducted. Focus on demonstrating your understanding of network analysis concepts and their business application.\nFamiliarizing yourself with the data—by means of EDA—is recommended, though.",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#evaluation-criteria",
+    "href": "project/finalCourseProject/main.html#evaluation-criteria",
+    "title": "Final Course Project",
+    "section": "Evaluation Criteria",
+    "text": "Evaluation Criteria\nYour submission and individual presentation will be evaluated based on:\n\n\n\n\n\n\n\n\nCriterion\nWeight\nDescription\n\n\n\n\nConceptual Understanding\n35%\nDepth of understanding of network analysis concepts; appropriateness of proposed methods; theoretical justification\n\n\nAnalytical Design\n30%\nQuality of research design; comparison of multiple approaches; understanding of trade-offs and limitations\n\n\nBusiness Insight\n25%\nTranslation of technical concepts into business value; strategic thinking; practical implementation considerations\n\n\nCommunication\n10%\nClarity and coherence of writing; logical structure; professional presentation",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#key-questions-to-address",
+    "href": "project/finalCourseProject/main.html#key-questions-to-address",
+    "title": "Final Course Project",
+    "section": "",
+    "text": "Your analysis should answer:\n\n\n\n\n\n\nImportantCore Questions\n\n\n\n\nHow would you analyze this data to persuade the advisory board to fund the innovative, network-based approach to customer segmentation?\n\nWhat evidence demonstrates the limitations of demographic segmentation?\nWhat insights does network analysis provide that traditional methods miss?\n\nWhat are the expected advantages of genre-based segmentation over demographic segmentation?\n\nHow might it improve recommendation accuracy?\nHow might it enable better targeting for marketing campaigns?\nWhat operational efficiencies might it create?\n\nHow might your segmentation change if you incorporate both preference and social connection data?\n\nWhat different insights might each data source provide?\nHow would you decide which approach is most valuable?\n\nHow could the platform validate whether your proposed segmentation leads to better business outcomes?\n\nWhat metrics would you track?\nWhat validation approach would you design?\nWhat are the risks and limitations?",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#writing-guidance",
+    "href": "project/finalCourseProject/main.html#writing-guidance",
+    "title": "Final Course Project",
+    "section": "Writing Guidance",
+    "text": "Writing Guidance\n\n\n\n\n\n\nTipTips for Design Documents\n\n\n\n\nBe specific: Identify and name the specific methods you propose\nJustify your choices: Explain why your chosen methods are appropriate for this context\nConsider trade-offs: Discuss advantages and limitations of different approaches\nLink technical to business: Always connect analytical choices to business objectives\nBe realistic: Acknowledge data quality, computational, and organizational constraints\nStructure logically: Each section should flow naturally into the next\nWrite professionally: Address your audience (Elena and the advisory board)",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#resources",
+    "href": "project/finalCourseProject/main.html#resources",
+    "title": "Final Course Project",
+    "section": "Resources",
+    "text": "Resources\n\nCourse materials: Weeks 1-8 lectures and readings from SMM638",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#submission-details",
+    "href": "project/finalCourseProject/main.html#submission-details",
+    "title": "Final Course Project",
+    "section": "Submission Details",
+    "text": "Submission Details\n\n\n\n\n\n\nWarningSubmission Requirements\n\n\n\n\nDue date: November 28, 2025 (15:59)\nFormat: Single PDF document\nFilename: SMM638_FinalProject_[YourName].pdf\nSubmission method: Via Moodle",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#academic-integrity",
+    "href": "project/finalCourseProject/main.html#academic-integrity",
+    "title": "Final Course Project",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\n\nThis is an individual project\nYou may discuss high-level approaches with classmates, but your written document must be your own work\nProperly cite all sources, including course materials, academic papers, and the teaching case\nUse of AI tools (e.g., ChatGPT) for writing assistance must be disclosed in your document\nPlagiarism or inappropriate collaboration will result in academic penalties",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "project/finalCourseProject/main.html#tips-for-success",
+    "href": "project/finalCourseProject/main.html#tips-for-success",
+    "title": "Final Course Project",
+    "section": "Tips for Success",
+    "text": "Tips for Success\n\n\n\n\n\n\nTipClick to expand tips\n\n\n\n\nRead the teaching case carefully: Understand Elena’s challenge and the business context\nReview course materials: Draw on relevant lectures and concepts from the course\nBe specific: Name specific methods and explain your reasoning\nThink strategically: This is a business decision, not just a technical exercise\nConsider constraints: Address real-world implementation challenges\nWrite clearly: Use logical structure and clear transitions\nProofread: Check for errors before submitting\nStay within word count: Conciseness is a professional skill\n\n\n\n\nQuestions? Contact the instructor or post in the course discussion forum.\nGood luck! This project is your opportunity to demonstrate mastery of network analysis methods while solving a realistic business problem",
+    "crumbs": [
+      "Project",
+      "Final course project"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html",
+    "href": "course/syllabus.html",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nNoteCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nModel network formation and behavior\nAnalyze network evolution and dynamics over time\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes:\n\nUnderstand fundamental network concepts and terminology\nDifferentiate between network types (one-mode, two-mode, signed, weighted)\nSet up R/Python environment for network analysis\nPerform basic network data management and visualization\n\nTopics Covered:\n\nNetwork elements: nodes, edges, dyads, triads\nReal-world network examples (economic, organizational, social)\nTaxonomy of network measures (node, meso, macro levels)\nIntroduction to network analysis software\n\nCase Study: RCB: Social network analysis\n\n\n\nWeeks 2-3\nLearning Outcomes:\n\nCalculate and interpret various centrality measures\nUnderstand when to apply different centrality metrics\nAnalyze the relationship between centrality and outcomes\nImplement centrality algorithms in R/Python\n\nTopics Covered:\n\nDegree centrality and its variants\nCloseness centrality and information flow\nBetweenness centrality and brokerage\nEigenvector centrality and influence\nPageRank and its applications\nLocal clustering coefficient\n\nCase Study: Who is the right influencer? A social network analysis\n\n\n\nWeeks 4-5\nLearning Outcomes:\n\nAnalyze dyadic patterns and relationships\nModel homophily and its effects\nUnderstand triadic closure and its implications\nNetwork evolution patterns\nTest network hypotheses\n\nTopics Covered:\n\nReciprocity and mutuality\nHomophily and selection effects\nTriadic census and transitivity\nConditional Uniform Graph (CUG) tests\n\nCase Study: Feeding SoundCloud’s recommendation system with social network data\n\n\n\nWeeks 7-8\nLearning Outcomes:\n\nMeasure network cohesion at multiple levels\nApply community detection algorithms\nInterpret community structure for business insights\nImplement blockmodeling techniques\n\nTopics Covered:\n\nNetwork density and cohesion metrics\nCore-periphery structures\nCommunity detection algorithms (Louvain, modularity optimization)\nBlockmodeling\n\nCase Study: Profiling beer enthusiasts at BeerAdvocate\n\n\n\nWeeks 9-10\nLearning Outcomes:\n\nAnalyze the strategic value of network positions\nUnderstand closure vs. brokerage trade-offs\nApply network insights to career development\nDesign network interventions\n\nTopics Covered:\n\nStructural holes and brokerage opportunities\nNetwork closure and social capital\nThe strength of weak ties\nNetwork position and innovation\nCareer implications of network structure\n\nCase Study: Network position and employee performance in Silico’s R&D lab",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-overview",
+    "href": "course/syllabus.html#course-overview",
+    "title": "Course Syllabus",
+    "section": "",
+    "text": "Network Analytics (SMM638) provides a comprehensive introduction to the theory and practice of analyzing networked systems in business and organizational contexts. This module equips students with cutting-edge tools and techniques to understand, visualize, and leverage network structures for strategic decision-making.\n\n\n\nBy the end of this module, you will be able to:\n\n\n\n\n\n\nNoteCore Competencies\n\n\n\n\nTheoretical Foundation\n\nMaster fundamental network concepts, terminology, and mathematical foundations\nUnderstand different types of networks (social, organizational, technological)\nApply network theory to real-world business problems\n\nTechnical Skills\n\nCollect, clean, and structure network data from multiple sources\nImplement network analysis algorithms in R and Python\nCreate compelling visualizations of complex network structures\nPerform statistical analysis on network data\n\nAnalytical Capabilities\n\nCalculate and interpret centrality measures to identify key actors\nDetect communities and clusters within networks\nModel network formation and behavior\nAnalyze network evolution and dynamics over time\n\nBusiness Applications\n\nTransform network insights into actionable business strategies\nApply network analysis to marketing, operations, and organizational design\nEvaluate the impact of network position on performance\nDesign network interventions for business outcomes\n\n\n\n\n\n\n\nIn today’s interconnected world, understanding networks is crucial for:\n\nMarketing: Influencer identification, viral marketing, customer segmentation\nOperations: Supply chain optimization, knowledge management, innovation diffusion\nStrategy: Partnership formation, competitive analysis, ecosystem mapping\nHR: Organizational design, team composition, talent management\n\n\n\n\nWeek 1\nLearning Outcomes:\n\nUnderstand fundamental network concepts and terminology\nDifferentiate between network types (one-mode, two-mode, signed, weighted)\nSet up R/Python environment for network analysis\nPerform basic network data management and visualization\n\nTopics Covered:\n\nNetwork elements: nodes, edges, dyads, triads\nReal-world network examples (economic, organizational, social)\nTaxonomy of network measures (node, meso, macro levels)\nIntroduction to network analysis software\n\nCase Study: RCB: Social network analysis\n\n\n\nWeeks 2-3\nLearning Outcomes:\n\nCalculate and interpret various centrality measures\nUnderstand when to apply different centrality metrics\nAnalyze the relationship between centrality and outcomes\nImplement centrality algorithms in R/Python\n\nTopics Covered:\n\nDegree centrality and its variants\nCloseness centrality and information flow\nBetweenness centrality and brokerage\nEigenvector centrality and influence\nPageRank and its applications\nLocal clustering coefficient\n\nCase Study: Who is the right influencer? A social network analysis\n\n\n\nWeeks 4-5\nLearning Outcomes:\n\nAnalyze dyadic patterns and relationships\nModel homophily and its effects\nUnderstand triadic closure and its implications\nNetwork evolution patterns\nTest network hypotheses\n\nTopics Covered:\n\nReciprocity and mutuality\nHomophily and selection effects\nTriadic census and transitivity\nConditional Uniform Graph (CUG) tests\n\nCase Study: Feeding SoundCloud’s recommendation system with social network data\n\n\n\nWeeks 7-8\nLearning Outcomes:\n\nMeasure network cohesion at multiple levels\nApply community detection algorithms\nInterpret community structure for business insights\nImplement blockmodeling techniques\n\nTopics Covered:\n\nNetwork density and cohesion metrics\nCore-periphery structures\nCommunity detection algorithms (Louvain, modularity optimization)\nBlockmodeling\n\nCase Study: Profiling beer enthusiasts at BeerAdvocate\n\n\n\nWeeks 9-10\nLearning Outcomes:\n\nAnalyze the strategic value of network positions\nUnderstand closure vs. brokerage trade-offs\nApply network insights to career development\nDesign network interventions\n\nTopics Covered:\n\nStructural holes and brokerage opportunities\nNetwork closure and social capital\nThe strength of weak ties\nNetwork position and innovation\nCareer implications of network structure\n\nCase Study: Network position and employee performance in Silico’s R&D lab",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#assessment-strategy",
+    "href": "course/syllabus.html#assessment-strategy",
+    "title": "Course Syllabus",
+    "section": "Assessment Strategy",
+    "text": "Assessment Strategy\n\n📊 Assessment Components\n\n\nClass Participation (10%)\n\nActive engagement in discussions\nQuality of questions and insights\nIn-class case discussion contribution\n\nOngoing throughout term\n\n\nMid-Term Project (50%)\n\nTeam-based analysis (3-4 students)\nReal-world dataset\nTechnical implementation\nBusiness recommendations\n15-minute presentation\n\nDue: November 10, 2025\n\n\nFinal Project (40%)\n\nIndividual research project\nBusiness case requesting network analysis\nExecutive summary of case discussion (1,000 words)\n10-minute case discussion, job interview style\n\nDue: November 28, 2025\n\n\n\n\n📝 Assessment Criteria\nAll assessments will be evaluated on:\n\nTechnical Proficiency (30%)\n\nCorrect implementation of methods\nCode quality and documentation\nAppropriate use of techniques\n\nAnalytical Rigor (30%)\n\nSound methodology\nProper interpretation of results\nStatistical validity\n\nBusiness Relevance (30%)\n\nClear problem definition\nActionable insights\nStrategic recommendations\n\nCommunication (10%)\n\nClear presentation\nEffective visualizations\nProfessional writing",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-resources",
+    "href": "course/syllabus.html#course-resources",
+    "title": "Course Syllabus",
+    "section": "Course Resources",
+    "text": "Course Resources\n\n💻 Technical Requirements\n\n\n\n\n\n\nImportantEssential Software Setup\n\n\n\nProgramming Environments:\n\nR (version 4.3+) with RStudio\nPython (version 3.9+) with Spyder or Jupyter Lab/Notebooks\nGit for version control\n\nSample R Packages:\n# Core packages\ninstall.packages(c(\"igraph\", \"tidygraph\", \"ggraph\"))\n\n# Statistical modeling\ninstall.packages(c(\"statnet\", \"ergm\", \"btergm\"))\n\n# Visualization\ninstall.packages(c(\"networkD3\", \"visNetwork\", \"graphlayouts\"))\n\n# Data manipulation\ninstall.packages(c(\"tidyverse\"))\nSample Python Modules:\n# Data manipulation and computation\nconda install -c conda-forge numpy scipy matplotlib pandas \n\n# Network libraries\nconda install -c conda-forge networkx graph-tool\n\n# Interactive visualization\nconda install -c conda-forge plotly bokeh pyvis\n\n\nAlternatively, you can create the environment directly using the provided smm638.yaml file:\nconda env create -f smm638.yaml\nconda activate smm638\n\n\n📚 Reading List\nCore Textbooks:\n\nMenczer, F., Fortunato, S., & Davis, C. A. (2020). A first course in network science. Cambridge University Press.\n\nComprehensive yet accessible survey of network science notions and tools\nExcellent first course in network analysis book\n\nNewman, M. (2018). Networks (2nd ed.). Oxford University Press.\n\nComprehensive mathematical treatment of network problems\nExcellent for understanding algorithms\nFor the braves…\n\nEasley, D., & Kleinberg, J. (2010). Networks, crowds, and markets: Reasoning about a highly connected world. Cambridge: Cambridge University Press.\n\nFocus on economic applications of network concepts and methods\nPlenty of examples\nVariety of organizational and market issues, from auctions to social influence in digital platforms\n\nRawlings, C. M., Smith, J. A., Moody, J., & McFarland, D. A. (2023). Network analysis: integrating social network theory, method, and application with R. Cambridge University Press.\n\nFocus on social networks\nExcellent survey of network notions and methods\nOnline companion with R applications\n\nCarpenter, M. (2009). An executive’s primer on the strategy of social networks. Business Expert Press.\n\nAn executive’s perspective on networks\nA very actionable framework to maximize the value of your network\n\n\nSupplementary Readings:\n\nBarabási, A. L. (2014). Linked: How Everything Is Connected to Everything Else and What It Means for Business, Science, and Everyday Life. Basic Books.\nJackson, M. O. (2019). The Human Network. Pantheon Books.\nWatts, D. J. (2003). Six Degrees: The Science of a Connected Age. Norton.\n\n\n\n🌐 Online Resources\nCourse Materials: - GitHub repository: github.com/simoneSantoni/net-analysis-smm638 - Moodle page with lectures and assignments - Slack workspace for discussions\nExternal Resources: - Awesome Network Analysis",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course/syllabus.html#course-policies",
+    "href": "course/syllabus.html#course-policies",
+    "title": "Course Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\n📋 Attendance and Participation\n\nAttendance: Mandatory for all sessions\nPunctuality: Sessions start promptly; late arrivals disrupt learning\nPreparation: Complete readings and exercises before class\nEngagement: Active participation expected in all activities\n\n\n\n🤝 Collaboration Policy\n\nTeamwork: Encouraged for designated group projects\nIndividual Work: Must be completed independently\nCode Sharing: Allowed for learning, not for assignments\nCitation: Always attribute sources and collaborators\nAI: Disclose how you use LLMs to get your work done\n\n\n\n📧 Communication\n\n\n\n\n\n\nTipGetting Help\n\n\n\n\nMoodle Forum: First point of contact for content questions\n\nResponse time: 24-48 hours on weekdays\n\nOffice Hours: Wednesdays 15:00-17:00 (by appointment)\n\nBook via: simone.santoni.1@city.ac.uk\n\nEmail: For personal/administrative matters only\n\nUse clear subject lines: “SMM638 - [Topic]”\n\nPeer Support: Join study groups on Slack\n\n\n\n\n\n♿ Accessibility and Accommodations\nStudents requiring accommodations should:\n\nContact Student Services for documentation\nNotify instructor within first two weeks\nDiscuss specific needs and arrangements\n\nAll accommodations will be made in accordance with university policies.\n\n\n📝 Academic Integrity\n\nPlagiarism: Zero tolerance; all work must be original\nCollaboration: Clearly acknowledge all contributions\nData Sources: Properly cite all datasets used\nCode Attribution: Credit all borrowed/adapted code (included LLM generated code)\n\nViolations will be reported to the Academic Misconduct Committee.\n\n\n🔄 Syllabus Modifications\nThis syllabus may be adjusted to:\n\nAccommodate class progress\nIncorporate current events/examples\nRespond to student feedback\n\nAll changes will be announced via Moodle with one week’s notice.\n\n\n\n\n\n\n\nNoteReady to Start?\n\n\n\nNetwork Analytics is a powerful lens for understanding our interconnected world. This module will challenge you to think structurally about business problems and equip you with tools to uncover hidden patterns in complex systems.\nLet’s build networks together! 🌐",
+    "crumbs": [
+      "Course Information",
+      "Syllabus"
     ]
   }
 ]
