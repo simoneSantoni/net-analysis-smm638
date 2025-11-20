@@ -207,225 +207,184 @@ SMM638 Network Analytics
 </div>
 
 </section>
-<section id="part-1-network-communities" class="slide level2">
-<h2>Part 1: Network Communities</h2>
+<section id="part-i-network-communities" class="slide level2 center middle">
+<h2>Part I: Network Communities</h2>
 </section>
 <section id="overview-of-weeks-15" class="slide level2 smaller">
 <h2>Overview of Weeks 1–5</h2>
-<p>What we have learned:</p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>What we have learned:</strong></p>
 <ul>
-<li>How to represent a system as a <strong>network</strong>
+<li><strong>Network Representation</strong>: Nodes (actors), edges (relationships), and the “physics” of connectivity.</li>
+<li><strong>Node Positioning</strong>: Centrality metrics (Degree, Betweenness, Eigenvector) to identify <em>key players</em>.</li>
+<li><strong>Formation Mechanisms</strong>: Why links form (Homophily, Triadic Closure, Preferential Attachment).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Caution</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>What we will learn (Weeks 7 &amp; 8):</strong></p>
 <ul>
-<li>Nodes, edges, paths, walks, geodesics</li>
-<li>Directed vs.&nbsp;undirected, weighted vs.&nbsp;unweighted</li>
+<li><strong>Macro-Structure (Communities)</strong>:
+<ul>
+<li>Detecting cohesive subgroups (cliques, clusters).</li>
+<li><em>Business Use</em>: Market segmentation, fraud rings, organizational silos.</li>
 </ul></li>
-<li>How to assess the <strong>position of individual nodes</strong>
+<li><strong>Meso-Structure (Roles &amp; Positions)</strong>:
 <ul>
-<li>Degree, closeness, betweenness, eigenvector centrality</li>
-<li>Interpretation: access to resources, brokerage, prestige</li>
+<li>Identifying actors with similar <em>functions</em> (even if unconnected).</li>
+<li><em>Business Use</em>: Talent management, supply chain redundancy, competitive analysis.</li>
 </ul></li>
-<li>How to assess <strong>mechanisms shaping network structure</strong>
+<li><strong>Strategic Implications</strong>:
 <ul>
-<li>Reciprocity, triadic closure, preferential attachment</li>
-<li>Homophily: “birds of a feather flock together”</li>
-<li>Random vs.&nbsp;structured networks as useful baselines</li>
+<li>How structure dictates performance, innovation, and resilience.</li>
 </ul></li>
 </ul>
-<p>What we will learn (Weeks 7 and 8):</p>
-<ul>
-<li>How to build <strong>simplified models of a network</strong> using:
-<ul>
-<li><strong>Communities</strong> (cohesive groups)</li>
-<li><strong>Roles</strong> (who plays similar structural functions)</li>
-<li><strong>Positions</strong> (higher-level pattern of relations among roles)</li>
-</ul></li>
-<li>How these structures shape:
-<ul>
-<li><strong>Opportunities</strong> and <strong>constraints</strong> for individual nodes</li>
-<li><strong>Performance consequences</strong> (e.g., diffusion, access, power)</li>
-</ul></li>
-</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="durkheims-theory-of-social-integration" class="slide level2">
-<h2>Durkheim’s Theory of Social Integration</h2>
-<p><strong>Mechanical Solidarity</strong> (traditional societies) - Integration through <strong>similarity</strong> and shared attributes - Everyone does similar work, shares same values - Maps onto → <strong>Communities</strong> in networks</p>
-<p><strong>Organic Solidarity</strong> (modern societies)<br>
-- Integration through <strong>differentiation</strong> and interdependence - Specialized roles in division of labor - Maps onto → <strong>Positions</strong> in networks</p>
-<p><strong>Implication</strong>: Communities ≠ Positions are orthogonal dimensions</p>
+<section id="why-do-networks-are-more-than-the-sum-of-their-parts" class="slide level2 smaller">
+<h2>Why Do Networks Are More Than the Sum of Their Parts?</h2>
+<p>Sociologist Émile Durkheim proposed two forms of social integration that map perfectly onto network analysis, and explain why networks are more than the sum of their parts:</p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>1. Mechanical Solidarity (Cohesion)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Integration through <strong>similarity</strong> and direct interaction.</li>
+<li>“We are connected because we are the same.”</li>
+<li><strong>Network Concept</strong>: <strong>Communities</strong> (Clusters, Cliques).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>2. Organic Solidarity (Equivalence)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Integration through <strong>interdependence</strong> and specialized roles.</li>
+<li>“We are connected because we need each other’s different functions.”</li>
+<li><strong>Network Concept</strong>: <strong>Positions</strong> (Roles, Blockmodels).</li>
+</ul>
+</div>
+</div>
+</div>
+<p><em>Key Insight: A network can be analyzed through <strong>cohesion</strong> (who hangs out with whom) or <strong>equivalence</strong> (who does the same job).</em></p>
 </section>
 <section id="example-academic-department" class="slide level2">
 <h2>Example: Academic Department</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Two orthogonal dimensions of structure</span></span>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(igraph)</span>
 <span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="co"># Communities (based on direct interaction)</span></span>
-<span id="cb1-4"><a></a>ML_group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Prof_A"</span>, <span class="st">"PhD_1"</span>, <span class="st">"PhD_2"</span>)</span>
-<span id="cb1-5"><a></a>Theory_group <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Prof_B"</span>, <span class="st">"PhD_3"</span>, <span class="st">"PhD_4"</span>)</span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a><span class="co"># Positions (based on role similarity)</span></span>
-<span id="cb1-8"><a></a>Senior <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Prof_A"</span>, <span class="st">"Prof_B"</span>)  <span class="co"># Both advise</span></span>
-<span id="cb1-9"><a></a>Junior <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"PhD_1"</span>, <span class="st">"PhD_2"</span>, <span class="st">"PhD_3"</span>, <span class="st">"PhD_4"</span>)  <span class="co"># All advised</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>A junior ML researcher and junior theorist: - <strong>Different communities</strong> (ML vs.&nbsp;Theory) - <strong>Same position</strong> (advisee role)</p>
+<span id="cb1-3"><a></a><span class="co"># 1. Construct the Network (Edges based on Community Cohesion)</span></span>
+<span id="cb1-4"><a></a>edges <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-5"><a></a>  <span class="at">from =</span> <span class="fu">c</span>(<span class="st">"Prof_A"</span>, <span class="st">"Prof_A"</span>, <span class="st">"PhD_1"</span>,   <span class="co"># ML Group</span></span>
+<span id="cb1-6"><a></a>           <span class="st">"Prof_B"</span>, <span class="st">"Prof_B"</span>, <span class="st">"PhD_3"</span>),  <span class="co"># Theory Group</span></span>
+<span id="cb1-7"><a></a>  <span class="at">to   =</span> <span class="fu">c</span>(<span class="st">"PhD_1"</span>,  <span class="st">"PhD_2"</span>,  <span class="st">"PhD_2"</span>,</span>
+<span id="cb1-8"><a></a>           <span class="st">"PhD_3"</span>,  <span class="st">"PhD_4"</span>,  <span class="st">"PhD_4"</span>)</span>
+<span id="cb1-9"><a></a>)</span>
+<span id="cb1-10"><a></a>g <span class="ot">&lt;-</span> <span class="fu">graph_from_data_frame</span>(edges, <span class="at">directed =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a><span class="co"># 2. Define Attributes (Data from Example)</span></span>
+<span id="cb1-13"><a></a><span class="co"># Communities (Color)</span></span>
+<span id="cb1-14"><a></a><span class="fu">V</span>(g)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(g)<span class="sc">$</span>name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Prof_A"</span>, <span class="st">"PhD_1"</span>, <span class="st">"PhD_2"</span>), </span>
+<span id="cb1-15"><a></a>                     <span class="st">"#E41A1C"</span>, <span class="st">"#377EB8"</span>) <span class="co"># Red for ML, Blue for Theory</span></span>
+<span id="cb1-16"><a></a></span>
+<span id="cb1-17"><a></a><span class="co"># Positions (Shape)</span></span>
+<span id="cb1-18"><a></a><span class="co"># Profs are Squares, Students are Circles</span></span>
+<span id="cb1-19"><a></a><span class="fu">V</span>(g)<span class="sc">$</span>shape <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(g)<span class="sc">$</span>name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Prof_A"</span>, <span class="st">"Prof_B"</span>), </span>
+<span id="cb1-20"><a></a>                     <span class="st">"square"</span>, <span class="st">"circle"</span>)</span>
+<span id="cb1-21"><a></a></span>
+<span id="cb1-22"><a></a><span class="co"># 3. Visualize</span></span>
+<span id="cb1-23"><a></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb1-24"><a></a><span class="fu">plot</span>(g, <span class="at">layout =</span> <span class="fu">layout_nicely</span>(g),</span>
+<span id="cb1-25"><a></a>     <span class="at">vertex.label.color =</span> <span class="st">"white"</span>, <span class="at">vertex.label.font =</span> <span class="dv">2</span>,</span>
+<span id="cb1-26"><a></a>     <span class="at">vertex.size =</span> <span class="dv">30</span>, <span class="at">edge.width =</span> <span class="dv">2</span>,</span>
+<span id="cb1-27"><a></a>     <span class="at">main =</span> <span class="st">"Communities (Color) vs. Positions (Shape)"</span>)</span>
+<span id="cb1-28"><a></a></span>
+<span id="cb1-29"><a></a><span class="fu">legend</span>(<span class="st">"bottomleft"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"ML"</span>, <span class="st">"History"</span>), </span>
+<span id="cb1-30"><a></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"#E41A1C"</span>, <span class="st">"#377EB8"</span>), <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">bty =</span> <span class="st">"n"</span>, <span class="at">title =</span> <span class="st">"Community"</span>)</span>
+<span id="cb1-31"><a></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"Senior"</span>, <span class="st">"Junior"</span>), </span>
+<span id="cb1-32"><a></a>       <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">16</span>), <span class="at">bty =</span> <span class="st">"n"</span>, <span class="at">title =</span> <span class="st">"Position"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="slideshow_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p>A junior ML researcher and junior historian:</p>
+<ul>
+<li><strong>Different communities</strong> (ML vs.&nbsp;History)</li>
+<li><strong>Same position</strong> (student role)</li>
+</ul>
 </section>
 <section id="on-the-concept-of-community" class="slide level2">
 <h2>On the Concept of Community</h2>
-<p><strong>Intuition</strong></p>
-<p>A <em>community</em> is a subset of nodes that are more densely connected to each other than to outsiders.</p>
-<p><strong>Examples</strong></p>
+<p><strong>Definition</strong></p>
+<p>A <em>community</em> is a subset of nodes that are more densely connected to each other than to the rest of the network.</p>
+<p><strong>Business Applications</strong></p>
 <ul>
-<li>Friendship groups in a high school</li>
-<li>R&amp;D collaboration clusters</li>
-<li>Online communities</li>
-<li>Scientific collaboration clusters</li>
+<li><strong>Marketing</strong>: Identifying customer segments based on purchase behavior (e.g., “Tech Enthusiasts” vs.&nbsp;“Home Decorators”).</li>
+<li><strong>HR / People Analytics</strong>: Uncovering informal collaboration teams that don’t match the org chart.</li>
+<li><strong>Fraud Detection</strong>: Detecting “rings” of accounts that trade/interact only with each other to boost ratings or launder money.</li>
+<li><strong>Supply Chain</strong>: Identifying regional clusters of suppliers to assess local risks.</li>
 </ul>
 </section>
-<section id="the-case-of-small-world-networks" class="slide level2">
-<h2>The Case of Small-World Networks</h2>
-<p><strong>Intuition</strong></p>
-<p>Small worlds combine:</p>
+<section id="the-small-world-phenomenon" class="slide level2 smaller">
+<h2>The “Small World” Phenomenon</h2>
+<p><strong>The Concept</strong></p>
+<p>Most real-world networks (social, biological, technological) exhibit the “Small World” property:</p>
 <ol type="1">
-<li><strong>High clustering</strong></li>
-<li><strong>Short average path lengths</strong></li>
+<li><strong>High Clustering</strong>: My friends are likely to be friends with each other (like a caveman village).</li>
+<li><strong>Short Path Lengths</strong>: I can reach anyone in the world in ~6 steps (like a random graph).</li>
 </ol>
-<p><strong>Examples</strong></p>
-<ul>
-<li>Milgram experiment<br>
-</li>
-<li>Watts–Strogatz model</li>
-</ul>
-</section>
-<section id="the-connection-between-homophily-and-small-worlds" class="slide level2">
-<h2>The Connection Between Homophily and Small Worlds</h2>
-<p>Homophily → dense cohesive groups → small-world structure</p>
-</section>
-<section id="examples-of-homophily-in-small-worlds" class="slide level2">
-<h2>Examples of Homophily in Small Worlds</h2>
-<ul>
-<li>Educational settings<br>
-</li>
-<li>Study groups<br>
-</li>
-<li>Cliques along demographic lines</li>
-</ul>
-</section>
-<section id="granovetter-the-strength-of-weak-ties" class="slide level2">
-<h2>Granovetter: The Strength of Weak Ties</h2>
-<p><strong>The Paradox</strong></p>
-<p>“Weak ties” (acquaintances) provide <strong>more novel information</strong> than “strong ties” (close friends).</p>
 <p><strong>Why?</strong></p>
 <ul>
-<li>Strong ties cluster together (your friends know each other)</li>
-<li>Weak ties bridge to distant parts of the network</li>
-<li>Information from close friends is redundant</li>
+<li><strong>Homophily</strong> creates the clusters (local cohesion).</li>
+<li><strong>Weak Ties</strong> (bridges) create the shortcuts (global reach).</li>
 </ul>
-<p><strong>Implication</strong>: Bridges between communities are crucial for information flow</p>
-</section>
-<section id="weak-ties-visual-demonstration" class="slide level2">
-<h2>Weak Ties: Visual Demonstration</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(igraph)</span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a><span class="co"># Two dense communities</span></span>
-<span id="cb2-4"><a></a>g1 <span class="ot">&lt;-</span> <span class="fu">make_full_graph</span>(<span class="dv">10</span>)</span>
-<span id="cb2-5"><a></a>g2 <span class="ot">&lt;-</span> <span class="fu">make_full_graph</span>(<span class="dv">10</span>)</span>
-<span id="cb2-6"><a></a>g <span class="ot">&lt;-</span> <span class="fu">disjoint_union</span>(g1, g2)</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a><span class="co"># Add weak tie bridges</span></span>
-<span id="cb2-9"><a></a>g <span class="ot">&lt;-</span> <span class="fu">add_edges</span>(g, <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">15</span>, <span class="dv">7</span>,<span class="dv">17</span>, <span class="dv">2</span>,<span class="dv">12</span>))</span>
-<span id="cb2-10"><a></a></span>
-<span id="cb2-11"><a></a><span class="co"># Calculate betweenness</span></span>
-<span id="cb2-12"><a></a>btw <span class="ot">&lt;-</span> <span class="fu">edge_betweenness</span>(g)</span>
-<span id="cb2-13"><a></a></span>
-<span id="cb2-14"><a></a><span class="co"># Weak ties have highest betweenness!</span></span>
-<span id="cb2-15"><a></a><span class="co"># They are bottlenecks for information flow</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Result</strong>: Removing 3 weak ties doubles average path length</p>
-</section>
-<section id="the-case-of-small-world-networks-1" class="slide level2">
-<h2>The Case of Small-World Networks</h2>
-<p><strong>Intuition</strong></p>
-<p>Small worlds combine:</p>
-<ol type="1">
-<li><strong>High clustering</strong> (dense local neighborhoods)</li>
-<li><strong>Short average path lengths</strong> (few steps between any two nodes)</li>
-</ol>
-<p><strong>Examples</strong></p>
+<p><strong>Business Implication</strong></p>
 <ul>
-<li>Milgram experiment (“six degrees of separation”)</li>
-<li>Watts–Strogatz model</li>
-<li>Social networks, neural networks, power grids</li>
-</ul>
-<p><strong>Why it matters</strong>: Local cohesion + global reach</p>
-</section>
-<section id="small-world-structure-comparison" class="slide level2">
-<h2>Small-World Structure Comparison</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Network Type</th>
-<th>Clustering</th>
-<th>Path Length</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Regular lattice</strong></td>
-<td>High</td>
-<td>High</td>
-<td>Grid</td>
-</tr>
-<tr class="even">
-<td><strong>Random</strong></td>
-<td>Low</td>
-<td>Low</td>
-<td>Erdős-Rényi</td>
-</tr>
-<tr class="odd">
-<td><strong>Small-world</strong></td>
-<td><strong>High</strong></td>
-<td><strong>Low</strong></td>
-<td>Real social networks</td>
-</tr>
-</tbody>
-</table>
-<p>Small-world = “Best of both worlds”</p>
-</section>
-<section id="creating-a-small-world-network" class="slide level2">
-<h2>Creating a Small-World Network</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Watts-Strogatz model</span></span>
-<span id="cb3-2"><a></a><span class="fu">library</span>(igraph)</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>      <span class="co"># nodes</span></span>
-<span id="cb3-5"><a></a>k <span class="ot">&lt;-</span> <span class="dv">6</span>        <span class="co"># neighbors</span></span>
-<span id="cb3-6"><a></a>p <span class="ot">&lt;-</span> <span class="fl">0.1</span>      <span class="co"># rewiring probability</span></span>
-<span id="cb3-7"><a></a></span>
-<span id="cb3-8"><a></a><span class="co"># Start with ring, rewire 10% of edges</span></span>
-<span id="cb3-9"><a></a>g <span class="ot">&lt;-</span> <span class="fu">watts.strogatz.game</span>(<span class="dv">1</span>, n, k<span class="sc">/</span><span class="dv">2</span>, p)</span>
-<span id="cb3-10"><a></a></span>
-<span id="cb3-11"><a></a><span class="co"># Result: high clustering (like regular)</span></span>
-<span id="cb3-12"><a></a><span class="co">#         + short paths (like random)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Only 10% rewired edges needed to achieve small-world property!</p>
-</section>
-<section id="the-connection-between-homophily-and-small-worlds-1" class="slide level2">
-<h2>The Connection Between Homophily and Small Worlds</h2>
-<p>Homophily (similarity-based tie formation): - Creates <strong>dense cohesive groups</strong> (high clustering) - But a few cross-group ties (weak ties) → <strong>short paths</strong></p>
-<p>Result: Small-world structure emerges naturally</p>
-<p><strong>Examples</strong> - Educational settings (study groups by major, occasional cross-major friendships) - Organizational networks (departments cluster, management bridges)</p>
-</section>
-<section id="definitions-of-network-communities" class="slide level2">
-<h2>Definitions of Network Communities</h2>
-<ul>
-<li><strong>Strong</strong>: Cliques (all nodes connected to all others)</li>
-<li><strong>Weak</strong>: Subgraphs where internal density &gt; external density</li>
-<li><strong>LS Sets</strong>: Subsets where any proper subset has more ties to the set than to outsiders</li>
+<li><strong>Information Diffusion</strong>: News travels fast in small worlds.</li>
+<li><strong>Viral Marketing</strong>: You need to seed ideas in different clusters (high clustering) but ensure they can jump across bridges (short paths).</li>
 </ul>
 </section>
-<section id="example-of-communities-in-a-strong-sense" class="slide level2">
-<h2>Example of Communities in a Strong Sense</h2>
-<p>Strongly cohesive groups, nearly clique-like.</p>
-</section>
-<section id="example-of-communities-in-a-weak-sense" class="slide level2">
-<h2>Example of Communities in a Weak Sense</h2>
-<p>High internal density but not complete; overlapping clusters.</p>
-</section>
+<section id="strong-communities-the-clique" class="slide level2">
+<h2>Strong Communities: The Clique</h2>
+<p><strong>Definition</strong> A <strong>Clique</strong> is a subgraph where every distinct pair of nodes is adjacent. It represents the strictest form of cohesion.</p>
+
+<img data-src="slideshow_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="weak-communities-density-based" class="slide level2">
+<h2>Weak Communities: Density-Based</h2>
+<p><strong>Definition</strong> A <strong>Weak Community</strong> is a subgraph where the density of internal edges is significantly higher than the density of external edges (ties to the rest of the network).</p>
+
+<img data-src="slideshow_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="ls-sets-robustness" class="slide level2">
+<h2>LS Sets: Robustness</h2>
+<p><strong>Definition</strong> An <strong>LS Set</strong> is a subset of nodes where any proper subset has more ties to the <em>rest of the group</em> than to the <em>outside</em>. It represents defensive cohesion—it is harder to split the group than to disconnect it from the network.</p>
+
+<img data-src="slideshow_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="most-popular-community-detection-algorithms" class="slide level2">
 <h2>Most Popular Community Detection Algorithms</h2>
 <ul>
@@ -440,369 +399,349 @@ SMM638 Network Analytics
 <li>Walktrap / Label propagation</li>
 </ul>
 </section>
-<section id="the-connection-between-network-communities-and-modularity" class="slide level2">
-<h2>The Connection between Network Communities and Modularity</h2>
-<p><strong>Modularity</strong> is the most common metric for defining communities. It compares the observed number of edges within groups to what we would expect in a random network with the same degree distribution.</p>
-</section>
-<section id="understanding-modularity" class="slide level2">
-<h2>Understanding Modularity</h2>
-<p><strong>What is Modularity (Q)?</strong></p>
-<p>Measures if a partition has more <strong>within-group edges</strong> than expected by chance.</p>
-<p><span class="math display">\[Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j)\]</span></p>
+<section id="understanding-modularity-q" class="slide level2 smaller">
+<h2>Understanding Modularity (Q)</h2>
+<p>Many of the community detection algorithms we just discussed, such as Louvain, aim to optimize a metric called Modularity (Q).</p>
+<p><strong>The Metric</strong></p>
+<p>Modularity measures the strength of division of a network into modules (communities).</p>
+<p><span class="math display">\[Q = \text{(Fraction of edges within groups)} - \text{(Expected fraction if edges were random)}\]</span></p>
+<p><strong>Interpretation</strong></p>
 <ul>
-<li><span class="math inline">\(A_{ij}\)</span> = observed edge</li>
-<li><span class="math inline">\(\frac{k_i k_j}{2m}\)</span> = expected edge (null model)</li>
-<li><span class="math inline">\(\delta(c_i, c_j)\)</span> = 1 if same community, 0 otherwise</li>
+<li><strong><span class="math inline">\(Q \approx 0\)</span></strong>: The network is random; no community structure.</li>
+<li><strong><span class="math inline">\(Q \in [0.3, 0.7]\)</span></strong>: Strong community structure (common in social networks).</li>
+<li><strong><span class="math inline">\(Q \to 1\)</span></strong>: Disconnected components (islands).</li>
+</ul>
+<p><strong>The “Resolution Limit”</strong></p>
+<ul>
+<li>Modularity optimization has a blind spot: it may fail to detect small communities in very large networks, merging them into larger clusters.</li>
+<li><em>Solution</em>: Use multi-resolution algorithms (e.g., Louvain with resolution parameter).</li>
 </ul>
 </section>
-<section id="modularity-interpretation" class="slide level2">
-<h2>Modularity Interpretation</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Q Value</th>
-<th>Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Q &lt; 0.3</strong></td>
-<td>No meaningful community structure</td>
-</tr>
-<tr class="even">
-<td><strong>Q = 0.3-0.7</strong></td>
-<td>Significant community structure</td>
-</tr>
-<tr class="odd">
-<td><strong>Q &gt; 0.7</strong></td>
-<td>Very strong divisions (rare)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Rule of thumb</strong>: Q &gt; 0.4 indicates good community detection</p>
-</section>
-<section id="most-popular-community-detection-algorithms-1" class="slide level2">
-<h2>Most Popular Community Detection Algorithms</h2>
+<section id="community-detection-algorithms-a-field-guide" class="slide level2 smaller">
+<h2>Community Detection Algorithms: A Field Guide</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 28%">
-<col style="width: 28%">
-<col style="width: 17%">
 <col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Algorithm</th>
-<th>Objective</th>
-<th>Speed</th>
-<th>Best Use</th>
+<th>Mechanism</th>
+<th>Pros</th>
+<th>Cons</th>
+<th>Best For</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Louvain</strong></td>
-<td>Modularity max</td>
-<td>Fast</td>
-<td>General purpose</td>
+<td>Modularity Optimization</td>
+<td>Very Fast</td>
+<td>Resolution limit</td>
+<td>Large networks (Default choice)</td>
 </tr>
 <tr class="even">
 <td><strong>Leiden</strong></td>
-<td>Improved modularity</td>
-<td>Fast</td>
-<td>Quality + speed</td>
+<td>Refined Louvain</td>
+<td>Faster, guarantees connected comms</td>
+<td>-</td>
+<td>Large networks (Modern standard)</td>
 </tr>
 <tr class="odd">
-<td><strong>Walktrap</strong></td>
-<td>Random walks</td>
-<td>Medium</td>
-<td>Multi-scale</td>
+<td><strong>Girvan-Newman</strong></td>
+<td>Edge Betweenness (Divisive)</td>
+<td>Intuitive hierarchy</td>
+<td>Very Slow (<span class="math inline">\(O(N^3)\)</span>)</td>
+<td>Small networks (&lt;500 nodes), teaching</td>
 </tr>
 <tr class="even">
-<td><strong>Girvan-Newman</strong></td>
-<td>Edge betweenness</td>
-<td>Slow</td>
-<td>Hierarchical, small networks</td>
+<td><strong>Label Propagation</strong></td>
+<td>Local Voting</td>
+<td>Linear time</td>
+<td>Unstable (random seed matters)</td>
+<td>Massive networks</td>
 </tr>
 <tr class="odd">
-<td><strong>Label Propagation</strong></td>
-<td>Local consensus</td>
-<td>Very fast</td>
-<td>Large networks, unstable</td>
+<td><strong>Spectral</strong></td>
+<td>Eigenvectors</td>
+<td>Math rigor</td>
+<td>Slower</td>
+<td>Fixed <span class="math inline">\(k\)</span> communities</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Recommendation</strong>: Start with Louvain or Leiden</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Start with <strong>Louvain</strong> or <strong>Leiden</strong>.</p>
+<p>Use <strong>Girvan-Newman</strong> only if you need to analyze the hierarchy of splits in a small graph.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="resolution-parameter" class="slide level2">
 <h2>Resolution Parameter</h2>
 <p>Many algorithms have a <strong>resolution</strong> parameter controlling granularity:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Higher resolution → more, smaller communities</span></span>
-<span id="cb4-2"><a></a>communities_fine <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g, <span class="at">resolution=</span><span class="fl">2.0</span>)  <span class="co"># 8 communities</span></span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="co"># Default resolution</span></span>
-<span id="cb4-5"><a></a>communities_default <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g, <span class="at">resolution=</span><span class="fl">1.0</span>)  <span class="co"># 4 communities</span></span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a><span class="co"># Lower resolution → fewer, larger communities  </span></span>
-<span id="cb4-8"><a></a>communities_coarse <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g, <span class="at">resolution=</span><span class="fl">0.5</span>)  <span class="co"># 2 communities</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Choice depends on your research question</strong></p>
+
+<img data-src="slideshow_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1152"><div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><strong>Choice depends on your research question</strong></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Macro-Level (Low Resolution)</strong>: Use when you want to identify broad market segments or major political coalitions. You care about the “big picture” splits.</li>
+<li><strong>Micro-Level (High Resolution)</strong>: Use when you need to find specific, tight-knit teams or niche sub-cultures. You care about the fine-grained details.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="community-detection-algorithms-in-action" class="slide level2">
 <h2>Community Detection Algorithms in Action</h2>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(igraph)</span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a><span class="co"># Load network</span></span>
-<span id="cb5-4"><a></a>g <span class="ot">&lt;-</span> <span class="fu">make_graph</span>(<span class="st">"Zachary"</span>)  <span class="co"># or read from file</span></span>
-<span id="cb5-5"><a></a></span>
-<span id="cb5-6"><a></a><span class="co"># Method 1: Louvain (fast, modularity-based)</span></span>
-<span id="cb5-7"><a></a>comm_louvain <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g)</span>
-<span id="cb5-8"><a></a></span>
-<span id="cb5-9"><a></a><span class="co"># Method 2: Leiden (improved Louvain)</span></span>
-<span id="cb5-10"><a></a>comm_leiden <span class="ot">&lt;-</span> <span class="fu">cluster_leiden</span>(g)</span>
-<span id="cb5-11"><a></a></span>
-<span id="cb5-12"><a></a><span class="co"># Method 3: Walktrap (random walk-based)</span></span>
-<span id="cb5-13"><a></a>comm_walktrap <span class="ot">&lt;-</span> <span class="fu">cluster_walktrap</span>(g, <span class="at">steps =</span> <span class="dv">4</span>)</span>
-<span id="cb5-14"><a></a></span>
-<span id="cb5-15"><a></a><span class="co"># Method 4: Edge Betweenness (hierarchical)</span></span>
-<span id="cb5-16"><a></a>comm_edgebet <span class="ot">&lt;-</span> <span class="fu">cluster_edge_betweenness</span>(g)</span>
-<span id="cb5-17"><a></a></span>
-<span id="cb5-18"><a></a><span class="co"># Method 5: Fast Greedy (hierarchical modularity)</span></span>
-<span id="cb5-19"><a></a>comm_fastgreedy <span class="ot">&lt;-</span> <span class="fu">cluster_fast_greedy</span>(g)</span>
-<span id="cb5-20"><a></a></span>
-<span id="cb5-21"><a></a><span class="co"># Extract results</span></span>
-<span id="cb5-22"><a></a><span class="fu">membership</span>(comm_louvain)         <span class="co"># Community assignments</span></span>
-<span id="cb5-23"><a></a><span class="fu">length</span>(comm_louvain)             <span class="co"># Number of communities</span></span>
-<span id="cb5-24"><a></a><span class="fu">sizes</span>(comm_louvain)              <span class="co"># Community sizes</span></span>
-<span id="cb5-25"><a></a><span class="fu">modularity</span>(comm_louvain)         <span class="co"># Modularity score</span></span>
-<span id="cb5-26"><a></a></span>
-<span id="cb5-27"><a></a><span class="co"># Compare methods</span></span>
-<span id="cb5-28"><a></a><span class="fu">compare</span>(comm_louvain, comm_leiden, <span class="at">method =</span> <span class="st">"nmi"</span>)  <span class="co"># Agreement</span></span>
-<span id="cb5-29"><a></a></span>
-<span id="cb5-30"><a></a><span class="co"># Visualize</span></span>
-<span id="cb5-31"><a></a><span class="fu">plot</span>(comm_louvain, g,</span>
-<span id="cb5-32"><a></a>     <span class="at">vertex.size =</span> <span class="dv">8</span>,</span>
-<span id="cb5-33"><a></a>     <span class="at">edge.color =</span> <span class="st">"gray80"</span>,</span>
-<span id="cb5-34"><a></a>     <span class="at">main =</span> <span class="st">"Communities"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(igraph)</span>
+<span id="cb2-2"><a></a></span>
+<span id="cb2-3"><a></a><span class="co"># Load network</span></span>
+<span id="cb2-4"><a></a>g <span class="ot">&lt;-</span> <span class="fu">make_graph</span>(<span class="st">"Zachary"</span>)  <span class="co"># or read from file</span></span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a><span class="co"># Method 1: Louvain (fast, modularity-based)</span></span>
+<span id="cb2-7"><a></a>comm_louvain <span class="ot">&lt;-</span> <span class="fu">cluster_louvain</span>(g)</span>
+<span id="cb2-8"><a></a></span>
+<span id="cb2-9"><a></a><span class="co"># Method 2: Leiden (improved Louvain)</span></span>
+<span id="cb2-10"><a></a>comm_leiden <span class="ot">&lt;-</span> <span class="fu">cluster_leiden</span>(g)</span>
+<span id="cb2-11"><a></a></span>
+<span id="cb2-12"><a></a><span class="co"># Method 3: Walktrap (random walk-based)</span></span>
+<span id="cb2-13"><a></a>comm_walktrap <span class="ot">&lt;-</span> <span class="fu">cluster_walktrap</span>(g, <span class="at">steps =</span> <span class="dv">4</span>)</span>
+<span id="cb2-14"><a></a></span>
+<span id="cb2-15"><a></a><span class="co"># Method 4: Edge Betweenness (hierarchical)</span></span>
+<span id="cb2-16"><a></a>comm_edgebet <span class="ot">&lt;-</span> <span class="fu">cluster_edge_betweenness</span>(g)</span>
+<span id="cb2-17"><a></a></span>
+<span id="cb2-18"><a></a><span class="co"># Method 5: Fast Greedy (hierarchical modularity)</span></span>
+<span id="cb2-19"><a></a>comm_fastgreedy <span class="ot">&lt;-</span> <span class="fu">cluster_fast_greedy</span>(g)</span>
+<span id="cb2-20"><a></a></span>
+<span id="cb2-21"><a></a><span class="co"># Extract results</span></span>
+<span id="cb2-22"><a></a><span class="fu">membership</span>(comm_louvain)         <span class="co"># Community assignments</span></span>
+<span id="cb2-23"><a></a><span class="fu">length</span>(comm_louvain)             <span class="co"># Number of communities</span></span>
+<span id="cb2-24"><a></a><span class="fu">sizes</span>(comm_louvain)              <span class="co"># Community sizes</span></span>
+<span id="cb2-25"><a></a><span class="fu">modularity</span>(comm_louvain)         <span class="co"># Modularity score</span></span>
+<span id="cb2-26"><a></a></span>
+<span id="cb2-27"><a></a><span class="co"># Compare methods</span></span>
+<span id="cb2-28"><a></a><span class="fu">compare</span>(comm_louvain, comm_leiden, <span class="at">method =</span> <span class="st">"nmi"</span>)  <span class="co"># Agreement</span></span>
+<span id="cb2-29"><a></a></span>
+<span id="cb2-30"><a></a><span class="co"># Visualize</span></span>
+<span id="cb2-31"><a></a><span class="fu">plot</span>(comm_louvain, g,</span>
+<span id="cb2-32"><a></a>     <span class="at">vertex.size =</span> <span class="dv">8</span>,</span>
+<span id="cb2-33"><a></a>     <span class="at">edge.color =</span> <span class="st">"gray80"</span>,</span>
+<span id="cb2-34"><a></a>     <span class="at">main =</span> <span class="st">"Communities"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
-<section id="part-ii-roles-and-positions" class="slide level2">
+<section id="part-ii-roles-and-positions" class="slide level2 center middle">
 <h2>Part II: Roles and Positions</h2>
+<blockquote>
+<p>“Community detection finds your friends. Role analysis finds your professional doppelgänger.”</p>
+</blockquote>
 </section>
-<section id="definitions" class="slide level2">
-<h2>Definitions</h2>
-<p><strong>Role</strong>: Set of nodes with similar structural functions<br>
-<strong>Position</strong>: Pattern of relations defining a node’s structural location</p>
+<section id="definitions-role-vs.-position" class="slide level2">
+<h2>Definitions: Role vs.&nbsp;Position</h2>
+<p><strong>Role</strong></p>
+<ul>
+<li>A pattern of relationships.</li>
+<li>Example: “Broker”, “Isolate”, “Hub”, “Authority”.</li>
+<li><em>Abstract concept</em>.</li>
+</ul>
+<p><strong>Position</strong></p>
+<ul>
+<li>A set of actors who occupy the same role in a specific network.</li>
+<li>Example: “The Senior Managers” (a group of 5 specific people who all have the ‘Authority’ role).</li>
+<li><em>Concrete grouping</em>.</li>
+</ul>
+<p><strong>Equivalence</strong> ` - The mathematical rule we use to decide if two nodes are in the same position.</p>
 </section>
 <section id="rendering-roles-in-network-data" class="slide level2">
 <h2>Rendering Roles in Network Data</h2>
-<p><strong>Intuition</strong> - Complex networks are hard to understand node-by-node - We group nodes that “do the same thing” - Example: In a hospital, all nurses have similar ties to doctors and patients</p>
-<p><strong>Approaches</strong> - Blockmodeling (discrete partitions) - Hierarchical clustering (continuous similarity)</p>
+<p><strong>Intuition</strong></p>
+<ul>
+<li>Complex networks are hard to understand node-by-node</li>
+<li>We group nodes that “do the same thing”</li>
+<li>Example: In a hospital, all nurses have similar ties to doctors and patients</li>
+</ul>
+<p><strong>Approaches</strong></p>
+<ul>
+<li>Blockmodeling (discrete partitions)</li>
+<li>Hierarchical clustering (continuous similarity)</li>
+</ul>
 </section>
 <section id="rendering-roles-algorithms" class="slide level2">
 <h2>Rendering Roles: Algorithms</h2>
-<div class="cell">
-<details open="" class="code-fold">
+<p>The following outputs demonstrate the blockmodeling process: first, a <strong>dendrogram</strong> reveals the hierarchical clustering of structurally equivalent nodes; second, an <strong>image matrix</strong> summarizes the density of ties between these positions; and finally, the <strong>network graph</strong> visualizes the actors colored by their assigned role.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(igraph)</span>
-<span id="cb6-2"><a></a></span>
-<span id="cb6-3"><a></a>g <span class="ot">&lt;-</span> <span class="fu">sample_pa</span>(<span class="dv">20</span>, <span class="at">directed =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-4"><a></a>adj <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">as_adjacency_matrix</span>(g))</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a><span class="co"># Method 1: Correlation-based equivalence</span></span>
-<span id="cb6-7"><a></a>equiv_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">t</span>(adj))          <span class="co"># Correlate row profiles</span></span>
-<span id="cb6-8"><a></a>dist_cor <span class="ot">&lt;-</span> <span class="fu">as.dist</span>(<span class="dv">1</span> <span class="sc">-</span> equiv_cor)</span>
-<span id="cb6-9"><a></a>hc_cor <span class="ot">&lt;-</span> <span class="fu">hclust</span>(dist_cor, <span class="at">method =</span> <span class="st">"complete"</span>)</span>
-<span id="cb6-10"><a></a>positions_cor <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc_cor, <span class="at">k =</span> <span class="dv">4</span>)</span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a><span class="co"># Method 2: Euclidean distance equivalence</span></span>
-<span id="cb6-13"><a></a>dist_euclidean <span class="ot">&lt;-</span> <span class="fu">dist</span>(adj, <span class="at">method =</span> <span class="st">"euclidean"</span>)</span>
-<span id="cb6-14"><a></a>hc_euclidean <span class="ot">&lt;-</span> <span class="fu">hclust</span>(dist_euclidean, <span class="at">method =</span> <span class="st">"ward.D2"</span>)</span>
-<span id="cb6-15"><a></a>positions_euclidean <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc_euclidean, <span class="at">k =</span> <span class="dv">4</span>)</span>
-<span id="cb6-16"><a></a></span>
-<span id="cb6-17"><a></a><span class="co"># Visualize dendrogram</span></span>
-<span id="cb6-18"><a></a><span class="fu">plot</span>(hc_cor, <span class="at">main =</span> <span class="st">"Position Hierarchy"</span>, <span class="at">xlab =</span> <span class="st">"Node"</span>)</span>
-<span id="cb6-19"><a></a><span class="fu">rect.hclust</span>(hc_cor, <span class="at">k =</span> <span class="dv">4</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span>
-<span id="cb6-20"><a></a></span>
-<span id="cb6-21"><a></a><span class="co"># Create image matrix</span></span>
-<span id="cb6-22"><a></a>n_pos <span class="ot">&lt;-</span> <span class="fu">max</span>(positions_cor)</span>
-<span id="cb6-23"><a></a>image_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> n_pos, <span class="at">ncol =</span> n_pos)</span>
-<span id="cb6-24"><a></a></span>
-<span id="cb6-25"><a></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_pos) {</span>
-<span id="cb6-26"><a></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_pos) {</span>
-<span id="cb6-27"><a></a>    block <span class="ot">&lt;-</span> adj[positions_cor <span class="sc">==</span> i, positions_cor <span class="sc">==</span> j]</span>
-<span id="cb6-28"><a></a>    image_matrix[i, j] <span class="ot">&lt;-</span> <span class="fu">mean</span>(block)</span>
-<span id="cb6-29"><a></a>  }</span>
-<span id="cb6-30"><a></a>}</span>
-<span id="cb6-31"><a></a></span>
-<span id="cb6-32"><a></a><span class="fu">print</span>(<span class="fu">round</span>(image_matrix, <span class="dv">2</span>))</span>
-<span id="cb6-33"><a></a></span>
-<span id="cb6-34"><a></a><span class="co"># Visualize with position colors</span></span>
-<span id="cb6-35"><a></a><span class="fu">V</span>(g)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="fu">rainbow</span>(n_pos)[positions_cor]</span>
-<span id="cb6-36"><a></a><span class="fu">plot</span>(g, <span class="at">vertex.size =</span> <span class="dv">8</span>, <span class="at">main =</span> <span class="st">"Network by Position"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(igraph)</span>
+<span id="cb3-2"><a></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Create a network with clear positional structure</span></span>
+<span id="cb3-5"><a></a><span class="co"># 3 "leaders" (high out-degree), 6 "followers" (high in-degree), 3 "isolates"</span></span>
+<span id="cb3-6"><a></a>g <span class="ot">&lt;-</span> <span class="fu">make_empty_graph</span>(<span class="at">n=</span><span class="dv">12</span>, <span class="at">directed=</span><span class="cn">TRUE</span>)</span>
+<span id="cb3-7"><a></a>g <span class="ot">&lt;-</span> <span class="fu">add_edges</span>(g, <span class="fu">c</span>(</span>
+<span id="cb3-8"><a></a>  <span class="dv">1</span>,<span class="dv">4</span>, <span class="dv">1</span>,<span class="dv">5</span>, <span class="dv">1</span>,<span class="dv">6</span>, <span class="dv">1</span>,<span class="dv">7</span>,  <span class="co"># Leader 1 → Followers</span></span>
+<span id="cb3-9"><a></a>  <span class="dv">2</span>,<span class="dv">5</span>, <span class="dv">2</span>,<span class="dv">6</span>, <span class="dv">2</span>,<span class="dv">7</span>, <span class="dv">2</span>,<span class="dv">8</span>,  <span class="co"># Leader 2 → Followers</span></span>
+<span id="cb3-10"><a></a>  <span class="dv">3</span>,<span class="dv">6</span>, <span class="dv">3</span>,<span class="dv">7</span>, <span class="dv">3</span>,<span class="dv">8</span>, <span class="dv">3</span>,<span class="dv">9</span>,  <span class="co"># Leader 3 → Followers</span></span>
+<span id="cb3-11"><a></a>  <span class="dv">4</span>,<span class="dv">1</span>, <span class="dv">5</span>,<span class="dv">2</span>, <span class="dv">6</span>,<span class="dv">3</span>        <span class="co"># Some followers → leaders (feedback)</span></span>
+<span id="cb3-12"><a></a>))</span>
+<span id="cb3-13"><a></a></span>
+<span id="cb3-14"><a></a>adj <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">as_adjacency_matrix</span>(g))</span>
+<span id="cb3-15"><a></a></span>
+<span id="cb3-16"><a></a><span class="co"># Step 1: Compute Similarity Matrix (Correlation of tie patterns)</span></span>
+<span id="cb3-17"><a></a>similarity <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">t</span>(adj))  <span class="co"># Transpose to correlate rows</span></span>
+<span id="cb3-18"><a></a>similarity[<span class="fu">is.na</span>(similarity)] <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># Handle nodes with no ties</span></span>
+<span id="cb3-19"><a></a></span>
+<span id="cb3-20"><a></a><span class="co"># Step 2: Hierarchical Clustering</span></span>
+<span id="cb3-21"><a></a>dist_matrix <span class="ot">&lt;-</span> <span class="fu">as.dist</span>(<span class="dv">1</span> <span class="sc">-</span> similarity)  <span class="co"># Convert similarity to distance</span></span>
+<span id="cb3-22"><a></a>hc <span class="ot">&lt;-</span> <span class="fu">hclust</span>(dist_matrix, <span class="at">method =</span> <span class="st">"ward.D2"</span>)</span>
+<span id="cb3-23"><a></a>positions <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc, <span class="at">k =</span> <span class="dv">3</span>)  <span class="co"># Cut into 3 positions</span></span>
+<span id="cb3-24"><a></a></span>
+<span id="cb3-25"><a></a><span class="co"># Step 3: Create Blockmodel (Image Matrix)</span></span>
+<span id="cb3-26"><a></a>n_pos <span class="ot">&lt;-</span> <span class="fu">max</span>(positions)</span>
+<span id="cb3-27"><a></a>blockmodel <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> n_pos, <span class="at">ncol =</span> n_pos)</span>
+<span id="cb3-28"><a></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_pos) {</span>
+<span id="cb3-29"><a></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_pos) {</span>
+<span id="cb3-30"><a></a>    block <span class="ot">&lt;-</span> adj[positions <span class="sc">==</span> i, positions <span class="sc">==</span> j, drop<span class="ot">=</span><span class="cn">FALSE</span>]</span>
+<span id="cb3-31"><a></a>    <span class="cf">if</span>(<span class="fu">length</span>(block) <span class="sc">&gt;</span> <span class="dv">0</span>) blockmodel[i, j] <span class="ot">&lt;-</span> <span class="fu">mean</span>(block)</span>
+<span id="cb3-32"><a></a>  }</span>
+<span id="cb3-33"><a></a>}</span>
+<span id="cb3-34"><a></a></span>
+<span id="cb3-35"><a></a><span class="co"># Visualize the three outputs</span></span>
+<span id="cb3-36"><a></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>))</span>
+<span id="cb3-37"><a></a></span>
+<span id="cb3-38"><a></a><span class="co"># 1. Dendrogram (Hierarchical Clustering)</span></span>
+<span id="cb3-39"><a></a><span class="fu">plot</span>(hc, <span class="at">main =</span> <span class="st">"1. Hierarchical Clustering"</span>, <span class="at">xlab =</span> <span class="st">"Node"</span>, <span class="at">sub =</span> <span class="st">""</span>, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb3-40"><a></a><span class="fu">rect.hclust</span>(hc, <span class="at">k =</span> <span class="dv">3</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span>
+<span id="cb3-41"><a></a></span>
+<span id="cb3-42"><a></a><span class="co"># 2. Image Matrix (Blockmodel)</span></span>
+<span id="cb3-43"><a></a><span class="fu">image</span>(<span class="dv">1</span><span class="sc">:</span>n_pos, <span class="dv">1</span><span class="sc">:</span>n_pos, blockmodel, <span class="at">col =</span> <span class="fu">heat.colors</span>(<span class="dv">10</span>), </span>
+<span id="cb3-44"><a></a>      <span class="at">main =</span> <span class="st">"2. Blockmodel</span><span class="sc">\n</span><span class="st">(Position-to-Position Density)"</span>,</span>
+<span id="cb3-45"><a></a>      <span class="at">xlab =</span> <span class="st">"Position"</span>, <span class="at">ylab =</span> <span class="st">"Position"</span>, <span class="at">axes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-46"><a></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at =</span> <span class="dv">1</span><span class="sc">:</span>n_pos); <span class="fu">axis</span>(<span class="dv">2</span>, <span class="at">at =</span> <span class="dv">1</span><span class="sc">:</span>n_pos)</span>
+<span id="cb3-47"><a></a><span class="fu">text</span>(<span class="fu">expand.grid</span>(<span class="dv">1</span><span class="sc">:</span>n_pos, <span class="dv">1</span><span class="sc">:</span>n_pos), <span class="at">labels =</span> <span class="fu">round</span>(blockmodel, <span class="dv">2</span>), <span class="at">cex =</span> <span class="fl">1.2</span>)</span>
+<span id="cb3-48"><a></a></span>
+<span id="cb3-49"><a></a><span class="co"># 3. Network colored by position</span></span>
+<span id="cb3-50"><a></a><span class="fu">V</span>(g)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"green"</span>)[positions]</span>
+<span id="cb3-51"><a></a><span class="fu">plot</span>(g, <span class="at">vertex.size =</span> <span class="dv">20</span>, <span class="at">edge.arrow.size =</span> <span class="fl">0.5</span>, </span>
+<span id="cb3-52"><a></a>     <span class="at">main =</span> <span class="st">"3. Network by Position"</span>,</span>
+<span id="cb3-53"><a></a>     <span class="at">vertex.label =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>)</span>
+<span id="cb3-54"><a></a><span class="fu">legend</span>(<span class="st">"bottomleft"</span>, <span class="at">legend =</span> <span class="fu">paste</span>(<span class="st">"Pos"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), </span>
+<span id="cb3-55"><a></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"green"</span>), <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">bty =</span> <span class="st">"n"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+
 </div>
-</section>
-<section id="rendering-positions-in-network-data" class="slide level2">
-<h2>Rendering Positions in Network Data</h2>
-<p><strong>Triad Census</strong> - Analyzing the frequency of different triad types (e.g., transitive, cyclic) - Different roles (e.g., broker vs.&nbsp;isolate) show different triad profiles</p>
-<p><strong>Multiplexity</strong> - Roles often defined by multiple types of ties (e.g., friend + coworker)</p>
-</section>
-<section id="rendering-positions-algorithms" class="slide level2">
-<h2>Rendering Positions: Algorithms</h2>
-<p><strong>Similarity Matrices</strong> - Compute similarity between every pair of nodes (correlation, distance)</p>
-<p><strong>Clustering</strong> - Group similar nodes using hierarchical or k-means clustering</p>
-<p><strong>Blockmodels</strong> - Permute the adjacency matrix to reveal blocks of high/low density</p>
-</section>
+<img data-src="slideshow_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1152"></section>
 <section id="structural-equivalence-definition" class="slide level2">
 <h2>Structural Equivalence: Definition</h2>
 <p><strong>Two nodes are structurally equivalent if they have identical ties to the same alters</strong></p>
-<p>Example: - Node A connects to: {C, D, E} - Node B connects to: {C, D, E} - → A and B are structurally equivalent</p>
+<p>Example:</p>
+<ul>
+<li>Node A connects to: {C, D, E}</li>
+<li>Node B connects to: {C, D, E}</li>
+<li>→ A and B are structurally equivalent</li>
+</ul>
 <p><strong>Implication</strong>: They are <strong>substitutable</strong> - occupy the same position</p>
 </section>
 <section id="types-of-equivalence" class="slide level2">
 <h2>Types of Equivalence</h2>
+<p><strong>1. Structural Equivalence (Strict)</strong> - Two nodes are connected to the <strong>exact same</strong> other nodes. - <em>Example</em>: Two siblings who have the exact same parents and grandparents. - <em>Business</em>: Two customer service reps who handle the exact same set of tickets (rare).</p>
+<p><strong>2. Regular Equivalence (Functional)</strong> - Two nodes are connected to <strong>equivalent</strong> types of nodes. - <em>Example</em>: Two doctors. Dr.&nbsp;A treats Patient X; Dr.&nbsp;B treats Patient Y. They don’t know the same people, but they have the same <em>relationship</em> to their patients. - <em>Business</em>: Two department heads. They manage different teams, but structurally they are identical.</p>
+<p><strong>We typically use Structural Equivalence (via correlation) as a proxy for Regular Equivalence in dense networks.</strong></p>
+</section>
+<section id="measuring-structural-equivalence" class="slide level2 smaller">
+<h2>Measuring Structural Equivalence</h2>
+<p><strong>The Method</strong>: Use <strong>correlation</strong> to measure how similar two nodes’ tie patterns are.</p>
+<ul>
+<li><strong>High correlation (→ 1)</strong>: Nodes connect to the same others → Structurally equivalent</li>
+<li><strong>Low correlation (→ 0 or negative)</strong>: Nodes have different tie patterns → Different positions</li>
+</ul>
+<p><strong>Example Network</strong>: 4 nodes with directed ties</p>
+
+<img data-src="slideshow_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1152"><div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><strong>Interpretation</strong></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Nodes A &amp; B</strong>: Correlation ≈ 1.0 → <strong>Highly equivalent</strong> (both connect to B, C)</li>
+<li><strong>Nodes C &amp; D</strong>: Correlation ≈ 1.0 → <strong>Highly equivalent</strong> (both connect to C)</li>
+<li><strong>Nodes A &amp; C</strong>: Correlation ≈ 0 → <strong>Not equivalent</strong> (different tie patterns)</li>
+</ul>
+<p><strong>Conclusion</strong>: We can group {A, B} into one position and {C, D} into another.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-the-two-lenses" class="slide level2">
+<h2>Summary: The Two Lenses</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 44%">
+<col style="width: 33%">
+<col style="width: 33%">
 <col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Type</th>
-<th>Definition</th>
-<th>Example</th>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;"><strong>Community Detection</strong></th>
+<th style="text-align: left;"><strong>Role Analysis</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Structural</strong></td>
-<td>Identical ties to same alters</td>
-<td>Two salespeople serving same clients</td>
+<td style="text-align: left;"><strong>Underlying Logic</strong></td>
+<td style="text-align: left;"><strong>Cohesion</strong> (Adjacency)</td>
+<td style="text-align: left;"><strong>Equivalence</strong> (Similarity)</td>
 </tr>
 <tr class="even">
-<td><strong>Regular</strong></td>
-<td>Similar types of ties</td>
-<td>All managers supervise someone</td>
+<td style="text-align: left;"><strong>Key Metric</strong></td>
+<td style="text-align: left;">Modularity</td>
+<td style="text-align: left;">Correlation / Euclidean Dist</td>
 </tr>
 <tr class="odd">
-<td><strong>Automorphic</strong></td>
-<td>Topologically identical</td>
-<td>Symmetry in graph</td>
+<td style="text-align: left;"><strong>Visual Result</strong></td>
+<td style="text-align: left;">Clusters / Blobs</td>
+<td style="text-align: left;">Blockmodels / Hierarchies</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Business Question</strong></td>
+<td style="text-align: left;">“Who works with whom?”</td>
+<td style="text-align: left;">“Who does the same job?”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Typical Insight</strong></td>
+<td style="text-align: left;">Silos, factions, teams</td>
+<td style="text-align: left;">Redundancy, hierarchy, gaps</td>
 </tr>
 </tbody>
 </table>
-<p>Most common in practice: <strong>Structural equivalence</strong></p>
-</section>
-<section id="measuring-structural-equivalence" class="slide level2">
-<h2>Measuring Structural Equivalence</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(igraph)</span>
-<span id="cb7-2"><a></a></span>
-<span id="cb7-3"><a></a><span class="co"># Adjacency matrix</span></span>
-<span id="cb7-4"><a></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>,</span>
-<span id="cb7-5"><a></a>              <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>,</span>
-<span id="cb7-6"><a></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>,</span>
-<span id="cb7-7"><a></a>              <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb7-8"><a></a></span>
-<span id="cb7-9"><a></a><span class="co"># Correlation (nodes with similar tie profiles)</span></span>
-<span id="cb7-10"><a></a><span class="co"># cor() correlates columns, so transpose for row profiles</span></span>
-<span id="cb7-11"><a></a>equivalence <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="fu">t</span>(A))  <span class="co"># Higher = more equivalent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="rendering-roles-in-network-data-1" class="slide level2">
-<h2>Rendering Roles in Network Data</h2>
-<p><strong>From actors to positions</strong></p>
-<ol type="1">
-<li>Calculate similarity matrix (correlation or Euclidean distance)</li>
-<li>Apply hierarchical clustering</li>
-<li>Cut dendrogram to get positions</li>
-<li>Interpret role meanings</li>
-</ol>
-<p><strong>Result</strong>: Reduced representation (30 actors → 4 positions)</p>
-</section>
-<section id="blockmodeling-image-matrices" class="slide level2">
-<h2>Blockmodeling: Image Matrices</h2>
-<p><strong>Blockmodel</strong> reduces network to position-level interactions</p>
-<p><strong>Example</strong>: 30-person organization → 3 positions (Senior, Mid, Junior)</p>
-<p><strong>Image Matrix</strong> (3×3):</p>
-<pre><code>           Senior  Mid  Junior
-Senior  [   0.8   0.6   0.3  ]
-Mid     [   0.4   0.5   0.7  ]
-Junior  [   0.1   0.6   0.4  ]</code></pre>
-<p>Interpretation: Senior staff advise all levels, juniors mainly interact with mid-level</p>
-</section>
-<section id="concor-algorithm" class="slide level2">
-<h2>CONCOR Algorithm</h2>
-<p><strong>CONvergence of iterated CORrelations</strong></p>
-<ol type="1">
-<li>Calculate correlation matrix of node profiles</li>
-<li>Correlate the correlation matrix<br>
-</li>
-<li>Repeat until convergence</li>
-<li>Split based on sign of first eigenvector</li>
-</ol>
-<p><strong>Why it works</strong>: Iterating amplifies structural patterns</p>
-<p><strong>Result</strong>: Hierarchical partition (can split recursively)</p>
-</section>
-<section id="rendering-positions-algorithms-1" class="slide level2">
-<h2>Rendering Positions: Algorithms</h2>
-<p><strong>Methods for finding positions</strong>:</p>
-<ol type="1">
-<li><strong>Correlation-based clustering</strong>
-<ul>
-<li>Correlate row (or column) profiles</li>
-<li>Hierarchical clustering</li>
-</ul></li>
-<li><strong>Euclidean distance clustering</strong>
-<ul>
-<li>Calculate Euclidean distance between profiles</li>
-<li>Ward linkage clustering</li>
-</ul></li>
-<li><strong>CONCOR</strong> (classical approach)</li>
-</ol>
-<p><strong>Choice</strong>: Correlation for directed networks, Euclidean for valued networks</p>
-</section>
-<section id="communities-vs.-positions-key-differences" class="slide level2">
-<h2>Communities vs.&nbsp;Positions: Key Differences</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Dimension</th>
-<th>Communities</th>
-<th>Positions</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Basis</strong></td>
-<td>Direct ties</td>
-<td>Tie patterns</td>
-</tr>
-<tr class="even">
-<td><strong>Logic</strong></td>
-<td>Cohesion</td>
-<td>Equivalence</td>
-</tr>
-<tr class="odd">
-<td><strong>Question</strong></td>
-<td>Who interacts with whom?</td>
-<td>Who plays similar roles?</td>
-</tr>
-<tr class="even">
-<td><strong>Example</strong></td>
-<td>Research groups</td>
-<td>Hierarchical levels</td>
-</tr>
-<tr class="odd">
-<td><strong>Solidarity</strong></td>
-<td>Mechanical</td>
-<td>Organic</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Both are valid, complementary perspectives</strong></p>
+<p><strong>Final Thought</strong>: A complete network analysis usually requires <strong>both</strong>. You want to know who is in the “Marketing Cluster” (Community) AND who is the “Bridge” (Role) within that cluster.</p>
 </section>
 <section id="when-communities-positions" class="slide level2">
 <h2>When Communities ≠ Positions</h2>
@@ -811,13 +750,11 @@ Junior  [   0.1   0.6   0.4  ]</code></pre>
 <li><strong>Communities</strong>: Departments (Marketing, R&amp;D, Finance)</li>
 <li><strong>Positions</strong>: Ranks (Executives, Managers, Staff)</li>
 </ul>
-<p>A Marketing Manager and an R&amp;D Manager: - <strong>Different communities</strong> (different departments) - <strong>Same position</strong> (both supervise, both report up)</p>
-<p><strong>Adjusted Rand Index</strong>: Measures overlap (0 = independent, 1 = identical)</p>
-</section>
-<section id="wrap-up" class="slide level2">
-<h2>Wrap up</h2>
-<p>Communities = cohesion<br>
-Roles/positions = equivalence</p>
+<p>A Marketing Manager and an R&amp;D Manager:</p>
+<ul>
+<li><strong>Different communities</strong> (different departments)</li>
+<li><strong>Same position</strong> (both supervise, both report up)</li>
+</ul>
 
 
 </section>

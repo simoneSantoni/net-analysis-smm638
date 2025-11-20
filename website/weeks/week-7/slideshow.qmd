@@ -1,4 +1,3 @@
-
 ---
 title: "Communities, Roles, and Positions in Networks"
 author: "SMM638 Network Analytics"
@@ -12,247 +11,227 @@ format:
     css: ../../slideshow-theme.css
     code-fold: true
     code-summary: ""
-
 ---
 
-## Part 1: Network Communities
+## Part I: Network Communities {.center .middle}
 
 ---
 
 ## Overview of Weeks 1–5 {.smaller}
 
-What we have learned:
+::: {.callout-important}
+**What we have learned:**
 
-- How to represent a system as a **network**
-  - Nodes, edges, paths, walks, geodesics
-  - Directed vs. undirected, weighted vs. unweighted
-- How to assess the **position of individual nodes**
-  - Degree, closeness, betweenness, eigenvector centrality
-  - Interpretation: access to resources, brokerage, prestige
-- How to assess **mechanisms shaping network structure**
-  - Reciprocity, triadic closure, preferential attachment
-  - Homophily: “birds of a feather flock together”
-  - Random vs. structured networks as useful baselines
+- **Network Representation**: Nodes (actors), edges (relationships), and the "physics" of connectivity.
+- **Node Positioning**: Centrality metrics (Degree, Betweenness, Eigenvector) to identify *key players*.
+- **Formation Mechanisms**: Why links form (Homophily, Triadic Closure, Preferential Attachment).
+:::
 
-What we will learn (Weeks 7 and 8):
+::: {.callout-caution}
+**What we will learn (Weeks 7 & 8):**
 
-- How to build **simplified models of a network** using:
-  - **Communities** (cohesive groups)
-  - **Roles** (who plays similar structural functions)
-  - **Positions** (higher-level pattern of relations among roles)
-- How these structures shape:
-  - **Opportunities** and **constraints** for individual nodes
-  - **Performance consequences** (e.g., diffusion, access, power)
-
+- **Macro-Structure (Communities)**:
+  - Detecting cohesive subgroups (cliques, clusters).
+  - *Business Use*: Market segmentation, fraud rings, organizational silos.
+- **Meso-Structure (Roles & Positions)**:
+  - Identifying actors with similar *functions* (even if unconnected).
+  - *Business Use*: Talent management, supply chain redundancy, competitive analysis.
+- **Strategic Implications**:
+  - How structure dictates performance, innovation, and resilience.
+:::
 ---
 
-## Durkheim's Theory of Social Integration
+## Why Do Networks Are More Than the Sum of Their Parts? {.smaller}
 
-**Mechanical Solidarity** (traditional societies)
-- Integration through **similarity** and shared attributes
-- Everyone does similar work, shares same values
-- Maps onto → **Communities** in networks
+Sociologist Émile Durkheim proposed two forms of social integration that map 
+perfectly onto network analysis, and explain why networks are more than the 
+sum of their parts:
 
-**Organic Solidarity** (modern societies)  
-- Integration through **differentiation** and interdependence
-- Specialized roles in division of labor
-- Maps onto → **Positions** in networks
+::: {.callout-note icon="false"}
+## 1. Mechanical Solidarity (Cohesion)
 
-**Implication**: Communities ≠ Positions are orthogonal dimensions
+- Integration through **similarity** and direct interaction.
+- "We are connected because we are the same."
+- **Network Concept**: **Communities** (Clusters, Cliques).
+:::
+
+::: {.callout-note icon="false"}
+## 2. Organic Solidarity (Equivalence)
+
+- Integration through **interdependence** and specialized roles.
+- "We are connected because we need each other's different functions."
+- **Network Concept**: **Positions** (Roles, Blockmodels).
+:::
+*Key Insight: A network can be analyzed through **cohesion** (who hangs out with whom) or **equivalence** (who does the same job).*
 
 ---
 
 ## Example: Academic Department
 
-```r
-# Two orthogonal dimensions of structure
+```{r}
+#| echo: true
+#| fig-height: 5
+#| fig-align: center
 
-# Communities (based on direct interaction)
-ML_group <- c("Prof_A", "PhD_1", "PhD_2")
-Theory_group <- c("Prof_B", "PhD_3", "PhD_4")
+library(igraph)
 
-# Positions (based on role similarity)
-Senior <- c("Prof_A", "Prof_B")  # Both advise
-Junior <- c("PhD_1", "PhD_2", "PhD_3", "PhD_4")  # All advised
+# 1. Construct the Network (Edges based on Community Cohesion)
+edges <- data.frame(
+  from = c("Prof_A", "Prof_A", "PhD_1",   # ML Group
+           "Prof_B", "Prof_B", "PhD_3"),  # Theory Group
+  to   = c("PhD_1",  "PhD_2",  "PhD_2",
+           "PhD_3",  "PhD_4",  "PhD_4")
+)
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# 2. Define Attributes (Data from Example)
+# Communities (Color)
+V(g)$color <- ifelse(V(g)$name %in% c("Prof_A", "PhD_1", "PhD_2"), 
+                     "#E41A1C", "#377EB8") # Red for ML, Blue for Theory
+
+# Positions (Shape)
+# Profs are Squares, Students are Circles
+V(g)$shape <- ifelse(V(g)$name %in% c("Prof_A", "Prof_B"), 
+                     "square", "circle")
+
+# 3. Visualize
+par(mar=c(1,1,1,1))
+plot(g, layout = layout_nicely(g),
+     vertex.label.color = "white", vertex.label.font = 2,
+     vertex.size = 30, edge.width = 2,
+     main = "Communities (Color) vs. Positions (Shape)")
+
+legend("bottomleft", legend = c("ML", "History"), 
+       col = c("#E41A1C", "#377EB8"), pch = 19, bty = "n", title = "Community")
+legend("bottomright", legend = c("Senior", "Junior"), 
+       col = "black", pch = c(15, 16), bty = "n", title = "Position")
 ```
 
-A junior ML researcher and junior theorist:
-- **Different communities** (ML vs. Theory)
-- **Same position** (advisee role)
+A junior ML researcher and junior historian:
+
+- **Different communities** (ML vs. History)
+- **Same position** (student role)
 
 ---
 
 ## On the Concept of Community
 
+**Definition**
 
-**Intuition**
+A *community* is a subset of nodes that are more densely connected to each other than to the rest of the network.
 
-A *community* is a subset of nodes that are more densely connected to each other than to outsiders.
+**Business Applications**
 
-**Examples**
-
-- Friendship groups in a high school
-- R&D collaboration clusters
-- Online communities
-- Scientific collaboration clusters
-
----
-
-## The Case of Small-World Networks
-
-**Intuition**
-
-Small worlds combine:
-
-1. **High clustering**
-2. **Short average path lengths**
-
-**Examples**
-
-- Milgram experiment  
-- Watts–Strogatz model
+- **Marketing**: Identifying customer segments based on purchase behavior (e.g., "Tech Enthusiasts" vs. "Home Decorators").
+- **HR / People Analytics**: Uncovering informal collaboration teams that don't match the org chart.
+- **Fraud Detection**: Detecting "rings" of accounts that trade/interact only with each other to boost ratings or launder money.
+- **Supply Chain**: Identifying regional clusters of suppliers to assess local risks.
 
 ---
 
-## The Connection Between Homophily and Small Worlds
+## The "Small World" Phenomenon {.smaller}
 
-Homophily → dense cohesive groups → small-world structure
+**The Concept**
 
----
+Most real-world networks (social, biological, technological) exhibit the "Small World" property:
 
-## Examples of Homophily in Small Worlds
-
-- Educational settings  
-- Study groups  
-- Cliques along demographic lines  
-
----
-
-## Granovetter: The Strength of Weak Ties
-
-**The Paradox**
-
-"Weak ties" (acquaintances) provide **more novel information** than "strong ties" (close friends).
+1.  **High Clustering**: My friends are likely to be friends with each other (like a caveman village).
+2.  **Short Path Lengths**: I can reach anyone in the world in ~6 steps (like a random graph).
 
 **Why?**
 
-- Strong ties cluster together (your friends know each other)
-- Weak ties bridge to distant parts of the network
-- Information from close friends is redundant
+- **Homophily** creates the clusters (local cohesion).
+- **Weak Ties** (bridges) create the shortcuts (global reach).
 
-**Implication**: Bridges between communities are crucial for information flow
+**Business Implication**
+
+- **Information Diffusion**: News travels fast in small worlds.
+- **Viral Marketing**: You need to seed ideas in different clusters (high clustering) but ensure they can jump across bridges (short paths).
 
 ---
 
-## Weak Ties: Visual Demonstration
+## Strong Communities: The Clique
 
-```r
+**Definition**
+A **Clique** is a subgraph where every distinct pair of nodes is adjacent. It represents the strictest form of cohesion.
+
+```{r}
+#| echo: false
+#| fig-height: 4
+#| fig-align: center
+
 library(igraph)
+par(mar=c(0,0,0,0))
 
-# Two dense communities
-g1 <- make_full_graph(10)
-g2 <- make_full_graph(10)
-g <- disjoint_union(g1, g2)
+# Create a graph with a 5-node clique and some peripheral nodes
+g <- make_full_graph(5) 
+V(g)$name <- 1:5
+g <- g + vertices("6", "7", "8")
+g <- add_edges(g, c(1,6, 2,7, 5,8))
 
-# Add weak tie bridges
-g <- add_edges(g, c(5,15, 7,17, 2,12))
+# Color the clique
+V(g)$color <- ifelse(V(g)$name %in% as.character(1:5), "#E41A1C", "gray80")
+V(g)$label <- NA
 
-# Calculate betweenness
-btw <- edge_betweenness(g)
-
-# Weak ties have highest betweenness!
-# They are bottlenecks for information flow
+plot(g, layout = layout_with_kk(g), vertex.size=25, edge.color="gray50")
+legend("bottomleft", legend="Clique (Complete Subgraph)", col="#E41A1C", pch=19, bty="n")
 ```
 
-**Result**: Removing 3 weak ties doubles average path length
-
 ---
 
-## The Case of Small-World Networks
+## Weak Communities: Density-Based
 
-**Intuition**
+**Definition**
+A **Weak Community** is a subgraph where the density of internal edges is significantly higher than the density of external edges (ties to the rest of the network).
 
-Small worlds combine:
+```{r}
+#| echo: false
+#| fig-height: 4
+#| fig-align: center
 
-1. **High clustering** (dense local neighborhoods)
-2. **Short average path lengths** (few steps between any two nodes)
+par(mar=c(0,0,0,0))
 
-**Examples**
+# Create a graph with a dense cluster (not a clique)
+set.seed(123)
+g <- sample_gnm(10, 25) # Dense group
+g2 <- sample_gnm(10, 10) # Sparse group
+g_combined <- disjoint_union(g, g2)
+g_combined <- add_edges(g_combined, c(1,11, 5,15)) # Weak bridges
 
-- Milgram experiment ("six degrees of separation")
-- Watts–Strogatz model
-- Social networks, neural networks, power grids
+# Color the dense community
+V(g_combined)$color <- c(rep("#377EB8", 10), rep("gray80", 10))
+V(g_combined)$label <- NA
 
-**Why it matters**: Local cohesion + global reach
-
----
-
-## Small-World Structure Comparison
-
-| Network Type | Clustering | Path Length | Example |
-|--------------|------------|-------------|---------|
-| **Regular lattice** | High | High | Grid |
-| **Random** | Low | Low | Erdős-Rényi |
-| **Small-world** | **High** | **Low** | Real social networks |
-
-Small-world = "Best of both worlds"
-
----
-
-## Creating a Small-World Network
-
-```r
-# Watts-Strogatz model
-library(igraph)
-
-n <- 100      # nodes
-k <- 6        # neighbors
-p <- 0.1      # rewiring probability
-
-# Start with ring, rewire 10% of edges
-g <- watts.strogatz.game(1, n, k/2, p)
-
-# Result: high clustering (like regular)
-#         + short paths (like random)
+plot(g_combined, layout = layout_with_fr(g_combined), vertex.size=20, edge.color="gray50")
+legend("bottomleft", legend="High Internal Density", col="#377EB8", pch=19, bty="n")
 ```
 
-Only 10% rewired edges needed to achieve small-world property!
-
 ---
 
-## The Connection Between Homophily and Small Worlds
+## LS Sets: Robustness
 
-Homophily (similarity-based tie formation):
-- Creates **dense cohesive groups** (high clustering)
-- But a few cross-group ties (weak ties) → **short paths**
+**Definition**
+An **LS Set** is a subset of nodes where any proper subset has more ties to the *rest of the group* than to the *outside*. It represents defensive cohesion—it is harder to split the group than to disconnect it from the network.
 
-Result: Small-world structure emerges naturally
+```{r}
+#| echo: false
+#| fig-height: 4
+#| fig-align: center
 
-**Examples**
-- Educational settings (study groups by major, occasional cross-major friendships)
-- Organizational networks (departments cluster, management bridges)
+par(mar=c(0,0,0,0))
 
----
+# Create a robust structure (4-clique connected to outside by 1 link)
+g <- make_full_graph(4)
+V(g)$name <- 1:4
+g <- g + vertices("5", "6")
+g <- add_edges(g, c(4,5, 5,6))
 
-## Definitions of Network Communities
+V(g)$color <- ifelse(V(g)$name %in% 1:4, "#4DAF4A", "gray80")
+V(g)$label <- NA
 
-
-- **Strong**: Cliques (all nodes connected to all others)
-- **Weak**: Subgraphs where internal density > external density
-- **LS Sets**: Subsets where any proper subset has more ties to the set than to outsiders
-
-
----
-
-## Example of Communities in a Strong Sense
-
-Strongly cohesive groups, nearly clique-like.
-
----
-
-## Example of Communities in a Weak Sense
-
-High internal density but not complete; overlapping clusters.
+plot(g, layout = layout_with_kk(g), vertex.size=30, edge.width=2)
+legend("bottomleft", legend="LS Set (Robust Cohesion)", col="#4DAF4A", pch=19, bty="n")
+```
 
 ---
 
@@ -266,50 +245,45 @@ High internal density but not complete; overlapping clusters.
 
 ---
 
-## The Connection between Network Communities and Modularity
+## Understanding Modularity (Q) {.smaller}
 
-**Modularity** is the most common metric for defining communities. It compares the observed number of edges within groups to what we would expect in a random network with the same degree distribution.
+Many of the community detection algorithms we just discussed, such as Louvain, aim to optimize a metric called Modularity (Q).
 
+**The Metric**
 
----
+Modularity measures the strength of division of a network into modules (communities).
 
-## Understanding Modularity
+$$Q = \text{(Fraction of edges within groups)} - \text{(Expected fraction if edges were random)}$$
 
-**What is Modularity (Q)?**
+**Interpretation**
 
-Measures if a partition has more **within-group edges** than expected by chance.
+- **$Q \approx 0$**: The network is random; no community structure.
+- **$Q \in [0.3, 0.7]$**: Strong community structure (common in social networks).
+- **$Q \to 1$**: Disconnected components (islands).
 
-$$Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j)$$
+**The "Resolution Limit"**
 
-- $A_{ij}$ = observed edge
-- $\frac{k_i k_j}{2m}$ = expected edge (null model)
-- $\delta(c_i, c_j)$ = 1 if same community, 0 otherwise
-
----
-
-## Modularity Interpretation
-
-| Q Value | Interpretation |
-|---------|----------------|
-| **Q < 0.3** | No meaningful community structure |
-| **Q = 0.3-0.7** | Significant community structure |
-| **Q > 0.7** | Very strong divisions (rare) |
-
-**Rule of thumb**: Q > 0.4 indicates good community detection
+- Modularity optimization has a blind spot: it may fail to detect small communities in very large networks, merging them into larger clusters.
+- *Solution*: Use multi-resolution algorithms (e.g., Louvain with resolution parameter).
 
 ---
 
-## Most Popular Community Detection Algorithms
+## Community Detection Algorithms: A Field Guide {.smaller}
 
-| Algorithm | Objective | Speed | Best Use |
-|-----------|-----------|-------|----------|
-| **Louvain** | Modularity max | Fast | General purpose |
-| **Leiden** | Improved modularity | Fast | Quality + speed |
-| **Walktrap** | Random walks | Medium | Multi-scale |
-| **Girvan-Newman** | Edge betweenness | Slow | Hierarchical, small networks |
-| **Label Propagation** | Local consensus | Very fast | Large networks, unstable |
+| Algorithm | Mechanism | Pros | Cons | Best For |
+|-----------|-----------|------|------|----------|
+| **Louvain** | Modularity Optimization | Very Fast | Resolution limit | Large networks (Default choice) |
+| **Leiden** | Refined Louvain | Faster, guarantees connected comms | - | Large networks (Modern standard) |
+| **Girvan-Newman** | Edge Betweenness (Divisive) | Intuitive hierarchy | Very Slow ($O(N^3)$) | Small networks (<500 nodes), teaching |
+| **Label Propagation** | Local Voting | Linear time | Unstable (random seed matters) | Massive networks |
+| **Spectral** | Eigenvectors | Math rigor | Slower | Fixed $k$ communities |
 
-**Recommendation**: Start with Louvain or Leiden
+:::{.callout-tip}
+
+Start with **Louvain** or **Leiden**. 
+
+Use **Girvan-Newman** only if you need to analyze the hierarchy of splits in a small graph.
+:::
 
 ---
 
@@ -317,18 +291,39 @@ $$Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i
 
 Many algorithms have a **resolution** parameter controlling granularity:
 
-```r
-# Higher resolution → more, smaller communities
-communities_fine <- cluster_louvain(g, resolution=2.0)  # 8 communities
+```{r}
+#| echo: false
+#| fig-height: 4
+#| fig-width: 12
+#| fig-align: center
 
-# Default resolution
-communities_default <- cluster_louvain(g, resolution=1.0)  # 4 communities
+library(igraph)
+set.seed(42)
+g <- make_graph("Zachary")
+l <- layout_with_fr(g)
 
-# Lower resolution → fewer, larger communities  
-communities_coarse <- cluster_louvain(g, resolution=0.5)  # 2 communities
+par(mfrow=c(1,3), mar=c(2,2,3,2))
+
+# Low Resolution (Coarse)
+# Note: Using Leiden algorithm which supports resolution parameter robustly
+c_low <- cluster_leiden(g, objective_function="modularity", resolution_parameter=0.5)
+plot(c_low, g, layout=l, vertex.label=NA, vertex.size=15, main="Resolution = 0.5\n(Few, Large Communities)")
+
+# Medium Resolution (Standard)
+c_med <- cluster_leiden(g, objective_function="modularity", resolution_parameter=1.0)
+plot(c_med, g, layout=l, vertex.label=NA, vertex.size=15, main="Resolution = 1.0\n(Standard)")
+
+# High Resolution (Fine)
+c_high <- cluster_leiden(g, objective_function="modularity", resolution_parameter=1.5)
+plot(c_high, g, layout=l, vertex.label=NA, vertex.size=15, main="Resolution = 1.5\n(Many, Small Communities)")
 ```
 
-**Choice depends on your research question**
+::: {.callout-important}
+## **Choice depends on your research question**
+
+- **Macro-Level (Low Resolution)**: Use when you want to identify broad market segments or major political coalitions. You care about the "big picture" splits.
+- **Micro-Level (High Resolution)**: Use when you need to find specific, tight-knit teams or niche sub-cultures. You care about the fine-grained details.
+:::
 
 ---
 
@@ -378,101 +373,112 @@ plot(comm_louvain, g,
 
 ---
 
-## Part II: Roles and Positions
+## Part II: Roles and Positions {.center .middle}
+
+> "Community detection finds your friends. Role analysis finds your professional doppelgänger."
 
 ---
 
-## Definitions
+## Definitions: Role vs. Position
 
-**Role**: Set of nodes with similar structural functions  
-**Position**: Pattern of relations defining a node's structural location  
+**Role**
+
+- A pattern of relationships.
+- Example: "Broker", "Isolate", "Hub", "Authority".
+- *Abstract concept*.
+
+**Position**
+
+- A set of actors who occupy the same role in a specific network.
+- Example: "The Senior Managers" (a group of 5 specific people who all have the 'Authority' role).
+- *Concrete grouping*.
+
+**Equivalence**
+`
+- The mathematical rule we use to decide if two nodes are in the same position.  
 
 ---
 
 ## Rendering Roles in Network Data
 
 **Intuition**
+
 - Complex networks are hard to understand node-by-node
 - We group nodes that "do the same thing"
 - Example: In a hospital, all nurses have similar ties to doctors and patients
 
 **Approaches**
+
 - Blockmodeling (discrete partitions)
 - Hierarchical clustering (continuous similarity)
-
 
 ---
 
 ## Rendering Roles: Algorithms
+The following outputs demonstrate the blockmodeling process: first, a **dendrogram** reveals the hierarchical clustering of structurally equivalent nodes; second, an **image matrix** summarizes the density of ties between these positions; and finally, the **network graph** visualizes the actors colored by their assigned role.
 
 ```{r}
-#| label: reference-blockmodels
-#| eval: false
-#| code-fold: show
+#| echo: true
+#| fig-height: 5
+#| fig-width: 12
+#| fig-align: center
 
 library(igraph)
+set.seed(42)
 
-g <- sample_pa(20, directed = TRUE)
+# Create a network with clear positional structure
+# 3 "leaders" (high out-degree), 6 "followers" (high in-degree), 3 "isolates"
+g <- make_empty_graph(n=12, directed=TRUE)
+g <- add_edges(g, c(
+  1,4, 1,5, 1,6, 1,7,  # Leader 1 → Followers
+  2,5, 2,6, 2,7, 2,8,  # Leader 2 → Followers
+  3,6, 3,7, 3,8, 3,9,  # Leader 3 → Followers
+  4,1, 5,2, 6,3        # Some followers → leaders (feedback)
+))
+
 adj <- as.matrix(as_adjacency_matrix(g))
 
-# Method 1: Correlation-based equivalence
-equiv_cor <- cor(t(adj))          # Correlate row profiles
-dist_cor <- as.dist(1 - equiv_cor)
-hc_cor <- hclust(dist_cor, method = "complete")
-positions_cor <- cutree(hc_cor, k = 4)
+# Step 1: Compute Similarity Matrix (Correlation of tie patterns)
+similarity <- cor(t(adj))  # Transpose to correlate rows
+similarity[is.na(similarity)] <- 0  # Handle nodes with no ties
 
-# Method 2: Euclidean distance equivalence
-dist_euclidean <- dist(adj, method = "euclidean")
-hc_euclidean <- hclust(dist_euclidean, method = "ward.D2")
-positions_euclidean <- cutree(hc_euclidean, k = 4)
+# Step 2: Hierarchical Clustering
+dist_matrix <- as.dist(1 - similarity)  # Convert similarity to distance
+hc <- hclust(dist_matrix, method = "ward.D2")
+positions <- cutree(hc, k = 3)  # Cut into 3 positions
 
-# Visualize dendrogram
-plot(hc_cor, main = "Position Hierarchy", xlab = "Node")
-rect.hclust(hc_cor, k = 4, border = "red")
-
-# Create image matrix
-n_pos <- max(positions_cor)
-image_matrix <- matrix(0, nrow = n_pos, ncol = n_pos)
-
+# Step 3: Create Blockmodel (Image Matrix)
+n_pos <- max(positions)
+blockmodel <- matrix(0, nrow = n_pos, ncol = n_pos)
 for(i in 1:n_pos) {
   for(j in 1:n_pos) {
-    block <- adj[positions_cor == i, positions_cor == j]
-    image_matrix[i, j] <- mean(block)
+    block <- adj[positions == i, positions == j, drop=FALSE]
+    if(length(block) > 0) blockmodel[i, j] <- mean(block)
   }
 }
 
-print(round(image_matrix, 2))
+# Visualize the three outputs
+par(mfrow=c(1,3), mar=c(4,4,3,2))
 
-# Visualize with position colors
-V(g)$color <- rainbow(n_pos)[positions_cor]
-plot(g, vertex.size = 8, main = "Network by Position")
+# 1. Dendrogram (Hierarchical Clustering)
+plot(hc, main = "1. Hierarchical Clustering", xlab = "Node", sub = "", hang = -1)
+rect.hclust(hc, k = 3, border = "red")
+
+# 2. Image Matrix (Blockmodel)
+image(1:n_pos, 1:n_pos, blockmodel, col = heat.colors(10), 
+      main = "2. Blockmodel\n(Position-to-Position Density)",
+      xlab = "Position", ylab = "Position", axes = FALSE)
+axis(1, at = 1:n_pos); axis(2, at = 1:n_pos)
+text(expand.grid(1:n_pos, 1:n_pos), labels = round(blockmodel, 2), cex = 1.2)
+
+# 3. Network colored by position
+V(g)$color <- c("red", "blue", "green")[positions]
+plot(g, vertex.size = 20, edge.arrow.size = 0.5, 
+     main = "3. Network by Position",
+     vertex.label = 1:12)
+legend("bottomleft", legend = paste("Pos", 1:3), 
+       col = c("red", "blue", "green"), pch = 19, bty = "n")
 ```
-
----
-
-## Rendering Positions in Network Data
-
-**Triad Census**
-- Analyzing the frequency of different triad types (e.g., transitive, cyclic)
-- Different roles (e.g., broker vs. isolate) show different triad profiles
-
-**Multiplexity**
-- Roles often defined by multiple types of ties (e.g., friend + coworker)
-
-
----
-
-## Rendering Positions: Algorithms
-
-**Similarity Matrices**
-- Compute similarity between every pair of nodes (correlation, distance)
-
-**Clustering**
-- Group similar nodes using hierarchical or k-means clustering
-
-**Blockmodels**
-- Permute the adjacency matrix to reveal blocks of high/low density
-
 
 ---
 
@@ -481,6 +487,7 @@ plot(g, vertex.size = 8, main = "Network by Position")
 **Two nodes are structurally equivalent if they have identical ties to the same alters**
 
 Example:
+
 - Node A connects to: {C, D, E}
 - Node B connects to: {C, D, E}
 - → A and B are structurally equivalent
@@ -491,19 +498,35 @@ Example:
 
 ## Types of Equivalence
 
-| Type | Definition | Example |
-|------|------------|---------|
-| **Structural** | Identical ties to same alters | Two salespeople serving same clients |
-| **Regular** | Similar types of ties | All managers supervise someone |
-| **Automorphic** | Topologically identical | Symmetry in graph |
+**1. Structural Equivalence (Strict)**
+- Two nodes are connected to the **exact same** other nodes.
+- *Example*: Two siblings who have the exact same parents and grandparents.
+- *Business*: Two customer service reps who handle the exact same set of tickets (rare).
 
-Most common in practice: **Structural equivalence**
+**2. Regular Equivalence (Functional)**
+- Two nodes are connected to **equivalent** types of nodes.
+- *Example*: Two doctors. Dr. A treats Patient X; Dr. B treats Patient Y. They don't know the same people, but they have the same *relationship* to their patients.
+- *Business*: Two department heads. They manage different teams, but structurally they are identical.
+
+**We typically use Structural Equivalence (via correlation) as a proxy for Regular Equivalence in dense networks.**
 
 ---
 
-## Measuring Structural Equivalence
+## Measuring Structural Equivalence {.smaller}
 
-```r
+**The Method**: Use **correlation** to measure how similar two nodes' tie patterns are.
+
+- **High correlation (→ 1)**: Nodes connect to the same others → Structurally equivalent
+- **Low correlation (→ 0 or negative)**: Nodes have different tie patterns → Different positions
+
+**Example Network**: 4 nodes with directed ties
+
+```{r}
+#| echo: false
+#| fig-height: 3
+#| fig-width: 12
+#| fig-align: center
+
 library(igraph)
 
 # Adjacency matrix
@@ -512,88 +535,62 @@ A <- matrix(c(0, 1, 1, 0,
               0, 0, 0, 1,
               0, 0, 1, 0), nrow=4, byrow=TRUE)
 
+# Create graph for visualization
+g <- graph_from_adjacency_matrix(A, mode="directed")
+V(g)$name <- c("A", "B", "C", "D")
+
 # Correlation (nodes with similar tie profiles)
-# cor() correlates columns, so transpose for row profiles
-equivalence <- cor(t(A))  # Higher = more equivalent
+equivalence <- cor(t(A))  # Transpose to correlate row profiles
+rownames(equivalence) <- colnames(equivalence) <- c("A", "B", "C", "D")
+
+# Visualize
+par(mfrow=c(1,2), mar=c(4,4,3,2))
+
+# 1. Network
+plot(g, vertex.size=40, vertex.label.cex=1.5, edge.arrow.size=0.8,
+     main="Network Structure", vertex.color="lightblue")
+
+# 2. Equivalence Matrix (as heatmap using base R)
+# Create color palette
+colors <- colorRampPalette(c("white", "orange", "red"))(100)
+# Plot heatmap
+image(1:4, 1:4, equivalence, col=colors, axes=FALSE,
+      xlab="", ylab="", main="Structural Equivalence Matrix")
+axis(1, at=1:4, labels=c("A", "B", "C", "D"), las=1)
+axis(2, at=1:4, labels=c("A", "B", "C", "D"), las=1)
+# Add correlation values as text
+for(i in 1:4) {
+  for(j in 1:4) {
+    text(i, j, round(equivalence[i,j], 2), cex=1.2)
+  }
+}
+# Add grid
+abline(h=0.5:4.5, v=0.5:4.5, col="gray", lty=2)
 ```
 
----
+::: {.callout-important}
+## **Interpretation**
 
-## Rendering Roles in Network Data
+- **Nodes A & B**: Correlation ≈ 1.0 → **Highly equivalent** (both connect to B, C)
+- **Nodes C & D**: Correlation ≈ 1.0 → **Highly equivalent** (both connect to C)
+- **Nodes A & C**: Correlation ≈ 0 → **Not equivalent** (different tie patterns)
 
-**From actors to positions**
-
-1. Calculate similarity matrix (correlation or Euclidean distance)
-2. Apply hierarchical clustering
-3. Cut dendrogram to get positions
-4. Interpret role meanings
-
-**Result**: Reduced representation (30 actors → 4 positions)
+**Conclusion**: We can group {A, B} into one position and {C, D} into another.
+:::
 
 ---
 
-## Blockmodeling: Image Matrices
+## Summary: The Two Lenses
 
-**Blockmodel** reduces network to position-level interactions
+| Feature | **Community Detection** | **Role Analysis** |
+| :--- | :--- | :--- |
+| **Underlying Logic** | **Cohesion** (Adjacency) | **Equivalence** (Similarity) |
+| **Key Metric** | Modularity | Correlation / Euclidean Dist |
+| **Visual Result** | Clusters / Blobs | Blockmodels / Hierarchies |
+| **Business Question** | "Who works with whom?" | "Who does the same job?" |
+| **Typical Insight** | Silos, factions, teams | Redundancy, hierarchy, gaps |
 
-**Example**: 30-person organization → 3 positions (Senior, Mid, Junior)
-
-**Image Matrix** (3×3):
-```
-           Senior  Mid  Junior
-Senior  [   0.8   0.6   0.3  ]
-Mid     [   0.4   0.5   0.7  ]
-Junior  [   0.1   0.6   0.4  ]
-```
-
-Interpretation: Senior staff advise all levels, juniors mainly interact with mid-level
-
----
-
-## CONCOR Algorithm
-
-**CONvergence of iterated CORrelations**
-
-1. Calculate correlation matrix of node profiles
-2. Correlate the correlation matrix  
-3. Repeat until convergence
-4. Split based on sign of first eigenvector
-
-**Why it works**: Iterating amplifies structural patterns
-
-**Result**: Hierarchical partition (can split recursively)
-
----
-
-## Rendering Positions: Algorithms
-
-**Methods for finding positions**:
-
-1. **Correlation-based clustering**
-   - Correlate row (or column) profiles
-   - Hierarchical clustering
-
-2. **Euclidean distance clustering**
-   - Calculate Euclidean distance between profiles
-   - Ward linkage clustering
-
-3. **CONCOR** (classical approach)
-
-**Choice**: Correlation for directed networks, Euclidean for valued networks
-
----
-
-## Communities vs. Positions: Key Differences
-
-| Dimension | Communities | Positions |
-|-----------|-------------|-----------|
-| **Basis** | Direct ties | Tie patterns |
-| **Logic** | Cohesion | Equivalence |
-| **Question** | Who interacts with whom? | Who plays similar roles? |
-| **Example** | Research groups | Hierarchical levels |
-| **Solidarity** | Mechanical | Organic |
-
-**Both are valid, complementary perspectives**
+**Final Thought**: A complete network analysis usually requires **both**. You want to know who is in the "Marketing Cluster" (Community) AND who is the "Bridge" (Role) within that cluster.  
 
 ---
 
@@ -605,15 +602,6 @@ Interpretation: Senior staff advise all levels, juniors mainly interact with mid
 - **Positions**: Ranks (Executives, Managers, Staff)
 
 A Marketing Manager and an R&D Manager:
+
 - **Different communities** (different departments)
 - **Same position** (both supervise, both report up)
-
-**Adjusted Rand Index**: Measures overlap (0 = independent, 1 = identical)
-
----
-
-## Wrap up
-
-
-Communities = cohesion  
-Roles/positions = equivalence  

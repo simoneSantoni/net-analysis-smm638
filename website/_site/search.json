@@ -22,14 +22,14 @@
     "href": "weeks/week-7/slideshow.html#overview-of-weeks-15",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Overview of Weeks 1–5",
-    "text": "Overview of Weeks 1–5\nWhat we have learned:\n\nHow to represent a system as a network\n\nNodes, edges, paths, walks, geodesics\nDirected vs. undirected, weighted vs. unweighted\n\nHow to assess the position of individual nodes\n\nDegree, closeness, betweenness, eigenvector centrality\nInterpretation: access to resources, brokerage, prestige\n\nHow to assess mechanisms shaping network structure\n\nReciprocity, triadic closure, preferential attachment\nHomophily: “birds of a feather flock together”\nRandom vs. structured networks as useful baselines\n\n\nWhat we will learn (Weeks 7 and 8):\n\nHow to build simplified models of a network using:\n\nCommunities (cohesive groups)\nRoles (who plays similar structural functions)\nPositions (higher-level pattern of relations among roles)\n\nHow these structures shape:\n\nOpportunities and constraints for individual nodes\nPerformance consequences (e.g., diffusion, access, power)"
+    "text": "Overview of Weeks 1–5\n\n\n\n\n\n\nImportant\n\n\nWhat we have learned:\n\nNetwork Representation: Nodes (actors), edges (relationships), and the “physics” of connectivity.\nNode Positioning: Centrality metrics (Degree, Betweenness, Eigenvector) to identify key players.\nFormation Mechanisms: Why links form (Homophily, Triadic Closure, Preferential Attachment).\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\nWhat we will learn (Weeks 7 & 8):\n\nMacro-Structure (Communities):\n\nDetecting cohesive subgroups (cliques, clusters).\nBusiness Use: Market segmentation, fraud rings, organizational silos.\n\nMeso-Structure (Roles & Positions):\n\nIdentifying actors with similar functions (even if unconnected).\nBusiness Use: Talent management, supply chain redundancy, competitive analysis.\n\nStrategic Implications:\n\nHow structure dictates performance, innovation, and resilience."
   },
   {
     "objectID": "weeks/week-7/slideshow.html#on-the-concept-of-community",
     "href": "weeks/week-7/slideshow.html#on-the-concept-of-community",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "On the Concept of Community",
-    "text": "On the Concept of Community\nIntuition\nA community is a subset of nodes that are more densely connected to each other than to outsiders.\nExamples\n\nFriendship groups in a high school\nR&D collaboration clusters\nOnline communities\nScientific collaboration clusters"
+    "text": "On the Concept of Community\nDefinition\nA community is a subset of nodes that are more densely connected to each other than to the rest of the network.\nBusiness Applications\n\nMarketing: Identifying customer segments based on purchase behavior (e.g., “Tech Enthusiasts” vs. “Home Decorators”).\nHR / People Analytics: Uncovering informal collaboration teams that don’t match the org chart.\nFraud Detection: Detecting “rings” of accounts that trade/interact only with each other to boost ratings or launder money.\nSupply Chain: Identifying regional clusters of suppliers to assess local risks."
   },
   {
     "objectID": "weeks/week-7/slideshow.html#the-case-of-small-world-networks",
@@ -99,7 +99,7 @@
     "href": "weeks/week-7/slideshow.html#part-ii-roles-and-positions",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Part II: Roles and Positions",
-    "text": "Part II: Roles and Positions"
+    "text": "Part II: Roles and Positions\n\n“Community detection finds your friends. Role analysis finds your professional doppelgänger.”"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#definitions",
@@ -113,28 +113,28 @@
     "href": "weeks/week-7/slideshow.html#rendering-roles-in-network-data",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Rendering Roles in Network Data",
-    "text": "Rendering Roles in Network Data\nIntuition - Complex networks are hard to understand node-by-node - We group nodes that “do the same thing” - Example: In a hospital, all nurses have similar ties to doctors and patients\nApproaches - Blockmodeling (discrete partitions) - Hierarchical clustering (continuous similarity)"
+    "text": "Rendering Roles in Network Data\nIntuition\n\nComplex networks are hard to understand node-by-node\nWe group nodes that “do the same thing”\nExample: In a hospital, all nurses have similar ties to doctors and patients\n\nApproaches\n\nBlockmodeling (discrete partitions)\nHierarchical clustering (continuous similarity)"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#rendering-roles-algorithms",
     "href": "weeks/week-7/slideshow.html#rendering-roles-algorithms",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Rendering Roles: Algorithms",
-    "text": "Rendering Roles: Algorithms\n\n\nCode\nlibrary(igraph)\n\ng &lt;- sample_pa(20, directed = TRUE)\nadj &lt;- as.matrix(as_adjacency_matrix(g))\n\n# Method 1: Correlation-based equivalence\nequiv_cor &lt;- cor(t(adj))          # Correlate row profiles\ndist_cor &lt;- as.dist(1 - equiv_cor)\nhc_cor &lt;- hclust(dist_cor, method = \"complete\")\npositions_cor &lt;- cutree(hc_cor, k = 4)\n\n# Method 2: Euclidean distance equivalence\ndist_euclidean &lt;- dist(adj, method = \"euclidean\")\nhc_euclidean &lt;- hclust(dist_euclidean, method = \"ward.D2\")\npositions_euclidean &lt;- cutree(hc_euclidean, k = 4)\n\n# Visualize dendrogram\nplot(hc_cor, main = \"Position Hierarchy\", xlab = \"Node\")\nrect.hclust(hc_cor, k = 4, border = \"red\")\n\n# Create image matrix\nn_pos &lt;- max(positions_cor)\nimage_matrix &lt;- matrix(0, nrow = n_pos, ncol = n_pos)\n\nfor(i in 1:n_pos) {\n  for(j in 1:n_pos) {\n    block &lt;- adj[positions_cor == i, positions_cor == j]\n    image_matrix[i, j] &lt;- mean(block)\n  }\n}\n\nprint(round(image_matrix, 2))\n\n# Visualize with position colors\nV(g)$color &lt;- rainbow(n_pos)[positions_cor]\nplot(g, vertex.size = 8, main = \"Network by Position\")"
+    "text": "Rendering Roles: Algorithms\nThe following outputs demonstrate the blockmodeling process: first, a dendrogram reveals the hierarchical clustering of structurally equivalent nodes; second, an image matrix summarizes the density of ties between these positions; and finally, the network graph visualizes the actors colored by their assigned role.\n\n\nCode\nlibrary(igraph)\nset.seed(42)\n\n# Create a network with clear positional structure\n# 3 \"leaders\" (high out-degree), 6 \"followers\" (high in-degree), 3 \"isolates\"\ng &lt;- make_empty_graph(n=12, directed=TRUE)\ng &lt;- add_edges(g, c(\n  1,4, 1,5, 1,6, 1,7,  # Leader 1 → Followers\n  2,5, 2,6, 2,7, 2,8,  # Leader 2 → Followers\n  3,6, 3,7, 3,8, 3,9,  # Leader 3 → Followers\n  4,1, 5,2, 6,3        # Some followers → leaders (feedback)\n))\n\nadj &lt;- as.matrix(as_adjacency_matrix(g))\n\n# Step 1: Compute Similarity Matrix (Correlation of tie patterns)\nsimilarity &lt;- cor(t(adj))  # Transpose to correlate rows\nsimilarity[is.na(similarity)] &lt;- 0  # Handle nodes with no ties\n\n# Step 2: Hierarchical Clustering\ndist_matrix &lt;- as.dist(1 - similarity)  # Convert similarity to distance\nhc &lt;- hclust(dist_matrix, method = \"ward.D2\")\npositions &lt;- cutree(hc, k = 3)  # Cut into 3 positions\n\n# Step 3: Create Blockmodel (Image Matrix)\nn_pos &lt;- max(positions)\nblockmodel &lt;- matrix(0, nrow = n_pos, ncol = n_pos)\nfor(i in 1:n_pos) {\n  for(j in 1:n_pos) {\n    block &lt;- adj[positions == i, positions == j, drop=FALSE]\n    if(length(block) &gt; 0) blockmodel[i, j] &lt;- mean(block)\n  }\n}\n\n# Visualize the three outputs\npar(mfrow=c(1,3), mar=c(4,4,3,2))\n\n# 1. Dendrogram (Hierarchical Clustering)\nplot(hc, main = \"1. Hierarchical Clustering\", xlab = \"Node\", sub = \"\", hang = -1)\nrect.hclust(hc, k = 3, border = \"red\")\n\n# 2. Image Matrix (Blockmodel)\nimage(1:n_pos, 1:n_pos, blockmodel, col = heat.colors(10), \n      main = \"2. Blockmodel\\n(Position-to-Position Density)\",\n      xlab = \"Position\", ylab = \"Position\", axes = FALSE)\naxis(1, at = 1:n_pos); axis(2, at = 1:n_pos)\ntext(expand.grid(1:n_pos, 1:n_pos), labels = round(blockmodel, 2), cex = 1.2)\n\n# 3. Network colored by position\nV(g)$color &lt;- c(\"red\", \"blue\", \"green\")[positions]\nplot(g, vertex.size = 20, edge.arrow.size = 0.5, \n     main = \"3. Network by Position\",\n     vertex.label = 1:12)\nlegend(\"bottomleft\", legend = paste(\"Pos\", 1:3), \n       col = c(\"red\", \"blue\", \"green\"), pch = 19, bty = \"n\")"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#rendering-positions-in-network-data",
     "href": "weeks/week-7/slideshow.html#rendering-positions-in-network-data",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Rendering Positions in Network Data",
-    "text": "Rendering Positions in Network Data\nTriad Census - Analyzing the frequency of different triad types (e.g., transitive, cyclic) - Different roles (e.g., broker vs. isolate) show different triad profiles\nMultiplexity - Roles often defined by multiple types of ties (e.g., friend + coworker)"
+    "text": "Rendering Positions in Network Data\nTriad Census\n\nAnalyzing the frequency of different triad types (e.g., transitive, cyclic)\nDifferent roles (e.g., broker vs. isolate) show different triad profiles\n\nMultiplexity\n\nRoles often defined by multiple types of ties (e.g., friend + coworker)"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#rendering-positions-algorithms",
     "href": "weeks/week-7/slideshow.html#rendering-positions-algorithms",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Rendering Positions: Algorithms",
-    "text": "Rendering Positions: Algorithms\nSimilarity Matrices - Compute similarity between every pair of nodes (correlation, distance)\nClustering - Group similar nodes using hierarchical or k-means clustering\nBlockmodels - Permute the adjacency matrix to reveal blocks of high/low density"
+    "text": "Rendering Positions: Algorithms\nMethods for finding positions:\n\nCorrelation-based clustering\n\nCorrelate row (or column) profiles\nHierarchical clustering\n\nEuclidean distance clustering\n\nCalculate Euclidean distance between profiles\nWard linkage clustering\n\nCONCOR (classical approach)\n\nChoice: Correlation for directed networks, Euclidean for valued networks"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#wrap-up",
@@ -2590,7 +2590,7 @@
     "href": "weeks/week-7/slideshow.html#example-academic-department",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Example: Academic Department",
-    "text": "Example: Academic Department\n# Two orthogonal dimensions of structure\n\n# Communities (based on direct interaction)\nML_group &lt;- c(\"Prof_A\", \"PhD_1\", \"PhD_2\")\nTheory_group &lt;- c(\"Prof_B\", \"PhD_3\", \"PhD_4\")\n\n# Positions (based on role similarity)\nSenior &lt;- c(\"Prof_A\", \"Prof_B\")  # Both advise\nJunior &lt;- c(\"PhD_1\", \"PhD_2\", \"PhD_3\", \"PhD_4\")  # All advised\nA junior ML researcher and junior theorist: - Different communities (ML vs. Theory) - Same position (advisee role)"
+    "text": "Example: Academic Department\n\n\nCode\nlibrary(igraph)\n\n# 1. Construct the Network (Edges based on Community Cohesion)\nedges &lt;- data.frame(\n  from = c(\"Prof_A\", \"Prof_A\", \"PhD_1\",   # ML Group\n           \"Prof_B\", \"Prof_B\", \"PhD_3\"),  # Theory Group\n  to   = c(\"PhD_1\",  \"PhD_2\",  \"PhD_2\",\n           \"PhD_3\",  \"PhD_4\",  \"PhD_4\")\n)\ng &lt;- graph_from_data_frame(edges, directed = FALSE)\n\n# 2. Define Attributes (Data from Example)\n# Communities (Color)\nV(g)$color &lt;- ifelse(V(g)$name %in% c(\"Prof_A\", \"PhD_1\", \"PhD_2\"), \n                     \"#E41A1C\", \"#377EB8\") # Red for ML, Blue for Theory\n\n# Positions (Shape)\n# Profs are Squares, Students are Circles\nV(g)$shape &lt;- ifelse(V(g)$name %in% c(\"Prof_A\", \"Prof_B\"), \n                     \"square\", \"circle\")\n\n# 3. Visualize\npar(mar=c(1,1,1,1))\nplot(g, layout = layout_nicely(g),\n     vertex.label.color = \"white\", vertex.label.font = 2,\n     vertex.size = 30, edge.width = 2,\n     main = \"Communities (Color) vs. Positions (Shape)\")\n\nlegend(\"bottomleft\", legend = c(\"ML\", \"History\"), \n       col = c(\"#E41A1C\", \"#377EB8\"), pch = 19, bty = \"n\", title = \"Community\")\nlegend(\"bottomright\", legend = c(\"Senior\", \"Junior\"), \n       col = \"black\", pch = c(15, 16), bty = \"n\", title = \"Position\")\n\n\n\nA junior ML researcher and junior historian:\n\nDifferent communities (ML vs. History)\nSame position (student role)"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#granovetter-the-strength-of-weak-ties",
@@ -2660,28 +2660,28 @@
     "href": "weeks/week-7/slideshow.html#resolution-parameter",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Resolution Parameter",
-    "text": "Resolution Parameter\nMany algorithms have a resolution parameter controlling granularity:\n# Higher resolution → more, smaller communities\ncommunities_fine &lt;- cluster_louvain(g, resolution=2.0)  # 8 communities\n\n# Default resolution\ncommunities_default &lt;- cluster_louvain(g, resolution=1.0)  # 4 communities\n\n# Lower resolution → fewer, larger communities  \ncommunities_coarse &lt;- cluster_louvain(g, resolution=0.5)  # 2 communities\nChoice depends on your research question"
+    "text": "Resolution Parameter\nMany algorithms have a resolution parameter controlling granularity:\n\n\n\n\n\n\n\nChoice depends on your research question\n\n\n\nMacro-Level (Low Resolution): Use when you want to identify broad market segments or major political coalitions. You care about the “big picture” splits.\nMicro-Level (High Resolution): Use when you need to find specific, tight-knit teams or niche sub-cultures. You care about the fine-grained details."
   },
   {
     "objectID": "weeks/week-7/slideshow.html#structural-equivalence-definition",
     "href": "weeks/week-7/slideshow.html#structural-equivalence-definition",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Structural Equivalence: Definition",
-    "text": "Structural Equivalence: Definition\nTwo nodes are structurally equivalent if they have identical ties to the same alters\nExample: - Node A connects to: {C, D, E} - Node B connects to: {C, D, E} - → A and B are structurally equivalent\nImplication: They are substitutable - occupy the same position"
+    "text": "Structural Equivalence: Definition\nTwo nodes are structurally equivalent if they have identical ties to the same alters\nExample:\n\nNode A connects to: {C, D, E}\nNode B connects to: {C, D, E}\n→ A and B are structurally equivalent\n\nImplication: They are substitutable - occupy the same position"
   },
   {
     "objectID": "weeks/week-7/slideshow.html#types-of-equivalence",
     "href": "weeks/week-7/slideshow.html#types-of-equivalence",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Types of Equivalence",
-    "text": "Types of Equivalence\n\n\n\n\n\n\n\n\nType\nDefinition\nExample\n\n\n\n\nStructural\nIdentical ties to same alters\nTwo salespeople serving same clients\n\n\nRegular\nSimilar types of ties\nAll managers supervise someone\n\n\nAutomorphic\nTopologically identical\nSymmetry in graph\n\n\n\nMost common in practice: Structural equivalence"
+    "text": "Types of Equivalence\n1. Structural Equivalence (Strict) - Two nodes are connected to the exact same other nodes. - Example: Two siblings who have the exact same parents and grandparents. - Business: Two customer service reps who handle the exact same set of tickets (rare).\n2. Regular Equivalence (Functional) - Two nodes are connected to equivalent types of nodes. - Example: Two doctors. Dr. A treats Patient X; Dr. B treats Patient Y. They don’t know the same people, but they have the same relationship to their patients. - Business: Two department heads. They manage different teams, but structurally they are identical.\nWe typically use Structural Equivalence (via correlation) as a proxy for Regular Equivalence in dense networks."
   },
   {
     "objectID": "weeks/week-7/slideshow.html#measuring-structural-equivalence",
     "href": "weeks/week-7/slideshow.html#measuring-structural-equivalence",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "Measuring Structural Equivalence",
-    "text": "Measuring Structural Equivalence\nlibrary(igraph)\n\n# Adjacency matrix\nA &lt;- matrix(c(0, 1, 1, 0,\n              1, 0, 1, 0,\n              0, 0, 0, 1,\n              0, 0, 1, 0), nrow=4, byrow=TRUE)\n\n# Correlation (nodes with similar tie profiles)\n# cor() correlates columns, so transpose for row profiles\nequivalence &lt;- cor(t(A))  # Higher = more equivalent"
+    "text": "Measuring Structural Equivalence\nThe Method: Use correlation to measure how similar two nodes’ tie patterns are.\n\nHigh correlation (→ 1): Nodes connect to the same others → Structurally equivalent\nLow correlation (→ 0 or negative): Nodes have different tie patterns → Different positions\n\nExample Network: 4 nodes with directed ties\n\n\n\n\n\n\n\nInterpretation\n\n\n\nNodes A & B: Correlation ≈ 1.0 → Highly equivalent (both connect to B, C)\nNodes C & D: Correlation ≈ 1.0 → Highly equivalent (both connect to C)\nNodes A & C: Correlation ≈ 0 → Not equivalent (different tie patterns)\n\nConclusion: We can group {A, B} into one position and {C, D} into another."
   },
   {
     "objectID": "weeks/week-7/slideshow.html#rendering-roles-in-network-data-1",
@@ -2723,7 +2723,7 @@
     "href": "weeks/week-7/slideshow.html#when-communities-positions",
     "title": "Communities, Roles, and Positions in Networks",
     "section": "When Communities ≠ Positions",
-    "text": "When Communities ≠ Positions\nExample: Corporate structure\n\nCommunities: Departments (Marketing, R&D, Finance)\nPositions: Ranks (Executives, Managers, Staff)\n\nA Marketing Manager and an R&D Manager: - Different communities (different departments) - Same position (both supervise, both report up)\nAdjusted Rand Index: Measures overlap (0 = independent, 1 = identical)"
+    "text": "When Communities ≠ Positions\nExample: Corporate structure\n\nCommunities: Departments (Marketing, R&D, Finance)\nPositions: Ranks (Executives, Managers, Staff)\n\nA Marketing Manager and an R&D Manager:\n\nDifferent communities (different departments)\nSame position (both supervise, both report up)"
   },
   {
     "objectID": "weeks/week-7/main.html#practice-1",
@@ -2735,5 +2735,110 @@
       "Weekly materials",
       "Week 7"
     ]
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#durkheims-theory-network-analysis",
+    "href": "weeks/week-7/slideshow.html#durkheims-theory-network-analysis",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Durkheim’s Theory & Network Analysis",
+    "text": "Durkheim’s Theory & Network Analysis\nSociologist Émile Durkheim proposed two forms of social integration that map perfectly onto network analysis:\n1. Mechanical Solidarity (Cohesion)\n\nIntegration through similarity and direct interaction.\n“We are connected because we are the same.”\nNetwork Concept: Communities (Clusters, Cliques).\n\n2. Organic Solidarity (Equivalence)\n\nIntegration through interdependence and specialized roles.\n“We are connected because we need each other’s different functions.”\nNetwork Concept: Positions (Roles, Blockmodels).\n\nKey Insight: A network can be analyzed through cohesion (who hangs out with whom) or equivalence (who does the same job)."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#the-small-world-phenomenon",
+    "href": "weeks/week-7/slideshow.html#the-small-world-phenomenon",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "The “Small World” Phenomenon",
+    "text": "The “Small World” Phenomenon\nThe Concept\nMost real-world networks (social, biological, technological) exhibit the “Small World” property:\n\nHigh Clustering: My friends are likely to be friends with each other (like a caveman village).\nShort Path Lengths: I can reach anyone in the world in ~6 steps (like a random graph).\n\nWhy?\n\nHomophily creates the clusters (local cohesion).\nWeak Ties (bridges) create the shortcuts (global reach).\n\nBusiness Implication\n\nInformation Diffusion: News travels fast in small worlds.\nViral Marketing: You need to seed ideas in different clusters (high clustering) but ensure they can jump across bridges (short paths)."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#understanding-modularity-q",
+    "href": "weeks/week-7/slideshow.html#understanding-modularity-q",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Understanding Modularity (Q)",
+    "text": "Understanding Modularity (Q)\nMany of the community detection algorithms we just discussed, such as Louvain, aim to optimize a metric called Modularity (Q).\nThe Metric\nModularity measures the strength of division of a network into modules (communities).\n\\[Q = \\text{(Fraction of edges within groups)} - \\text{(Expected fraction if edges were random)}\\]\nInterpretation\n\n\\(Q \\approx 0\\): The network is random; no community structure.\n\\(Q \\in [0.3, 0.7]\\): Strong community structure (common in social networks).\n\\(Q \\to 1\\): Disconnected components (islands).\n\nThe “Resolution Limit”\n\nModularity optimization has a blind spot: it may fail to detect small communities in very large networks, merging them into larger clusters.\nSolution: Use multi-resolution algorithms (e.g., Louvain with resolution parameter)."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#community-detection-algorithms-a-field-guide",
+    "href": "weeks/week-7/slideshow.html#community-detection-algorithms-a-field-guide",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Community Detection Algorithms: A Field Guide",
+    "text": "Community Detection Algorithms: A Field Guide\n\n\n\n\n\n\n\n\n\n\nAlgorithm\nMechanism\nPros\nCons\nBest For\n\n\n\n\nLouvain\nModularity Optimization\nVery Fast\nResolution limit\nLarge networks (Default choice)\n\n\nLeiden\nRefined Louvain\nFaster, guarantees connected comms\n-\nLarge networks (Modern standard)\n\n\nGirvan-Newman\nEdge Betweenness (Divisive)\nIntuitive hierarchy\nVery Slow (\\(O(N^3)\\))\nSmall networks (&lt;500 nodes), teaching\n\n\nLabel Propagation\nLocal Voting\nLinear time\nUnstable (random seed matters)\nMassive networks\n\n\nSpectral\nEigenvectors\nMath rigor\nSlower\nFixed \\(k\\) communities\n\n\n\n\n\n\n\n\n\nTip\n\n\nStart with Louvain or Leiden.\nUse Girvan-Newman only if you need to analyze the hierarchy of splits in a small graph."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#part-ii-roles-and-positions-1",
+    "href": "weeks/week-7/slideshow.html#part-ii-roles-and-positions-1",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Part II: Roles and Positions",
+    "text": "Part II: Roles and Positions\n\n“Community detection finds your friends. Role analysis finds your professional doppelgänger.”"
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#definitions-role-vs.-position",
+    "href": "weeks/week-7/slideshow.html#definitions-role-vs.-position",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Definitions: Role vs. Position",
+    "text": "Definitions: Role vs. Position\nRole\n\nA pattern of relationships.\nExample: “Broker”, “Isolate”, “Hub”, “Authority”.\nAbstract concept.\n\nPosition\n\nA set of actors who occupy the same role in a specific network.\nExample: “The Senior Managers” (a group of 5 specific people who all have the ‘Authority’ role).\nConcrete grouping.\n\nEquivalence ` - The mathematical rule we use to decide if two nodes are in the same position."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#blockmodeling-the-strategic-map",
+    "href": "weeks/week-7/slideshow.html#blockmodeling-the-strategic-map",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Blockmodeling: The Strategic Map",
+    "text": "Blockmodeling: The Strategic Map\nBlockmodeling is the process of reducing a complex network into a simplified “Image Matrix” based on positions.\nProcess: 1. Partition actors into positions (using clustering/CONCOR). 2. Calculate Density between all pairs of positions. 3. Threshold to create binary Image Matrix (1 if density &gt; cutoff, else 0).\nExample Image Matrix (Core-Periphery)\n          Core   Periphery\nCore      [ 1       1    ]  &lt;-- Core talks to Core AND Periphery\nPeriphery [ 1       0    ]  &lt;-- Periphery talks to Core but NOT each other\nInterpretation: A centralized system where the Core coordinates everything."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#summary-the-two-lenses",
+    "href": "weeks/week-7/slideshow.html#summary-the-two-lenses",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Summary: The Two Lenses",
+    "text": "Summary: The Two Lenses\n\n\n\n\n\n\n\n\nFeature\nCommunity Detection\nRole Analysis\n\n\n\n\nUnderlying Logic\nCohesion (Adjacency)\nEquivalence (Similarity)\n\n\nKey Metric\nModularity\nCorrelation / Euclidean Dist\n\n\nVisual Result\nClusters / Blobs\nBlockmodels / Hierarchies\n\n\nBusiness Question\n“Who works with whom?”\n“Who does the same job?”\n\n\nTypical Insight\nSilos, factions, teams\nRedundancy, hierarchy, gaps\n\n\n\nFinal Thought: A complete network analysis usually requires both. You want to know who is in the “Marketing Cluster” (Community) AND who is the “Bridge” (Role) within that cluster."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#section",
+    "href": "weeks/week-7/slideshow.html#section",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "",
+    "text": "Part 1: Network Communities"
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#why-do-networks-are-more-than-the-sum-of-their-parts",
+    "href": "weeks/week-7/slideshow.html#why-do-networks-are-more-than-the-sum-of-their-parts",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Why Do Networks Are More Than the Sum of Their Parts?",
+    "text": "Why Do Networks Are More Than the Sum of Their Parts?\nSociologist Émile Durkheim proposed two forms of social integration that map perfectly onto network analysis, and explain why networks are more than the sum of their parts:\n\n\n\n1. Mechanical Solidarity (Cohesion)\n\n\n\nIntegration through similarity and direct interaction.\n“We are connected because we are the same.”\nNetwork Concept: Communities (Clusters, Cliques).\n\n\n\n\n\n\n\n2. Organic Solidarity (Equivalence)\n\n\n\nIntegration through interdependence and specialized roles.\n“We are connected because we need each other’s different functions.”\nNetwork Concept: Positions (Roles, Blockmodels).\n\n\n\n\nKey Insight: A network can be analyzed through cohesion (who hangs out with whom) or equivalence (who does the same job)."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#strong-communities-the-clique",
+    "href": "weeks/week-7/slideshow.html#strong-communities-the-clique",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Strong Communities: The Clique",
+    "text": "Strong Communities: The Clique\nDefinition A Clique is a subgraph where every distinct pair of nodes is adjacent. It represents the strictest form of cohesion."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#weak-communities-density-based",
+    "href": "weeks/week-7/slideshow.html#weak-communities-density-based",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Weak Communities: Density-Based",
+    "text": "Weak Communities: Density-Based\nDefinition A Weak Community is a subgraph where the density of internal edges is significantly higher than the density of external edges (ties to the rest of the network)."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#ls-sets-robustness",
+    "href": "weeks/week-7/slideshow.html#ls-sets-robustness",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "LS Sets: Robustness",
+    "text": "LS Sets: Robustness\nDefinition An LS Set is a subset of nodes where any proper subset has more ties to the rest of the group than to the outside. It represents defensive cohesion—it is harder to split the group than to disconnect it from the network."
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#part-i-network-communities",
+    "href": "weeks/week-7/slideshow.html#part-i-network-communities",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Part I: Network Communities",
+    "text": "Part I: Network Communities"
+  },
+  {
+    "objectID": "weeks/week-7/slideshow.html#advanced-position-analysis-beyond-simple-equivalence",
+    "href": "weeks/week-7/slideshow.html#advanced-position-analysis-beyond-simple-equivalence",
+    "title": "Communities, Roles, and Positions in Networks",
+    "section": "Advanced Position Analysis: Beyond Simple Equivalence",
+    "text": "Advanced Position Analysis: Beyond Simple Equivalence\nWhile structural equivalence focuses on identical tie patterns, real-world position analysis often requires more sophisticated approaches:\n\n\n\nTriad Census: Micro-Structural Signatures\n\n\nWhat it is: Analyzing the frequency of different triad configurations (3-node subgraphs) around each actor.\nWhy it matters: Actors in the same position tend to participate in similar types of triads.\nExample: - Brokers appear in many “open triads” (A→B→C, but no A→C) - Core members appear in many “closed triads” (A↔︎B↔︎C↔︎A)\nBusiness Application: In organizational networks, managers who participate in similar triad patterns likely have similar coordination roles, even if they manage different teams.\n\n\n\n\n\n\nMultiplexity: Multi-Dimensional Roles\n\n\nWhat it is: Positions defined across multiple relationship types simultaneously.\nWhy it matters: Real roles are rarely defined by a single tie type.\nExample: A “trusted advisor” position might require both: - High expertise ties (people seek their advice) - High friendship ties (people trust them personally)\nBusiness Application: In innovation networks, successful “innovation champions” often occupy positions with both formal authority ties AND informal collaboration ties."
   }
 ]
