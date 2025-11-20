@@ -1,12 +1,402 @@
 ---
 title: "Week 7"
 format: html
-subtitle: "Network cohesion and community"
+subtitle: "Communities, Roles, and Positions in Networks"
 date: "today"
 callout-appearance: "default"
 ---
 
+## Overview
+
+This week shifts focus from individual nodes and local structures to
+understanding networks at a higher level of abstraction. We explore two
+complementary approaches to seeing social structure:
+
+1. **Connectionist approaches**: How cohesive communities form through direct
+   ties and resource flows
+2. **Positional approaches**: How roles and positions emerge through similar
+   patterns of ties
+
+These perspectives help us address fundamental questions about social
+integration: What holds groups together? How do we identify meaningful
+subgroups? How do role structures organize social life?
+
+## Prepare
+
 ::: {.callout-note}
-Content coming soon.
+## 📚
+
+📖 Review the [syllabus](../../course/syllabus.qmd)
+
+📖 Review concepts from previous weeks:
+
+- [Network fundamentals](../week-1/network_terms.qmd) (Week 1)
+- [Centrality measures](../week-3/slideshow.html) (Week 3) 
+- [Triadic structures](../week-4/slideshow.html) (Week 4)
+
+📖 **Required readings** - Book chapters available in this directory:
+
+Chapter 8: "Cohesion and Groups" and  Chapter 10: "Positions and Roles" from
+Rawlings, Craig M., Jeffrey A. Smith, James Moody, and Daniel A. McFarland.
+[Network analysis: integrating social network theory, method, and application
+with R](https://go.exlibris.link/5r30tSdj). Cambridge University Press, 2023.
+
+:::
+
+## Participate
+
+::: {.callout-note}
+## 👥
+
+📉 Slideshow: [Communities, Roles, and Positions](slideshow.html)
+
+**Key topics covered**:
+
+**Theoretical Foundations**:
+- Durkheim's mechanical vs. organic solidarity
+- Granovetter's strength of weak ties
+- Watts-Strogatz small-world networks
+- Homophily and social integration
+
+**Part I: Network Communities**
+
+- Social cohesion and integration
+- Measuring connectivity: density, clustering, path lengths
+- Small-world networks and the strength of weak ties
+- **Understanding modularity**: formula, interpretation, thresholds
+- Community detection algorithms:
+  - Louvain and Leiden (modularity-based)
+  - Walktrap (random walk-based)
+  - Edge betweenness (Girvan-Newman)
+  - Label propagation
+- **Algorithm comparison**: when to use each method
+- **Resolution parameter**: controlling community granularity
+- Assessing community structure and fit
+
+**Part II: Roles and Positions**
+
+- From actors to roles: the dramaturgical metaphor
+- **Types of structural equivalence**: structural, regular, automorphic
+- **Measuring equivalence**: correlation and distance methods
+- Blockmodeling procedures and image matrices
+- **CONCOR algorithm**: convergence of iterated correlations
+- Hierarchical cluster analysis
+- Multi-relational role structures
+- Ideal role types and assessing fit
+
+**Integration: Communities ≠ Positions**
+
+- Comparing connectionist and positional approaches
+- When partitions align vs. diverge
+- Adjusted Rand Index for measuring overlap
+- Methodological pluralism
+
+:::
+
+
+## Practice
+
+
+::: {.callout-note}
+## 💻
+
+### Tutorial 1: [Community Detection in R](practice_1.qmd)
+
+A comprehensive tutorial covering:
+
+- **Multiple algorithms**: Louvain, Edge Betweenness, Walktrap, Spectral, Fast Greedy
+- **Method comparison**: Calculate and compare modularity scores across methods
+- **Agreement analysis**: Use Normalized Mutual Information (NMI) to assess method consistency
+- **Quality assessment**: Analyze within vs. between community density
+- **Resolution exploration**: Sweep resolution parameters to find optimal granularity
+- **Stability testing**: Assess robustness to network perturbations
+- **Visualization**: Create publication-quality community structure plots
+- **Hands-on examples**: Karate Club network and scale-free networks
+
+### Tutorial 2: [Community Detection in Python](practice_2.qmd)
+
+A parallel tutorial using Python and NetworkX that demonstrates:
+
+- Loading and exploring networks in Python
+- Applying greedy modularity, label propagation, and Girvan-Newman algorithms
+- Optionally running Louvain (if `python-louvain` is installed)
+- Computing modularity using `networkx.algorithms.community`
+- Visualizing communities with Matplotlib
+- Comparing methods via a modularity summary table and bar plot
+- Applying methods to both the karate club graph and a larger scale-free network
+
+### Tutorial 3: [Role and Position Analysis in R](practice_3.qmd)
+
+A comprehensive tutorial covering blockmodeling and structural equivalence:
+
+- **Structural equivalence measures**: Correlation and Euclidean distance
+- **CONCOR algorithm**: Classical blockmodeling approach
+- **Hierarchical clustering**: Identifying positions from tie profiles
+- **Blockmodels and image matrices**: Reduced network representations
+- **Block density analysis**: Within vs. between position densities
+- **Multiple methods comparison**: Comparing different equivalence measures
+- **Model fit assessment**: Evaluating blockmodel quality
+- **Practical examples**: Corporate advice networks and organizational hierarchies
+- **Substantive interpretation**: Understanding role meanings
+
+### Advanced Topics (Coming Soon)
+
+- Small-world analysis and metrics
+- Cohesive blocking and k-components
+- Dynamic community detection
+- Overlapping community detection
+
+:::
+
+
+## Perform
+
+
+::: {.callout-note}
+## 📝
+
+**Application exercises**:
+
+1. **Community Analysis**: Apply multiple community detection algorithms to a
+   network and compare results. Assess which method best captures substantive
+communities.
+
+2. **Role Structure Analysis**: Perform a blockmodeling analysis to identify
+   role positions in an organizational or social network. Create and interpret
+the image matrix.
+
+3. **Integration**: Examine whether communities correspond to positions - do
+   structurally equivalent actors tend to be in the same community?
+
+:::
+
+## Ponder
+
+::: {.callout-note}
+## 🤔
+
+### Core Readings
+
+**Cohesion and Communities**
+
+Chapter 8 ("Cohesion and Groups") from Borgatti, S. P., Everett, M. G.,
+Johnson, J. C., & Agneessens, F. (2024). *Analyzing Social Networks Using R*.
+Sage Publications.
+
+**Foundational Work on Blockmodeling**
+
+White, H. C., Boorman, S. A., & Breiger, R. L. (1976). Social structure from
+multiple networks. I. Blockmodels of roles and positions. *American Journal of
+Sociology*, 81(4), 730-780.
+
+**Community Detection Algorithms**
+
+Newman, M. E. J., & Girvan, M. (2004). Finding and evaluating community
+structure in networks. *Physical Review E*, 69(2), 026113.
+
+Blondel, V. D., Guillaume, J. L., Lambiotte, R., & Lefebvre, E. (2008). Fast
+unfolding of communities in large networks. *Journal of Statistical Mechanics:
+Theory and Experiment*, 2008(10), P10008.
+
+**Small-World Networks**
+
+Watts, D. J., & Strogatz, S. H. (1998). Collective dynamics of 'small-world'
+networks. *Nature*, 393(6684), 440-442.
+
+Granovetter, M. S. (1973). The strength of weak ties. *American Journal of
+Sociology*, 78(6), 1360-1380.
+
+### Supplementary Readings
+
+**Structural Cohesion**
+
+Moody, J., & White, D. R. (2003). Structural cohesion and embeddedness: A
+hierarchical concept of social groups. *American Sociological Review*, 68(1),
+103-127.
+
+**Generalized Blockmodeling**
+
+Doreian, P., Batagelj, V., & Ferligoj, A. (2005). *Generalized Blockmodeling*.
+Cambridge University Press.
+
+**Role Equivalence**
+
+Burt, R. S. (1990). Detecting role equivalence. *Social Networks*, 12(1),
+83-97.
+
+**Applications**
+
+Padgett, J. F., & Ansell, C. K. (1993). Robust action and the rise of the
+Medici, 1400-1434. *American Journal of Sociology*, 98(6), 1259-1319.
+
+### Conceptual Connections
+
+**Mechanical vs. Organic Solidarity**
+
+Consider how Durkheim's distinction between mechanical solidarity (based on
+similarity) and organic solidarity (based on differentiated interdependence)
+maps onto the distinction between communities and role structures.
+
+**Methodological Pluralism**
+
+Reflect on why there is no single "best" method for community detection or
+blockmodeling. What does this tell us about the nature of social structure?
+
+**Integration of Approaches**
+
+How might communities and positions relate to each other? Can structurally
+equivalent actors be in different communities? Can community members occupy
+different positions?
+
+:::
+
+
+## Quick Reference: Essential R Code
+
+### Community Detection Snippets
+
+```{r}
+#| label: reference-communities
+#| eval: false
+#| code-fold: show
+
+library(igraph)
+
+# Load network
+g <- make_graph("Zachary")  # or read from file
+
+# Method 1: Louvain (fast, modularity-based)
+comm_louvain <- cluster_louvain(g)
+
+# Method 2: Leiden (improved Louvain)
+comm_leiden <- cluster_leiden(g)
+
+# Method 3: Walktrap (random walk-based)
+comm_walktrap <- cluster_walktrap(g, steps = 4)
+
+# Method 4: Edge Betweenness (hierarchical)
+comm_edgebet <- cluster_edge_betweenness(g)
+
+# Method 5: Fast Greedy (hierarchical modularity)
+comm_fastgreedy <- cluster_fast_greedy(g)
+
+# Extract results
+membership(comm_louvain)         # Community assignments
+length(comm_louvain)             # Number of communities
+sizes(comm_louvain)              # Community sizes
+modularity(comm_louvain)         # Modularity score
+
+# Compare methods
+compare(comm_louvain, comm_leiden, method = "nmi")  # Agreement
+
+# Visualize
+plot(comm_louvain, g,
+     vertex.size = 8,
+     edge.color = "gray80",
+     main = "Communities")
+```
+
+### Blockmodeling Snippets
+
+```{r}
+#| label: reference-blockmodels
+#| eval: false
+#| code-fold: show
+
+library(igraph)
+
+g <- sample_pa(20, directed = TRUE)
+adj <- as.matrix(as_adjacency_matrix(g))
+
+# Method 1: Correlation-based equivalence
+equiv_cor <- cor(t(adj))          # Correlate row profiles
+dist_cor <- as.dist(1 - equiv_cor)
+hc_cor <- hclust(dist_cor, method = "complete")
+positions_cor <- cutree(hc_cor, k = 4)
+
+# Method 2: Euclidean distance equivalence
+dist_euclidean <- dist(adj, method = "euclidean")
+hc_euclidean <- hclust(dist_euclidean, method = "ward.D2")
+positions_euclidean <- cutree(hc_euclidean, k = 4)
+
+# Visualize dendrogram
+plot(hc_cor, main = "Position Hierarchy", xlab = "Node")
+rect.hclust(hc_cor, k = 4, border = "red")
+
+# Create image matrix
+n_pos <- max(positions_cor)
+image_matrix <- matrix(0, nrow = n_pos, ncol = n_pos)
+
+for(i in 1:n_pos) {
+  for(j in 1:n_pos) {
+    block <- adj[positions_cor == i, positions_cor == j]
+    image_matrix[i, j] <- mean(block)
+  }
+}
+
+print(round(image_matrix, 2))
+
+# Visualize with position colors
+V(g)$color <- rainbow(n_pos)[positions_cor]
+plot(g, vertex.size = 8, main = "Network by Position")
+```
+
+### Essential Network Data Sources
+
+```{r}
+#| label: reference-data
+#| eval: false
+#| code-fold: show
+
+library(igraph)
+
+# Built-in networks
+karate <- make_graph("Zachary")              # Karate club
+dolphins <- make_graph("Dolphins")            # Dolphin social network
+
+# Generate synthetic networks
+erdos_renyi <- sample_gnp(100, 0.05)         # Random
+barabasi <- sample_pa(100, power = 1)        # Scale-free
+small_world <- watts.strogatz.game(1, 100, 5, 0.1)  # Small-world
+
+# Read from file
+g_edgelist <- read_graph("network.txt", format = "edgelist")
+g_graphml <- read_graph("network.graphml", format = "graphml")
+g_gml <- read_graph("network.gml", format = "gml")
+
+# From adjacency matrix
+adj_matrix <- as.matrix(read.csv("adjacency.csv", row.names = 1))
+g_adj <- graph_from_adjacency_matrix(adj_matrix, mode = "undirected")
+
+# From data frame
+edges_df <- data.frame(from = c("A", "B", "C"),
+                       to = c("B", "C", "D"))
+g_df <- graph_from_data_frame(edges_df, directed = TRUE)
+```
+
+## Additional Resources
+
+
+::: {.callout-tip}
+## 🔧 Software and Tools
+
+**R packages**:
+
+- `igraph`: Community detection, blockmodeling
+- `sna` and `network`: Role equivalence, structural cohesion
+- `blockmodeling`: Generalized blockmodeling
+
+**Python packages**:
+
+- `igraph`: Community detection algorithms
+- `networkx`: Modularity, community detection
+- `python-louvain`: Louvain algorithm implementation
+- `leidenalg`: Leiden algorithm
+
+**Visualization**:
+
+- Gephi: Interactive community visualization
+- Cytoscape: Network analysis and visualization
+- R packages: `ggraph`, `visNetwork`
 
 :::

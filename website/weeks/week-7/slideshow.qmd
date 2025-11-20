@@ -1,0 +1,518 @@
+
+---
+title: "Communities, Roles, and Positions in Networks"
+author: "SMM638 Network Analytics"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: slide
+    chalkboard: true
+    multiplex: false
+    css: ../../slideshow-theme.css
+    code-fold: true
+    code-summary: ""
+jupyter: python3
+---
+
+## Part 1: Network Communities
+
+---
+
+## Overview of Weeks 1–5 {.smaller}
+
+What we have learned:
+
+- How to represent a system as a **network**
+  - Nodes, edges, paths, walks, geodesics
+  - Directed vs. undirected, weighted vs. unweighted
+- How to assess the **position of individual nodes**
+  - Degree, closeness, betweenness, eigenvector centrality
+  - Interpretation: access to resources, brokerage, prestige
+- How to assess **mechanisms shaping network structure**
+  - Reciprocity, triadic closure, preferential attachment
+  - Homophily: “birds of a feather flock together”
+  - Random vs. structured networks as useful baselines
+
+What we will learn (Weeks 7 and 8):
+
+- How to build **simplified models of a network** using:
+  - **Communities** (cohesive groups)
+  - **Roles** (who plays similar structural functions)
+  - **Positions** (higher-level pattern of relations among roles)
+- How these structures shape:
+  - **Opportunities** and **constraints** for individual nodes
+  - **Performance consequences** (e.g., diffusion, access, power)
+
+---
+
+## Durkheim's Theory of Social Integration
+
+**Mechanical Solidarity** (traditional societies)
+- Integration through **similarity** and shared attributes
+- Everyone does similar work, shares same values
+- Maps onto → **Communities** in networks
+
+**Organic Solidarity** (modern societies)  
+- Integration through **differentiation** and interdependence
+- Specialized roles in division of labor
+- Maps onto → **Positions** in networks
+
+**Implication**: Communities ≠ Positions are orthogonal dimensions
+
+---
+
+## Example: Academic Department
+
+```python
+# Two orthogonal dimensions of structure
+
+# Communities (based on direct interaction)
+ML_group = ["Prof_A", "PhD_1", "PhD_2"]
+Theory_group = ["Prof_B", "PhD_3", "PhD_4"]
+
+# Positions (based on role similarity)
+Senior = ["Prof_A", "Prof_B"]  # Both advise
+Junior = ["PhD_1", "PhD_2", "PhD_3", "PhD_4"]  # All advised
+```
+
+A junior ML researcher and junior theorist:
+- **Different communities** (ML vs. Theory)
+- **Same position** (advisee role)
+
+---
+
+## On the Concept of Community
+
+
+**Intuition**
+
+A *community* is a subset of nodes that are more densely connected to each other than to outsiders.
+
+**Examples**
+
+- Friendship groups in a high school
+- R&D collaboration clusters
+- Online communities
+- Scientific collaboration clusters
+
+---
+
+## The Case of Small-World Networks
+
+**Intuition**
+
+Small worlds combine:
+
+1. **High clustering**
+2. **Short average path lengths**
+
+**Examples**
+
+- Milgram experiment  
+- Watts–Strogatz model
+
+---
+
+## The Connection Between Homophily and Small Worlds
+
+Homophily → dense cohesive groups → small-world structure
+
+---
+
+## Examples of Homophily in Small Worlds
+
+- Educational settings  
+- Study groups  
+- Cliques along demographic lines  
+
+---
+
+## Granovetter: The Strength of Weak Ties
+
+**The Paradox**
+
+"Weak ties" (acquaintances) provide **more novel information** than "strong ties" (close friends).
+
+**Why?**
+
+- Strong ties cluster together (your friends know each other)
+- Weak ties bridge to distant parts of the network
+- Information from close friends is redundant
+
+**Implication**: Bridges between communities are crucial for information flow
+
+---
+
+## Weak Ties: Visual Demonstration
+
+```python
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# Two dense communities
+G = nx.complete_graph(10)
+H = nx.complete_graph(10)
+G = nx.disjoint_union(G, H)
+
+# Add weak tie bridges
+G.add_edges_from([(5, 15), (7, 17), (2, 12)])
+
+# Calculate betweenness
+btw = nx.edge_betweenness_centrality(G)
+
+# Weak ties have highest betweenness!
+# They are bottlenecks for information flow
+```
+
+**Result**: Removing 3 weak ties doubles average path length
+
+---
+
+## The Case of Small-World Networks
+
+**Intuition**
+
+Small worlds combine:
+
+1. **High clustering** (dense local neighborhoods)
+2. **Short average path lengths** (few steps between any two nodes)
+
+**Examples**
+
+- Milgram experiment ("six degrees of separation")
+- Watts–Strogatz model
+- Social networks, neural networks, power grids
+
+**Why it matters**: Local cohesion + global reach
+
+---
+
+## Small-World Structure Comparison
+
+| Network Type | Clustering | Path Length | Example |
+|--------------|------------|-------------|---------|
+| **Regular lattice** | High | High | Grid |
+| **Random** | Low | Low | Erdős-Rényi |
+| **Small-world** | **High** | **Low** | Real social networks |
+
+Small-world = "Best of both worlds"
+
+---
+
+## Creating a Small-World Network
+
+```python
+# Watts-Strogatz model
+import networkx as nx
+
+n = 100      # nodes
+k = 6        # neighbors
+p = 0.1      # rewiring probability
+
+# Start with ring, rewire 10% of edges
+G = nx.watts_strogatz_graph(n, k, p)
+
+# Result: high clustering (like regular)
+#         + short paths (like random)
+```
+
+Only 10% rewired edges needed to achieve small-world property!
+
+---
+
+## The Connection Between Homophily and Small Worlds
+
+Homophily (similarity-based tie formation):
+- Creates **dense cohesive groups** (high clustering)
+- But a few cross-group ties (weak ties) → **short paths**
+
+Result: Small-world structure emerges naturally
+
+**Examples**
+- Educational settings (study groups by major, occasional cross-major friendships)
+- Organizational networks (departments cluster, management bridges)
+
+---
+
+## Definitions of Network Communities
+
+
+- **Strong**
+- **Weak**
+- **Density-based operational definitions**
+
+---
+
+## Example of Communities in a Strong Sense
+
+Strongly cohesive groups, nearly clique-like.
+
+---
+
+## Example of Communities in a Weak Sense
+
+High internal density but not complete; overlapping clusters.
+
+---
+
+## Most Popular Community Detection Algorithms
+
+- Louvain  
+- Leiden  
+- Girvan–Newman  
+- Spectral clustering  
+- Walktrap / Label propagation  
+
+---
+
+## The Connection between Network Communities and Modularity
+
+Definition of modularity; modularity maximization.
+
+---
+
+## Understanding Modularity
+
+**What is Modularity (Q)?**
+
+Measures if a partition has more **within-group edges** than expected by chance.
+
+$$Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j)$$
+
+- $A_{ij}$ = observed edge
+- $\frac{k_i k_j}{2m}$ = expected edge (null model)
+- $\delta(c_i, c_j)$ = 1 if same community, 0 otherwise
+
+---
+
+## Modularity Interpretation
+
+| Q Value | Interpretation |
+|---------|----------------|
+| **Q < 0.3** | No meaningful community structure |
+| **Q = 0.3-0.7** | Significant community structure |
+| **Q > 0.7** | Very strong divisions (rare) |
+
+**Rule of thumb**: Q > 0.4 indicates good community detection
+
+---
+
+## Most Popular Community Detection Algorithms
+
+| Algorithm | Objective | Speed | Best Use |
+|-----------|-----------|-------|----------|
+| **Louvain** | Modularity max | Fast | General purpose |
+| **Leiden** | Improved modularity | Fast | Quality + speed |
+| **Walktrap** | Random walks | Medium | Multi-scale |
+| **Girvan-Newman** | Edge betweenness | Slow | Hierarchical, small networks |
+| **Label Propagation** | Local consensus | Very fast | Large networks, unstable |
+
+**Recommendation**: Start with Louvain or Leiden
+
+---
+
+## Resolution Parameter
+
+Many algorithms have a **resolution** parameter controlling granularity:
+
+```python
+# Higher resolution → more, smaller communities
+communities_fine = louvain(G, resolution=2.0)  # 8 communities
+
+# Default resolution
+communities_default = louvain(G, resolution=1.0)  # 4 communities
+
+# Lower resolution → fewer, larger communities  
+communities_coarse = louvain(G, resolution=0.5)  # 2 communities
+```
+
+**Choice depends on your research question**
+
+---
+
+## Community Detection Algorithms in Action
+
+
+R-style examples and workflow.
+
+---
+
+## Part II: Roles and Positions
+
+---
+
+## Definitions
+
+**Role**: Set of nodes with similar structural functions  
+**Position**: Pattern of relations defining a node's structural location  
+
+---
+
+## Rendering Roles in Network Data
+
+Intuition, approaches, use cases.
+
+---
+
+## Rendering Roles: Algorithms
+
+Blockmodeling, equivalence types, clustering.
+
+---
+
+## Rendering Positions in Network Data
+
+Triad profiles, multiplexity, centrality patterns.
+
+---
+
+## Rendering Positions: Algorithms
+
+Similarity matrices, clustering, blockmodels.
+
+---
+
+## Structural Equivalence: Definition
+
+**Two nodes are structurally equivalent if they have identical ties to the same alters**
+
+Example:
+- Node A connects to: {C, D, E}
+- Node B connects to: {C, D, E}
+- → A and B are structurally equivalent
+
+**Implication**: They are **substitutable** - occupy the same position
+
+---
+
+## Types of Equivalence
+
+| Type | Definition | Example |
+|------|------------|---------|
+| **Structural** | Identical ties to same alters | Two salespeople serving same clients |
+| **Regular** | Similar types of ties | All managers supervise someone |
+| **Automorphic** | Topologically identical | Symmetry in graph |
+
+Most common in practice: **Structural equivalence**
+
+---
+
+## Measuring Structural Equivalence
+
+```python
+import numpy as np
+from scipy.spatial.distance import pdist, squareform
+
+# Adjacency matrix
+A = [[0, 1, 1, 0],
+     [1, 0, 1, 0],
+     [0, 0, 0, 1],
+     [0, 0, 1, 0]]
+
+# Correlation distance (1 - correlation)
+# Nodes with similar tie profiles have high correlation
+corr = np.corrcoef(A)
+equivalence = corr  # Higher = more equivalent
+```
+
+---
+
+## Rendering Roles in Network Data
+
+**From actors to positions**
+
+1. Calculate similarity matrix (correlation or Euclidean distance)
+2. Apply hierarchical clustering
+3. Cut dendrogram to get positions
+4. Interpret role meanings
+
+**Result**: Reduced representation (30 actors → 4 positions)
+
+---
+
+## Blockmodeling: Image Matrices
+
+**Blockmodel** reduces network to position-level interactions
+
+**Example**: 30-person organization → 3 positions (Senior, Mid, Junior)
+
+**Image Matrix** (3×3):
+```
+           Senior  Mid  Junior
+Senior  [   0.8   0.6   0.3  ]
+Mid     [   0.4   0.5   0.7  ]
+Junior  [   0.1   0.6   0.4  ]
+```
+
+Interpretation: Senior staff advise all levels, juniors mainly interact with mid-level
+
+---
+
+## CONCOR Algorithm
+
+**CONvergence of iterated CORrelations**
+
+1. Calculate correlation matrix of node profiles
+2. Correlate the correlation matrix  
+3. Repeat until convergence
+4. Split based on sign of first eigenvector
+
+**Why it works**: Iterating amplifies structural patterns
+
+**Result**: Hierarchical partition (can split recursively)
+
+---
+
+## Rendering Positions: Algorithms
+
+**Methods for finding positions**:
+
+1. **Correlation-based clustering**
+   - Correlate row (or column) profiles
+   - Hierarchical clustering
+
+2. **Euclidean distance clustering**
+   - Calculate Euclidean distance between profiles
+   - Ward linkage clustering
+
+3. **CONCOR** (classical approach)
+
+**Choice**: Correlation for directed networks, Euclidean for valued networks
+
+---
+
+## Communities vs. Positions: Key Differences
+
+| Dimension | Communities | Positions |
+|-----------|-------------|-----------|
+| **Basis** | Direct ties | Tie patterns |
+| **Logic** | Cohesion | Equivalence |
+| **Question** | Who interacts with whom? | Who plays similar roles? |
+| **Example** | Research groups | Hierarchical levels |
+| **Solidarity** | Mechanical | Organic |
+
+**Both are valid, complementary perspectives**
+
+---
+
+## When Communities ≠ Positions
+
+**Example**: Corporate structure
+
+- **Communities**: Departments (Marketing, R&D, Finance)
+- **Positions**: Ranks (Executives, Managers, Staff)
+
+A Marketing Manager and an R&D Manager:
+- **Different communities** (different departments)
+- **Same position** (both supervise, both report up)
+
+**Adjusted Rand Index**: Measures overlap (0 = independent, 1 = identical)
+
+---
+
+## Wrap up
+
+
+Communities = cohesion  
+Roles/positions = equivalence  

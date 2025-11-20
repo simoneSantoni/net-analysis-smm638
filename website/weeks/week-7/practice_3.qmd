@@ -1,0 +1,841 @@
+---
+title: "Role and Position Analysis in R"
+subtitle: "Blockmodeling and Structural Equivalence"
+format: 
+  html:
+    code-fold: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+execute:
+  warning: false
+  message: false
+---
+
+# Introduction
+
+This tutorial demonstrates how to analyze roles and positions in networks using R. We'll explore structural equivalence, implement the CONCOR algorithm, perform blockmodeling, and create image matrices to understand the underlying role structure of networks.
+
+## Learning Objectives
+
+By the end of this tutorial, you will be able to:
+
+- Understand different concepts of structural equivalence
+- Compute similarity measures between actors based on tie patterns
+- Implement the CONCOR algorithm for blockmodeling
+- Perform hierarchical clustering of tie profiles
+- Create and interpret blockmodels and image matrices
+- Visualize role structures in networks
+- Assess the quality of blockmodel fits
+
+## Required Packages
+
+```{r}
+#| label: setup
+
+# Load required packages
+library(igraph)
+library(ggplot2)
+
+# Optional packages (install if needed)
+if (!require("pheatmap", quietly = TRUE)) {
+  cat("Note: pheatmap not installed. Using base heatmap instead.\n")
+  use_pheatmap <- FALSE
+} else {
+  use_pheatmap <- TRUE
+}
+
+# Set seed for reproducibility
+set.seed(42)
+```
+
+# Understanding Structural Equivalence
+
+## Concepts
+
+**Structural equivalence** means that actors occupy the same position in a network if they have identical patterns of ties to and from other actors.
+
+Two main types:
+
+1. **Structural equivalence**: Actors have identical ties to the same others
+2. **Regular equivalence**: Actors have ties to others who are themselves equivalent
+
+We'll focus primarily on structural equivalence and blockmodeling.
+
+## Example Network: Corporate Advice Network
+
+Let's create a small directed network representing advice-seeking among managers:
+
+```{r}
+#| label: create-advice-network
+
+# Create advice network adjacency matrix
+advice_mat <- matrix(0, nrow = 10, ncol = 10)
+rownames(advice_mat) <- colnames(advice_mat) <- paste0("M", 1:10)
+
+# Senior managers (M1, M2) - give advice, rarely seek it
+advice_mat["M3", "M1"] <- 1
+advice_mat["M4", "M1"] <- 1
+advice_mat["M5", "M1"] <- 1
+advice_mat["M6", "M2"] <- 1
+advice_mat["M7", "M2"] <- 1
+advice_mat["M8", "M2"] <- 1
+
+# Middle managers (M3, M4) - seek from seniors, advise juniors
+advice_mat["M1", "M3"] <- 1  # Senior asks middle (rare)
+advice_mat["M9", "M3"] <- 1
+advice_mat["M10", "M3"] <- 1
+advice_mat["M9", "M4"] <- 1
+advice_mat["M10", "M4"] <- 1
+
+# Middle managers (M5, M6) - similar pattern
+advice_mat["M7", "M5"] <- 1
+advice_mat["M8", "M5"] <- 1
+advice_mat["M7", "M6"] <- 1
+advice_mat["M8", "M6"] <- 1
+
+# Junior managers (M7, M8, M9, M10) - mainly seek advice
+advice_mat["M7", "M8"] <- 1  # Some peer connections
+advice_mat["M8", "M7"] <- 1
+advice_mat["M9", "M10"] <- 1
+advice_mat["M10", "M9"] <- 1
+
+# Create network object  
+advice_net <- graph_from_adjacency_matrix(advice_mat, mode = "directed")
+
+cat("Network size:", vcount(advice_net), "nodes\n")
+cat("Number of ties:", ecount(advice_net), "edges\n")
+cat("Density:", round(edge_density(advice_net), 3), "\n")
+```
+
+## Visualize the Advice Network
+
+```{r}
+#| label: viz-advice-network
+#| fig-width: 8
+#| fig-height: 6
+
+# Plot the network
+set.seed(42)
+layout_advice <- layout_with_fr(advice_net)
+
+plot(advice_net,
+     layout = layout_advice,
+     vertex.color = "lightblue",
+     vertex.size = 15,
+     vertex.label = V(advice_net)$name,
+     vertex.label.cex = 0.8,
+     vertex.label.color = "black",
+     edge.color = "gray50",
+     edge.width = 1.5,
+     edge.arrow.size = 0.5,
+     main = "Corporate Advice Network")
+```
+
+# Measuring Structural Equivalence
+
+## Correlation-Based Similarity
+
+One common approach is to correlate the tie patterns of actors.
+
+```{r}
+#| label: correlation-similarity
+
+# Calculate structural equivalence using correlation
+# For directed networks, we consider both in-ties and out-ties
+
+# Custom function for structural equivalence
+compute_structural_equiv <- function(adj_mat) {
+  n <- nrow(adj_mat)
+  sim_mat <- matrix(0, n, n)
+  
+  # Combine row and column vectors for each node
+  for(i in 1:n) {
+    for(j in 1:n) {
+      # Correlation between tie profiles
+      profile_i <- c(adj_mat[i,], adj_mat[,i])
+      profile_j <- c(adj_mat[j,], adj_mat[,j])
+      sim_mat[i,j] <- cor(profile_i, profile_j)
+    }
+  }
+  
+  rownames(sim_mat) <- colnames(sim_mat) <- rownames(adj_mat)
+  return(sim_mat)
+}
+
+similarity_matrix <- compute_structural_equiv(advice_mat)
+
+# Display similarity matrix
+round(similarity_matrix, 2)
+```
+
+## Euclidean Distance
+
+Another approach uses Euclidean distance between tie profiles:
+
+```{r}
+#| label: euclidean-distance
+
+# Compute Euclidean distance
+compute_euclidean_dist <- function(adj_mat) {
+  n <- nrow(adj_mat)
+  dist_mat <- matrix(0, n, n)
+  
+  for(i in 1:n) {
+    for(j in 1:n) {
+      profile_i <- c(adj_mat[i,], adj_mat[,i])
+      profile_j <- c(adj_mat[j,], adj_mat[,j])
+      dist_mat[i,j] <- sqrt(sum((profile_i - profile_j)^2))
+    }
+  }
+  
+  rownames(dist_mat) <- colnames(dist_mat) <- rownames(adj_mat)
+  return(dist_mat)
+}
+
+euclid_dist <- compute_euclidean_dist(advice_mat)
+
+# Display distance matrix
+round(euclid_dist, 2)
+```
+
+## Visualizing Equivalence with Heatmap
+
+```{r}
+#| label: heatmap-equivalence
+#| fig-width: 8
+#| fig-height: 7
+
+# Create heatmap of structural equivalence
+if (use_pheatmap) {
+  pheatmap::pheatmap(similarity_matrix,
+           cluster_rows = TRUE,
+           cluster_cols = TRUE,
+           display_numbers = TRUE,
+           number_format = "%.2f",
+           main = "Structural Equivalence Similarity\n(Correlation-based)",
+           color = colorRampPalette(c("white", "lightblue", "darkblue"))(100))
+} else {
+  heatmap(similarity_matrix,
+          main = "Structural Equivalence Similarity\n(Correlation-based)",
+          col = colorRampPalette(c("white", "lightblue", "darkblue"))(100))
+}
+```
+
+# Hierarchical Clustering
+
+We can use hierarchical clustering to identify groups of structurally equivalent actors.
+
+```{r}
+#| label: hierarchical-clustering
+#| fig-width: 10
+#| fig-height: 6
+
+# Convert similarity to distance for clustering
+# Use 1 - correlation as distance
+dist_matrix <- as.dist(1 - similarity_matrix)
+
+# Perform hierarchical clustering
+hc <- hclust(dist_matrix, method = "complete")
+
+# Plot dendrogram
+plot(hc,
+     main = "Hierarchical Clustering of Structural Equivalence",
+     xlab = "Managers",
+     ylab = "Distance",
+     sub = "")
+
+# Add rectangles for 3 clusters
+rect.hclust(hc, k = 3, border = 2:4)
+```
+
+## Extract Clusters
+
+```{r}
+#| label: extract-clusters
+
+# Cut tree to get 3 positions
+positions <- cutree(hc, k = 3)
+
+# Display position assignments
+cat("Position assignments:\n")
+print(positions)
+
+# Count members per position
+cat("\nPosition sizes:\n")
+print(table(positions))
+```
+
+# CONCOR Algorithm
+
+**CONCOR** (CONvergence of iterated CORrelations) is a classical algorithm for blockmodeling.
+
+## Implementing CONCOR
+
+```{r}
+#| label: concor
+
+# Perform CONCOR using custom implementation
+# Simplified CONCOR algorithm
+concor_simple <- function(adj_mat, max_iter = 25) {
+  # Compute initial correlation matrix
+  sim_mat <- compute_structural_equiv(adj_mat)
+  
+  # Iteratively correlate
+  for(iter in 1:max_iter) {
+    old_sim <- sim_mat
+    sim_mat <- cor(sim_mat)
+    
+    # Check for convergence
+    if(max(abs(sim_mat - old_sim)) < 0.001) break
+  }
+  
+  # Convert to distance and cluster  
+  dist_mat <- as.dist(1 - sim_mat)
+  hc <- hclust(dist_mat, method = "complete")
+  return(hc)
+}
+
+concor_result <- concor_simple(advice_mat)
+
+# Plot CONCOR dendrogram
+plot(concor_result,
+     main = "CONCOR-style Blockmodel Dendrogram")
+
+# Get block membership (using 3 blocks)
+concor_membership <- cutree(concor_result, k = 3)
+
+cat("CONCOR block assignments:\n")
+print(concor_membership)
+```
+
+# Creating Blockmodels
+
+## Reorder Matrix by Position
+
+```{r}
+#| label: reorder-matrix
+
+# Reorder adjacency matrix by position
+block_order <- order(positions)
+blocked_mat <- advice_mat[block_order, block_order]
+
+# Display blocked matrix
+cat("Reordered adjacency matrix by position:\n")
+print(blocked_mat)
+```
+
+## Visualize Blocked Matrix
+
+```{r}
+#| label: viz-blocked-matrix
+#| fig-width: 8
+#| fig-height: 7
+
+# Create heatmap of blocked adjacency matrix
+if (use_pheatmap) {
+  pheatmap::pheatmap(blocked_mat,
+           cluster_rows = FALSE,
+           cluster_cols = FALSE,
+           display_numbers = TRUE,
+           number_format = "%.0f",
+           main = "Blocked Adjacency Matrix",
+           color = colorRampPalette(c("white", "coral"))(2),
+           legend = FALSE)
+} else {
+  heatmap(blocked_mat, 
+          Rowv = NA, Colv = NA,
+          main = "Blocked Adjacency Matrix",
+          col = c("white", "coral"),
+          scale = "none")
+}
+```
+
+# Image Matrices
+
+An **image matrix** summarizes the blockmodel by indicating whether ties are present or absent between positions.
+
+## Compute Image Matrix
+
+```{r}
+#| label: image-matrix
+
+# Function to create image matrix
+create_image_matrix <- function(adj_matrix, positions, alpha = 0.5) {
+  n_positions <- max(positions)
+  image_mat <- matrix(0, nrow = n_positions, ncol = n_positions)
+  
+  for(i in 1:n_positions) {
+    for(j in 1:n_positions) {
+      # Get actors in positions i and j
+      actors_i <- which(positions == i)
+      actors_j <- which(positions == j)
+      
+      # Extract block
+      block <- adj_matrix[actors_i, actors_j, drop = FALSE]
+      
+      # Calculate density
+      block_density <- sum(block) / length(block)
+      
+      # Set image based on alpha threshold
+      image_mat[i, j] <- ifelse(block_density >= alpha, 1, 0)
+    }
+  }
+  
+  rownames(image_mat) <- colnames(image_mat) <- paste0("Pos", 1:n_positions)
+  return(image_mat)
+}
+
+# Create image matrix with alpha = 0.5
+image_mat <- create_image_matrix(advice_mat, positions, alpha = 0.5)
+
+cat("Image matrix (alpha = 0.5):\n")
+print(image_mat)
+```
+
+## Visualize Image Matrix
+
+```{r}
+#| label: viz-image-matrix
+#| fig-width: 6
+#| fig-height: 5
+
+# Visualize image matrix
+if (use_pheatmap) {
+  pheatmap::pheatmap(image_mat,
+           cluster_rows = FALSE,
+           cluster_cols = FALSE,
+           display_numbers = TRUE,
+           number_format = "%.0f",
+           main = "Image Matrix\n(Reduced Network)",
+           color = colorRampPalette(c("white", "darkred"))(2),
+           legend = FALSE)
+} else {
+  heatmap(image_mat,
+          Rowv = NA, Colv = NA,
+          main = "Image Matrix\n(Reduced Network)",
+          col = c("white", "darkred"),
+          scale = "none")
+}
+```
+
+## Plot Reduced Network
+
+```{r}
+#| label: plot-reduced-network
+#| fig-width: 6
+#| fig-height: 6
+
+# Create network from image matrix
+image_net <- graph_from_adjacency_matrix(image_mat, mode = "directed")
+
+# Set vertex names
+V(image_net)$name <- paste0("Pos", 1:vcount(image_net))
+
+# Plot reduced network
+set.seed(42)
+plot(image_net,
+     layout = layout_nicely(image_net),
+     vertex.color = c("coral", "lightblue", "lightgreen")[1:vcount(image_net)],
+     vertex.size = 40,
+     vertex.label = V(image_net)$name,
+     vertex.label.cex = 1.2,
+     vertex.label.color = "white",
+     edge.color = "black",
+     edge.width = 3,
+     edge.arrow.size = 0.8,
+     main = "Reduced Network (Image Graph)")
+```
+
+# Block Density Analysis
+
+Analyze within-block and between-block densities to assess blockmodel quality.
+
+```{r}
+#| label: block-density
+
+# Function to compute block density table
+compute_block_densities <- function(adj_matrix, positions) {
+  n_positions <- max(positions)
+  density_mat <- matrix(0, nrow = n_positions, ncol = n_positions)
+  
+  for(i in 1:n_positions) {
+    for(j in 1:n_positions) {
+      actors_i <- which(positions == i)
+      actors_j <- which(positions == j)
+      
+      block <- adj_matrix[actors_i, actors_j, drop = FALSE]
+      density_mat[i, j] <- sum(block) / length(block)
+    }
+  }
+  
+  rownames(density_mat) <- colnames(density_mat) <- paste0("Pos", 1:n_positions)
+  return(density_mat)
+}
+
+# Compute block densities
+block_densities <- compute_block_densities(advice_mat, positions)
+
+cat("Block densities:\n")
+print(round(block_densities, 3))
+
+# Visualize block densities
+if (use_pheatmap) {
+  pheatmap::pheatmap(block_densities,
+           cluster_rows = FALSE,
+           cluster_cols = FALSE,
+           display_numbers = TRUE,
+           number_format = "%.2f",
+           main = "Block Densities",
+           color = colorRampPalette(c("white", "orange", "darkred"))(100))
+} else {
+  heatmap(block_densities,
+          Rowv = NA, Colv = NA,
+          main = "Block Densities",
+          col = colorRampPalette(c("white", "orange", "darkred"))(100),
+          scale = "none")
+}
+```
+
+# Assessing Blockmodel Fit
+
+## Blockmodel Adequacy
+
+We can measure how well the blockmodel represents the original network using correlation.
+
+```{r}
+#| label: blockmodel-fit
+
+# Reconstruct network from blockmodel
+reconstruct_from_blocks <- function(image_mat, positions) {
+  n <- length(positions)
+  recon_mat <- matrix(0, nrow = n, ncol = n)
+  
+  for(i in 1:n) {
+    for(j in 1:n) {
+      pos_i <- positions[i]
+      pos_j <- positions[j]
+      recon_mat[i, j] <- image_mat[pos_i, pos_j]
+    }
+  }
+  
+  return(recon_mat)
+}
+
+# Reconstruct
+reconstructed <- reconstruct_from_blocks(image_mat, positions)
+
+# Compute correlation between original and reconstructed
+fit_cor <- cor(as.vector(advice_mat), as.vector(reconstructed))
+
+cat("Blockmodel fit (correlation):", round(fit_cor, 3), "\n")
+
+# Compute accuracy
+matching <- sum((advice_mat > 0) == (reconstructed > 0))
+total <- length(advice_mat)
+accuracy <- matching / total
+
+cat("Classification accuracy:", round(accuracy, 3), "\n")
+```
+
+# Example 2: Larger Network - Classic Blockmodel Study
+
+Let's use a larger, well-known dataset to demonstrate blockmodeling at scale.
+
+```{r}
+#| label: larger-example
+
+# Create a stylized larger network with clearer role structure
+# Simulating an organization with distinct hierarchical positions
+
+n_senior <- 2
+n_middle <- 4
+n_junior <- 8
+n_total <- n_senior + n_middle + n_junior
+
+# Initialize matrix
+org_mat <- matrix(0, nrow = n_total, ncol = n_total)
+rownames(org_mat) <- colnames(org_mat) <- paste0("E", 1:n_total)
+
+# Define position indices
+senior_idx <- 1:n_senior
+middle_idx <- (n_senior + 1):(n_senior + n_middle)
+junior_idx <- (n_senior + n_middle + 1):n_total
+
+# Add ties based on organizational hierarchy
+# Juniors -> Middle managers (high density)
+for(j in junior_idx) {
+  contacts <- sample(middle_idx, size = 2)
+  org_mat[j, contacts] <- 1
+}
+
+# Middle -> Seniors (high density)
+for(m in middle_idx) {
+  contacts <- sample(senior_idx, size = 1)
+  org_mat[m, contacts] <- 1
+}
+
+# Seniors -> Middle (moderate density, delegation)
+for(s in senior_idx) {
+  contacts <- sample(middle_idx, size = 2)
+  org_mat[s, contacts] <- 1
+}
+
+# Some peer connections within levels
+# Junior peers
+for(i in 1:3) {
+  pair <- sample(junior_idx, 2)
+  org_mat[pair[1], pair[2]] <- 1
+}
+
+# Middle peers
+for(i in 1:2) {
+  pair <- sample(middle_idx, 2)
+  org_mat[pair[1], pair[2]] <- 1
+}
+
+# Create network
+org_net <- graph_from_adjacency_matrix(org_mat, mode = "directed")
+
+cat("Organization network:\n")
+cat("Nodes:", vcount(org_net), "\n")
+cat("Edges:", ecount(org_net), "\n")
+```
+
+## Visualize Organization Network
+
+```{r}
+#| label: viz-org-network
+#| fig-width: 10
+#| fig-height: 8
+
+# Assign colors by true position
+true_positions <- c(rep(1, n_senior), rep(2, n_middle), rep(3, n_junior))
+colors <- c("darkred", "orange", "lightblue")[true_positions]
+
+set.seed(42)
+layout_org <- layout_with_fr(org_net)
+
+plot(org_net,
+     layout = layout_org,
+     vertex.color = colors,
+     vertex.size = 15,
+     vertex.label = V(org_net)$name,
+     vertex.label.cex = 0.7,
+     edge.color = "gray60",
+     edge.arrow.size = 0.5,
+     main = "Organizational Hierarchy Network")
+
+legend("bottomright", 
+       legend = c("Senior", "Middle", "Junior"),
+       col = c("darkred", "orange", "lightblue"),
+       pch = 19,
+       pt.cex = 2,
+       bty = "n")
+```
+
+## Apply Blockmodeling
+
+```{r}
+#| label: org-blockmodel
+
+# Compute structural equivalence
+org_similarity <- compute_structural_equiv(org_mat)
+org_equiv <- 1 - org_similarity  # Convert to distance
+
+# Hierarchical clustering
+org_hc <- hclust(as.dist(org_equiv), method = "complete")
+
+# Cut for 3 positions
+org_positions <- cutree(org_hc, k = 3)
+
+cat("Discovered positions:\n")
+print(org_positions)
+
+# Dendrogram
+plot(org_hc,
+     main = "Organizational Network - Hierarchical Clustering",
+     xlab = "Employees",
+     labels = rownames(org_mat))
+rect.hclust(org_hc, k = 3, border = 2:4)
+```
+
+## Organization Image Matrix
+
+```{r}
+#| label: org-image-matrix
+#| fig-width: 7
+#| fig-height: 6
+
+# Create image matrix
+org_image <- create_image_matrix(org_mat, org_positions, alpha = 0.3)
+
+cat("Organization image matrix:\n")
+print(org_image)
+
+# Visualize
+if (use_pheatmap) {
+  pheatmap::pheatmap(org_image,
+           cluster_rows = FALSE,
+           cluster_cols = FALSE,
+           display_numbers = TRUE,
+           number_format = "%.0f",
+           main = "Organization Image Matrix",
+           color = colorRampPalette(c("white", "navy"))(2),
+           legend = FALSE)
+} else {
+  heatmap(org_image,
+          Rowv = NA, Colv = NA,
+          main = "Organization Image Matrix",
+          col = c("white", "navy"),
+          scale = "none")
+}
+
+# Block densities
+org_densities <- compute_block_densities(org_mat, org_positions)
+
+cat("\nBlock densities:\n")
+print(round(org_densities, 3))
+```
+
+# Comparing Position Detection Methods
+
+Let's compare different methods for identifying positions.
+
+```{r}
+#| label: compare-methods
+
+# Method 1: Hierarchical clustering with correlation
+method1 <- cutree(hclust(as.dist(1 - compute_structural_equiv(advice_mat)),
+                         method = "complete"), k = 3)
+
+# Method 2: Hierarchical clustering with Euclidean distance
+method2 <- cutree(hclust(as.dist(compute_euclidean_dist(advice_mat)),
+                         method = "ward.D2"), k = 3)
+
+# Method 3: CONCOR
+method3 <- cutree(concor_simple(advice_mat), k = 3)
+
+# Compare assignments
+comparison <- data.frame(
+  Actor = rownames(advice_mat),
+  Correlation_HC = method1,
+  Euclidean_HC = method2,
+  CONCOR = method3
+)
+
+print(comparison)
+
+# Calculate agreement between methods
+cat("\nAgreement between methods:\n")
+cat("Correlation vs Euclidean:", 
+    sum(method1 == method2) / length(method1), "\n")
+cat("Correlation vs CONCOR:", 
+    sum(method1 == method3) / length(method1), "\n")
+cat("Euclidean vs CONCOR:", 
+    sum(method2 == method3) / length(method2), "\n")
+```
+
+# Interpretation and Substantive Meaning
+
+When interpreting blockmodels, consider:
+
+## Role Interpretation
+
+Based on our advice network analysis:
+
+```{r}
+#| label: role-interpretation
+
+# Analyze each position's characteristics
+for(pos in 1:3) {
+  cat("\n=== Position", pos, "===\n")
+  members <- which(positions == pos)
+  cat("Members:", paste(names(members), collapse = ", "), "\n")
+  
+  # Out-degree (advice giving)
+  out_deg <- rowSums(advice_mat[members, , drop = FALSE])
+  cat("Avg out-degree:", round(mean(out_deg), 2), "\n")
+  
+  # In-degree (advice seeking)
+  in_deg <- colSums(advice_mat[, members, drop = FALSE])
+  cat("Avg in-degree:", round(mean(in_deg), 2), "\n")
+}
+```
+
+::: {.callout-tip}
+## Interpreting Positions
+
+- **Position 1**: High in-degree, low out-degree → **Advice Givers** (senior experts)
+- **Position 2**: Moderate both → **Intermediaries** (middle management)  
+- **Position 3**: Low in-degree, high out-degree → **Advice Seekers** (juniors)
+:::
+
+# Key Takeaways
+
+1. **Structural equivalence** identifies actors with similar tie patterns, revealing role structures
+
+2. **Multiple measurement approaches** exist (correlation, Euclidean, etc.) - compare results
+
+3. **CONCOR** is a classical algorithm but hierarchical clustering offers more flexibility
+
+4. **Image matrices** provide reduced representations of complex networks
+
+5. **Blockmodel fit** should be assessed - not all networks have clear role structures
+
+6. **Substantive interpretation** is crucial - positions should make sense in context
+
+7. **Position != Community** - positions are about similar patterns, not cohesion
+
+# Exercises
+
+## Exercise 1: Apply to Karate Club
+
+Load Zachary's Karate Club network and:
+
+1. Compute structural equivalence between members
+2. Identify positions using hierarchical clustering
+3. Create and interpret the image matrix
+4. Do positions correspond to the known split?
+
+```{r}
+#| eval: false
+
+# Starter code
+library(igraph)
+karate <- make_graph("Zachary")
+karate_mat <- as_adjacency_matrix(karate, sparse = FALSE)
+
+# Your code here
+```
+
+## Exercise 2: Different Alpha Values
+
+For the advice network:
+
+1. Create image matrices with alpha = 0.25, 0.5, 0.75
+2. Compare the resulting image graphs
+3. Which alpha best represents the network?
+
+## Exercise 3: Regular Equivalence (Advanced)
+
+Research and implement a measure of regular equivalence:
+
+1. Understand the difference from structural equivalence
+2. Apply to the advice network
+3. Compare results with structural equivalence
+4. When would regular equivalence be more appropriate?
+
+# Additional Resources
+
+- **Foundational paper**: White, Boorman, & Breiger (1976). Social structure from multiple networks.
+
+- **sna package documentation**: [CRAN sna reference](https://CRAN.R-project.org/package=sna)
+
+- **Blockmodeling book**: Doreian, Batagelj, & Ferligoj (2005). *Generalized Blockmodeling*
+
+- **Applied examples**: Wasserman & Faust (1994), Chapters 9-10
+
+---
+
+**Next Steps**: Combine community detection (from practice_1.qmd) with role analysis to explore whether structurally equivalent actors belong to the same communities - they often don't!
