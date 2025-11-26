@@ -6,7 +6,82 @@ date: "today"
 callout-appearance: "default"
 ---
 
-::: {.callout-note}
-Content coming soon.
+## Prepare
 
+::: {.callout-note}
+## 📚
+
+📖 Review [Week 7 materials](../week-7/main.qmd) on cohesion, community detection, and attention-based segmentation
+
+📖 Read the case study: **"Fuller's and the Problem of Market Segmentation in the Beer Market"** (`ba_case.pdf`)
+
+📌 Focus on Exhibits 2-4: contrasts between traditional vs. network-based segmentation, the two-mode user-style representation, and the three strategic options
+
+📝 Jot down where BeerAdvocate attention data could reveal segments that Fuller's current research misses
+:::
+
+## Participate
+
+::: {.callout-note}
+## 👥
+
+🙋 **Case Discussion**: Fuller's attention-based segmentation dilemma
+
+Sarah Mitchell and James Chen must choose how to re-segment the beer market as craft, imports, and digital discovery squeeze Fuller's "middle" position. The board needs evidence that attention networks from BeerAdvocate can guide portfolio and brand decisions.
+
+**Key Discussion Questions**:
+
+- What signals about loyalty, exploration, and cross-over styles are invisible to traditional focus groups and surveys?
+- How would you build and validate a two-mode network (users ↔ beer styles) from BeerAdvocate, and what biases/coverage limits should Fuller's anticipate?
+- Compare Options 1-3 (enhanced traditional research, network analysis pilot, integrated platform): which path fits Fuller's risk tolerance, timeline, and capability needs?
+- How could attention communities translate into concrete moves (range rationalization, innovation briefs, pub assortment, messaging) for London Pride, ESB, and newer styles?
+- If you recommend a pilot, what success metrics and governance would make the board confident to scale?
+:::
+
+## Practice
+
+::: {.callout-note}
+##  💻
+
+**Hands-on Analysis: Attention-based segmentation**
+
+**📊 [BeerAdvocate Network Analysis](network_analysis.qmd)**
+
+Explore how attention flows across beer styles and communities of enthusiasts:
+
+- Build the two-mode user-style network and project it to a user-only network
+- Run community detection to surface attention clusters and interpret "taste brokers"
+- Compare degree, betweenness, and clustering to spot core vs. peripheral styles and users
+- Experiment with different time windows or style groupings to test segmentation stability
+:::
+
+## Perform
+
+::: {.callout-note}
+##  📝
+
+**Case Prep (bring to class)**
+
+- Choose your preferred option (1: enhanced traditional, 2: network pilot, 3: integrated platform) with 2-3 bullets of rationale
+- Outline the minimum viable pilot: data scope, metrics of success, and how insights would feed portfolio decisions
+- Note the biggest risks (selection bias, capability gaps, cost/pace) and how you would mitigate them
+:::
+
+## Ponder
+
+::: {.callout-note}
+## 🤔
+
+**Attention, community, and heritage**
+
+- How does segmenting on shared attention (communities of discussion) differ from demographics or occasions, and when is each lens most actionable?
+- Where might "taste brokers" who bridge styles signal early shifts in demand, and how could Fuller's engage them?
+- How can a heritage brand balance authenticity with experiments prompted by online community signals?
+- What safeguards are needed when blending public community data with proprietary sales and pub insights?
+
+**Further Reading**:
+
+- Aral, S. (2020). *The Hype Machine* - attention dynamics and diffusion in online communities
+- Wasserman, S., & Faust, K. (1994). *Social Network Analysis* - foundational methods for two-mode networks and projections
+- Blei, D. M. (2012). "Probabilistic Topic Models" - alternative ways to cluster unstructured community text
 :::

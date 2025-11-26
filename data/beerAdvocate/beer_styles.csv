@@ -1,0 +1,21 @@
+style_id,style_name,community,popularity
+S01,English Bitter,1,0.7
+S02,ESB,1,0.6
+S03,English Pale Ale,1,0.5
+S04,Mild,1,0.3
+S05,American IPA,2,0.9
+S06,Double IPA,2,0.8
+S07,American Pale Ale,2,0.75
+S08,Session IPA,2,0.5
+S09,Belgian Tripel,3,0.6
+S10,Belgian Dubbel,3,0.55
+S11,Saison,3,0.65
+S12,Witbier,3,0.5
+S13,Imperial Stout,4,0.7
+S14,Porter,4,0.6
+S15,Oatmeal Stout,4,0.5
+S16,Baltic Porter,4,0.4
+S17,German Pilsner,5,0.65
+S18,Czech Pilsner,5,0.55
+S19,Helles,5,0.45
+S20,Schwarzbier,5,0.35

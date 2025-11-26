@@ -1,0 +1,3614 @@
+user_id,beer_style,post_count
+U0001,Double IPA,3
+U0001,Witbier,3
+U0001,Session IPA,1
+U0001,Imperial Stout,1
+U0002,Mild,12
+U0002,English Bitter,1
+U0002,Session IPA,54
+U0002,English Pale Ale,11
+U0002,ESB,5
+U0002,German Pilsner,9
+U0003,Double IPA,4
+U0003,English Bitter,2
+U0003,English Pale Ale,1
+U0004,Session IPA,4
+U0004,American Pale Ale,13
+U0004,American IPA,1
+U0004,Mild,1
+U0005,Double IPA,1
+U0005,Belgian Tripel,37
+U0006,Double IPA,1
+U0006,American Pale Ale,5
+U0007,Saison,2
+U0007,American Pale Ale,9
+U0007,Belgian Dubbel,10
+U0008,ESB,8
+U0008,Schwarzbier,78
+U0008,English Bitter,4
+U0009,American IPA,1
+U0009,American Pale Ale,3
+U0009,Belgian Tripel,4
+U0009,Double IPA,2
+U0010,German Pilsner,49
+U0010,Schwarzbier,7
+U0011,Witbier,1
+U0011,Saison,9
+U0011,English Bitter,2
+U0012,Imperial Stout,5
+U0012,Oatmeal Stout,12
+U0012,Witbier,12
+U0013,English Bitter,18
+U0013,Helles,24
+U0014,Porter,1
+U0014,Oatmeal Stout,1
+U0014,German Pilsner,1
+U0014,Baltic Porter,2
+U0015,Mild,2
+U0015,Imperial Stout,1
+U0015,American Pale Ale,1
+U0015,American IPA,3
+U0016,Double IPA,8
+U0016,German Pilsner,2
+U0016,English Bitter,10
+U0016,Session IPA,9
+U0016,American Pale Ale,34
+U0017,Baltic Porter,6
+U0017,ESB,12
+U0017,Oatmeal Stout,18
+U0017,German Pilsner,5
+U0018,American IPA,11
+U0018,Porter,6
+U0018,Imperial Stout,3
+U0019,Mild,13
+U0019,ESB,10
+U0019,English Pale Ale,1
+U0019,English Bitter,12
+U0020,Czech Pilsner,36
+U0020,ESB,12
+U0020,English Bitter,5
+U0021,Session IPA,13
+U0021,American IPA,28
+U0022,Belgian Tripel,4
+U0022,Belgian Dubbel,1
+U0022,Saison,2
+U0023,Baltic Porter,10
+U0023,Czech Pilsner,3
+U0024,Imperial Stout,6
+U0024,Baltic Porter,15
+U0024,Saison,5
+U0025,American Pale Ale,6
+U0025,Double IPA,1
+U0025,Session IPA,7
+U0026,Belgian Dubbel,84
+U0026,German Pilsner,5
+U0027,Helles,3
+U0027,American IPA,2
+U0028,Belgian Dubbel,7
+U0028,Saison,5
+U0028,Session IPA,1
+U0029,Czech Pilsner,3
+U0029,German Pilsner,6
+U0029,Helles,1
+U0030,Oatmeal Stout,15
+U0030,American IPA,17
+U0031,English Bitter,2
+U0031,Session IPA,54
+U0031,Double IPA,4
+U0031,American IPA,30
+U0032,Double IPA,40
+U0032,American Pale Ale,22
+U0032,ESB,2
+U0032,American IPA,3
+U0032,Imperial Stout,1
+U0032,Session IPA,7
+U0032,Czech Pilsner,3
+U0033,Belgian Dubbel,3
+U0033,Imperial Stout,2
+U0034,Saison,4
+U0034,Belgian Dubbel,1
+U0034,Witbier,2
+U0034,Belgian Tripel,2
+U0035,Baltic Porter,23
+U0035,Belgian Tripel,6
+U0035,Imperial Stout,1
+U0035,American IPA,4
+U0035,Session IPA,17
+U0036,American Pale Ale,11
+U0036,Belgian Dubbel,45
+U0037,German Pilsner,50
+U0037,Czech Pilsner,6
+U0038,Porter,4
+U0038,Oatmeal Stout,1
+U0039,American IPA,1
+U0039,Double IPA,1
+U0039,Session IPA,3
+U0039,Mild,4
+U0040,Belgian Dubbel,2
+U0040,Helles,4
+U0041,Imperial Stout,4
+U0041,Helles,60
+U0041,American IPA,37
+U0041,Session IPA,9
+U0041,Oatmeal Stout,9
+U0042,Belgian Tripel,3
+U0042,Witbier,8
+U0043,American Pale Ale,1
+U0043,American IPA,21
+U0043,Double IPA,16
+U0044,Oatmeal Stout,10
+U0044,Imperial Stout,17
+U0044,Porter,5
+U0044,Baltic Porter,1
+U0045,American Pale Ale,42
+U0045,Double IPA,34
+U0046,English Bitter,2
+U0046,Saison,49
+U0046,Helles,10
+U0046,Schwarzbier,70
+U0047,American IPA,5
+U0047,Session IPA,4
+U0048,Imperial Stout,23
+U0048,Belgian Dubbel,6
+U0049,Saison,12
+U0049,Witbier,12
+U0049,Belgian Tripel,15
+U0049,Belgian Dubbel,28
+U0050,Witbier,1
+U0050,Saison,7
+U0051,English Bitter,26
+U0051,German Pilsner,7
+U0051,Czech Pilsner,11
+U0051,Imperial Stout,8
+U0052,Oatmeal Stout,2
+U0052,Imperial Stout,6
+U0052,Porter,2
+U0052,Baltic Porter,5
+U0052,Helles,13
+U0052,Belgian Dubbel,1
+U0052,Saison,3
+U0052,Session IPA,3
+U0052,English Bitter,11
+U0053,Czech Pilsner,18
+U0053,American Pale Ale,4
+U0053,Session IPA,7
+U0054,Double IPA,3
+U0054,American Pale Ale,1
+U0054,Schwarzbier,1
+U0054,Session IPA,1
+U0055,German Pilsner,1
+U0055,Double IPA,6
+U0055,American IPA,1
+U0055,Oatmeal Stout,4
+U0056,Saison,16
+U0056,Belgian Tripel,2
+U0057,Schwarzbier,2
+U0057,Belgian Dubbel,5
+U0058,Witbier,7
+U0058,English Bitter,20
+U0058,Schwarzbier,107
+U0058,American IPA,30
+U0059,Porter,5
+U0059,German Pilsner,2
+U0060,Oatmeal Stout,2
+U0060,Belgian Tripel,8
+U0060,Belgian Dubbel,2
+U0061,Mild,5
+U0061,Saison,3
+U0061,Czech Pilsner,7
+U0061,German Pilsner,2
+U0061,Helles,3
+U0061,American Pale Ale,3
+U0061,English Pale Ale,2
+U0062,American IPA,2
+U0062,Session IPA,1
+U0062,Double IPA,2
+U0062,English Pale Ale,1
+U0062,American Pale Ale,1
+U0063,English Bitter,2
+U0063,English Pale Ale,1
+U0063,Session IPA,2
+U0063,ESB,1
+U0064,Imperial Stout,7
+U0064,American IPA,8
+U0064,Session IPA,3
+U0064,Double IPA,12
+U0064,Porter,5
+U0065,Witbier,8
+U0065,Double IPA,17
+U0065,Helles,12
+U0066,Belgian Tripel,3
+U0066,Belgian Dubbel,3
+U0066,English Pale Ale,1
+U0066,Imperial Stout,2
+U0067,English Pale Ale,20
+U0067,ESB,9
+U0067,English Bitter,12
+U0067,Mild,1
+U0068,German Pilsner,4
+U0068,American Pale Ale,20
+U0068,Session IPA,5
+U0069,Saison,11
+U0069,Helles,1
+U0069,English Bitter,3
+U0069,German Pilsner,3
+U0070,Imperial Stout,4
+U0070,Oatmeal Stout,7
+U0070,Porter,1
+U0071,English Bitter,8
+U0071,Mild,10
+U0071,ESB,33
+U0071,Belgian Tripel,38
+U0071,English Pale Ale,12
+U0072,Saison,28
+U0072,Mild,25
+U0072,Baltic Porter,4
+U0072,Session IPA,26
+U0073,ESB,2
+U0073,American IPA,7
+U0073,Czech Pilsner,1
+U0073,Helles,37
+U0073,Schwarzbier,119
+U0074,Baltic Porter,2
+U0074,Porter,31
+U0074,Imperial Stout,19
+U0075,Session IPA,2
+U0075,English Pale Ale,30
+U0075,Mild,9
+U0075,English Bitter,49
+U0075,Baltic Porter,51
+U0076,Witbier,1
+U0076,Porter,2
+U0076,Double IPA,2
+U0076,English Bitter,1
+U0077,American IPA,15
+U0077,English Bitter,2
+U0077,ESB,10
+U0077,Double IPA,3
+U0078,Oatmeal Stout,24
+U0078,Session IPA,28
+U0078,American IPA,2
+U0078,Double IPA,14
+U0079,Witbier,17
+U0079,Baltic Porter,6
+U0079,Porter,6
+U0080,Session IPA,2
+U0080,English Pale Ale,3
+U0081,English Bitter,23
+U0081,Session IPA,7
+U0082,Mild,1
+U0082,English Bitter,2
+U0082,ESB,1
+U0082,English Pale Ale,1
+U0083,Oatmeal Stout,22
+U0083,English Bitter,51
+U0084,Helles,4
+U0084,German Pilsner,1
+U0085,Imperial Stout,29
+U0085,American IPA,2
+U0085,American Pale Ale,2
+U0085,Session IPA,8
+U0085,Belgian Tripel,1
+U0086,Mild,1
+U0086,Oatmeal Stout,2
+U0086,German Pilsner,2
+U0087,Porter,13
+U0087,English Bitter,6
+U0087,ESB,3
+U0087,Helles,1
+U0088,Double IPA,22
+U0088,Imperial Stout,6
+U0088,American IPA,101
+U0088,American Pale Ale,74
+U0088,German Pilsner,9
+U0088,English Pale Ale,35
+U0089,English Pale Ale,1
+U0089,German Pilsner,19
+U0089,English Bitter,18
+U0089,ESB,2
+U0090,English Bitter,56
+U0090,German Pilsner,1
+U0090,Czech Pilsner,2
+U0090,Helles,1
+U0091,American IPA,1
+U0091,Imperial Stout,1
+U0091,American Pale Ale,13
+U0091,Double IPA,1
+U0091,Session IPA,6
+U0092,English Pale Ale,16
+U0092,German Pilsner,2
+U0092,Helles,4
+U0092,Witbier,26
+U0093,American IPA,4
+U0093,English Pale Ale,1
+U0094,Schwarzbier,14
+U0094,German Pilsner,3
+U0094,Czech Pilsner,11
+U0095,American Pale Ale,21
+U0095,English Bitter,22
+U0096,Helles,16
+U0096,ESB,6
+U0096,German Pilsner,2
+U0096,Czech Pilsner,3
+U0097,Session IPA,1
+U0097,Czech Pilsner,2
+U0097,Belgian Dubbel,3
+U0097,Schwarzbier,3
+U0097,Witbier,2
+U0098,Witbier,30
+U0098,American IPA,1
+U0098,Belgian Tripel,37
+U0099,Oatmeal Stout,33
+U0099,Baltic Porter,17
+U0100,American IPA,2
+U0100,Helles,7
+U0100,Baltic Porter,21
+U0101,Baltic Porter,1
+U0101,Porter,1
+U0101,Oatmeal Stout,4
+U0102,Schwarzbier,7
+U0102,Helles,40
+U0102,ESB,7
+U0102,Czech Pilsner,2
+U0103,Witbier,9
+U0103,Saison,35
+U0103,American Pale Ale,14
+U0103,Belgian Dubbel,15
+U0104,American Pale Ale,8
+U0104,Belgian Dubbel,12
+U0105,American Pale Ale,3
+U0105,Oatmeal Stout,4
+U0105,Imperial Stout,1
+U0105,Czech Pilsner,4
+U0106,Session IPA,14
+U0106,English Bitter,5
+U0106,Mild,27
+U0106,American Pale Ale,4
+U0106,ESB,4
+U0106,Belgian Tripel,12
+U0107,American IPA,1
+U0107,American Pale Ale,4
+U0107,English Pale Ale,52
+U0108,American Pale Ale,108
+U0108,Double IPA,42
+U0108,American IPA,3
+U0108,Schwarzbier,23
+U0108,Session IPA,10
+U0109,ESB,20
+U0109,English Bitter,77
+U0110,Porter,1
+U0110,Session IPA,4
+U0110,Belgian Dubbel,6
+U0111,Helles,5
+U0111,ESB,9
+U0111,English Bitter,2
+U0111,Mild,5
+U0112,Porter,5
+U0112,Belgian Dubbel,1
+U0113,English Pale Ale,1
+U0113,Oatmeal Stout,4
+U0113,Baltic Porter,1
+U0114,American Pale Ale,11
+U0114,ESB,1
+U0115,Witbier,33
+U0115,Belgian Tripel,30
+U0116,Czech Pilsner,2
+U0116,Mild,41
+U0116,English Bitter,20
+U0116,ESB,4
+U0117,American Pale Ale,8
+U0117,Helles,8
+U0117,Session IPA,1
+U0118,Double IPA,7
+U0118,American IPA,1
+U0119,Porter,2
+U0119,Mild,9
+U0119,Oatmeal Stout,24
+U0119,Witbier,3
+U0119,Imperial Stout,13
+U0119,ESB,1
+U0119,Baltic Porter,6
+U0119,Double IPA,1
+U0120,Porter,6
+U0120,Witbier,1
+U0120,Saison,8
+U0120,Helles,6
+U0120,Belgian Tripel,8
+U0121,English Bitter,41
+U0121,Mild,30
+U0121,ESB,11
+U0122,Belgian Tripel,16
+U0122,English Bitter,1
+U0123,English Pale Ale,1
+U0123,English Bitter,3
+U0123,ESB,3
+U0123,Mild,3
+U0123,Witbier,1
+U0123,Belgian Tripel,1
+U0124,Porter,1
+U0124,Belgian Dubbel,33
+U0124,American IPA,1
+U0124,English Bitter,9
+U0125,Session IPA,5
+U0125,American Pale Ale,1
+U0126,American IPA,12
+U0126,Session IPA,1
+U0126,American Pale Ale,2
+U0126,Double IPA,1
+U0127,Double IPA,90
+U0127,American Pale Ale,79
+U0127,American IPA,29
+U0127,Session IPA,3
+U0128,Witbier,10
+U0128,English Bitter,40
+U0129,Porter,1
+U0129,Oatmeal Stout,24
+U0129,Imperial Stout,1
+U0129,Baltic Porter,14
+U0130,ESB,2
+U0130,Saison,3
+U0131,English Bitter,21
+U0131,Double IPA,2
+U0132,American Pale Ale,1
+U0132,American IPA,2
+U0132,Session IPA,21
+U0132,ESB,7
+U0133,Saison,98
+U0133,Witbier,17
+U0134,Double IPA,28
+U0134,Saison,4
+U0134,Porter,11
+U0135,Double IPA,60
+U0135,Porter,6
+U0136,Porter,3
+U0136,Baltic Porter,29
+U0137,Czech Pilsner,10
+U0137,German Pilsner,58
+U0137,Schwarzbier,22
+U0137,Helles,2
+U0138,English Pale Ale,1
+U0138,Session IPA,3
+U0138,Double IPA,3
+U0139,Session IPA,26
+U0139,American Pale Ale,34
+U0139,American IPA,13
+U0139,Double IPA,31
+U0140,Double IPA,1
+U0140,American Pale Ale,13
+U0140,Porter,7
+U0140,Session IPA,2
+U0140,American IPA,6
+U0140,German Pilsner,5
+U0140,English Bitter,7
+U0141,Session IPA,3
+U0141,American Pale Ale,59
+U0141,American IPA,9
+U0141,Double IPA,43
+U0142,Imperial Stout,14
+U0142,Porter,22
+U0142,American Pale Ale,7
+U0142,Double IPA,9
+U0142,ESB,20
+U0142,American IPA,1
+U0143,English Pale Ale,33
+U0143,Saison,6
+U0144,Belgian Tripel,2
+U0144,Witbier,54
+U0144,Saison,27
+U0144,Belgian Dubbel,10
+U0144,Double IPA,4
+U0145,Saison,4
+U0145,Double IPA,10
+U0145,Belgian Tripel,3
+U0145,Session IPA,28
+U0145,American IPA,6
+U0146,Baltic Porter,30
+U0146,Imperial Stout,13
+U0147,English Bitter,2
+U0147,Mild,2
+U0147,English Pale Ale,1
+U0148,American IPA,23
+U0148,Oatmeal Stout,2
+U0149,Double IPA,50
+U0149,Witbier,9
+U0150,Belgian Dubbel,72
+U0150,American Pale Ale,1
+U0151,Double IPA,20
+U0151,American IPA,11
+U0151,Oatmeal Stout,106
+U0151,Czech Pilsner,12
+U0151,Mild,3
+U0151,ESB,24
+U0151,American Pale Ale,2
+U0152,German Pilsner,25
+U0152,Helles,98
+U0152,Saison,4
+U0152,Czech Pilsner,1
+U0153,Session IPA,26
+U0153,Imperial Stout,3
+U0153,Helles,4
+U0153,American Pale Ale,17
+U0153,Baltic Porter,8
+U0153,ESB,42
+U0154,Czech Pilsner,1
+U0154,Oatmeal Stout,5
+U0154,German Pilsner,1
+U0154,Helles,1
+U0154,Baltic Porter,1
+U0154,Schwarzbier,2
+U0155,German Pilsner,2
+U0155,Oatmeal Stout,16
+U0155,English Bitter,7
+U0155,Helles,1
+U0156,Schwarzbier,1
+U0156,ESB,1
+U0156,English Bitter,1
+U0156,English Pale Ale,2
+U0156,Baltic Porter,1
+U0157,American IPA,3
+U0157,ESB,5
+U0157,English Pale Ale,2
+U0157,American Pale Ale,9
+U0157,Schwarzbier,7
+U0158,Schwarzbier,15
+U0158,Porter,7
+U0158,Saison,6
+U0158,Imperial Stout,1
+U0159,English Bitter,5
+U0159,ESB,6
+U0160,Belgian Dubbel,2
+U0160,ESB,6
+U0160,Belgian Tripel,31
+U0161,Double IPA,137
+U0161,Belgian Tripel,6
+U0161,American Pale Ale,74
+U0162,Saison,5
+U0162,Belgian Tripel,29
+U0163,Session IPA,2
+U0163,American IPA,9
+U0163,Imperial Stout,11
+U0164,Belgian Tripel,13
+U0164,Witbier,1
+U0164,Belgian Dubbel,9
+U0165,Belgian Dubbel,1
+U0165,Witbier,7
+U0165,Saison,2
+U0165,Belgian Tripel,1
+U0165,Imperial Stout,1
+U0166,American Pale Ale,1
+U0166,Porter,6
+U0167,Belgian Dubbel,6
+U0167,Saison,4
+U0167,Czech Pilsner,4
+U0167,American IPA,1
+U0167,Belgian Tripel,1
+U0168,American IPA,4
+U0168,Session IPA,1
+U0168,Double IPA,1
+U0168,American Pale Ale,1
+U0168,Oatmeal Stout,1
+U0169,Belgian Dubbel,6
+U0169,Porter,1
+U0170,Imperial Stout,2
+U0170,Baltic Porter,6
+U0170,Porter,3
+U0170,Oatmeal Stout,7
+U0170,ESB,13
+U0171,German Pilsner,1
+U0171,Belgian Tripel,2
+U0171,English Pale Ale,2
+U0171,Saison,1
+U0172,Belgian Dubbel,9
+U0172,Imperial Stout,20
+U0172,Oatmeal Stout,3
+U0173,Saison,6
+U0173,English Bitter,2
+U0173,Double IPA,8
+U0174,Belgian Dubbel,15
+U0174,Witbier,1
+U0174,Saison,9
+U0174,Baltic Porter,1
+U0174,Belgian Tripel,7
+U0175,Belgian Tripel,1
+U0175,Saison,2
+U0175,Belgian Dubbel,1
+U0175,Witbier,2
+U0176,Oatmeal Stout,27
+U0176,Porter,24
+U0176,Imperial Stout,9
+U0177,American IPA,1
+U0177,Czech Pilsner,1
+U0177,Double IPA,12
+U0177,Oatmeal Stout,1
+U0178,Mild,13
+U0178,English Bitter,5
+U0179,Session IPA,18
+U0179,American Pale Ale,12
+U0179,Saison,1
+U0179,American IPA,9
+U0180,Witbier,4
+U0180,Belgian Dubbel,1
+U0181,English Bitter,2
+U0181,ESB,9
+U0181,Porter,17
+U0181,Mild,26
+U0182,American Pale Ale,2
+U0182,Session IPA,5
+U0182,Double IPA,9
+U0182,American IPA,13
+U0182,Porter,1
+U0183,Oatmeal Stout,15
+U0183,Witbier,6
+U0183,American Pale Ale,11
+U0183,Belgian Dubbel,14
+U0184,English Bitter,5
+U0184,Imperial Stout,5
+U0185,Baltic Porter,9
+U0185,Oatmeal Stout,60
+U0186,Czech Pilsner,4
+U0186,Porter,3
+U0186,Imperial Stout,4
+U0186,Belgian Dubbel,1
+U0186,Baltic Porter,9
+U0186,Oatmeal Stout,4
+U0186,Session IPA,1
+U0187,Schwarzbier,5
+U0187,English Pale Ale,9
+U0187,Saison,21
+U0187,Witbier,5
+U0187,Belgian Tripel,27
+U0187,Belgian Dubbel,24
+U0187,American Pale Ale,36
+U0188,Helles,7
+U0188,Porter,11
+U0188,English Bitter,6
+U0189,Witbier,19
+U0189,Belgian Tripel,10
+U0189,Belgian Dubbel,5
+U0189,Saison,16
+U0189,Imperial Stout,23
+U0190,Double IPA,1
+U0190,American IPA,2
+U0190,Session IPA,3
+U0191,Double IPA,1
+U0191,American Pale Ale,19
+U0191,German Pilsner,9
+U0192,Imperial Stout,7
+U0192,Porter,5
+U0192,American IPA,4
+U0192,Oatmeal Stout,37
+U0193,Belgian Tripel,73
+U0193,Witbier,48
+U0193,Belgian Dubbel,43
+U0194,German Pilsner,30
+U0194,ESB,34
+U0195,Session IPA,37
+U0195,Porter,51
+U0196,German Pilsner,37
+U0196,American IPA,1
+U0196,Czech Pilsner,42
+U0196,Helles,30
+U0196,Schwarzbier,6
+U0197,English Bitter,1
+U0197,Witbier,1
+U0197,Double IPA,1
+U0197,Session IPA,4
+U0198,ESB,6
+U0198,English Pale Ale,36
+U0198,English Bitter,6
+U0199,English Bitter,9
+U0199,Witbier,22
+U0199,ESB,12
+U0199,English Pale Ale,13
+U0199,Mild,6
+U0199,Helles,11
+U0200,Oatmeal Stout,1
+U0200,English Pale Ale,2
+U0200,Porter,2
+U0200,Imperial Stout,1
+U0201,Czech Pilsner,15
+U0201,Session IPA,4
+U0201,English Pale Ale,41
+U0201,Porter,20
+U0202,German Pilsner,1
+U0202,Czech Pilsner,20
+U0202,Helles,4
+U0202,Schwarzbier,5
+U0202,American Pale Ale,2
+U0203,Session IPA,30
+U0203,Double IPA,14
+U0203,American IPA,6
+U0204,American IPA,15
+U0204,Porter,1
+U0204,Double IPA,4
+U0204,American Pale Ale,2
+U0204,Session IPA,2
+U0204,Oatmeal Stout,1
+U0205,Mild,20
+U0205,American IPA,3
+U0205,Double IPA,19
+U0206,Double IPA,1
+U0206,American IPA,2
+U0206,American Pale Ale,1
+U0206,Session IPA,1
+U0207,Session IPA,5
+U0207,American IPA,1
+U0207,Double IPA,1
+U0208,Czech Pilsner,5
+U0208,Belgian Tripel,12
+U0208,Helles,39
+U0208,German Pilsner,5
+U0208,Schwarzbier,3
+U0209,Belgian Tripel,1
+U0209,Saison,1
+U0209,English Pale Ale,5
+U0210,Oatmeal Stout,49
+U0210,Baltic Porter,34
+U0210,Porter,47
+U0211,Imperial Stout,2
+U0211,American Pale Ale,4
+U0211,Porter,1
+U0211,Oatmeal Stout,1
+U0211,Baltic Porter,1
+U0211,Schwarzbier,2
+U0212,American IPA,8
+U0212,Baltic Porter,19
+U0212,Porter,1
+U0213,Saison,31
+U0213,English Pale Ale,21
+U0213,Belgian Dubbel,63
+U0214,Imperial Stout,22
+U0214,Baltic Porter,1
+U0214,Porter,7
+U0215,ESB,9
+U0215,American Pale Ale,8
+U0216,English Pale Ale,2
+U0216,English Bitter,3
+U0217,Baltic Porter,1
+U0217,Saison,8
+U0217,Porter,5
+U0217,Imperial Stout,13
+U0217,Oatmeal Stout,2
+U0217,English Bitter,5
+U0217,German Pilsner,3
+U0218,Belgian Dubbel,41
+U0218,Saison,34
+U0218,Witbier,4
+U0219,Session IPA,26
+U0219,Witbier,1
+U0219,Baltic Porter,4
+U0219,Imperial Stout,17
+U0219,Porter,24
+U0220,Porter,21
+U0220,Belgian Dubbel,52
+U0220,Belgian Tripel,29
+U0220,Witbier,3
+U0221,Baltic Porter,2
+U0221,Saison,1
+U0221,Oatmeal Stout,49
+U0222,American Pale Ale,17
+U0222,Double IPA,7
+U0222,Saison,4
+U0222,American IPA,7
+U0223,Mild,2
+U0223,English Bitter,8
+U0223,ESB,4
+U0223,Witbier,1
+U0224,Saison,1
+U0224,Witbier,1
+U0224,Belgian Dubbel,3
+U0224,American Pale Ale,1
+U0225,Porter,31
+U0225,Imperial Stout,45
+U0225,Oatmeal Stout,24
+U0226,English Pale Ale,1
+U0226,English Bitter,2
+U0226,ESB,2
+U0226,Mild,2
+U0227,Porter,7
+U0227,American Pale Ale,5
+U0227,Double IPA,17
+U0227,Mild,19
+U0228,American Pale Ale,64
+U0228,Belgian Tripel,22
+U0229,Porter,10
+U0229,Witbier,3
+U0229,Imperial Stout,3
+U0229,German Pilsner,13
+U0229,Oatmeal Stout,1
+U0229,Baltic Porter,15
+U0230,American Pale Ale,1
+U0230,German Pilsner,1
+U0230,Double IPA,19
+U0231,Imperial Stout,1
+U0231,American IPA,27
+U0232,Session IPA,2
+U0232,American IPA,1
+U0232,Belgian Tripel,4
+U0232,Belgian Dubbel,1
+U0232,ESB,2
+U0233,American Pale Ale,1
+U0233,Belgian Dubbel,5
+U0233,Double IPA,12
+U0233,German Pilsner,1
+U0233,American IPA,5
+U0233,Session IPA,1
+U0234,German Pilsner,2
+U0234,English Pale Ale,4
+U0235,American Pale Ale,2
+U0235,Double IPA,14
+U0236,Czech Pilsner,28
+U0236,Helles,26
+U0236,Schwarzbier,9
+U0236,ESB,13
+U0236,German Pilsner,3
+U0236,Witbier,34
+U0237,Oatmeal Stout,3
+U0237,Imperial Stout,1
+U0237,Porter,1
+U0237,Baltic Porter,1
+U0238,English Bitter,4
+U0238,Session IPA,8
+U0238,Schwarzbier,9
+U0238,Czech Pilsner,1
+U0238,German Pilsner,20
+U0239,English Bitter,1
+U0239,ESB,16
+U0240,English Bitter,12
+U0240,English Pale Ale,5
+U0240,Double IPA,45
+U0240,ESB,38
+U0240,Mild,13
+U0240,Session IPA,7
+U0241,Double IPA,4
+U0241,Mild,7
+U0241,Baltic Porter,1
+U0242,Belgian Dubbel,1
+U0242,Witbier,4
+U0243,American Pale Ale,1
+U0243,Session IPA,12
+U0243,American IPA,32
+U0244,Czech Pilsner,1
+U0244,American IPA,17
+U0245,English Pale Ale,15
+U0245,ESB,14
+U0246,Imperial Stout,1
+U0246,Porter,1
+U0246,Oatmeal Stout,4
+U0247,Belgian Dubbel,25
+U0247,Belgian Tripel,26
+U0247,American IPA,35
+U0247,Oatmeal Stout,16
+U0248,Imperial Stout,3
+U0248,Oatmeal Stout,52
+U0248,Baltic Porter,7
+U0249,English Bitter,10
+U0249,ESB,4
+U0249,Mild,33
+U0249,English Pale Ale,13
+U0249,Belgian Dubbel,4
+U0250,Witbier,3
+U0250,Saison,1
+U0250,Belgian Dubbel,1
+U0250,Belgian Tripel,1
+U0251,American IPA,6
+U0251,Double IPA,8
+U0251,American Pale Ale,1
+U0252,Session IPA,16
+U0252,American Pale Ale,10
+U0252,Porter,5
+U0252,Double IPA,3
+U0253,Saison,6
+U0253,Belgian Tripel,15
+U0253,Belgian Dubbel,5
+U0253,Witbier,31
+U0254,Witbier,6
+U0254,Mild,9
+U0254,ESB,15
+U0254,English Pale Ale,1
+U0255,Baltic Porter,1
+U0255,Imperial Stout,14
+U0255,Oatmeal Stout,1
+U0256,Witbier,4
+U0256,Imperial Stout,4
+U0256,Schwarzbier,19
+U0256,English Bitter,4
+U0256,Porter,9
+U0256,Belgian Dubbel,25
+U0257,Mild,2
+U0257,Oatmeal Stout,4
+U0257,American IPA,18
+U0257,Double IPA,1
+U0257,American Pale Ale,9
+U0258,American IPA,2
+U0258,German Pilsner,6
+U0258,Session IPA,1
+U0259,American Pale Ale,26
+U0259,Belgian Tripel,39
+U0259,Witbier,25
+U0260,Imperial Stout,1
+U0260,Oatmeal Stout,2
+U0260,American IPA,5
+U0260,Session IPA,1
+U0261,Imperial Stout,17
+U0261,Baltic Porter,18
+U0261,Porter,1
+U0261,American Pale Ale,1
+U0262,Mild,6
+U0262,American Pale Ale,5
+U0262,Session IPA,7
+U0263,Imperial Stout,3
+U0263,English Pale Ale,2
+U0264,Czech Pilsner,1
+U0264,German Pilsner,1
+U0264,American IPA,1
+U0264,Double IPA,1
+U0264,Helles,2
+U0265,Session IPA,1
+U0265,Double IPA,3
+U0265,American IPA,3
+U0265,American Pale Ale,8
+U0265,Mild,3
+U0266,Witbier,1
+U0266,American Pale Ale,4
+U0266,Saison,1
+U0267,ESB,1
+U0267,Mild,38
+U0267,Oatmeal Stout,22
+U0268,Belgian Dubbel,1
+U0268,Czech Pilsner,3
+U0268,Belgian Tripel,1
+U0268,Porter,4
+U0268,Saison,1
+U0268,Double IPA,1
+U0268,Witbier,1
+U0269,Helles,5
+U0269,American Pale Ale,1
+U0269,Session IPA,1
+U0269,Double IPA,1
+U0269,American IPA,2
+U0270,Double IPA,5
+U0270,Belgian Tripel,11
+U0270,Session IPA,1
+U0270,American IPA,18
+U0271,Double IPA,8
+U0271,Session IPA,8
+U0271,English Pale Ale,1
+U0271,Imperial Stout,19
+U0271,ESB,10
+U0272,American Pale Ale,4
+U0272,Mild,1
+U0272,Double IPA,1
+U0272,American IPA,1
+U0273,American IPA,1
+U0273,Saison,3
+U0273,Double IPA,1
+U0273,German Pilsner,1
+U0274,Belgian Dubbel,1
+U0274,Saison,4
+U0275,Belgian Tripel,4
+U0275,Witbier,22
+U0275,Saison,10
+U0275,Belgian Dubbel,12
+U0276,American IPA,48
+U0276,Porter,74
+U0276,Oatmeal Stout,8
+U0276,Imperial Stout,4
+U0277,American Pale Ale,10
+U0277,Belgian Dubbel,26
+U0277,Saison,15
+U0277,Belgian Tripel,2
+U0278,English Pale Ale,1
+U0278,Belgian Tripel,4
+U0279,German Pilsner,13
+U0279,Czech Pilsner,21
+U0279,Helles,32
+U0279,Schwarzbier,1
+U0280,Porter,3
+U0280,Double IPA,23
+U0280,German Pilsner,1
+U0280,American IPA,28
+U0281,Oatmeal Stout,1
+U0281,Porter,1
+U0281,Imperial Stout,4
+U0282,Czech Pilsner,3
+U0282,American Pale Ale,1
+U0282,Belgian Tripel,1
+U0282,Witbier,4
+U0282,English Pale Ale,20
+U0282,Helles,7
+U0283,American IPA,5
+U0283,Oatmeal Stout,6
+U0284,American Pale Ale,23
+U0284,ESB,4
+U0285,Belgian Tripel,3
+U0285,Saison,2
+U0285,Belgian Dubbel,13
+U0285,Witbier,9
+U0285,Imperial Stout,13
+U0286,English Bitter,8
+U0286,ESB,1
+U0286,English Pale Ale,11
+U0287,American Pale Ale,20
+U0287,German Pilsner,9
+U0287,Double IPA,2
+U0287,Session IPA,7
+U0287,Mild,39
+U0287,Witbier,16
+U0288,American IPA,1
+U0288,Belgian Dubbel,1
+U0288,Double IPA,1
+U0288,Imperial Stout,2
+U0289,Belgian Tripel,25
+U0289,American IPA,66
+U0289,Saison,40
+U0289,Witbier,5
+U0290,Double IPA,2
+U0290,American Pale Ale,2
+U0290,American IPA,7
+U0291,Double IPA,8
+U0291,American Pale Ale,18
+U0291,ESB,2
+U0291,Session IPA,19
+U0292,Baltic Porter,3
+U0292,Saison,2
+U0292,Session IPA,1
+U0292,Oatmeal Stout,1
+U0292,Mild,1
+U0292,German Pilsner,2
+U0293,Double IPA,1
+U0293,Saison,2
+U0293,American IPA,1
+U0293,Session IPA,1
+U0294,Belgian Tripel,12
+U0294,Belgian Dubbel,4
+U0295,ESB,7
+U0295,Imperial Stout,14
+U0295,Porter,1
+U0295,Witbier,24
+U0296,Imperial Stout,2
+U0296,Oatmeal Stout,2
+U0296,Porter,4
+U0297,Witbier,5
+U0297,Belgian Tripel,3
+U0298,English Bitter,4
+U0298,Porter,1
+U0299,Oatmeal Stout,47
+U0299,Witbier,2
+U0300,Double IPA,24
+U0300,American IPA,14
+U0300,American Pale Ale,1
+U0300,Session IPA,12
+U0301,Witbier,11
+U0301,Belgian Tripel,13
+U0301,Baltic Porter,1
+U0302,German Pilsner,2
+U0302,Schwarzbier,10
+U0303,Belgian Dubbel,1
+U0303,Schwarzbier,1
+U0303,American IPA,4
+U0303,American Pale Ale,1
+U0304,American IPA,12
+U0304,Mild,3
+U0304,English Bitter,9
+U0304,English Pale Ale,3
+U0304,ESB,3
+U0304,Helles,1
+U0305,Double IPA,1
+U0305,American Pale Ale,21
+U0305,Porter,39
+U0305,Session IPA,20
+U0306,American IPA,18
+U0306,Mild,8
+U0307,Witbier,2
+U0307,Belgian Dubbel,21
+U0307,Saison,11
+U0307,Belgian Tripel,10
+U0307,Helles,23
+U0308,Saison,1
+U0308,Czech Pilsner,5
+U0309,Witbier,12
+U0309,Belgian Dubbel,11
+U0309,Oatmeal Stout,8
+U0309,Belgian Tripel,7
+U0310,American IPA,9
+U0310,English Bitter,1
+U0311,Saison,32
+U0311,Double IPA,33
+U0312,Czech Pilsner,4
+U0312,Saison,20
+U0312,American IPA,11
+U0313,ESB,4
+U0313,English Pale Ale,15
+U0313,English Bitter,13
+U0313,Saison,29
+U0314,English Pale Ale,1
+U0314,American Pale Ale,1
+U0314,Schwarzbier,14
+U0315,Imperial Stout,14
+U0315,English Bitter,1
+U0316,Witbier,20
+U0316,Belgian Dubbel,4
+U0316,Saison,1
+U0316,Belgian Tripel,9
+U0317,Helles,17
+U0317,Mild,16
+U0317,Czech Pilsner,40
+U0317,English Pale Ale,31
+U0318,Imperial Stout,2
+U0318,Double IPA,7
+U0318,Oatmeal Stout,4
+U0319,ESB,36
+U0319,English Bitter,42
+U0319,American Pale Ale,43
+U0319,English Pale Ale,64
+U0320,Belgian Tripel,9
+U0320,Schwarzbier,40
+U0321,German Pilsner,19
+U0321,Czech Pilsner,8
+U0321,Belgian Tripel,2
+U0321,Helles,6
+U0321,English Bitter,5
+U0321,Schwarzbier,12
+U0322,American IPA,1
+U0322,American Pale Ale,2
+U0322,Session IPA,2
+U0322,Double IPA,1
+U0323,English Bitter,2
+U0323,English Pale Ale,7
+U0323,ESB,4
+U0323,Saison,15
+U0324,Imperial Stout,1
+U0324,Session IPA,2
+U0324,American IPA,1
+U0324,ESB,1
+U0325,Belgian Dubbel,1
+U0325,Belgian Tripel,1
+U0325,Double IPA,1
+U0325,Saison,1
+U0325,English Pale Ale,1
+U0325,Witbier,1
+U0326,Imperial Stout,181
+U0326,Porter,25
+U0326,Baltic Porter,37
+U0326,Oatmeal Stout,22
+U0326,Helles,64
+U0327,English Pale Ale,4
+U0327,Mild,1
+U0327,ESB,1
+U0328,Belgian Tripel,1
+U0328,Saison,32
+U0328,Witbier,2
+U0329,English Pale Ale,14
+U0329,Session IPA,40
+U0330,Double IPA,9
+U0330,American Pale Ale,8
+U0330,Session IPA,2
+U0330,English Bitter,11
+U0330,American IPA,2
+U0331,Oatmeal Stout,5
+U0331,Porter,2
+U0331,Czech Pilsner,4
+U0332,Imperial Stout,5
+U0332,Oatmeal Stout,1
+U0333,English Pale Ale,1
+U0333,English Bitter,28
+U0333,ESB,1
+U0334,Session IPA,3
+U0334,Double IPA,8
+U0334,American IPA,4
+U0334,American Pale Ale,18
+U0335,Double IPA,8
+U0335,Session IPA,1
+U0335,American Pale Ale,9
+U0336,American Pale Ale,12
+U0336,German Pilsner,3
+U0336,American IPA,44
+U0336,Saison,50
+U0336,Session IPA,36
+U0336,Double IPA,87
+U0337,Belgian Tripel,18
+U0337,Oatmeal Stout,7
+U0337,Porter,43
+U0338,English Pale Ale,5
+U0338,Mild,21
+U0338,English Bitter,15
+U0338,ESB,16
+U0338,Imperial Stout,15
+U0338,American IPA,5
+U0339,Belgian Dubbel,15
+U0339,Schwarzbier,2
+U0339,Belgian Tripel,13
+U0339,Saison,8
+U0339,Witbier,7
+U0340,American Pale Ale,13
+U0340,Double IPA,32
+U0340,Session IPA,11
+U0340,Porter,15
+U0340,ESB,14
+U0340,American IPA,1
+U0341,English Pale Ale,1
+U0341,ESB,4
+U0341,English Bitter,1
+U0342,German Pilsner,2
+U0342,Helles,3
+U0342,Czech Pilsner,2
+U0342,English Pale Ale,10
+U0343,Saison,5
+U0343,Porter,1
+U0344,Belgian Dubbel,2
+U0344,American IPA,1
+U0344,Belgian Tripel,2
+U0344,Witbier,1
+U0345,ESB,10
+U0345,English Pale Ale,4
+U0345,English Bitter,1
+U0345,Belgian Tripel,6
+U0345,Mild,9
+U0346,American Pale Ale,21
+U0346,American IPA,16
+U0347,Saison,20
+U0347,Belgian Dubbel,10
+U0347,Witbier,3
+U0348,Belgian Dubbel,12
+U0348,Belgian Tripel,21
+U0348,Saison,9
+U0348,English Bitter,16
+U0348,Baltic Porter,7
+U0349,ESB,10
+U0349,English Pale Ale,13
+U0350,German Pilsner,1
+U0350,Czech Pilsner,5
+U0351,Oatmeal Stout,80
+U0351,Baltic Porter,8
+U0351,Imperial Stout,6
+U0351,Porter,17
+U0351,ESB,6
+U0352,Mild,7
+U0352,English Bitter,5
+U0352,Saison,11
+U0353,ESB,23
+U0353,Imperial Stout,11
+U0353,Oatmeal Stout,1
+U0353,German Pilsner,5
+U0354,Schwarzbier,3
+U0354,ESB,3
+U0354,German Pilsner,1
+U0354,Oatmeal Stout,3
+U0354,Mild,1
+U0355,Mild,21
+U0355,American Pale Ale,24
+U0355,English Bitter,23
+U0356,Double IPA,3
+U0356,Porter,24
+U0356,Baltic Porter,2
+U0356,Imperial Stout,6
+U0357,American IPA,18
+U0357,American Pale Ale,33
+U0357,Session IPA,8
+U0357,Double IPA,27
+U0357,Saison,3
+U0358,American IPA,3
+U0358,ESB,2
+U0358,Baltic Porter,4
+U0358,American Pale Ale,5
+U0359,Schwarzbier,3
+U0359,Saison,1
+U0359,Oatmeal Stout,4
+U0360,Saison,1
+U0360,Schwarzbier,4
+U0361,American IPA,2
+U0361,Imperial Stout,2
+U0361,Double IPA,1
+U0362,Baltic Porter,7
+U0362,Oatmeal Stout,7
+U0362,Imperial Stout,6
+U0362,Porter,1
+U0363,American IPA,2
+U0363,Session IPA,12
+U0363,American Pale Ale,6
+U0363,Double IPA,7
+U0363,German Pilsner,1
+U0364,American IPA,13
+U0364,Session IPA,9
+U0364,Double IPA,11
+U0365,Imperial Stout,4
+U0365,Double IPA,1
+U0366,Saison,1
+U0366,Czech Pilsner,1
+U0366,Witbier,1
+U0366,Helles,1
+U0366,Belgian Dubbel,2
+U0367,Saison,2
+U0367,Mild,12
+U0367,Belgian Dubbel,1
+U0367,English Bitter,9
+U0367,Witbier,18
+U0367,Session IPA,57
+U0367,Baltic Porter,44
+U0368,American IPA,1
+U0368,American Pale Ale,1
+U0368,Session IPA,1
+U0368,Saison,2
+U0368,English Pale Ale,1
+U0369,American Pale Ale,7
+U0369,English Bitter,24
+U0369,English Pale Ale,7
+U0369,Mild,6
+U0369,ESB,2
+U0370,American IPA,1
+U0370,Double IPA,6
+U0370,Session IPA,7
+U0370,American Pale Ale,11
+U0370,German Pilsner,10
+U0371,American IPA,15
+U0371,English Bitter,34
+U0371,ESB,1
+U0371,English Pale Ale,4
+U0371,Mild,24
+U0371,American Pale Ale,125
+U0372,American IPA,18
+U0372,Czech Pilsner,20
+U0372,Witbier,19
+U0372,Belgian Tripel,21
+U0373,Helles,4
+U0373,Saison,8
+U0373,Imperial Stout,22
+U0374,American Pale Ale,1
+U0374,American IPA,1
+U0374,ESB,1
+U0374,Double IPA,2
+U0374,Session IPA,1
+U0375,English Pale Ale,53
+U0375,Mild,9
+U0375,English Bitter,16
+U0375,ESB,63
+U0376,American Pale Ale,31
+U0376,Double IPA,15
+U0377,Session IPA,3
+U0377,Double IPA,2
+U0378,Belgian Dubbel,13
+U0378,Baltic Porter,19
+U0379,Baltic Porter,23
+U0379,Imperial Stout,3
+U0380,Helles,5
+U0380,ESB,2
+U0380,Belgian Dubbel,3
+U0380,Schwarzbier,6
+U0381,American Pale Ale,1
+U0381,Imperial Stout,50
+U0381,English Bitter,2
+U0382,American Pale Ale,3
+U0382,Session IPA,4
+U0382,American IPA,12
+U0382,Double IPA,14
+U0383,ESB,55
+U0383,Mild,2
+U0384,American Pale Ale,9
+U0384,English Bitter,4
+U0384,English Pale Ale,13
+U0384,Mild,6
+U0384,ESB,19
+U0385,Czech Pilsner,91
+U0385,Helles,8
+U0386,American IPA,19
+U0386,Double IPA,6
+U0386,American Pale Ale,6
+U0387,Session IPA,4
+U0387,ESB,1
+U0388,Oatmeal Stout,28
+U0388,American Pale Ale,4
+U0388,American IPA,2
+U0388,Session IPA,6
+U0388,Double IPA,11
+U0389,Belgian Tripel,4
+U0389,Porter,5
+U0389,Belgian Dubbel,46
+U0389,Witbier,7
+U0390,Witbier,16
+U0390,Belgian Dubbel,14
+U0390,Belgian Tripel,4
+U0390,American Pale Ale,3
+U0390,Schwarzbier,4
+U0391,Session IPA,2
+U0391,American Pale Ale,2
+U0391,Baltic Porter,6
+U0391,ESB,16
+U0392,Helles,3
+U0392,Belgian Tripel,15
+U0392,Belgian Dubbel,9
+U0392,Saison,10
+U0392,Witbier,8
+U0393,ESB,6
+U0393,Oatmeal Stout,8
+U0393,Baltic Porter,1
+U0394,Imperial Stout,47
+U0394,Oatmeal Stout,5
+U0395,Oatmeal Stout,15
+U0395,Porter,12
+U0395,Session IPA,28
+U0396,German Pilsner,56
+U0396,ESB,3
+U0397,Baltic Porter,7
+U0397,Witbier,10
+U0397,Saison,1
+U0397,Belgian Tripel,6
+U0398,Porter,14
+U0398,Oatmeal Stout,4
+U0399,American IPA,8
+U0399,Session IPA,6
+U0399,American Pale Ale,11
+U0399,Imperial Stout,1
+U0399,Double IPA,7
+U0399,Witbier,5
+U0400,Czech Pilsner,10
+U0400,Schwarzbier,9
+U0400,Helles,26
+U0400,German Pilsner,28
+U0400,English Bitter,1
+U0401,Imperial Stout,58
+U0401,Porter,7
+U0401,Baltic Porter,19
+U0402,Witbier,7
+U0402,Belgian Tripel,11
+U0402,American Pale Ale,16
+U0403,English Bitter,10
+U0403,ESB,11
+U0403,American IPA,5
+U0403,Mild,2
+U0404,Belgian Dubbel,1
+U0404,Schwarzbier,2
+U0404,Helles,5
+U0404,Belgian Tripel,2
+U0404,Porter,1
+U0404,German Pilsner,3
+U0405,American IPA,1
+U0405,Imperial Stout,40
+U0405,Porter,2
+U0405,Oatmeal Stout,46
+U0405,Baltic Porter,49
+U0406,English Bitter,68
+U0406,English Pale Ale,5
+U0406,Session IPA,24
+U0406,ESB,40
+U0406,Mild,19
+U0406,American Pale Ale,7
+U0406,Imperial Stout,7
+U0407,Imperial Stout,7
+U0407,American IPA,36
+U0408,Mild,14
+U0408,Double IPA,24
+U0408,American IPA,1
+U0408,Session IPA,13
+U0408,American Pale Ale,59
+U0409,Double IPA,3
+U0409,American IPA,4
+U0409,Session IPA,1
+U0409,Witbier,6
+U0409,American Pale Ale,3
+U0410,Belgian Dubbel,20
+U0410,English Pale Ale,15
+U0410,Double IPA,27
+U0410,English Bitter,7
+U0411,Double IPA,22
+U0411,Belgian Dubbel,45
+U0411,Belgian Tripel,48
+U0411,Saison,5
+U0411,Czech Pilsner,121
+U0412,Double IPA,3
+U0412,Belgian Tripel,6
+U0412,Witbier,5
+U0413,Saison,25
+U0413,Belgian Tripel,7
+U0413,Belgian Dubbel,25
+U0413,Witbier,34
+U0414,American IPA,19
+U0414,Saison,3
+U0414,American Pale Ale,4
+U0415,Session IPA,32
+U0415,Double IPA,4
+U0415,Belgian Dubbel,15
+U0415,Schwarzbier,21
+U0416,ESB,12
+U0416,American Pale Ale,83
+U0416,Porter,8
+U0416,Session IPA,15
+U0417,Belgian Dubbel,7
+U0417,Witbier,17
+U0417,Saison,50
+U0418,Belgian Tripel,1
+U0418,Belgian Dubbel,4
+U0419,Baltic Porter,23
+U0419,English Pale Ale,16
+U0419,Czech Pilsner,31
+U0419,American IPA,27
+U0420,Session IPA,30
+U0420,American IPA,23
+U0420,ESB,16
+U0420,Baltic Porter,12
+U0421,English Pale Ale,2
+U0421,Belgian Dubbel,6
+U0422,Session IPA,1
+U0422,Oatmeal Stout,19
+U0422,Imperial Stout,2
+U0422,American IPA,11
+U0422,English Bitter,15
+U0423,Witbier,20
+U0423,English Pale Ale,5
+U0423,English Bitter,9
+U0424,American Pale Ale,2
+U0424,Belgian Tripel,1
+U0424,Session IPA,3
+U0425,German Pilsner,7
+U0425,Belgian Tripel,1
+U0425,Porter,1
+U0425,Czech Pilsner,2
+U0425,Helles,1
+U0426,ESB,1
+U0426,English Bitter,2
+U0426,Mild,1
+U0426,English Pale Ale,1
+U0426,Belgian Tripel,1
+U0426,Imperial Stout,1
+U0427,Witbier,5
+U0427,Czech Pilsner,3
+U0427,Saison,60
+U0427,Belgian Dubbel,21
+U0428,Witbier,30
+U0428,Saison,19
+U0428,Belgian Tripel,89
+U0428,Belgian Dubbel,4
+U0428,English Bitter,8
+U0429,Belgian Dubbel,1
+U0429,Witbier,17
+U0429,Saison,4
+U0429,Belgian Tripel,5
+U0430,English Bitter,37
+U0430,American IPA,1
+U0430,Double IPA,1
+U0430,Session IPA,14
+U0430,Porter,5
+U0431,Porter,25
+U0431,Oatmeal Stout,19
+U0431,Imperial Stout,5
+U0431,Baltic Porter,15
+U0431,English Pale Ale,15
+U0431,Witbier,12
+U0432,Double IPA,1
+U0432,American Pale Ale,5
+U0432,Session IPA,2
+U0432,American IPA,6
+U0432,Schwarzbier,16
+U0433,German Pilsner,6
+U0433,American Pale Ale,5
+U0433,Session IPA,1
+U0433,Imperial Stout,24
+U0434,Belgian Dubbel,7
+U0434,Witbier,3
+U0434,Saison,6
+U0434,Schwarzbier,5
+U0435,American Pale Ale,4
+U0435,Oatmeal Stout,4
+U0435,Double IPA,6
+U0436,Baltic Porter,5
+U0436,Double IPA,3
+U0437,American IPA,1
+U0437,Double IPA,27
+U0437,Session IPA,3
+U0438,Oatmeal Stout,1
+U0438,Saison,12
+U0439,Saison,18
+U0439,ESB,2
+U0439,Double IPA,56
+U0440,American IPA,4
+U0440,Session IPA,1
+U0441,American Pale Ale,6
+U0441,Czech Pilsner,25
+U0442,Saison,51
+U0442,Belgian Dubbel,26
+U0443,Imperial Stout,1
+U0443,Oatmeal Stout,2
+U0443,Porter,2
+U0444,Witbier,1
+U0444,Oatmeal Stout,3
+U0444,Belgian Tripel,1
+U0444,ESB,20
+U0445,Double IPA,2
+U0445,American Pale Ale,1
+U0445,American IPA,2
+U0446,English Bitter,14
+U0446,ESB,13
+U0447,Saison,16
+U0447,Double IPA,68
+U0447,Witbier,7
+U0448,Double IPA,3
+U0448,Saison,2
+U0448,Belgian Tripel,1
+U0448,Belgian Dubbel,1
+U0449,Helles,1
+U0449,Czech Pilsner,12
+U0450,Porter,4
+U0450,American Pale Ale,1
+U0450,Session IPA,1
+U0450,Double IPA,1
+U0451,English Bitter,17
+U0451,English Pale Ale,26
+U0451,ESB,26
+U0451,Mild,13
+U0451,Oatmeal Stout,34
+U0452,Witbier,1
+U0452,Belgian Tripel,8
+U0453,American IPA,19
+U0453,Session IPA,30
+U0453,Imperial Stout,27
+U0453,Double IPA,32
+U0453,American Pale Ale,7
+U0453,Saison,32
+U0454,German Pilsner,14
+U0454,Schwarzbier,12
+U0454,Helles,7
+U0455,Double IPA,1
+U0455,American Pale Ale,4
+U0455,Oatmeal Stout,1
+U0455,American IPA,5
+U0455,Session IPA,2
+U0456,ESB,1
+U0456,Double IPA,1
+U0456,American IPA,5
+U0456,American Pale Ale,18
+U0456,Session IPA,2
+U0457,Double IPA,3
+U0457,Czech Pilsner,1
+U0457,English Pale Ale,1
+U0457,English Bitter,1
+U0457,Oatmeal Stout,1
+U0458,ESB,8
+U0458,Double IPA,20
+U0458,Session IPA,6
+U0458,American Pale Ale,17
+U0458,American IPA,10
+U0458,Czech Pilsner,8
+U0459,Belgian Dubbel,2
+U0459,Baltic Porter,1
+U0459,American Pale Ale,3
+U0460,Belgian Tripel,32
+U0460,Imperial Stout,83
+U0460,Belgian Dubbel,50
+U0460,Porter,1
+U0461,English Pale Ale,3
+U0461,Double IPA,1
+U0461,American Pale Ale,2
+U0462,Oatmeal Stout,8
+U0462,American Pale Ale,46
+U0462,Imperial Stout,31
+U0463,English Bitter,10
+U0463,ESB,59
+U0463,English Pale Ale,32
+U0463,Mild,7
+U0463,Porter,1
+U0464,Witbier,6
+U0464,English Bitter,11
+U0464,Double IPA,1
+U0465,Saison,19
+U0465,Belgian Dubbel,1
+U0466,Session IPA,15
+U0466,Imperial Stout,1
+U0466,Double IPA,1
+U0466,Porter,1
+U0467,American IPA,8
+U0467,Session IPA,103
+U0467,Imperial Stout,16
+U0468,Double IPA,2
+U0468,Belgian Dubbel,1
+U0468,American IPA,3
+U0469,Witbier,28
+U0469,Session IPA,25
+U0470,Saison,6
+U0470,Witbier,2
+U0470,Belgian Tripel,1
+U0471,Oatmeal Stout,16
+U0471,Schwarzbier,153
+U0471,Belgian Tripel,17
+U0471,American Pale Ale,5
+U0471,Double IPA,18
+U0471,English Pale Ale,43
+U0471,Witbier,38
+U0472,Belgian Dubbel,46
+U0472,Schwarzbier,4
+U0473,Mild,2
+U0473,Saison,45
+U0473,Session IPA,23
+U0473,ESB,34
+U0474,Czech Pilsner,131
+U0474,German Pilsner,6
+U0474,Helles,11
+U0475,American Pale Ale,4
+U0475,Session IPA,1
+U0476,Baltic Porter,3
+U0476,Belgian Dubbel,11
+U0476,Porter,13
+U0476,Imperial Stout,3
+U0476,Oatmeal Stout,13
+U0477,Witbier,41
+U0477,Belgian Tripel,8
+U0477,Saison,6
+U0478,Belgian Dubbel,2
+U0478,Saison,1
+U0478,Helles,2
+U0478,ESB,1
+U0479,Czech Pilsner,31
+U0479,Helles,1
+U0479,German Pilsner,50
+U0479,Imperial Stout,47
+U0480,Mild,15
+U0480,Imperial Stout,17
+U0481,Witbier,4
+U0481,Belgian Dubbel,4
+U0482,American Pale Ale,11
+U0482,American IPA,142
+U0483,Belgian Tripel,3
+U0483,Witbier,2
+U0483,Belgian Dubbel,1
+U0483,American IPA,2
+U0483,Imperial Stout,1
+U0484,Imperial Stout,25
+U0484,Oatmeal Stout,7
+U0484,Porter,30
+U0484,Baltic Porter,10
+U0485,Porter,4
+U0485,Double IPA,5
+U0485,Oatmeal Stout,10
+U0486,American Pale Ale,3
+U0486,Double IPA,2
+U0487,Baltic Porter,11
+U0487,Porter,6
+U0488,Baltic Porter,1
+U0488,Oatmeal Stout,1
+U0488,Witbier,1
+U0488,Porter,2
+U0489,American IPA,25
+U0489,American Pale Ale,41
+U0490,Session IPA,4
+U0490,ESB,12
+U0491,Double IPA,27
+U0491,American Pale Ale,1
+U0491,American IPA,24
+U0491,English Pale Ale,1
+U0492,English Bitter,11
+U0492,Saison,2
+U0492,Mild,3
+U0492,English Pale Ale,14
+U0493,Baltic Porter,25
+U0493,English Bitter,23
+U0493,American Pale Ale,12
+U0493,Imperial Stout,2
+U0494,Saison,2
+U0494,Oatmeal Stout,15
+U0494,Imperial Stout,9
+U0495,ESB,1
+U0495,English Pale Ale,3
+U0495,English Bitter,1
+U0496,Saison,7
+U0496,Czech Pilsner,2
+U0497,American IPA,4
+U0497,ESB,1
+U0497,Mild,1
+U0498,American IPA,1
+U0498,Session IPA,1
+U0498,German Pilsner,1
+U0498,Imperial Stout,2
+U0499,Double IPA,45
+U0499,Session IPA,10
+U0499,American Pale Ale,28
+U0500,Mild,47
+U0500,Belgian Dubbel,50
+U0500,Session IPA,23
+U0500,Baltic Porter,13
+U0500,American Pale Ale,74
+U0501,ESB,28
+U0501,English Pale Ale,2
+U0502,American Pale Ale,13
+U0502,English Bitter,1
+U0502,ESB,26
+U0503,German Pilsner,1
+U0503,Czech Pilsner,1
+U0503,Saison,4
+U0503,Helles,1
+U0504,American Pale Ale,1
+U0504,Porter,12
+U0504,Baltic Porter,1
+U0504,Oatmeal Stout,9
+U0505,Witbier,8
+U0505,Helles,3
+U0506,American IPA,6
+U0506,Belgian Tripel,7
+U0507,Oatmeal Stout,7
+U0507,Porter,59
+U0507,Baltic Porter,38
+U0507,Witbier,2
+U0508,American Pale Ale,5
+U0508,Double IPA,3
+U0509,ESB,8
+U0509,English Bitter,4
+U0510,Belgian Dubbel,8
+U0510,Porter,1
+U0510,Baltic Porter,4
+U0510,Imperial Stout,3
+U0510,Oatmeal Stout,5
+U0511,Oatmeal Stout,5
+U0511,American IPA,33
+U0511,American Pale Ale,6
+U0511,Session IPA,45
+U0512,English Pale Ale,4
+U0512,English Bitter,1
+U0513,Belgian Tripel,9
+U0513,ESB,13
+U0514,English Pale Ale,3
+U0514,English Bitter,11
+U0514,ESB,13
+U0515,Witbier,23
+U0515,Saison,85
+U0515,German Pilsner,23
+U0515,Belgian Tripel,94
+U0515,Belgian Dubbel,8
+U0516,ESB,65
+U0516,American Pale Ale,1
+U0516,Imperial Stout,5
+U0516,Mild,7
+U0516,English Pale Ale,23
+U0517,English Pale Ale,10
+U0517,American IPA,2
+U0517,Belgian Dubbel,5
+U0517,Mild,6
+U0518,Mild,9
+U0518,ESB,23
+U0518,English Bitter,109
+U0518,Helles,28
+U0518,English Pale Ale,71
+U0518,Belgian Tripel,34
+U0519,Saison,12
+U0519,Belgian Dubbel,15
+U0519,Imperial Stout,1
+U0519,German Pilsner,4
+U0520,American Pale Ale,3
+U0520,ESB,8
+U0520,Double IPA,1
+U0520,Session IPA,1
+U0521,American IPA,36
+U0521,Belgian Tripel,5
+U0521,Imperial Stout,77
+U0522,German Pilsner,10
+U0522,Double IPA,17
+U0522,Helles,1
+U0522,Schwarzbier,5
+U0522,Czech Pilsner,24
+U0522,Belgian Dubbel,1
+U0523,English Bitter,4
+U0523,Mild,1
+U0524,Belgian Tripel,2
+U0524,Belgian Dubbel,1
+U0524,Witbier,1
+U0525,Porter,5
+U0525,Baltic Porter,6
+U0525,Imperial Stout,2
+U0525,Oatmeal Stout,9
+U0525,Saison,6
+U0525,ESB,3
+U0526,Helles,21
+U0526,Schwarzbier,34
+U0527,Saison,57
+U0527,Imperial Stout,22
+U0528,Witbier,56
+U0528,Belgian Tripel,1
+U0528,Saison,10
+U0528,Belgian Dubbel,2
+U0528,Double IPA,1
+U0528,English Bitter,15
+U0528,English Pale Ale,14
+U0529,English Pale Ale,4
+U0529,Mild,3
+U0529,English Bitter,14
+U0530,English Bitter,3
+U0530,English Pale Ale,1
+U0530,ESB,2
+U0530,Porter,3
+U0530,Mild,2
+U0530,Helles,5
+U0531,English Bitter,3
+U0531,ESB,3
+U0531,Mild,2
+U0532,Belgian Tripel,69
+U0532,English Pale Ale,13
+U0532,Imperial Stout,81
+U0532,Czech Pilsner,34
+U0533,Witbier,5
+U0533,Saison,31
+U0533,Belgian Tripel,12
+U0533,Belgian Dubbel,1
+U0533,ESB,24
+U0533,Helles,7
+U0533,Czech Pilsner,6
+U0534,German Pilsner,3
+U0534,Schwarzbier,56
+U0535,Czech Pilsner,2
+U0535,Saison,1
+U0535,Imperial Stout,2
+U0535,Schwarzbier,3
+U0536,English Pale Ale,1
+U0536,English Bitter,7
+U0536,Double IPA,11
+U0536,American IPA,31
+U0537,Saison,1
+U0537,ESB,1
+U0537,Czech Pilsner,1
+U0537,Witbier,1
+U0537,American IPA,2
+U0537,Belgian Tripel,1
+U0538,English Bitter,2
+U0538,ESB,2
+U0538,English Pale Ale,4
+U0538,Witbier,5
+U0539,Witbier,1
+U0539,Belgian Dubbel,1
+U0539,Saison,1
+U0539,American IPA,1
+U0539,Belgian Tripel,3
+U0540,Session IPA,23
+U0540,Saison,11
+U0540,English Bitter,5
+U0541,English Pale Ale,1
+U0541,English Bitter,2
+U0541,ESB,1
+U0541,Witbier,1
+U0541,Mild,1
+U0542,Oatmeal Stout,35
+U0542,American Pale Ale,8
+U0542,Baltic Porter,9
+U0543,Czech Pilsner,5
+U0543,German Pilsner,2
+U0544,Porter,8
+U0544,ESB,1
+U0544,American IPA,4
+U0544,Belgian Dubbel,2
+U0544,Witbier,2
+U0545,English Pale Ale,2
+U0545,Belgian Dubbel,2
+U0545,American Pale Ale,1
+U0545,American IPA,1
+U0546,English Bitter,5
+U0546,ESB,3
+U0547,Imperial Stout,14
+U0547,Session IPA,59
+U0547,Schwarzbier,1
+U0547,German Pilsner,14
+U0547,Witbier,4
+U0547,Belgian Tripel,13
+U0548,American IPA,22
+U0548,American Pale Ale,51
+U0549,American Pale Ale,2
+U0549,Baltic Porter,2
+U0549,Porter,4
+U0550,Porter,37
+U0550,Belgian Tripel,19
+U0550,Belgian Dubbel,20
+U0550,German Pilsner,2
+U0550,Witbier,17
+U0550,Saison,49
+U0551,Saison,41
+U0551,American Pale Ale,4
+U0552,American Pale Ale,34
+U0552,American IPA,10
+U0552,Double IPA,5
+U0552,Session IPA,4
+U0553,ESB,3
+U0553,American IPA,2
+U0554,ESB,14
+U0554,Session IPA,1
+U0554,Witbier,2
+U0554,Oatmeal Stout,10
+U0555,Belgian Dubbel,2
+U0555,Saison,3
+U0556,Belgian Tripel,18
+U0556,Baltic Porter,9
+U0557,Porter,16
+U0557,Imperial Stout,15
+U0558,Oatmeal Stout,4
+U0558,Double IPA,54
+U0559,Baltic Porter,20
+U0559,Oatmeal Stout,14
+U0559,Imperial Stout,6
+U0560,English Pale Ale,1
+U0560,English Bitter,1
+U0560,ESB,9
+U0560,Mild,1
+U0560,American Pale Ale,3
+U0560,Double IPA,1
+U0561,Porter,5
+U0561,Baltic Porter,35
+U0561,Czech Pilsner,11
+U0561,Imperial Stout,10
+U0562,Imperial Stout,14
+U0562,ESB,3
+U0563,English Bitter,4
+U0563,ESB,2
+U0563,Oatmeal Stout,19
+U0563,Double IPA,5
+U0564,German Pilsner,18
+U0564,Schwarzbier,1
+U0564,Helles,12
+U0564,American IPA,34
+U0564,Czech Pilsner,59
+U0565,American IPA,33
+U0565,Czech Pilsner,84
+U0565,Session IPA,27
+U0566,Oatmeal Stout,3
+U0566,Baltic Porter,17
+U0567,Double IPA,27
+U0567,Mild,6
+U0568,Mild,2
+U0568,American IPA,2
+U0568,Porter,1
+U0569,Imperial Stout,41
+U0569,Witbier,1
+U0570,Saison,13
+U0570,Witbier,4
+U0570,Belgian Dubbel,9
+U0571,Porter,9
+U0571,American Pale Ale,7
+U0571,Belgian Tripel,2
+U0571,Oatmeal Stout,7
+U0572,English Bitter,5
+U0572,ESB,3
+U0572,Oatmeal Stout,5
+U0573,Session IPA,8
+U0573,American Pale Ale,30
+U0573,American IPA,5
+U0573,Double IPA,13
+U0573,English Pale Ale,5
+U0574,Witbier,1
+U0574,Czech Pilsner,2
+U0574,Belgian Dubbel,2
+U0574,Belgian Tripel,1
+U0575,Witbier,1
+U0575,Belgian Dubbel,10
+U0576,English Bitter,10
+U0576,Belgian Dubbel,4
+U0576,Oatmeal Stout,11
+U0576,Belgian Tripel,1
+U0577,English Pale Ale,12
+U0577,Mild,1
+U0577,English Bitter,2
+U0578,ESB,16
+U0578,Double IPA,9
+U0579,Saison,1
+U0579,Belgian Tripel,3
+U0579,Belgian Dubbel,1
+U0580,Saison,49
+U0580,American Pale Ale,49
+U0581,ESB,22
+U0581,Mild,8
+U0581,English Pale Ale,15
+U0582,Oatmeal Stout,6
+U0582,Double IPA,1
+U0583,Session IPA,58
+U0583,American Pale Ale,28
+U0584,Saison,5
+U0584,German Pilsner,70
+U0585,Double IPA,5
+U0585,English Bitter,6
+U0585,Imperial Stout,2
+U0585,Session IPA,2
+U0585,American Pale Ale,3
+U0585,American IPA,5
+U0586,English Pale Ale,14
+U0586,ESB,12
+U0586,English Bitter,10
+U0586,German Pilsner,25
+U0586,Imperial Stout,22
+U0586,Saison,2
+U0587,American Pale Ale,13
+U0587,Baltic Porter,37
+U0588,German Pilsner,59
+U0588,Czech Pilsner,13
+U0589,Imperial Stout,22
+U0589,Baltic Porter,1
+U0589,Oatmeal Stout,4
+U0589,Czech Pilsner,29
+U0590,Imperial Stout,1
+U0590,English Pale Ale,7
+U0591,Double IPA,9
+U0591,English Pale Ale,4
+U0591,Session IPA,16
+U0591,Imperial Stout,26
+U0591,American IPA,14
+U0592,Helles,17
+U0592,German Pilsner,2
+U0592,Czech Pilsner,2
+U0593,Imperial Stout,2
+U0593,Double IPA,13
+U0593,Mild,5
+U0594,Imperial Stout,14
+U0594,Porter,24
+U0594,Mild,4
+U0594,Oatmeal Stout,5
+U0594,Schwarzbier,11
+U0595,Belgian Dubbel,59
+U0595,Witbier,14
+U0595,American Pale Ale,5
+U0596,Porter,2
+U0596,Baltic Porter,1
+U0596,Imperial Stout,3
+U0596,Oatmeal Stout,6
+U0597,American IPA,18
+U0597,Baltic Porter,5
+U0597,Session IPA,10
+U0598,German Pilsner,17
+U0598,Belgian Dubbel,28
+U0599,English Bitter,3
+U0599,Imperial Stout,8
+U0599,Oatmeal Stout,4
+U0599,Porter,33
+U0600,Imperial Stout,1
+U0600,American Pale Ale,1
+U0600,Porter,2
+U0600,Baltic Porter,2
+U0600,ESB,1
+U0601,Double IPA,14
+U0601,American IPA,1
+U0601,Session IPA,8
+U0601,Schwarzbier,4
+U0601,American Pale Ale,2
+U0602,Imperial Stout,1
+U0602,Porter,15
+U0602,Oatmeal Stout,3
+U0602,Session IPA,4
+U0602,Baltic Porter,8
+U0602,English Pale Ale,7
+U0602,American IPA,15
+U0603,Saison,2
+U0603,Double IPA,26
+U0603,Belgian Dubbel,11
+U0604,German Pilsner,6
+U0604,Czech Pilsner,8
+U0604,Helles,3
+U0604,Belgian Dubbel,4
+U0604,Schwarzbier,1
+U0604,Imperial Stout,3
+U0605,Double IPA,1
+U0605,ESB,2
+U0605,American IPA,2
+U0605,American Pale Ale,29
+U0606,German Pilsner,10
+U0606,Schwarzbier,3
+U0607,Saison,2
+U0607,German Pilsner,2
+U0607,Helles,3
+U0608,American IPA,10
+U0608,ESB,27
+U0608,Witbier,6
+U0609,English Bitter,9
+U0609,ESB,10
+U0610,American Pale Ale,1
+U0610,American IPA,37
+U0611,Belgian Dubbel,3
+U0611,American IPA,18
+U0611,American Pale Ale,5
+U0612,Imperial Stout,2
+U0612,Helles,1
+U0612,ESB,6
+U0612,Schwarzbier,16
+U0613,Helles,1
+U0613,Belgian Tripel,19
+U0613,Witbier,47
+U0613,Belgian Dubbel,24
+U0614,English Bitter,3
+U0614,Helles,17
+U0614,Baltic Porter,16
+U0615,Imperial Stout,1
+U0615,Double IPA,2
+U0615,Session IPA,3
+U0615,Baltic Porter,2
+U0616,American IPA,6
+U0616,American Pale Ale,26
+U0617,Belgian Dubbel,4
+U0617,Witbier,2
+U0618,Saison,3
+U0618,American Pale Ale,2
+U0619,American Pale Ale,6
+U0619,American IPA,4
+U0619,Double IPA,3
+U0619,Session IPA,1
+U0619,ESB,21
+U0620,Belgian Tripel,1
+U0620,Witbier,2
+U0620,Belgian Dubbel,2
+U0620,Czech Pilsner,4
+U0620,American Pale Ale,2
+U0620,Saison,5
+U0620,Imperial Stout,1
+U0621,Czech Pilsner,1
+U0621,Belgian Tripel,2
+U0621,ESB,1
+U0621,American IPA,3
+U0622,Belgian Tripel,1
+U0622,Saison,1
+U0622,Witbier,3
+U0622,Belgian Dubbel,3
+U0622,ESB,2
+U0623,Belgian Dubbel,5
+U0623,Witbier,13
+U0623,English Bitter,3
+U0623,Saison,10
+U0623,Helles,14
+U0624,Saison,1
+U0624,Double IPA,1
+U0624,Oatmeal Stout,4
+U0625,Double IPA,1
+U0625,American Pale Ale,1
+U0625,Session IPA,1
+U0625,American IPA,2
+U0625,Belgian Tripel,1
+U0625,English Bitter,1
+U0626,Witbier,65
+U0626,Imperial Stout,9
+U0626,English Bitter,25
+U0626,ESB,2
+U0626,Double IPA,6
+U0627,Session IPA,5
+U0627,English Pale Ale,1
+U0627,American Pale Ale,2
+U0627,Schwarzbier,1
+U0627,Baltic Porter,4
+U0628,Imperial Stout,1
+U0628,Oatmeal Stout,1
+U0628,Witbier,3
+U0629,Double IPA,17
+U0629,American Pale Ale,45
+U0629,Session IPA,17
+U0630,Session IPA,1
+U0630,American IPA,1
+U0630,Double IPA,1
+U0630,Mild,3
+U0631,American IPA,8
+U0631,Belgian Dubbel,47
+U0631,Witbier,173
+U0631,German Pilsner,89
+U0631,American Pale Ale,49
+U0632,Witbier,4
+U0632,Belgian Tripel,6
+U0632,Oatmeal Stout,6
+U0633,Session IPA,1
+U0633,American Pale Ale,25
+U0633,Double IPA,15
+U0634,American IPA,7
+U0634,Imperial Stout,20
+U0635,Imperial Stout,1
+U0635,ESB,1
+U0635,American IPA,3
+U0635,German Pilsner,2
+U0636,Porter,5
+U0636,Baltic Porter,3
+U0636,Double IPA,31
+U0636,Saison,7
+U0636,Imperial Stout,41
+U0637,English Bitter,8
+U0637,Oatmeal Stout,33
+U0637,Belgian Dubbel,4
+U0637,Porter,23
+U0638,Session IPA,25
+U0638,Double IPA,9
+U0639,German Pilsner,19
+U0639,Czech Pilsner,31
+U0639,Belgian Tripel,1
+U0639,Schwarzbier,1
+U0639,Helles,4
+U0639,English Pale Ale,9
+U0640,Belgian Dubbel,13
+U0640,Saison,26
+U0640,Belgian Tripel,21
+U0640,Witbier,7
+U0640,English Pale Ale,11
+U0641,Session IPA,6
+U0641,Imperial Stout,7
+U0642,English Bitter,5
+U0642,Imperial Stout,1
+U0643,Belgian Dubbel,5
+U0643,Belgian Tripel,4
+U0643,Session IPA,3
+U0643,Saison,3
+U0644,Saison,15
+U0644,Witbier,5
+U0644,Belgian Tripel,21
+U0644,Belgian Dubbel,2
+U0644,American IPA,19
+U0645,American IPA,21
+U0645,Imperial Stout,18
+U0645,Double IPA,4
+U0645,American Pale Ale,3
+U0646,American Pale Ale,19
+U0646,American IPA,18
+U0647,Porter,5
+U0647,Session IPA,21
+U0647,Imperial Stout,1
+U0647,Oatmeal Stout,1
+U0648,Mild,4
+U0648,Saison,2
+U0648,English Pale Ale,73
+U0649,Belgian Tripel,32
+U0649,American IPA,32
+U0649,Double IPA,16
+U0649,Czech Pilsner,34
+U0650,Imperial Stout,53
+U0650,Oatmeal Stout,144
+U0650,Witbier,11
+U0651,American Pale Ale,3
+U0651,Porter,1
+U0651,Imperial Stout,1
+U0651,English Bitter,1
+U0652,Belgian Tripel,5
+U0652,Czech Pilsner,36
+U0653,Porter,9
+U0653,Baltic Porter,2
+U0654,Imperial Stout,4
+U0654,Oatmeal Stout,27
+U0654,Mild,8
+U0655,English Bitter,1
+U0655,Session IPA,1
+U0655,Mild,4
+U0655,Baltic Porter,1
+U0656,Belgian Tripel,25
+U0656,Porter,4
+U0656,Oatmeal Stout,25
+U0656,Imperial Stout,1
+U0656,Baltic Porter,6
+U0657,Oatmeal Stout,11
+U0657,American IPA,16
+U0657,ESB,2
+U0657,Baltic Porter,1
+U0658,Porter,7
+U0658,American IPA,19
+U0658,Imperial Stout,2
+U0658,Baltic Porter,17
+U0659,German Pilsner,115
+U0659,Schwarzbier,102
+U0659,Czech Pilsner,11
+U0659,Helles,43
+U0660,English Pale Ale,26
+U0660,German Pilsner,5
+U0661,American Pale Ale,5
+U0661,Witbier,14
+U0661,Belgian Dubbel,2
+U0661,Belgian Tripel,5
+U0661,Porter,4
+U0661,Saison,4
+U0662,German Pilsner,10
+U0662,Mild,25
+U0662,Double IPA,9
+U0663,Czech Pilsner,4
+U0663,Saison,18
+U0664,American Pale Ale,8
+U0664,Double IPA,5
+U0664,Session IPA,28
+U0665,Schwarzbier,57
+U0665,Baltic Porter,9
+U0665,Oatmeal Stout,2
+U0665,Imperial Stout,9
+U0665,Porter,17
+U0665,American Pale Ale,27
+U0666,Czech Pilsner,6
+U0666,Helles,4
+U0666,American IPA,2
+U0666,Belgian Tripel,3
+U0666,Schwarzbier,17
+U0667,Session IPA,4
+U0667,American IPA,23
+U0667,Double IPA,17
+U0667,Czech Pilsner,1
+U0668,ESB,3
+U0668,American IPA,2
+U0668,American Pale Ale,15
+U0669,Czech Pilsner,34
+U0669,English Bitter,20
+U0670,American Pale Ale,17
+U0670,Porter,34
+U0670,American IPA,23
+U0670,Double IPA,7
+U0671,Oatmeal Stout,2
+U0671,German Pilsner,13
+U0671,ESB,14
+U0671,Czech Pilsner,2
+U0672,Imperial Stout,1
+U0672,Baltic Porter,1
+U0672,Porter,1
+U0672,Saison,3
+U0672,American IPA,1
+U0673,Double IPA,2
+U0673,English Pale Ale,4
+U0673,American IPA,2
+U0674,Session IPA,1
+U0674,Double IPA,5
+U0675,Double IPA,42
+U0675,American Pale Ale,9
+U0675,American IPA,9
+U0676,American IPA,1
+U0676,Double IPA,1
+U0676,Session IPA,1
+U0676,ESB,5
+U0677,American IPA,44
+U0677,American Pale Ale,15
+U0677,Session IPA,3
+U0678,English Pale Ale,2
+U0678,ESB,1
+U0678,English Bitter,2
+U0678,Belgian Tripel,4
+U0679,English Pale Ale,1
+U0679,American IPA,1
+U0679,English Bitter,4
+U0679,Helles,2
+U0680,Saison,10
+U0680,Belgian Tripel,14
+U0681,Oatmeal Stout,30
+U0681,American IPA,13
+U0681,Session IPA,21
+U0682,ESB,1
+U0682,English Bitter,31
+U0683,Saison,4
+U0683,Belgian Tripel,6
+U0683,Belgian Dubbel,15
+U0683,Witbier,13
+U0684,Double IPA,1
+U0684,Imperial Stout,1
+U0684,Baltic Porter,9
+U0684,Porter,12
+U0685,Baltic Porter,36
+U0685,Double IPA,12
+U0685,American IPA,20
+U0686,American IPA,5
+U0686,American Pale Ale,18
+U0686,ESB,2
+U0686,Oatmeal Stout,2
+U0686,Session IPA,1
+U0686,Double IPA,1
+U0687,Session IPA,1
+U0687,American IPA,1
+U0687,Double IPA,5
+U0688,Saison,19
+U0688,Double IPA,11
+U0688,Belgian Dubbel,8
+U0689,Porter,17
+U0689,American IPA,4
+U0689,Double IPA,16
+U0689,American Pale Ale,17
+U0689,Session IPA,6
+U0689,German Pilsner,3
+U0690,Session IPA,3
+U0690,American IPA,2
+U0691,Oatmeal Stout,22
+U0691,Baltic Porter,17
+U0692,Session IPA,3
+U0692,Belgian Tripel,48
+U0692,American IPA,5
+U0692,Porter,37
+U0693,Porter,29
+U0693,Imperial Stout,22
+U0694,American IPA,19
+U0694,American Pale Ale,41
+U0694,English Bitter,26
+U0694,Double IPA,28
+U0694,Helles,13
+U0695,Imperial Stout,6
+U0695,Oatmeal Stout,2
+U0695,Porter,8
+U0696,Czech Pilsner,1
+U0696,ESB,3
+U0696,English Bitter,1
+U0696,Double IPA,1
+U0697,American IPA,4
+U0697,Double IPA,7
+U0697,Session IPA,3
+U0697,American Pale Ale,17
+U0698,Oatmeal Stout,4
+U0698,Session IPA,5
+U0698,Baltic Porter,13
+U0699,Belgian Tripel,4
+U0699,Saison,2
+U0699,Belgian Dubbel,1
+U0700,Mild,8
+U0700,English Bitter,15
+U0700,English Pale Ale,3
+U0700,ESB,15
+U0700,Belgian Tripel,9
+U0700,Double IPA,3
+U0701,Belgian Dubbel,1
+U0701,Belgian Tripel,1
+U0701,Saison,1
+U0701,Czech Pilsner,2
+U0702,Saison,1
+U0702,Belgian Tripel,1
+U0702,Belgian Dubbel,1
+U0702,Schwarzbier,1
+U0702,Witbier,1
+U0702,Session IPA,2
+U0702,Imperial Stout,1
+U0702,ESB,3
+U0702,American IPA,8
+U0703,English Bitter,2
+U0703,Mild,7
+U0703,ESB,4
+U0704,Helles,3
+U0704,Double IPA,2
+U0704,American IPA,12
+U0704,Imperial Stout,7
+U0705,Imperial Stout,12
+U0705,Baltic Porter,8
+U0706,Helles,2
+U0706,German Pilsner,1
+U0706,Schwarzbier,1
+U0706,Saison,1
+U0706,Czech Pilsner,1
+U0707,Oatmeal Stout,4
+U0707,Session IPA,1
+U0708,Czech Pilsner,1
+U0708,Schwarzbier,3
+U0708,Belgian Dubbel,8
+U0708,German Pilsner,8
+U0708,American Pale Ale,1
+U0709,Double IPA,9
+U0709,Witbier,39
+U0709,German Pilsner,64
+U0709,Saison,1
+U0709,Helles,22
+U0710,Porter,8
+U0710,Imperial Stout,19
+U0710,Baltic Porter,96
+U0711,ESB,7
+U0711,English Pale Ale,9
+U0711,Mild,6
+U0711,English Bitter,1
+U0711,Belgian Tripel,1
+U0712,American IPA,5
+U0712,Double IPA,2
+U0712,ESB,1
+U0712,American Pale Ale,1
+U0712,Session IPA,3
+U0712,Witbier,9
+U0713,English Pale Ale,1
+U0713,Belgian Tripel,1
+U0713,American Pale Ale,2
+U0713,American IPA,2
+U0714,Double IPA,119
+U0714,Helles,6
+U0714,Session IPA,3
+U0715,American Pale Ale,4
+U0715,Double IPA,22
+U0715,Session IPA,26
+U0716,Porter,38
+U0716,Baltic Porter,4
+U0717,Porter,43
+U0717,Czech Pilsner,10
+U0718,Baltic Porter,10
+U0718,Oatmeal Stout,14
+U0718,Imperial Stout,2
+U0718,Porter,33
+U0718,English Bitter,10
+U0718,Belgian Tripel,19
+U0719,Double IPA,39
+U0719,German Pilsner,27
+U0719,Baltic Porter,1
+U0720,English Bitter,4
+U0720,ESB,4
+U0721,American IPA,3
+U0721,American Pale Ale,2
+U0722,Witbier,22
+U0722,Saison,4
+U0722,Oatmeal Stout,57
+U0722,Belgian Dubbel,7
+U0722,Belgian Tripel,1
+U0722,Mild,7
+U0723,Belgian Tripel,16
+U0723,Double IPA,33
+U0723,American Pale Ale,34
+U0723,Witbier,30
+U0724,German Pilsner,34
+U0724,Session IPA,54
+U0724,Double IPA,6
+U0724,Witbier,3
+U0724,Porter,12
+U0725,Double IPA,73
+U0725,Porter,25
+U0726,American IPA,17
+U0726,Double IPA,14
+U0726,Session IPA,11
+U0726,Belgian Dubbel,6
+U0726,American Pale Ale,27
+U0726,English Pale Ale,40
+U0726,Mild,2
+U0727,ESB,11
+U0727,English Bitter,9
+U0728,Double IPA,20
+U0728,Belgian Dubbel,4
+U0728,American IPA,33
+U0728,American Pale Ale,148
+U0729,ESB,3
+U0729,American IPA,2
+U0730,Witbier,22
+U0730,English Bitter,1
+U0731,Saison,11
+U0731,American IPA,2
+U0731,American Pale Ale,1
+U0731,German Pilsner,16
+U0731,Porter,10
+U0732,American IPA,7
+U0732,Session IPA,6
+U0732,American Pale Ale,1
+U0733,American IPA,2
+U0733,Double IPA,4
+U0734,Double IPA,2
+U0734,Session IPA,10
+U0735,Mild,1
+U0735,Double IPA,2
+U0735,American IPA,1
+U0735,American Pale Ale,2
+U0736,Schwarzbier,43
+U0736,English Pale Ale,5
+U0736,Double IPA,3
+U0736,Session IPA,2
+U0737,Czech Pilsner,2
+U0737,Schwarzbier,3
+U0737,Helles,1
+U0738,German Pilsner,1
+U0738,Belgian Tripel,2
+U0738,English Bitter,1
+U0738,Belgian Dubbel,1
+U0739,Czech Pilsner,5
+U0739,Mild,17
+U0739,Double IPA,1
+U0739,English Bitter,11
+U0739,American IPA,26
+U0740,American Pale Ale,1
+U0740,Schwarzbier,7
+U0740,American IPA,8
+U0741,Double IPA,3
+U0741,American Pale Ale,2
+U0741,Session IPA,2
+U0742,American IPA,5
+U0742,Double IPA,5
+U0742,American Pale Ale,4
+U0742,English Pale Ale,13
+U0743,American Pale Ale,10
+U0743,Helles,22
+U0744,Helles,72
+U0744,English Pale Ale,3
+U0744,Czech Pilsner,47
+U0744,Schwarzbier,13
+U0745,Schwarzbier,10
+U0745,English Pale Ale,8
+U0746,Belgian Tripel,13
+U0746,Belgian Dubbel,30
+U0746,Saison,16
+U0746,Porter,16
+U0746,Witbier,13
+U0746,Mild,43
+U0747,Baltic Porter,12
+U0747,ESB,4
+U0747,English Pale Ale,6
+U0747,English Bitter,2
+U0747,Mild,5
+U0748,Helles,3
+U0748,Czech Pilsner,7
+U0748,German Pilsner,18
+U0748,Double IPA,5
+U0749,Helles,1
+U0749,Belgian Dubbel,6
+U0750,English Bitter,2
+U0750,English Pale Ale,13
+U0750,ESB,7
+U0750,Mild,1
+U0750,Czech Pilsner,9
+U0751,Baltic Porter,1
+U0751,Double IPA,9
+U0751,Imperial Stout,8
+U0751,Porter,3
+U0751,Oatmeal Stout,9
+U0752,Imperial Stout,2
+U0752,Oatmeal Stout,1
+U0752,Baltic Porter,1
+U0752,German Pilsner,2
+U0753,Belgian Dubbel,1
+U0753,Saison,4
+U0754,Belgian Tripel,5
+U0754,Belgian Dubbel,1
+U0754,American IPA,1
+U0754,Saison,34
+U0755,Double IPA,44
+U0755,American IPA,4
+U0755,Session IPA,37
+U0756,English Bitter,4
+U0756,ESB,1
+U0757,Witbier,24
+U0757,Czech Pilsner,16
+U0757,ESB,27
+U0758,English Pale Ale,54
+U0758,ESB,7
+U0758,German Pilsner,15
+U0759,Schwarzbier,16
+U0759,Helles,5
+U0760,English Pale Ale,1
+U0760,Czech Pilsner,1
+U0760,Mild,2
+U0760,ESB,1
+U0760,Double IPA,1
+U0761,American IPA,21
+U0761,Witbier,16
+U0761,Saison,13
+U0761,Belgian Tripel,11
+U0762,ESB,1
+U0762,American IPA,2
+U0762,Double IPA,25
+U0762,American Pale Ale,12
+U0763,Belgian Dubbel,4
+U0763,ESB,1
+U0763,English Pale Ale,2
+U0763,German Pilsner,6
+U0764,Imperial Stout,13
+U0764,Oatmeal Stout,3
+U0764,Baltic Porter,11
+U0764,Porter,2
+U0765,American IPA,10
+U0765,German Pilsner,2
+U0766,Belgian Dubbel,12
+U0766,Porter,9
+U0766,American IPA,40
+U0767,Imperial Stout,3
+U0767,Porter,8
+U0767,Baltic Porter,7
+U0768,Saison,6
+U0768,Witbier,6
+U0769,Belgian Dubbel,26
+U0769,Saison,30
+U0770,Double IPA,1
+U0770,English Bitter,2
+U0770,English Pale Ale,4
+U0770,American Pale Ale,9
+U0770,Session IPA,1
+U0771,American Pale Ale,1
+U0771,Saison,1
+U0771,Belgian Dubbel,1
+U0771,Belgian Tripel,1
+U0771,Witbier,6
+U0772,American IPA,2
+U0772,Baltic Porter,10
+U0772,Porter,3
+U0772,American Pale Ale,1
+U0773,English Bitter,2
+U0773,Double IPA,8
+U0773,Mild,7
+U0773,ESB,2
+U0773,English Pale Ale,2
+U0774,American IPA,2
+U0774,Session IPA,5
+U0774,Double IPA,8
+U0774,American Pale Ale,21
+U0774,ESB,4
+U0774,Oatmeal Stout,1
+U0775,American Pale Ale,10
+U0775,Double IPA,5
+U0775,American IPA,28
+U0776,Porter,1
+U0776,Oatmeal Stout,1
+U0776,Baltic Porter,2
+U0776,ESB,2
+U0777,Czech Pilsner,4
+U0777,Belgian Tripel,3
+U0778,Oatmeal Stout,41
+U0778,Porter,55
+U0779,Saison,11
+U0779,Belgian Dubbel,5
+U0779,Belgian Tripel,2
+U0779,Witbier,33
+U0779,English Pale Ale,6
+U0780,Saison,5
+U0780,Witbier,3
+U0781,Saison,7
+U0781,Imperial Stout,27
+U0782,German Pilsner,13
+U0782,Session IPA,2
+U0782,American IPA,7
+U0782,Helles,34
+U0782,Imperial Stout,3
+U0783,Mild,10
+U0783,Oatmeal Stout,56
+U0784,Session IPA,1
+U0784,American IPA,1
+U0784,American Pale Ale,1
+U0784,Porter,3
+U0784,Double IPA,1
+U0785,English Bitter,2
+U0785,Belgian Tripel,3
+U0786,American Pale Ale,1
+U0786,American IPA,1
+U0786,Session IPA,1
+U0786,Double IPA,1
+U0786,Schwarzbier,3
+U0786,Czech Pilsner,1
+U0787,Double IPA,2
+U0787,Helles,2
+U0787,Baltic Porter,1
+U0787,Imperial Stout,1
+U0788,Porter,1
+U0788,Double IPA,23
+U0788,Belgian Dubbel,9
+U0788,Belgian Tripel,4
+U0788,Witbier,1
+U0788,Saison,5
+U0788,American Pale Ale,8
+U0788,Session IPA,1
+U0789,English Pale Ale,22
+U0789,Saison,17
+U0789,Witbier,76
+U0789,ESB,1
+U0790,Imperial Stout,67
+U0790,Porter,5
+U0791,Porter,10
+U0791,American IPA,15
+U0792,Oatmeal Stout,5
+U0792,Imperial Stout,4
+U0793,American IPA,41
+U0793,Mild,3
+U0794,German Pilsner,5
+U0794,Czech Pilsner,3
+U0794,English Bitter,12
+U0795,Imperial Stout,2
+U0795,Oatmeal Stout,3
+U0796,Witbier,25
+U0796,Belgian Dubbel,3
+U0796,Saison,5
+U0796,Belgian Tripel,17
+U0796,Double IPA,9
+U0796,Oatmeal Stout,3
+U0797,American IPA,3
+U0797,Belgian Dubbel,9
+U0798,American Pale Ale,2
+U0798,Double IPA,1
+U0798,American IPA,2
+U0798,Session IPA,1
+U0798,Belgian Tripel,1
+U0799,American IPA,85
+U0799,Session IPA,177
+U0799,Porter,43
+U0799,ESB,6
+U0799,Double IPA,60
+U0799,English Pale Ale,35
+U0800,Witbier,8
+U0800,Belgian Dubbel,1
+U0801,Session IPA,4
+U0801,American IPA,21
+U0802,Saison,4
+U0802,Mild,23
+U0802,ESB,13
+U0802,English Bitter,25
+U0802,Imperial Stout,10
+U0803,Baltic Porter,4
+U0803,Oatmeal Stout,8
+U0803,Porter,2
+U0803,Imperial Stout,1
+U0803,Session IPA,1
+U0803,Saison,1
+U0804,ESB,9
+U0804,English Bitter,4
+U0804,Mild,22
+U0805,Baltic Porter,6
+U0805,Imperial Stout,21
+U0805,Oatmeal Stout,2
+U0806,English Bitter,21
+U0806,ESB,1
+U0807,Saison,7
+U0807,Schwarzbier,14
+U0807,Helles,6
+U0807,Czech Pilsner,4
+U0807,American IPA,12
+U0808,English Bitter,2
+U0808,German Pilsner,8
+U0808,Baltic Porter,14
+U0808,American Pale Ale,22
+U0809,Double IPA,1
+U0809,Porter,16
+U0809,Imperial Stout,6
+U0809,Baltic Porter,5
+U0809,Oatmeal Stout,4
+U0809,English Pale Ale,44
+U0810,Double IPA,2
+U0810,Mild,2
+U0810,Witbier,22
+U0810,American Pale Ale,14
+U0811,Baltic Porter,2
+U0811,American Pale Ale,10
+U0812,Witbier,81
+U0812,Oatmeal Stout,15
+U0812,Imperial Stout,20
+U0812,English Bitter,12
+U0812,ESB,42
+U0813,American Pale Ale,1
+U0813,American IPA,1
+U0813,Double IPA,2
+U0813,Oatmeal Stout,1
+U0814,Double IPA,7
+U0814,American IPA,1
+U0814,Session IPA,4
+U0814,American Pale Ale,41
+U0815,Helles,41
+U0815,Czech Pilsner,12
+U0816,Imperial Stout,10
+U0816,English Pale Ale,4
+U0817,Imperial Stout,5
+U0817,Saison,15
+U0817,Schwarzbier,4
+U0817,Witbier,8
+U0818,English Bitter,6
+U0818,Saison,13
+U0818,Belgian Tripel,1
+U0818,Belgian Dubbel,1
+U0819,English Pale Ale,3
+U0819,English Bitter,1
+U0819,Mild,1
+U0819,ESB,1
+U0820,Porter,17
+U0820,German Pilsner,4
+U0821,American Pale Ale,9
+U0821,Double IPA,50
+U0822,American Pale Ale,1
+U0822,American IPA,6
+U0822,Double IPA,1
+U0822,Session IPA,2
+U0823,American Pale Ale,1
+U0823,Double IPA,1
+U0823,Porter,2
+U0823,Session IPA,2
+U0824,American Pale Ale,31
+U0824,American IPA,33
+U0824,Session IPA,10
+U0824,Double IPA,5
+U0824,Imperial Stout,5
+U0824,Witbier,31
+U0825,English Pale Ale,1
+U0825,American Pale Ale,11
+U0825,Oatmeal Stout,9
+U0825,Session IPA,116
+U0826,Belgian Dubbel,69
+U0826,Belgian Tripel,6
+U0827,English Pale Ale,10
+U0827,ESB,15
+U0828,English Pale Ale,11
+U0828,American IPA,63
+U0828,Double IPA,13
+U0829,Double IPA,28
+U0829,Session IPA,3
+U0829,American Pale Ale,34
+U0830,American IPA,7
+U0830,Belgian Tripel,5
+U0830,Czech Pilsner,18
+U0831,Saison,1
+U0831,Belgian Tripel,89
+U0831,Baltic Porter,9
+U0831,English Bitter,58
+U0832,Belgian Tripel,25
+U0832,Belgian Dubbel,1
+U0832,Saison,1
+U0832,Schwarzbier,3
+U0832,Witbier,4
+U0832,Session IPA,41
+U0833,Witbier,10
+U0833,Baltic Porter,13
+U0833,ESB,11
+U0833,Belgian Tripel,3
+U0834,English Bitter,1
+U0834,American Pale Ale,15
+U0834,Session IPA,5
+U0835,Oatmeal Stout,1
+U0835,Saison,4
+U0835,Belgian Tripel,14
+U0836,Witbier,44
+U0836,Double IPA,1
+U0837,Double IPA,19
+U0837,ESB,8
+U0837,English Bitter,10
+U0837,English Pale Ale,9
+U0837,Mild,5
+U0837,Belgian Tripel,10
+U0838,Schwarzbier,1
+U0838,Double IPA,2
+U0838,American IPA,1
+U0838,German Pilsner,2
+U0838,Oatmeal Stout,1
+U0838,American Pale Ale,1
+U0839,American Pale Ale,10
+U0839,American IPA,19
+U0839,Double IPA,40
+U0840,American Pale Ale,1
+U0840,English Bitter,1
+U0840,Session IPA,1
+U0840,American IPA,4
+U0841,American Pale Ale,15
+U0841,English Bitter,13
+U0842,German Pilsner,16
+U0842,Czech Pilsner,4
+U0843,Oatmeal Stout,12
+U0843,American Pale Ale,4
+U0843,English Bitter,10
+U0843,Schwarzbier,3
+U0843,ESB,13
+U0844,Double IPA,1
+U0844,American Pale Ale,1
+U0844,Saison,6
+U0844,Helles,2
+U0844,Czech Pilsner,4
+U0844,Oatmeal Stout,2
+U0845,Belgian Dubbel,2
+U0845,Session IPA,1
+U0845,Helles,10
+U0845,Belgian Tripel,10
+U0845,English Bitter,9
+U0845,Baltic Porter,6
+U0846,American IPA,49
+U0846,Session IPA,1
+U0846,American Pale Ale,28
+U0846,Double IPA,1
+U0847,Belgian Dubbel,4
+U0847,Witbier,7
+U0847,Belgian Tripel,4
+U0847,Saison,1
+U0847,American Pale Ale,4
+U0848,American Pale Ale,4
+U0848,Session IPA,6
+U0848,Double IPA,1
+U0849,Oatmeal Stout,101
+U0849,American IPA,42
+U0849,Imperial Stout,1
+U0850,Baltic Porter,11
+U0850,American Pale Ale,21
+U0851,Double IPA,1
+U0851,American IPA,1
+U0851,English Pale Ale,2
+U0851,Session IPA,2
+U0852,Belgian Dubbel,9
+U0852,English Pale Ale,20
+U0852,Belgian Tripel,9
+U0852,Witbier,2
+U0853,Session IPA,4
+U0853,American IPA,1
+U0854,Schwarzbier,147
+U0854,American IPA,2
+U0854,English Pale Ale,94
+U0854,Helles,14
+U0854,American Pale Ale,92
+U0854,German Pilsner,7
+U0855,ESB,1
+U0855,Session IPA,11
+U0855,English Pale Ale,4
+U0856,American Pale Ale,25
+U0856,Belgian Dubbel,13
+U0856,Helles,1
+U0856,Saison,2
+U0856,Belgian Tripel,5
+U0856,Double IPA,2
+U0856,Imperial Stout,6
+U0857,Witbier,2
+U0857,Saison,6
+U0857,Oatmeal Stout,2
+U0857,Belgian Tripel,3
+U0857,Belgian Dubbel,14
+U0858,Porter,22
+U0858,American IPA,7
+U0859,Double IPA,2
+U0859,Saison,2
+U0859,Belgian Tripel,1
+U0859,Belgian Dubbel,1
+U0859,Witbier,3
+U0860,ESB,1
+U0860,Double IPA,26
+U0860,American Pale Ale,14
+U0860,Session IPA,9
+U0860,American IPA,3
+U0860,Imperial Stout,1
+U0861,Witbier,1
+U0861,Saison,5
+U0862,Belgian Tripel,5
+U0862,Saison,14
+U0862,Belgian Dubbel,4
+U0863,Porter,11
+U0863,English Bitter,45
+U0864,German Pilsner,1
+U0864,Oatmeal Stout,3
+U0864,Schwarzbier,15
+U0864,Session IPA,19
+U0864,American IPA,15
+U0865,Porter,26
+U0865,American Pale Ale,17
+U0865,Belgian Dubbel,48
+U0866,Belgian Dubbel,1
+U0866,American Pale Ale,1
+U0866,Double IPA,3
+U0866,Witbier,1
+U0866,Saison,7
+U0867,ESB,5
+U0867,American Pale Ale,25
+U0867,American IPA,11
+U0867,Session IPA,20
+U0867,Double IPA,9
+U0867,Oatmeal Stout,3
+U0867,German Pilsner,9
+U0868,English Pale Ale,8
+U0868,Mild,15
+U0868,ESB,3
+U0868,English Bitter,15
+U0868,Saison,3
+U0869,American Pale Ale,20
+U0869,Double IPA,7
+U0869,English Bitter,28
+U0869,English Pale Ale,10
+U0869,American IPA,1
+U0870,American IPA,3
+U0870,Double IPA,1
+U0870,Saison,2
+U0871,American Pale Ale,23
+U0871,American IPA,25
+U0871,Double IPA,21
+U0871,Session IPA,10
+U0871,Schwarzbier,2
+U0871,Imperial Stout,17
+U0871,Czech Pilsner,2
+U0872,German Pilsner,4
+U0872,Czech Pilsner,4
+U0873,Porter,1
+U0873,American IPA,1
+U0873,Imperial Stout,5
+U0873,Helles,5
+U0874,Imperial Stout,1
+U0874,English Pale Ale,21
+U0874,English Bitter,20
+U0875,Session IPA,4
+U0875,American Pale Ale,1
+U0876,Czech Pilsner,7
+U0876,German Pilsner,4
+U0876,Double IPA,5
+U0876,Helles,6
+U0876,Schwarzbier,1
+U0877,Baltic Porter,27
+U0877,Porter,5
+U0878,Witbier,3
+U0878,Belgian Tripel,3
+U0878,Helles,8
+U0879,ESB,3
+U0879,Double IPA,4
+U0880,Helles,3
+U0880,Double IPA,6
+U0880,Porter,7
+U0880,American IPA,1
+U0880,Saison,11
+U0881,Imperial Stout,16
+U0881,Oatmeal Stout,1
+U0881,Helles,1
+U0882,American IPA,1
+U0882,Porter,2
+U0882,Belgian Dubbel,1
+U0882,American Pale Ale,1
+U0883,American IPA,5
+U0883,Double IPA,23
+U0883,American Pale Ale,38
+U0883,Session IPA,32
+U0884,American Pale Ale,36
+U0884,Oatmeal Stout,5
+U0884,Porter,10
+U0884,Imperial Stout,6
+U0885,German Pilsner,4
+U0885,Schwarzbier,13
+U0885,English Pale Ale,9
+U0885,Imperial Stout,10
+U0886,ESB,28
+U0886,Session IPA,21
+U0887,Double IPA,18
+U0887,English Bitter,7
+U0887,English Pale Ale,18
+U0887,Mild,16
+U0887,ESB,45
+U0888,Belgian Tripel,5
+U0888,Schwarzbier,1
+U0889,Double IPA,1
+U0889,Porter,4
+U0890,English Bitter,55
+U0890,Schwarzbier,12
+U0890,English Pale Ale,1
+U0890,Mild,39
+U0890,ESB,11
+U0891,American IPA,2
+U0891,American Pale Ale,8
+U0891,Mild,20
+U0891,Double IPA,34
+U0892,Belgian Dubbel,16
+U0892,Witbier,15
+U0892,Saison,7
+U0892,Belgian Tripel,59
+U0892,Baltic Porter,13
+U0893,Porter,21
+U0893,Oatmeal Stout,65
+U0893,Imperial Stout,30
+U0893,Baltic Porter,10
+U0893,Saison,6
+U0894,Imperial Stout,8
+U0894,English Bitter,18
+U0894,Oatmeal Stout,26
+U0894,Porter,45
+U0894,Baltic Porter,37
+U0895,ESB,1
+U0895,English Pale Ale,1
+U0895,American IPA,13
+U0895,Mild,1
+U0895,English Bitter,1
+U0896,German Pilsner,2
+U0896,Helles,6
+U0896,Schwarzbier,6
+U0896,ESB,4
+U0896,Czech Pilsner,8
+U0896,Imperial Stout,11
+U0897,Double IPA,2
+U0897,English Pale Ale,5
+U0897,American IPA,9
+U0897,ESB,6
+U0898,American IPA,3
+U0898,Double IPA,62
+U0898,American Pale Ale,9
+U0898,Session IPA,30
+U0899,Session IPA,18
+U0899,American IPA,1
+U0899,Belgian Dubbel,15
+U0900,Session IPA,2
+U0900,Double IPA,6
+U0900,American IPA,1
+U0901,German Pilsner,8
+U0901,American Pale Ale,26
+U0902,Saison,61
+U0902,Belgian Tripel,75
+U0903,American IPA,8
+U0903,Double IPA,1
+U0903,Session IPA,12
+U0904,Porter,4
+U0904,American Pale Ale,41
+U0904,Double IPA,24
+U0905,Imperial Stout,1
+U0905,Porter,1
+U0905,Oatmeal Stout,1
+U0905,Schwarzbier,4
+U0906,Belgian Tripel,3
+U0906,Belgian Dubbel,6
+U0906,Witbier,2
+U0906,Saison,37
+U0907,Oatmeal Stout,11
+U0907,Imperial Stout,15
+U0907,Porter,1
+U0907,Baltic Porter,9
+U0907,American IPA,1
+U0908,Saison,26
+U0908,Helles,5
+U0908,Belgian Dubbel,44
+U0909,Saison,78
+U0909,English Bitter,73
+U0909,Belgian Tripel,3
+U0909,American IPA,62
+U0910,Imperial Stout,15
+U0910,Oatmeal Stout,11
+U0910,Baltic Porter,154
+U0911,English Bitter,1
+U0911,American IPA,11
+U0912,American Pale Ale,33
+U0912,Baltic Porter,1
+U0912,English Pale Ale,15
+U0912,Session IPA,23
+U0912,Porter,37
+U0913,ESB,4
+U0913,English Bitter,1
+U0914,Belgian Dubbel,7
+U0914,Saison,4
+U0915,Imperial Stout,68
+U0915,Oatmeal Stout,8
+U0916,English Pale Ale,4
+U0916,Mild,9
+U0916,American Pale Ale,1
+U0917,American IPA,1
+U0917,Imperial Stout,1
+U0917,American Pale Ale,4
+U0917,Double IPA,1
+U0918,German Pilsner,8
+U0918,Czech Pilsner,11
+U0919,ESB,47
+U0919,English Pale Ale,42
+U0919,English Bitter,4
+U0919,Mild,3
+U0920,German Pilsner,86
+U0920,American IPA,4
+U0920,ESB,12
+U0921,Schwarzbier,1
+U0921,Baltic Porter,3
+U0921,American IPA,8
+U0922,Oatmeal Stout,2
+U0922,American Pale Ale,4
+U0922,Witbier,2
+U0922,Double IPA,1
+U0923,Imperial Stout,40
+U0923,Witbier,8
+U0923,Belgian Tripel,1
+U0923,Double IPA,18
+U0924,Saison,4
+U0924,Witbier,1
+U0925,Imperial Stout,12
+U0925,Session IPA,4
+U0925,Double IPA,2
+U0926,German Pilsner,3
+U0926,Czech Pilsner,1
+U0926,Helles,1
+U0927,Helles,3
+U0927,Schwarzbier,2
+U0928,Baltic Porter,25
+U0928,English Pale Ale,24
+U0928,Mild,8
+U0928,Witbier,32
+U0928,ESB,47
+U0929,Saison,11
+U0929,Witbier,24
+U0929,Belgian Tripel,2
+U0930,Session IPA,30
+U0930,English Bitter,2
+U0930,Czech Pilsner,31
+U0931,English Bitter,14
+U0931,American Pale Ale,1
+U0931,Session IPA,23
+U0932,Saison,36
+U0932,Belgian Tripel,7
+U0933,Session IPA,3
+U0933,American Pale Ale,25
+U0933,Double IPA,52
+U0934,American Pale Ale,23
+U0934,American IPA,7
+U0934,Session IPA,27
+U0934,English Pale Ale,1
+U0935,American Pale Ale,3
+U0935,Saison,2
+U0936,Oatmeal Stout,1
+U0936,Mild,92
+U0936,English Bitter,28
+U0936,English Pale Ale,1
+U0937,English Bitter,2
+U0937,English Pale Ale,3
+U0937,ESB,2
+U0938,ESB,1
+U0938,Mild,19
+U0939,German Pilsner,13
+U0939,Imperial Stout,49
+U0940,American Pale Ale,5
+U0940,Session IPA,8
+U0940,Witbier,6
+U0940,Double IPA,1
+U0941,ESB,7
+U0941,Double IPA,1
+U0941,English Pale Ale,4
+U0941,German Pilsner,5
+U0941,Belgian Dubbel,1
+U0942,Double IPA,27
+U0942,American IPA,31
+U0942,American Pale Ale,2
+U0942,Baltic Porter,65
+U0943,American Pale Ale,1
+U0943,German Pilsner,15
+U0943,Mild,1
+U0944,English Bitter,26
+U0944,ESB,15
+U0944,Czech Pilsner,24
+U0944,German Pilsner,18
+U0945,American IPA,67
+U0945,Witbier,1
+U0945,American Pale Ale,38
+U0946,Belgian Tripel,48
+U0946,American Pale Ale,1
+U0946,Witbier,40
+U0946,Saison,25
+U0946,Belgian Dubbel,2
+U0947,American IPA,44
+U0947,Imperial Stout,2
+U0947,Belgian Dubbel,10
+U0947,Double IPA,27
+U0947,Session IPA,16
+U0947,Oatmeal Stout,5
+U0948,Double IPA,32
+U0948,Session IPA,2
+U0949,Witbier,2
+U0949,Porter,1
+U0949,Saison,1
+U0949,Belgian Dubbel,5
+U0949,American Pale Ale,7
+U0950,Mild,6
+U0950,German Pilsner,7
+U0951,American IPA,7
+U0951,Saison,16
+U0951,Imperial Stout,1
+U0951,Session IPA,2
+U0951,Mild,16
+U0951,Double IPA,2
+U0952,ESB,2
+U0952,English Bitter,2
+U0952,English Pale Ale,1
+U0952,Belgian Dubbel,1
+U0953,Belgian Tripel,5
+U0953,German Pilsner,1
+U0953,Czech Pilsner,1
+U0953,Witbier,3
+U0953,Saison,1
+U0954,Imperial Stout,46
+U0954,Porter,5
+U0954,Oatmeal Stout,4
+U0954,Belgian Tripel,19
+U0955,Helles,17
+U0955,Saison,37
+U0955,American Pale Ale,9
+U0955,Czech Pilsner,2
+U0955,German Pilsner,78
+U0956,English Pale Ale,16
+U0956,English Bitter,6
+U0957,Porter,4
+U0957,Double IPA,1
+U0957,German Pilsner,1
+U0958,Belgian Dubbel,2
+U0958,Porter,3
+U0958,Oatmeal Stout,26
+U0958,Imperial Stout,2
+U0958,Double IPA,2
+U0959,Oatmeal Stout,1
+U0959,English Pale Ale,3
+U0959,American Pale Ale,1
+U0959,Baltic Porter,7
+U0959,Double IPA,5
+U0959,Session IPA,2
+U0959,American IPA,2
+U0960,Double IPA,1
+U0960,Mild,13
+U0960,Saison,70
+U0960,English Bitter,13
+U0961,Double IPA,1
+U0961,Witbier,1
+U0961,Belgian Dubbel,1
+U0961,Belgian Tripel,2
+U0962,Imperial Stout,3
+U0962,Porter,7
+U0962,Baltic Porter,20
+U0962,Oatmeal Stout,3
+U0962,Helles,14
+U0963,Belgian Tripel,6
+U0963,Czech Pilsner,13
+U0963,Schwarzbier,112
+U0964,Oatmeal Stout,7
+U0964,Imperial Stout,15
+U0965,Porter,7
+U0965,Double IPA,7
+U0965,American IPA,1
+U0965,American Pale Ale,24
+U0965,Session IPA,1
+U0965,English Bitter,16
+U0966,Session IPA,14
+U0966,American Pale Ale,28
+U0966,Double IPA,11
+U0966,American IPA,5
+U0966,English Bitter,31
+U0966,Belgian Tripel,33
+U0967,Saison,5
+U0967,Double IPA,11
+U0967,American Pale Ale,7
+U0967,American IPA,1
+U0967,Session IPA,1
+U0967,Czech Pilsner,1
+U0968,Witbier,36
+U0968,Belgian Dubbel,27
+U0969,Belgian Dubbel,1
+U0969,Belgian Tripel,4
+U0970,Belgian Tripel,3
+U0970,Belgian Dubbel,1
+U0970,Witbier,1
+U0971,German Pilsner,4
+U0971,Witbier,10
+U0972,English Bitter,4
+U0972,Imperial Stout,2
+U0972,ESB,3
+U0972,Mild,3
+U0973,Czech Pilsner,5
+U0973,American IPA,1
+U0974,Porter,12
+U0974,American IPA,11
+U0974,Oatmeal Stout,2
+U0974,Imperial Stout,3
+U0975,Saison,14
+U0975,Imperial Stout,5
+U0975,Oatmeal Stout,13
+U0976,Schwarzbier,3
+U0976,Belgian Tripel,2
+U0976,Witbier,1
+U0977,American IPA,5
+U0977,Double IPA,22
+U0977,Session IPA,17
+U0977,American Pale Ale,7
+U0977,German Pilsner,21
+U0977,Helles,3
+U0978,American IPA,9
+U0978,American Pale Ale,1
+U0978,English Bitter,1
+U0978,Double IPA,7
+U0978,Session IPA,2
+U0979,Double IPA,12
+U0979,Session IPA,1
+U0979,American IPA,22
+U0980,Oatmeal Stout,2
+U0980,Belgian Dubbel,45
+U0981,Belgian Dubbel,1
+U0981,ESB,1
+U0981,Belgian Tripel,4
+U0982,Belgian Tripel,1
+U0982,Double IPA,1
+U0982,Saison,3
+U0982,Witbier,2
+U0983,Belgian Dubbel,9
+U0983,Witbier,6
+U0983,Belgian Tripel,112
+U0983,Saison,6
+U0983,Mild,9
+U0984,Witbier,2
+U0984,Czech Pilsner,1
+U0984,Saison,4
+U0985,Saison,12
+U0985,Witbier,23
+U0986,Session IPA,2
+U0986,American Pale Ale,1
+U0986,American IPA,2
+U0986,Double IPA,1
+U0986,English Bitter,1
+U0987,Mild,19
+U0987,American Pale Ale,7
+U0987,American IPA,28
+U0988,American Pale Ale,1
+U0988,Belgian Tripel,3
+U0988,American IPA,2
+U0989,Double IPA,16
+U0989,American Pale Ale,12
+U0989,Imperial Stout,31
+U0989,Session IPA,52
+U0989,American IPA,1
+U0990,Baltic Porter,24
+U0990,Saison,45
+U0990,English Pale Ale,49
+U0990,English Bitter,23
+U0991,Belgian Dubbel,9
+U0991,English Pale Ale,5
+U0991,Session IPA,31
+U0992,Baltic Porter,1
+U0992,Porter,12
+U0992,Belgian Dubbel,1
+U0992,English Bitter,67
+U0993,Porter,92
+U0993,Oatmeal Stout,9
+U0994,Belgian Dubbel,2
+U0994,ESB,9
+U0995,Witbier,2
+U0995,Mild,5
+U0995,Imperial Stout,2
+U0996,Porter,15
+U0996,Session IPA,8
+U0996,American IPA,5
+U0996,English Pale Ale,18
+U0997,Double IPA,2
+U0997,Session IPA,4
+U0997,American Pale Ale,10
+U0998,Double IPA,23
+U0998,Porter,30
+U0999,Oatmeal Stout,12
+U0999,English Pale Ale,1
+U1000,Belgian Dubbel,8
+U1000,Belgian Tripel,31
+U1000,Saison,19
+U1000,American IPA,19
+U1000,Witbier,2
+U1000,Double IPA,3
