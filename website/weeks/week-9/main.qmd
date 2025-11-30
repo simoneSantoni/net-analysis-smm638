@@ -6,7 +6,252 @@ date: "today"
 callout-appearance: "default"
 ---
 
+## Overview
+
+This week addresses one of the central questions in network analytics: **When do
+networks create value?** We explore how structural position translates into
+tangible outcomes for individuals and organizations, drawing on two foundational
+theories of social capital:
+
+1.  **Bonding Social Capital (Coleman)**: Dense, closed networks create value
+through **trust** and cooperation. When your contacts know each other,
+reputation effects operate, social norms can be enforced, and cheating becomes
+costly. This is the theory of *network closure*.
+
+2.  **Bridging Social Capital (Burt)**: Sparse networks with *structural holes*
+create value through access to **diverse information** and brokerage
+opportunities. Individuals who span disconnected groups gain early access to
+non-redundant information and strategic control over information flows.
+
+These perspectives represent a fundamental tension in network strategy: closure
+provides safety and trust, while brokerage provides opportunity and innovation.
+The optimal structure depends on what you are trying to achieve.
+
+## Prepare
+
 ::: {.callout-note}
-Content coming soon.
+## 📚
+
+📖 **Review**:
+
+-   [Network fundamentals](../week-1/network_terms.qmd) (Week 1)
+-   [Centrality measures](../week-3/main.qmd) (Week 3) — especially betweenness
+centrality
+-   [Communities and cohesion](../week-7/main.qmd) (Week 7)
+
+📖 **Required Readings**:
+
+**Burt, R. S. (2004). "Structural Holes and Good Ideas."** *American Journal of
+Sociology*, 110(2), 349-399.
+
+*Focus on:*
+
+-   **Structural holes**: The "empty space" between disconnected groups that
+creates brokerage opportunities
+-   **Information benefits**: How brokers access diverse, non-redundant
+knowledge before others
+-   **Good ideas**: Evidence that network position predicts idea quality and
+career success
+
+**Coleman, J. S. (1988). "Social Capital in the Creation of Human Capital."**
+*American Journal of Sociology*, 94, S95-S120.
+
+*Focus on:*
+
+-   **Closure and trust**: How dense networks enable cooperation and reduce
+transaction costs
+-   **Reputation effects**: Why cheating becomes costly when mutual friends can
+observe and sanction
+-   **Norm enforcement**: How closed networks establish and maintain shared
+expectations
+
+:::
+
+## Participate
+
+::: {.callout-note}
+## 👥
+
+📉 Slideshow: [When Do Networks Create Value?](slideshow.html)
+
+This presentation covers:
+
+-   The theoretical framework: social capital vs. social homogeneity
+-   Bonding social capital: network closure and the Coleman perspective
+-   Bridging social capital: structural holes and the Burt framework
+-   Measuring closure (clustering coefficient) and brokerage (betweenness,
+constraint)
+-   Business applications: fraud detection, organizational networks, and board
+interlocks
+-   The strategic tension between safety (closure) and opportunity (brokerage)
+
+:::
+
+## Practice
+
+::: {.callout-note}
+## 💻
+
+**Hands-on Analysis**: Measuring social capital and brokerage
+
+Apply the concepts from this week to analyze network position and its
+relationship to performance:
+
+**Exercise 1: Clustering and Closure**
+
+Using the network datasets from previous weeks, calculate and interpret:
+
+-   Local clustering coefficients for each node
+-   Network-level average clustering
+-   Compare clustering across different types of networks (social vs.
+information vs. collaboration)
+
+**Exercise 2: Brokerage Position**
+
+Identify brokers and structural holes:
+
+-   Calculate betweenness centrality to find nodes on shortest paths
+-   Compute Burt's constraint index to measure structural hole access
+-   Visualize brokerage positions by coloring nodes by constraint level
+
+**Exercise 3: Position-Performance Relationship**
+
+If your network has performance data (e.g., sales, ratings, influence):
+
+-   Correlate network position metrics with performance outcomes
+-   Test whether brokers outperform actors in closed networks (or vice versa)
+-   Consider what contextual factors might moderate these relationships
+
+:::
+
+## Perform
+
+::: {.callout-note}
+## 📝
+
+**Application Exercise: Network Audit**
+
+Choose an organization or professional context you are familiar with (your
+workplace, a student organization, an industry you follow):
+
+1.  **Map the informal network**: Sketch the key actors and their connections
+(you don't need complete data—use your intuition about who interacts with whom)
+
+2.  **Identify brokers**: Who spans different groups? Who has access to diverse
+information sources?
+
+3.  **Identify closed clusters**: Which groups have dense internal connections?
+Where might trust be highest?
+
+4.  **Strategic implications**: Based on your analysis:
+    -   What are the risks if key brokers leave?
+    -   Where might silos be limiting information flow?
+    -   How could the network be restructured to improve performance?
+
+Bring your analysis to class for discussion.
+
+:::
+
+## Ponder
+
+::: {.callout-note}
+## 🤔
+
+### Discussion Questions
+
+**1. The Closure-Brokerage Trade-off**
+
+Burt argues for the value of structural holes; Coleman emphasizes closure. Are
+these perspectives contradictory, or can they be reconciled? Consider: Under
+what conditions would you advise an actor to invest in bridging ties vs.
+strengthening existing relationships?
+
+**2. Dark Sides of Social Capital**
+
+Both closure and brokerage have potential downsides:
+
+-   Closed networks can become insular, resistant to change, and exclusionary
+-   Brokers may exploit information asymmetries or face burnout from bridging
+demands
+
+How should organizations manage these risks while capturing network value?
+
+**3. Network Position and Ethics**
+
+The RBC fraud detection case shows how network analysis can identify criminal
+behavior. But similar techniques could be used to:
+
+-   Identify union organizers or whistleblowers
+-   Target vulnerable individuals for manipulation
+-   Reinforce existing power imbalances
+
+What ethical guidelines should govern the use of network analytics in
+organizations?
+
+**4. Building Your Network Strategically**
+
+Based on this week's material, how would you approach building your own
+professional network? Should you focus on:
+
+-   Deepening existing relationships (closure)?
+-   Reaching out to new, distant contacts (brokerage)?
+-   Some combination depending on context?
+
+### Core Readings
+
+-   **Structural Holes**: Burt, R. S. (1992). *Structural Holes: The Social
+Structure of Competition*. Harvard University Press.
+
+-   **Social Capital**: Coleman, J. S. (1988). "Social Capital in the Creation
+of Human Capital." *American Journal of Sociology*.
+
+-   **Weak Ties**: Granovetter, M. S. (1973). "The Strength of Weak Ties."
+*American Journal of Sociology*.
+
+### Supplementary Readings
+
+-   **Good Ideas**: Burt, R. S. (2004). "Structural Holes and Good Ideas."
+*American Journal of Sociology*.
+
+-   **Brokerage and Closure**: Burt, R. S. (2005). *Brokerage and Closure: An
+Introduction to Social Capital*. Oxford University Press.
+
+-   **Network Effects on Careers**: Seibert, S. E., Kraimer, M. L., & Liden, R.
+C. (2001). "A Social Capital Theory of Career Success." *Academy of Management
+Journal*.
+
+-   **Board Interlocks**: Mizruchi, M. S. (1996). "What Do Interlocks Do?"
+*Annual Review of Sociology*.
+
+:::
+
+## Additional Resources
+
+::: {.callout-tip}
+## 🔧 Tools and Methods
+
+**Measuring Closure**:
+
+-   `igraph::transitivity()` — local and global clustering coefficients
+-   `igraph::triangles()` — count triangles for each node
+
+**Measuring Brokerage**:
+
+-   `igraph::betweenness()` — betweenness centrality
+-   `igraph::constraint()` — Burt's network constraint (inverse of structural
+hole access)
+
+**Visualization**:
+
+-   Color nodes by constraint level to show brokerage positions
+-   Use edge bundling to reveal community structure
+-   Size nodes by betweenness to highlight bridges
+
+**Python alternatives**:
+
+-   `networkx.clustering()` — clustering coefficients
+-   `networkx.betweenness_centrality()` — betweenness
+-   `networkx.constraint()` — Burt's constraint (available via custom
+implementation)
 
 :::

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-20">
+<meta name="dcterms.date" content="2025-11-30">
 
 <title>Week 9 – SMM638 - Network Analytics</title>
 <style>
@@ -40,14 +40,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b25cb6ef9275ed217fc2e4ff85f8cf91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-702d9172da3b3d749f5039613a8b0eaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-b25cb6ef9275ed217fc2e4ff85f8cf91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-291fbc31fb41708205ef726e9abf1620.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-7c743f1943c3ba7373d1a557ea17542a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-291fbc31fb41708205ef726e9abf1620.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -446,8 +446,20 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#participate" id="toc-participate" class="nav-link" data-scroll-target="#participate">Participate</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#perform" id="toc-perform" class="nav-link" data-scroll-target="#perform">Perform</a></li>
+  <li><a href="#ponder" id="toc-ponder" class="nav-link" data-scroll-target="#ponder">Ponder</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -467,7 +479,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 20, 2025</p>
+      <p class="date">November 30, 2025</p>
     </div>
   </div>
   
@@ -479,21 +491,241 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This week addresses one of the central questions in network analytics: <strong>When do networks create value?</strong> We explore how structural position translates into tangible outcomes for individuals and organizations, drawing on two foundational theories of social capital:</p>
+<ol type="1">
+<li><p><strong>Bonding Social Capital (Coleman)</strong>: Dense, closed networks create value through <strong>trust</strong> and cooperation. When your contacts know each other, reputation effects operate, social norms can be enforced, and cheating becomes costly. This is the theory of <em>network closure</em>.</p></li>
+<li><p><strong>Bridging Social Capital (Burt)</strong>: Sparse networks with <em>structural holes</em> create value through access to <strong>diverse information</strong> and brokerage opportunities. Individuals who span disconnected groups gain early access to non-redundant information and strategic control over information flows.</p></li>
+</ol>
+<p>These perspectives represent a fundamental tension in network strategy: closure provides safety and trust, while brokerage provides opportunity and innovation. The optimal structure depends on what you are trying to achieve.</p>
+</section>
+<section id="prepare" class="level2">
+<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>📚
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Content coming soon.</p>
+<p>📖 <strong>Review</strong>:</p>
+<ul>
+<li><a href="../../weeks/week-1/network_terms.html">Network fundamentals</a> (Week 1)</li>
+<li><a href="../../weeks/week-3/main.html">Centrality measures</a> (Week 3) — especially betweenness centrality</li>
+<li><a href="../../weeks/week-7/main.html">Communities and cohesion</a> (Week 7)</li>
+</ul>
+<p>📖 <strong>Required Readings</strong>:</p>
+<p><strong>Burt, R. S. (2004). “Structural Holes and Good Ideas.”</strong> <em>American Journal of Sociology</em>, 110(2), 349-399.</p>
+<p><em>Focus on:</em></p>
+<ul>
+<li><strong>Structural holes</strong>: The “empty space” between disconnected groups that creates brokerage opportunities</li>
+<li><strong>Information benefits</strong>: How brokers access diverse, non-redundant knowledge before others</li>
+<li><strong>Good ideas</strong>: Evidence that network position predicts idea quality and career success</li>
+</ul>
+<p><strong>Coleman, J. S. (1988). “Social Capital in the Creation of Human Capital.”</strong> <em>American Journal of Sociology</em>, 94, S95-S120.</p>
+<p><em>Focus on:</em></p>
+<ul>
+<li><strong>Closure and trust</strong>: How dense networks enable cooperation and reduce transaction costs</li>
+<li><strong>Reputation effects</strong>: Why cheating becomes costly when mutual friends can observe and sanction</li>
+<li><strong>Norm enforcement</strong>: How closed networks establish and maintain shared expectations</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="participate" class="level2">
+<h2 class="anchored" data-anchor-id="participate">Participate</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>👥
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>📉 Slideshow: <a href="slideshow.html">When Do Networks Create Value?</a></p>
+<p>This presentation covers:</p>
+<ul>
+<li>The theoretical framework: social capital vs.&nbsp;social homogeneity</li>
+<li>Bonding social capital: network closure and the Coleman perspective</li>
+<li>Bridging social capital: structural holes and the Burt framework</li>
+<li>Measuring closure (clustering coefficient) and brokerage (betweenness, constraint)</li>
+<li>Business applications: fraud detection, organizational networks, and board interlocks</li>
+<li>The strategic tension between safety (closure) and opportunity (brokerage)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>💻
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Hands-on Analysis</strong>: Measuring social capital and brokerage</p>
+<p>Apply the concepts from this week to analyze network position and its relationship to performance:</p>
+<p><strong>Exercise 1: Clustering and Closure</strong></p>
+<p>Using the network datasets from previous weeks, calculate and interpret:</p>
+<ul>
+<li>Local clustering coefficients for each node</li>
+<li>Network-level average clustering</li>
+<li>Compare clustering across different types of networks (social vs. information vs.&nbsp;collaboration)</li>
+</ul>
+<p><strong>Exercise 2: Brokerage Position</strong></p>
+<p>Identify brokers and structural holes:</p>
+<ul>
+<li>Calculate betweenness centrality to find nodes on shortest paths</li>
+<li>Compute Burt’s constraint index to measure structural hole access</li>
+<li>Visualize brokerage positions by coloring nodes by constraint level</li>
+</ul>
+<p><strong>Exercise 3: Position-Performance Relationship</strong></p>
+<p>If your network has performance data (e.g., sales, ratings, influence):</p>
+<ul>
+<li>Correlate network position metrics with performance outcomes</li>
+<li>Test whether brokers outperform actors in closed networks (or vice versa)</li>
+<li>Consider what contextual factors might moderate these relationships</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="perform" class="level2">
+<h2 class="anchored" data-anchor-id="perform">Perform</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>📝
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Application Exercise: Network Audit</strong></p>
+<p>Choose an organization or professional context you are familiar with (your workplace, a student organization, an industry you follow):</p>
+<ol type="1">
+<li><p><strong>Map the informal network</strong>: Sketch the key actors and their connections (you don’t need complete data—use your intuition about who interacts with whom)</p></li>
+<li><p><strong>Identify brokers</strong>: Who spans different groups? Who has access to diverse information sources?</p></li>
+<li><p><strong>Identify closed clusters</strong>: Which groups have dense internal connections? Where might trust be highest?</p></li>
+<li><p><strong>Strategic implications</strong>: Based on your analysis:</p>
+<ul>
+<li>What are the risks if key brokers leave?</li>
+<li>Where might silos be limiting information flow?</li>
+<li>How could the network be restructured to improve performance?</li>
+</ul></li>
+</ol>
+<p>Bring your analysis to class for discussion.</p>
+</div>
+</div>
+</section>
+<section id="ponder" class="level2">
+<h2 class="anchored" data-anchor-id="ponder">Ponder</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>🤔
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="discussion-questions" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-questions">Discussion Questions</h3>
+<p><strong>1. The Closure-Brokerage Trade-off</strong></p>
+<p>Burt argues for the value of structural holes; Coleman emphasizes closure. Are these perspectives contradictory, or can they be reconciled? Consider: Under what conditions would you advise an actor to invest in bridging ties vs. strengthening existing relationships?</p>
+<p><strong>2. Dark Sides of Social Capital</strong></p>
+<p>Both closure and brokerage have potential downsides:</p>
+<ul>
+<li>Closed networks can become insular, resistant to change, and exclusionary</li>
+<li>Brokers may exploit information asymmetries or face burnout from bridging demands</li>
+</ul>
+<p>How should organizations manage these risks while capturing network value?</p>
+<p><strong>3. Network Position and Ethics</strong></p>
+<p>The RBC fraud detection case shows how network analysis can identify criminal behavior. But similar techniques could be used to:</p>
+<ul>
+<li>Identify union organizers or whistleblowers</li>
+<li>Target vulnerable individuals for manipulation</li>
+<li>Reinforce existing power imbalances</li>
+</ul>
+<p>What ethical guidelines should govern the use of network analytics in organizations?</p>
+<p><strong>4. Building Your Network Strategically</strong></p>
+<p>Based on this week’s material, how would you approach building your own professional network? Should you focus on:</p>
+<ul>
+<li>Deepening existing relationships (closure)?</li>
+<li>Reaching out to new, distant contacts (brokerage)?</li>
+<li>Some combination depending on context?</li>
+</ul>
+</section>
+<section id="core-readings" class="level3">
+<h3 class="anchored" data-anchor-id="core-readings">Core Readings</h3>
+<ul>
+<li><p><strong>Structural Holes</strong>: Burt, R. S. (1992). <em>Structural Holes: The Social Structure of Competition</em>. Harvard University Press.</p></li>
+<li><p><strong>Social Capital</strong>: Coleman, J. S. (1988). “Social Capital in the Creation of Human Capital.” <em>American Journal of Sociology</em>.</p></li>
+<li><p><strong>Weak Ties</strong>: Granovetter, M. S. (1973). “The Strength of Weak Ties.” <em>American Journal of Sociology</em>.</p></li>
+</ul>
+</section>
+<section id="supplementary-readings" class="level3">
+<h3 class="anchored" data-anchor-id="supplementary-readings">Supplementary Readings</h3>
+<ul>
+<li><p><strong>Good Ideas</strong>: Burt, R. S. (2004). “Structural Holes and Good Ideas.” <em>American Journal of Sociology</em>.</p></li>
+<li><p><strong>Brokerage and Closure</strong>: Burt, R. S. (2005). <em>Brokerage and Closure: An Introduction to Social Capital</em>. Oxford University Press.</p></li>
+<li><p><strong>Network Effects on Careers</strong>: Seibert, S. E., Kraimer, M. L., &amp; Liden, R. C. (2001). “A Social Capital Theory of Career Success.” <em>Academy of Management Journal</em>.</p></li>
+<li><p><strong>Board Interlocks</strong>: Mizruchi, M. S. (1996). “What Do Interlocks Do?” <em>Annual Review of Sociology</em>.</p></li>
+</ul>
+</section>
+</div>
+</div>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🔧 Tools and Methods
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Measuring Closure</strong>:</p>
+<ul>
+<li><code>igraph::transitivity()</code> — local and global clustering coefficients</li>
+<li><code>igraph::triangles()</code> — count triangles for each node</li>
+</ul>
+<p><strong>Measuring Brokerage</strong>:</p>
+<ul>
+<li><code>igraph::betweenness()</code> — betweenness centrality</li>
+<li><code>igraph::constraint()</code> — Burt’s network constraint (inverse of structural hole access)</li>
+</ul>
+<p><strong>Visualization</strong>:</p>
+<ul>
+<li>Color nodes by constraint level to show brokerage positions</li>
+<li>Use edge bundling to reveal community structure</li>
+<li>Size nodes by betweenness to highlight bridges</li>
+</ul>
+<p><strong>Python alternatives</strong>:</p>
+<ul>
+<li><code>networkx.clustering()</code> — clustering coefficients</li>
+<li><code>networkx.betweenness_centrality()</code> — betweenness</li>
+<li><code>networkx.constraint()</code> — Burt’s constraint (available via custom implementation)</li>
+</ul>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
