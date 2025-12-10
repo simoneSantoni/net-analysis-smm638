@@ -3,10 +3,108 @@ title: "Week 10"
 format: html
 subtitle: "Network position and performance - case discussion"
 date: "today"
-callout-appearance: default
+callout-appearance: "default"
 ---
 
-::: {.callout-note}
-Content coming soon.
+## Prepare
 
+::: {.callout-note}
+## 📚
+
+📖 Review [Week 9 materials](../week-9/main.qmd) on structural holes, brokerage, and network constraint
+
+📖 Read the case study: **"Structural Holes and Good Ideas at Apex Manufacturing"** (`structural_holes_case.pdf`)
+
+📌 Focus on the key exhibits: network structure across business units, constraint distribution by rank, and the relationship between brokerage position and performance outcomes
+
+📝 Consider how Apex's supply-chain managers could leverage structural holes for innovation and career advancement
+:::
+
+## Participate
+
+::: {.callout-note}
+## 👥
+
+🙋 **Case Discussion**: Apex's structural holes and innovation dilemma
+
+Apex Manufacturing's 673 supply-chain managers operate in a fragmented organizational network riddled with structural holes between business units. While this creates opportunities for brokerage, managers face challenges in whether and how to span these gaps to generate valuable ideas and advance their careers.
+
+**Key Discussion Questions**:
+
+- What network positions offer the greatest "vision advantage" for identifying good ideas, and why are managers with low constraint more likely to have their ideas valued?
+- How do structural holes between business units create both opportunities and risks for managers seeking to innovate?
+- Why do only 68% of managers respond to surveys about ideas, and what does this pattern of "organizational silence" reveal about network dynamics?
+- Compare high-constraint vs. low-constraint managers: how do their career trajectories (salary, evaluation, promotion) differ, and what mechanisms explain this gap?
+- Should Apex actively redesign its network to reduce structural holes, or are there strategic benefits to maintaining the current fragmented structure?
+- How might the two feedback cycles (negative: withdrawal after dismissal; positive: continued proposing after validation) perpetuate inequality in the organization?
+:::
+
+## Practice
+
+::: {.callout-note}
+##  💻
+
+**Hands-on Analysis: Structural holes and performance**
+
+We provide two complementary analytical notebooks for this week's case:
+
+### 📊 [Exploratory Data Analysis](eda_apex.qmd)
+
+Complete exploratory analysis of the Apex Manufacturing dataset:
+
+- **Data overview**: Load and inspect the 673 managers and 1,218 relationships
+- **Demographics**: Analyze age, education, rank, business unit distributions
+- **Network metrics**: Explore degree, constraint, betweenness, and clustering
+- **Structural holes theory**: Validate the "vision advantage" hypothesis
+- **Performance outcomes**: Examine salary, evaluations, promotion patterns
+- **Correlation analysis**: Identify key relationships between network position and outcomes
+- **Network visualization**: See the organizational structure and cross-BU gaps
+
+*Start here if you want a comprehensive overview of the dataset and key patterns.*
+
+### 📈 [Case Analysis: Network Position & Performance](network_analysis.qmd)
+
+Deep-dive analysis addressing the four key discussion questions:
+
+1. **Vision Advantage**: How low-constraint positions lead to better ideas
+2. **Opportunities & Risks**: Benefits and challenges of spanning structural holes
+3. **Organizational Silence**: Why 32% of managers don't respond to surveys
+4. **Career Trajectories**: Performance gaps between high and low constraint managers
+
+Includes statistical tests, theoretical mechanisms, and actionable insights.
+
+*Use this for detailed answers to the case discussion questions and theoretical depth.*
+
+**Recommended approach**: Start with the EDA to understand the data, then work through the case analysis to answer specific questions.
+:::
+
+## Perform
+
+::: {.callout-note}
+##  📝
+
+**Case Prep (bring to class)**
+
+- Identify 2-3 specific managers in the Apex network who exemplify high vs. low constraint positions and predict their likely performance outcomes
+- Outline what actions Apex senior leadership could take to either (a) help high-constraint managers escape their positions, or (b) systematically leverage brokerage for innovation
+- Note the trade-offs: if everyone bridges structural holes, do the holes disappear and the advantage erode?
+:::
+
+## Ponder
+
+::: {.callout-note}
+## 🤔
+
+**Brokerage, closure, and organizational design**
+
+- When is brokerage (spanning structural holes) more valuable than closure (dense, cohesive networks), and does the answer depend on task, hierarchy, or organizational culture?
+- How can individual managers ethically leverage structural holes without becoming manipulative "information brokers" who hoard knowledge?
+- What organizational interventions (cross-functional teams, rotation programs, collaboration platforms) might reduce structural holes while preserving the benefits of diverse perspectives?
+- How should performance evaluation and compensation systems account for network position advantages that may be unequally distributed by rank, location, or unit?
+
+**Further Reading**:
+
+- Burt, R. S. (2005). *Brokerage and Closure* - comprehensive treatment of structural holes theory and empirical evidence
+- Reagans, R., & McEvily, B. (2003). "Network Structure and Knowledge Transfer" - when closure matters more than brokerage
+- Obstfeld, D. (2005). "Social Networks, the Tertius Iungens Orientation, and Involvement in Innovation" - active vs. passive brokerage strategies
 :::

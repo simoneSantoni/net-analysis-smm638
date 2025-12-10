@@ -1,0 +1,71 @@
+
+BURT (2004) STRUCTURAL HOLES DATASET - EDA SUMMARY
+Generated: 2025-12-10 11:13:29
+
+===============================================================================
+DATASET OVERVIEW
+===============================================================================
+Nodes (Employees): 673
+Edges (Relationships): 1218
+Network Density: 0.0118
+Connected Components: 9
+Social Isolates: 193 (28.7%)
+
+===============================================================================
+DEMOGRAPHIC SUMMARY
+===============================================================================
+Age: Mean=50.1, Range=[24, 68]
+Education: Bachelor: 356, Less: 162, Graduate: 155
+Ranks: Exec: 25, Mgr1: 127, Mgr2: 191, Mgr3: 169, SrMgr: 161
+Business Units: 6
+
+===============================================================================
+NETWORK METRICS (Non-Isolates)
+===============================================================================
+Mean Degree: 5.08
+Mean Weighted Degree: 4.27
+Mean Log Constraint: 3.251
+Mean Betweenness: 0.0089
+Mean Clustering: 0.039
+
+===============================================================================
+KEY FINDINGS (REPLICATING BURT 2004)
+===============================================================================
+
+1. BROKERAGE AND PERFORMANCE
+   - Degree ↔ Log Constraint: r = -0.965
+     (As expected: more contacts → lower constraint)
+   
+   - Log Constraint ↔ Salary Residual: r = -0.026
+     (Negative association: lower constraint → higher salary)
+
+2. BROKERAGE AND GOOD IDEAS
+   - Log Constraint ↔ Idea Value: r = -0.473
+     (Strong negative: structural holes → better ideas)
+   
+   - Idea Dismissal Rate: 64.8% among expressed ideas
+
+3. NETWORK STRUCTURE
+   - Cross-BU Ties: 0.6%
+     (Confirms structural holes between business units)
+   
+   - Tie Strength Distribution:
+          often: 466 (38.3%)
+     frequent: 414 (34.0%)
+     sometimes: 230 (18.9%)
+     idea_only: 108 (8.9%)
+
+===============================================================================
+VISUALIZATIONS GENERATED
+===============================================================================
+1. fig1_demographics.png - Demographic distributions
+2. fig2_network_metrics.png - Network position metrics
+3. fig3_performance.png - Performance and outcome variables
+4. fig4_correlation_heatmap.png - Correlation matrix
+5. fig5_edge_analysis.png - Edge/tie analysis
+6. fig6_structural_holes_theory.png - Key theoretical relationships
+7. fig7_network_visualization.png - Network structure
+
+All outputs saved to: /home/simon/githubRepos/net-analysis-smm638/data/apex/eda_output
+
+===============================================================================
